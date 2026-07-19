@@ -1,16 +1,18 @@
 # AlignSSL-SV
 
-**Self-supervised pretraining on read alignments with calibrated uncertainty for structural-variant (deletion) calling.**
+**A self-supervised method to find structural-variant deletions from read alignments. The method gives calibrated uncertainty.**
 
-AlignSSL-SV is a deletion-focused structural-variant (SV) caller for short-read whole-genome sequencing. It is designed as a direct, head-to-head extension of and critique of **DeepSV** (Cai, Wu & Gao, *BMC Bioinformatics* 2019, 20:665). Where DeepSV encodes the read pileup as a hand-designed RGB image and trains a fully supervised CNN, AlignSSL-SV replaces that with:
+AlignSSL-SV is a caller for structural-variant (SV) deletions. It uses short-read whole-genome sequencing data. It is a direct extension of **DeepSV** (Cai, Wu & Gao, *BMC Bioinformatics* 2019, 20:665). This project also shows the limits of DeepSV and compares the two methods directly.
 
-1. **An image-free alignment tensor** — reads are encoded directly into a multi-channel `(C=18, R=128, W=256)` tensor of alignment features (depth, mapping quality, insert-size deviation, orientation, clip signal, base identity), with no lossy RGB rasterization step.
-2. **Self-supervised pretraining** — a masked-alignment-modeling (MAM) objective learns a transferable representation of the pileup from *unlabeled* windows, so downstream deletion calling needs far fewer labels.
-3. **Calibrated uncertainty** — temperature scaling plus MC-dropout give per-call confidence that is well-calibrated across sequencing depth and ancestry.
+DeepSV changes the read pileup into a hand-made RGB image. Then it trains a fully supervised CNN. AlignSSL-SV uses a different method with three parts:
+
+1. **An alignment tensor with no image.** AlignSSL-SV changes the reads directly into a tensor with many channels. The tensor has the shape `(C=18, R=128, W=256)`. The channels hold alignment features: depth, mapping quality, insert-size difference, orientation, clip signal, and base identity. AlignSSL-SV does not make an RGB image, so it does not lose data in that step.
+2. **Self-supervised pretraining.** A masked-alignment-modeling (MAM) task learns a representation of the pileup from *unlabeled* windows. This lets the deletion caller use fewer labels.
+3. **Calibrated uncertainty.** Temperature scaling and MC-dropout give a confidence value for each call. The confidence value is well-calibrated across different sequencing depths and different ancestries.
 
 ## Headline results (1000 Genomes phase-3 deletions; test = chr12–22)
 
-**Label efficiency** — at the smallest label budget (1% ≈ 128 windows) the SSL-pretrained encoder recovers a usable **F1 ≈ 0.40** while both the from-scratch encoder and the DeepSV-style RGB+CNN baseline collapse (F1 = 0.00 and 0.08). The DeepSV-representation baseline plateaus around **F1 ≈ 0.57** at full labels, well below either alignment-tensor variant (≈ 0.80–0.82).
+**Label efficiency.** The SSL-pretrained encoder gets a usable **F1 ≈ 0.40** at the smallest label budget (1% ≈ 128 windows). At the same budget, the from-scratch encoder and the DeepSV-style RGB+CNN baseline both fail (F1 = 0.00 and 0.08). The DeepSV-representation baseline stops at about **F1 ≈ 0.57** at full labels. This value is much lower than the two alignment-tensor models (≈ 0.80–0.82).
 
 | Labels | AlignSSL (pretrained) | AlignSSL (scratch) | DeepSV baseline |
 |-------:|:---------------------:|:------------------:|:---------------:|
@@ -21,7 +23,7 @@ AlignSSL-SV is a deletion-focused structural-variant (SV) caller for short-read 
 |  50%   | **0.747 ± 0.078**     | 0.744 ± 0.046      | 0.557 ± 0.250   |
 | 100%   | 0.803 ± 0.117         | **0.819 ± 0.036**  | 0.574 ± 0.076   |
 
-**Calibration** — the alignment-tensor models are far better calibrated than the DeepSV baseline (lower expected calibration error is better):
+**Calibration.** The alignment-tensor models are much better calibrated than the DeepSV baseline. A lower expected calibration error (ECE) is better.
 
 | Model | ECE | Temperature |
 |---|:---:|:---:|
@@ -29,9 +31,9 @@ AlignSSL-SV is a deletion-focused structural-variant (SV) caller for short-read 
 | AlignSSL, from scratch | 0.025 ± 0.009 | 0.823 |
 | DeepSV baseline | 0.091 ± 0.045 | 1.785 |
 
-**Cross-population generalization** — trained on non-European ancestries, evaluated on held-out CEU (NA12878). SSL pretraining shrinks the generalization gap (in-dist → cross-pop F1 drop) from **+0.117** (scratch) to **+0.015** (pretrained).
+**Cross-population generalization.** The models train on non-European ancestries. Then they are evaluated on held-out CEU (NA12878). SSL pretraining makes the generalization gap smaller. This gap is the drop in F1 from the in-distribution test to the cross-population test. The gap goes from **+0.117** (scratch) to **+0.015** (pretrained).
 
-See `results/` for the raw CSVs and figures, and `docs/AlignSSL_SV_manuscript.md` for the full write-up.
+For the source CSVs and the figures, see `results/`. For the full report, see `docs/AlignSSL_SV_manuscript.md`.
 
 ## Repository layout
 
@@ -67,16 +69,16 @@ requirements.txt     Python dependencies
 ## Data
 
 - **Reference:** GRCh37 (`hs37d5.fa`).
-- **Truth set:** 1000 Genomes phase-3 merged SV genotypes (`ALL.wgs.mergedSV.v8.20130502.svs.genotypes.vcf.gz`), 40,975 deletions across 2,504 samples.
-- **BAMs:** 1000 Genomes high-coverage PCR-free alignments, selected for ancestry diversity (YRI, ASW, CHB, MXL, TSI, GIH for training; CEU held out for cross-population test).
-- BAM files themselves are not committed (each is 150–260 GB). `scripts/pfetch_bam.sh` and `cluster/*.sbatch` reproduce their retrieval.
+- **Truth set:** the 1000 Genomes phase-3 merged SV genotypes (`ALL.wgs.mergedSV.v8.20130502.svs.genotypes.vcf.gz`). The set has 40,975 deletions across 2,504 samples.
+- **BAMs:** the 1000 Genomes high-coverage PCR-free alignments. The samples give a mix of ancestries. Training uses YRI, ASW, CHB, MXL, TSI, and GIH. The cross-population test holds out CEU.
+- This repository does not hold the BAM files, because each file is 150–260 GB. To get the BAM files again, use `scripts/pfetch_bam.sh` and `cluster/*.sbatch`.
 
-GIAB HG002 + Truvari benchmarking is planned as the Phase-4 headline evaluation (see `docs/project.md` §15).
+The Phase-4 headline evaluation will use GIAB HG002 and Truvari. For more data, see `docs/project.md` §15.
 
 ## Relationship to prior work
 
-AlignSSL-SV does **not** claim primacy on "self-supervised learning for structural variants" as a category — BASILISC (Banerjee, Stanford Digital Repository 2026, doi:10.25740/jj829qd2843) precedes us there. Our contribution is narrower and specific: the **image-free alignment-tensor representation**, combined with **calibrated, ancestry-transferable uncertainty**, for short-read deletion calling. See `docs/AlignSSL_SV_novelty_verdict.md` for the full adversarial novelty analysis.
+AlignSSL-SV does **not** claim to be the first to use self-supervised learning for structural variants. BASILISC (Banerjee, Stanford Digital Repository 2026, doi:10.25740/jj829qd2843) did this before AlignSSL-SV. The contribution of AlignSSL-SV is more specific. It has two parts: the **alignment-tensor representation with no image**, and **calibrated uncertainty that transfers across ancestries**, for short-read deletion calling. For the full novelty analysis, see `docs/AlignSSL_SV_novelty_verdict.md`.
 
 ## Status
 
-Research code, active development. Results above are from the initial multi-ancestry panel; see `PROGRESS.md` for the current state and open items.
+This is research code in active development. The results above come from the first multi-ancestry panel. For the current state and the open items, see `PROGRESS.md`.
