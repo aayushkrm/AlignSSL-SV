@@ -100,7 +100,7 @@ downloading. Everything else had to be fetched from EBI (see §5).
 | `tensors/` | 89 MB | Labeled tensors for the two beegfs samples (NA19238, NA19625) — 12 shards |
 | `tensors_panel/` | 157 MB | Labeled tensors for the downloaded panel samples (NA18525, NA19648, NA20502, NA20845) — 20 shards (5 each) |
 | `tensors_na12878/` | 12 MB | Labeled tensors for held-out **test** sample NA12878/CEU — 2 shards |
-| `tensors_pretrain/` | 68 GB | **Unlabeled SSL pretrain windows** (60 shards) + the consolidated flat memmap `pretrain_mm.f16` (70.8 GB) and `pretrain_mm.meta.npz` |
+| `tensors_pretrain/` | 68 GiB | **Unlabeled SSL pretrain windows** (60 shards) + the consolidated flat memmap `pretrain_mm.f16` (65.9 GiB = 70.8 GB, 70,778,880,128 bytes) and `pretrain_mm.meta.npz`. (Directory total and memmap size are both ~68 GiB — the memmap dominates the directory; sizes here are GiB from `du`, the 70.8 GB elsewhere is the decimal-GB byte count of the same file.) |
 | `ckpt/` | 13 MB | Encoder checkpoints (`encoder_ssl*.pt`) + all results JSON (label-efficiency, calibration, cross-pop, ablations, DeepSV baseline) |
 | `bam_extra/` | 445 GB | Large BAMs kept on scratch: NA12878 (251 GB, test) and NA20845 (226 GB, GIH/SAS) with their `.bai` |
 | `bam_idx/` | 20 MB | `.bai` index files and symlinks (named `<sample>.<pop>.bam.bai`) |

@@ -346,7 +346,7 @@ All 4 jobs RUNNING, no failures. On completion of each: run `samtools view -c` f
 
 **Download-discard decision (user-approved).** The EBI concurrent-download corruption (see 2026-07-18 entry) kept failing the BGZF integrity gate for three of the four in-flight samples. Rather than keep fighting the per-connection throttle and cache corruption, the panel was **frozen at what was already validated**. **NA19017 (LWK), NA19240 (YRI trio), and NA19239 (YRI trio) were discarded** — their jobs were cancelled and ~518 GB of orphaned partial data was reclaimed from scratch. The one exception: **NA20845 (GIH/SAS), which had already PASSED integrity** on attempt 2 (`SCAN_OK, reads=560,191,023`), was kept.
 
-**NA20845 extraction complete (job 1517676, COMPLETED 0:0, 01:13:47).** Both tensor sets were extracted before the 226 GB BAM was deleted post-validation:
+**NA20845 extraction complete (job 1517676, COMPLETED 0:0, 01:13:47).** Both tensor sets were extracted from the 226 GB BAM (the BAM is currently retained on scratch at `bam_extra/`, alongside NA12878, as insurance):
 - **Labeled tensors** → `tensors_panel/`: 4,968 tensors / 1,242 truth DELs / **5 shards**.
 - **SSL pretrain windows** → `tensors_pretrain/`: 40,000 windows / **20 shards**.
 Validation gate passed (`labeled_shards_present=True pretrain_shards_present=True`), then the BAM was removed.
@@ -354,7 +354,7 @@ Validation gate passed (`labeled_shards_present=True pretrain_shards_present=Tru
 **Final frozen panel.**
 - **Fine-tune / labeled panel = 6 samples**: NA19238 (YRI/AFR), NA19625 (ASW/AFR), NA18525 (CHB/EAS), NA19648 (MXL/AMR), NA20502 (TSI/EUR), **NA20845 (GIH/SAS)**.
 - **Held-out cross-population TEST = NA12878 (CEU/EUR)** only (LWK/NA19017 no longer available).
-- **SSL pretrain corpus = 3 samples** (NA19238 + NA19625 + NA20845) = **120,000 unlabeled windows / 60 shards / 46 GB** — now spans AFR×2 + **SAS** (previously AFR-only, 2 samples / 80,000 windows).
+- **SSL pretrain corpus = 3 samples** (NA19238 + NA19625 + NA20845) = **120,000 unlabeled windows / 60 shards** (compressed `.npz` shards ~2 GiB on disk; consolidated flat float16 memmap `pretrain_mm.f16` = 65.9 GiB / 70.8 GB, so `tensors_pretrain/` totals ~68 GiB) — now spans AFR×2 + **SAS** (previously AFR-only, 2 samples / 80,000 windows).
 - ⚠️ Caveat: the SSL pretrain corpus (3 samples) is smaller than the labeled panel (6 samples); the other three labeled samples have no pretrain windows because their BAMs were deleted after labeled-tensor extraction. Re-adding them would require re-downloading three ~200 GB BAMs.
 
 **Memmap rebuilt.** `build_memmap.py` consolidated the 60 pretrain shards (glob `pretrain_*_train_shard*.npz`) into one flat float16 memmap `pretrain_mm.f16` = **70.8 GB, 120,000 windows, shape (18,64,256), all label=−1** (up from 47 GB / 80,000). It stages cleanly into each GPU node's `/dev/shm`.
