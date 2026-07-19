@@ -58,6 +58,7 @@ scripts/             Runnable drivers
 cluster/             SLURM sbatch templates (download, extract, pretrain, finetune)
 tests/               End-to-end pipeline test on synthetic data
 docs/                Manuscript, research proposal, literature survey, slide decks
+  CLUSTER.md             Cluster, filesystem, and full reproduction guide
   project.md             As-built project record (current)
   project_versions/      project.md v1 (plan) and v2 (as-built)
   progress_versions/     PROGRESS.md v01–v20 (full development log history)
@@ -72,6 +73,7 @@ requirements.txt     Python dependencies
 - **Truth set:** the 1000 Genomes phase-3 merged SV genotypes (`ALL.wgs.mergedSV.v8.20130502.svs.genotypes.vcf.gz`). The set has 40,975 deletions across 2,504 samples.
 - **BAMs:** the 1000 Genomes high-coverage PCR-free alignments. The samples give a mix of ancestries. Training uses YRI, ASW, CHB, MXL, TSI, and GIH. The cross-population test holds out CEU.
 - This repository does not hold the BAM files, because each file is 150–260 GB. To get the BAM files again, use `scripts/pfetch_bam.sh` and `cluster/*.sbatch`.
+- To reproduce the full pipeline on the cluster — filesystem layout, conda environments, job submission, and all practical steps — read `docs/CLUSTER.md`.
 
 The Phase-4 headline evaluation will use GIAB HG002 and Truvari. For more data, see `docs/project.md` §15.
 

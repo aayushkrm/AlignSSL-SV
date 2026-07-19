@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: 2026-07-17 (3/6 new panel BAMs downloaded+extracted; NA19239 corrupted download caught, quarantined, re-downloading; MAE-only SSL ablation winner confirmed at 3 seeds). Maps to the Phase 0–5 plan in `project.md`._
+_Last updated: 2026-07-19 (panel frozen at 6 labeled samples + NA12878 test; NA20845/GIH added to SSL corpus → 3 samples / 120K windows / 60 shards; 4-seed re-pretrain launched on all 4 GPUs; GitHub repo published at github.com/aayushkrm/AlignSSL-SV; README in STE; new docs/CLUSTER.md). Maps to the Phase 0–5 plan in `project.md`. See the 2026-07-19 section at the bottom for the current state._
 
 **Legend:** ✅ done & verified · 🟡 in progress · ⬜ not started · ⚠️ decision/caveat for you
 
@@ -338,3 +338,40 @@ All 4 jobs RUNNING, no failures. On completion of each: run `samtools view -c` f
 **Fix deployed** (`alignssl_sv/scripts/pfetch_bam.sh`, pushed to cluster at `code/scripts/pfetch_bam.sh` for future launches only — the 3 currently-running retries keep executing their already-loaded script, per standing practice of not disturbing in-flight jobs): (1) a cross-job `mkdir`-based mutex (`.pfetch_download.lock`) so at most one pfetch invocation is in its concurrent-download phase cluster-wide at a time, serializing Range-request contention against the shared host; (2) default parallelism lowered 16→8 chunks per job. Both NA19017 and NA20845 auto-retried per the script's existing 3-attempt logic and are now on attempt 2 (as of this update); NA19240 is still on its first attempt. Will re-check the integrity gate on each as they complete and apply the mutex-patched script to any sample requiring a further retry.
 
 **Download status recheck (2026-07-18, late):** NA19239 (single-stream) at 71% (~176.8 GB), ETA ~13h45m holding steady. NA19240, NA19017 (attempt 2), NA20845 (attempt 2) all RUNNING on hydra-n1.
+
+
+---
+
+## Update: 2026-07-19 — panel frozen, NA20845 added, GitHub published, 4-seed re-pretrain launched
+
+**Download-discard decision (user-approved).** The EBI concurrent-download corruption (see 2026-07-18 entry) kept failing the BGZF integrity gate for three of the four in-flight samples. Rather than keep fighting the per-connection throttle and cache corruption, the panel was **frozen at what was already validated**. **NA19017 (LWK), NA19240 (YRI trio), and NA19239 (YRI trio) were discarded** — their jobs were cancelled and ~518 GB of orphaned partial data was reclaimed from scratch. The one exception: **NA20845 (GIH/SAS), which had already PASSED integrity** on attempt 2 (`SCAN_OK, reads=560,191,023`), was kept.
+
+**NA20845 extraction complete (job 1517676, COMPLETED 0:0, 01:13:47).** Both tensor sets were extracted before the 226 GB BAM was deleted post-validation:
+- **Labeled tensors** → `tensors_panel/`: 4,968 tensors / 1,242 truth DELs / **5 shards**.
+- **SSL pretrain windows** → `tensors_pretrain/`: 40,000 windows / **20 shards**.
+Validation gate passed (`labeled_shards_present=True pretrain_shards_present=True`), then the BAM was removed.
+
+**Final frozen panel.**
+- **Fine-tune / labeled panel = 6 samples**: NA19238 (YRI/AFR), NA19625 (ASW/AFR), NA18525 (CHB/EAS), NA19648 (MXL/AMR), NA20502 (TSI/EUR), **NA20845 (GIH/SAS)**.
+- **Held-out cross-population TEST = NA12878 (CEU/EUR)** only (LWK/NA19017 no longer available).
+- **SSL pretrain corpus = 3 samples** (NA19238 + NA19625 + NA20845) = **120,000 unlabeled windows / 60 shards / 46 GB** — now spans AFR×2 + **SAS** (previously AFR-only, 2 samples / 80,000 windows).
+- ⚠️ Caveat: the SSL pretrain corpus (3 samples) is smaller than the labeled panel (6 samples); the other three labeled samples have no pretrain windows because their BAMs were deleted after labeled-tensor extraction. Re-adding them would require re-downloading three ~200 GB BAMs.
+
+**Memmap rebuilt.** `build_memmap.py` consolidated the 60 pretrain shards (glob `pretrain_*_train_shard*.npz`) into one flat float16 memmap `pretrain_mm.f16` = **70.8 GB, 120,000 windows, shape (18,64,256), all label=−1** (up from 47 GB / 80,000). It stages cleanly into each GPU node's `/dev/shm`.
+
+**4-seed re-pretrain launched on all 4 free GPUs (2026-07-19 16:2x).** The GPU queue was empty (0 pending jobs, any user), so all four seeds started within ~48 s:
+
+| Job | Seed | GPU | Node |
+|---|---|---|---|
+| 1517715 | 0 | A100 80 GB | hydra-gpu3 |
+| 1517716 | 1 | T4 15 GB | hydra-gpu1 |
+| 1517717 | 2 | T4 15 GB | hydra-gpu1 |
+| 1517718 | 3 | T4 15 GB | hydra-gpu1 |
+
+Identical hyperparameters (25 epochs, batch 96, lr 1.5e-4, mask 0.6, view-keep 0.5), differing only by random seed → gives genuine **pretraining-seed variance** for the paper. A100 (bf16) runs ~10× faster than the T4s (fp16). Loss decreasing cleanly on all four. **Next:** on completion, re-run the full fine-tune / label-efficiency / calibration / length-strata sweep and the CEU held-out cross-population eval against the seed-averaged encoders.
+
+**GitHub repository published.** The complete project is now public at **`github.com/aayushkrm/AlignSSL-SV`** (MIT license, commits authored solely by the user). It contains: the `alignssl/` package (8 modules), `scripts/` and `cluster/` drivers, `tests/`, `results/` (4 CSVs + 2 figures), the full `docs/` set — manuscript, research proposal, 62-paper literature survey, slide decks, novelty verdict, `project.md` v1–v2, and `PROGRESS.md` v01–v20 history. A completeness audit hash-diffed the live clone against the local staging tree: **61/61 tracked files byte-identical**. SSH private keys, large regenerable data (BAMs/tensors/checkpoints), and third-party/copyrighted material are correctly excluded via `.gitignore`.
+
+**README rewritten in ASD-STE100 Simplified Technical English** (commit `1476b0b`): short single-idea sentences, active voice, imperative mood, consistent terminology — all result tables, numbers, technical names, and links preserved verbatim.
+
+**New: `docs/CLUSTER.md`** — a full cluster and reproduction guide so a new contributor can continue from the exact current state: SLURM partitions and limits, the beegfs/scratch filesystem layout, conda environments, the who-is-used-for-what data panel, the integrity-gated download procedure, the end-to-end workflow with an ASCII pipeline diagram, before-vs-now training summary, and the hard-won gotchas (base64→sbatch submission, 60 s SSH cap, EBI throttle/corruption, `/dev/shm` memmap staging, T4 batch-96 limit, bf16-only-on-A100, memmap-rebuild-after-adding-samples).
