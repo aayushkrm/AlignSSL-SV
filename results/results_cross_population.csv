@@ -1,0 +1,3 @@
+arm,in_dist_F1_mean,in_dist_F1_sd,xpop_CEU_F1_mean,xpop_CEU_F1_sd,xpop_ECE_mean,xpop_ECE_sd,gen_gap_mean,gen_gap_sd,n_test,n_pos
+pretrained,0.6863,0.1368,0.6717,0.1744,0.1128,0.1307,0.0146,0.1144,1448,362
+scratch,0.8979,0.0524,0.7810,0.1359,0.0550,0.0500,0.1169,0.0835,1448,362

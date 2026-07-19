@@ -1,0 +1,10 @@
+torch>=2.0
+pysam>=0.22
+h5py
+scikit-learn
+numpy
+pandas
+scipy
+matplotlib
+tqdm
+pyyaml

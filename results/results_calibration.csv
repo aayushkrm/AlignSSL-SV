@@ -1,0 +1,4 @@
+model,ECE_mean,ECE_sd,temperature_mean
+AlignSSL_pretrained,0.0179,0.0085,0.778
+AlignSSL_scratch,0.0252,0.0093,0.823
+DeepSV_baseline,0.0911,0.0451,1.785

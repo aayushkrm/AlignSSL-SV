@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+*.swp
+
+# Data & model artifacts (too large / regenerable — see scripts/ and cluster/)
+*.bam
+*.bam.bai
+*.npz
+*.npy
+*.h5
+*.pt
+*.ckpt
+*.log
+
+# Secrets — never commit
+*.ppk
+*_openssh
+*private*
+*.pem
+id_rsa*
+.ghconfig/
