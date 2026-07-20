@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: 2026-07-19 (panel frozen at 6 labeled samples + NA12878 test; NA20845/GIH added to SSL corpus → 3 samples / 120K windows / 60 shards; 4-seed re-pretrain launched on all 4 GPUs; GitHub repo published at github.com/aayushkrm/AlignSSL-SV; README in STE; new docs/CLUSTER.md). Maps to the Phase 0–5 plan in `project.md`. See the 2026-07-19 section at the bottom for the current state._
+_Last updated: 2026-07-20 (panel frozen at 6 labeled samples + NA12878 test; NA20845/GIH added to SSL corpus → 3 samples / 120K windows / 60 shards; **4-seed re-pretrain COMPLETE — all 4 encoders ready**; GitHub repo published at github.com/aayushkrm/AlignSSL-SV; README in STE; new docs/CLUSTER.md). Maps to the Phase 0–5 plan in `project.md`. See the 2026-07-20 section at the bottom for the current state._
 
 **Legend:** ✅ done & verified · 🟡 in progress · ⬜ not started · ⚠️ decision/caveat for you
 
@@ -368,10 +368,23 @@ Validation gate passed (`labeled_shards_present=True pretrain_shards_present=Tru
 | 1517717 | 2 | T4 15 GB | hydra-gpu1 |
 | 1517718 | 3 | T4 15 GB | hydra-gpu1 |
 
-Identical hyperparameters (25 epochs, batch 96, lr 1.5e-4, mask 0.6, view-keep 0.5), differing only by random seed → gives genuine **pretraining-seed variance** for the paper. A100 (bf16) runs ~10× faster than the T4s (fp16). Loss decreasing cleanly on all four. **Next:** on completion, re-run the full fine-tune / label-efficiency / calibration / length-strata sweep and the CEU held-out cross-population eval against the seed-averaged encoders.
+Identical hyperparameters (25 epochs, batch 96, lr 1.5e-4, mask 0.6, view-keep 0.5), differing only by random seed → gives genuine **pretraining-seed variance** for the paper. A100 (bf16) runs ~3.8× faster per step than the T4s (fp16) — see the completion table below for measured wall times. Loss decreasing cleanly on all four. **Next:** on completion, re-run the full fine-tune / label-efficiency / calibration / length-strata sweep and the CEU held-out cross-population eval against the seed-averaged encoders.
 
 **GitHub repository published.** The complete project is now public at **`github.com/aayushkrm/AlignSSL-SV`** (MIT license, commits authored solely by the user). It contains: the `alignssl/` package (8 modules), `scripts/` and `cluster/` drivers, `tests/`, `results/` (4 CSVs + 2 figures), the full `docs/` set — manuscript, research proposal, 62-paper literature survey, slide decks, novelty verdict, `project.md` v1–v2, and `PROGRESS.md` v01–v20 history. A completeness audit hash-diffed the live clone against the local staging tree: **61/61 tracked files byte-identical**. SSH private keys, large regenerable data (BAMs/tensors/checkpoints), and third-party/copyrighted material are correctly excluded via `.gitignore`.
 
 **README rewritten in ASD-STE100 Simplified Technical English** (commit `1476b0b`): short single-idea sentences, active voice, imperative mood, consistent terminology — all result tables, numbers, technical names, and links preserved verbatim.
 
 **New: `docs/CLUSTER.md`** — a full cluster and reproduction guide so a new contributor can continue from the exact current state: SLURM partitions and limits, the beegfs/scratch filesystem layout, conda environments, the who-is-used-for-what data panel, the integrity-gated download procedure, the end-to-end workflow with an ASCII pipeline diagram, before-vs-now training summary, and the hard-won gotchas (base64→sbatch submission, 60 s SSH cap, EBI throttle/corruption, `/dev/shm` memmap staging, T4 batch-96 limit, bf16-only-on-A100, memmap-rebuild-after-adding-samples).
+
+## Update: 2026-07-20 — 4-seed re-pretrain COMPLETE (all 4 encoders ready)
+
+All four SSL encoders finished the full 25 epochs (1,250 steps/epoch → step 31,200) on the 3-sample corpus (NA19238 + NA19625 + NA20845 = 120,000 windows). Final combined-objective losses are tightly clustered across seeds, confirming stable pretraining:
+
+| Seed | Job(s) | GPU | Wall | Final loss (mae / vic) |
+|---|---|---|---|---|
+| 0 | 1517715 | A100 80 GB | 03:13:33 | 14.72 (2.64 / 12.08) |
+| 1 | 1517730 | T4 15 GB | 12:22:49 | 14.78 (2.67 / 12.11) |
+| 2 | 1517731 | T4 15 GB | 12:03:51 | 14.86 (2.66 / 12.21) |
+| 3 | 1517732 | T4 15 GB | 12:00:46 | 14.96 (2.66 / 12.29) |
+
+Note: the first T4 launches for seeds 1–3 (jobs 1517716/17/18) were cancelled at epoch 4 and resubmitted as 1517730/31/32, which ran to completion. Checkpoints written to `ckpt/encoder_ssl_seed{0,1,2,3}.pt` (each with a `.hist.json` of 157 log records). **Measured runtime supersedes earlier estimates:** ~3.2 h/A100 and ~12 h/T4 for 25 epochs at batch 96 (A100 ≈ 3.8× faster per step) — see CLUSTER.md §Training. **Next:** run the seed-averaged fine-tune / label-efficiency / calibration (ECE, temperature) / length-strata sweep and the CEU (NA12878) held-out cross-population eval against all four encoders.
