@@ -384,7 +384,7 @@ All four SSL encoders finished the full 25 epochs (1,250 steps/epoch → step 31
 |---|---|---|---|---|
 | 0 | 1517715 | A100 80 GB | 03:13:33 | 14.72 (2.64 / 12.08) |
 | 1 | 1517730 | T4 15 GB | 12:22:49 | 14.78 (2.67 / 12.11) |
-| 2 | 1517731 | T4 15 GB | 12:03:51 | 14.86 (2.66 / 12.21) |
-| 3 | 1517732 | T4 15 GB | 12:00:46 | 14.96 (2.66 / 12.29) |
+| 2 | 1517732 | T4 15 GB | 12:00:46 | 14.86 (2.66 / 12.21) |
+| 3 | 1517731 | T4 15 GB | 12:03:51 | 14.96 (2.66 / 12.29) |
 
 Note: the first T4 launches for seeds 1–3 (jobs 1517716/17/18) were cancelled at epoch 4 and resubmitted as 1517730/31/32, which ran to completion. Checkpoints written to `ckpt/encoder_ssl_seed{0,1,2,3}.pt` (each with a `.hist.json` of 157 log records). **Measured runtime supersedes earlier estimates:** ~3.2 h/A100 and ~12 h/T4 for 25 epochs at batch 96 (A100 ≈ 3.8× faster per step) — see CLUSTER.md §Training. **Next:** run the seed-averaged fine-tune / label-efficiency / calibration (ECE, temperature) / length-strata sweep and the CEU (NA12878) held-out cross-population eval against all four encoders.
