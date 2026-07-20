@@ -100,6 +100,7 @@ downloading. Everything else had to be fetched from EBI (see §5).
 | `tensors/` | 89 MB | Labeled tensors for the two beegfs samples (NA19238, NA19625) — 12 shards |
 | `tensors_panel/` | 157 MB | Labeled tensors for the downloaded panel samples (NA18525, NA19648, NA20502, NA20845) — 20 shards (5 each) |
 | `tensors_na12878/` | 12 MB | Labeled tensors for held-out **test** sample NA12878/CEU — 2 shards |
+| `tensors_all6/` | — (symlinks) | Consolidated view of all 6 labeled TRAIN/fine-tune samples in one directory (32 shards: 6+6 from `tensors/` plus 5+5+5+5 from `tensors_panel/`), built with symlinks so `ShardDataset` — which globs a single `shard_dir` — can read the whole panel at once. Rebuild with a fresh `ln -s` pass if `tensors/`/`tensors_panel/` change. |
 | `tensors_pretrain/` | 68 GiB | **Unlabeled SSL pretrain windows** (60 compressed shards, ~2 GiB) + the consolidated flat memmap `pretrain_mm.f16` (65.9 GiB = 70.8 GB, 70,778,880,128 bytes) and `pretrain_mm.meta.npz`. (Directory total = shards + memmap ≈ 68 GiB; the memmap alone is 65.9 GiB — sizes here are GiB from `du`, the 70.8 GB elsewhere is the decimal-GB byte count of the same file.) |
 | `ckpt/` | 13 MB | Encoder checkpoints (`encoder_ssl*.pt`) + all results JSON (label-efficiency, calibration, cross-pop, ablations, DeepSV baseline) |
 | `bam_extra/` | 445 GB | Large BAMs kept on scratch: NA12878 (251 GB, test) and NA20845 (226 GB, GIH/SAS) with their `.bai` |
@@ -261,14 +262,24 @@ trusted for extraction.
 - **NA20845 (GIH/SAS) added** to the pretrain corpus → **3 samples, 120,000 windows,
   60 shards**, memmap rebuilt to 70.8 GB. This adds South-Asian ancestry to the
   previously AFR-only pretraining pool.
-- **Re-pretraining with 4 seeds** on all 4 free GPUs simultaneously:
-  `encoder_ssl_seed0.pt` (A100, hydra-gpu3) + `encoder_ssl_seed{1,2,3}.pt`
-  (T4, hydra-gpu1), identical hyperparameters (25 epochs, batch 96, lr 1.5e-4,
-  mask 0.6, view-keep 0.5), differing only by random seed — this yields genuine
-  **pretraining-seed variance** for the paper.
-- **Next**: re-run the full fine-tune / label-efficiency / calibration / length-strata
-  sweep and the CEU held-out cross-population eval against the new seed-averaged
-  encoders.
+- **Re-pretraining with 4 seeds**, all COMPLETE:
+  `encoder_ssl_seed0.pt` (A100, hydra-gpu3, job 1517715, 3:13:33) and
+  `encoder_ssl_seed{1,2,3}.pt` (T4, hydra-gpu1; seed1=job 1517730 12:22:49,
+  seed2=job 1517732 12:00:46, seed3=job 1517731 12:03:51 — seed↔job confirmed
+  from each job's `SSL_SEED_DONE seed=N` log marker), identical hyperparameters
+  (25 epochs, batch 96, lr 1.5e-4, mask 0.6, view-keep 0.5), differing only by
+  random seed — this yields genuine **pretraining-seed variance** for the paper.
+- **Fine-tune + cross-population sweep on the 6-sample panel, in progress**:
+  built `tensors_all6/` (symlinked union of all 6 labeled TRAIN samples,
+  32 shards, `train=21,016 / test=9,196` windows — roughly 10× the earlier
+  2-sample runs). Launched 8 jobs against the 4 seed encoders:
+  `ft6_s{0..3}` (label-efficiency + calibration + length-strata,
+  jobs 1517998–1518001) and `xp6_s{0..3}` (CEU/NA12878 cross-population,
+  jobs 1518002–1518005), all on `gpu_T4`. Only 3 GPUs run concurrently (the
+  4th T4 is occupied by another user's job), so jobs queue in pairs.
+- **Next**: once all 8 finish, aggregate label-efficiency/calibration/
+  length-strata across the 4 seeds and update the headline results tables and
+  figures, then fold the multi-ancestry (CEU) generalization numbers in.
 
 ---
 

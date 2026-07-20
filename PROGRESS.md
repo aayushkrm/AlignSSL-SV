@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: 2026-07-20 (panel frozen at 6 labeled samples + NA12878 test; NA20845/GIH added to SSL corpus → 3 samples / 120K windows / 60 shards; **4-seed re-pretrain COMPLETE — all 4 encoders ready**; GitHub repo published at github.com/aayushkrm/AlignSSL-SV; README in STE; new docs/CLUSTER.md). Maps to the Phase 0–5 plan in `project.md`. See the 2026-07-20 section at the bottom for the current state._
+_Last updated: 2026-07-20 (panel frozen at 6 labeled samples + NA12878 test; NA20845/GIH added to SSL corpus → 3 samples / 120K windows / 60 shards; **4-seed re-pretrain COMPLETE — all 4 encoders ready**; **6-sample fine-tune + cross-population sweep (8 jobs) IN PROGRESS**; GitHub repo published at github.com/aayushkrm/AlignSSL-SV; README in STE; docs/CLUSTER.md). Maps to the Phase 0–5 plan in `project.md`. See the 2026-07-20 sections at the bottom for the current state._
 
 **Legend:** ✅ done & verified · 🟡 in progress · ⬜ not started · ⚠️ decision/caveat for you
 
@@ -388,3 +388,48 @@ All four SSL encoders finished the full 25 epochs (1,250 steps/epoch → step 31
 | 3 | 1517731 | T4 15 GB | 12:03:51 | 14.96 (2.66 / 12.29) |
 
 Note: the first T4 launches for seeds 1–3 (jobs 1517716/17/18) were cancelled at epoch 4 and resubmitted as 1517730/31/32, which ran to completion. Checkpoints written to `ckpt/encoder_ssl_seed{0,1,2,3}.pt` (each with a `.hist.json` of 157 log records). **Measured runtime supersedes earlier estimates:** ~3.2 h/A100 and ~12 h/T4 for 25 epochs at batch 96 (A100 ≈ 3.8× faster per step) — see CLUSTER.md §Training. **Next:** run the seed-averaged fine-tune / label-efficiency / calibration (ECE, temperature) / length-strata sweep and the CEU (NA12878) held-out cross-population eval against all four encoders.
+
+## Update: 2026-07-20 (later) — 6-sample fine-tune + cross-population sweep launched
+
+**Consolidated labeled panel.** `ShardDataset` reads a single `shard_dir`, but
+the 6 labeled TRAIN samples were split across two directories (`tensors/` for
+the 2 beegfs samples, `tensors_panel/` for the 4 downloaded panel samples).
+Built `tensors_all6/` — a symlinked union of all 32 shards (6+6+5+5+5+5) — so
+one directory serves the full panel. Loading it gives **train=21,016 /
+test=9,196** labeled windows, roughly a 10× increase over the earlier 2-sample
+runs (chr1-11 train / chr12-22 test split, unchanged).
+
+**8 jobs launched** against all 4 seed encoders, on `gpu_T4` (only 3 of 4 GPUs
+run concurrently — the 4th is occupied by another user's job, so the queue
+processes in pairs):
+
+- **`ft6_s{0,1,2,3}`** (jobs 1517998–1518001): `finetune_eval.py` on
+  `tensors_all6/`, label-efficiency (fractions 0.01/0.05/0.1/0.25/0.5/1.0),
+  calibration (ECE, temperature scaling), length-stratified recall — same
+  protocol as before, now on the full 6-sample panel and all 4 seeds.
+- **`xp6_s{0,1,2,3}`** (jobs 1518002–1518005): `cross_pop_eval.py`, trains on
+  `tensors_all6/` and evaluates in-distribution vs the held-out CEU sample
+  (NA12878, `tensors_na12878/`) — the multi-ancestry generalization check.
+
+**Partial results (seed 0, in progress, label-efficiency arm):** pretrained vs
+from-scratch Deletion F1 —
+
+| Label fraction | Pretrained F1 | Scratch F1 |
+|---|---|---|
+| 1% | 0.531 | 0.021 |
+| 5% | 0.635 | 0.560 |
+| 10% | 0.809 | 0.878 |
+| 25% | 0.884 | 0.791 |
+
+The label-efficiency signal at 1% labels is the headline result: pretraining
+reaches F1 ≈ 0.51–0.59 (seeds 0–2) while training from scratch collapses to
+F1 ≈ 0.00–0.11 on the same 1% split. At higher label fractions the two arms
+converge and occasionally from-scratch edges ahead (expected — with enough
+labels, task-specific training closes the gap; the pretraining value proposition
+is precisely the low-label regime).
+
+**Next:** wait for all 8 jobs to finish, aggregate F1/ECE/temperature/
+length-strata across the 4 seeds (mean ± std, as done for the earlier 3-seed
+run), aggregate the CEU cross-population numbers, regenerate the headline
+label-efficiency and length-strata figures, and update `project.md` and the
+manuscript draft with the 4-seed, 6-sample-panel results.
