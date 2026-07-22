@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: 2026-07-20 (panel frozen at 6 labeled samples + NA12878 test; NA20845/GIH added to SSL corpus → 3 samples / 120K windows / 60 shards; **4-seed re-pretrain COMPLETE — all 4 encoders ready**; **6-sample fine-tune + cross-population sweep (8 jobs) IN PROGRESS**; GitHub repo published at github.com/aayushkrm/AlignSSL-SV; README in STE; docs/CLUSTER.md). Maps to the Phase 0–5 plan in `project.md`. See the 2026-07-20 sections at the bottom for the current state._
+_Last updated: 2026-07-20 (panel frozen at 6 labeled samples + NA12878 test; NA20845/GIH added to SSL corpus → 3 samples / 120K windows / 60 shards; **4-seed re-pretrain COMPLETE — all 4 encoders ready**; **6-sample fine-tune + cross-population sweep (8 jobs) COMPLETE — 4-seed results aggregated; 1%-label F1 ~10× > from-scratch**; GitHub repo published at github.com/aayushkrm/AlignSSL-SV; README in STE; docs/CLUSTER.md). Maps to the Phase 0–5 plan in `project.md`. See the 2026-07-20 sections at the bottom for the current state._
 
 **Legend:** ✅ done & verified · 🟡 in progress · ⬜ not started · ⚠️ decision/caveat for you
 
@@ -428,8 +428,59 @@ converge and occasionally from-scratch edges ahead (expected — with enough
 labels, task-specific training closes the gap; the pretraining value proposition
 is precisely the low-label regime).
 
-**Next:** wait for all 8 jobs to finish, aggregate F1/ECE/temperature/
-length-strata across the 4 seeds (mean ± std, as done for the earlier 3-seed
-run), aggregate the CEU cross-population numbers, regenerate the headline
-label-efficiency and length-strata figures, and update `project.md` and the
-manuscript draft with the 4-seed, 6-sample-panel results.
+## Update: 2026-07-21 — sweep COMPLETE, 4-seed results aggregated
+
+All 8 jobs finished. The three fine-tune jobs first hit the 5 h walltime and
+were killed by SLURM (TIMEOUT) one step short of writing their JSON (the driver
+dumps results only at the end); resubmitted with a 12 h limit as `ft6b_s{0..3}`
+(jobs 1518335–1518338), all COMPLETED (~5 h 57 m each). Cross-population jobs
+`xp6_s{0..3}` all COMPLETED. Aggregated across the 4 pretraining seeds
+(mean ± s.d.):
+
+**Label efficiency — Deletion F1 on held-out test (chr12–22).** Train = 6-sample
+panel, up to 21,016 windows.
+
+| Labels | n(train) | AlignSSL (pretrained) | From scratch |
+|---|---|---|---|
+| **1%** | 210 | **0.514 ± 0.055** | **0.050 ± 0.040** |
+| 5% | 1,050 | 0.655 ± 0.035 | 0.734 ± 0.107 |
+| 10% | 2,101 | 0.813 ± 0.007 | 0.763 ± 0.088 |
+| 25% | 5,254 | 0.846 ± 0.064 | 0.854 ± 0.055 |
+| 50% | 10,508 | 0.913 ± 0.014 | 0.912 ± 0.022 |
+| 100% | 21,016 | 0.934 ± 0.004 | 0.944 ± 0.003 |
+
+**The headline holds and is now 4-seed-robust: at 1% labels pretraining gives a
+~10× F1 gain (0.51 vs 0.05).** The arms converge by 50–100% labels — expected,
+since with abundant labels supervised training closes the gap; the value of SSL
+is precisely the low-label regime. (Note: from-scratch variance is large at
+5–25% — it is unstable at low-to-mid label counts, while the pretrained encoder
+is consistently tighter, e.g. ±0.007 at 10%.)
+
+**Calibration @100% labels:** pretrained ECE = 0.0078 ± 0.0017 (T = 0.63),
+scratch ECE = 0.0072 ± 0.0004 (T = 0.59) — both well-calibrated after
+temperature scaling; no meaningful difference at full labels.
+
+**Length-stratified recall @100% labels** (both arms strong; largest deletions
+hardest for both): 50–200 bp 0.919/0.917, 200–500 bp 0.913/0.903,
+500 bp–1 kb 0.929/0.938, 1–5 kb 0.926/0.954, >5 kb 0.857/0.881
+(pretrained/scratch).
+
+**Cross-population (held-out CEU / NA12878):** in-distribution F1 ≈ 0.904 for
+both arms; on the unseen CEU sample pretrained F1 = 0.690 ± 0.089 vs
+scratch 0.792 ± 0.056. **Honest reading:** at *full* labels the SSL encoder does
+**not** improve out-of-distribution transfer here — if anything the from-scratch
+model transfers slightly better and is better-calibrated OOD (ECE 0.019 vs
+0.068). The multi-ancestry generalization claim therefore rests on the
+*low-label* regime (to be run) rather than the 100%-label cross-population
+number; the current experiment does not support an OOD-robustness claim at full
+supervision, and the manuscript will state this plainly.
+
+Aggregated artifacts saved: `fig_label_efficiency_4seed.png`,
+`results_label_efficiency_4seed.csv`, `results_cross_population_4seed.csv`,
+`results_length_strata_4seed.csv`.
+
+**Next:** (1) run the cross-population eval at *low* label fractions to test
+whether the SSL transfer advantage appears where it should; (2) refresh the
+length-strata figure for 4 seeds; (3) update `project.md` and the manuscript
+draft with these numbers and the honest OOD caveat; (4) fold in GIAB HG002 +
+Truvari as the headline benchmark (Phase 4).

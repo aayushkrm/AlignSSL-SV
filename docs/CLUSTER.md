@@ -269,17 +269,25 @@ trusted for extraction.
   from each job's `SSL_SEED_DONE seed=N` log marker), identical hyperparameters
   (25 epochs, batch 96, lr 1.5e-4, mask 0.6, view-keep 0.5), differing only by
   random seed — this yields genuine **pretraining-seed variance** for the paper.
-- **Fine-tune + cross-population sweep on the 6-sample panel, in progress**:
+- **Fine-tune + cross-population sweep on the 6-sample panel, COMPLETE**:
   built `tensors_all6/` (symlinked union of all 6 labeled TRAIN samples,
   32 shards, `train=21,016 / test=9,196` windows — roughly 10× the earlier
-  2-sample runs). Launched 8 jobs against the 4 seed encoders:
-  `ft6_s{0..3}` (label-efficiency + calibration + length-strata,
-  jobs 1517998–1518001) and `xp6_s{0..3}` (CEU/NA12878 cross-population,
-  jobs 1518002–1518005), all on `gpu_T4`. Only 3 GPUs run concurrently (the
-  4th T4 is occupied by another user's job), so jobs queue in pairs.
-- **Next**: once all 8 finish, aggregate label-efficiency/calibration/
-  length-strata across the 4 seeds and update the headline results tables and
-  figures, then fold the multi-ancestry (CEU) generalization numbers in.
+  2-sample runs). Ran 8 jobs against the 4 seed encoders. **Gotcha:** the first
+  fine-tune jobs (`ft6_s*`, `--time=300`) hit the 5 h walltime and were killed
+  by SLURM one step before the driver writes its JSON at the end → **no output
+  file** despite reaching the last label fraction. Resubmitted with `--time=720`
+  as `ft6b_s{0..3}` (jobs 1518335–1518338), all COMPLETED (~5 h 57 m). The
+  cross-population jobs `xp6_s{0..3}` (jobs 1518002–1518005) are shorter and
+  completed on the first pass. Only 3 GPUs run concurrently (the 4th T4 is
+  occupied by another user), so jobs queue in pairs.
+- **Headline (4-seed mean ± s.d.)**: at 1% labels Deletion F1 = 0.514 ± 0.055
+  (pretrained) vs 0.050 ± 0.040 (from scratch) — a ~10× low-label gain; arms
+  converge by 50–100% labels. Full tables/figure: `PROGRESS.md`,
+  `results_*_4seed.csv`, `fig_label_efficiency_4seed.png`.
+- **Next**: run cross-population eval at *low* label fractions (the OOD/CEU
+  advantage, if any, should appear there — at full labels it does not); refresh
+  the length-strata figure; update `project.md` + manuscript with these numbers
+  and the honest OOD caveat; then fold in GIAB HG002 + Truvari (Phase 4).
 
 ---
 

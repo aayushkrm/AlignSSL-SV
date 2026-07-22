@@ -1,0 +1,3 @@
+arm,in_dist_F1_mean,in_dist_F1_std,CEU_F1_mean,CEU_F1_std,CEU_ECE_mean,CEU_ECE_std,CEU_F1_per_seed
+pretrained,0.9041,0.0217,0.6902,0.0894,0.0680,0.0372,0.682;0.605;0.838;0.637
+scratch,0.9042,0.0054,0.7919,0.0556,0.0185,0.0042,0.777;0.764;0.741;0.886
