@@ -271,7 +271,7 @@ trusted for extraction.
   random seed — this yields genuine **pretraining-seed variance** for the paper.
 - **Fine-tune + cross-population sweep on the 6-sample panel, COMPLETE**:
   built `tensors_all6/` (symlinked union of all 6 labeled TRAIN samples,
-  32 shards, `train=21,016 / test=9,196` windows — roughly 10× the earlier
+  32 shards, `train=21,016 / test=9,196` windows — roughly 2.7× the earlier
   2-sample runs). Ran 8 jobs against the 4 seed encoders. **Gotcha:** the first
   fine-tune jobs (`ft6_s*`, `--time=300`) hit the 5 h walltime and were killed
   by SLURM one step before the driver writes its JSON at the end → **no output

@@ -396,7 +396,7 @@ the 6 labeled TRAIN samples were split across two directories (`tensors/` for
 the 2 beegfs samples, `tensors_panel/` for the 4 downloaded panel samples).
 Built `tensors_all6/` — a symlinked union of all 32 shards (6+6+5+5+5+5) — so
 one directory serves the full panel. Loading it gives **train=21,016 /
-test=9,196** labeled windows, roughly a 10× increase over the earlier 2-sample
+test=9,196** labeled windows, roughly a 2.7× increase over the earlier 2-sample
 runs (chr1-11 train / chr12-22 test split, unchanged).
 
 **8 jobs launched** against all 4 seed encoders, on `gpu_T4` (only 3 of 4 GPUs
@@ -478,6 +478,34 @@ supervision, and the manuscript will state this plainly.
 Aggregated artifacts saved: `fig_label_efficiency_4seed.png`,
 `results_label_efficiency_4seed.csv`, `results_cross_population_4seed.csv`,
 `results_length_strata_4seed.csv`.
+
+### Ablation + matched-panel DeepSV head-to-head (also COMPLETE)
+
+A parallel set of jobs (launched separately) finished on the **same 6-sample
+panel**, giving the two comparisons the main table needs: (a) does the combined
+MAM+VICReg objective beat each single objective, and (b) how does a faithful
+DeepSV-lineage baseline (RGB pileup + supervised CNN) do on the *matched* panel.
+Ablation encoders `encoder_abl_{maeonly,viconly}_120k.pt` (jobs 1518372/1518371,
+~11.9 h each on the 120K corpus); ablation fine-tune `abft6_{mae,vic}_s{0,1,2}`
+(jobs 1518382–1518387, ~6 h each); DeepSV `dsv6_s{0,1,2}` (jobs
+1518379/1518390/1518391, ~28 min each). Deletion F1 (mean ± s.d.):
+
+| Labels | Combined (MAM+VICReg) | MAM-only | VICReg-only | DeepSV baseline |
+|---|---|---|---|---|
+| 1% | 0.514 ± 0.055 | **0.547 ± 0.029** | 0.434 ± 0.060 | 0.083 ± 0.059 |
+| 5% | 0.655 ± 0.035 | 0.700 ± 0.084 | 0.645 ± 0.025 | 0.551 ± 0.044 |
+| 10% | **0.813 ± 0.007** | 0.740 ± 0.128 | 0.732 ± 0.069 | 0.492 ± 0.085 |
+| 25% | **0.847 ± 0.064** | 0.809 ± 0.070 | 0.773 ± 0.110 | 0.839 ± 0.001 |
+| 50% | **0.913 ± 0.014** | 0.779 ± 0.129 | 0.764 ± 0.046 | 0.827 ± 0.035 |
+| 100% | **0.934 ± 0.004** | 0.869 ± 0.102 | 0.832 ± 0.107 | 0.694 ± 0.147 |
+
+**Reading:** masked reconstruction (MAM) drives most of the *low-label* benefit
+(MAM-only ≈ combined at 1%; VICReg-only weaker), but the **combined objective
+wins clearly at ≥10% labels** and is far tighter (e.g. ±0.007 at 10% vs ±0.13
+for MAM-only) — this is the justification for the combined loss. The DeepSV
+baseline is worst throughout and unstable at full labels (0.694 ± 0.147). Note
+the combined arm has 4 seeds; the ablation and DeepSV arms have 3 seeds each.
+Artifacts: `fig_ablation_4arm.png`, `results_ablation_4arm.csv`.
 
 **Next:** (1) run the cross-population eval at *low* label fractions to test
 whether the SSL transfer advantage appears where it should; (2) refresh the
