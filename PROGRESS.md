@@ -512,3 +512,27 @@ whether the SSL transfer advantage appears where it should; (2) refresh the
 length-strata figure for 4 seeds; (3) update `project.md` and the manuscript
 draft with these numbers and the honest OOD caveat; (4) fold in GIAB HG002 +
 Truvari as the headline benchmark (Phase 4).
+
+## Update: 2026-07-22 — pre-submission HARDENING DAG launched (16 jobs, fixes audit asymmetries A/B/C)
+
+A reviewer-perspective audit (saved as `AUDIT_reviewer_verification.md`) confirmed the results are trustworthy in direction and mechanism, found **no chromosomal leakage** (pretrain shards are chr1–11 only; test is chr12–22), an identical test set across all four arms, and a clean single-variable ablation design. It flagged **three asymmetries** to harmonize before a Q1 submission:
+
+- **(A) Error-bar asymmetry [top priority].** The combined arm's error bars come from **4 distinct pretraining seeds** (`encoder_ssl_seed0–3.pt`), but each ablation arm (MAM-only, VICReg-only) fine-tuned **one shared seed-0 encoder** across 3 fine-tune seeds → ablation bars reflected fine-tune-only variance, not pretraining variance.
+- **(B) Seed-count mismatch:** combined = 4 seeds; ablation / DeepSV = 3.
+- **(C) Fine-tune batch confound:** combined `ft6` used batch 96; ablation `abft6` and DeepSV `dsv6` used batch 128.
+
+**Fix — one clean single-variable DAG (16 SLURM jobs, all batch 96, num-workers 2, submitted 2026-07-22).** All arms are now harmonized to the combined arm's fine-tune configuration; the only variable that differs between arms is the thing under test.
+
+| Group | Jobs | What | Gating |
+|---|---|---|---|
+| Pretrain | 1522999–1523002 | MAM-only + VICReg-only, **seeds 1,2** (seed0 encoders reused) → `encoder_abl_{maeonly,viconly}_120k_seed{1,2}.pt` (T4/fp16, 25 ep, batch 96) | none |
+| Ablation FT seed0 | 1523003 (MAM), 1523004 (VIC) | fine-tune the existing seed-0 encoders at **batch 96** → `abft6h_{obj}_seed0.json` | none |
+| Ablation FT seed1,2 | 1523005–1523008 | fine-tune each **seed-matched** new encoder → `abft6h_{obj}_seed{1,2}.json` | `afterok` on its own pretrain |
+| DeepSV rerun | 1523009/11/13 | DeepSV baseline at **batch 96**, seeds 0–2 → `deepsv6h_results_seed{0,1,2}.json` | none |
+| Cross-pop low-label | 1523010/12/14 | new `cross_pop_lowlabel.py`: label-fraction sweep evaluating in-dist + NA12878 (CEU) xpop at each fraction, seeds 0–2 → `xpopll_results_seed{0,1,2}.json` | none |
+
+**Startup health check confirmed the objectives are correctly wired** from the live loss decomposition: MAM-only job reports `loss = mae` (VICReg term excluded), VICReg-only job reports `loss = vic` (MAM term excluded). No errors in any log. SLURM self-advances the DAG; the 10-CPU personal cap naturally serializes execution.
+
+**New code (committed, pushed):** `scripts/cross_pop_lowlabel.py` (label-frac cross-population eval) and `analysis/aggregate_hardened.py` (aggregates the 4-arm ablation + cross-pop-low-label JSONs into `results_ablation_4arm_hardened.csv`, `results_crosspop_lowlabel.csv`, `fig_ablation_4arm_hardened.png`, `fig_crosspop_lowlabel.png` — error bars now computed across **pretraining** seeds). GitHub HEAD = `4de3576`.
+
+**On completion:** download the 16 JSONs, run `aggregate_hardened.py`, regenerate the ablation figure with proper per-pretraining-seed error bars, update the manuscript's ablation table + the honest OOD caveat with the low-label cross-population numbers. Then Phase 4 (GIAB HG002 + Truvari) — not yet on the cluster (no HG002 data, Truvari not installed; reference is GRCh37/hs37d5).
