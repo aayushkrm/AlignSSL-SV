@@ -6,10 +6,15 @@ the full-label cross_pop_eval could not address). Mirrors finetune_eval.py's
 label-fraction subsampling EXACTLY, but evaluates each trained model on TWO
 held-out test sets at every label fraction:
 
-  (A) in-distribution : chr12-22 of the two African training samples
-      NA19238[YRI]+NA19625[ASW]  (shard-dir `tensors_all6` ... but see note)
+  (A) in-distribution : chr12-22 of the SAME six-sample fine-tuning panel the
+      model was trained on (`--shard-dir`, i.e. `tensors_all6`: NA19238[YRI],
+      NA19625[ASW], NA18525[CHB], NA19648[MXL], NA20502[TSI], NA20845[GIH]).
+      Held out by CHROMOSOME (train chr1-11 / test chr12-22), not by sample or
+      ancestry -- so (A) is the in-distribution reference point.
   (B) cross-population : chr12-22 of NA12878 (CEU/European), a held-out
       INDIVIDUAL of a held-out ANCESTRY (shard-dir `tensors_na12878`).
+      CEU appears in NEITHER the SSL pretrain corpus NOR the fine-tune panel,
+      so (B) is held out by sample AND by ancestry.
 
 For pretrained vs scratch, averaged over seeds by the caller. The gap (A - B)
 at each label fraction quantifies whether SSL pretraining buys ancestry

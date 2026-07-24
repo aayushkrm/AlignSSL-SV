@@ -176,7 +176,7 @@ At **full supervision**, this advantage narrows: both models transfer with compa
 | 100% | AlignSSL-pretrained | 0.932 ± 0.006 | 0.784 ± 0.028 | +0.148 |
 | 100% | AlignSSL-scratch | 0.866 ± 0.051 | 0.742 ± 0.022 | +0.124 |
 
-![Figure 4. Cross-ancestry transfer across the label-fraction sweep. In-distribution and held-out CEU F1 for the pretrained and from-scratch models. At 1% labels the pretrained model transfers near-losslessly to the held-out ancestry while the from-scratch model has not learned to call deletions; the gap between the paradigms closes as labels become abundant.]({{artifact:art_01de127a-e22c-4711-841a-fe525898856b}})
+![Figure 3. Cross-ancestry transfer across the label-fraction sweep. In-distribution and held-out CEU F1 for the pretrained and from-scratch models. At 1% labels the pretrained model transfers near-losslessly to the held-out ancestry while the from-scratch model has not learned to call deletions; the gap between the paradigms closes as labels become abundant.]({{artifact:art_01de127a-e22c-4711-841a-fe525898856b}})
 
 ### 4.6 Data-integrity control
 
