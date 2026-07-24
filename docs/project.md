@@ -312,7 +312,7 @@ Use Truvari to match calls against GIAB truth; report metrics always stratified.
 ### Phase 1 — Supervised skeleton, no SSL (weeks 3–6)
 
 * Train encoder + heads fully supervised, no pretraining. → **Done** (the "from-scratch" arm in every sweep).
-* Learned-channels-vs-RGB ablation. → **Done**, via the DeepSV-representation head-to-head rather than an ablation on a shared backbone — learned channels + our encoder beats the DeepSV representation + `DeepSVNet` at 5/6 label fractions and is far better calibrated.
+* Learned-channels-vs-RGB ablation. → **Done**, via the DeepSV-representation head-to-head rather than an ablation on a shared backbone — learned channels + our encoder beats the DeepSV representation + `DeepSVNet` at **all six** label fractions (hardened numbers) and is ~10× better calibrated.
 
 ### Phase 2 — Self-supervised pretraining (weeks 6–12)
 
@@ -368,7 +368,7 @@ Use Truvari to match calls against GIAB truth; report metrics always stratified.
 | --- | --- | --- | --- |
 | 0 — Baseline & harness | 1–3 | DeepSV reproduced; Truvari harness live; tensor pipeline cached | DeepSV reproduction infeasible → reimplementation done instead; Truvari harness not built (C2); tensor pipeline done |
 | 1 — Supervised skeleton | 3–6 | Matches DeepSV without SSL; RGB-vs-learned ablation done | Done (via head-to-head baseline) |
-| 2 — Self-supervised pretraining | 6–12 | MAE + contrastive working; label-efficiency money plot | Done; objective ablation additionally resolved (MAM-only wins) |
+| 2 — Self-supervised pretraining | 6–12 | MAE + contrastive working; label-efficiency money plot | Done; objective ablation additionally resolved — a **crossover**: MAM leads at 1–10% labels, combined MAM+VICReg wins from 25% upward and at full supervision (adopted default) |
 | 3 — Uncertainty & calibration | 12–16 | Calibrated caller; ECE + reliability diagrams | ECE done; reliability diagrams not rendered; mechanism simplified |
 | 4 — Full eval & ablations | 16–22 | All baselines, strata, ablation matrix, cross-ancestry | Partially done — see §7.4 and §13 |
 | 5 — Write / release / submit | 22–34 | Manuscript submitted; code + weights released | Manuscript drafted, not submitted; code packaged, weights not archived |
