@@ -53,11 +53,11 @@
 
 # Head-to-head vs DeepSV-representation baseline (3 random seeds)
 
-- Deletion F1 across label fractions:
-  - **AlignSSL-SV:** ~0.40 → 0.80–0.82 (peaks at full data)
-  - **DeepSV-repr. baseline:** stuck around **0.57 and never clears ~0.6**
-- Our model **wins 5 of 6** label settings (DeepSV-repr. only edges us at the 5% point).
-- **Bottom line:** the DeepSV-style representation+CNN plateaus; our model keeps improving and ends much higher.
+- Deletion F1 across label fractions (harmonized, all arms batch 96):
+  - **AlignSSL-SV (pretrained):** 0.514 → **0.934** at full data
+  - **DeepSV-repr. baseline:** 0.434 → **0.707 ± 0.140** — unstable at full supervision
+- Our pretrained model **wins at all six** label settings.
+- **Bottom line:** the DeepSV-style representation+CNN is both lower and far more variable; our learned encoder keeps improving and ends much higher.
 - *Reminder: this is our controlled reimplementation of DeepSV's representation and CNN, run on identical data/splits — not their original code (see methodology note above).*
 
 # Technical detail: calibration (trustworthy confidence)

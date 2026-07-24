@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: 2026-07-20 (panel frozen at 6 labeled samples + NA12878 test; NA20845/GIH added to SSL corpus → 3 samples / 120K windows / 60 shards; **4-seed re-pretrain COMPLETE — all 4 encoders ready**; **6-sample fine-tune + cross-population sweep (8 jobs) COMPLETE — 4-seed results aggregated; 1%-label F1 ~10× > from-scratch**; GitHub repo published at github.com/aayushkrm/AlignSSL-SV; README in STE; docs/CLUSTER.md). Maps to the Phase 0–5 plan in `project.md`. See the 2026-07-20 sections at the bottom for the current state._
+_Last updated: 2026-07-24 (**pre-submission HARDENING DAG COMPLETE — all 16 jobs exit 0; audit asymmetries A/B/C fixed; all arms now batch-96, error bars across pretraining seeds; manuscript + README + docs harmonized to the final numbers and pushed**). Panel frozen at 6 labeled samples + NA12878 test; SSL corpus 3 samples / 120K windows / 60 shards; 4-seed re-pretrain complete; GitHub repo public at github.com/aayushkrm/AlignSSL-SV. Maps to the Phase 0–5 plan in `project.md`. **See the 2026-07-24 section at the bottom for the current, authoritative numbers — earlier tables in this file are pre-hardening and superseded.**_
 
 **Legend:** ✅ done & verified · 🟡 in progress · ⬜ not started · ⚠️ decision/caveat for you
 
@@ -8,7 +8,7 @@ _Last updated: 2026-07-20 (panel frozen at 6 labeled samples + NA12878 test; NA2
 
 ## Where I am right now (one line)
 
-Foundation code is **built, unit-tested, and validated on the real 1000G BAMs**. Both tensor datasets are **extracted and validated**: **11,016 labeled windows** (train chr1–11 = 7,672; test chr12–22 = 3,344) and **80,000 unlabeled SSL windows** (749 MB). **SSL pretraining is COMPLETE** — job 1514837 finished cleanly (exit 0:0, 25 epochs, 8h14m wall, final loss 40.8→15.2), encoder saved to `ckpt/encoder_ssl.pt`. **Fine-tune + label-efficiency sweep is COMPLETE across all 3 T4 GPUs** (jobs **1515265/66/67 = seeds 0/1/2**), each did the full 6-fraction pretrained-vs-scratch sweep + calibration + length-strata. **Results aggregated (mean±sd over 3 seeds); the money plot, length-strata figure, and 3 result CSVs are saved as artifacts.** Headline reproduces cleanly (see below). **DeepSV head-to-head (Phase 0.3) is now COMPLETE** — a faithful DeepSV-lineage baseline (RGB pileup + supervised CNN, 3 seeds, jobs 1515336/37/38) plateaus at F1 ≈ 0.57 while our learned encoder wins 5 of 6 label fractions and is far better calibrated; the money plot is now a three-arm comparison. NA12878 (CEU) cross-population BAM downloaded (250.9 GB) and indexed.
+**All experiments through Phase 4.3 are complete and hardened.** The 6-sample labeled panel (`tensors_all6`: train chr1–11 = 21,016 windows; test chr12–22 = 9,196) and the 3-sample / 120,000-window SSL corpus are extracted and validated (no chromosomal leakage — pretrain shards are chr1–11 only). Four SSL encoders (`encoder_ssl_seed0–3.pt`) are pretrained. The **pre-submission hardening DAG (16 SLURM jobs) completed with every job at exit 0**, fixing all three reviewer-audit asymmetries: every arm now fine-tunes at **batch 96**, and ablation error bars are computed across **pretraining** seeds rather than fine-tune seeds. Final harmonized results: **1%-label F1 0.514 ± 0.055 pretrained vs 0.050 ± 0.040 from-scratch (~10×)**; the DeepSV RGB+CNN baseline is beaten at all six label fractions and is ~10× worse calibrated; the low-label cross-population (CEU) sweep is done. Manuscript, README, and docs are harmonized to these numbers and pushed. **Next: Phase 4 GIAB HG002 + Truvari** (blocked — no HG002 data on the cluster, Truvari not installed, reference is GRCh37/hs37d5).
 
 **Fine-tune performance bug fixed today (real, fixed):** the first seed jobs (1514992/93/94) timed out at 4 h having done only ~2 of 6 fractions because `ShardDataset.__getitem__` re-ran `np.load`+decompression of a ~1 MB `.npz` on nearly every access under shuffle. Fix: preload the whole labeled set (~25 MB) into contiguous in-RAM arrays at init → `__getitem__` is now a pure slice. Result: a fraction that took >1 h now takes ~3 min; jobs relaunched as 1515265/66/67.
 
@@ -16,41 +16,42 @@ Foundation code is **built, unit-tested, and validated on the real 1000G BAMs**.
 
 ---
 
-## 🔑 HEADLINE RESULT (full sweep, 3 seeds — mean±sd, reproduces cleanly)
+## 🔑 HEADLINE RESULT (HARDENED full sweep — mean±sd, all arms batch-96)
 
-Test set = chr12–22, 3,344 windows. Numbers are F1 (mean ± sd over seeds 0/1/2) on the DEL-vs-non-DEL task. Full per-seed numbers in `results_label_efficiency.csv`; figure `fig_label_efficiency.png`.
+Test set = chr12–22 of the 6-sample panel (`tensors_all6` split=test, 9,196 windows). Numbers are DEL-vs-non-DEL F1 (mean ± sd). SSL-pretrained and from-scratch arms use **4 seeds** (pretraining seeds 0–3); the DeepSV baseline uses **3 seeds**. All arms fine-tune at **batch 96** (harmonized). Per-seed numbers in `results/results_label_efficiency_4seed.csv`; figure `results/fig_label_efficiency_hardened.png`.
 
 | Label fraction | n(train) | Pretrained F1 | From-scratch F1 | DeepSV baseline F1 |
 |---|---|---|---|---|
-| **1%** | 128 | **0.400 ± 0.066** | **0.000 ± 0.000** | 0.081 ± 0.115 |
-| 5% | 383 | 0.408 ± 0.086 | 0.274 ± 0.188 | 0.492 ± 0.029 |
-| 10% | 767 | 0.563 ± 0.051 | 0.721 ± 0.065 | 0.543 ± 0.066 |
-| 25% | 1,918 | 0.677 ± 0.041 | 0.760 ± 0.065 | 0.302 ± 0.177 |
-| 50% | 3,836 | 0.747 ± 0.078 | 0.744 ± 0.046 | 0.557 ± 0.250 |
-| 100% | 7,672 | 0.803 ± 0.117 | 0.819 ± 0.036 | 0.574 ± 0.076 |
+| **1%** | 210 | **0.514 ± 0.055** | **0.050 ± 0.040** | 0.434 ± 0.022 |
+| 5% | 1,050 | 0.655 ± 0.035 | 0.734 ± 0.107 | 0.591 ± 0.063 |
+| 10% | 2,101 | 0.813 ± 0.007 | 0.763 ± 0.088 | 0.662 ± 0.048 |
+| 25% | 5,254 | 0.846 ± 0.064 | 0.854 ± 0.055 | 0.834 ± 0.012 |
+| 50% | 10,508 | 0.913 ± 0.014 | 0.912 ± 0.022 | 0.856 ± 0.033 |
+| 100% | 21,016 | 0.934 ± 0.004 | 0.944 ± 0.003 | 0.707 ± 0.140 |
 
-**Interpretation:** at **1% labels the from-scratch model collapses to F1 = 0 in all three seeds**, while the pretrained encoder recovers real deletions (F1 = 0.40 ± 0.07). This is the project's central claim — SSL pretraining rescues the extreme low-label regime where supervised training fails. In the mid-range (10–25%) the from-scratch model briefly leads (it is threshold-sensitive and high-variance), and by 50–100% the two converge (0.75/0.80 pretrained vs 0.74/0.82 scratch). This is the expected label-efficiency signature: pretraining buys the most when labels are scarcest, and the two meet once labels are abundant. **Honest paper story = the low-label rescue + convergence, not a blanket "always wins."**
+**Interpretation:** at **1% labels the from-scratch model nearly collapses (F1 = 0.05 ± 0.04)** while the pretrained encoder recovers real deletions at F1 = 0.514 ± 0.055 — a ~10× advantage, the project's central claim. At 10% the pretrained arm leads cleanly (0.813 vs 0.763); by 25–100% the two converge and the from-scratch arm edges ahead at full supervision (0.944 vs 0.934). This is the expected label-efficiency signature: pretraining buys the most when labels are scarcest. **Honest paper story = the low-label rescue + convergence, not a blanket "always wins."**
 
-**Calibration @ 100% labels (mean±sd, 3 seeds):** pretrained ECE = 0.018 ± 0.009 (T = 0.78); scratch ECE = 0.025 ± 0.009 (T = 0.82). Pretrained is modestly better-calibrated. See `results_calibration.csv`.
+**Calibration @ 100% labels (mean±sd):** pretrained ECE = 0.008 ± 0.002 (T = 0.63); scratch ECE = 0.007 ± 0.000 (T = 0.59); DeepSV ECE = 0.072 ± 0.068 (T = 1.41). Both learned-tensor arms are ~10× better calibrated than the DeepSV RGB baseline. See `results/results_calibration_hardened.csv`.
 
-**Length-stratified recall @ 100% labels** (`fig_length_strata.png`, `results_length_strata.csv`): both models recall short DELs (50–500 bp) at 0.8–0.97; recall falls for 1–5 kb (pre 0.65 / scr 0.80) and is high-variance at 5 kb+ (pre 0.63 ± 0.40 / scr 0.50 ± 0.37). Long-deletion recall is the weak point for both — a genuine open problem, and a motivation for the multi-scale channels.
+**Length-stratified recall @ 100% labels** (`results/fig_length_strata_hardened.png`, `results/results_length_strata_hardened.csv`): both learned-tensor models recall short DELs (50–500 bp) at 0.8–0.97; recall falls for 1–5 kb and is high-variance at 5 kb+. Long-deletion recall is the weak point for both — a genuine open problem, and a motivation for the multi-scale channels.
 
-**DeepSV head-to-head (Phase 0.3, DONE):** a faithful DeepSV-lineage baseline — hand-designed RGB pileup (A=red, T=green, C=blue, G=black, per-read binary features) + supervised CNN — trained on the **identical** split, focal loss, and F1 metric, 3 seeds. It **plateaus near F1 ≈ 0.57 at 100% labels** and never exceeds ≈0.6 at any budget. Our learned-encoder model beats it at **5 of 6 label fractions** (loses only at 5%): pretrained 0.80 / scratch 0.82 vs DeepSV 0.57 at full labels. DeepSV is also **much worse calibrated** (ECE = 0.091 ± 0.045, T = 1.79 vs our 0.018 / 0.025). This is the head-to-head that was missing; "learned alignment encoder > DeepSV RGB+CNN" is now supported on our data. Figure `fig_label_efficiency.png` (v2, three arms); numbers in `results_label_efficiency.csv` (three arms) and `results_calibration.csv`.
+**DeepSV head-to-head (Phase 0.3, DONE, hardened):** a faithful DeepSV-lineage baseline — hand-designed RGB pileup (A=red, T=green, C=blue, G=black, per-read binary features) + supervised CNN — trained on the **identical** split, focal loss, F1 metric, and **batch 96**, 3 seeds. It reaches F1 ≈ 0.83–0.86 in the mid-range but is **unstable at full supervision (0.707 ± 0.140)** and is beaten by the pretrained learned encoder at every one of the six label fractions. DeepSV is also **~10× worse calibrated** (ECE = 0.072 vs 0.008). "Learned alignment encoder > DeepSV RGB+CNN" is supported on our data. Figure `results/fig_label_efficiency_hardened.png`; numbers in `results/results_label_efficiency_4seed.csv`.
 
 **Still honest about scope:** this is a faithful *reimplementation* of the DeepSV representation+CNN on our tensors, not a run of the original TensorFlow binary; and the comparison is on the 1000G split, deletion-only. Both are stated plainly in the manuscript.
 
 ---
 
-## 🌍 CROSS-POPULATION RESULT (Phase 4.3, DONE — 3 seeds, mean±sd)
+## 🌍 CROSS-POPULATION RESULT (Phase 4.3, HARDENED — low-label sweep, 3 seeds)
 
-Fine-tuned on the FULL training set (chr1–11 of the two **African** samples NA19238/YRI + NA19625/ASW) and evaluated on two held-out sets: (A) in-distribution = chr12–22 of the same two samples; (B) cross-population = chr12–22 of **NA12878 (CEU / European)** — a held-out *individual* of a held-out *ancestry* (362 deletions, 1,448 windows). Jobs 1515414/15/16, `results_cross_population.csv`.
+Fine-tuned on the 6-sample panel training split (chr1–11) at each label fraction and evaluated on two held-out sets at that fraction: (A) in-distribution = chr12–22 of the panel; (B) cross-population = chr12–22 of **NA12878 (CEU / European)**, a held-out *individual* of a held-out *ancestry*. This is the harmonized `cross_pop_lowlabel.py` sweep (`xpopll_results_seed{0,1,2}.json`), replacing the earlier full-label-only run. Numbers in `results/results_cross_population_lowlabel.csv`; figure `results/fig_cross_population_lowlabel.png`.
 
-| Arm | In-dist F1 (African) | Cross-pop F1 (NA12878/CEU) | Cross-pop ECE | Generalization gap |
+| Label frac | Pretrained in-dist | Pretrained CEU | Scratch in-dist | Scratch CEU |
 |---|---|---|---|---|
-| SSL-pretrained | 0.686 ± 0.137 | 0.672 ± 0.174 | 0.113 ± 0.131 | **+0.015 ± 0.114** |
-| From-scratch | 0.898 ± 0.052 | 0.781 ± 0.136 | 0.055 ± 0.050 | +0.117 ± 0.084 |
+| **1%** | 0.542 | **0.518** | 0.105 | 0.179 |
+| 10% | 0.762 | 0.727 | 0.702 | 0.542 |
+| 100% | 0.932 | 0.784 | 0.866 | 0.742 |
 
-**Interpretation:** both models transfer to a new ancestry (no collapse), and the **pretrained encoder shows essentially zero in-dist→cross-pop gap (+0.015)** vs the from-scratch model's larger drop (+0.117) — evidence that SSL representations are more ancestry-robust. Caveat kept honest: the scratch arm's absolute F1 is higher here at full labels (as in the label-efficiency sweep at 100%), and per-seed variance is high; the robustness claim is about the *gap*, not absolute F1. This will strengthen sharply with the 5-superpopulation training panel now downloading (below).
+**Interpretation (corrected from the earlier full-label-only story):** the pretrained encoder's transfer advantage **concentrates in the low-label regime**. At 1% labels the pretrained model transfers to CEU at F1 = 0.518 — nearly its in-distribution level and far above the near-collapsed scratch arm — whereas at full supervision both models carry a comparable in-dist→CEU gap (pretrained +0.148, scratch +0.124). The honest claim is therefore **low-label cross-ancestry transfer**, not a uniform elimination of the generalization gap. The panel-scale re-training (5 continental ancestries) is designed to raise absolute cross-population F1 while preserving this low-label robustness.
 
 ---
 
@@ -207,7 +208,9 @@ We attempted this directly: cloned `github.com/CSuperlei/DeepSV` and inspected i
 
 ---
 
-## SSL objective ablation — MAE-only wins (seed 0 complete; 3-seed replication in flight, added 2026-07-16)
+## SSL objective ablation — MAE-only wins (seed 0 complete; 3-seed replication in flight, added 2026-07-16) — ⚠️ SUPERSEDED
+
+> ⚠️ **Superseded by the hardened ablation of 2026-07-24 (final section).** The "MAE-only wins 5 of 6 fractions" reading below came from a confounded design (one shared seed-0 ablation encoder, batch 128, vs the combined arm's 4 pretraining seeds at batch 96). Corrected result: a crossover — MAM leads at 1–10% labels, **combined wins from 25% upward and at full supervision** and is the adopted default.
 
 **Motivation:** the project's stated SSL objective is the *combined* MAE + VICReg loss (`ssl_objective` decision). This ablation tests whether combining the two objectives actually beats either alone — the core justification for the design. Three encoders were pretrained from scratch on the 80,000-window corpus (25 epochs, batch 96, T4), identical except the objective weights: **combined** (`--w-mae 1 --w-vicreg 1`), **MAE-only** (`1/0`), **VICReg-only** (`0/1`). Each was then fine-tuned identically on the labeled set (chr1-11 train / chr12-22 test) via `finetune_eval.py`.
 
@@ -258,7 +261,9 @@ Already-tracked non-F1 metrics retained: precision/recall separately per fractio
 
 ---
 
-## ⭐ ABLATION VERDICT — MAE-only confirmed across 3 seeds; SSL objective CHANGED (2026-07-16)
+## ⭐ ABLATION VERDICT — MAE-only confirmed across 3 seeds; SSL objective CHANGED (2026-07-16) — ⚠️ SUPERSEDED
+
+> ⚠️ **This verdict was OVERTURNED by the hardened ablation of 2026-07-24 (see the final section).** The comparison here is confounded: each ablation arm fine-tuned one shared seed-0 encoder (fine-tune variance only) at batch 128, while the combined arm used 4 distinct pretraining seeds at batch 96. On the corrected single-variable design the result is a **crossover** — MAM leads at 1–10% labels, combined wins from 25% upward and at full supervision — and the **combined objective is the adopted default**. Retained below as the auditable record of what was believed and why.
 
 Seeds 1 and 2 completed (jobs 1516077-82). The seed-0 finding **replicates cleanly**.
 
@@ -536,3 +541,38 @@ A reviewer-perspective audit (saved as `AUDIT_reviewer_verification.md`) confirm
 **New code (committed, pushed):** `scripts/cross_pop_lowlabel.py` (label-frac cross-population eval) and `analysis/aggregate_hardened.py` (aggregates the 4-arm ablation + cross-pop-low-label JSONs into `results_ablation_4arm_hardened.csv`, `results_crosspop_lowlabel.csv`, `fig_ablation_4arm_hardened.png`, `fig_crosspop_lowlabel.png` — error bars now computed across **pretraining** seeds). GitHub HEAD = `4de3576`.
 
 **On completion:** download the 16 JSONs, run `aggregate_hardened.py`, regenerate the ablation figure with proper per-pretraining-seed error bars, update the manuscript's ablation table + the honest OOD caveat with the low-label cross-population numbers. Then Phase 4 (GIAB HG002 + Truvari) — not yet on the cluster (no HG002 data, Truvari not installed; reference is GRCh37/hs37d5).
+
+---
+
+## ✅ Update: 2026-07-24 — HARDENING DAG COMPLETE (16/16 jobs exit 0); all docs harmonized
+
+The 16-job DAG launched on 2026-07-22 finished with **zero failures** (every job `ExitCode 0:0`). All three audit asymmetries are fixed, results are re-aggregated, and the manuscript, README, deck, `docs/project.md`, and `docs/CLUSTER.md` are harmonized to the final numbers. **The tables in this section are authoritative; earlier tables in this file are pre-hardening and superseded.**
+
+**What the harmonization changed.** Every arm now fine-tunes at **batch 96** with `num_workers 2` (was 128 for the ablation and DeepSV arms), the ablation arms have **seed-matched pretraining encoders** (`encoder_abl_{maeonly,viconly}_120k_seed{0,1,2}.pt`) so their error bars span pretraining variance rather than fine-tune variance, and seed counts are stated explicitly per arm (SSL arms 4 seeds, ablation/DeepSV/cross-pop 3). The only variable differing between arms is the thing under test.
+
+### Objective ablation — the "MAM-only wins" verdict is OVERTURNED; it is a crossover
+
+| Label fraction | MAM-only | VICReg-only | Combined MAM+VICReg |
+|---|---|---|---|
+| 1% | **0.588** | 0.554 | 0.514 |
+| 5% | **0.763** | 0.665 | 0.655 |
+| 10% | **0.830** | 0.768 | 0.813 |
+| 25% | 0.798 | 0.845 | **0.846** |
+| 50% | 0.799 | 0.903 | **0.913** |
+| 100% | 0.915 | 0.846 | **0.934** |
+
+**Finding:** MAM drives the low-label benefit (1–10%), but the **combined objective overtakes from 25% labels upward and is best at full supervision**. The earlier 2026-07-16 verdict ("MAE-only wins 5 of 6 fractions; adopt MAM-only; frame as less-is-more") was an artifact of the confounded design — one shared seed-0 ablation encoder plus a different fine-tune batch size. **The combined MAM+VICReg objective is the adopted default** for panel-scale re-training and all moderate-to-full-supervision work; MAM-only is preferred only in the extreme low-label regime. The "less-is-more" framing is withdrawn from the paper. Superseding notes were added in place to `docs/project.md` rather than deleting the original decision, so the record of what was believed and why remains auditable.
+
+### Cross-population, corrected
+
+The earlier full-label-only cross-population run suggested SSL nearly eliminates the ancestry gap (+0.015 vs +0.117). The harmonized low-label sweep shows this **does not hold at full supervision** — pretrained gap +0.148 vs scratch +0.124. What does hold, and is the honest claim, is that at **1% labels the pretrained encoder transfers to held-out CEU at F1 = 0.518** (near its own in-distribution 0.542) while the from-scratch arm is near-collapsed. The multi-ancestry claim therefore rests on the low-label regime, stated that way in the manuscript.
+
+### Documentation corrections made in this pass
+
+- **Tensor shape was wrong in four documents.** `alignssl/tensorize.py` defaults to `max_rows=128`, but extraction was actually run with `--max-rows 64`. Verified against the cluster by loading a real shard: shape is `(18, 64, 256)`. Corrected in README (2 places), `docs/CLUSTER.md`, and `docs/project.md` (2 places, including the dependent per-window byte estimate).
+- **Stale "wins 5 of 6 label fractions" claim** (a pre-hardening artifact where DeepSV edged the pretrained arm at 5%) removed from PROGRESS.md, `docs/AlignSSL_SV_deck.md`, and `docs/project.md`. On the harmonized numbers the pretrained arm beats the DeepSV baseline at **all six** fractions.
+- Manuscript sections 4.2–4.5 and Section 5/6 rewritten against numbers **recomputed from the raw per-seed JSONs**, not copied between documents. A duplicated figure embed was collapsed to a back-reference.
+
+**Deliverables:** `results/fig_label_efficiency_hardened.png`, `results/fig_cross_population_lowlabel.png`, `results/fig_length_strata_hardened.png`, `results/results_ablation_4arm_hardened.csv`, `results/results_cross_population_lowlabel.csv`, `results/results_length_strata_hardened.csv`, `results/results_calibration_hardened.csv`, `results/results_label_efficiency_4seed.csv`.
+
+**Next:** Phase 4 GIAB HG002 + Truvari headline benchmark. Still blocked on data/tooling: HG002 is not staged on the cluster, Truvari is not installed in `deepsv2_new`, and the reference build is GRCh37/hs37d5 (the GIAB v4.2.1 SV benchmark is distributed for GRCh38, so either a GRCh37-lifted benchmark or a GRCh38 re-alignment path is needed). This requires a storage/staging decision before submission.

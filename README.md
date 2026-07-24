@@ -6,32 +6,36 @@ AlignSSL-SV is a caller for structural-variant (SV) deletions. It uses short-rea
 
 DeepSV changes the read pileup into a hand-made RGB image. Then it trains a fully supervised CNN. AlignSSL-SV uses a different method with three parts:
 
-1. **An alignment tensor with no image.** AlignSSL-SV changes the reads directly into a tensor with many channels. The tensor has the shape `(C=18, R=128, W=256)`. The channels hold alignment features: depth, mapping quality, insert-size difference, orientation, clip signal, and base identity. AlignSSL-SV does not make an RGB image, so it does not lose data in that step.
+1. **An alignment tensor with no image.** AlignSSL-SV changes the reads directly into a tensor with many channels. The tensor has the shape `(C=18, R=64, W=256)`. The channels hold alignment features: depth, mapping quality, insert-size difference, orientation, clip signal, and base identity. AlignSSL-SV does not make an RGB image, so it does not lose data in that step.
 2. **Self-supervised pretraining.** A masked-alignment-modeling (MAM) task learns a representation of the pileup from *unlabeled* windows. This lets the deletion caller use fewer labels.
 3. **Calibrated uncertainty.** Temperature scaling and MC-dropout give a confidence value for each call. The confidence value is well-calibrated across different sequencing depths and different ancestries.
 
 ## Headline results (1000 Genomes phase-3 deletions; test = chr12–22)
 
-**Label efficiency.** The SSL-pretrained encoder gets a usable **F1 ≈ 0.40** at the smallest label budget (1% ≈ 128 windows). At the same budget, the from-scratch encoder and the DeepSV-style RGB+CNN baseline both fail (F1 = 0.00 and 0.08). The DeepSV-representation baseline stops at about **F1 ≈ 0.57** at full labels. This value is much lower than the two alignment-tensor models (≈ 0.80–0.82).
+All arms below use a harmonized fine-tuning batch size of 96, with error bars across 3–4 seeds (pretraining seeds for the SSL arm).
+
+**Label efficiency.** The SSL-pretrained encoder gets a usable **F1 ≈ 0.51** at the smallest label budget (1% ≈ 210 windows). At the same budget, the from-scratch encoder collapses (F1 ≈ 0.05) — a ~10× gap that is the headline result. The two alignment-tensor models converge at full supervision (0.934 pretrained vs. 0.944 from-scratch), while the DeepSV-style RGB+CNN baseline is the weakest and most unstable at full labels (0.707 ± 0.140).
 
 | Labels | AlignSSL (pretrained) | AlignSSL (scratch) | DeepSV baseline |
 |-------:|:---------------------:|:------------------:|:---------------:|
-|   1%   | **0.400 ± 0.066**     | 0.000 ± 0.000      | 0.081 ± 0.115   |
-|   5%   | 0.408 ± 0.086         | 0.274 ± 0.188      | **0.492 ± 0.029** |
-|  10%   | 0.563 ± 0.051         | **0.721 ± 0.065**  | 0.543 ± 0.066   |
-|  25%   | 0.677 ± 0.041         | **0.760 ± 0.065**  | 0.302 ± 0.177   |
-|  50%   | **0.747 ± 0.078**     | 0.744 ± 0.046      | 0.557 ± 0.250   |
-| 100%   | 0.803 ± 0.117         | **0.819 ± 0.036**  | 0.574 ± 0.076   |
+|   1%   | **0.514 ± 0.055**     | 0.050 ± 0.040      | 0.434 ± 0.022   |
+|   5%   | 0.655 ± 0.035         | **0.734 ± 0.107**  | 0.591 ± 0.063   |
+|  10%   | **0.813 ± 0.007**     | 0.763 ± 0.088      | 0.662 ± 0.048   |
+|  25%   | 0.846 ± 0.064         | **0.854 ± 0.055**  | 0.834 ± 0.012   |
+|  50%   | **0.913 ± 0.014**     | 0.912 ± 0.022      | 0.856 ± 0.033   |
+| 100%   | 0.934 ± 0.004         | **0.944 ± 0.003**  | 0.707 ± 0.140   |
 
 **Calibration.** The alignment-tensor models are much better calibrated than the DeepSV baseline. A lower expected calibration error (ECE) is better.
 
 | Model | ECE | Temperature |
 |---|:---:|:---:|
-| AlignSSL, pretrained | **0.018 ± 0.009** | 0.778 |
-| AlignSSL, from scratch | 0.025 ± 0.009 | 0.823 |
-| DeepSV baseline | 0.091 ± 0.045 | 1.785 |
+| AlignSSL, pretrained | **0.008 ± 0.002** | 0.634 |
+| AlignSSL, from scratch | 0.007 ± 0.000 | 0.586 |
+| DeepSV baseline | 0.072 ± 0.068 | 1.411 |
 
-**Cross-population generalization.** The models train on non-European ancestries. Then they are evaluated on held-out CEU (NA12878). SSL pretraining makes the generalization gap smaller. This gap is the drop in F1 from the in-distribution test to the cross-population test. The gap goes from **+0.117** (scratch) to **+0.015** (pretrained).
+**Cross-population generalization.** The models train on non-European ancestries, then are evaluated on held-out CEU (NA12878) across the label-fraction sweep. The pretrained encoder's transfer advantage is concentrated in the **low-label regime**: at 1% labels it reaches held-out CEU **F1 0.518 ± 0.062** (near-lossless from its in-distribution 0.542), while the from-scratch model has not learned to call deletions (CEU F1 0.179). At full supervision the two paradigms transfer comparably — pretraining's ancestry-robustness benefit is specifically a low-label phenomenon.
+
+**Which SSL objective matters.** A 3-seed ablation shows a crossover: masked-alignment modeling (MAM) drives the low-label benefit (F1 0.588 at 1% labels vs. 0.554 VICReg-only, 0.514 combined), while the combined MAM+VICReg objective is strongest from 25% labels upward and at full supervision (0.934 vs. 0.915 MAM-only). MAM is indispensable for label efficiency; combining it with VICReg is the right default when moderate-to-full supervision is available.
 
 For the source CSVs and the figures, see `results/`. For the full report, see `docs/AlignSSL_SV_manuscript.md`.
 
@@ -39,7 +43,7 @@ For the source CSVs and the figures, see `results/`. For the full report, see `d
 
 ```
 alignssl/            Core package
-  tensorize.py         BAM window -> (18,128,256) alignment tensor
+  tensorize.py         BAM window -> (18,64,256) alignment tensor
   encoder.py           Multi-scale CNN + transformer encoder (d_model=128)
   ssl.py               Self-supervised objective (masked-alignment-modeling)
   heads.py             Deletion classifier + calibration (temperature, MC-dropout)

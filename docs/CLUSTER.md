@@ -164,8 +164,8 @@ The **labeled** set (fine-tune + test) spans six 1000G super-populations; the
 
 ### Tensor format
 
-- **Labeled tensors**: shape `(C=18, R=128, W=256)` float16 — 18 alignment-derived
-  channels, up to 128 reads, 256 columns across the window. Stored in `.npz` shards
+- **Labeled tensors**: shape `(C=18, R=64, W=256)` float16 — 18 alignment-derived
+  channels, up to 64 reads (`--max-rows 64`), 256 columns across the window. Stored in `.npz` shards
   with arrays `X` (windows), `chrom`, `bin_size`, `start`, `label` (genotype 0/1/2).
 - **Pretrain windows**: shape `(18, 64, 256)` float16, `label = -1` (unlabeled).
 - **Chromosome split**: train = chr1–11, test = chr12–22. The *same* shard directory
@@ -198,7 +198,7 @@ trusted for extraction.
                          │
    BAM ──pfetch_bam.sh──►│  (16-way, integrity-gated)     [CPU: amd_256M]
                          ▼
-   extract_tensors.py  → tensors_panel/  (labeled (18,128,256))   [CPU]
+   extract_tensors.py  → tensors_panel/  (labeled (18,64,256))    [CPU]
    extract_pretrain.py → tensors_pretrain/ (unlabeled (18,64,256))[CPU]
                          │
    build_memmap.py     → pretrain_mm.f16 (flat float16, 70.8 GB)  [CPU: amd_256M]

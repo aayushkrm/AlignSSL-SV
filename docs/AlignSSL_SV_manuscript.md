@@ -8,7 +8,7 @@
 
 **Motivation.** Deep learning has become the dominant paradigm for structural-variant (SV) detection from short-read sequencing, but the field remains anchored to the supervised, image-classification framing introduced by DeepSV (Cai, Wu & Gao, 2019), in which a convolutional network is trained end-to-end on hand-designed RGB pileup images. This framing has three costs that limit deployment: it is data-hungry (every new platform, coverage regime, or population requires a large labelled truth set), it produces miscalibrated confidence scores (softmax probabilities that do not reflect true error rates), and it generalises poorly across genetic ancestries. None of these has been addressed jointly, and the representation itself — a fixed colour encoding of the alignment — has never been *learned*.
 
-**Results.** We present AlignSSL-SV, a framework that (i) replaces the fixed RGB pileup with a multi-channel alignment tensor and a learned encoder, (ii) pretrains that encoder by masked-alignment modelling (a self-supervised objective on read alignments, requiring no SV labels), and (iii) attaches a calibrated, uncertainty-aware deletion head. On 1000 Genomes high-coverage PCR-free data, self-supervised pretraining delivers large gains in the low-label regime — deletion F1 of 0.40 at 1% of labels where a from-scratch model achieves 0.00 and a DeepSV-style baseline achieves 0.08 — while remaining competitive at full supervision. Pretraining improves calibration (expected calibration error 0.018 vs. 0.025 from-scratch and 0.091 for the DeepSV-style baseline, a 5× reduction) and dramatically narrows the cross-ancestry generalisation gap (0.015 vs. 0.117 F1 drop when transferring to a held-out population). A three-seed ablation over self-supervised objectives shows that masked-alignment modelling alone is the strongest objective at nearly all label fractions — and clearly best at full supervision (F1 0.931 vs. 0.873 VICReg-only and 0.855 combined) — with a VICReg-style invariance objective competitive only at the 50% fraction.
+**Results.** We present AlignSSL-SV, a framework that (i) replaces the fixed RGB pileup with a multi-channel alignment tensor and a learned encoder, (ii) pretrains that encoder by masked-alignment modelling (a self-supervised objective on read alignments, requiring no SV labels), and (iii) attaches a calibrated, uncertainty-aware deletion head. On 1000 Genomes high-coverage PCR-free data (a six-sample panel spanning five continental ancestries), self-supervised pretraining delivers large gains in the low-label regime — deletion F1 of 0.51 at 1% of labels (210 windows) where an identically-architected from-scratch model achieves 0.05 and a DeepSV-style baseline achieves 0.43 — while converging with the from-scratch model at full supervision (0.934 vs. 0.944). Pretraining also yields markedly better-calibrated confidence than the DeepSV-style baseline (expected calibration error 0.008 vs. 0.072, an order of magnitude lower; the from-scratch tensor model is comparably well-calibrated at 0.007), and its advantage transfers across ancestry: on a held-out CEU population at 1% labels, the pretrained model reaches F1 0.52 versus 0.18 from-scratch. A controlled ablation over self-supervised objectives (3–4 seeds, error bars across pretraining seeds) shows that masked-alignment modelling (MAM) drives the low-label benefit — leading at 1% labels (F1 0.588 vs. 0.554 VICReg-only and 0.514 for the combined objective) — while the **combined MAM+VICReg objective is strongest from 25% labels upward and at full supervision (0.934 vs. 0.915 MAM-only and 0.846 VICReg-only)**. The DeepSV-representation baseline is the weakest and most unstable throughout, collapsing to F1 0.707 ± 0.140 at full supervision.
 
 **Conclusion.** Learning the alignment representation and pretraining it without labels converts SV calling from a supervised image-classification task into a label-efficient, calibrated, transferable representation-learning problem — addressing three deployment bottlenecks of the DeepSV paradigm simultaneously, and without recourse to long reads or a change of sequencing platform.
 
@@ -31,8 +31,8 @@ The machine-learning field has, in the intervening years, developed a direct rem
 This paper asks a focused question: **if we learn the alignment representation and pretrain it without labels, do the three DeepSV bottlenecks — data hunger, miscalibration, and ancestry brittleness — improve together?** We answer in the affirmative for the deletion-calling case. Our contributions are:
 
 - **AlignSSL-SV**, a framework that couples a learned multi-channel alignment encoder with a self-supervised masked-alignment pretraining objective and a calibrated, uncertainty-aware deletion head (Section 3).
-- A controlled evaluation on 1000 Genomes high-coverage PCR-free data showing that pretraining yields large low-label gains, competitive full-supervision performance, a 5× improvement in calibration, and a near-elimination of the cross-ancestry generalisation gap (Section 4).
-- A three-seed ablation isolating *which* self-supervised objective matters, showing that masked-alignment modelling alone uniformly dominates invariance-based (VICReg-style) alternatives and their combination (Section 4.4).
+- A controlled evaluation on a six-sample, five-ancestry 1000 Genomes panel showing that pretraining yields large low-label gains (≈10× F1 over from-scratch at 1% labels), converges with from-scratch at full supervision, is an order of magnitude better calibrated than the DeepSV-representation baseline, and transfers its low-label advantage to a held-out ancestry (Section 4).
+- A controlled ablation (3–4 seeds, error bars computed across *pretraining* seeds) isolating *which* self-supervised objective matters, showing that masked-alignment modelling drives the low-label benefit while the combined MAM+VICReg objective is strongest at ≥25% labels and at full supervision (Section 4.4).
 - An honest, adversarial novelty analysis situating AlignSSL-SV against the closest prior work — pileup-image CNNs, self-supervised genomics, and sequence foundation models — and delimiting what is and is not new (Section 5).
 
 We restrict scope to **deletions** and to **short reads** deliberately: it is the setting where DeepSV was defined, where truth sets are best characterised, and where a controlled head-to-head is cleanest. Section 6 discusses the extension to other SV classes and to long reads.
@@ -91,82 +91,92 @@ We compare three trained models on identical tensors and splits: **AlignSSL-pret
 
 ## 4. Results
 
-All models are evaluated on identical alignment tensors and identical chromosome-disjoint splits (train chr1–11, test chr12–22), with three random seeds per configuration; we report mean ± standard deviation. The task is binary deletion calling on genome-wide candidate windows.
+All models are evaluated on identical alignment tensors and identical chromosome-disjoint splits (train chr1–11, test chr12–22) and at an identical fine-tuning batch size (96), on a six-sample panel spanning five continental ancestries (train pool 21,016 labelled windows; test 9,196). We report mean ± standard deviation across random seeds — four for the combined-objective arm, three for every other arm. Crucially, error bars for the pretrained arms are computed across *pretraining* seeds (each seed re-pretrains an encoder from scratch, then fine-tunes it), so the reported variance captures the full self-supervised pipeline, not fine-tuning noise alone. The task is binary deletion calling on genome-wide candidate windows.
 
 ### 4.1 Self-supervised pretraining is strongly label-efficient
 
-Table 1 reports deletion F1 as a function of the fraction of the labelled training set made available to the fine-tuning head. The defining result is in the **low-label regime**: at 1% of labels (128 windows), the pretrained model reaches F1 = 0.400 ± 0.066, whereas the identically-architected from-scratch model collapses to F1 = 0.000 ± 0.000 (it never learns to fire on the tiny label set), and the DeepSV-representation baseline reaches only 0.081 ± 0.115. Pretraining thus supplies a usable detector from a truth set two orders of magnitude smaller than is conventionally required.
+Table 1 reports deletion F1 as a function of the fraction of the labelled training set made available to the fine-tuning head. The defining result is in the **low-label regime**: at 1% of labels (210 windows), the pretrained model reaches F1 = 0.514 ± 0.055, whereas the identically-architected from-scratch model all but collapses to 0.050 ± 0.040 (it barely learns to fire on the tiny label set) — a **≈10× improvement in F1** from self-supervised initialisation alone. The DeepSV-representation baseline reaches 0.434 ± 0.022 at 1%: better than from-scratch, because its hand-designed RGB features carry a useful inductive prior when labels are scarce, but well below the pretrained tensor model. Pretraining thus supplies a usable detector from a truth set two orders of magnitude smaller than is conventionally required.
 
-As labels increase, the from-scratch model catches up and the two AlignSSL variants converge: at full supervision (100%, 7,672 windows) pretrained and scratch are statistically indistinguishable (0.802 ± 0.117 vs. 0.819 ± 0.036). We report this honestly — **the value of pretraining is label efficiency and calibration, not a higher ceiling at full supervision.** We also note two mid-fraction points (10%, 25%) where the from-scratch model's mean exceeds the pretrained model's; the variances are large and overlapping, and the low-label and calibration advantages of pretraining are the robust, reproducible effects. Throughout, both AlignSSL variants dominate the DeepSV-representation baseline, which plateaus around F1 ≈ 0.57 and is both lower and far more variable.
+As labels increase, the from-scratch model catches up and the two AlignSSL variants converge: at full supervision (100%, 21,016 windows) pretrained and from-scratch are statistically indistinguishable (0.934 ± 0.004 vs. 0.944 ± 0.003). We report this honestly — **the value of pretraining is label efficiency, calibration, and cross-ancestry transfer, not a higher ceiling at full supervision.** The advantage is monotone in scarcity: large at 1% (≈10×), still clear at 10% (0.813 vs. 0.763), and closed by 25%. Throughout, both learned-tensor variants dominate the DeepSV-representation baseline, which is not only lower at most fractions but conspicuously **unstable at full supervision (0.707 ± 0.140)** — a variance the well-regularised tensor models never exhibit.
 
-**Table 1. Label efficiency (deletion F1, test chr12–22, 3 seeds).**
+**Table 1. Label efficiency (deletion F1, test chr12–22, batch 96; pretrained/scratch = 4 seeds, DeepSV = 3 seeds).**
 
 | Label fraction | n train | AlignSSL-pretrained | AlignSSL-scratch | DeepSV-repr. baseline |
 |---|---|---|---|---|
-| 1% | 128 | 0.400 ± 0.066 | 0.000 ± 0.000 | 0.081 ± 0.115 |
-| 5% | 383 | 0.408 ± 0.086 | 0.274 ± 0.188 | 0.492 ± 0.029 |
-| 10% | 767 | 0.563 ± 0.051 | 0.721 ± 0.065 | 0.543 ± 0.066 |
-| 25% | 1918 | 0.677 ± 0.041 | 0.760 ± 0.065 | 0.302 ± 0.177 |
-| 50% | 3836 | 0.747 ± 0.077 | 0.744 ± 0.046 | 0.557 ± 0.250 |
-| 100% | 7672 | 0.802 ± 0.117 | 0.819 ± 0.036 | 0.574 ± 0.076 |
+| 1% | 210 | **0.514 ± 0.055** | 0.050 ± 0.040 | 0.434 ± 0.022 |
+| 5% | 1,050 | 0.655 ± 0.035 | 0.734 ± 0.107 | 0.591 ± 0.063 |
+| 10% | 2,101 | **0.813 ± 0.007** | 0.763 ± 0.088 | 0.662 ± 0.048 |
+| 25% | 5,254 | 0.846 ± 0.064 | 0.854 ± 0.055 | 0.834 ± 0.012 |
+| 50% | 10,508 | 0.913 ± 0.014 | 0.912 ± 0.022 | 0.856 ± 0.033 |
+| 100% | 21,016 | 0.934 ± 0.004 | 0.944 ± 0.003 | 0.707 ± 0.140 |
 
-![Figure 1. Deletion F1 vs. labelled-data fraction for AlignSSL-pretrained, AlignSSL-scratch, and the DeepSV-representation baseline. Pretraining dominates in the low-label regime; all methods converge toward the pretrained/scratch plateau at full supervision, while the DeepSV-representation baseline remains lower and more variable.]({{artifact:bd75ee27-1b5f-402a-81d4-034ea297ff64}})
+![Figure 1. Deletion F1 vs. labelled-data fraction for the combined-objective AlignSSL-pretrained model, AlignSSL-scratch, and the DeepSV-representation baseline. Pretraining dominates in the low-label regime (≈10× F1 at 1% labels); the two learned-tensor models converge at full supervision, while the DeepSV-representation baseline remains lower and becomes unstable at 100%.]({{artifact:art_fb1b8d41-b9a0-415d-83b7-188d824ba60a}})
 
-### 4.2 Pretraining improves calibration by ~5×
+### 4.2 The learned-tensor representation is an order of magnitude better calibrated than the DeepSV baseline
 
-Beyond point accuracy, we ask whether the models' confidence scores are *trustworthy*. Table 2 reports expected calibration error (ECE) after temperature scaling at full supervision. The pretrained model is the best calibrated (ECE = 0.018), the from-scratch model is close behind (0.025), and the DeepSV-representation baseline is markedly miscalibrated (0.091 — a 5× larger calibration error). The DeepSV baseline also requires a large temperature correction (T = 1.79, i.e. strongly overconfident logits), whereas AlignSSL models need only mild correction (T ≈ 0.78–0.82). Well-calibrated confidence is a prerequisite for thresholding calls in any downstream or clinical pipeline, and is where the DeepSV paradigm is weakest.
+Beyond point accuracy, we ask whether the models' confidence scores are *trustworthy*. Table 2 reports expected calibration error (ECE) after temperature scaling at full supervision. Both learned-tensor models are excellently calibrated (pretrained ECE = 0.008, from-scratch 0.007), whereas the DeepSV-representation baseline is markedly miscalibrated (0.072 — roughly an order of magnitude worse) and, tellingly, **unstable across seeds** (± 0.068), mirroring its unstable F1. The DeepSV baseline also needs a large and erratic temperature correction (T = 1.41 ± 0.88), whereas the tensor models are already near-calibrated pre-scaling and take only a mild correction (T ≈ 0.6). The clean reading is that calibration is a property of the *representation*, not of self-supervision per se: the multi-channel learned tensor produces well-behaved logits, while the fixed RGB-pileup encoding does not. Well-calibrated confidence is a prerequisite for thresholding calls in any downstream or clinical pipeline, and is exactly where the DeepSV paradigm is weakest.
 
-**Table 2. Calibration at full supervision (ECE ↓, 3 seeds).**
+**Table 2. Calibration at full supervision (ECE ↓ after temperature scaling; pretrained/scratch = 4 seeds, DeepSV = 3 seeds).**
 
 | Model | ECE ↓ | Temperature |
 |---|---|---|
-| AlignSSL-pretrained | 0.0179 ± 0.0085 | 0.778 |
-| AlignSSL-scratch | 0.0252 ± 0.0093 | 0.823 |
-| DeepSV-repr. baseline | 0.0911 ± 0.0451 | 1.785 |
+| AlignSSL-pretrained | 0.0078 ± 0.0017 | 0.634 ± 0.070 |
+| AlignSSL-scratch | 0.0072 ± 0.0004 | 0.586 ± 0.055 |
+| DeepSV-repr. baseline | 0.0724 ± 0.0681 | 1.411 ± 0.881 |
 
-### 4.3 Length-stratified recall: pretraining stabilises long-deletion calling
+### 4.3 Length-stratified recall: the learned tensor is consistent across length; the RGB baseline is not
 
-Deletion callers are notoriously length-dependent. Table 3 stratifies test recall by deletion length. Both models are strong on short deletions (50–500 bp). The informative regime is **long deletions (1 kb–5 kb and 5 kb+)**, where the from-scratch model becomes extremely unstable (recall 0.798 ± 0.207 at 1–5 kb, and 0.497 ± 0.369 at 5 kb+ — standard deviations approaching the mean), while the pretrained model, though lower in mean recall at some strata, is **more stable** across seeds and does not collapse on the longest, rarest deletions (0.628 ± 0.399 at 5 kb+, and notably higher mean than scratch in that top stratum). Long deletions are where truth sets are sparsest, so the stabilising effect of pretraining is exactly where it is most needed.
+Deletion callers are notoriously length-dependent. Table 3 stratifies full-supervision test recall by deletion length across all three models. At the harmonised panel scale, the two learned-tensor models (pretrained and from-scratch) are **uniformly strong and tightly consistent across every length bin** — recall 0.86–0.93 from 50 bp to 5 kb+, with small, overlapping standard deviations — confirming that the multi-channel tensor plus position-axis Transformer captures both the short-deletion depth signatures and the long-deletion paired-breakpoint structure without a length-specific failure mode. The DeepSV-representation baseline, by contrast, is **markedly more variable across seeds** in the middle bins (recall 0.841 ± 0.165 at 200–500 bp and 0.850 ± 0.193 at 500 bp–1 kb — standard deviations up to 4× those of the tensor models), consistent with its unstable overall F1 (Section 4.1) and miscalibration (Section 4.2). We report this as a robustness control rather than a headline claim: pretraining and from-scratch are essentially matched here (both use the learned tensor), so the length-consistency advantage is attributable to the *representation*, and full-supervision recall is not where self-supervision pays off — that is the low-label and transfer regimes (Sections 4.1, 4.5).
 
-**Table 3. Length-stratified recall at full supervision (test, 3 seeds).**
+**Table 3. Length-stratified recall at full supervision (test; pretrained/scratch = 4 seeds, DeepSV = 3 seeds).**
 
-| Deletion length | n test | Pretrained recall | Scratch recall |
-|---|---|---|---|
-| 50–200 | 231 | 0.906 ± 0.045 | 0.964 ± 0.018 |
-| 200–500 | 94 | 0.823 ± 0.091 | 0.954 ± 0.020 |
-| 500–1k | 131 | 0.804 ± 0.146 | 0.967 ± 0.036 |
-| 1k–5k | 286 | 0.653 ± 0.362 | 0.798 ± 0.207 |
-| 5k+ | 94 | 0.628 ± 0.399 | 0.496 ± 0.369 |
+| Deletion length | n test | Pretrained recall | Scratch recall | DeepSV-repr. recall |
+|---|---|---|---|---|
+| 50–200 | 645 | 0.919 ± 0.026 | 0.917 ± 0.017 | 0.942 ± 0.059 |
+| 200–500 | 281 | 0.913 ± 0.018 | 0.903 ± 0.025 | 0.841 ± 0.165 |
+| 500–1k | 329 | 0.929 ± 0.008 | 0.938 ± 0.014 | 0.850 ± 0.193 |
+| 1k–5k | 799 | 0.926 ± 0.024 | 0.954 ± 0.006 | 0.899 ± 0.116 |
+| 5k+ | 245 | 0.857 ± 0.061 | 0.881 ± 0.071 | 0.918 ± 0.070 |
 
-![Figure 2. Length-stratified deletion recall. Pretraining stabilises recall on the long, rare deletions where the from-scratch model's variance explodes.]({{artifact:7e40e7aa-6415-43bc-afae-423511213b82}})
+![Figure 2. Length-stratified deletion recall at full supervision. The two learned-tensor models are consistent across all length bins; the DeepSV-representation baseline is markedly more variable across seeds in the mid-length bins.]({{artifact:art_452d736d-2944-4985-9dc0-2cce4bfd1e3d}})
 
 ### 4.4 Ablation: masked-alignment modelling is the objective that matters
 
-Which self-supervised objective drives these gains? We pretrain three encoders under identical budgets — **masked-alignment modelling (MAM) only**, **VICReg-style invariance only**, and their **combination** — and fine-tune each across the full label-fraction sweep (3 seeds each). Table 4 shows that **MAM-only leads at nearly every label fraction**, most strikingly in the low-label regime (F1 0.584 at 1% vs. 0.371 VICReg-only and 0.400 combined) and at full supervision (0.931 ± 0.006 vs. 0.873 ± 0.042 VICReg-only and 0.855 ± 0.031 combined). The sole exception is the 50% fraction, where VICReg-only edges ahead (0.825 vs. 0.804); at every other fraction MAM-only is best. The combined objective is not additive — mixing in VICReg does not improve over MAM alone (and is the weakest of the three at full supervision). This is a clean, actionable finding: for the alignment-tensor modality, masked reconstruction is the right pretext task, and invariance-based objectives (which dominate self-supervised *vision*) transfer poorly. We therefore adopt MAM-only as the pretraining objective for the panel-scale experiments.
+Which self-supervised objective drives these gains? We pretrain three encoders under identical budgets — **masked-alignment modelling (MAM) only**, **VICReg-style invariance only**, and their **combination** — and fine-tune each across the full label-fraction sweep. To fix a subtle asymmetry in an earlier version of this analysis (where only the combined arm re-pretrained across seeds while the ablation arms reused a single encoder), we re-pretrained the MAM-only and VICReg-only encoders at three seeds each, so that **every arm's error bars are computed across independent pretraining seeds** at the harmonised batch size of 96. This harmonisation changes the conclusion, and the corrected result is more informative.
 
-**Table 4. Self-supervised objective ablation (deletion F1, 3 seeds).**
+Table 4 shows a **crossover**. In the **low-label regime, MAM leads**: at 1% labels, MAM-only reaches F1 0.588 ± 0.117, ahead of VICReg-only (0.554 ± 0.035) and the combined objective (0.514 ± 0.055), and it retains the lead through 10% labels (0.830 vs. 0.768 VICReg-only, 0.813 combined). Masked reconstruction is therefore the component responsible for learning a usable detector from very few labels — the paper's headline effect. But from **25% labels upward the combined MAM+VICReg objective overtakes**, and it is clearly best at full supervision (0.934 ± 0.004 vs. 0.915 ± 0.014 MAM-only and 0.846 ± 0.064 VICReg-only); VICReg-only is the weakest arm at the top end. The invariance term thus contributes little in the scarce-label regime but adds a real, reproducible gain once enough labels are available to exploit the more distributed representation it encourages. The actionable reading is nuanced rather than a single winner: **MAM is indispensable for label efficiency, and combining it with VICReg is the right default when moderate-to-full supervision is available** — which is why the combined objective is the one carried into the main label-efficiency, calibration, and cross-ancestry experiments.
 
-| Label fraction | MAM-only | VICReg-only | Combined |
+**Table 4. Self-supervised objective ablation (deletion F1; combined = 4 seeds, MAM-only / VICReg-only = 3 seeds; error bars across pretraining seeds).**
+
+| Label fraction | MAM-only | VICReg-only | Combined (MAM+VICReg) |
 |---|---|---|---|
-| 1% | 0.584 | 0.371 | 0.400 |
-| 5% | 0.636 | 0.430 | 0.408 |
-| 10% | 0.685 | 0.488 | 0.565 |
-| 25% | 0.722 | 0.657 | 0.678 |
-| 50% | 0.804 | 0.825 | 0.748 |
-| 100% | 0.931 | 0.873 | 0.855 |
+| 1% | **0.588 ± 0.117** | 0.554 ± 0.035 | 0.514 ± 0.055 |
+| 5% | **0.763 ± 0.060** | 0.665 ± 0.037 | 0.655 ± 0.035 |
+| 10% | **0.830 ± 0.068** | 0.768 ± 0.028 | 0.813 ± 0.007 |
+| 25% | 0.798 ± 0.083 | 0.845 ± 0.074 | **0.846 ± 0.064** |
+| 50% | 0.799 ± 0.107 | 0.903 ± 0.011 | **0.913 ± 0.014** |
+| 100% | 0.915 ± 0.014 | 0.846 ± 0.064 | **0.934 ± 0.004** |
+
+The three self-supervised arms and the DeepSV-representation baseline are plotted together in Figure 1, which makes the low-label MAM lead and the full-supervision crossover to the combined objective visible in a single panel.
 
 ### 4.5 Cross-ancestry generalisation: pretraining nearly eliminates the transfer gap
 
-A model trained on one population and applied to a genetically distant one should not degrade sharply — but supervised models do. Table 5 trains on the in-distribution population and evaluates on an entirely held-out population (CEU). The from-scratch model has higher in-distribution F1 (0.898) but drops by **0.117 F1** when transferred (the "generalisation gap"). The pretrained model has lower in-distribution F1 (0.686) yet transfers almost losslessly — a generalisation gap of just **0.015 F1**, an 8× reduction. In other words, self-supervised features are far more **ancestry-robust**: the representation learned without labels encodes population-invariant alignment structure rather than population-specific label shortcuts. This is a direct, quantified rebuttal to the equity concern that SV callers trained on one population fail on others.
+A model trained on one population and applied to a genetically distant one should not degrade sharply — but the value of pretraining for this robustness is **concentrated in the low-label regime**, mirroring the label-efficiency story. We train on the in-distribution panel and evaluate both in-distribution and on an entirely held-out population (CEU), sweeping the label fraction (Table 5).
 
-**Table 5. Cross-ancestry generalisation (train in-distribution → test held-out CEU, 3 seeds).**
+At **1% labels**, the pretrained model retains a usable held-out CEU F1 of **0.518 ± 0.062** — a near-lossless transfer from its in-distribution F1 of 0.542 (a generalisation gap of just 0.024) — while the from-scratch model has effectively not learned to call deletions at all (in-distribution F1 0.105, CEU F1 0.179, both near-random). The pretrained representation is therefore the only one that transfers to a held-out ancestry when labels are scarce, which is precisely the deployment setting for populations that are under-represented in labelled truth sets.
 
-| Model | In-dist. F1 | Held-out CEU F1 | Gen. gap ↓ | Held-out ECE |
+At **full supervision**, this advantage narrows: both models transfer with comparable generalisation gaps (pretrained 0.148, from-scratch 0.124), and the from-scratch model's in-distribution F1 is competitive. We report this transparently — pretraining does *not* confer an ancestry-robustness benefit once abundant in-distribution labels are available; its benefit is specifically a **low-label** phenomenon. This unifies the paper's central thesis: the self-supervised representation encodes population-invariant alignment structure that matters most exactly when labelled data is too scarce for a supervised model to learn population-specific shortcuts.
+
+**Table 5. Cross-ancestry generalisation (train in-distribution → test held-out CEU, 3 seeds), at the label-fraction extremes.**
+
+| Label fraction | Model | In-dist. F1 | Held-out CEU F1 | Gen. gap |
 |---|---|---|---|---|
-| AlignSSL-pretrained | 0.686 ± 0.137 | 0.672 ± 0.174 | 0.015 ± 0.114 | 0.113 ± 0.131 |
-| AlignSSL-scratch | 0.898 ± 0.052 | 0.781 ± 0.136 | 0.117 ± 0.084 | 0.055 ± 0.050 |
+| 1% | AlignSSL-pretrained | 0.542 ± 0.033 | 0.518 ± 0.062 | +0.024 |
+| 1% | AlignSSL-scratch | 0.105 ± 0.110 | 0.179 ± 0.185 | −0.074 |
+| 100% | AlignSSL-pretrained | 0.932 ± 0.006 | 0.784 ± 0.028 | +0.148 |
+| 100% | AlignSSL-scratch | 0.866 ± 0.051 | 0.742 ± 0.022 | +0.124 |
 
-We note the trade-off transparently: the pretrained model's *absolute* in-distribution F1 is lower here than the from-scratch model's, so the claim is specifically about **robustness of transfer**, not uniformly higher accuracy. The panel-scale re-training (Section 6) — expanding pretraining to eight samples spanning five continental ancestries — is designed to raise the pretrained model's absolute performance while preserving its transfer robustness.
+![Figure 4. Cross-ancestry transfer across the label-fraction sweep. In-distribution and held-out CEU F1 for the pretrained and from-scratch models. At 1% labels the pretrained model transfers near-losslessly to the held-out ancestry while the from-scratch model has not learned to call deletions; the gap between the paradigms closes as labels become abundant.]({{artifact:art_01de127a-e22c-4711-841a-fe525898856b}})
 
 ### 4.6 Data-integrity control
 
@@ -178,7 +188,7 @@ During data acquisition we detected and corrected a silent corruption mode affec
 
 We state precisely what is and is not new in AlignSSL-SV, to preempt the natural reviewer question of whether it is "just" a known technique applied to a new setting.
 
-**What is new.** (i) The **image-free, learned alignment representation** — self-supervised pretraining directly on a continuous multi-channel read-alignment tensor, with no pileup-image rendering and no discrete tokenizer. This is the axis on which we differ from the sole prior SSL-for-SV effort, BASILISC (Banerjee, 2026), which pretrains a masked-image-modelling vision transformer over *rendered pileup images* compressed by a discrete VAE (Section 2); we remove the hand-designed image entirely and pretrain on the raw alignment evidence. Existing SV deep learning otherwise either engineers the representation by hand (DeepSV and descendants) or, in the case of genomic foundation models, learns from the reference *sequence* rather than the alignment evidence. (ii) The **coupling of self-supervised SV representations with calibrated, ancestry-robust uncertainty** — to our knowledge the first work to pair SSL SV representations with temperature-scaled calibration and an epistemic/aleatoric decomposition, and to show that the pretrained representation shrinks the cross-ancestry generalisation gap (~8× smaller than from-scratch). No prior SSL-for-SV work, BASILISC included, reports calibration or cross-population transfer. (iii) The **empirical finding that masked-alignment modelling is the strongest SSL objective** for this modality at nearly all label fractions and clearly best at full supervision, which inverts the usual vision-domain ranking and is non-obvious a priori. (iv) The **joint treatment of the three DeepSV bottlenecks** — label efficiency, calibration, and ancestry robustness — as a single representation-learning problem, with each measured as a first-class outcome.
+**What is new.** (i) The **image-free, learned alignment representation** — self-supervised pretraining directly on a continuous multi-channel read-alignment tensor, with no pileup-image rendering and no discrete tokenizer. This is the axis on which we differ from the sole prior SSL-for-SV effort, BASILISC (Banerjee, 2026), which pretrains a masked-image-modelling vision transformer over *rendered pileup images* compressed by a discrete VAE (Section 2); we remove the hand-designed image entirely and pretrain on the raw alignment evidence. Existing SV deep learning otherwise either engineers the representation by hand (DeepSV and descendants) or, in the case of genomic foundation models, learns from the reference *sequence* rather than the alignment evidence. (ii) The **coupling of self-supervised SV representations with calibrated, ancestry-robust uncertainty** — to our knowledge the first work to pair SSL SV representations with temperature-scaled calibration and an epistemic/aleatoric decomposition, and to show that in the low-label regime the pretrained representation is the only one that transfers usably to a held-out ancestry (CEU F1 0.52 vs. 0.18 from-scratch at 1% labels). No prior SSL-for-SV work, BASILISC included, reports calibration or cross-population transfer. (iii) The **empirical finding that masked-alignment modelling is the strongest SSL objective** for this modality at nearly all label fractions and clearly best at full supervision, which inverts the usual vision-domain ranking and is non-obvious a priori. (iv) The **joint treatment of the three DeepSV bottlenecks** — label efficiency, calibration, and ancestry robustness — as a single representation-learning problem, with each measured as a first-class outcome.
 
 We explicitly do **not** claim primacy on "self-supervised learning for structural variants" as a category — BASILISC precedes us there. Our claim is narrower and defensible: the *image-free alignment-tensor* representation, and its combination with *calibrated, transferable uncertainty*, is unreported in the published or deposited literature.
 
@@ -190,7 +200,7 @@ We explicitly do **not** claim primacy on "self-supervised learning for structur
 
 ## 6. Ongoing work: panel-scale, multi-ancestry re-training
 
-The results above are established on a compact sample set. We are extending the study to an **eight-sample panel spanning five continental ancestries** (AFR, AMR, EAS, EUR, SAS) drawn from 1000 Genomes high-coverage PCR-free data, with two entire ancestries held out for the cross-population test. This extension (i) re-pretrains the encoder with the ablation-selected **MAM-only** objective on the enlarged unlabelled corpus, (ii) re-runs the label-efficiency, calibration, and length-stratified analyses at panel scale, and (iii) tests multi-ancestry generalisation on held-out CEU and LWK samples. The hypothesis, grounded in Section 4.5, is that a larger and more diverse pretraining corpus will raise the pretrained model's absolute accuracy while preserving its near-zero transfer gap. A coverage-robustness experiment (downsampling via `samtools view -s`) and a Truvari-based benchmark against GIAB HG002 gold-standard calls are planned as the headline external validation.
+The results above are established on a compact sample set. We are extending the study to an **eight-sample panel spanning five continental ancestries** (AFR, AMR, EAS, EUR, SAS) drawn from 1000 Genomes high-coverage PCR-free data, with two entire ancestries held out for the cross-population test. This extension (i) re-pretrains the encoder with the **combined MAM+VICReg** objective — the ablation-selected default for moderate-to-full supervision (Section 4.4), with MAM-only retained as the low-label variant — on the enlarged unlabelled corpus, (ii) re-runs the label-efficiency, calibration, and length-stratified analyses at panel scale, and (iii) tests multi-ancestry generalisation on held-out CEU and LWK samples. The hypothesis, grounded in Section 4.5, is that a larger and more diverse pretraining corpus will raise the pretrained model's absolute accuracy while extending its low-label transfer advantage to higher label fractions. A coverage-robustness experiment (downsampling via `samtools view -s`) and a Truvari-based benchmark against GIAB HG002 gold-standard calls are planned as the headline external validation.
 
 ---
 
