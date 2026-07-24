@@ -75,7 +75,7 @@ The deliverable of the project is a method paper with:
 | Hand-designed 64-color RGB pileup encoding | **REPLACE** | Lossy, non-learnable; we feed raw channels + learn the encoding. | Built: 18-channel continuous tensor (`tensorize.py`), residual-CNN + Transformer encoder with a learned stem. Also built a faithful RGB+CNN reimplementation as the head-to-head baseline (`deepsv_baseline.py`) since the original repo would not run. |
 | Fixed 50 bp / 256×256 windows | **REPLACE (soften)** | Use larger, multi-scale windows. | Built: window shape `(18, 64, 256)` — 64 read rows × 256 bp columns, with length-adaptive binning (`bin_for_len`) mapping deletion size to a span from 4096 bp up. Length-stratified evaluation implemented (§13). |
 | k-means candidate generation | **KEEP (v1)** | Reuse truth-VCF-anchored candidates initially. | v1 only: candidates are truth-VCF loci (positives) + random/negative genomic windows, not a learned or classical-caller proposer. Learned candidate generation (v2) not attempted — deferred, see §15. |
-| Purely supervised training on scarce labels | **ADD self-supervision** | Pretrain on unlabeled BAMs, fine-tune on the small truth set. | Built and ablated: masked-alignment modelling (MAM) vs VICReg vs combined. **DECISION: MAM-only** wins 5/6 label fractions, best calibration, most stable long-deletion recall — supersedes the original "combine both" plan (§4). |
+| Purely supervised training on scarce labels | **ADD self-supervision** | Pretrain on unlabeled BAMs, fine-tune on the small truth set. | Built and ablated: masked-alignment modelling (MAM) vs VICReg vs combined. **DECISION (hardened 2026-07-24): keep the COMBINED MAM+VICReg objective.** The ablation is a crossover — MAM leads at 1–10% labels, combined wins 25/50/100% and is best at full supervision (0.934 vs MAM 0.915, VICReg 0.846). The interim "MAM-only, less-is-more" decision (§4.4) was confounded and is withdrawn. |
 | Binary softmax output | **ADD calibrated uncertainty** | Evidential / ensemble head + conformal calibration (original plan). | Simplified: temperature scaling + MC-dropout (epistemic/aleatoric decomposition), not the originally planned evidential-NLL + conformal-prediction stack. Documented as a scope simplification, not silently substituted (§6, §15). |
 
 ---
@@ -432,9 +432,9 @@ Calibration at 100% labels: pretrained ECE 0.018±0.009 (T=0.78); from-scratch E
 
 > ⚠️ **SUPERSEDED (2026-07-24) — §13.1 records the 2-sample-corpus, pre-hardening run.** Authoritative harmonized numbers (6-sample panel, 4 pretraining seeds, batch 96 across all arms): pretrained F1 0.514±0.055 (1%) / 0.813±0.007 (10%) / 0.934±0.004 (100%); from-scratch 0.050±0.040 / 0.763±0.088 / 0.944±0.003; DeepSV-repr. 0.434±0.022 / 0.662±0.048 / 0.707±0.140. Calibration at 100%: pretrained ECE 0.008±0.002 (T=0.63), from-scratch 0.007±0.000 (T=0.59), DeepSV-repr. 0.072±0.068 (T=1.41) — ~10× worse, not 4–5×. The pretrained arm beats the DeepSV baseline at all six fractions. See PROGRESS.md (2026-07-24).
 
-### 13.2 SSL objective ablation (supersedes the original combined-objective plan)
+### 13.2 SSL objective ablation (hardened 2026-07-24 — the original combined-objective plan STANDS)
 
-See §4.4 for the full table. **DECISION: MAM-only** is the production objective going forward.
+See §4.4 for the full table. **DECISION: the COMBINED MAM+VICReg objective is the production objective going forward.** The hardened, seed-matched ablation (batch 96 across all arms, error bars over pretraining seeds) is a crossover: MAM-only leads at 1–10% labels, but combined wins 25%, 50% and 100% and is best at full supervision (0.934 vs MAM-only 0.915, VICReg-only 0.846). The interim "MAM-only / less-is-more" decision was an artifact of a confounded comparison (one shared seed-0 ablation encoder at fine-tune batch 128 vs the combined arm's 4 pretraining seeds at batch 96) and is **withdrawn**.
 
 ### 13.3 Length-stratified recall
 

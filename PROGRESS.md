@@ -82,14 +82,14 @@ Fine-tuned on the 6-sample panel training split (chr1–11) at each label fracti
 | 0.1b | Full labeled extraction (both samples, all chroms) | ✅ | Job 1514620 done (exit 0): 11,016 windows, 12 shards. Split validated (1514623): TRAIN chr1–11 = 7,672 (1,918 pos/5,754 neg); TEST chr12–22 = 3,344 (836 pos/2,508 neg); clean, no leakage |
 | 0.1c | Unlabeled pretrain-window extraction (train chroms) | ✅ | Job 1514624 done (exit 0): 80,000 windows, 40 shards, 749 MB → `tensors_pretrain/` (weighted bin sampling, small-DEL-biased) |
 | 0.2 | Truvari evaluation harness + stratification scripts | ⬜ | ⚠️ see caveat C2 (Truvari vs genotype-VCF eval) |
-| 0.3 | Reproduce a DeepSV-like baseline F1 on our split | ✅ | Jobs 1515336/37/38 (3 seeds, gpu_T4). `DeepSVNet` (RGB pileup + supervised CNN, 389K params) in `alignssl/deepsv_baseline.py`; eval `scripts/deepsv_baseline_eval.py`. F1 plateaus ≈0.57 @100%; we win 5/6 fractions; DeepSV ECE 0.091. Three-arm money plot + CSVs saved |
+| 0.3 | Reproduce a DeepSV-like baseline F1 on our split | ✅ | Jobs 1515336/37/38 (3 seeds, gpu_T4). `DeepSVNet` (RGB pileup + supervised CNN, 389K params) in `alignssl/deepsv_baseline.py`; eval `scripts/deepsv_baseline_eval.py`. Hardened: DeepSV-repr. is unstable at 100% (0.707 ± 0.140) and **beaten by the pretrained encoder at all six** label fractions; DeepSV ECE 0.072 vs pretrained 0.008 (~10× worse). Three-arm money plot + CSVs saved |
 
 ## PHASE 1 — Supervised skeleton, no SSL (weeks 3–6)
 
 | # | Task | Status |
 |---|------|--------|
 | 1.1 | Train encoder + cls + breakpoint heads fully supervised | ⬜ |
-| 1.2 | "Learned channels vs DeepSV RGB" ablation | ✅ | Delivered via Phase 0.3 head-to-head: learned 18-ch encoder vs hand-designed RGB+CNN, same split/loss/metric. Learned wins 5/6 fractions, better calibrated |
+| 1.2 | "Learned channels vs DeepSV RGB" ablation | ✅ | Delivered via Phase 0.3 head-to-head: learned 18-ch encoder vs hand-designed RGB+CNN, same split/loss/metric. Hardened: learned wins **all six** fractions, ~10× better calibrated |
 
 ## PHASE 2 — Self-supervised pretraining (weeks 6–12) — _scientific heart_
 
@@ -179,7 +179,7 @@ Next step once they finish: fine-tune each on the existing labeled set (chr1–1
 1. ✅ **SSL pretraining** (job 1514837): done — `ckpt/encoder_ssl.pt` (loss 40.8→15.2).
 2. ✅ **Fine-tune + label-efficiency sweep** (jobs **1515265/66/67**, 3× T4, seeds 0/1/2): full pretrained-vs-scratch sweep + calibration + length-strata, all 3 seeds complete.
 3. ✅ **Aggregated 3 seeds** → money plot with error bars (`fig_label_efficiency.png`), length-strata figure (`fig_length_strata.png`), 3 result CSVs — all saved as artifacts.
-4. ✅ **Phase 0.3 — DeepSV-like supervised baseline** (jobs 1515336/37/38, 3 seeds): done. Three-arm money plot (`fig_label_efficiency.png` v2) + three-arm CSVs saved. Learned encoder beats DeepSV RGB+CNN at 5/6 fractions and is far better calibrated.
+4. ✅ **Phase 0.3 — DeepSV-like supervised baseline** (jobs 1515336/37/38, 3 seeds): done. Three-arm money plot (`fig_label_efficiency.png` v2) + three-arm CSVs saved. Learned encoder beats DeepSV RGB+CNN at **all six** fractions (hardened) and is ~10× better calibrated.
 5. **Cross-population eval**: extract NA12878 (CEU) test tensors, score the fine-tuned model on a held-out individual + ancestry. ← _next._
 6. Coverage-robustness via `samtools view -s` downsampling (no new download).
 7. Phase 3.3 reliability diagrams / Brier / risk–coverage curves from saved logits.
