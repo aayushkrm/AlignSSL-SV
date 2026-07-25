@@ -43,93 +43,220 @@ def chrom_to_int(c):
     return {"X": 23, "Y": 24, "MT": 25, "M": 25}.get(c, int(c) if c.isdigit() else 0)
 
 
-def depth_ratio(bam, chrom, s, span):
-    """centre-vs-flank read-depth ratio from read coordinates only.
+BIN_BP = 64          # coverage-profile resolution; divides win_width (256)
 
-    Returns ratio in [0, inf); a real deletion drives it toward 0. Mirrors
-    `depth_centre_flank_ratio` in classical_baseline_eval.py, which is the
-    feature that made the uniform-negative benchmark separable.
+
+def chrom_coverage(bam, chrom, clen, bin_bp=BIN_BP):
+    """Per-bin read coverage for a whole chromosome in ONE pass over the BAM.
+
+    Returns a float32 array of length ceil(clen / bin_bp) holding the number of
+    reads overlapping each bin (proportional to depth, which is all a ratio
+    needs). Built with a difference array, so cost is O(reads) with two array
+    writes per read rather than a pysam fetch per candidate window.
+
+    This is what makes exhaustive candidate scanning affordable. Scoring
+    windows by individual `bam.fetch` calls costs ~1 ms each, capping a
+    chromosome at ~10^4 candidates; the informative depth-ratio range covers
+    well under 1% of random windows, so that budget cannot supply enough
+    hard candidates to match the positive distribution (see match_strata).
+    With a profile in memory, scoring is array arithmetic and every window on
+    the chromosome can be considered.
     """
-    q0, q1 = s + span // 4, s + 3 * span // 4          # centre half
-    cov_c = cov_f = 0
-    try:
-        for r in bam.fetch(chrom, max(0, s), s + span):
-            if r.is_unmapped or r.reference_end is None:
-                continue
-            a, b = r.reference_start, r.reference_end
-            # overlap with centre half, and with the two flanking quarters
-            oc = max(0, min(b, q1) - max(a, q0))
-            of = max(0, min(b, q0) - max(a, s)) + max(0, min(b, s + span) - max(a, q1))
-            cov_c += oc
-            cov_f += of
-        # normalise by the width of each region (centre = span/2, flanks = span/2)
-        dc = cov_c / (span / 2.0)
-        df = cov_f / (span / 2.0)
-    except (ValueError, KeyError):
-        return np.inf
-    if df <= 0:
-        return np.inf          # no flanking coverage -> uninformative, not hard
-    return dc / df
+    n = int(clen // bin_bp) + 2
+    diff = np.zeros(n + 1, dtype=np.int32)
+    for r in bam.fetch(chrom):
+        if r.is_unmapped or r.reference_end is None:
+            continue
+        a = int(r.reference_start) // bin_bp
+        b = int(r.reference_end) // bin_bp + 1
+        if a >= n:
+            continue
+        diff[a] += 1
+        diff[min(b, n)] -= 1
+    return np.cumsum(diff[:n]).astype(np.float32)
+
+
+def ratio_from_profile(cov, starts, span, bin_bp=BIN_BP):
+    """Vectorised centre-vs-flank depth ratio for many window starts.
+
+    Mirrors `depth_centre_flank_ratio` in classical_baseline_eval.py -- the
+    feature that made the uniform-negative benchmark separable -- but reads
+    from the binned profile. A real deletion drives the ratio toward 0
+    (homozygous) or ~0.5 (heterozygous); copy-neutral sequence sits near 1.
+
+    Windows whose flanks carry no coverage return inf and are dropped by the
+    caller: they are unmappable, not hard.
+    """
+    starts = np.asarray(starts, dtype=np.int64)
+    csum = np.concatenate([[0.0], np.cumsum(cov, dtype=np.float64)])
+    nb = cov.size
+
+    def seg(lo, hi):
+        lo = np.clip(lo // bin_bp, 0, nb)
+        hi = np.clip(hi // bin_bp, 0, nb)
+        return csum[hi] - csum[lo]
+
+    q0, q1 = starts + span // 4, starts + 3 * span // 4
+    centre = seg(q0, q1)
+    flank = seg(starts, q0) + seg(q1, starts + span)
+    out = np.full(starts.shape, np.inf, dtype=np.float64)
+    ok = flank > 0
+    out[ok] = centre[ok] / flank[ok]
+    return out
+
+
+def match_strata(pos, neg, n_keep, rng, n_strata=10):
+    """Choose `n_keep` indices into `neg` so the kept values' distribution
+    approximates that of `pos`.
+
+    Stratifies on the quantiles of `pos` and allocates the quota across strata
+    in proportion to the positive mass in each, drawing uniformly at random
+    within a stratum. Shortfalls (a stratum the candidate pool cannot fill,
+    or floor-rounding of the quota) are redistributed over the remaining
+    candidates in ascending order of distance to the positive median, so a
+    deficit degrades toward the bulk of the positive distribution rather than
+    toward whichever extreme the pool happens to over-represent.
+
+    Returns a list of indices into `neg`, of length min(n_keep, len(neg)).
+    """
+    pos = np.asarray(pos, dtype=np.float64)
+    neg = np.asarray(neg, dtype=np.float64)
+    if pos.size == 0 or neg.size == 0 or n_keep <= 0:
+        return []
+    n_keep = int(min(n_keep, neg.size))
+
+    qs = np.linspace(0.0, 1.0, n_strata + 1)
+    cuts = np.quantile(pos, qs)
+    inner = np.unique(cuts[1:-1])          # collapse ties (discrete features)
+    n_bin = inner.size + 1
+    pos_bin = np.digitize(pos, inner, right=False)
+    neg_bin = np.digitize(neg, inner, right=False)
+
+    weights = np.bincount(pos_bin, minlength=n_bin) / float(pos.size)
+    buckets = [list(np.nonzero(neg_bin == k)[0]) for k in range(n_bin)]
+    for b in buckets:
+        rng.shuffle(b)
+
+    want = np.floor(weights * n_keep).astype(int)
+    keep = []
+    for k in range(n_bin):
+        take = int(min(want[k], len(buckets[k])))
+        keep.extend(buckets[k][:take])
+        buckets[k] = buckets[k][take:]
+
+    shortfall = n_keep - len(keep)
+    if shortfall > 0:
+        med = float(np.median(pos))
+        left = [j for b in buckets for j in b]
+        left.sort(key=lambda j: abs(neg[j] - med))
+        keep.extend(left[:shortfall])
+    return keep
 
 
 def build_items(truth_by_chrom, fa, bam, win_width, n_neg_per_pos, multiscale,
-                seed, pool_mult, log_every=20000):
-    """Positives centred on truth deletions; negatives = the most
-    deletion-like non-truth windows a depth pre-filter would propose."""
+                seed, pool_mult, n_strata=10, log_every=20000):
+    """Positives centred on truth deletions; negatives drawn so that their
+    centre/flank depth-ratio distribution MATCHES the positives'.
+
+    Why distribution matching rather than "keep the lowest ratios"
+    -------------------------------------------------------------
+    An earlier version of this function kept the `n_neg` candidates with the
+    smallest depth ratio. That over-corrects and does not model a candidate
+    generator. The extreme lower tail of a genome-wide scan is dominated by
+    mappability dropouts and centromeric gaps with ratio ~ 0, whereas a
+    heterozygous deletion sits near 0.5 and a homozygous one near 0. Keeping
+    the tail therefore *inverts* the shortcut -- a classifier learns "ratio
+    very near zero => negative" and the benchmark stays trivially separable,
+    just with the sign flipped. Reported separability would look fixed while
+    the task remained an artefact.
+
+    Instead we stratify the positives' own depth-ratio distribution into
+    `n_strata` quantile bins and fill each bin with negatives drawn from the
+    candidate pool at the same relative frequency. By construction the feature
+    that made the uniform-negative benchmark separable then carries (close to)
+    zero marginal information, and the classifier must use breakpoint
+    signatures -- soft-clips, discordant insert sizes, split reads -- which is
+    the decision an SV caller actually faces after a depth pre-filter has
+    proposed a candidate. Section 4.2 of the manuscript reports the resulting
+    control AUC as the check that this worked.
+
+    Positive geometry, channel layout, multi-scale binning, chromosome split
+    and shard format are untouched, so arms remain comparable.
+    """
     rng = np.random.default_rng(seed)
     items = []
-    n_scored = 0
     t0 = time.time()
+    stats = []
     for chrom, dels in truth_by_chrom.items():
         if not dels:
             continue
         clen = fa.get_reference_length(chrom)
-        bins_used, pos_spans = set(), []
+        cov = chrom_coverage(bam, chrom, clen)
+        print(f"  chrom {chrom}: coverage profile {cov.size} bins "
+              f"({time.time()-t0:.0f}s elapsed)", flush=True)
+
+        # ---- positives, and their depth-ratio distribution per scale -------
+        by_scale = {}                      # bs -> list of positive starts
+        pos_spans = []
         for (ds, de, geno) in dels:
             ln = de - ds
             bs = bin_for_len(ln, win_width) if multiscale else 1
-            bins_used.add(bs)
             span = win_width * bs
             mid = (ds + de) // 2
             s = max(0, min(mid - span // 2, clen - span))
             bp0, bp1 = (ds - s) / span, (de - s) / span
             items.append((chrom, s, win_width, bs, 1, geno, bp0, bp1, ln))
             pos_spans.append((s, span))
-        bins_used = sorted(bins_used) or [1]
+            by_scale.setdefault(bs, []).append(s)
 
-        n_neg = len(dels) * n_neg_per_pos
-        # draw a pool of valid (non-truth) candidates, then keep the hardest
-        pool = []
-        target_pool = n_neg * pool_mult
-        guard = 0
-        while len(pool) < target_pool and guard < target_pool * 40:
-            guard += 1
-            bs = int(rng.choice(bins_used))
+        # Matching is done WITHIN each multi-scale bin. Window span changes the
+        # ratio's meaning (a 256 bp window inside a 4 kb deletion is fully
+        # deleted; a 4 kb window around it is not), so pooling scales would
+        # let the model recover the label from span alone.
+        for bs, pstarts in sorted(by_scale.items()):
             span = win_width * bs
-            s = int(rng.integers(0, max(1, clen - span)))
-            if any(s < de and s + span > ds for ds, de, _ in dels):
+            pos_r = ratio_from_profile(cov, pstarts, span)
+            pos_r = pos_r[np.isfinite(pos_r)]
+            if pos_r.size == 0:
                 continue
-            if any(abs(s - ps) < span for ps, _ in pos_spans):
+            n_neg = len(pstarts) * n_neg_per_pos
+
+            # ---- exhaustive candidate scan on a stride-span/4 grid ---------
+            step = max(win_width // 4, span // 4)
+            cand = np.arange(0, max(1, clen - span), step, dtype=np.int64)
+            # reject candidates overlapping ANY truth deletion (± one span) or
+            # any positive window, so negatives are true non-deletions
+            keepmask = np.ones(cand.size, dtype=bool)
+            for (ds, de, _) in dels:
+                keepmask &= ~((cand < de + span) & (cand + span > ds - span))
+            for (ps, pspan) in pos_spans:
+                keepmask &= ~(np.abs(cand - ps) < max(span, pspan))
+            cand = cand[keepmask]
+            if cand.size == 0:
                 continue
-            pool.append((s, bs, span))
-        # score the pool; hardest = lowest centre/flank depth ratio
-        scored = []
-        for (s, bs, span) in pool:
-            r = depth_ratio(bam, chrom, s, span)
-            if np.isfinite(r):
-                scored.append((r, s, bs))
-            n_scored += 1
-            if n_scored % log_every == 0:
-                print(f"    scored {n_scored} candidates "
-                      f"({n_scored/max(1e-9, time.time()-t0):.0f}/s)", flush=True)
-        scored.sort(key=lambda z: z[0])
-        keep = scored[:n_neg]
-        for (r, s, bs) in keep:
-            items.append((chrom, s, win_width, bs, 0, 0, np.nan, np.nan, 0))
-        if keep:
-            print(f"  chrom {chrom}: {len(dels)} pos, pool {len(pool)}, "
-                  f"kept {len(keep)} neg, depth-ratio kept "
-                  f"[{keep[0][0]:.3f}, {keep[-1][0]:.3f}]", flush=True)
+            cr = ratio_from_profile(cov, cand, span)
+            fin = np.isfinite(cr)
+            cand, cr = cand[fin], cr[fin]
+            if cand.size == 0:
+                continue
+
+            idx = match_strata(pos_r, cr, n_neg, rng, n_strata)
+            for j in idx:
+                items.append((chrom, int(cand[j]), win_width, bs, 0, 0,
+                              np.nan, np.nan, 0))
+            kr = cr[np.asarray(idx, dtype=int)] if idx else np.array([0.0])
+            stats.append((chrom, bs, len(pstarts), len(idx), cand.size,
+                          float(np.median(pos_r)), float(np.median(kr))))
+            print(f"    scale {bs}: {len(pstarts)} pos, {cand.size} candidates "
+                  f"scanned, {len(idx)} neg kept | depth-ratio median "
+                  f"pos {np.median(pos_r):.3f} vs neg {np.median(kr):.3f}",
+                  flush=True)
+
+    if stats:
+        dp = np.array([abs(s[5] - s[6]) for s in stats])
+        print(f"  MATCH QUALITY: median |pos-neg| depth-ratio offset "
+              f"{np.median(dp):.4f} over {len(stats)} chrom x scale groups "
+              f"(0 = perfectly matched)", flush=True)
     return items
 
 
