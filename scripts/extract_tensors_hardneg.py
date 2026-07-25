@@ -264,10 +264,15 @@ def flush_shard(out_dir, sample, split, shard_idx, shard, meta, manifest):
     X = np.stack(shard).astype(np.float16)
     M = np.asarray(meta, dtype=np.float64)
     path = os.path.join(out_dir, f"{sample}_{split}_shard{shard_idx:04d}.npz")
+    # Schema must match scripts/extract_tensors.py EXACTLY -- alignssl.data
+    # .ShardDataset is shared by the uniform-negative and hard-negative arms,
+    # and it reads "X" (capital) and a two-column "bp". Writing "x"/"bp0"/"bp1"
+    # here made every shard unreadable by the evaluators.
     np.savez_compressed(
-        path, x=X, label=M[:, 0].astype(np.int64), geno=M[:, 1].astype(np.int64),
-        bp0=M[:, 2], bp1=M[:, 3], bin_size=M[:, 4].astype(np.int64),
-        del_len=M[:, 5], chrom=M[:, 6].astype(np.int64),
+        path, X=X,
+        label=M[:, 0].astype(np.int64), geno=M[:, 1].astype(np.int64),
+        bp=M[:, 2:4].astype(np.float32), bin_size=M[:, 4].astype(np.int64),
+        del_len=M[:, 5].astype(np.int64), chrom=M[:, 6].astype(np.int64),
         start=M[:, 7].astype(np.int64))
     manifest.append((os.path.basename(path), len(shard),
                      int(M[:, 0].sum())))
