@@ -1,0 +1,4 @@
+arm,n_seeds,ECE_mean,ECE_sd,ECE_median,T_mean,T_sd,ECE_per_seed
+AlignSSL-combined,4,0.0078,0.0017,0.0077,0.634,0.070,0.0070;0.0101;0.0083;0.0056
+AlignSSL-scratch,4,0.0072,0.0004,0.0071,0.586,0.055,0.0073;0.0078;0.0067;0.0069
+DeepSV-representation,3,0.0724,0.0681,0.0327,1.411,0.881,0.0327;0.1683;0.0163

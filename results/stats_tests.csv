@@ -1,0 +1,14 @@
+claim,comparison,test,statistic,p_value,means,note
+headline low-label gain,combined vs scratch @1% labels,paired t-test (same 4 seeds),13.274,9.24e-04,0.5144 vs 0.0497,10.4x
+low-label gain (combined),combined vs scratch @1%,Welch t-test,11.844,4.22e-05,0.5144 vs 0.0497,10.4x
+low-label gain (MAM-only),MAM-only vs scratch @1%,Welch t-test,6.249,1.72e-02,0.5880 vs 0.0497,11.8x
+low-label gain (VICReg-only),VICReg-only vs scratch @1%,Welch t-test,14.947,4.23e-05,0.5543 vs 0.0497,11.2x
+convergence at full supervision,combined vs scratch @100%,paired t-test (same 4 seeds),-4.201,0.0246,0.9337 vs 0.9441,scratch higher by 0.0104
+ablation @100%,combined vs MAM-only @100%,Welch t-test,1.765,0.2088,0.9337 vs 0.9154,not significant
+ablation @1%,MAM-only vs combined @1%,Welch t-test,0.828,0.4771,0.5880 vs 0.5144,not significant
+cross-ancestry @0.01,"combined vs scratch, held-out CEU F1",Welch t-test,2.457,0.1102,0.5179 vs 0.1792,not significant
+cross-ancestry @0.05,"combined vs scratch, held-out CEU F1",Welch t-test,0.696,0.5370,0.6376 vs 0.5959,not significant
+cross-ancestry @0.1,"combined vs scratch, held-out CEU F1",Welch t-test,3.378,0.0282,0.7265 vs 0.5417,significant
+cross-ancestry @0.25,"combined vs scratch, held-out CEU F1",Welch t-test,0.619,0.5839,0.6887 vs 0.6251,not significant
+cross-ancestry @0.5,"combined vs scratch, held-out CEU F1",Welch t-test,-2.714,0.0836,0.6793 vs 0.8344,not significant
+cross-ancestry @1,"combined vs scratch, held-out CEU F1",Welch t-test,1.633,0.1818,0.7839 vs 0.7421,not significant

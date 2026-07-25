@@ -1,0 +1,232 @@
+# Adversarial internal review — AlignSSL-SV
+
+**Reviewer role:** simulated critical referee for *Bioinformatics* / *Briefings in Bioinformatics*.
+**Date:** 2026-07-25
+**Material reviewed:** `docs/AlignSSL_SV_manuscript.md`, the full codebase in this
+repository, all per-seed result JSONs under `results/json/`, and the derived tables
+under `results/`.
+**Method:** every manuscript number was recomputed from the canonical per-seed JSONs
+by `analysis/aggregate_all.py`; every comparative claim was subjected to the
+hypothesis test it implies; and one control experiment was run to test the
+benchmark itself.
+
+---
+
+## Recommendation
+
+**Reject in present form** (as a methods paper). The manuscript is arithmetically
+accurate, the pipeline is honestly built, and there is no data leakage. But the
+central claim does not survive the control experiment a referee would demand
+first, and the evaluation task is not the task the paper says it is.
+
+The work is salvageable, and Section 5 below states how. What it cannot be is a
+paper claiming that self-supervised pretraining yields a *useful* deletion caller.
+
+---
+
+## 1. Major — the benchmark is separable by a single hand-crafted feature
+
+This is the finding that governs everything else.
+
+`scripts/extract_tensors.py::build_items` centres positive windows on truth
+deletions, and draws negatives **uniformly at random from the chromosome**,
+rejecting a draw only if it overlaps or abuts a truth deletion:
+
+```python
+s = int(rng.integers(0, max(1, clen - span)))
+if not any(s < de and s + span > ds for ds, de, _ in dels) and \
+   not any(abs(s - ps) < span for ps, _ in pos_spans):
+    items.append((chrom, s, win_width, bs, 0, 0, np.nan, np.nan, 0))
+```
+
+A uniformly-drawn genomic window does not look like a deletion. So the task the
+paper measures is not "is this candidate a real deletion" but "is there a
+coverage dip at this locus".
+
+I ran the control (`scripts/classical_baseline_eval.py`): twelve hand-crafted
+alignment features — depth profile shape, discordant-pair rate, soft-clip rate,
+insert-size deviation, mapping quality — into logistic regression and a
+gradient-boosted tree, on the **identical shards, split, label fractions and
+seeds** as the deep arms.
+
+| Labels | 1% | 5% | 10% | 25% | 50% | 100% |
+|---|---|---|---|---|---|---|
+| Classical GBT (12 features) | **0.894** | **0.917** | **0.924** | 0.931 | 0.937 | 0.939 |
+| Classical logistic | 0.877 | 0.878 | 0.869 | 0.866 | 0.872 | 0.871 |
+| AlignSSL (combined SSL) | 0.514 | 0.655 | 0.813 | 0.847 | 0.913 | 0.934 |
+| AlignSSL (no pretraining) | 0.050 | 0.734 | 0.763 | 0.854 | 0.912 | 0.944 |
+| DeepSV-style representation | 0.434 | 0.591 | 0.662 | 0.834 | 0.856 | 0.707 |
+
+The 12-feature model **beats or matches every deep arm at every label budget**,
+and at 1% of labels (210 windows) it exceeds the best deep arm by 0.31 F1.
+
+Worse, no training is needed at all. Single-feature discrimination on the
+held-out test set (n = 9,196; 2,299 positive):
+
+| Feature | ROC-AUC |
+|---|---|
+| centre-vs-flank depth ratio | **0.955** |
+| soft-clip rate | 0.802 |
+| discordant-pair rate | 0.732 |
+| insert-size deviation (max) | 0.694 |
+| depth s.d. | 0.686 |
+
+**Consequence for the paper's thesis.** The headline result — pretrained F1 0.514
+vs from-scratch 0.050 at 1% labels — is real, reproducible, and statistically
+solid (paired *t* = 13.27, *p* = 9.2 × 10⁻⁴). But its interpretation collapses.
+It does not show that pretraining buys label efficiency for deletion calling. It
+shows that a randomly-initialised CNN needs more than 210 labels to learn a
+depth-ratio threshold, and pretraining supplies that inductive bias sooner. A
+decision stump on one feature would have done better than both. The manuscript
+currently sells this as the method's central contribution; a referee will find
+the control in one afternoon and the paper will not recover.
+
+**This is not a presentational fix.** The task must change.
+
+---
+
+## 2. Major — statistical claims are asserted without tests, and several are false
+
+The manuscript reports mean ± s.d. across seeds and then uses
+significance-flavoured language ("indistinguishable", "clearly best", "leads")
+with no hypothesis test anywhere. I ran them; results are now in
+`results/stats_tests.csv`. Verdicts:
+
+| Manuscript claim | Test | Verdict |
+|---|---|---|
+| Low-label gain, combined vs scratch @1% | paired *t* = 13.27, *p* = 9.2e-04 | **Holds** (10.4×) |
+| Same, MAM-only / VICReg-only @1% | Welch *p* = 1.7e-02 / 4.2e-05 | **Holds** |
+| "Statistically indistinguishable at 100% labels" | paired *t* = −4.20, *p* = 0.025 | **False** — from-scratch is *higher* by 0.010, consistently, on every seed |
+| Combined objective best at 100% (ablation) | Welch *p* = 0.209 | **Not significant** |
+| MAM-only leads at 1% | Welch *p* = 0.477 | **Not significant** |
+| Pretraining "nearly eliminates" the ancestry gap | significant at 1 of 6 fractions (*p* = 0.028 @10%) | **Overstated**, and the gap *inverts* — from-scratch has the smaller gap at 1% and 50% |
+
+The ablation section ranks three objectives off means whose seed spreads overlap.
+At n = 3–4 seeds those orderings are not established. Either raise the seed count
+until they are, or report the ablation as "no separable difference detected".
+
+---
+
+## 3. Major — the calibration claim rests on one outlier seed
+
+Table 2 quotes the DeepSV-representation baseline at ECE = 0.072 ± 0.068 against
+AlignSSL's 0.0078, an order-of-magnitude gap. Per-seed values are
+**0.0327, 0.1683, 0.0163** — median 0.0327. One seed carries the mean. The honest
+statement is "roughly 4× on the median, with one unstable run at 20×", and the
+instability of that arm is itself the more interesting observation.
+
+Separately: AlignSSL-combined ECE 0.0078 ± 0.0017 vs from-scratch 0.0072 ± 0.0004.
+Pretraining does **not** improve calibration here. Temperature scaling does the
+work in both arms. The abstract implies otherwise.
+
+---
+
+## 4. Moderate
+
+**4.1 Provenance — now verified, previously unverifiable.** The committed
+aggregation script had drifted from the committed CSVs (different filenames and
+schemas) and computed neither the calibration nor the length-stratified table.
+The committed results were therefore not reproducible from committed code. Fixed:
+`analysis/aggregate_all.py` is now the single source of truth, derives all five
+tables plus the test table from `results/json/`, and hard-asserts the two
+provenance invariants below.
+
+**4.2 Error bars — verified sound.** Each seed of each pretrained arm genuinely
+uses a distinct pretraining encoder (`encoder_ssl_seed{0..3}.pt` and the
+per-objective ablation encoders), so the reported spread covers the whole
+self-supervised pipeline, not fine-tuning noise. Fine-tuning batch size is 96 in
+every arm. Both are now runtime assertions.
+
+**4.3 Pretraining corpus size is understated** in Methods — a stale figure from
+an earlier two-sample era. The corpus is 120,000 windows over 60 shards from
+three samples.
+
+**4.4 Cross-ancestry design is underpowered.** One held-out population (CEU),
+three seeds, and an inversion in the middle of the label range cannot support a
+claim about ancestry robustness. Either add held-out populations or drop the
+claim to an observation.
+
+**4.5 No external gold standard.** Evaluation is direct genotype concordance
+against the 1000 Genomes phase-3 integrated SV callset, which is itself a
+short-read consensus callset — not an orthogonal truth set. GIAB HG002 with
+Truvari matching is the benchmark a referee expects. Deferred by decision; must
+be named plainly in Limitations.
+
+**4.6 Deletions only**, single coverage regime, no repeat/segmental-duplication
+stratification. The length-stratified table shows recall falling from 0.91
+(50–200 bp) to 0.63 (>5 kb), which is the honest and useful part of the results.
+
+---
+
+## 5. What the work actually is, and how to publish it
+
+The engineering is sound and the negative results are informative. Three viable
+routes, in order of preference:
+
+**Route A — fix the task (best, and what I recommend).** Replace uniform negatives
+with the false positives of a depth-based candidate generator: score a large pool
+of non-truth windows by centre/flank depth ratio and keep the most
+deletion-like. The classification problem becomes the one a caller actually
+faces — "given a depth dip was proposed here, is it real?" — on which the
+shortcut feature is, by construction, uninformative. `scripts/extract_tensors_hardneg.py`
+implements this. **Blocker:** the beegfs dataset workspace holding the reference
+FASTA, truth VCF, and five of six panel BAMs has been deleted from the cluster;
+only NA12878 and NA20845 survive. Full re-extraction is not currently possible.
+A partial version — reselecting the hardest negatives from the *existing*
+tensors — is possible and is being measured.
+
+**Route B — publish it as a negative/benchmarking result.** "Hand-crafted
+alignment features match deep representation learning on random-negative deletion
+benchmarks" is a genuinely useful contribution, because the random-negative
+protocol is common in this literature and this paper would be the one that
+measured it. Retitle, lead with the control, keep the SSL arms as the deep
+comparators. This is publishable with the data in hand and does not require the
+lost BAMs.
+
+**Route C — narrow to a representation-learning study.** Drop all caller
+language, present the label-efficiency curve as evidence about optimisation and
+inductive bias, and state up front that the task is separable so the numbers are
+not caller performance. Weakest of the three, but honest.
+
+**Not acceptable:** submitting the present framing. The control is too easy to
+reproduce.
+
+---
+
+## 6. Required corrections to the manuscript (blocking)
+
+1. Add the classical control as a first-class arm in Table 1 and as Figure 2;
+   state the single-feature ROC-AUC of 0.955 in the Results, not a footnote.
+2. Delete "statistically indistinguishable at full supervision" — the paired test
+   contradicts it; from-scratch is significantly higher.
+3. Requalify all ablation rankings as not significant at the available seed count.
+4. Report DeepSV ECE as median with the outlier named; remove the implication that
+   pretraining improves calibration.
+5. Requalify the ancestry claim to the one fraction where it is significant, and
+   disclose the inversion at 1% and 50%.
+6. Correct the pretraining corpus size to 120,000 windows / three samples.
+7. Rewrite Abstract and contributions to match items 1–6.
+8. State in Limitations: random-negative protocol, no orthogonal truth set,
+   deletions only, single coverage regime, one held-out population.
+9. Describe the negative-sampling procedure explicitly in Methods. Its absence is
+   what let the shortcut go unnoticed.
+
+---
+
+## 7. What holds up
+
+Worth stating plainly, because it is the part that survives adversarial review:
+
+- No chromosomal leakage. Pretraining shards contain chr1–11 only; test is
+  chr12–22; verified from the stored `chrom` field, exact counts summing to 120,000.
+- Identical test set across all arms; harmonized fine-tuning batch size; distinct
+  pretraining encoder per seed.
+- Every manuscript table reconciles exactly with the per-seed JSONs.
+- The low-label gap between pretrained and from-scratch is real and significant.
+- The length-stratified recall breakdown is honest and is the most scientifically
+  useful table in the paper.
+- The 1% cross-population and calibration analyses were run and reported even
+  where they did not favour the method.
+
+The pipeline is trustworthy. The benchmark it runs on is not hard enough to
+support the claims made from it.
