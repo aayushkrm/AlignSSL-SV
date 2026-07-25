@@ -18,7 +18,25 @@ from __future__ import annotations
 import ast
 from pathlib import Path
 
-import pytest
+try:
+    import pytest
+except ModuleNotFoundError:  # pragma: no cover - cluster env has no pytest
+    # This file doubles as a pre-extraction gate inside a sbatch script, and the
+    # cluster environment (deepsv2_new) has no pytest. Supply the one decorator
+    # this module uses so import succeeds and the __main__ block below can run.
+    class _MarkShim:
+        @staticmethod
+        def parametrize(_argnames, argvalues, **_kw):
+            def decorate(fn):
+                fn._parametrized_values = list(argvalues)
+                return fn
+
+            return decorate
+
+    class _PytestShim:
+        mark = _MarkShim()
+
+    pytest = _PytestShim()  # type: ignore[assignment]
 
 ROOT = Path(__file__).resolve().parents[1]
 CANONICAL = ROOT / "scripts" / "extract_tensors.py"
