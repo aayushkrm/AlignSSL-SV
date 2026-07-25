@@ -27,8 +27,8 @@ Inputs (results/json_hardneg/):
   hn_deepsv_seed{0,1,2}.json      DeepSV representation baseline
 
 Outputs (results/):
-  table6_hardneg_label_efficiency.csv
-  table7_hardneg_vs_uniform.csv        arm ordering under both benchmarks
+  table7_hardneg_label_efficiency.csv
+  table8_hardneg_vs_uniform.csv        arm ordering under both benchmarks
   stats_hardneg.csv                    every test quoted for this benchmark
 
 Usage:
@@ -114,7 +114,7 @@ def main():
     n_train = [r["n"] for r in pre[0]["label_efficiency"]]
 
     # ---- Table 6: label efficiency on the hard-negative benchmark -----------
-    with open(f"{O}/table6_hardneg_label_efficiency.csv", "w", newline="") as fh:
+    with open(f"{O}/table7_hardneg_label_efficiency.csv", "w", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(["label_frac", "n_train", "arm", "n_seeds",
                     "F1_mean", "F1_sd", "P_mean", "R_mean", "AUPRC_mean",
@@ -137,7 +137,7 @@ def main():
     # each benchmark's own within-benchmark rank alongside the raw means, and
     # the rank column is what the manuscript may cite.
     uni = read_uniform(a.uniform_table)
-    with open(f"{O}/table7_hardneg_vs_uniform.csv", "w", newline="") as fh:
+    with open(f"{O}/table8_hardneg_vs_uniform.csv", "w", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(["label_frac", "arm",
                     "uniform_F1_mean", "uniform_rank",
@@ -204,8 +204,8 @@ def main():
         w.writerows(rows)
 
     # ---- Console verdict ---------------------------------------------------
-    print(f"wrote {O}/table6_hardneg_label_efficiency.csv, "
-          f"{O}/table7_hardneg_vs_uniform.csv, {O}/stats_hardneg.csv")
+    print(f"wrote {O}/table7_hardneg_label_efficiency.csv, "
+          f"{O}/table8_hardneg_vs_uniform.csv, {O}/stats_hardneg.csv")
     print("\nF1 by label fraction (hard-negative benchmark):")
     print("  frac  " + "".join(f"{k[:14]:>16}" for k in arms))
     for i, f in enumerate(FRACS):

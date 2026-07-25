@@ -113,15 +113,34 @@ The interpretation of this entire table is bounded by the control in Section 4.2
 | 50% | 10,508 | 0.913 ± 0.014 | 0.912 ± 0.022 | 0.856 ± 0.033 | 0.872 ± 0.001 | **0.937 ± 0.001** |
 | 100% | 21,016 | 0.934 ± 0.004 | 0.944 ± 0.003 | 0.707 ± 0.140 | 0.871 ± 0.000 | **0.939 ± 0.001** |
 
-![Figure 1. Deletion F1 vs. labelled-data fraction for the combined-objective AlignSSL-pretrained model, AlignSSL-scratch, and the DeepSV-representation baseline. Pretraining dominates in the low-label regime (≈10× F1 at 1% labels); the two learned-tensor models converge at full supervision, while the DeepSV-representation baseline remains lower and becomes unstable at 100%.]({{artifact:art_fb1b8d41-b9a0-415d-83b7-188d824ba60a}})
+![Figure 1. Deletion F1 vs. labelled-data fraction for the combined-objective AlignSSL-pretrained model, AlignSSL-scratch, and the DeepSV-representation baseline. Pretraining dominates in the low-label regime (≈10× F1 at 1% labels); the two learned-tensor models converge at full supervision, while the DeepSV-representation baseline remains lower and becomes unstable at 100%.]({{artifact:art_6b3657d8-5b3f-4b2c-b2ad-1df2139e7a24}})
 
 ### 4.2 A hand-crafted-feature control bounds what this benchmark can demonstrate
 
 Every deep-learning SV paper we are aware of, DeepSV included, compares deep architectures against one another or against signature-based callers, but not against a *deliberately minimal* learned baseline on the identical windows. We ran that control, and it is the most consequential result in this paper.
 
-From the same alignment tensors, identical shards, identical chromosome split, identical label fractions and identical seeds, we computed twelve scalar summary features per window — centre-versus-flank depth ratio, maximum depth drop, depth-profile variance, discordant-pair rate, soft-clip rate, maximum insert-size |z|, mean mapping quality, valid-row fraction, and four positional moments of the depth profile — and fitted an ℓ2-regularised logistic regression and a gradient-boosted tree (`Classical-logreg`, `Classical-GBT` in Table 1). Both dominate every deep arm at every label budget. At 1% labels (210 windows), where the paper's headline claim lives, the gradient-boosted tree reaches **F1 = 0.894 ± 0.002** against 0.514 ± 0.055 for the pretrained network and 0.050 ± 0.040 from scratch; at full supervision it reaches 0.939 ± 0.001 against 0.934 and 0.944. Its variance across seeds is one to two orders of magnitude smaller than any deep arm's.
+From the same alignment tensors, identical shards, identical chromosome split, identical label fractions and identical seeds, we computed twelve scalar summary features per window — mean, standard deviation and minimum of the depth profile; centre-versus-flank depth ratio; maximum sustained depth drop; discordant-pair rate; soft-clip rate; mean and maximum insert-size |z|; mean mapping quality; occupied read-row count; and valid-base fraction — and fitted an ℓ2-regularised logistic regression and a gradient-boosted tree (`Classical-logreg`, `Classical-GBT` in Table 1). Both dominate every deep arm at every label budget. At 1% labels (210 windows), where the paper's headline claim lives, the gradient-boosted tree reaches **F1 = 0.894 ± 0.002** against 0.514 ± 0.055 for the pretrained network and 0.050 ± 0.040 from scratch; at full supervision it reaches 0.939 ± 0.001 against 0.934 and 0.944. Its variance across seeds is one to two orders of magnitude smaller than any deep arm's.
 
-We then localised the cause. Scoring each feature individually on the held-out test set, *with no training whatsoever*, the **centre-versus-flank read-depth ratio alone attains ROC-AUC = 0.955**; the next-best features (soft-clip rate, discordant-pair rate) are far behind. The benchmark is therefore separable by a single depth heuristic that requires no model at all.
+We then localised the cause. Scoring each feature individually on the held-out test set, *with no training whatsoever* and no fitted parameter of any kind, the **centre-versus-flank read-depth ratio alone attains ROC-AUC = 0.955** (Table 6). The benchmark is therefore separable by a single depth heuristic that requires no model at all.
+
+**Table 6.** Untrained single-feature discrimination on the held-out test split (chr12–22, *n* = 9,196; 2,299 deletions). ROC-AUC is the exact rank statistic. A feature can be informative with either polarity — for depth-like features the *low* tail is deletion-like — so the oriented column reports max(AUC, 1 − AUC), the magnitude of the information leak; 0.5 is uninformative. Reproduced by `scripts/single_feature_auc.py`.
+
+| Feature | ROC-AUC | Oriented | Deletion side |
+|---|---|---|---|
+| centre-vs-flank depth ratio | 0.045 | **0.955** | low |
+| soft-clip rate | 0.802 | 0.802 | high |
+| discordant-pair rate | 0.732 | 0.732 | high |
+| insert-size \|z\| (max) | 0.694 | 0.694 | high |
+| depth s.d. | 0.686 | 0.686 | high |
+| max sustained depth drop | 0.680 | 0.680 | high |
+| insert-size \|z\| (mean) | 0.678 | 0.678 | high |
+| depth minimum | 0.343 | 0.657 | low |
+| mean mapping quality | 0.450 | 0.550 | low |
+| occupied read rows | 0.538 | 0.538 | high |
+| valid-base fraction | 0.517 | 0.517 | high |
+| mean depth | 0.502 | 0.502 | high |
+
+Two features of this table are worth drawing out. First, **mean depth is uninformative** (0.502) while the centre-versus-flank *ratio* is near-perfect: what leaks is not coverage level but the localised contrast between a window's middle and its edges, which is exactly the geometry the extraction protocol builds into every positive. Second, the leak is not confined to depth — soft-clip and discordant-pair rates independently reach 0.73–0.80, so a benchmark repair that neutralises only the depth statistic would leave two further shortcuts intact. This is why the remediation in Section 6 matches on the depth ratio and then re-runs the full arm set, including the classical controls, rather than assuming one matched feature makes the task hard.
 
 The mechanism is the negative-sampling protocol, which we inherited from standard practice in this literature and which our own extraction code implements: positive windows are centred on truth deletions, while negatives are drawn **uniformly at random** from the same chromosomes, rejected only if they overlap or abut a truth deletion. A uniformly-drawn genomic window does not resemble a deletion. The resulting task is "does a coverage dip exist here?", not "is this proposed candidate a real deletion?" — and the former is answerable by a threshold.
 
@@ -129,7 +148,7 @@ This does not invalidate the comparisons in Section 4.1, which are internally co
 
 **We therefore report the benchmark-separability finding as a first-class contribution.** The control costs minutes of CPU time, applies to any pileup-style SV benchmark, and to our knowledge has not previously been run. Its implication is that published low-label and architecture-comparison results on random-negative SV benchmarks — a family that includes DeepSV's own evaluation and much of what followed — may be measuring threshold-learning speed rather than caller quality.
 
-![Figure 2. Left: deletion F1 versus labelled-data fraction for all arms; the two hand-crafted-feature controls (heavy lines) exceed every deep arm at every budget, with the largest margin in the low-label regime. Right: single-feature discrimination on the held-out test set with no training — the centre-versus-flank depth ratio alone reaches ROC-AUC 0.955.]({{artifact:art_dca11f98-9031-42d2-91ca-72074453b133}})
+![Figure 2. Left: deletion F1 versus labelled-data fraction for all arms; the two hand-crafted-feature controls (heavy lines) exceed every deep arm at every budget, with the largest margin in the low-label regime. Right: single-feature discrimination on the held-out test set with no training — the centre-versus-flank depth ratio alone reaches ROC-AUC 0.955.]({{artifact:art_38410a53-1025-43c4-a9af-0a3521eb07d9}})
 
 ### 4.3 Calibration is a property of the representation, not of self-supervision
 
@@ -159,7 +178,7 @@ Deletion callers are notoriously length-dependent. Table 3 stratifies full-super
 | 1k–5k | 799 | 0.926 ± 0.024 | 0.954 ± 0.006 | 0.899 ± 0.116 |
 | 5k+ | 245 | 0.857 ± 0.061 | 0.881 ± 0.071 | 0.918 ± 0.070 |
 
-![Figure 3. Length-stratified deletion recall at full supervision. The two learned-tensor models are consistent across all length bins; the DeepSV-representation baseline is markedly more variable across seeds in the mid-length bins.]({{artifact:art_452d736d-2944-4985-9dc0-2cce4bfd1e3d}})
+![Figure 3. Length-stratified deletion recall at full supervision. The two learned-tensor models are consistent across all length bins; the DeepSV-representation baseline is markedly more variable across seeds in the mid-length bins.]({{artifact:art_cf7645c0-8b8d-46e9-9a50-95509162a99d}})
 
 ### 4.5 Ablation over self-supervised objectives: all three help, but they cannot be ranked at this seed count
 
@@ -182,7 +201,7 @@ Ranking the objectives *against one another*, however, is **not supported at the
 
 The three self-supervised arms and the DeepSV-representation baseline are plotted together in Figure 4. The mean ordering — MAM ahead below 10% labels, the combined objective ahead above 25% — is visible, and so are the overlapping error bars that are the reason we do not claim it.
 
-![Figure 4. Self-supervised objective ablation: MAM-only, VICReg-only, and combined (MAM+VICReg), with the DeepSV-representation baseline for reference. Error bars are standard deviations across independent pretraining seeds. All three self-supervised arms separate clearly from the baseline; they do not separate from one another.]({{artifact:art_bb8d65d6-1a62-4b8a-8711-8fd2d7c9dcd4}})
+![Figure 4. Self-supervised objective ablation: MAM-only, VICReg-only, and combined (MAM+VICReg), with the DeepSV-representation baseline for reference. Error bars are standard deviations across independent pretraining seeds. All three self-supervised arms separate clearly from the baseline; they do not separate from one another.]({{artifact:art_c7f8fab3-85e1-4313-9025-0bf9cd1f94e1}})
 
 ### 4.6 Cross-ancestry transfer: a suggestive but statistically weak effect
 
@@ -201,7 +220,7 @@ Across the sweep, the pretrained model's held-out CEU F1 exceeds the from-scratc
 | 50% | 0.679 ± 0.075 | 0.834 ± 0.030 | 0.084 | +0.224 | +0.081 |
 | 100% | 0.784 ± 0.028 | 0.742 ± 0.022 | 0.182 | +0.148 | +0.124 |
 
-![Figure 5. Cross-ancestry transfer across the label-fraction sweep. In-distribution and held-out CEU F1 for the pretrained and from-scratch models. At 1% labels the pretrained model transfers near-losslessly to the held-out ancestry while the from-scratch model has not learned to call deletions; the gap between the paradigms closes as labels become abundant.]({{artifact:art_01de127a-e22c-4711-841a-fe525898856b}})
+![Figure 5. Cross-ancestry transfer across the label-fraction sweep. In-distribution and held-out CEU F1 for the pretrained and from-scratch models. At 1% labels the pretrained model transfers near-losslessly to the held-out ancestry while the from-scratch model has not learned to call deletions; the gap between the paradigms closes as labels become abundant.]({{artifact:art_9c67fdcc-feb9-4135-86b2-87196632fc61}})
 
 ### 4.7 Data-integrity control
 

@@ -106,6 +106,37 @@ def check_pvalues(md: str, results: Path) -> list[str]:
     return errs
 
 
+def check_single_feature_auc(md: str, results: Path) -> list[str]:
+    """Table 6: every feature's AUC and oriented AUC must match source.
+
+    These are the paper's separability-control numbers and are quoted in the
+    abstract, contributions, results and conclusion, so they get the strictest
+    check: every row of the source table must appear verbatim in the manuscript,
+    at the same rounding.
+    """
+    path = results / "table6_single_feature_auc.csv"
+    if not path.exists():
+        return [f"{path} missing (run scripts/single_feature_auc.py)"]
+    errs = []
+    with open(path) as fh:
+        rows = list(csv.DictReader(fh))
+    for r in rows:
+        auc, ori = float(r["auc"]), float(r["auc_oriented"])
+        if f"{auc:.3f}" not in md:
+            errs.append(f"Table 6: AUC {auc:.3f} for {r['feature']} absent "
+                        "from manuscript")
+        if f"{ori:.3f}" not in md:
+            errs.append(f"Table 6: oriented AUC {ori:.3f} for {r['feature']} "
+                        "absent from manuscript")
+    # the headline number must be the maximum, not merely present
+    top = max(rows, key=lambda r: float(r["auc_oriented"]))
+    if f"ROC-AUC = {float(top['auc_oriented']):.3f}" not in md:
+        errs.append(f"Table 6: headline 'ROC-AUC = "
+                    f"{float(top['auc_oriented']):.3f}' "
+                    f"({top['feature']}) not stated in manuscript")
+    return errs
+
+
 def check_markers(md: str) -> list[str]:
     bad = re.findall(r"\{\{artifact:[^}]*[A-Z_]{4,}[^}]*\}\}", md)
     return [f"unresolved artifact placeholder: {b}" for b in bad]
@@ -124,6 +155,7 @@ def main() -> int:
     errs += check_table1(md, load_table1(res))
     errs += check_calibration(md, res)
     errs += check_pvalues(md, res)
+    errs += check_single_feature_auc(md, res)
     errs += check_markers(md)
 
     if errs:
