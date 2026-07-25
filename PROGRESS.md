@@ -580,3 +580,37 @@ The earlier full-label-only cross-population run suggested SSL nearly eliminates
 **Deliverables:** `results/fig_label_efficiency_hardened.png`, `results/fig_cross_population_lowlabel.png`, `results/fig_length_strata_hardened.png`, `results/results_ablation_4arm_hardened.csv`, `results/results_cross_population_lowlabel.csv`, `results/results_length_strata_hardened.csv`, `results/results_calibration_hardened.csv`, `results/results_label_efficiency_4seed.csv`.
 
 **Next:** Phase 4 GIAB HG002 + Truvari headline benchmark. Still blocked on data/tooling: HG002 is not staged on the cluster, Truvari is not installed in `deepsv2_new`, and the reference build is GRCh37/hs37d5 (the GIAB v4.2.1 SV benchmark is distributed for GRCh38, so either a GRCh37-lifted benchmark or a GRCh38 re-alignment path is needed). This requires a storage/staging decision before submission.
+
+---
+
+## ✅ Update: 2026-07-25 — data-loss accounting; figure consolidation; hard-negative chain unblocked
+
+Three defects found and fixed this pass, plus the honest recording of an infrastructure loss.
+
+### The beegfs workspace expired — what it cost and what it did not
+
+`/beegfs/datasets/ws/ws1/igorno-genomes_1000_2/` was a time-limited BeeGFS dataset workspace; it expired and was reclaimed. It held the reference FASTA, the truth VCF, and the NA19238/NA19625 high-coverage BAMs.
+
+**Not lost, and why the results stand:** the reference genome and truth VCF had already been re-staged to `$B/ref/` (`hs37d5.fa`, `ALL.wgs.mergedSV.v8.20130502.svs.genotypes.vcf.gz`), so every label and coordinate remains reproducible. The extracted tensors — the actual model inputs — were always on scratch. All 32 `tensors_all6/` symlinks were re-verified to resolve; they point into surviving scratch directories, not into the reclaimed workspace. No training or evaluation input was lost.
+
+**Genuinely lost, and it reaches the science:** only two BAMs survive anywhere, both in `$B/bam_extra/` — NA20845 (GIH) and NA12878 (CEU). Any analysis that must re-read *alignments* rather than re-use existing tensors is confined to those two samples. **The hard-negative candidate-filtering control is therefore single-sample** (NA20845 in-distribution, NA12878 held-out CEU) instead of spanning the six-sample panel. This is a real scope reduction, recorded in three places: `docs/CLUSTER.md` §2.1, `cluster/README_hardneg_rebenchmark.md`, and the manuscript's limitations paragraph (§6). Re-obtaining a BAM costs ~40 h single-stream or ~8 h with 16-way parallel chunking.
+
+### The figure markers pointed at pre-hardening images
+
+All five `{{artifact:...}}` embeds in the manuscript resolved to figures generated *before* the hardening pass — Figure 4's pointed at the pre-hardening ablation plot, i.e. the plot showing the overturned "MAM-only wins" pattern. Figure generation was consolidated into `analysis/make_figures.py` (one script, regenerates all five from `results/`) and the markers were repointed to the current artifacts, each replacement guarded by an occurrence-count assertion. Figures are numbered 1–5 contiguously.
+
+Data-fidelity fixes in the same pass: Figure 3's title claimed length *degradation* when the numbers show length *consistency* (recall sd for the DeepSV-representation baseline is up to 4× that of the tensor models — 0.841±0.165, 0.850±0.193 — while both tensor arms hold ~0.86–0.95 across every bin); the top length bin rendered the raw sentinel `1000000000` instead of a `≥` threshold; Figure 2's chance annotation floated away from its reference line; Figure 1's gap annotation was a floating label rather than a bracket spanning the measured gap with the multiplier computed from data.
+
+### The hard-negative chain was dying on a schema mismatch, then on its own gate
+
+**Root cause (silent, expensive).** `scripts/extract_tensors_hardneg.py` wrote `np.savez_compressed(..., x=X, bp0=..., bp1=...)` while `scripts/extract_tensors.py` writes `X=` and a two-column `bp`. Both feed the *same* loader, `alignssl.data.ShardDataset`. So a ~2 h extraction "succeeded" and every downstream evaluator then died with `KeyError: 'X is not a file in the archive'` — job `hncls` (1556879) lasted 9 seconds and the deep array job sat on `DependencyNeverSatisfied`.
+
+**Fix, and a static guard.** The hard-negative extractor now writes the canonical schema. `tests/test_shard_schema.py` (new) parses the single `np.savez_compressed` call in each extractor with `ast`, collects every field `ShardDataset` subscripts out of the archive, and asserts the keyword sets agree and cover every loader field. Verified it fails on the old code and passes on the fix. Because extraction is expensive and the failure is silent at write time, the gate runs *inside* the sbatch before extraction starts.
+
+**Second-order failure.** `deepsv2_new` has no pytest, so the gate's top-level `import pytest` aborted with `ModuleNotFoundError` before the pytest-free `__main__` block could run — job 1556926 died in 7 s with the gate never executing. The import is now optional (a shim supplies the one decorator the module uses). Verified both paths: 9 passed under `pytest tests/`, and the PASS line prints when the file runs as a script with pytest blocked from `sys.meta_path`. Confirmed in `deepsv2_new` on the cluster before resubmitting.
+
+### Chain currently running
+
+`1556929` (hnext4, amd_256M) → `1556930` (hncls2, amd_256M) → `1556931_[0-2]` (hndeep2, gpu_T4, batch 96). Both pre-extraction gates passed in the cluster environment: quantile matching removes the depth-ratio shortcut (uniform-negative AUC 0.951 → quantile-matched 0.504, pos median 0.429 vs matched median 0.429), and the extractors agree on the shard schema. The classical/separability arm is deliberately sequenced *before* the GPU arms so a still-separable benchmark costs ~2 CPU-minutes instead of GPU-hours; `hn_single_feature_auc.csv` compared against `results/table6_single_feature_auc.csv` is the number that says whether the depth leak is closed.
+
+**Next:** on completion run `analysis/aggregate_hardneg.py` (→ table7, table8, `stats_hardneg.csv`), state whether the leak is closed, regenerate figures, and update the manuscript and README — including restoring or permanently withdrawing the two claims currently marked withdrawn (calibration superiority, cross-ancestry robustness). Then Phase 4 (GIAB HG002 + Truvari), still blocked on staging: HG002 is not on the cluster, Truvari is not installed in `deepsv2_new`, and the reference is GRCh37/hs37d5 while the GIAB v4.2.1 SV benchmark ships for GRCh38.
