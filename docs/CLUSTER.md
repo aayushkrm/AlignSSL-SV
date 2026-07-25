@@ -76,31 +76,61 @@ command has a 60-second wall-clock cap; keep remote commands short (a long
 ## 2. Filesystem layout
 
 There are two storage areas: **scratch** (fast, per-user working space, where all
-job I/O happens) and **beegfs** (shared read-only reference datasets).
+job I/O happens) and **beegfs** (shared dataset workspaces). The beegfs
+workspace this project used has since expired and been reclaimed — see §2.1.
 
-### 2.1 Reference data (read-only) — `beegfs`
+### 2.1 Reference data — was on `beegfs`, now re-staged to scratch
 
-Base path: `/beegfs/datasets/ws/ws1/igorno-genomes_1000_2/`
+> **The beegfs workspace `/beegfs/datasets/ws/ws1/igorno-genomes_1000_2/` no
+> longer exists.** It was a time-limited BeeGFS dataset workspace and it expired
+> and was reclaimed. Everything that lived under it — the reference FASTA, the
+> truth VCF, and the two original high-coverage BAMs — went with it. Do not write
+> new paths against that base; it is documented here only so old sbatch scripts
+> and log files remain interpretable.
 
-| Path | Size | What it is |
+**What was lost:**
+
+| Old path (GONE) | Size | What it was |
 |---|---|---|
 | `fasta/hs37d5.fa` (+`.fai`) | 3.2 GB | GRCh37/hs37d5 reference genome — the coordinate system for all tensors |
-| `vcf/ALL.wgs.mergedSV.v8.20130502.svs.genotypes.vcf.gz` (+`.tbi`) | 18 MB | 1000 Genomes Phase-3 structural-variant truth set: **40,975 deletions across 2,504 samples** — the labels |
-| `bam/high_coverage/NA19238.*.bam` | 246 GB | high-coverage BAM, YRI/AFR (already on beegfs) |
-| `bam/high_coverage/NA19625.*.bam` | 158 GB | high-coverage BAM, ASW/AFR (already on beegfs) |
+| `vcf/ALL.wgs.mergedSV.v8.20130502.svs.genotypes.vcf.gz` (+`.tbi`) | 18 MB | 1000 Genomes Phase-3 SV truth set: **40,975 deletions across 2,504 samples** — the labels |
+| `bam/high_coverage/NA19238.*.bam` | 246 GB | high-coverage BAM, YRI/AFR |
+| `bam/high_coverage/NA19625.*.bam` | 158 GB | high-coverage BAM, ASW/AFR |
 
-The two beegfs BAMs (NA19238, NA19625) were the original pair available without
-downloading. Everything else had to be fetched from EBI (see §5).
+**Current canonical locations (all on scratch, `$B=/scratch/igorno-alignssl_sv`):**
+
+| Path | What it is |
+|---|---|
+| `$B/ref/hs37d5.fa` (+`.fai`) | reference genome, re-staged |
+| `$B/ref/ALL.wgs.mergedSV.v8.20130502.svs.genotypes.vcf.gz` (+`.tbi`) | truth VCF, re-staged |
+
+**Why the loss did not invalidate the results.** The reference and truth VCF were
+re-staged before anything needed them again, so every label and coordinate is
+reproducible. The *tensors* — the actual model inputs — had already been
+extracted and live on scratch, so no training or evaluation input was lost. The
+one consequence that does propagate into the science is BAM availability: only
+two BAMs survive anywhere, both in `$B/bam_extra/` —
+`NA20845.wgs.ILLUMINA.bwa.GIH.high_cov_pcr_free.20140203.bam` and
+`NA12878.mapped.ILLUMINA.bwa.CEU.high_coverage_pcr_free.20130906.bam`. Any
+analysis that must re-read alignments (rather than re-use existing tensors) is
+therefore limited to those two samples. This is why the hard-negative control is
+single-sample; see `cluster/README_hardneg_rebenchmark.md` and the limitations
+section of the manuscript, both of which state the reduction explicitly.
+
+Re-obtaining a lost BAM means re-downloading from EBI (§5) at ~1.7 MB/s
+single-stream — roughly 40 h for a 250 GB BAM, or ~8 h with the 16-way parallel
+`pfetch` chunking. Budget accordingly before promising any multi-sample
+alignment-level analysis.
 
 ### 2.2 Working space (scratch) — `BASE=/scratch/igorno-alignssl_sv`
 
 | Subdir / file | Size | Contents |
 |---|---|---|
 | `code/` | 210 KB | The `alignssl/` Python package + `scripts/` + `cluster/` sbatch templates. **This is a mirror of this repo's code** — sync it here before running. |
-| `tensors/` | 89 MB | Labeled tensors for the two beegfs samples (NA19238, NA19625) — 12 shards |
+| `tensors/` | 89 MB | Labeled tensors for the two originally-beegfs-resident samples (NA19238, NA19625) — 12 shards. These tensors survive; the BAMs they came from do not (§2.1). |
 | `tensors_panel/` | 157 MB | Labeled tensors for the downloaded panel samples (NA18525, NA19648, NA20502, NA20845) — 20 shards (5 each) |
 | `tensors_na12878/` | 12 MB | Labeled tensors for held-out **test** sample NA12878/CEU — 2 shards |
-| `tensors_all6/` | — (symlinks) | Consolidated view of all 6 labeled TRAIN/fine-tune samples in one directory (32 shards: 6+6 from `tensors/` plus 5+5+5+5 from `tensors_panel/`), built with symlinks so `ShardDataset` — which globs a single `shard_dir` — can read the whole panel at once. Rebuild with a fresh `ln -s` pass if `tensors/`/`tensors_panel/` change. |
+| `tensors_all6/` | — (symlinks) | Consolidated view of all 6 labeled TRAIN/fine-tune samples in one directory (32 shards: 6+6 from `tensors/` plus 5+5+5+5 from `tensors_panel/`), built with symlinks so `ShardDataset` — which globs a single `shard_dir` — can read the whole panel at once. Rebuild with a fresh `ln -s` pass if `tensors/`/`tensors_panel/` change. All 32 symlinks were re-verified to resolve after the beegfs loss (§2.1) — they point into surviving scratch directories, not into the reclaimed workspace. |
 | `tensors_pretrain/` | 68 GiB | **Unlabeled SSL pretrain windows** (60 compressed shards, ~2 GiB) + the consolidated flat memmap `pretrain_mm.f16` (65.9 GiB = 70.8 GB, 70,778,880,128 bytes) and `pretrain_mm.meta.npz`. (Directory total = shards + memmap ≈ 68 GiB; the memmap alone is 65.9 GiB — sizes here are GiB from `du`, the 70.8 GB elsewhere is the decimal-GB byte count of the same file.) |
 | `ckpt/` | 13 MB | Encoder checkpoints (`encoder_ssl*.pt`) + all results JSON (label-efficiency, calibration, cross-pop, ablations, DeepSV baseline) |
 | `bam_extra/` | 445 GB | Large BAMs kept on scratch: NA12878 (251 GB, test) and NA20845 (226 GB, GIH/SAS) with their `.bai` |
@@ -142,8 +172,8 @@ The **labeled** set (fine-tune + test) spans six 1000G super-populations; the
 
 | Sample | Population | Super-pop | Role | Has pretrain windows? | BAM source |
 |---|---|---|---|---|---|
-| NA19238 | YRI | AFR | fine-tune (train) | **yes** (20 shards) | beegfs |
-| NA19625 | ASW | AFR | fine-tune (train) | **yes** (20 shards) | beegfs |
+| NA19238 | YRI | AFR | fine-tune (train) | **yes** (20 shards) | beegfs (BAM now lost, §2.1) |
+| NA19625 | ASW | AFR | fine-tune (train) | **yes** (20 shards) | beegfs (BAM now lost, §2.1) |
 | NA20845 | GIH | SAS | fine-tune (train) | **yes** (20 shards) | downloaded (kept on scratch) |
 | NA18525 | CHB | EAS | fine-tune (train) | no (labeled only) | downloaded (BAM deleted) |
 | NA19648 | MXL | AMR | fine-tune (train) | no (labeled only) | downloaded (BAM deleted) |
@@ -194,7 +224,7 @@ trusted for extraction.
 ## 6. End-to-end workflow
 
 ```
-                 beegfs ref (hs37d5.fa, truth VCF)
+                 $B/ref/ (hs37d5.fa, truth VCF)
                          │
    BAM ──pfetch_bam.sh──►│  (16-way, integrity-gated)     [CPU: amd_256M]
                          ▼
@@ -336,7 +366,8 @@ and is intentionally excluded from this repo:
 2. Clone this repo; `pip install -r requirements.txt` in a Python 3.10/3.11 env with
    PyTorch (or replicate `deepsv2_new`).
 3. Sync `alignssl/`, `scripts/`, `cluster/` to `$BASE/code/` on the cluster.
-4. Reference data is on beegfs (§2.1); the truth VCF supplies deletion labels.
+4. Reference data is in `$B/ref/` (§2.1 — it was on beegfs until that
+   workspace expired); the truth VCF supplies deletion labels.
 5. To extend the pretrain corpus: `pfetch_bam.sh` a new BAM → `samtools view -c`
    gate → `extract_pretrain.py` → `build_memmap.py` → `pretrain_ssl.py`.
 6. To reproduce results: run `finetune_eval.py`, `cross_pop_eval.py`, and the DeepSV
