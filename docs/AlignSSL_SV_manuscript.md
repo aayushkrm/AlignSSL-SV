@@ -273,6 +273,8 @@ Two further extensions are planned once the benchmark is settled: a coverage-rob
 - **Truth set.** The 1000 Genomes phase-3 integrated SV call set is itself a consensus of callers and carries its own error; a curated orthogonal benchmark (GIAB HG002) is deferred to the candidate-filtering study.
 - **Full-supervision ceiling.** Pretraining does not exceed from-scratch training at 100% labels — the from-scratch model is marginally ahead (*p* = 0.025). The value of pretraining, on this benchmark, is confined to the low-label regime.
 - **Single-panel pretraining corpus.** The unlabelled pretraining corpus comes from three samples; corpus-size and diversity scaling are untested.
+- **Single coverage regime.** All alignments are high-coverage (~30x) PCR-free Illumina. Robustness to lower coverage, PCR-positive libraries, or different read lengths is untested; the depth-derived channels are the ones most likely to be coverage-sensitive.
+- **One held-out population.** Cross-ancestry generalisation is measured against a single held-out population (NA12878, CEU). A single held-out ancestry cannot distinguish population-specific transfer loss from sample-specific idiosyncrasy.
 
 ---
 
@@ -280,7 +282,7 @@ Two further extensions are planned once the benchmark is settled: a coverage-rob
 
 This paper reports two results, and the second qualifies the first.
 
-Self-supervised pretraining on read-alignment tensors is strongly label-efficient relative to supervised training of the identical architecture: at 1% of labels it delivers roughly a ten-fold F1 improvement (*p* = 9.2 × 10⁻⁴), an effect that holds for each self-supervised objective tested individually. Calibration tracks the multi-channel learned representation rather than the pretraining objective: both learned-tensor models are better calibrated than a DeepSV-style RGB encoding (median ECE 0.008 and 0.007 vs. 0.033), though this comparison rests on three baseline seeds with one outlier and, like every number here, is measured on the separable task characterised below.
+Self-supervised pretraining on read-alignment tensors is strongly label-efficient relative to supervised training of the identical architecture: at 1% of labels it delivers roughly a ten-fold F1 improvement (*p* = 9.2 × 10⁻⁴), an effect that holds for each self-supervised objective tested individually. Calibration tracks the multi-channel learned representation rather than the pretraining objective: both learned-tensor models are better calibrated than a DeepSV-style RGB encoding (median ECE 0.008 and 0.007 vs. 0.033), though this comparison rests on three baseline seeds with one outlier and, like every number here, is measured on the separable task characterised in Section 4.2.
 
 But a hand-crafted-feature control — twelve scalar alignment features on the identical windows — matches or beats every deep arm at every label budget, and a single centre-versus-flank depth ratio separates the classes at ROC-AUC 0.955 with no training at all. The cause is the uniformly-sampled negatives standard in this benchmark family. The label-efficiency gap we measure is therefore a difference in how fast each initialisation learns a depth threshold, not evidence of deployable label efficiency for deletion calling.
 
