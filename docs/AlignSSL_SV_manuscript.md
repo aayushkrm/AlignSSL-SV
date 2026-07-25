@@ -2,6 +2,12 @@
 
 **Running title:** Label-efficient alignment-tensor pretraining, and a separability control for SV benchmarks
 
+**Ayush Kumar**
+
+Correspondence: aayush.kumarm.3myself@gmail.com · Code: https://github.com/aayushkrm/AlignSSL-SV
+
+**Keywords:** structural variant detection; deletion calling; self-supervised learning; representation learning; read alignment; benchmark separability; calibration; 1000 Genomes
+
 ---
 
 ## Abstract
