@@ -75,7 +75,10 @@ def main():
           f"(dropped {'YES' if losses[-1] < losses[0] else 'NO'})")
 
     # ---------- Stage 1b: fine-tune deletion head ----------
-    ft = FinetuneDataset(bam, fa, CHROM, truth, win_width=W, max_rows=64,
+    # FinetuneDataset takes truth as {chrom: [(start0, end0, geno), ...]};
+    # the fixture deletions are homozygous-alt for the purposes of this test.
+    truth_by_chrom = {CHROM: [(s, e, 2) for (s, e) in truth]}
+    ft = FinetuneDataset(bam, fa, truth_by_chrom, win_width=W, max_rows=64,
                          n_neg_per_pos=4, seed=3)
     n = len(ft); idx = np.arange(n); np.random.shuffle(idx)
     cut = int(0.6 * n); cut2 = int(0.8 * n)

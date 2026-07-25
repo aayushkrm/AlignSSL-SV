@@ -12,7 +12,7 @@
 
 **Conclusion.** Learning the alignment representation and pretraining it without labels yields large, reproducible low-label gains over supervised training of the same architecture. But on the random-negative protocol standard in this literature, hand-crafted alignment features match or exceed all deep arms, which we report as a first-class negative result: benchmarks of this construction cannot substantiate claims of deployable SV-calling performance, and future work must evaluate against candidate sets that defeat the depth heuristic.
 
-**Availability.** Code, tensor-extraction pipeline, and trained encoders are provided as project artifacts.
+**Availability.** Code, the tensor-extraction pipeline, result tables and figures are at https://github.com/aayushkrm/AlignSSL-SV (MIT licence).
 
 ---
 
@@ -33,7 +33,7 @@ This paper asks a focused question: **if we learn the alignment representation a
 - **AlignSSL-SV**, a framework that couples a learned multi-channel alignment encoder with a self-supervised masked-alignment pretraining objective and a calibrated, uncertainty-aware deletion head (Section 3).
 - A controlled evaluation on a six-sample, five-ancestry 1000 Genomes panel showing that pretraining yields large low-label gains (≈10× F1 over from-scratch at 1% labels, *p* = 9.2 × 10⁻⁴), and that at full supervision the from-scratch model is marginally ahead (Section 4).
 - **A hand-crafted-feature control that bounds what the benchmark can show** (Section 4.2): twelve alignment features match or beat every deep arm at every label budget, and one depth-ratio feature reaches ROC-AUC 0.955 untrained. We report this as a negative result about the random-negative evaluation protocol, which is widely used in this literature and, to our knowledge, has not previously been subjected to such a control.
-- A controlled ablation (3–4 seeds, error bars computed across *pretraining* seeds) isolating *which* self-supervised objective matters, showing that masked-alignment modelling drives the low-label benefit while the combined MAM+VICReg objective is strongest at ≥25% labels and at full supervision (Section 4.4).
+- A controlled ablation (3–4 seeds, error bars computed across *pretraining* seeds) isolating the contribution of each self-supervised objective (Section 4.5).
 - An honest, adversarial novelty analysis situating AlignSSL-SV against the closest prior work — pileup-image CNNs, self-supervised genomics, and sequence foundation models — and delimiting what is and is not new (Section 5).
 
 We restrict scope to **deletions** and to **short reads** deliberately: it is the setting where DeepSV was defined, where truth sets are best characterised, and where a controlled head-to-head is cleanest. Section 6 discusses the extension to other SV classes and to long reads.
@@ -72,9 +72,9 @@ The encoder is a compact residual CNN stem (channel-wise feature extraction over
 
 ### 3.4 Self-supervised pretraining: masked-alignment modelling
 
-We pretrain by **masked-alignment modelling (MAM)**: a random fraction (0.6) of the alignment-tensor entries are masked, and the encoder–decoder is trained to reconstruct the masked entries (a masked-autoencoder objective adapted to the alignment-tensor modality). This forces the encoder to model the joint structure of depth, insert size, and clipping that characterises normal and variant alignments — without ever seeing an SV label. Pretraining uses 80,000 windows drawn from held-out genomic regions of the pretraining samples, consolidated into a flat float16 memory-mapped array for throughput.
+We pretrain by **masked-alignment modelling (MAM)**: a random fraction (0.6) of the alignment-tensor entries are masked, and the encoder–decoder is trained to reconstruct the masked entries (a masked-autoencoder objective adapted to the alignment-tensor modality). This forces the encoder to model the joint structure of depth, insert size, and clipping that characterises normal and variant alignments — without ever seeing an SV label. Pretraining uses 120,000 unlabelled windows drawn from three samples (NA19238, NA19625, NA20845; AFR × 2 + SAS) restricted to the pretraining chromosomes, consolidated into a flat float16 memory-mapped array (65.9 GiB) for throughput. No SV labels enter this stage: every window carries label = −1.
 
-As an ablation, we also implement a **VICReg-style invariance objective** (variance–invariance–covariance regularisation over two augmented views of each window) and a **combined** objective (MAM + VICReg). Section 4.4 shows that MAM alone is the best of the three.
+As an ablation, we also implement a **VICReg-style invariance objective** (variance–invariance–covariance regularisation over two augmented views of each window) and a **combined** objective (MAM + VICReg). Section 4.5 compares the three; all deliver the low-label effect, and the available seed count does not support ranking them against one another.
 
 ### 3.5 Deletion head, calibration, and uncertainty
 
@@ -82,7 +82,7 @@ The fine-tuning head is a small classifier on the window embedding, trained with
 
 ### 3.6 Data and splits
 
-We use 1000 Genomes Project high-coverage PCR-free Illumina alignments (GRCh37/hs37d5) and the phase-3 integrated SV call set (`ALL.wgs.mergedSV.v8.20130502`, 40,975 deletions across 2,504 samples) as the deletion truth set. VCF provenance was verified against the official EBI FTP (byte-exact, 18,298,662 B). Pretraining and fine-tuning use **disjoint chromosome sets** (train chr1–11, test chr12–22) to prevent representation leakage between stages. For the cross-ancestry experiment, models are trained on one population and evaluated on a genetically distant, entirely held-out population (CEU held out). Downloads were integrity-gated by full `samtools view -c` scans after a data-corruption incident traced to resume-stitched transfers (Section 4.6 / Supplementary).
+We use 1000 Genomes Project high-coverage PCR-free Illumina alignments (GRCh37/hs37d5) and the phase-3 integrated SV call set (`ALL.wgs.mergedSV.v8.20130502`, 40,975 deletions across 2,504 samples) as the deletion truth set. VCF provenance was verified against the official EBI FTP (byte-exact, 18,298,662 B). Pretraining and fine-tuning use **disjoint chromosome sets** (train chr1–11, test chr12–22) to prevent representation leakage between stages. For the cross-ancestry experiment, models are trained on one population and evaluated on a genetically distant, entirely held-out population (CEU held out). Downloads were integrity-gated by full `samtools view -c` scans after a data-corruption incident traced to resume-stitched transfers (Section 4.7).
 
 ### 3.7 Baselines
 
@@ -129,7 +129,7 @@ This does not invalidate the comparisons in Section 4.1, which are internally co
 
 **We therefore report the benchmark-separability finding as a first-class contribution.** The control costs minutes of CPU time, applies to any pileup-style SV benchmark, and to our knowledge has not previously been run. Its implication is that published low-label and architecture-comparison results on random-negative SV benchmarks — a family that includes DeepSV's own evaluation and much of what followed — may be measuring threshold-learning speed rather than caller quality.
 
-![Figure 1. Left: deletion F1 versus labelled-data fraction for all arms; the two hand-crafted-feature controls (heavy lines) exceed every deep arm at every budget, with the largest margin in the low-label regime. Right: single-feature discrimination on the held-out test set with no training — the centre-versus-flank depth ratio alone reaches ROC-AUC 0.955.]({{artifact:art_dca11f98-9031-42d2-91ca-72074453b133}})
+![Figure 2. Left: deletion F1 versus labelled-data fraction for all arms; the two hand-crafted-feature controls (heavy lines) exceed every deep arm at every budget, with the largest margin in the low-label regime. Right: single-feature discrimination on the held-out test set with no training — the centre-versus-flank depth ratio alone reaches ROC-AUC 0.955.]({{artifact:art_dca11f98-9031-42d2-91ca-72074453b133}})
 
 ### 4.3 Calibration is a property of the representation, not of self-supervision
 
@@ -147,7 +147,7 @@ The defensible reading is that calibration tracks the *representation* rather th
 
 ### 4.4 Length-stratified recall: the learned tensor is consistent across length; the RGB baseline is not
 
-Deletion callers are notoriously length-dependent. Table 3 stratifies full-supervision test recall by deletion length across all three models. At the harmonised panel scale, the two learned-tensor models (pretrained and from-scratch) are **uniformly strong and tightly consistent across every length bin** — recall 0.86–0.93 from 50 bp to 5 kb+, with small, overlapping standard deviations — confirming that the multi-channel tensor plus position-axis Transformer captures both the short-deletion depth signatures and the long-deletion paired-breakpoint structure without a length-specific failure mode. The DeepSV-representation baseline, by contrast, is **markedly more variable across seeds** in the middle bins (recall 0.841 ± 0.165 at 200–500 bp and 0.850 ± 0.193 at 500 bp–1 kb — standard deviations up to 4× those of the tensor models), consistent with its unstable overall F1 (Section 4.1) and miscalibration (Section 4.2). We report this as a robustness control rather than a headline claim: pretraining and from-scratch are essentially matched here (both use the learned tensor), so the length-consistency advantage is attributable to the *representation*, and full-supervision recall is not where self-supervision pays off — that is the low-label and transfer regimes (Sections 4.1, 4.5).
+Deletion callers are notoriously length-dependent. Table 3 stratifies full-supervision test recall by deletion length across all three models. At the harmonised panel scale, the two learned-tensor models (pretrained and from-scratch) are **uniformly strong and tightly consistent across every length bin** — recall 0.86–0.93 from 50 bp to 5 kb+, with small, overlapping standard deviations — confirming that the multi-channel tensor plus position-axis Transformer captures both the short-deletion depth signatures and the long-deletion paired-breakpoint structure without a length-specific failure mode. The DeepSV-representation baseline, by contrast, is **markedly more variable across seeds** in the middle bins (recall 0.841 ± 0.165 at 200–500 bp and 0.850 ± 0.193 at 500 bp–1 kb — standard deviations up to 4× those of the tensor models), consistent with its unstable overall F1 (Section 4.1) and miscalibration (Section 4.3). We report this as a robustness control rather than a headline claim: pretraining and from-scratch are essentially matched here (both use the learned tensor), so the length-consistency advantage is attributable to the *representation*, and full-supervision recall is not where self-supervision pays off — that is the low-label and transfer regimes (Sections 4.1, 4.6).
 
 **Table 3. Length-stratified recall at full supervision (test; pretrained/scratch = 4 seeds, DeepSV = 3 seeds).**
 
@@ -159,9 +159,9 @@ Deletion callers are notoriously length-dependent. Table 3 stratifies full-super
 | 1k–5k | 799 | 0.926 ± 0.024 | 0.954 ± 0.006 | 0.899 ± 0.116 |
 | 5k+ | 245 | 0.857 ± 0.061 | 0.881 ± 0.071 | 0.918 ± 0.070 |
 
-![Figure 2. Length-stratified deletion recall at full supervision. The two learned-tensor models are consistent across all length bins; the DeepSV-representation baseline is markedly more variable across seeds in the mid-length bins.]({{artifact:art_452d736d-2944-4985-9dc0-2cce4bfd1e3d}})
+![Figure 3. Length-stratified deletion recall at full supervision. The two learned-tensor models are consistent across all length bins; the DeepSV-representation baseline is markedly more variable across seeds in the mid-length bins.]({{artifact:art_452d736d-2944-4985-9dc0-2cce4bfd1e3d}})
 
-### 4.4 Ablation over self-supervised objectives: all three help, but they cannot be ranked at this seed count
+### 4.5 Ablation over self-supervised objectives: all three help, but they cannot be ranked at this seed count
 
 Which self-supervised objective drives these gains? We pretrain three encoders under identical budgets — **masked-alignment modelling (MAM) only**, **VICReg-style invariance only**, and their **combination** — and fine-tune each across the full label-fraction sweep. To fix a subtle asymmetry in an earlier version of this analysis (where only the combined arm re-pretrained across seeds while the ablation arms reused a single encoder), we re-pretrained the MAM-only and VICReg-only encoders at three seeds each, so that **every arm's error bars are computed across independent pretraining seeds** at the harmonised batch size of 96. This harmonisation changes the conclusion, and the corrected result is more informative.
 
@@ -180,9 +180,11 @@ Ranking the objectives *against one another*, however, is **not supported at the
 | 50% | 0.799 ± 0.107 | 0.903 ± 0.011 | **0.913 ± 0.014** |
 | 100% | 0.915 ± 0.014 | 0.846 ± 0.064 | **0.934 ± 0.004** |
 
-The three self-supervised arms and the DeepSV-representation baseline are plotted together in Figure 1, which makes the low-label MAM lead and the full-supervision crossover to the combined objective visible in a single panel.
+The three self-supervised arms and the DeepSV-representation baseline are plotted together in Figure 4. The mean ordering — MAM ahead below 10% labels, the combined objective ahead above 25% — is visible, and so are the overlapping error bars that are the reason we do not claim it.
 
-### 4.5 Cross-ancestry transfer: a suggestive but statistically weak effect
+![Figure 4. Self-supervised objective ablation: MAM-only, VICReg-only, and combined (MAM+VICReg), with the DeepSV-representation baseline for reference. Error bars are standard deviations across independent pretraining seeds. All three self-supervised arms separate clearly from the baseline; they do not separate from one another.]({{artifact:art_bb8d65d6-1a62-4b8a-8711-8fd2d7c9dcd4}})
+
+### 4.6 Cross-ancestry transfer: a suggestive but statistically weak effect
 
 We train on the in-distribution panel and evaluate both in-distribution and on an entirely held-out population (CEU), sweeping the full label fraction (Table 5). Reporting only the extremes, as an earlier version of this analysis did, conceals the structure of the result; we therefore give all six fractions.
 
@@ -193,15 +195,15 @@ Across the sweep, the pretrained model's held-out CEU F1 exceeds the from-scratc
 | Label fraction | Pretrained CEU F1 | Scratch CEU F1 | *p* | Gap (pre) | Gap (scr) |
 |---|---|---|---|---|---|
 | 1% | 0.518 ± 0.062 | 0.179 ± 0.185 | 0.110 | +0.024 | −0.074 |
-| 5% | 0.638 | 0.596 | 0.537 | — | — |
-| 10% | 0.727 | 0.542 | **0.028** | — | — |
-| 25% | 0.689 | 0.625 | 0.584 | — | — |
-| 50% | 0.679 | 0.834 | 0.084 | — | — |
+| 5% | 0.638 ± 0.038 | 0.596 ± 0.076 | 0.537 | +0.022 | +0.166 |
+| 10% | 0.727 ± 0.057 | 0.542 ± 0.052 | **0.028** | +0.035 | +0.161 |
+| 25% | 0.689 ± 0.134 | 0.625 ± 0.057 | 0.584 | +0.107 | +0.204 |
+| 50% | 0.679 ± 0.075 | 0.834 ± 0.030 | 0.084 | +0.224 | +0.081 |
 | 100% | 0.784 ± 0.028 | 0.742 ± 0.022 | 0.182 | +0.148 | +0.124 |
 
-![Figure 3. Cross-ancestry transfer across the label-fraction sweep. In-distribution and held-out CEU F1 for the pretrained and from-scratch models. At 1% labels the pretrained model transfers near-losslessly to the held-out ancestry while the from-scratch model has not learned to call deletions; the gap between the paradigms closes as labels become abundant.]({{artifact:art_01de127a-e22c-4711-841a-fe525898856b}})
+![Figure 5. Cross-ancestry transfer across the label-fraction sweep. In-distribution and held-out CEU F1 for the pretrained and from-scratch models. At 1% labels the pretrained model transfers near-losslessly to the held-out ancestry while the from-scratch model has not learned to call deletions; the gap between the paradigms closes as labels become abundant.]({{artifact:art_01de127a-e22c-4711-841a-fe525898856b}})
 
-### 4.6 Data-integrity control
+### 4.7 Data-integrity control
 
 During data acquisition we detected and corrected a silent corruption mode affecting large BAM transfers: files that passed download-tool exit codes and `samtools quickcheck` (header + EOF only) nonetheless failed a full `samtools view -c` scan with BGZF-inflation errors, traced to resume-stitched (`wget --continue`) transfers joining a partially-flushed block. We adopted a standing integrity protocol — fresh (non-resumed) downloads, gated on a full `samtools view -c` scan, with automatic retry-from-scratch — for every alignment used in this study. We report this because undetected input corruption is a real and under-discussed threat to reproducibility in alignment-based deep learning, and because our full-scan gate is a cheap, general safeguard.
 
@@ -215,7 +217,7 @@ We state precisely what is and is not new in AlignSSL-SV, to preempt the natural
 
 **What we do not claim.** We do not claim a new SV caller, nor deployable accuracy: the control forbids it. We do not claim primacy on "self-supervised learning for structural variants" as a category — BASILISC precedes us. We do not claim that self-supervision improves calibration (the effect is attributable to the representation, and pretrained and from-scratch models are indistinguishable), that one self-supervised objective beats another (*p* > 0.2), or that pretraining confers ancestry robustness (significant at 1 of 6 label fractions, with the gap inverting at two). Each of these was claimed in an earlier draft of this work and withdrawn when the tests were run.
 
-**What is not new (and we do not claim it is).** Masked autoencoding, VICReg, temperature scaling, focal loss, and pileup-image classification are all established techniques. Our contribution is their principled composition on a modality where they had not been combined, and the controlled evidence for what works. We also do not claim a higher full-supervision accuracy ceiling than a from-scratch model; the honest claim is label efficiency, calibration, and transfer robustness.
+**What is not new (and we do not claim it is).** Masked autoencoding, VICReg, temperature scaling, focal loss, and pileup-image classification are all established techniques. Our contribution is their principled composition on a modality where they had not been combined, and the controlled evidence for what works — including the hand-crafted-feature control that bounds it. We also do not claim a higher full-supervision accuracy ceiling than a from-scratch model. The single claim that survives every control we ran is **label efficiency**: at 1% labels the pretrained model reaches F1 0.514 ± 0.055 where the from-scratch model reaches 0.050 ± 0.040.
 
 **Relationship to sequence foundation models.** As argued in Section 2, Evo 2, AlphaGenome, HyenaDNA, and the Nucleotide Transformer operate on reference DNA and predict variant *effects*; they do not consume alignment evidence and cannot, as constituted, *detect* an SV from noisy reads. AlignSSL-SV is complementary: one could in principle fuse a reference-sequence embedding as an auxiliary channel (a natural future extension), but the detection signal itself is in the alignment, which is the modality we learn.
 
@@ -223,7 +225,15 @@ We state precisely what is and is not new in AlignSSL-SV, to preempt the natural
 
 ## 6. Ongoing work: a candidate-filtering benchmark that defeats the depth shortcut
 
-The control in Section 4.2 identifies the single change that would make results of this kind interpretable, and it is a change to the *task*, not to the model. We are re-extracting the labelled set under a **candidate-filtering protocol**: negatives are no longer drawn uniformly from the genome but are the false positives a depth-based candidate generator actually proposes. Concretely, a large pool of windows is scored by the same centre-versus-flank depth statistic that Section 4.2 shows to be the shortcut, and the highest-scoring windows that do **not** overlap a truth deletion are retained as negatives. Positives, window geometry, channel layout, multi-scale binning, chromosome split and shard format are unchanged, so the new benchmark differs from the old one in exactly one variable. By construction the shortcut feature is then near-uninformative, and the question becomes the one a caller actually faces: *given that a coverage anomaly was proposed here, is it a real deletion?* We will re-run the full arm set — including both hand-crafted-feature controls — on that benchmark, and we commit in advance to reporting the outcome whichever way it falls. If pretraining's low-label advantage survives, the claim becomes a strong one; if the classical controls again dominate, that is a substantive finding about the limits of pileup-style deep learning for deletion calling.
+The control in Section 4.2 identifies the single change that would make results of this kind interpretable, and it is a change to the *task*, not to the model. We are re-extracting the labelled set under a **candidate-filtering protocol**: negatives are no longer drawn uniformly from the genome but are chosen to be indistinguishable from the positives *on the shortcut statistic itself*.
+
+The selection rule matters, and the obvious version of it fails. Retaining the windows with the most deletion-like (lowest) centre-versus-flank depth ratio does not remove the shortcut but **inverts** it: a genome-wide lower tail is dominated by mappability dropouts at ratio ≈ 0, whereas heterozygous deletions sit near 0.5, so a classifier learns "very low ratio ⇒ negative" and the feature remains diagnostic with its sign flipped. We measured this directly — extreme-tail selection yields ROC-AUC 0.016 for the depth ratio, as separable as the uniform benchmark and merely reversed.
+
+The rule we adopt instead is **quantile matching within each multi-scale bin**: for every positive, a negative is drawn whose depth ratio falls in the same quantile stratum of the candidate pool, with strata computed separately per window scale because the ratio's meaning depends on span (pooling scales would leak the label through span alone). Candidates come from a one-pass binned coverage profile per chromosome, scored by prefix sums so that exhaustive stride scanning is affordable and the pool genuinely contains mid-range candidates — a uniformly drawn pool does not, which is why the matching must draw from a scan rather than a sample. Under this rule the depth ratio measures ROC-AUC 0.504 with near-identical class medians, and the property is asserted by a unit test that gates the extraction job.
+
+Positives, window geometry, channel layout, multi-scale binning, chromosome split and shard format are unchanged. The question becomes the one a caller actually faces: *given that a coverage anomaly was proposed here, is it a real deletion?* We are re-running the full arm set — including both hand-crafted-feature controls, at the harmonised batch size, with the classical control scheduled first because it is the diagnostic — and we commit in advance to reporting the outcome whichever way it falls. If pretraining's low-label advantage survives, the claim becomes a strong one; if the classical controls again dominate, that is a substantive finding about the limits of pileup-style deep learning for deletion calling.
+
+Two constraints on that re-run should be stated plainly. First, a loss of the shared reference directory mid-study left only two of the six panel alignments recoverable, so the candidate-filtering benchmark is scoped to NA20845 (GIH) with NA12878 (CEU) held out. Second, because both the sample scope and the definition of the negative class differ, absolute F1 will not be comparable to Table 1; what is comparable, and what we will report, is the **ordering of the arms** — specifically whether the hand-crafted control still dominates.
 
 Two further extensions are planned once the benchmark is settled: a coverage-robustness experiment (downsampling via `samtools view -s`) and a Truvari-based comparison against GIAB HG002 curated calls, which provides an orthogonal truth set free of the consensus-caller circularity of the 1000 Genomes call set. Both are deferred deliberately: running them on a benchmark we know to be separable would not be informative.
 
@@ -233,7 +243,7 @@ Two further extensions are planned once the benchmark is settled: a coverage-rob
 
 - **Benchmark separability (governing limitation).** The evaluation task, built with uniformly-sampled negatives as is standard in this literature, is separable by a single depth heuristic at ROC-AUC 0.955 and is solved better by twelve hand-crafted features than by any deep arm (Section 4.2). Every accuracy number in this paper must be read as a measurement on that task, not as deployable caller performance. This is the reason the paper's contribution is framed as a representation-learning and benchmarking result rather than as a new SV caller.
 - **No comparison against production callers.** We compare learned representations under matched conditions; we do not compare against Manta, DELLY, LUMPY, GRIDSS or similar, because a comparison on a separable benchmark would favour whichever method best exploits the shortcut and would be uninformative.
-- **Statistical power.** Three to four pretraining seeds per arm suffice for the headline low-label contrast (*p* < 10⁻³) but not to rank the self-supervised objectives against one another (*p* > 0.2, Section 4.4) or to establish cross-ancestry transfer (significant at 1 of 6 label fractions, Section 4.5). Those analyses are reported as orderings of means, not findings.
+- **Statistical power.** Three to four pretraining seeds per arm suffice for the headline low-label contrast (*p* < 10⁻³) but not to rank the self-supervised objectives against one another (*p* > 0.2, Section 4.5) or to establish cross-ancestry transfer (significant at 1 of 6 label fractions, Section 4.6). Those analyses are reported as orderings of means, not findings.
 - **Scope.** Deletions and short reads only. Insertions, duplications, inversions, translocations and long-read data are out of scope, though the framework is not deletion-specific by construction.
 - **Truth set.** The 1000 Genomes phase-3 integrated SV call set is itself a consensus of callers and carries its own error; a curated orthogonal benchmark (GIAB HG002) is deferred to the candidate-filtering study.
 - **Full-supervision ceiling.** Pretraining does not exceed from-scratch training at 100% labels — the from-scratch model is marginally ahead (*p* = 0.025). The value of pretraining, on this benchmark, is confined to the low-label regime.
@@ -255,7 +265,7 @@ We consider the control the more valuable of the two results. It is cheap, gener
 
 ## Data and code availability
 
-The tensor-extraction pipeline, encoder and head implementations, pretraining and fine-tuning scripts, trained encoders, result tables, and figures are provided as project artifacts. Sequencing data are from the 1000 Genomes Project (high-coverage PCR-free alignments, GRCh37/hs37d5) and are publicly available from the EBI 1000 Genomes FTP. The deletion truth set is the 1000 Genomes phase-3 integrated SV call set.
+The tensor-extraction pipeline, encoder and head implementations, pretraining and fine-tuning scripts, cluster job scripts, aggregation and manuscript-reconciliation tooling, result tables, and figures are available at https://github.com/aayushkrm/AlignSSL-SV under the MIT licence. Trained encoder checkpoints are available from the authors on request pending a Zenodo deposit. Sequencing data are from the 1000 Genomes Project (high-coverage PCR-free alignments, GRCh37/hs37d5) and are publicly available from the EBI 1000 Genomes FTP. The deletion truth set is the 1000 Genomes phase-3 integrated SV call set.
 
 ## References
 
