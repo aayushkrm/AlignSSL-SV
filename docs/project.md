@@ -110,6 +110,39 @@ Training has two stages: self-supervised pretraining with no labels, then superv
 
 > **AS IMPLEMENTED (major deviation, deliberate, open caveat).** We did **not** use GIAB HG002 or HGSVC/HPRC. Instead: (1) **Truth labels** come from the 1000 Genomes Phase 3 integrated SV genotype VCF (`ALL.wgs.mergedSV.v8.20130502.svs.genotypes.vcf.gz`, 40,975 deletions across 2,504 samples) — independently byte-size-verified against the official EBI FTP source on 2026-07-17. (2) **BAMs used**: original 2-sample pretrain corpus NA19238 (YRI) + NA19625 (ASW); held-out cross-population test NA12878 (CEU); an in-progress 5-superpopulation expansion panel — NA18525 (CHB), NA19648 (MXL), NA20502 (TSI) already downloaded/extracted, NA20845 (GIH)/NA19017 (LWK)/NA19240 (YRI)/NA19239 (YRI, QC/trio) still downloading as of this revision. Planned final split: **TRAIN** = NA19238+NA19625+NA18525+NA19648+NA20502+NA20845 (6 samples, 5 superpopulations); **HELD-OUT TEST** = NA12878 (CEU) + NA19017 (LWK), both unseen ancestries; **TRIO/QC** = NA19239+NA19240. (3) Coverage down-sampling and repeat/segdup stratification were **not** implemented — deferred (§15). **Ruling (standing, unchanged): proceed on 1000G now; add GIAB HG002 as the Phase-4 headline gold-standard benchmark once the Truvari harness exists.** This is caveat **C1**.
 
+> **SUPERSEDING NOTE (2026-07-25) — final data disposition; the panel is 6+1, not 6+2.**
+> The paragraph above describes an in-flight state and is retained for the record;
+> the following is what actually shipped.
+>
+> **(a) Downloads abandoned.** NA19017 (LWK), NA19240 (YRI) and NA19239 (YRI) were
+> never completed. EBI throttles to ~1.7 MB/s single-stream (~40 h per 250 GB BAM);
+> the three in-flight transfers were cancelled and ~518 GB of partial data reclaimed.
+> Consequence: the **held-out test set is NA12878 (CEU) alone**, not NA12878 + NA19017,
+> and there is **no trio/QC arm** — NA19239/NA19240 were its only inputs. Every
+> cross-ancestry claim in the manuscript therefore rests on a single held-out ancestry.
+> Stated that way in the manuscript; it is the honest scope.
+>
+> **(b) The 6-sample TRAIN panel was completed as planned** — NA19238 (YRI),
+> NA19625 (ASW), NA18525 (CHB), NA19648 (MXL), NA20502 (TSI), NA20845 (GIH),
+> 5 superpopulations. All tensors extracted and validated (`tensors_all6/`, 32 shards).
+>
+> **(c) The shared reference workspace was then lost.** BeeGFS
+> `/beegfs/datasets/ws/ws1/igorno-genomes_1000_2/` was time-limited; it expired and
+> was reclaimed, taking the reference FASTA, the truth VCF, and the NA19238/NA19625
+> BAMs. The reference and truth VCF had already been re-staged to `$B/ref/`, and the
+> extracted tensors were on scratch, so **no label, coordinate, or model input was
+> lost and all reported results remain reproducible**. What was lost is *alignment
+> access*: only NA20845 (GIH) and NA12878 (CEU) BAMs survive. Any analysis that must
+> re-read BAMs rather than re-use tensors is confined to those two samples — which is
+> why the hard-negative candidate-filtering control is **single-sample**. See
+> `docs/CLUSTER.md` §2.1, `cluster/README_hardneg_rebenchmark.md`, and the manuscript
+> limitations paragraph, which all state the same reduction.
+>
+> **(d) Caveat C1 is unchanged and still open**: Phase 4 GIAB HG002 + Truvari remains
+> the intended headline benchmark, still blocked on staging (HG002 not on the cluster,
+> Truvari not installed in `deepsv2_new`, reference is GRCh37/hs37d5 while the GIAB
+> v4.2.1 SV benchmark ships for GRCh38).
+
 | Data hygiene rule (non-negotiable) |
 | --- |
 | Never let a pretraining sample overlap a test individual or test chromosome. Hold out entire individuals AND entire chromosomes for test. |
