@@ -45,6 +45,22 @@ MAM-only leads at 1% labels (0.588 ± 0.117) and the combined objective leads at
 
 For the source CSVs and figures see `results/`; for the full report see `docs/AlignSSL_SV_manuscript.md`.
 
+## Preprint
+
+`docs/AlignSSL_SV_preprint.pdf` is the typeset manuscript (17 pages, figures
+inlined). Rebuild it from source with:
+
+```bash
+python analysis/make_figures.py --results-dir results   # regenerate figures
+python analysis/check_manuscript.py                     # reconcile numbers vs results/
+python analysis/build_preprint.py                       # render the PDF
+```
+
+`build_preprint.py` derives the figure mapping from the manuscript's own
+`Figure N.` captions and fails the build if a figure file is missing,
+duplicated, or the numbering is non-contiguous — so the PDF cannot silently
+ship a stale or wrong image.
+
 ## Repository layout
 
 ```
