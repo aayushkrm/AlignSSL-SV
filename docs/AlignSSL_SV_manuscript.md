@@ -308,9 +308,7 @@ Three findings follow, and they do not all point the same way.
 
 **(iii) A hand-crafted control still leads at every label budget.** Gradient-boosted trees on twelve scalar features lead at 10%, 25%, 50% and 100%; logistic regression on the same features leads at 1% and 5%. The reviewer's central objection to this paper therefore stands after the fix, and stands more informatively: it is not an artefact of uniformly-sampled negatives alone. The one qualification is that the gap closes at full supervision — 0.791 for GBT versus 0.762 for the pretrained tensor model is not a significant difference at three seeds (*p* = 0.741) — and that the GBT is itself degenerate at 1% labels (0.000), where it is the pretrained network and the logistic regression that still produce a usable detector.
 
-![Candidate-filtered benchmark](/Users/akm/.claude-science/orgs/d8cb02ba-8b97-435d-8e48-98fb5d9a2948/artifacts/proj_acb816763367/0b8b1b59-6de7-4036-bebf-cef7955b70ed/v7160b461_figure6_hardneg_benchmark.png)
-
-**Figure 6.** The candidate-filtered benchmark. *Left:* deletion F1 versus labelled fraction, the direct analogue of Figure 2 (left) on the harder task; every arm falls, and a hand-crafted control leads at every budget. *Right:* untrained single-feature separability on the two benchmarks, paired per feature; the depth shortcut is attenuated from 0.955 to 0.717 but not removed.
+![Figure 6. Left: deletion F1 versus labelled-data fraction on the candidate-filtered benchmark, the direct analogue of Figure 2 (left) on the harder task; every arm falls and a hand-crafted control leads at every budget. Right: untrained single-feature separability on the uniform and candidate-filtered benchmarks, paired per feature; the depth shortcut is attenuated from 0.955 to 0.717 but not removed.]({{artifact:art_0b8b1b59-6de7-4036-bebf-cef7955b70ed}})
 
 ### 6.4 What this changes
 
