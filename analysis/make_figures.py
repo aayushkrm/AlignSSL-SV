@@ -97,11 +97,17 @@ def by_arm(rows, key: str, xkey: str, ykey: str, sdkey: str | None):
     return out
 
 
-def pct_axis(ax, x):
+def pct_axis(ax, x, total=21016):
+    """Log x-axis of label fractions.
+
+    `total` is the size of the 100% labelled pool for the benchmark being
+    plotted; it differs between the uniform (21,016) and candidate-filtered
+    (3,452) benchmarks, so it must be passed rather than assumed.
+    """
     ax.set_xscale("log")
     ax.set_xticks(x)
     ax.set_xticklabels([f"{v*100:g}" for v in x])
-    ax.set_xlabel("Labelled training windows (% of 21,016)")
+    ax.set_xlabel(f"Labelled training windows (% of {total:,})")
 
 
 # ------------------------------------------------------------------ figure 1
@@ -268,13 +274,81 @@ def figure5(res: Path, out: Path) -> None:
     plt.close(fig)
 
 
+# ------------------------------------------------------------------ figure 6
+def figure6(res: Path, out: Path) -> None:
+    """Candidate-filtered benchmark: arm ordering, and shortcut attenuation.
+
+    Left panel is the direct analogue of figure2's left panel but on the
+    candidate-filtered task, so the two are read side by side. Right panel
+    pairs each feature's untrained discrimination on the two benchmarks; the
+    quantity of interest is the *drop*, so the pairing is drawn explicitly
+    rather than as two separate bar charts.
+    """
+    rows = read(res / "table7_hardneg_label_efficiency.csv")
+    uni = read(res / "table6_single_feature_auc.csv")
+    hn = read(res / "table9_hardneg_single_feature_auc.csv")
+    if not rows or not hn:
+        return
+    arms = ["Classical-GBT", "Classical-logreg", "AlignSSL-combined",
+            "AlignSSL-scratch", "DeepSV-representation"]
+    g = by_arm([r for r in rows if r["arm"] in arms], "arm",
+               "label_frac", "F1_mean", "F1_sd")
+    fig, axes = plt.subplots(1, 2, figsize=(8.4, 3.6),
+                             gridspec_kw=dict(width_ratios=[1.15, 1.0],
+                                              wspace=0.44))
+    ax = axes[0]
+    for arm in arms:
+        if arm not in g:
+            continue
+        x, y, sd = g[arm]
+        classical = arm.startswith("Classical")
+        ax.plot(x, y, "-s" if classical else "-o", color=COLOUR[arm],
+                label=LABEL[arm], linestyle="-" if classical else "--",
+                zorder=3 if classical else 2)
+        ax.fill_between(x, y - sd, y + sd, color=COLOUR[arm], alpha=0.12,
+                        linewidth=0)
+    n100 = max(int(r["n_train"]) for r in rows
+                if abs(float(r["label_frac"]) - 1.0) < 1e-9)
+    pct_axis(ax, g[arms[0]][0], total=n100)
+    ax.set_ylabel("Deletion F1 (held-out chr12–22)")
+    ax.set_ylim(0, 1.0)
+    ax.set_title("Candidate-filtered benchmark: every arm falls")
+    ax.legend(loc="upper left", frameon=False, fontsize=7)
+
+    # right panel: paired untrained separability, uniform vs candidate-filtered
+    ax = axes[1]
+    u = {r["feature"]: float(r["auc_oriented"]) for r in uni}
+    h = {r["feature"]: float(r["auc_oriented"]) for r in hn}
+    feats = sorted(set(u) & set(h), key=lambda f: u[f])
+    ypos = np.arange(len(feats))
+    for i, f in enumerate(feats):
+        ax.plot([h[f], u[f]], [i, i], color="0.75", lw=1.4, zorder=1,
+                solid_capstyle="round")
+    ax.scatter([u[f] for f in feats], ypos, s=26, color="#c0392b",
+               zorder=3, label="uniform negatives")
+    ax.scatter([h[f] for f in feats], ypos, s=26, color="#1f4e79",
+               zorder=3, label="candidate-filtered")
+    ax.set_yticks(ypos)
+    ax.set_yticklabels([f.replace("_", " ") for f in feats])
+    ax.axvline(0.5, color="0.3", lw=0.9, ls=":")
+    ax.text(0.505, len(feats) - 0.4, "chance", fontsize=7, color="0.3",
+            ha="left", va="center")
+    ax.set_xlim(0.45, 1.02)
+    ax.set_xlabel("Orientation-corrected ROC-AUC (untrained)")
+    ax.set_title("Shortcut attenuated, not removed")
+    ax.legend(loc="lower right", frameon=False, fontsize=7)
+    fig.savefig(out / "figure6_hardneg_benchmark.png")
+    plt.close(fig)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--results-dir", default="results")
     a = ap.parse_args()
     res = Path(a.results_dir)
     with plt.rc_context(RC):
-        for fn in (figure1, figure2, figure3, figure4, figure5):
+        for fn in (figure1, figure2, figure3, figure4, figure5,
+                   figure6):
             fn(res, res)
             print(f"{fn.__name__} ok")
     return 0

@@ -85,9 +85,19 @@ def check_calibration(md: str, results: Path) -> list[str]:
 
 
 def check_pvalues(md: str, results: Path) -> list[str]:
-    """Every p-value quoted in prose must appear in stats_tests.csv."""
+    """Every p-value quoted in prose must appear in a stats CSV.
+
+    Section 4 quotes stats_tests.csv; Section 6 (the candidate-filtered
+    benchmark) quotes stats_hardneg.csv, whose p-column is named `p`.
+    Both are pooled so the check covers the whole manuscript.
+    """
+    src = []
     with open(results / "stats_tests.csv") as fh:
-        src = [float(r["p_value"]) for r in csv.DictReader(fh)]
+        src += [float(r["p_value"]) for r in csv.DictReader(fh)]
+    hn = results / "stats_hardneg.csv"
+    if hn.exists():
+        with open(hn) as fh:
+            src += [float(r["p"]) for r in csv.DictReader(fh)]
     errs = []
     # decimal form, e.g. "p = 0.025"
     for tok in re.findall(r"\*p\* = (0\.[0-9]+)", md):
@@ -96,7 +106,7 @@ def check_pvalues(md: str, results: Path) -> list[str]:
                    (s > 0 and abs(v - float(f"{s:.{max(1, len(tok) - 2)}f}")) < 1e-12)
                    for s in src):
             errs.append(f"p-value {tok} quoted in prose has no match in "
-                        f"stats_tests.csv")
+                        f"either stats CSV")
     # scientific form, e.g. "9.2 x 10^-4"
     for mant, exp in re.findall(r"\*p\* = ([0-9.]+) × 10⁻([0-9⁻]+)", md):
         e = int(exp.replace("⁻", ""))
@@ -137,6 +147,79 @@ def check_single_feature_auc(md: str, results: Path) -> list[str]:
     return errs
 
 
+def check_hardneg_tables(md: str, results: Path) -> list[str]:
+    """Tables 7 and 9: the candidate-filtered benchmark.
+
+    Table 9 is checked cell-by-cell against its source (including the signed
+    change column, which is derived and therefore easy to get wrong by hand).
+    Table 7 is checked on mean +/- sd per (label fraction, arm).
+    """
+    errs: list[str] = []
+
+    t9 = results / "table9_hardneg_single_feature_auc.csv"
+    t6 = results / "table6_single_feature_auc.csv"
+    if t9.exists() and t6.exists():
+        with open(t9) as fh:
+            hn = {r["feature"]: float(r["auc_oriented"]) for r in csv.DictReader(fh)}
+        with open(t6) as fh:
+            un = {r["feature"]: float(r["auc_oriented"]) for r in csv.DictReader(fh)}
+        block = re.search(r"\| Feature \| Uniform \| Candidate-filtered.*?\n\n",
+                          md, re.S)
+        if block is None:
+            errs.append("Table 9 block not found in manuscript")
+        else:
+            seen = set()
+            for line in block.group(0).strip().splitlines()[2:]:
+                c = [x.strip().replace("**", "")
+                     for x in line.strip().strip("|").split("|")]
+                feat = c[0]
+                seen.add(feat)
+                if feat not in hn:
+                    errs.append(f"Table 9: unknown feature {feat}")
+                    continue
+                for shown, want, what in ((c[1], un[feat], "uniform"),
+                                          (c[2], hn[feat], "filtered")):
+                    if f"{want:.3f}" != f"{float(shown):.3f}":
+                        errs.append(f"Table 9 {feat} {what}: shows {shown}, "
+                                    f"source {want:.3f}")
+                delta = hn[feat] - un[feat]
+                if f"{delta:+.3f}".replace("-", "\u2212") != c[3]:
+                    errs.append(f"Table 9 {feat} change: shows {c[3]}, "
+                                f"source {delta:+.3f}")
+            missing = set(hn) - seen
+            if missing:
+                errs.append(f"Table 9 omits features: {sorted(missing)}")
+
+    t7 = results / "table7_hardneg_label_efficiency.csv"
+    if t7.exists():
+        with open(t7) as fh:
+            src = {(f'{float(r["label_frac"]):g}', r["arm"]):
+                   (float(r["F1_mean"]), float(r["F1_sd"]))
+                   for r in csv.DictReader(fh)}
+        cols = ["AlignSSL-combined", "AlignSSL-scratch", "DeepSV-representation",
+                "Classical-logreg", "Classical-GBT"]
+        block = re.search(r"\| Labels \| \*n\* \| AlignSSL \(pretrained\).*?\n\n",
+                          md, re.S)
+        if block is None:
+            errs.append("Table 7 block not found in manuscript")
+        else:
+            for line in block.group(0).strip().splitlines()[2:]:
+                c = [x.strip().replace("**", "")
+                     for x in line.strip().strip("|").split("|")]
+                frac = f'{float(c[0].rstrip("%")) / 100:g}'
+                for arm, cell in zip(cols, c[2:]):
+                    key = (frac, arm)
+                    if key not in src:
+                        errs.append(f"Table 7: no source row for {arm} @ {frac}")
+                        continue
+                    m, sd = src[key]
+                    want = f"{m:.3f} \u00b1 {sd:.3f}"
+                    if cell != want:
+                        errs.append(f"Table 7 {arm} @ {c[0]}: shows '{cell}', "
+                                    f"source '{want}'")
+    return errs
+
+
 def check_markers(md: str) -> list[str]:
     bad = re.findall(r"\{\{artifact:[^}]*[A-Z_]{4,}[^}]*\}\}", md)
     return [f"unresolved artifact placeholder: {b}" for b in bad]
@@ -156,6 +239,7 @@ def main() -> int:
     errs += check_calibration(md, res)
     errs += check_pvalues(md, res)
     errs += check_single_feature_auc(md, res)
+    errs += check_hardneg_tables(md, res)
     errs += check_markers(md)
 
     if errs:

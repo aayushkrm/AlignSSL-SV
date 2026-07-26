@@ -37,7 +37,18 @@ A twelve-feature gradient-boosted tree on hand-computed summary statistics **bea
 
 This is a property of how positive and negative windows are drawn, not of any model. Uniformly sampled negatives sit at background depth while heterozygous and homozygous deletions sit below it, so the centre-versus-flank depth contrast is nearly sufficient on its own. Mean depth alone is uninformative (AUC 0.502) — the leak is specifically in the *localised* contrast that the extraction protocol builds into every positive window. Two non-depth features also reach substantial discrimination independently, so neutralising depth alone would not be enough.
 
-Consequently **we do not claim state-of-the-art deletion calling on this benchmark**, and two claims that earlier drafts made are formally withdrawn: superior calibration and cross-ancestry robustness. Both are measured on the same shortcut-solvable task and neither survives the classical control. A hard-negative re-benchmark using per-scale quantile-matched negatives is in progress; see `docs/AlignSSL_SV_manuscript.md` §6.
+Consequently **we do not claim state-of-the-art deletion calling on this benchmark**, and two claims that earlier drafts made are formally withdrawn: superior calibration and cross-ancestry robustness. Both are measured on the same shortcut-solvable task and neither survives the classical control.
+
+### The repaired benchmark: the shortcut is attenuated, and the result is mixed
+
+We re-extracted the labelled set with **per-scale quantile-matched candidate negatives**, so that a negative window has a centre-versus-flank depth ratio drawn from the same stratum as the positive it is matched to. On the matched training pool that feature measures ROC-AUC 0.504; on the held-out chromosomes it falls from 0.955 to **0.717** — attenuated, not eliminated. Every arm's F1 falls, confirming a genuinely harder task. Because the shared reference directory was lost mid-study and only two alignments were recoverable, this benchmark is single-sample (NA20845 train/in-distribution test, NA12878 held out), with 3,452 training and 1,516 test windows.
+
+| Labels | AlignSSL (pretrained) | AlignSSL (scratch) | DeepSV repr. | Classical GBT |
+|-------:|:---------------------:|:------------------:|:------------:|:-------------:|
+|   1%   | 0.352 ± 0.064 | 0.000 ± 0.000 | 0.233 ± 0.172 | 0.000 ± 0.000 |
+| 100%   | 0.762 ± 0.110 | 0.702 ± 0.086 | 0.284 ± 0.131 | **0.791 ± 0.000** |
+
+Three findings, and they do not all favour the method. The **pretrained-versus-scratch gap survives and sharpens** — at 1% labels the from-scratch model never fires while the pretrained one reaches F1 0.352 (*p* = 0.016). The **learned tensor now clearly beats the DeepSV representation** at full supervision (0.762 vs 0.284, *p* = 0.018), which it did not on the uniform benchmark. But the **hand-crafted control still leads at every label budget**, so the negative result is not an artefact of uniform negative sampling. See `docs/AlignSSL_SV_manuscript.md` §6.
 
 ### Self-supervised objective ablation
 
@@ -118,4 +129,4 @@ AlignSSL-SV does **not** claim to be the first to use self-supervised learning f
 
 ## Status
 
-Research code under active development; a preprint is in preparation. The results above come from the six-sample multi-ancestry panel with CEU held out. The hard-negative re-benchmark that follows from the separability control is running. For current state and open items see `PROGRESS.md`.
+Research code under active development; a preprint is in preparation. The Section 4 results come from the six-sample multi-ancestry panel with CEU held out; the candidate-filtered benchmark is single-sample for the data-availability reason above. For current state and open items see `PROGRESS.md`.

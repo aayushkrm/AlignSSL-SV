@@ -1,0 +1,19 @@
+comparison,label_frac,n_a,n_b,mean_diff,t,p,verdict
+pretrained vs scratch,0.01,3,3,+0.3521,7.779,0.0161,significant at 0.05
+pretrained vs DeepSV-representation,0.01,3,3,+0.1188,0.916,0.4378,not significant
+pretrained vs Classical-GBT,0.01,3,3,+0.3521,7.779,0.0161,significant at 0.05
+pretrained vs scratch,0.05,3,3,+0.3249,3.606,0.0690,not significant
+pretrained vs DeepSV-representation,0.05,3,3,+0.0642,0.576,0.5979,not significant
+pretrained vs Classical-GBT,0.05,3,3,-0.2408,-2.521,0.1034,not significant
+pretrained vs scratch,0.1,3,3,+0.0430,0.430,0.6987,not significant
+pretrained vs DeepSV-representation,0.1,3,3,+0.0280,0.664,0.5622,not significant
+pretrained vs Classical-GBT,0.1,3,3,-0.1933,-4.449,0.0246,significant at 0.05
+pretrained vs scratch,0.25,3,3,-0.1745,-1.763,0.2085,not significant
+pretrained vs DeepSV-representation,0.25,3,3,+0.2146,1.358,0.2503,not significant
+pretrained vs Classical-GBT,0.25,3,3,-0.2187,-2.262,0.1516,not significant
+pretrained vs scratch,0.5,3,3,-0.0573,-1.002,0.4109,not significant
+pretrained vs DeepSV-representation,0.5,3,3,+0.2798,1.517,0.2483,not significant
+pretrained vs Classical-GBT,0.5,3,3,-0.1027,-1.827,0.2017,not significant
+pretrained vs scratch,1.0,3,3,+0.0592,0.603,0.5808,not significant
+pretrained vs DeepSV-representation,1.0,3,3,+0.4772,3.951,0.0179,significant at 0.05
+pretrained vs Classical-GBT,1.0,3,3,-0.0293,-0.379,0.7411,not significant
