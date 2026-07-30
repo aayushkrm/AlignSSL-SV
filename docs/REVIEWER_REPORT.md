@@ -222,7 +222,10 @@ Worth stating plainly, because it is the part that survives adversarial review:
 - Identical test set across all arms; harmonized fine-tuning batch size; distinct
   pretraining encoder per seed.
 - Every manuscript table reconciles exactly with the per-seed JSONs.
-- The low-label gap between pretrained and from-scratch is real and significant.
+- The low-label gap between pretrained and from-scratch is real and significant
+  *at a fixed 0.5 decision threshold*. Section 8 revises this bullet: under
+  threshold-free scoring the gap largely dissolves, and the fixed-threshold
+  framing is no longer defensible.
 - The length-stratified recall breakdown is honest and is the most scientifically
   useful table in the paper.
 - The 1% cross-population and calibration analyses were run and reported even
@@ -230,3 +233,123 @@ Worth stating plainly, because it is the part that survives adversarial review:
 
 The pipeline is trustworthy. The benchmark it runs on is not hard enough to
 support the claims made from it.
+
+---
+
+## 8. Evaluation-protocol audit (second pass)
+
+The first pass audited *what the numbers claim*. This pass audited *how the
+numbers were produced*, and found three defects in the shared evaluation path.
+Two are arithmetic and were silent; the third invalidates the paper's headline
+framing. All three are fixed in code, with regression tests that encode the
+defect rather than only the corrected behaviour.
+
+### 8.1 The decision threshold was fixed at 0.5 for every arm
+
+Every reported F1 was computed as `logits.argmax(1)`, i.e. a fixed 0.5
+probability cut, with no threshold selection anywhere in the pipeline. For a
+class-imbalanced task evaluated on models trained on as few as tens of labels,
+this conflates two entirely different properties: how well a model *ranks* the
+test set, and where its sigmoid happens to sit.
+
+`analysis/threshold_confound.py` isolates the mechanism. Holding the ranking
+signal exactly constant and moving only the sigmoid offset gives two models
+with AUPRC identical to machine precision (0.658861) and best-threshold F1
+within 0.001 of each other, yet F1 at the fixed cut differing by 0.198.
+
+The first recomputed cell has exactly this shape. Uniform benchmark, 1% labels:
+
+| arm | F1@tau | F1@0.5 | AUPRC |
+|---|---|---|---|
+| AlignSSL-pretrained | 0.456 | 0.362 | 0.463 |
+| AlignSSL-scratch | 0.451 | **0.035** | **0.484** |
+
+The from-scratch model's AUPRC is *higher*. It ranks the test set at least as
+well as the pretrained model and collapses only at the fixed cut, because it
+places nearly every probability below 0.5. The manuscript's description of it
+as a model that "all but collapses" and "barely learns to fire" is therefore
+not a statement about learned representation quality; it is a statement about
+sigmoid placement.
+
+This is the paper's central claim. It appears in the Abstract, the
+contributions list, Section 4.1, Table 1, Figure 1, Section 5, Section 6.1 and
+the novelty statement — eight places, all resting on the same fixed-threshold
+comparison.
+
+**Fix.** `alignssl/metrics.py` now scores every arm threshold-free (AUPRC,
+ROC-AUC) *and* at a threshold selected on a held-out validation split, never on
+test. The legacy `F1` key is preserved as an alias for F1@0.5 so old
+aggregation still runs, but it is no longer the headline number.
+
+### 8.2 The label budget was not the same for every arm
+
+The deep evaluators floored the labelled-subset size at the training batch size
+(`max(batch_size, int(frac * n_pool))`); the classical control did not
+(`int(frac * n_pool)`). On the uniform benchmark (n = 21,016) the floor never
+binds and the two rules agree at every fraction, so the defect was invisible
+there. On the candidate-filtered benchmark (n = 3,452) the 1% fraction is 34
+labels, below the batch size of 96 — so the deep arms silently received 2.8x
+the labels of the control they were plotted against, in precisely the cell
+carrying the low-label claim. The inflated count is printed in the published
+Table 7's own `n` column, which reads 96 at 1%.
+
+### 8.3 The validation split was gated on batch size
+
+The split used to select a decision threshold was carved only when the subset
+exceeded a batch-size-derived minimum. On the filtered benchmark no split was
+carved below a mid-range fraction, so the low-label cells silently fell back to
+the fixed 0.5 cut — the same cells as 8.2, and the same cells as the headline
+claim.
+
+The batch-size floor in 8.2 was not gratuitous: the training loader discards
+incomplete batches, so removing the floor naively yields *zero* batches on a
+subset smaller than one batch, and the low-label cells would train on nothing.
+Defects 8.2 and 8.3 are one root cause: batch size, an implementation detail,
+had leaked into the experimental protocol.
+
+**Fix.** `alignssl/protocol.py` now owns the budget rule, the split rule and
+the loader-parameter rule, and is imported by all three evaluators, so budget
+parity holds by construction rather than by three copies agreeing. The budget
+honours the true fraction and the loader adapts to it — the batch shrinks to
+the subset rather than the subset inflating to suit the batch — and incomplete
+batches are discarded only when the dropped tail is a small share of the data.
+The split gate is now a small absolute minimum per side, independent of batch
+size. Each output row records its effective loader configuration so the
+protocol is auditable from the results files, not only from the code.
+
+### 8.4 Consequences
+
+Every deep-arm number in the paper is being recomputed. The uniform benchmark
+is affected by 8.1 and 8.3 (not 8.2, which does not bind there); the filtered
+benchmark by all three. The classical control is affected by 8.1 only.
+
+The likely outcome, on the evidence available so far, is that the paper's
+positive claim weakens substantially and its critical contribution strengthens.
+If the pretrained-versus-scratch gap is a calibration effect rather than a
+discrimination effect, the honest claim is narrower and more interesting than
+the one currently made: *self-supervised initialisation places a low-label
+model's decision boundary usefully, but does not measurably improve how well
+that model ranks candidate deletions* — on a benchmark whose negatives a single
+untrained depth ratio already separates at ROC-AUC 0.955.
+
+That is a paper about how easily label-efficiency claims in this area can be
+manufactured by an unstated thresholding convention. It is a less flattering
+result than the one originally written, and a more useful one.
+
+### 8.5 Regression tests
+
+- `tests/test_metrics.py` (9 guards) — asserts that a model ranking the test
+  set perfectly with all scores below 0.5 records AUPRC 1.0, F1@0.5 = 0 and
+  F1@tau = 1.0; that tau is selected on validation and never on test; that
+  legacy keys keep their old meaning; and the one-class and empty cases.
+- `tests/test_protocol.py` (11 guards) — asserts that the two historical budget
+  rules genuinely disagree at the broken cell, that the shared rule matches the
+  classical rule at every fraction on both benchmarks, that the loader never
+  yields zero batches across a swept range of subset sizes, and traces the
+  broken cell end to end.
+- `tests/test_shard_schema.py` — static guard that both extractors write the
+  exact field set the shared loader reads.
+
+All run under pytest or as plain scripts, because the cluster environment has
+no pytest. Every cluster job now gates on them before training, so a
+recurrence fails in seconds rather than after GPU-hours. Full suite: 26 passed.
