@@ -42,9 +42,11 @@ def collect(ckpt_dir, bench, arm):
     for f in files:
         for frac, n, m in _rows(f):
             budget[frac] = n
+            # NOTE: `tau` is the threshold VALUE; `tau_selected` is a bool
+            # recording whether a validation split existed to select it.
             a = acc.setdefault(frac, {k: [] for k in
                                       ("f1_at_tau", "f1_at_half", "auprc",
-                                       "roc_auc", "tau_selected")})
+                                       "roc_auc", "tau", "pos_rate")})
             for k in a:
                 v = m.get(k)
                 if v is not None and not (isinstance(v, float) and np.isnan(v)):
@@ -73,8 +75,10 @@ def main():
                     rec[f"{k}_mean"] = round(float(np.mean(xs)), 4) if xs else ""
                     rec[f"{k}_sd"] = (round(float(np.std(xs, ddof=1)), 4)
                                       if len(xs) > 1 else 0.0)
-                taus = v["tau_selected"]
+                taus = v["tau"]
                 rec["tau_mean"] = round(float(np.mean(taus)), 3) if taus else ""
+                pr = v["pos_rate"]
+                rec["pos_rate"] = round(float(np.mean(pr)), 4) if pr else ""
                 out.append(rec)
 
     if not out:

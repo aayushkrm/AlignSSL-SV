@@ -53,6 +53,22 @@ def label_budget(frac: float, n_pool: int) -> int:
     return max(2, min(n_pool, int(round(frac * n_pool))))
 
 
+# ---------------------------------------------------------------------------
+# Label accounting: the validation split is drawn FROM the label budget, not
+# in addition to it.
+#
+# A label-efficiency x-axis must count every label the method consumed. Once a
+# decision threshold is selected on held-out data, those held-out labels were
+# used, so they belong inside the budget. At the 1% point on the uniform
+# benchmark the arm therefore sees 210 labels total -- 168 for gradient steps
+# and 42 for threshold selection -- not 210 for training plus a free 42.
+#
+# The consequence is visible and intended: full supervision now fits on 16,813
+# of 21,016 windows, so absolute scores sit below the previously published
+# fixed-threshold numbers, which trained on all 21,016 and then evaluated at an
+# arbitrary 0.5 cut. Comparisons across arms remain exact because every arm
+# pays the identical cost.
+# ---------------------------------------------------------------------------
 def split_budget(n: int, val_frac: float, min_side: int = MIN_SPLIT_SIDE):
     """Split a labelled budget of `n` into (n_val, n_train).
 
