@@ -2,6 +2,42 @@
 
 _Last updated: 2026-07-24 (**pre-submission HARDENING DAG COMPLETE — all 16 jobs exit 0; audit asymmetries A/B/C fixed; all arms now batch-96, error bars across pretraining seeds; manuscript + README + docs harmonized to the final numbers and pushed**). Panel frozen at 6 labeled samples + NA12878 test; SSL corpus 3 samples / 120K windows / 60 shards; 4-seed re-pretrain complete; GitHub repo public at github.com/aayushkrm/AlignSSL-SV. Maps to the Phase 0–5 plan in `project.md`. **See the 2026-07-24 section at the bottom for the current, authoritative numbers — earlier tables in this file are pre-hardening and superseded.**_
 
+> ### ⚠️ 2026-07-30 — EVERY NUMBER BELOW IS UNDER RECOMPUTATION
+>
+> A second audit pass examined *how* the numbers were produced rather than what
+> they claim, and found three defects in the shared evaluation path. See
+> `docs/REVIEWER_REPORT.md` §8 for the full account. In short:
+>
+> 1. **The decision threshold was fixed at 0.5 for every arm**, with no
+>    threshold selection anywhere. For models trained on tens of labels on a
+>    class-imbalanced task, this conflates *ranking quality* with *sigmoid
+>    placement*.
+> 2. **The label budget differed between the deep arms and the classical
+>    control** on the candidate-filtered benchmark (the deep arms silently
+>    received 2.8× the labels at the 1% point).
+> 3. **The validation split was gated on batch size**, so the low-label cells
+>    fell back to the fixed cut.
+>
+> Defects 2 and 3 share a root cause: batch size had leaked from an
+> implementation detail into the experimental protocol. All three are fixed in
+> `alignssl/metrics.py` and `alignssl/protocol.py`, with 20 regression guards
+> that encode the defects rather than only the corrected behaviour.
+>
+> **First recomputed evidence contradicts the headline claim below.** Uniform
+> benchmark, 1% labels, threshold-free: from-scratch AUPRC **0.484** vs
+> pretrained **0.463** — the from-scratch model ranks the test set *at least as
+> well*, and its F1@0.5 of 0.035 reflects only that it places nearly every
+> probability under 0.5. On the filtered benchmark at 1% the two arms' AUPRC
+> distributions overlap (pretrained 0.302 ± 0.053, n=3; scratch 0.252 ± 0.039,
+> n=5; Welch *p* = 0.24) and one from-scratch seed's F1 (0.416) exceeds every
+> pretrained seed.
+>
+> The "~10×" headline is therefore, on present evidence, largely an artefact of
+> an unstated thresholding convention. Treat the tables below as the
+> fixed-threshold record until the re-run completes.
+
+---
+
 **Legend:** ✅ done & verified · 🟡 in progress · ⬜ not started · ⚠️ decision/caveat for you
 
 ---
