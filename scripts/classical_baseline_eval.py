@@ -29,7 +29,8 @@ import argparse, json, sys, time
 import numpy as np
 
 sys.path.insert(0, "/scratch/igorno-alignssl_sv/code")
-from alignssl.data import ShardDataset  # noqa: E402
+from alignssl.data import ShardDataset
+from alignssl.metrics import score_arm  # noqa: E402
 
 Q_MAPQ, Q_DISC, Q_CLIP, Q_ISIZE, Q_DEPTH, Q_VALID = 6, 8, 9, 10, 11, 17
 FEAT_NAMES = ["depth_mean", "depth_sd", "depth_min", "depth_centre_flank_ratio",
@@ -103,6 +104,7 @@ def main():
     ap.add_argument("--out", required=True)
     ap.add_argument("--label-fracs", default="0.01,0.05,0.1,0.25,0.5,1.0")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--val-frac", type=float, default=0.2)
     a = ap.parse_args()
 
     from sklearn.linear_model import LogisticRegression
@@ -122,26 +124,38 @@ def main():
     for f in fracs:
         n = max(2, int(round(f * len(ytr))))
         idx = order[:n]
-        Xs, ys = Xtr[idx], ytr[idx]
-        rec = {"frac": f, "n": int(n)}
+        # Validation split carved OUT OF the labelled budget, exactly as in
+        # scripts/finetune_eval.py, so the threshold every arm uses is
+        # selected under the same label cost.
+        n_val = int(round(a.val_frac * n))
+        if n_val >= 2 and n - n_val >= 2:
+            v_idx, t_idx = idx[:n_val], idx[n_val:]
+        else:
+            v_idx, t_idx = idx[:0], idx
+        Xs, ys = Xtr[t_idx], ytr[t_idx]
+        Xv, yv = Xtr[v_idx], ytr[v_idx]
+        rec = {"frac": f, "n": int(n), "n_train": int(len(t_idx)),
+               "n_val": int(len(v_idx))}
         if len(np.unique(ys)) < 2:
-            rec["logreg"] = rec["hgb"] = {"P": 0.0, "R": 0.0, "F1": 0.0, "AUPRC": 0.0}
+            zero = score_arm(np.zeros(len(yte)), yte)
+            rec["logreg"] = rec["hgb"] = zero
             rows.append(rec); continue
         sc = StandardScaler().fit(Xs)
         lr = LogisticRegression(max_iter=2000, class_weight="balanced")
         lr.fit(sc.transform(Xs), ys)
-        pr = lr.predict_proba(sc.transform(Xte))[:, 1]
-        P, R, F = prf1(yte, (pr >= 0.5).astype(int))
-        rec["logreg"] = {"P": P, "R": R, "F1": F,
-                         "AUPRC": float(average_precision_score(yte, pr))}
+        pv = lr.predict_proba(sc.transform(Xv))[:, 1] if len(yv) else None
+        rec["logreg"] = score_arm(
+            lr.predict_proba(sc.transform(Xte))[:, 1], yte, pv,
+            yv if len(yv) else None)
         hgb = HistGradientBoostingClassifier(random_state=a.seed)
         hgb.fit(Xs, ys)
-        ph = hgb.predict_proba(Xte)[:, 1]
-        P, R, F = prf1(yte, (ph >= 0.5).astype(int))
-        rec["hgb"] = {"P": P, "R": R, "F1": F,
-                      "AUPRC": float(average_precision_score(yte, ph))}
-        print(f"frac={f} n={n} logreg F1={rec['logreg']['F1']:.4f} "
-              f"hgb F1={rec['hgb']['F1']:.4f}", flush=True)
+        hv = hgb.predict_proba(Xv)[:, 1] if len(yv) else None
+        rec["hgb"] = score_arm(hgb.predict_proba(Xte)[:, 1], yte, hv,
+                               yv if len(yv) else None)
+        print(f"frac={f} n={n} logreg F1@tau={rec['logreg']['f1_at_tau']:.4f} "
+              f"AUPRC={rec['logreg']['auprc']:.4f} | "
+              f"hgb F1@tau={rec['hgb']['f1_at_tau']:.4f} "
+              f"AUPRC={rec['hgb']['auprc']:.4f}", flush=True)
         rows.append(rec)
 
     json.dump({"label_efficiency": rows, "features": FEAT_NAMES,

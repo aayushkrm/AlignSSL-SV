@@ -20,6 +20,7 @@ from torch.utils.data import DataLoader, Subset
 
 from alignssl.data import ShardDataset
 from alignssl.deepsv_baseline import DeepSVNet
+from alignssl.metrics import score_arm
 from alignssl.heads import (focal_loss, TemperatureScaler,
                             expected_calibration_error)
 
@@ -82,6 +83,7 @@ def main():
     ap.add_argument("--label-fracs", default="0.01,0.05,0.1,0.25,0.5,1.0")
     ap.add_argument("--num-workers", type=int, default=2)
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--val-frac", type=float, default=0.2)
     args = ap.parse_args()
 
     torch.manual_seed(args.seed)
@@ -102,16 +104,36 @@ def main():
     for frac in fracs:
         n = max(args.batch_size, int(frac * len(train_ds)))
         idx = rng.permutation(len(train_ds))[:n]
-        sub = Subset(train_ds, idx.tolist())
+        # Validation split carved OUT OF the labelled budget, identical to
+        # scripts/finetune_eval.py, so this arm's threshold is selected
+        # under the same label cost as every other arm.
+        n_val = int(round(args.val_frac * n))
+        if n_val >= args.batch_size and n - n_val >= args.batch_size:
+            val_idx, tr_idx = idx[:n_val], idx[n_val:]
+        else:
+            val_idx, tr_idx = idx[:0], idx
+        sub = Subset(train_ds, tr_idx.tolist())
         dl = DataLoader(sub, batch_size=args.batch_size, shuffle=True,
                         collate_fn=collate, num_workers=args.num_workers,
                         drop_last=True)
+        val_dl = (DataLoader(Subset(train_ds, val_idx.tolist()),
+                             batch_size=args.batch_size, collate_fn=collate,
+                             num_workers=args.num_workers)
+                  if len(val_idx) else None)
         model = DeepSVNet().to(dev)
         train_one(model, dl, dev, args.epochs, args.lr)
         logits, labels, lens = collect_logits(model, test_dl, dev)
-        pred = logits.argmax(1)
-        p, r, f = prf1(pred, labels)
-        row = {"frac": frac, "n": int(n), "deepsv": {"P": p, "R": r, "F1": f}}
+        probs = torch.softmax(logits, 1)[:, 1]
+        if val_dl is not None:
+            v_logits, v_labels, _ = collect_logits(model, val_dl, dev)
+            v_probs = torch.softmax(v_logits, 1)[:, 1]
+        else:
+            v_probs = v_labels = None
+        rec = score_arm(probs, labels, v_probs, v_labels)
+        pred = (probs >= rec["tau"]).long()
+        p, r, f = rec["P_at_tau"], rec["R_at_tau"], rec["f1_at_tau"]
+        row = {"frac": frac, "n": int(n), "n_train": int(len(tr_idx)),
+               "n_val": int(len(val_idx)), "deepsv": rec}
         if abs(frac - 1.0) < 1e-9:
             ts = TemperatureScaler()
             ts.fit(logits, labels)
@@ -126,7 +148,9 @@ def main():
             row["deepsv"]["ece"] = float(ece)
             row["deepsv"]["temperature"] = float(ts.log_T.exp().item())
             row["deepsv"]["length_strata"] = strat
-        print(f"  frac={frac} deepsv: F1={f:.3f} P={p:.3f} R={r:.3f}", flush=True)
+        print(f"  frac={frac} deepsv: F1@tau={f:.3f} tau={rec['tau']:.3f} "
+              f"AUPRC={rec['auprc']:.3f} F1@0.5={rec['f1_at_half']:.3f}",
+              flush=True)
         results["label_efficiency"].append(row)
 
     with open(args.out, "w") as fo:

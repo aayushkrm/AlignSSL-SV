@@ -19,6 +19,7 @@ from alignssl.data import ShardDataset
 from alignssl.encoder import AlignEncoder
 from alignssl.heads import (SVHeads, finetune_loss, TemperatureScaler,
                             expected_calibration_error, ConformalBinary)
+from alignssl.metrics import score_arm
 
 
 class Model(nn.Module):
@@ -107,6 +108,9 @@ def main():
     ap.add_argument("--label-fracs", default="0.01,0.05,0.1,0.25,0.5,1.0")
     ap.add_argument("--num-workers", type=int, default=8)
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--val-frac", type=float, default=0.2,
+                    help="fraction of the LABELLED budget held out to "
+                         "select the decision threshold")
     args = ap.parse_args()
 
     torch.manual_seed(args.seed)
@@ -126,11 +130,24 @@ def main():
     for frac in fracs:
         n = max(args.batch_size, int(frac * len(train_ds)))
         idx = rng.permutation(len(train_ds))[:n]
-        sub = Subset(train_ds, idx.tolist())
+        # Carve a validation split OUT OF the labelled budget -- it is not
+        # granted for free. Used only to pick the decision threshold; the
+        # test chromosomes are never touched for threshold selection.
+        n_val = int(round(args.val_frac * n))
+        if n_val >= args.batch_size and n - n_val >= args.batch_size:
+            val_idx, tr_idx = idx[:n_val], idx[n_val:]
+        else:
+            val_idx, tr_idx = idx[:0], idx  # budget too small to split
+        sub = Subset(train_ds, tr_idx.tolist())
         dl = DataLoader(sub, batch_size=args.batch_size, shuffle=True,
                         collate_fn=collate, num_workers=args.num_workers,
                         drop_last=True)
-        row = {"frac": frac, "n": int(n)}
+        val_dl = (DataLoader(Subset(train_ds, val_idx.tolist()),
+                             batch_size=args.batch_size, collate_fn=collate,
+                             num_workers=args.num_workers)
+                  if len(val_idx) else None)
+        row = {"frac": frac, "n": int(n), "n_train": int(len(tr_idx)),
+               "n_val": int(len(val_idx))}
         for mode in ["pretrained", "scratch"]:
             if mode == "pretrained" and not args.encoder:
                 continue
@@ -141,11 +158,16 @@ def main():
             train_one(model, dl, dev, args.epochs, args.lr,
                       freeze_encoder=args.freeze_encoder)
             logits, labels, lens = collect_logits(model, test_dl, dev)
-            pred = logits.argmax(1)
-            p, r, f = prf1(pred, labels)
             probs_raw = torch.softmax(logits, 1)[:, 1]
-            row[mode] = {"P": p, "R": r, "F1": f,
-                         "AUPRC": auprc(probs_raw, labels)}
+            if val_dl is not None:
+                v_logits, v_labels, _ = collect_logits(model, val_dl, dev)
+                v_probs = torch.softmax(v_logits, 1)[:, 1]
+            else:
+                v_probs = v_labels = None
+            row[mode] = score_arm(probs_raw, labels, v_probs, v_labels)
+            pred = (probs_raw >= row[mode]["tau"]).long()
+            f = row[mode]["f1_at_tau"]
+            p, r = row[mode]["P_at_tau"], row[mode]["R_at_tau"]
             # calibration + length strata only for the full-label runs
             if abs(frac - 1.0) < 1e-9:
                 ts = TemperatureScaler()
@@ -166,7 +188,8 @@ def main():
                 _dump = os.path.splitext(args.out)[0] + f"_logits_{mode}.npz"
                 np.savez_compressed(_dump, logits=logits.numpy(),
                     labels=labels.numpy(), lens=lens.numpy())
-            print(f"  frac={frac} {mode}: F1={f:.3f} P={p:.3f} R={r:.3f}",
+            print(f"  frac={frac} {mode}: F1@tau={f:.3f} P={p:.3f} R={r:.3f} tau={row[mode]['tau']:.3f} "
+                  f"AUPRC={row[mode]['auprc']:.3f} F1@0.5={row[mode]['f1_at_half']:.3f}",
                   flush=True)
         results["label_efficiency"].append(row)
 
