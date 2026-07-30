@@ -1,0 +1,32 @@
+family,test,m_family,p_raw,p_holm,q_bh,nominal_0.05,survives_holm_0.05,survives_bh_0.05,verdict
+uniform: label-efficiency and ablation,headline low-label gain | combined vs scratch @1% labels,7,0.000924,0.00462,0.002156,True,True,True,survives Holm
+uniform: label-efficiency and ablation,low-label gain (combined) | combined vs scratch @1%,7,4.22e-05,0.0002954,0.00014805,True,True,True,survives Holm
+uniform: label-efficiency and ablation,low-label gain (MAM-only) | MAM-only vs scratch @1%,7,0.0172,0.0688,0.0301,True,False,True,survives BH only
+uniform: label-efficiency and ablation,low-label gain (VICReg-only) | VICReg-only vs scratch @1%,7,4.23e-05,0.0002954,0.00014805,True,True,True,survives Holm
+uniform: label-efficiency and ablation,convergence at full supervision | combined vs scratch @100%,7,0.0246,0.0738,0.03444,True,False,True,survives BH only
+uniform: label-efficiency and ablation,ablation @100% | combined vs MAM-only @100%,7,0.2088,0.4176,0.2436,False,False,False,not significant
+uniform: label-efficiency and ablation,ablation @1% | MAM-only vs combined @1%,7,0.4771,0.4771,0.4771,False,False,False,not significant
+uniform: cross-ancestry sweep,"cross-ancestry @0.01 | combined vs scratch, held-out CEU F1",6,0.1102,0.4408,0.2204,False,False,False,not significant
+uniform: cross-ancestry sweep,"cross-ancestry @0.05 | combined vs scratch, held-out CEU F1",6,0.537,1,0.5839,False,False,False,not significant
+uniform: cross-ancestry sweep,"cross-ancestry @0.1 | combined vs scratch, held-out CEU F1",6,0.0282,0.1692,0.1692,True,False,False,LOST to multiplicity
+uniform: cross-ancestry sweep,"cross-ancestry @0.25 | combined vs scratch, held-out CEU F1",6,0.5839,1,0.5839,False,False,False,not significant
+uniform: cross-ancestry sweep,"cross-ancestry @0.5 | combined vs scratch, held-out CEU F1",6,0.0836,0.418,0.2204,False,False,False,not significant
+uniform: cross-ancestry sweep,"cross-ancestry @1 | combined vs scratch, held-out CEU F1",6,0.1818,0.5454,0.2727,False,False,False,not significant
+candidate-filtered: pretrained vs Classical-GBT,pretrained vs Classical-GBT @0.01,6,0.0161,0.0966,0.0738,True,False,False,LOST to multiplicity
+candidate-filtered: pretrained vs Classical-GBT,pretrained vs Classical-GBT @0.05,6,0.1034,0.4136,0.2068,False,False,False,not significant
+candidate-filtered: pretrained vs Classical-GBT,pretrained vs Classical-GBT @0.1,6,0.0246,0.123,0.0738,True,False,False,LOST to multiplicity
+candidate-filtered: pretrained vs Classical-GBT,pretrained vs Classical-GBT @0.25,6,0.1516,0.4548,0.2274,False,False,False,not significant
+candidate-filtered: pretrained vs Classical-GBT,pretrained vs Classical-GBT @0.5,6,0.2017,0.4548,0.24204,False,False,False,not significant
+candidate-filtered: pretrained vs Classical-GBT,pretrained vs Classical-GBT @1.0,6,0.7411,0.7411,0.7411,False,False,False,not significant
+candidate-filtered: pretrained vs DeepSV-representation,pretrained vs DeepSV-representation @0.01,6,0.4378,1,0.5979,False,False,False,not significant
+candidate-filtered: pretrained vs DeepSV-representation,pretrained vs DeepSV-representation @0.05,6,0.5979,1,0.5979,False,False,False,not significant
+candidate-filtered: pretrained vs DeepSV-representation,pretrained vs DeepSV-representation @0.1,6,0.5622,1,0.5979,False,False,False,not significant
+candidate-filtered: pretrained vs DeepSV-representation,pretrained vs DeepSV-representation @0.25,6,0.2503,1,0.5006,False,False,False,not significant
+candidate-filtered: pretrained vs DeepSV-representation,pretrained vs DeepSV-representation @0.5,6,0.2483,1,0.5006,False,False,False,not significant
+candidate-filtered: pretrained vs DeepSV-representation,pretrained vs DeepSV-representation @1.0,6,0.0179,0.1074,0.1074,True,False,False,LOST to multiplicity
+candidate-filtered: pretrained vs scratch,pretrained vs scratch @0.01,6,0.0161,0.0966,0.0966,True,False,False,LOST to multiplicity
+candidate-filtered: pretrained vs scratch,pretrained vs scratch @0.05,6,0.069,0.345,0.207,False,False,False,not significant
+candidate-filtered: pretrained vs scratch,pretrained vs scratch @0.1,6,0.6987,1,0.6987,False,False,False,not significant
+candidate-filtered: pretrained vs scratch,pretrained vs scratch @0.25,6,0.2085,0.834,0.417,False,False,False,not significant
+candidate-filtered: pretrained vs scratch,pretrained vs scratch @0.5,6,0.4109,1,0.61635,False,False,False,not significant
+candidate-filtered: pretrained vs scratch,pretrained vs scratch @1.0,6,0.5808,1,0.69696,False,False,False,not significant
