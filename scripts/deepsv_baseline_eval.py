@@ -20,6 +20,7 @@ from torch.utils.data import DataLoader, Subset
 
 from alignssl.data import ShardDataset
 from alignssl.deepsv_baseline import DeepSVNet
+from alignssl.protocol import label_budget, split_budget, loader_params
 from alignssl.metrics import score_arm
 from alignssl.heads import (focal_loss, TemperatureScaler,
                             expected_calibration_error)
@@ -102,23 +103,23 @@ def main():
                "model": "DeepSVNet (RGB pileup + supervised CNN)"}
 
     for frac in fracs:
-        n = max(args.batch_size, int(frac * len(train_ds)))
+        # Exact budget from the shared protocol -- NO batch-size floor, so
+        # this arm receives the same label count as the classical control.
+        n = label_budget(frac, len(train_ds))
         idx = rng.permutation(len(train_ds))[:n]
         # Validation split carved OUT OF the labelled budget, identical to
         # scripts/finetune_eval.py, so this arm's threshold is selected
         # under the same label cost as every other arm.
-        n_val = int(round(args.val_frac * n))
-        if n_val >= args.batch_size and n - n_val >= args.batch_size:
-            val_idx, tr_idx = idx[:n_val], idx[n_val:]
-        else:
-            val_idx, tr_idx = idx[:0], idx
+        n_val, _n_tr, _did = split_budget(n, args.val_frac)
+        val_idx, tr_idx = idx[:n_val], idx[n_val:]
         sub = Subset(train_ds, tr_idx.tolist())
-        dl = DataLoader(sub, batch_size=args.batch_size, shuffle=True,
+        _bs, _drop = loader_params(len(tr_idx), args.batch_size)
+        dl = DataLoader(sub, batch_size=_bs, shuffle=True,
                         collate_fn=collate, num_workers=args.num_workers,
-                        drop_last=True)
+                        drop_last=_drop)
         val_dl = (DataLoader(Subset(train_ds, val_idx.tolist()),
-                             batch_size=args.batch_size, collate_fn=collate,
-                             num_workers=args.num_workers)
+                             batch_size=max(1, min(args.batch_size, len(val_idx))),
+                             collate_fn=collate, num_workers=args.num_workers)
                   if len(val_idx) else None)
         model = DeepSVNet().to(dev)
         train_one(model, dl, dev, args.epochs, args.lr)
@@ -133,7 +134,8 @@ def main():
         pred = (probs >= rec["tau"]).long()
         p, r, f = rec["P_at_tau"], rec["R_at_tau"], rec["f1_at_tau"]
         row = {"frac": frac, "n": int(n), "n_train": int(len(tr_idx)),
-               "n_val": int(len(val_idx)), "deepsv": rec}
+               "n_val": int(len(val_idx)), "batch_size_eff": int(_bs),
+               "drop_last": bool(_drop), "deepsv": rec}
         if abs(frac - 1.0) < 1e-9:
             ts = TemperatureScaler()
             ts.fit(logits, labels)

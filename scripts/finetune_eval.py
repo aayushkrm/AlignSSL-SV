@@ -19,6 +19,7 @@ from alignssl.data import ShardDataset
 from alignssl.encoder import AlignEncoder
 from alignssl.heads import (SVHeads, finetune_loss, TemperatureScaler,
                             expected_calibration_error, ConformalBinary)
+from alignssl.protocol import label_budget, split_budget, loader_params
 from alignssl.metrics import score_arm
 
 
@@ -128,26 +129,27 @@ def main():
     results = {"label_efficiency": [], "config": vars(args)}
 
     for frac in fracs:
-        n = max(args.batch_size, int(frac * len(train_ds)))
+        # Exact budget from the shared protocol -- NO batch-size floor, so
+        # this arm receives the same label count as the classical control.
+        n = label_budget(frac, len(train_ds))
         idx = rng.permutation(len(train_ds))[:n]
         # Carve a validation split OUT OF the labelled budget -- it is not
         # granted for free. Used only to pick the decision threshold; the
         # test chromosomes are never touched for threshold selection.
-        n_val = int(round(args.val_frac * n))
-        if n_val >= args.batch_size and n - n_val >= args.batch_size:
-            val_idx, tr_idx = idx[:n_val], idx[n_val:]
-        else:
-            val_idx, tr_idx = idx[:0], idx  # budget too small to split
+        n_val, _n_tr, _did = split_budget(n, args.val_frac)
+        val_idx, tr_idx = idx[:n_val], idx[n_val:]  # budget too small to split
         sub = Subset(train_ds, tr_idx.tolist())
-        dl = DataLoader(sub, batch_size=args.batch_size, shuffle=True,
+        _bs, _drop = loader_params(len(tr_idx), args.batch_size)
+        dl = DataLoader(sub, batch_size=_bs, shuffle=True,
                         collate_fn=collate, num_workers=args.num_workers,
-                        drop_last=True)
+                        drop_last=_drop)
         val_dl = (DataLoader(Subset(train_ds, val_idx.tolist()),
-                             batch_size=args.batch_size, collate_fn=collate,
-                             num_workers=args.num_workers)
+                             batch_size=max(1, min(args.batch_size, len(val_idx))),
+                             collate_fn=collate, num_workers=args.num_workers)
                   if len(val_idx) else None)
         row = {"frac": frac, "n": int(n), "n_train": int(len(tr_idx)),
-               "n_val": int(len(val_idx))}
+               "n_val": int(len(val_idx)), "batch_size_eff": int(_bs),
+               "drop_last": bool(_drop)}
         for mode in ["pretrained", "scratch"]:
             if mode == "pretrained" and not args.encoder:
                 continue

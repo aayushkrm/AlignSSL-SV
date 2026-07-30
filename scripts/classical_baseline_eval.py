@@ -30,6 +30,7 @@ import numpy as np
 
 sys.path.insert(0, "/scratch/igorno-alignssl_sv/code")
 from alignssl.data import ShardDataset
+from alignssl.protocol import label_budget, split_budget
 from alignssl.metrics import score_arm  # noqa: E402
 
 Q_MAPQ, Q_DISC, Q_CLIP, Q_ISIZE, Q_DEPTH, Q_VALID = 6, 8, 9, 10, 11, 17
@@ -122,12 +123,12 @@ def main():
     order = rng.permutation(len(ytr))
     rows = []
     for f in fracs:
-        n = max(2, int(round(f * len(ytr))))
+        n = label_budget(f, len(ytr))
         idx = order[:n]
         # Validation split carved OUT OF the labelled budget, exactly as in
         # scripts/finetune_eval.py, so the threshold every arm uses is
         # selected under the same label cost.
-        n_val = int(round(a.val_frac * n))
+        n_val, _n_tr, _did = split_budget(n, a.val_frac)
         if n_val >= 2 and n - n_val >= 2:
             v_idx, t_idx = idx[:n_val], idx[n_val:]
         else:
