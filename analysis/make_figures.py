@@ -16,6 +16,7 @@ Emits, overwriting in place:
     figure4_ssl_ablation.png       MAM vs VICReg vs combined
     figure5_cross_ancestry.png     In-distribution vs held-out CEU
     figure7_control_threshold_free.png  Control AUPRC vs labels, both benchmarks
+    figure8_threshold_sensitivity.png   Pretrained/scratch ratio by scoring rule
 """
 from __future__ import annotations
 
@@ -409,6 +410,74 @@ def figure7(res: Path, out: Path) -> None:
     plt.close(fig)
 
 
+def figure8(res: Path, out: Path) -> None:
+    """The headline gap is a thresholding effect.
+
+    Same runs, same seeds, three scoring rules. Left: the pretrained-over-
+    scratch F1 ratio at each label budget under a fixed 0.5 cut versus a
+    validation-selected threshold. Right: the two arms' absolute scores at the
+    smallest budget under all three rules, which is where the fixed cut does
+    its damage.
+    """
+    path = res / "table13_threshold_sensitivity.csv"
+    if not path.exists():
+        return
+    rows = [r for r in read(path) if r["benchmark"] == "uniform"]
+    if not rows:
+        return
+    rows.sort(key=lambda r: float(r["label_frac"]))
+    x = [float(r["label_frac"]) for r in rows]
+
+    fig, (axl, axr) = plt.subplots(1, 2, figsize=(9.4, 3.9),
+                                   gridspec_kw={"width_ratios": [1.25, 1]})
+
+    for key, colour, marker, lab in [
+            ("ratio_F1@0.5", "#c0392b", "o", "fixed 0.5 cut (as originally scored)"),
+            ("ratio_F1@tau", "#1f4e79", "s", "validation-selected threshold")]:
+        axl.plot(x, [float(r[key]) for r in rows], "-", marker=marker,
+                 color=colour, label=lab, zorder=3)
+    axl.axhline(1.0, ls=":", lw=1.0, color="#555555", zorder=1)
+    axl.annotate("parity", xy=(x[-1], 1.0), xytext=(-2, 5), ha="right",
+                 textcoords="offset points", fontsize=8, color="#555555")
+    axl.set_yscale("log")
+    axl.set_xscale("log")
+    axl.set_xticks(x)
+    axl.set_xticklabels([f"{v*100:g}" for v in x])
+    axl.set_yticks([0.5, 1, 2, 5, 10])
+    axl.set_yticklabels(["0.5", "1", "2", "5", "10"])
+    axl.set_xlabel("Labelled training windows (% of 21,016)")
+    axl.set_ylabel("Pretrained F1 / from-scratch F1")
+    axl.set_title("The 10x gap exists only at one budget,\n"
+                  "under one scoring rule", loc="left")
+    axl.legend(loc="upper right", frameon=False, fontsize=8)
+
+    lo = rows[0]
+    names = [n for _, n in (("f1_at_half", "F1@0.5"), ("f1_at_tau", "F1@tau"),
+                            ("auprc", "AUPRC"))]
+    idx = np.arange(len(names))
+    w = 0.36
+    for off, arm, colour, lab in [(-w / 2, "AlignSSL-pretrained", "#1f4e79", "pretrained"),
+                                  (w / 2, "AlignSSL-scratch", "#a98261", "from scratch")]:
+        axr.bar(idx + off, [float(lo[f"{arm}_{n}"]) for n in names], w,
+                color=colour, label=lab, zorder=3)
+    for i, n in enumerate(names):
+        pv = lo.get(f"p_{n}", "")
+        if pv not in ("", None):
+            axr.annotate(f"p = {float(pv):.3f}", xy=(i, 0.02), ha="center",
+                         fontsize=8, color="#333333")
+    axr.set_xticks(idx)
+    axr.set_xticklabels(names)
+    axr.set_ylim(0, 0.72)
+    axr.set_ylabel(f"Score at {int(float(lo['n_labelled']))} labels")
+    axr.set_title("At the smallest budget, only the fixed\n"
+                  "cut separates the two arms", loc="left")
+    axr.legend(loc="upper left", frameon=False, fontsize=8)
+
+    fig.tight_layout()
+    fig.savefig(out / "figure8_threshold_sensitivity.png")
+    plt.close(fig)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--results-dir", default="results")
@@ -416,7 +485,7 @@ def main() -> int:
     res = Path(a.results_dir)
     with plt.rc_context(RC):
         for fn in (figure1, figure2, figure3, figure4, figure5,
-                   figure6, figure7):
+                   figure6, figure7, figure8):
             fn(res, res)
             print(f"{fn.__name__} ok")
     return 0
