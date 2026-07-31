@@ -1,43 +1,52 @@
 # AlignSSL-SV
 
-**Self-supervised representation learning on read-alignment tensors for structural-variant deletion calling — and a negative control that shows why the standard benchmark cannot support the usual claims.**
+**Three controls for evaluating deep structural-variant callers, and a worked demonstration that their absence manufactured our own headline result.**
 
 AlignSSL-SV is a deletion caller for short-read whole-genome sequencing and a direct extension of **DeepSV** (Cai, Wu & Gao, *BMC Bioinformatics* 2019, 20:665). DeepSV renders the read pileup as a hand-designed RGB image and trains a fully supervised CNN. AlignSSL-SV replaces both halves of that design:
 
 1. **An alignment tensor instead of an image.** Reads are encoded directly into a `(C=18, R=64, W=256)` tensor whose channels carry depth, mapping quality, insert-size deviation, orientation, clip signal and base identity. Nothing is quantised into three colour planes, so no information is discarded at the encoding step.
 2. **Self-supervised pretraining.** A masked-alignment-modelling (MAM) objective learns a pileup representation from *unlabelled* windows, so the supervised classifier needs far fewer labels. A VICReg-style invariance objective and a combined objective are evaluated as ablations.
 
-The project's second, and in practice more important, contribution is methodological: a set of controls establishing what the widely-used benchmark construction can and cannot demonstrate.
+We built this to test whether that design improves label efficiency, calibration and ancestry robustness. It appeared to: at 1% of labels the pretrained encoder beat the identical from-scratch encoder ~11-fold in F1 (*p* = 0.009). **That result does not survive our own controls, and this repository now exists mainly to document why.** Every performance claim the project once made has been withdrawn. What remains is the three controls, the code that implements them, and the evidence that each defect is a property of the standard evaluation design rather than of this implementation.
 
 ## Headline results (1000 Genomes phase-3 deletions; test = chr12–22)
 
 All deep arms use a harmonised fine-tuning batch size of 96. Error bars span 3–4 seeds (independent *pretraining* seeds for the SSL arms).
 
-### The claim that survives every control: label efficiency
+### The headline result, and why it is an artefact
 
-At the smallest label budget (1% ≈ 210 windows) the SSL-pretrained encoder reaches a usable **F1 ≈ 0.51** while the identical from-scratch encoder collapses to **F1 ≈ 0.05** — a ~10× gap, and the result that every control leaves standing. The two converge under full supervision, and the DeepSV-style RGB+CNN baseline is weakest and least stable there.
+At the smallest label budget (1% ≈ 210 windows) the pretrained encoder reaches F1 0.478 while the identical from-scratch encoder collapses to 0.044 — a 10.89× gap at *p* = 0.009. Those F1s are computed by cutting the positive-class probability at a fixed 0.5, the convention this literature inherits from DeepSV.
 
-| Labels | AlignSSL (pretrained) | AlignSSL (scratch) | DeepSV baseline |
-|-------:|:---------------------:|:------------------:|:---------------:|
-|   1%   | **0.514 ± 0.055**     | 0.050 ± 0.040      | 0.435 ± 0.022   |
-|   5%   | 0.655 ± 0.035         | **0.734 ± 0.107**  | 0.591 ± 0.063   |
-|  10%   | **0.813 ± 0.007**     | 0.763 ± 0.088      | 0.662 ± 0.048   |
-|  25%   | 0.846 ± 0.064         | **0.854 ± 0.055**  | 0.834 ± 0.012   |
-|  50%   | **0.913 ± 0.014**     | 0.912 ± 0.022      | 0.856 ± 0.033   |
-| 100%   | 0.934 ± 0.004         | **0.944 ± 0.003**  | 0.707 ± 0.140   |
+A fixed cut conflates ranking quality with calibration. Re-scoring the identical runs three ways:
+
+| Scoring rule | pretrained | scratch | ratio | *p* |
+|---|---:|---:|---:|---:|
+| F1 at fixed 0.5 cut | 0.478 | 0.044 | **10.89×** | **0.009** |
+| F1 at validation-selected τ | 0.483 | 0.413 | 1.17× | 0.407 |
+| AUPRC (threshold-free) | 0.524 | 0.427 | 1.23× | 0.348 |
+
+The advantage exists under one scoring rule and no other. At every larger label budget the from-scratch arm is *ahead*. It was never degenerate — it ranked competently and scored timidly, and a fixed cut reads timidity as failure.
+
+A second, independent defect was in our own evaluators: a batch-size floor granted the deep arms up to **2.8× the labels** the classical control received, concentrated in exactly the low-label cells carrying the claim. Both are corrected in `alignssl/protocol.py` (equal budgets, validation labels carved out of the budget rather than granted free) and `analysis/threshold_sensitivity.py`.
 
 ### The control that reframes the paper: the benchmark is shortcut-solvable
 
-A twelve-feature gradient-boosted tree on hand-computed summary statistics **beats every deep arm at every label fraction**, including at 1% labels where it reaches F1 0.894 ± 0.002. Worse, a *single untrained feature* — the ratio of mean depth in the window centre to its flanks — separates the classes at **ROC-AUC = 0.955** with no fitting at all.
+A twelve-feature gradient-boosted tree on hand-computed summary statistics is **at its ceiling from the smallest label budget onward**: AUPRC 0.937 ± 0.009 at 1% labels, gaining only **+0.038** from a hundred-fold increase in supervision. Worse, a *single untrained feature* — the ratio of mean depth in the window centre to its flanks — separates the classes at **ROC-AUC = 0.955** with no fitting at all. A task that twelve scalars solve to 96% of asymptote after 210 examples cannot discriminate between learned representations.
 
-| Labels | Classical GBT | Classical logreg | AlignSSL (pretrained) |
-|-------:|:-------------:|:----------------:|:---------------------:|
-|   1%   | **0.894 ± 0.002** | 0.877 ± 0.008 | 0.514 ± 0.055 |
-| 100%   | **0.939 ± 0.001** | 0.871 ± 0.000 | 0.934 ± 0.004 |
+| Labels | Classical GBT | Best deep arm | its AUPRC | *p* | Leader |
+|-------:|:-------------:|:--------------|:---------:|----:|:------|
+| 1% | 0.937 ± 0.009 | AlignSSL-pretrained | 0.524 ± 0.052 | 0.005 | control |
+| 5% | 0.958 ± 0.006 | AlignSSL-scratch | 0.866 ± 0.022 | 0.016 | control |
+| 10% | 0.967 ± 0.004 | AlignSSL-scratch | 0.912 ± 0.030 | 0.087 | tie |
+| 25% | 0.971 ± 0.002 | AlignSSL-scratch | 0.936 ± 0.023 | 0.121 | tie |
+| 50% | 0.974 ± 0.002 | AlignSSL-scratch | 0.974 ± 0.001 | 0.671 | tie |
+| 100% | 0.975 ± 0.001 | AlignSSL-scratch | 0.979 ± 0.001 | 0.003 | **deep** |
+
+Scored threshold-free under the corrected protocol. An earlier draft claimed the control dominated at every budget; it does not. Its lead is significant where labels are scarce — which is the regime pretraining is proposed for — decays to a tie by 10%, and reverses at full supervision.
 
 This is a property of how positive and negative windows are drawn, not of any model. Uniformly sampled negatives sit at background depth while heterozygous and homozygous deletions sit below it, so the centre-versus-flank depth contrast is nearly sufficient on its own. Mean depth alone is uninformative (AUC 0.502) — the leak is specifically in the *localised* contrast that the extraction protocol builds into every positive window. Two non-depth features also reach substantial discrimination independently, so neutralising depth alone would not be enough.
 
-Consequently **we do not claim state-of-the-art deletion calling on this benchmark**, and two claims that earlier drafts made are formally withdrawn: superior calibration and cross-ancestry robustness. Both are measured on the same shortcut-solvable task and neither survives the classical control.
+Consequently **we make no performance claim on this benchmark.** Three claims earlier drafts made are formally withdrawn: superior calibration, cross-ancestry robustness, and — as of the thresholding analysis above — label efficiency, which was the headline.
 
 ### The repaired benchmark: the shortcut is attenuated, and the result is mixed
 
@@ -48,7 +57,7 @@ We re-extracted the labelled set with **per-scale quantile-matched candidate neg
 |   1%   | 0.352 ± 0.064 | 0.000 ± 0.000 | 0.233 ± 0.172 | 0.000 ± 0.000 |
 | 100%   | 0.762 ± 0.110 | 0.702 ± 0.086 | 0.284 ± 0.131 | **0.791 ± 0.000** |
 
-Three findings, and they do not all favour the method. The **pretrained-versus-scratch gap survives and sharpens** — at 1% labels the from-scratch model never fires while the pretrained one reaches F1 0.352 (*p* = 0.016). The **learned tensor now clearly beats the DeepSV representation** at full supervision (0.762 vs 0.284, *p* = 0.018), which it did not on the uniform benchmark. But the **hand-crafted control still leads at every label budget**, so the negative result is not an artefact of uniform negative sampling. See `docs/AlignSSL_SV_manuscript.md` §6.
+> **The arm-versus-arm numbers in this table are provisional.** They were produced under both defective conventions above — unequal budgets and a fixed 0.5 cut — and the corrected re-run is still training. In particular the 1% from-scratch 0.000 is the exact signature the thresholding analysis explains. What does *not* depend on either convention, and stands: quantile-matched candidate negatives attenuate the depth shortcut from ROC-AUC 0.955 to 0.717 without changing the positive set, and every arm's score falls, confirming a genuinely harder task. See `docs/AlignSSL_SV_manuscript.md` §6.
 
 ### Self-supervised objective ablation
 
