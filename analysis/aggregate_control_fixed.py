@@ -27,23 +27,21 @@ import numpy as np
 
 BENCHES = [("uni", "uniform"), ("hn", "candidate-filtered")]
 METRICS = ("auprc", "roc_auc", "f1_at_tau", "f1_at_half")
+# Each results row carries BOTH classical models under their own keys. They
+# must be named explicitly: an earlier version of this script took whichever
+# metric dict appeared first in the row and labelled it "gradient-boosted
+# tree", which silently reported the logistic regression instead -- a model
+# that is roughly 0.24 AUPRC weaker on the candidate-filtered benchmark.
+MODELS = [("hgb", "Classical-GBT"), ("logreg", "Classical-logreg")]
 
 
-def _metrics_of(row):
-    """Pull the metric dict out of a results row, whatever the arm key is."""
-    for v in row.values():
-        if isinstance(v, dict) and "auprc" in v:
-            return v
-    return row if "auprc" in row else None
-
-
-def collect(json_dir, bench):
+def collect(json_dir, bench, model_key):
     acc = {}
     files = sorted(glob.glob(os.path.join(json_dir, f"f_{bench}_classical_seed*.json")))
     for f in files:
         for row in json.load(open(f))["label_efficiency"]:
-            m = _metrics_of(row)
-            if m is None:
+            m = row.get(model_key)
+            if not isinstance(m, dict):
                 continue
             a = acc.setdefault(float(row["frac"]),
                                {k: [] for k in METRICS + ("pos_rate",)})
@@ -63,13 +61,14 @@ def main():
 
     rows = []
     for bkey, bname in BENCHES:
-        acc, nseed = collect(a.json_dir, bkey)
+      for mkey, mname in MODELS:
+        acc, nseed = collect(a.json_dir, bkey, mkey)
         if not acc:
             continue
         for frac in sorted(acc):
             v = acc[frac]
-            rec = {"benchmark": bname, "label_frac": frac, "n_labelled": v["n"],
-                   "n_seeds": nseed}
+            rec = {"benchmark": bname, "model": mname, "label_frac": frac,
+                   "n_labelled": v["n"], "n_seeds": nseed}
             for k in METRICS:
                 xs = v[k]
                 rec[f"{k}_mean"] = round(float(np.mean(xs)), 4) if xs else ""
@@ -88,11 +87,12 @@ def main():
         w.writerows(rows)
 
     for bkey, bname in BENCHES:
-        sel = [r for r in rows if r["benchmark"] == bname]
+        sel = [r for r in rows
+               if r["benchmark"] == bname and r["model"] == "Classical-GBT"]
         if not sel:
             continue
         lo, hi = sel[0], sel[-1]
-        print(f"\n{bname}: AUPRC {lo['auprc_mean']:.3f} at {lo['n_labelled']} labels "
+        print(f"\n{bname} (GBT): AUPRC {lo['auprc_mean']:.3f} at {lo['n_labelled']} labels "
               f"-> {hi['auprc_mean']:.3f} at {hi['n_labelled']} "
               f"(chance {hi['chance_auprc']:.2f})")
         span = hi["auprc_mean"] - lo["auprc_mean"]

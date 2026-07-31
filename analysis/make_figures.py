@@ -364,26 +364,34 @@ def figure7(res: Path, out: Path) -> None:
     fig, ax = plt.subplots(figsize=(5.4, 3.6))
     chance = None
     for bench, st in style.items():
+        # table11 carries both classical models; the GBT is the stronger of
+        # the two and is the control the argument rests on.
         pts = sorted((float(r["label_frac"]), float(r["auprc_mean"]),
                       float(r["auprc_sd"]), int(r["n_labelled"]))
-                     for r in rows if r["benchmark"] == bench)
+                     for r in rows if r["benchmark"] == bench
+                     and r["model"] == "Classical-GBT")
         if not pts:
             continue
         x, y, sd, n = (np.array(v) for v in zip(*pts))
         chance = float(next(r["chance_auprc"] for r in rows
-                            if r["benchmark"] == bench))
+                            if r["benchmark"] == bench
+                            and r["model"] == "Classical-GBT"))
         ax.errorbar(x, y, yerr=sd, marker=st["marker"], color=st["colour"],
                     capsize=2.5, label=st["label"], zorder=3)
         # Annotate the span each curve covers: that span IS the argument.
+        # Place each label at the curve's own left end, above the flat curve
+        # and below the rising one, so neither can collide with the other nor
+        # with the legend on the right.
         span = y[-1] - y[0]
-        ax.annotate(f"{span:+.3f} AUPRC\nover {n[-1] // max(n[0], 1)}x labels",
-                    xy=(x[-1], y[-1]), xytext=(-4, -30 if span < 0.05 else 14),
-                    textcoords="offset points", ha="right", fontsize=8,
+        flat = span < 0.1
+        ax.annotate(f"{span:+.3f} AUPRC over {n[-1] // max(n[0], 1)}x labels",
+                    xy=(x[0], y[0]), xytext=(6, 9 if flat else -16),
+                    textcoords="offset points", ha="left", fontsize=8,
                     color=st["colour"])
     if chance is not None:
         ax.axhline(chance, ls=":", lw=1.0, color="#555555", zorder=1)
-        ax.annotate("chance (positive rate)", xy=(0.011, chance),
-                    xytext=(0, 5), textcoords="offset points",
+        ax.annotate("chance (positive rate)", xy=(1.0, chance),
+                    xytext=(-2, 5), textcoords="offset points", ha="right",
                     fontsize=8, color="#555555")
     ax.set_ylim(0.15, 1.02)
     ax.set_ylabel("AUPRC, hand-crafted-feature control")
@@ -394,6 +402,7 @@ def figure7(res: Path, out: Path) -> None:
     ax.set_xlabel("Labelled training windows (% of benchmark)")
     ax.set_title("Twelve features saturate the uniform benchmark before\n"
                  "any deep model is trained", loc="left")
+    ax.set_ylim(0.15, 1.02)
     ax.legend(loc="center right", frameon=False, fontsize=8)
     ax.margins(0.04)
     fig.savefig(out / "figure7_control_threshold_free.png")
