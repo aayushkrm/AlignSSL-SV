@@ -15,6 +15,7 @@ Emits, overwriting in place:
     figure3_length_strata.png      Recall by deletion length
     figure4_ssl_ablation.png       MAM vs VICReg vs combined
     figure5_cross_ancestry.png     In-distribution vs held-out CEU
+    figure7_control_threshold_free.png  Control AUPRC vs labels, both benchmarks
 """
 from __future__ import annotations
 
@@ -341,6 +342,64 @@ def figure6(res: Path, out: Path) -> None:
     plt.close(fig)
 
 
+# ------------------------------------------------------------------ figure 7
+def figure7(res: Path, out: Path) -> None:
+    """Why the uniform benchmark cannot measure label efficiency.
+
+    One control (a gradient-boosted tree on twelve hand-computed alignment
+    features), one metric (AUPRC, which needs no decision threshold), both
+    benchmarks. The message is the *shape* of the two curves, not their
+    absolute height, so they share one axis rather than sitting in two panels.
+    """
+    path = res / "table11_control_threshold_free.csv"
+    if not path.exists():
+        return
+    rows = read(path)
+    style = {
+        "uniform": dict(colour="#c0392b", marker="o",
+                        label="Uniform benchmark (as in DeepSV)"),
+        "candidate-filtered": dict(colour="#1f4e79", marker="s",
+                                   label="Candidate-filtered benchmark (ours)"),
+    }
+    fig, ax = plt.subplots(figsize=(5.4, 3.6))
+    chance = None
+    for bench, st in style.items():
+        pts = sorted((float(r["label_frac"]), float(r["auprc_mean"]),
+                      float(r["auprc_sd"]), int(r["n_labelled"]))
+                     for r in rows if r["benchmark"] == bench)
+        if not pts:
+            continue
+        x, y, sd, n = (np.array(v) for v in zip(*pts))
+        chance = float(next(r["chance_auprc"] for r in rows
+                            if r["benchmark"] == bench))
+        ax.errorbar(x, y, yerr=sd, marker=st["marker"], color=st["colour"],
+                    capsize=2.5, label=st["label"], zorder=3)
+        # Annotate the span each curve covers: that span IS the argument.
+        span = y[-1] - y[0]
+        ax.annotate(f"{span:+.3f} AUPRC\nover {n[-1] // max(n[0], 1)}x labels",
+                    xy=(x[-1], y[-1]), xytext=(-4, -30 if span < 0.05 else 14),
+                    textcoords="offset points", ha="right", fontsize=8,
+                    color=st["colour"])
+    if chance is not None:
+        ax.axhline(chance, ls=":", lw=1.0, color="#555555", zorder=1)
+        ax.annotate("chance (positive rate)", xy=(0.011, chance),
+                    xytext=(0, 5), textcoords="offset points",
+                    fontsize=8, color="#555555")
+    ax.set_ylim(0.15, 1.02)
+    ax.set_ylabel("AUPRC, hand-crafted-feature control")
+    ax.set_xscale("log")
+    fr = sorted({float(r["label_frac"]) for r in rows})
+    ax.set_xticks(fr)
+    ax.set_xticklabels([f"{v*100:g}" for v in fr])
+    ax.set_xlabel("Labelled training windows (% of benchmark)")
+    ax.set_title("Twelve features saturate the uniform benchmark before\n"
+                 "any deep model is trained", loc="left")
+    ax.legend(loc="center right", frameon=False, fontsize=8)
+    ax.margins(0.04)
+    fig.savefig(out / "figure7_control_threshold_free.png")
+    plt.close(fig)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--results-dir", default="results")
@@ -348,7 +407,7 @@ def main() -> int:
     res = Path(a.results_dir)
     with plt.rc_context(RC):
         for fn in (figure1, figure2, figure3, figure4, figure5,
-                   figure6):
+                   figure6, figure7):
             fn(res, res)
             print(f"{fn.__name__} ok")
     return 0
