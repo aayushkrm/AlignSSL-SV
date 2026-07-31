@@ -26,8 +26,12 @@ import sys
 from decimal import Decimal, ROUND_HALF_UP
 from pathlib import Path
 
-ARM_COLUMNS = ["AlignSSL-combined", "AlignSSL-scratch", "DeepSV-representation",
-               "Classical-logreg", "Classical-GBT"]
+# Table 1 now reports the three deep arms under the conventional fixed-0.5
+# scoring, sourced from the corrected-protocol runs (table12) rather than from
+# table1_label_efficiency.csv, which predates the protocol correction. The
+# classical control moved to its own table because it is scored threshold-free.
+ARM_COLUMNS = ["AlignSSL-pretrained", "AlignSSL-scratch",
+               "DeepSV-representation"]
 
 
 def q3(x: float) -> str:
@@ -37,12 +41,56 @@ def q3(x: float) -> str:
 
 
 def load_table1(results: Path) -> dict:
+    """Manuscript Table 1 = fixed-0.5 F1 on the uniform benchmark, from table12."""
     src = {}
-    with open(results / "table1_label_efficiency.csv") as fh:
+    with open(results / "table12_label_efficiency_fixed.csv") as fh:
         for r in csv.DictReader(fh):
-            src[(float(r["label_frac"]), r["arm"])] = (float(r["F1_mean"]),
-                                                       float(r["F1_sd"]))
+            if r["benchmark"] != "uniform":
+                continue
+            src[(float(r["label_frac"]), r["arm"])] = (
+                float(r["f1_at_half_mean"]), float(r["f1_at_half_sd"]))
     return src
+
+
+def load_table13(results: Path) -> dict:
+    """Manuscript Table 13 = the 1%-label contrast under three scoring rules."""
+    with open(results / "table13_threshold_sensitivity.csv") as fh:
+        for r in csv.DictReader(fh):
+            if r["benchmark"] == "uniform" and abs(float(r["label_frac"]) - 0.01) < 1e-9:
+                return r
+    return {}
+
+
+def check_table13(md: str, src: dict) -> list[str]:
+    """Each row states pretrained, scratch, ratio and p for one scoring rule."""
+    if not src:
+        return ["Table 13: no uniform 1% row in table13_threshold_sensitivity.csv"]
+    rules = [
+        ("F1 at fixed 0.5 cut", "AlignSSL-pretrained_F1@0.5",
+         "AlignSSL-scratch_F1@0.5", "ratio_F1@0.5", "p_F1@0.5"),
+        ("F1 at selected \u03c4", "AlignSSL-pretrained_F1@tau",
+         "AlignSSL-scratch_F1@tau", "ratio_F1@tau", "p_F1@tau"),
+        ("AUPRC (threshold-free)", "AlignSSL-pretrained_AUPRC",
+         "AlignSSL-scratch_AUPRC", "ratio_AUPRC", "p_AUPRC"),
+    ]
+    errs = []
+    for label, kp, ks, kr, kpv in rules:
+        m = re.search(r"^\| " + re.escape(label) + r" \|(.*)$", md, re.M)
+        if m is None:
+            errs.append(f"Table 13: row '{label}' not found")
+            continue
+        cells = [c.strip().replace("**", "") for c in m.group(1).strip("|").split("|")]
+        for shown, key, fmt in ((cells[0], kp, q3), (cells[1], ks, q3)):
+            want = fmt(src[key])
+            if shown != want:
+                errs.append(f"Table 13 {label} {key}: '{shown}' != source '{want}'")
+        want_ratio = f"{float(src[kr]):.2f}\u00d7"
+        if cells[2] != want_ratio:
+            errs.append(f"Table 13 {label} ratio: '{cells[2]}' != '{want_ratio}'")
+        want_p = f"{float(src[kpv]):.3f}"
+        if cells[3] != want_p:
+            errs.append(f"Table 13 {label} p: '{cells[3]}' != '{want_p}'")
+    return errs
 
 
 def check_table1(md: str, src: dict) -> list[str]:
@@ -88,8 +136,10 @@ def check_pvalues(md: str, results: Path) -> list[str]:
     """Every p-value quoted in prose must appear in a stats CSV.
 
     Section 4 quotes stats_tests.csv; Section 6 (the candidate-filtered
-    benchmark) quotes stats_hardneg.csv, whose p-column is named `p`.
-    Both are pooled so the check covers the whole manuscript.
+    benchmark) quotes stats_hardneg.csv, whose p-column is named `p`;
+    Section 4.8 quotes the three per-rule p-columns of table13; Section 4.2
+    quotes the control-versus-deep p-column of table14. All are pooled so the
+    check covers the whole manuscript.
     """
     src = []
     with open(results / "stats_tests.csv") as fh:
@@ -98,6 +148,17 @@ def check_pvalues(md: str, results: Path) -> list[str]:
     if hn.exists():
         with open(hn) as fh:
             src += [float(r["p"]) for r in csv.DictReader(fh)]
+    for name, cols in (("table13_threshold_sensitivity.csv",
+                        ("p_F1@0.5", "p_F1@tau", "p_AUPRC")),
+                       ("table14_control_vs_deep.csv", ("p_value",))):
+        f = results / name
+        if not f.exists():
+            continue
+        with open(f) as fh:
+            for r in csv.DictReader(fh):
+                for c in cols:
+                    if r.get(c) not in (None, "", "nan"):
+                        src.append(float(r[c]))
     errs = []
     # decimal form, e.g. "p = 0.025"
     for tok in re.findall(r"\*p\* = (0\.[0-9]+)", md):
@@ -236,6 +297,7 @@ def main() -> int:
 
     errs: list[str] = []
     errs += check_table1(md, load_table1(res))
+    errs += check_table13(md, load_table13(res))
     errs += check_calibration(md, res)
     errs += check_pvalues(md, res)
     errs += check_single_feature_auc(md, res)
