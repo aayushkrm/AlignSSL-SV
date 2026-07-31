@@ -1,0 +1,13 @@
+benchmark,label_frac,n_labelled,control_auprc_mean,control_auprc_sd,control_n_seeds,best_deep_arm,best_deep_auprc_mean,best_deep_auprc_sd,best_deep_n_seeds,deep_minus_control,p_value,leader
+uniform,0.01,210,0.9368,0.0088,10,AlignSSL-pretrained,0.5241,0.0525,3,-0.4127,0.0051,control
+uniform,0.05,1051,0.9577,0.0063,10,AlignSSL-scratch,0.8664,0.0217,3,-0.0914,0.0163,control
+uniform,0.1,2102,0.9665,0.0039,10,AlignSSL-scratch,0.9125,0.0296,3,-0.0539,0.0867,tie
+uniform,0.25,5254,0.9714,0.0017,10,AlignSSL-scratch,0.9365,0.0233,3,-0.0349,0.1213,tie
+uniform,0.5,10508,0.9743,0.0022,10,AlignSSL-scratch,0.974,0.0006,3,-0.0003,0.6708,tie
+uniform,1.0,21016,0.9749,0.0013,10,AlignSSL-scratch,0.9792,0.001,3,0.0043,0.003,deep
+candidate-filtered,0.01,35,0.25,0.0,10,DeepSV-representation,0.3297,0.0253,3,0.0797,0.032,deep
+candidate-filtered,0.05,173,0.6257,0.0542,10,DeepSV-representation,0.411,0.0358,3,-0.2147,0.0004,control
+candidate-filtered,0.1,345,0.7185,0.0288,10,AlignSSL-scratch,0.5904,0.0064,2,-0.1281,0.0,control
+candidate-filtered,0.25,863,0.8028,0.0131,10,AlignSSL-scratch,0.7399,0.0901,2,-0.063,0.5034,tie
+candidate-filtered,0.5,1726,0.8454,0.0123,10,AlignSSL-scratch,0.7416,0.0714,2,-0.1038,0.2868,tie
+candidate-filtered,1.0,3452,0.8688,0.0059,10,AlignSSL-scratch,0.8794,0.0276,2,0.0106,0.684,tie
