@@ -135,11 +135,13 @@ def figure1(res: Path, out: Path) -> None:
     ax.annotate("", xy=(x[0], lo_p), xytext=(x[0], lo_s),
                 arrowprops=dict(arrowstyle="<->", lw=0.9, color="0.25",
                                 shrinkA=2, shrinkB=2))
-    ax.annotate(f"{lo_p / max(lo_s, 1e-9):.0f}\u00d7 F1\nat 1% labels",
-                xy=(x[0], (lo_p + lo_s) / 2), xytext=(x[0] * 1.35, 0.20),
+    ax.annotate(f"{lo_p / max(lo_s, 1e-9):.0f}\u00d7 at 1% labels —\n"
+                "but only at this fixed\ncut (see Figure 8)",
+                xy=(x[0], (lo_p + lo_s) / 2), xytext=(x[0] * 1.35, 0.18),
                 fontsize=8, color="0.25", va="center",
                 arrowprops=dict(arrowstyle="-", lw=0.6, color="0.55"))
-    ax.set_title("Self-supervised pretraining buys label efficiency")
+    ax.set_title("Label efficiency as conventionally scored,\n"
+                 "at a fixed 0.5 probability cut", loc="left")
     ax.legend(loc="lower right", frameon=False)
     fig.savefig(out / "figure1_label_efficiency.png")
     plt.close(fig)
