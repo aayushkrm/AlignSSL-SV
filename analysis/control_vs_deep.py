@@ -44,7 +44,15 @@ from scipy import stats
 # reported the logistic regression under the tree's name.
 DEEP = [("pre", "AlignSSL-pretrained"), ("scr", "AlignSSL-scratch"),
         ("dsv", "DeepSV-representation")]
-CONTROL = ("hgb", "Classical-GBT")
+# Both families are reduced by best-of-family at each budget, and the winning
+# member is named in the table. Symmetry matters here: an earlier version
+# fixed the control to the tree while letting the deep side take the best of
+# three, which inverted the verdict in the one cell where the tree happens to
+# be degenerate (35 candidate-filtered labels, where it never fires and scores
+# AUPRC = the positive rate, while the logistic regression on the same twelve
+# features reaches 0.477). Best-of-K inflates whichever side it is applied to,
+# so it must be applied to both or neither.
+CONTROL = [("hgb", "Classical-GBT"), ("logreg", "Classical-logreg")]
 BENCHES = [("uni", "uniform"), ("hn", "candidate-filtered")]
 METRIC = "auprc"
 
@@ -95,9 +103,14 @@ def main() -> int:
     for bench, bench_name in BENCHES:
         fracs, budget = _fracs(a.json_dir, bench)
         for frac in fracs:
-            ctrl = _seed_values(a.json_dir, bench, "classical", frac,
-                                METRIC, model_key=CONTROL[0])
-            if len(ctrl) < 2:
+            ctrl_name, ctrl = None, []
+            for key, name in CONTROL:
+                vals = _seed_values(a.json_dir, bench, "classical", frac,
+                                    METRIC, model_key=key)
+                if len(vals) > 1 and np.mean(vals) > (np.mean(ctrl)
+                                                      if ctrl else -1):
+                    ctrl_name, ctrl = name, vals
+            if ctrl_name is None:
                 continue
             best_name, best_vals = None, []
             for stem, name in DEEP:
@@ -113,6 +126,7 @@ def main() -> int:
                 "benchmark": bench_name,
                 "label_frac": frac,
                 "n_labelled": budget[frac],
+                "control_arm": ctrl_name,
                 "control_auprc_mean": round(float(np.mean(ctrl)), 4),
                 "control_auprc_sd": round(float(np.std(ctrl, ddof=1)), 4),
                 "control_n_seeds": len(ctrl),
@@ -144,7 +158,7 @@ def main() -> int:
         print(f"\n{bench_name}:")
         for r in sel:
             print(f"  {r['label_frac']:>5}  n={r['n_labelled']:>6}  "
-                  f"control {r['control_auprc_mean']:.3f}  "
+                  f"{r['control_arm']:<17s} {r['control_auprc_mean']:.3f}  "
                   f"{r['best_deep_arm']:<22s} {r['best_deep_auprc_mean']:.3f}  "
                   f"p={r['p_value']:.4f}  -> {r['leader']}")
         n_ctrl = sum(1 for r in sel if r["leader"] == "control")

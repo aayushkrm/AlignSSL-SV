@@ -52,16 +52,26 @@ Consequently **we make no performance claim on this benchmark.** Three claims ea
 
 We re-extracted the labelled set with **per-scale quantile-matched candidate negatives**, so that a negative window has a centre-versus-flank depth ratio drawn from the same stratum as the positive it is matched to. On the matched training pool that feature measures ROC-AUC 0.504; on the held-out chromosomes it falls from 0.955 to **0.717** — attenuated, not eliminated. Every arm's F1 falls, confirming a genuinely harder task. Because the shared reference directory was lost mid-study and only two alignments were recoverable, this benchmark is single-sample (NA20845 train/in-distribution test, NA12878 held out), with 3,452 training and 1,516 test windows.
 
-| Labels | AlignSSL (pretrained) | AlignSSL (scratch) | DeepSV repr. | Classical GBT |
-|-------:|:---------------------:|:------------------:|:------------:|:-------------:|
-|   1%   | 0.352 ± 0.064 | 0.000 ± 0.000 | 0.233 ± 0.172 | 0.000 ± 0.000 |
-| 100%   | 0.762 ± 0.110 | 0.702 ± 0.086 | 0.284 ± 0.131 | **0.791 ± 0.000** |
+| Labels | AlignSSL (pretrained) | AlignSSL (scratch) | DeepSV repr. | Classical GBT | Classical logreg |
+|-------:|:---:|:---:|:---:|:---:|:---:|
+| 1% (n=35) | 0.302 ± 0.053 | 0.283 ± 0.046 | 0.330 ± 0.025 | 0.250 ± 0.000 | **0.476 ± 0.076** |
+| 5% (n=173) | 0.368 ± 0.072 | 0.359 ± 0.095 | 0.411 ± 0.036 | **0.626 ± 0.054** | 0.596 ± 0.025 |
+| 10% (n=345) | 0.446 ± 0.024 | 0.510 ± 0.140 | 0.419 ± 0.018 | **0.719 ± 0.029** | 0.615 ± 0.026 |
+| 25% (n=863) | 0.649 ± 0.024 | 0.734 ± 0.065 | 0.511 ± 0.043 | **0.803 ± 0.013** | 0.624 ± 0.016 |
+| 50% (n=1726) | 0.722 ± 0.010 | 0.763 ± 0.063 | 0.538 ± 0.040 | **0.845 ± 0.012** | 0.629 ± 0.007 |
+| 100% (n=3452) | 0.844 ± 0.032 | **0.885 ± 0.022** | 0.656 ± 0.009 | 0.869 ± 0.006 | 0.631 ± 0.005 |
 
-> **The arm-versus-arm numbers in this table are provisional.** They were produced under both defective conventions above — unequal budgets and a fixed 0.5 cut — and the corrected re-run is still training. In particular the 1% from-scratch 0.000 is the exact signature the thresholding analysis explains. What does *not* depend on either convention, and stands: quantile-matched candidate negatives attenuate the depth shortcut from ROC-AUC 0.955 to 0.717 without changing the positive set, and every arm's score falls, confirming a genuinely harder task. See `docs/AlignSSL_SV_manuscript.md` §6.
+AUPRC on the held-out chromosomes, scored threshold-free under the corrected protocol with equal label budgets across arms (Table 12); bold marks the best arm at each budget. Three findings:
+
+1. **The shortcut repair does not rescue the pretraining claim.** At 1% labels the pretrained encoder (0.302 ± 0.053) is indistinguishable from from-scratch (0.283 ± 0.046), and from 10% upward the from-scratch arm is *ahead* at every budget. Pretraining buys nothing once the fixed-threshold artefact is removed.
+2. **The hand-crafted control still leads where labels are scarce.** It wins significantly at 1% and 5% (*p* = 0.0003, 0.0004) and ties at the remaining four budgets, including full supervision where the from-scratch network is nominally ahead (0.885 ± 0.022 versus 0.869 ± 0.006, *p* = 0.329). Twelve scalars remain competitive with a pretrained convolutional–attention encoder on a benchmark built so that no single feature exceeds ROC-AUC 0.72.
+3. **The learned tensor beats the RGB encoding only once labels suffice.** DeepSV-representation is *ahead* of both tensor arms at the two sparsest budgets (0.330 and 0.411) and only falls behind from 10% upward — so the encoding comparison, the one original claim that survives, is itself budget-dependent.
+
+What does not depend on any scoring convention: quantile-matched candidate negatives attenuate the depth shortcut from ROC-AUC 0.955 to 0.717 without changing the positive set, and every arm's score falls, confirming a genuinely harder task. See `docs/AlignSSL_SV_manuscript.md` §6.
 
 ### Self-supervised objective ablation
 
-MAM-only leads at 1% labels (0.588 ± 0.117) and the combined objective leads at full supervision (0.934 ± 0.004 vs 0.915 ± 0.014), but the seed-level intervals overlap throughout, so **we do not claim an ordering** among the three objectives. All three deliver the low-label effect.
+MAM-only leads at 1% labels (0.588 ± 0.117) and the combined objective leads at full supervision (0.934 ± 0.004 vs 0.915 ± 0.014), but the seed-level intervals overlap throughout, so **we do not claim an ordering** among the three objectives. These are F1 at a fixed 0.5 cut on the uniform benchmark, so both defects above apply: the "low-label effect" all three appeared to deliver is the thresholding artefact, and the benchmark they are measured on is shortcut-solvable. The ablation is reported for completeness and supports no claim about the objectives.
 
 For the source CSVs and figures see `results/`; for the full report see `docs/AlignSSL_SV_manuscript.md`.
 
@@ -108,6 +118,12 @@ scripts/             Runnable drivers
 analysis/            Aggregation, figures, and manuscript reconciliation
   aggregate_all.py       Per-seed JSON -> canonical results tables
   aggregate_hardneg.py   Hard-negative re-benchmark aggregation
+  aggregate_fixed.py     Corrected-protocol aggregation (equal budgets, threshold-free)
+  threshold_sensitivity.py  F1@0.5 vs F1@selected-tau vs AUPRC re-scoring
+  control_vs_deep.py     Best-of-family control-vs-deep contrasts
+  hardneg_arm_contrasts.py  Pairwise arm contrasts on the repaired benchmark
+  make_figures.py        All manuscript figures from results/ CSVs
+  build_preprint.py      Renders the typeset PDF, gated on figure numbering
   check_manuscript.py    Asserts every manuscript number matches results/
 cluster/             SLURM sbatch templates (fetch, extract, pretrain, finetune, controls)
 tests/               Unit and end-to-end tests (`python -m pytest tests/`)
@@ -116,7 +132,8 @@ docs/                Manuscript, proposal, literature survey, reviewer report, d
   REVIEWER_REPORT.md     Internal adversarial review and its resolutions
   CLUSTER.md             Cluster, filesystem, and full reproduction guide
   project.md             As-built project record
-results/             Canonical numbered tables (table1–table8) and figures
+results/             Canonical numbered tables (table1–table15) and figures
+                       table12–15 are the corrected protocol and supersede table1/table7
   raw_json/              Per-seed raw evaluation output
 PROGRESS.md          Development log (latest)
 requirements.txt     Python dependencies

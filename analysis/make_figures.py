@@ -16,7 +16,8 @@ Emits, overwriting in place:
     figure4_ssl_ablation.png       MAM vs VICReg vs combined
     figure5_cross_ancestry.png     In-distribution vs held-out CEU
     figure7_control_threshold_free.png  Control AUPRC vs labels, both benchmarks
-    figure8_threshold_sensitivity.png   Pretrained/scratch ratio by scoring rule
+    figure6_threshold_sensitivity.png   Pretrained/scratch ratio by scoring rule
+    figure8_hardneg_benchmark.png       Candidate-filtered arm set + shortcut attenuation
 """
 from __future__ import annotations
 
@@ -57,6 +58,12 @@ OBJ_COLOUR = {
     "VICReg-only": COLOUR["AlignSSL-VICReg-only"],
     "combined": COLOUR["AlignSSL-combined"],
 }
+# The corrected-protocol tables (table12 onward) name the pretrained arm
+# "AlignSSL-pretrained"; the earlier tables call the same arm
+# "AlignSSL-combined". Alias so one hue and one legend label cover both, and a
+# reader comparing an early figure with a late one sees the same colour.
+COLOUR["AlignSSL-pretrained"] = COLOUR["AlignSSL-combined"]
+LABEL["AlignSSL-pretrained"] = LABEL["AlignSSL-combined"]
 
 RC = {
     "figure.dpi": 200,
@@ -136,7 +143,7 @@ def figure1(res: Path, out: Path) -> None:
                 arrowprops=dict(arrowstyle="<->", lw=0.9, color="0.25",
                                 shrinkA=2, shrinkB=2))
     ax.annotate(f"{lo_p / max(lo_s, 1e-9):.0f}\u00d7 at 1% labels —\n"
-                "but only at this fixed\ncut (see Figure 8)",
+                "but only at this fixed\ncut (see Figure 6)",
                 xy=(x[0], (lo_p + lo_s) / 2), xytext=(x[0] * 1.35, 0.18),
                 fontsize=8, color="0.25", va="center",
                 arrowprops=dict(arrowstyle="-", lw=0.6, color="0.55"))
@@ -149,12 +156,18 @@ def figure1(res: Path, out: Path) -> None:
 
 # ------------------------------------------------------------------ figure 2
 def figure2(res: Path, out: Path) -> None:
-    rows = read(res / "table1_label_efficiency.csv")
+    # Sourced from the CORRECTED uniform rows of table12, not from the
+    # superseded table1: table1 scores F1 at a fixed 0.5 cut under unequal
+    # label budgets, and both conventions were shown to be defective
+    # (Sections 3.8 and 4.8). AUPRC is threshold-free, so the classical and
+    # deep arms are compared on the same footing here.
+    rows = [r for r in read(res / "table12_label_efficiency_fixed.csv")
+            if r.get("benchmark") == "uniform"]
     feats = read(res / "table6_single_feature_auc.csv")
-    arms = ["Classical-GBT", "Classical-logreg", "AlignSSL-combined",
+    arms = ["Classical-GBT", "Classical-logreg", "AlignSSL-pretrained",
             "AlignSSL-scratch", "DeepSV-representation"]
     g = by_arm([r for r in rows if r["arm"] in arms], "arm",
-               "label_frac", "F1_mean", "F1_sd")
+               "label_frac", "auprc_mean", "auprc_sd")
     fig, axes = plt.subplots(1, 2, figsize=(8.4, 3.4),
                              gridspec_kw=dict(width_ratios=[1.15, 1.0], wspace=0.42))
     ax = axes[0]
@@ -166,10 +179,12 @@ def figure2(res: Path, out: Path) -> None:
                 zorder=3 if classical else 2)
         ax.fill_between(x, y - sd, y + sd, color=COLOUR[arm], alpha=0.12,
                         linewidth=0)
-    pct_axis(ax, g[arms[0]][0])
-    ax.set_ylabel("Deletion F1 (held-out chr12–22)")
+    n100 = max(int(r["n_labelled"]) for r in rows
+               if abs(float(r["label_frac"]) - 1.0) < 1e-9)
+    pct_axis(ax, g[arms[0]][0], total=n100)
+    ax.set_ylabel("Deletion AUPRC (held-out chr12–22)")
     ax.set_ylim(0, 1.0)
-    ax.set_title("Hand-engineered features beat every deep arm")
+    ax.set_title("Twelve features lead where labels are scarce;\nthe gap closes by 50%")
     ax.legend(loc="lower right", frameon=False)
 
     # right panel: untrained single-feature separability
@@ -288,15 +303,21 @@ def figure6(res: Path, out: Path) -> None:
     quantity of interest is the *drop*, so the pairing is drawn explicitly
     rather than as two separate bar charts.
     """
-    rows = read(res / "table7_hardneg_label_efficiency.csv")
+    # Left panel reads the CORRECTED table (table12), not the superseded
+    # table7: table7 predates the equal-budget and threshold-free fixes, and
+    # its arm ordering disagrees with the manuscript text that now cites
+    # table12. AUPRC is plotted because it is the metric the corrected
+    # Section 6.3 conclusions rest on.
+    rows = [r for r in read(res / "table12_label_efficiency_fixed.csv")
+            if r.get("benchmark") == "candidate-filtered"]
     uni = read(res / "table6_single_feature_auc.csv")
     hn = read(res / "table9_hardneg_single_feature_auc.csv")
     if not rows or not hn:
         return
-    arms = ["Classical-GBT", "Classical-logreg", "AlignSSL-combined",
+    arms = ["Classical-GBT", "Classical-logreg", "AlignSSL-pretrained",
             "AlignSSL-scratch", "DeepSV-representation"]
     g = by_arm([r for r in rows if r["arm"] in arms], "arm",
-               "label_frac", "F1_mean", "F1_sd")
+               "label_frac", "auprc_mean", "auprc_sd")
     fig, axes = plt.subplots(1, 2, figsize=(8.4, 3.6),
                              gridspec_kw=dict(width_ratios=[1.15, 1.0],
                                               wspace=0.44))
@@ -311,12 +332,12 @@ def figure6(res: Path, out: Path) -> None:
                 zorder=3 if classical else 2)
         ax.fill_between(x, y - sd, y + sd, color=COLOUR[arm], alpha=0.12,
                         linewidth=0)
-    n100 = max(int(r["n_train"]) for r in rows
+    n100 = max(int(r["n_labelled"]) for r in rows
                 if abs(float(r["label_frac"]) - 1.0) < 1e-9)
     pct_axis(ax, g[arms[0]][0], total=n100)
-    ax.set_ylabel("Deletion F1 (held-out chr12–22)")
+    ax.set_ylabel("Deletion AUPRC (held-out chr12–22)")
     ax.set_ylim(0, 1.0)
-    ax.set_title("Candidate-filtered benchmark: every arm falls")
+    ax.set_title("Candidate-filtered: the control leads where labels are scarce")
     ax.legend(loc="upper left", frameon=False, fontsize=7)
 
     # right panel: paired untrained separability, uniform vs candidate-filtered
@@ -341,7 +362,7 @@ def figure6(res: Path, out: Path) -> None:
     ax.set_xlabel("Orientation-corrected ROC-AUC (untrained)")
     ax.set_title("Shortcut attenuated, not removed")
     ax.legend(loc="lower right", frameon=False, fontsize=7)
-    fig.savefig(out / "figure6_hardneg_benchmark.png")
+    fig.savefig(out / "figure8_hardneg_benchmark.png")
     plt.close(fig)
 
 
@@ -476,7 +497,7 @@ def figure8(res: Path, out: Path) -> None:
     axr.legend(loc="upper left", frameon=False, fontsize=8)
 
     fig.tight_layout()
-    fig.savefig(out / "figure8_threshold_sensitivity.png")
+    fig.savefig(out / "figure6_threshold_sensitivity.png")
     plt.close(fig)
 
 

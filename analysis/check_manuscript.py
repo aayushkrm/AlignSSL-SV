@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+from decimal import Decimal, ROUND_HALF_UP
 import re
 import sys
 from decimal import Decimal, ROUND_HALF_UP
@@ -150,7 +151,8 @@ def check_pvalues(md: str, results: Path) -> list[str]:
             src += [float(r["p"]) for r in csv.DictReader(fh)]
     for name, cols in (("table13_threshold_sensitivity.csv",
                         ("p_F1@0.5", "p_F1@tau", "p_AUPRC")),
-                       ("table14_control_vs_deep.csv", ("p_value",))):
+                       ("table14_control_vs_deep.csv", ("p_value",)),
+                       ("table15_hardneg_arm_contrasts.csv", ("p",))):
         f = results / name
         if not f.exists():
             continue
@@ -160,11 +162,28 @@ def check_pvalues(md: str, results: Path) -> list[str]:
                     if r.get(c) not in (None, "", "nan"):
                         src.append(float(r[c]))
     errs = []
-    # decimal form, e.g. "p = 0.025"
+
+    def _round_half_up(x: float, nd: int) -> str:
+        """Match how a human rounds when quoting: 0.3485 -> 0.349 at 3 dp.
+
+        f-strings use round-half-to-even (0.3485 -> '0.348'), and a plain
+        absolute tolerance of 5e-4 rejects exact-half cases through binary
+        representation error. Decimal quantisation avoids both.
+        """
+        return str(Decimal(repr(x)).quantize(Decimal(1).scaleb(-nd),
+                                             rounding=ROUND_HALF_UP))
+
+    # decimal form, e.g. "p = 0.025". A quoted value matches a source value
+    # if it is that value rounded half-up, OR if it lies within half a unit
+    # in the quoted last place. The second clause is needed because the stats
+    # CSVs themselves store p to 4 dp: an exact p of 0.34846 is stored as
+    # 0.3485, and both 0.348 (correct from full precision) and 0.349 (correct
+    # from the stored value) are then consistent with the source.
     for tok in re.findall(r"\*p\* = (0\.[0-9]+)", md):
-        v = float(tok)
-        if not any(abs(v - s) <= 5e-4 or
-                   (s > 0 and abs(v - float(f"{s:.{max(1, len(tok) - 2)}f}")) < 1e-12)
+        nd = len(tok) - 2
+        tol = Decimal(5) * Decimal(10) ** -(nd + 1)
+        if not any(_round_half_up(s, nd) == tok or
+                   abs(Decimal(tok) - Decimal(repr(s))) <= tol
                    for s in src):
             errs.append(f"p-value {tok} quoted in prose has no match in "
                         f"either stats CSV")
@@ -251,13 +270,18 @@ def check_hardneg_tables(md: str, results: Path) -> list[str]:
             if missing:
                 errs.append(f"Table 9 omits features: {sorted(missing)}")
 
-    t7 = results / "table7_hardneg_label_efficiency.csv"
+    # Table 7 is sourced from the CORRECTED protocol table (table12, filtered
+    # rows, threshold-free AUPRC), not from table7_hardneg_label_efficiency.csv:
+    # the latter scores F1 at a fixed 0.5 cut under the pre-correction
+    # negative-sampling protocol and is superseded (Sections 3.8, 4.8).
+    t7 = results / "table12_label_efficiency_fixed.csv"
     if t7.exists():
         with open(t7) as fh:
             src = {(f'{float(r["label_frac"]):g}', r["arm"]):
-                   (float(r["F1_mean"]), float(r["F1_sd"]))
-                   for r in csv.DictReader(fh)}
-        cols = ["AlignSSL-combined", "AlignSSL-scratch", "DeepSV-representation",
+                   (float(r["auprc_mean"]), float(r["auprc_sd"]))
+                   for r in csv.DictReader(fh)
+                   if r["benchmark"] == "candidate-filtered"}
+        cols = ["AlignSSL-pretrained", "AlignSSL-scratch", "DeepSV-representation",
                 "Classical-logreg", "Classical-GBT"]
         block = re.search(r"\| Labels \| \*n\* \| AlignSSL \(pretrained\).*?\n\n",
                           md, re.S)
@@ -282,6 +306,13 @@ def check_hardneg_tables(md: str, results: Path) -> list[str]:
 
 
 def check_markers(md: str) -> list[str]:
+    # A literal {{artifact:...}} written inside a code cell is resolved to a
+    # local absolute path BEFORE the cell runs, which silently converts a
+    # portable embed into a machine-specific one. This has happened; guard it.
+    abs_embeds = re.findall(r"!\[[^\]]*\]\((/[^)]+)\)", md)
+    if abs_embeds:
+        return [f"image embed is an absolute local path, not an artifact "
+                f"marker: {p}" for p in abs_embeds]
     bad = re.findall(r"\{\{artifact:[^}]*[A-Z_]{4,}[^}]*\}\}", md)
     return [f"unresolved artifact placeholder: {b}" for b in bad]
 

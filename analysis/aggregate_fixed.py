@@ -26,6 +26,11 @@ ARMS = [("pre", "AlignSSL-pretrained"), ("scr", "AlignSSL-scratch"),
         ("dsv", "DeepSV-representation")]
 BENCHES = [("uni", "uniform"), ("hn", "candidate-filtered")]
 
+# The classical control ships both its models in ONE results JSON per seed,
+# under sub-keys, rather than one file per arm as the deep evaluators do.
+# Same metric names, so the two collectors return the same shape.
+CLASSICAL = [("logreg", "Classical-logreg"), ("hgb", "Classical-GBT")]
+
 
 def _rows(path):
     """Yield (frac, n, metrics-dict) from one results JSON, arm-agnostic."""
@@ -54,6 +59,29 @@ def collect(ckpt_dir, bench, arm):
     return acc, budget, len(files)
 
 
+def collect_classical(ckpt_dir, bench, key):
+    """Same return shape as collect(), for one sub-model of the control."""
+    acc, budget = {}, {}
+    files = sorted(glob.glob(os.path.join(ckpt_dir,
+                                          f"f_{bench}_classical_seed*.json")))
+    for f in files:
+        d = json.load(open(f))
+        for row in d["label_efficiency"]:
+            m = row.get(key)
+            if m is None:
+                continue
+            frac = float(row["frac"])
+            budget[frac] = int(row["n"])
+            a = acc.setdefault(frac, {k: [] for k in
+                                      ("f1_at_tau", "f1_at_half", "auprc",
+                                       "roc_auc", "tau", "pos_rate")})
+            for k in a:
+                v = m.get(k)
+                if v is not None and not (isinstance(v, float) and np.isnan(v)):
+                    a[k].append(float(v))
+    return acc, budget, len(files)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ckpt-dir", required=True)
@@ -62,8 +90,10 @@ def main():
 
     out = []
     for bkey, bname in BENCHES:
-        for arm, aname in ARMS:
-            acc, budget, nseed = collect(a.ckpt_dir, bkey, arm)
+        jobs = [(aname, collect(a.ckpt_dir, bkey, arm)) for arm, aname in ARMS]
+        jobs += [(aname, collect_classical(a.ckpt_dir, bkey, key))
+                 for key, aname in CLASSICAL]
+        for aname, (acc, budget, nseed) in jobs:
             if not acc:
                 continue
             for frac in sorted(acc):

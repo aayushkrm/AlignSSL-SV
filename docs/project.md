@@ -2,6 +2,18 @@
 
 ## AlignSSL-SV: Self-Supervised Pretraining on Read Alignments with Calibrated Uncertainty for Structural-Variant Deletion Calling
 
+> ### ⚠️ STATUS BANNER — REVISED 2026-08-03: THE HEADLINE CLAIM IS WITHDRAWN
+>
+> A methodological audit of the *evaluation path* (as distinct from the results)
+> found three defects that invalidate this document's central claim. They are
+> documented in full in **§16**, and the corrected record lives in
+> `docs/AlignSSL_SV_manuscript.md` §§3.8, 4.8 and 6 plus `PROGRESS.md`.
+> In short: the ~10x low-label label-efficiency advantage of self-supervised
+> pretraining **does not survive** threshold-free scoring under equal label
+> budgets on a benchmark whose trivial shortcut has been closed. Every section
+> below that asserts otherwise — notably §5.3, §11 and §13.1 — is superseded by
+> §16 and is retained only as a record of what was believed and when.
+>
 > **STATUS BANNER (updated 2026-07-18).** This document was the original ~10-month execution plan, written before any code existed. Phases 0–3 and most of Phase 4 are now **implemented and validated on real 1000 Genomes BAMs**, with three-seed results for every headline claim. This revision keeps the original section numbering and every planned design choice, but adds an **"AS IMPLEMENTED"** callout under each section header stating what was actually built, what changed and why, and what remains open. Treat the original prose as the *plan*; the callouts are the *record*. Where a callout says **DECISION**, that choice has been acted on and downstream work now assumes it.
 
 ### Project Summary
@@ -42,6 +54,7 @@
 13. **[NEW] Results as of 2026-07-18**
 14. **[NEW] Novelty positioning update (BASILISC)**
 15. **[NEW] Open caveats & deferred work**
+16. **[NEW 2026-08-03] AUDIT OUTCOME — the headline claim is withdrawn (authoritative)**
 
 ---
 
@@ -263,7 +276,7 @@ Original: $L = \lambda_{cls} \cdot \text{FocalLoss} + \lambda_{bp} \cdot \text{S
 
 > **AS IMPLEMENTED.** $L = \text{FocalLoss}(\gamma=2)$ only. The breakpoint and evidential-uncertainty terms — and their weights — were never instantiated; MC-dropout and temperature scaling are applied as a post-hoc/inference-time mechanism (§6), not as an additional training loss term. This is the single largest simplification in the project relative to the original plan and should be stated explicitly in the manuscript's methods section (it already is).
 
-### 5.3 The label-efficiency experiment — the headline result, confirmed
+### 5.3 The label-efficiency experiment — the headline result, SINCE WITHDRAWN (see §16)
 
 > **AS IMPLEMENTED and delivered exactly as envisioned.** The money plot (F1 vs label fraction, pretrained vs from-scratch vs DeepSV-representation baseline) was built at 6 fractions (1/5/10/25/50/100%), 3 seeds each. Main-sweep numbers (2-sample pretrain corpus, mean ± sd): pretrained F1 1%=0.400±0.066→100%=0.803±0.117; from-scratch F1 1%=0.000±0.000→100%=0.819±0.036. The DeepSV-representation baseline plateaus at F1≈0.57 and never clears ~0.6 at any label fraction, and is beaten by the pretrained/scratch AlignSSL-SV arms at 5 of 6 fractions. Figure and CSVs saved as artifacts (`fig_label_efficiency.png`, `results_label_efficiency.csv`). The wide low-label gap closing by 100% is exactly the "reviewer-convincing signature" the plan called for.
 >
@@ -406,7 +419,7 @@ Use Truvari to match calls against GIAB truth; report metrics always stratified.
 | 4 — Full eval & ablations | 16–22 | All baselines, strata, ablation matrix, cross-ancestry | Partially done — see §7.4 and §13 |
 | 5 — Write / release / submit | 22–34 | Manuscript submitted; code + weights released | Manuscript drafted, not submitted; code packaged, weights not archived |
 
-The critical-path go/no-go at week 12 ("if pretraining shows no label-efficiency gain, pivot to calibration + cross-ancestry") **resolved positively** — the label-efficiency gain is real and is now the lead result, so no pivot was needed.
+The critical-path go/no-go at week 12 ("if pretraining shows no label-efficiency gain, pivot to calibration + cross-ancestry") was recorded on 2026-07-18 as having **resolved positively**. That reading is **withdrawn (2026-08-03)**: under the corrected evaluation protocol the label-efficiency gain is not established (§16). The go/no-go therefore resolves *negatively* on its own terms, and the pivot the plan anticipated is the one the paper has in fact taken — the contribution is now the negative result plus the benchmark-and-protocol diagnosis, not a pretraining win.
 
 ---
 
@@ -433,7 +446,9 @@ Unchanged from the original plan (titles, target venues, release plan, abstract 
 
 ### 12.3 Framing the contribution
 
-Unchanged — lead with the label-efficiency curve and calibration/reliability result; F1 parity-or-better as support, not the headline.
+~~Unchanged — lead with the label-efficiency curve and calibration/reliability result; F1 parity-or-better as support, not the headline.~~
+
+**REVISED 2026-08-03.** Both of the original leads are withdrawn (the label-efficiency curve in §16.2, the calibration advantage earlier). The framing is now: *lead with the benchmark diagnosis* — one untrained scalar feature solves the standard uniform-negative deletion benchmark at ROC-AUC 0.955 — then the protocol diagnosis (fixed-threshold F1 manufactures label-efficiency gains at small budgets), then the negative result on the repaired benchmark, with the hand-crafted-feature control as the yardstick that makes the negative result interpretable. The learnable-tensor-versus-RGB comparison is retained as supporting evidence, not the headline. See §16.4.
 
 ### 12.4 What to release
 
@@ -555,8 +570,122 @@ A second candidate (an NSR 2024 review paper on SNV→SV deep-learning represent
 10. Public release of pretrained weights to an archive (Zenodo/GitHub) (§12.4) — code is packaged, not yet published.
 11. Linear-probe monitoring during pretraining (§4.1, §8 Phase 2) — not tracked.
 
-None of these block a submittable manuscript given the current headline results (label efficiency, calibration, length-stratified recall, cross-population directionality, and the honest DeepSV-representation head-to-head), but each is a legitimate reviewer target and is listed here so the manuscript's Limitations section and this document stay in sync.
+None of these block a submittable manuscript, but the reason has changed: the manuscript's contribution is no longer the headline label-efficiency result (withdrawn, §16) but the negative result and the evaluation-protocol diagnosis that produced it. Each item below remains a legitimate reviewer target and is listed here so the manuscript's Limitations section and this document stay in sync.
 
 ---
 
-*Document history: v1 (2026-07-13) original execution plan. v2 (2026-07-18) full as-implemented rewrite — every section retains its original plan text with an "AS IMPLEMENTED" callout documenting what was actually built, what changed, why, and what remains open; new §13–15 added for results, novelty positioning, and deferred work.*
+## 16. [NEW, 2026-08-03] AUDIT OUTCOME — what this plan got right, and what it got wrong
+
+This section supersedes §5.3, §11 and §13.1. It is the authoritative status of
+the project's scientific claims. Nothing above it should be read as current
+where the two conflict.
+
+### 16.1 What was audited, and why the first audit was not enough
+
+The 2026-07-24 hardening pass audited *the numbers*: it equalised batch size
+across arms, moved error bars onto pretraining seeds, and re-ran every arm on
+the frozen 6-sample panel. It did not audit *the procedure that produced the
+numbers*. A second pass did, and found three defects in the shared evaluation
+path — all of them in code that every arm ran through, so none of them showed
+up as an arm-versus-arm inconsistency:
+
+1. **The decision threshold was fixed at 0.5 for every arm.** No threshold was
+   ever selected on validation data. On a class-imbalanced task with models
+   trained on tens of labels, a fixed cut conflates *ranking quality* with
+   *where the sigmoid happens to sit* — and the latter is exactly what
+   pretraining moves. Fixed in `alignssl/metrics.py`.
+2. **The label budget was not equal across arms.** A batch-size floor gated the
+   validation split, so at the 1% point the deep arms silently received up to
+   2.8x the labels the classical control did. Fixed in `alignssl/protocol.py`.
+3. **The benchmark was near-trivially separable.** A *single untrained* feature
+   — the centre-versus-flank read-depth ratio — reaches ROC-AUC 0.955 on the
+   uniform benchmark. The cause is the negative-sampling protocol this plan
+   specified (§2.3) and which the literature it builds on also uses: positives
+   are centred on truth deletions, negatives are drawn uniformly at random.
+   The resulting task is "is there a coverage dip here?", not "is this
+   candidate a real deletion?"
+
+Both code fixes carry regression guards that encode the *defective* behaviour,
+not only the corrected behaviour, so a silent reversion fails a test.
+
+### 16.2 The headline claim does not survive
+
+Under threshold-free scoring (AUPRC) with equal label budgets, on the uniform
+benchmark, at the smallest budget where the ~10x gap was claimed:
+
+| Scoring rule | Pretrained | From scratch | Ratio | *p* |
+|---|---|---|---|---|
+| F1 at a fixed 0.5 cut (as originally scored) | 0.476 | 0.045 | 10.5x | 0.009 |
+| F1 at a validation-selected threshold | 0.481 | 0.413 | 1.16x | 0.407 |
+| AUPRC (threshold-free) | 0.524 | 0.427 | 1.23x | 0.348 |
+
+The gap exists at exactly one budget under exactly one scoring rule. It is a
+property of sigmoid placement, not of representation quality.
+
+### 16.3 A harder benchmark was built, and the negative result holds on it
+
+Rather than report the negative result on a benchmark already shown to be
+defective, the negative-sampling protocol was rebuilt: candidate negatives are
+now **matched to positives on the leaking feature** (depth centre-flank ratio),
+which attenuates the shortcut from ROC-AUC 0.955 to 0.717 and drops every arm's
+absolute performance — confirming the task is genuinely harder rather than
+merely relabelled. On that benchmark, best-of-family per budget:
+
+| Budget | *n* | Control (GBT / logreg) | Best deep arm | *p* | Leader |
+|---|---|---|---|---|---|
+| 1% | 35 | 0.476 ± 0.076 | 0.330 ± 0.025 | 0.0003 | control |
+| 5% | 173 | 0.626 ± 0.054 | 0.411 ± 0.036 | 0.0004 | control |
+| 10% | 345 | 0.719 ± 0.029 | 0.510 ± 0.140 | 0.1211 | tie |
+| 25% | 863 | 0.803 ± 0.013 | 0.734 ± 0.065 | 0.2052 | tie |
+| 50% | 1726 | 0.845 ± 0.012 | 0.763 ± 0.063 | 0.1484 | tie |
+| 100% | 3452 | 0.869 ± 0.006 | 0.885 ± 0.022 | 0.3285 | tie |
+
+The control is a gradient-boosted tree (or logistic regression, whichever is
+stronger at that budget) on **twelve scalar summary features**. It leads
+significantly at the two sparsest budgets and ties at the other four. The
+earlier claim that it "leads at every budget" is itself withdrawn — the
+correction cuts against the paper's own convenient framing as well as against
+its headline.
+
+### 16.4 What the project's contribution actually is
+
+Not "self-supervised pretraining improves label efficiency for deletion
+calling." That claim is unsupported by this project's own data. What the work
+establishes, and what the manuscript now argues:
+
+1. **A negative result with a mechanism.** Masked-reconstruction + VICReg
+   pretraining on alignment tensors does not beat from-scratch training on this
+   task once scoring is threshold-free and budgets are equal.
+2. **A benchmark-construction diagnosis.** The uniform-negative protocol
+   standard in this literature yields a task solvable by one untrained scalar.
+   Any method benchmarked only that way is under-tested — which includes
+   DeepSV, and included this project.
+3. **A protocol diagnosis.** Fixed-threshold F1 at small label budgets
+   manufactures apparent label-efficiency gains. This is a reusable warning.
+4. **A hard-negative benchmark and matched protocol** released as code, on
+   which twelve hand-crafted features remain competitive with a pretrained
+   convolutional-attention encoder across the whole label curve.
+
+### 16.5 Consequences for the plan in §§1-15
+
+- **§1.1 (what we keep/replace/add versus DeepSV):** the learnable tensor still
+  replaces DeepSV's RGB encoding, and that comparison still favours the tensor
+  *once labels are sufficient*: the DeepSV-representation arm is last at five of
+  six budgets on the uniform benchmark, but on the candidate-filtered benchmark
+  it is ahead of both tensor arms at the two sparsest budgets and only falls
+  behind from 10% upward (Table 7). The *pretraining* half of the contribution is
+  withdrawn.
+- **§5.3, §13.1:** superseded; retained as a record of what was believed and when.
+- **§6 (calibrated uncertainty):** the calibration-superiority claim was
+  withdrawn earlier and is not reinstated. ECE is reported, not claimed as an
+  advantage.
+- **§11 (timeline):** the week-12 go/no-go resolves negatively; the pivot the
+  plan anticipated has been taken.
+- **§12.3 (framing the contribution):** rewritten around §16.4 before
+  submission. The target venues are unchanged — a well-executed negative result
+  with a benchmark diagnosis is in scope for *Bioinformatics* and *Briefings in
+  Bioinformatics*, and arguably a better fit there than a marginal positive.
+
+---
+
+*Document history: v1 (2026-07-13) original execution plan. v2 (2026-07-18) full as-implemented rewrite — every section retains its original plan text with an "AS IMPLEMENTED" callout documenting what was actually built, what changed, why, and what remains open; new §13–15 added for results, novelty positioning, and deferred work. v3 (2026-08-03) audit outcome: §16 added; the headline label-efficiency claim is withdrawn and §§5.3, 11, 13.1 marked superseded.*

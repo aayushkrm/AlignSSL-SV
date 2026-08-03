@@ -57,7 +57,7 @@ seeds** as the deep arms.
 | AlignSSL (no pretraining) | 0.050 | 0.734 | 0.763 | 0.854 | 0.912 | 0.944 |
 | DeepSV-style representation | 0.434 | 0.591 | 0.662 | 0.834 | 0.856 | 0.707 |
 
-The 12-feature model **beats or matches every deep arm at every label budget**
+The 12-feature model **leads significantly where labels are scarce (1%, 5%) and matches the deep arms elsewhere** (Table 14; the earlier "every budget" claim is withdrawn)
 under the fixed 0.5 cut used here, and at 1% of labels (210 windows) it exceeds
 the best deep arm by 0.31 F1. Under the corrected, threshold-free comparison
 (`results/table14_control_vs_deep.csv`) the control's lead is significant only
