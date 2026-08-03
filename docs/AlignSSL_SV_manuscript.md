@@ -149,7 +149,7 @@ Read on its own, this table says that pretraining supplies a usable detector fro
 | 50% | 10,508 | 0.887 ± 0.032 | **0.930 ± 0.006** | 0.770 ± 0.115 |
 | 100% | 21,016 | 0.888 ± 0.053 | **0.921 ± 0.027** | 0.702 ± 0.136 |
 
-![Figure 1. Deletion F1 vs. labelled-data fraction as conventionally scored, at a fixed 0.5 probability cut. The apparent low-label dominance of the pretrained arm is an artefact of that cut; see Figure 8.]({{artifact:art_6b3657d8-5b3f-4b2c-b2ad-1df2139e7a24}})
+![Figure 1. Deletion F1 vs. labelled-data fraction on the uniform benchmark, scored the way this literature scores it: a fixed 0.5 probability cut. Source is the `f1_at_half` columns of the corrected-protocol runs (`results/table12_label_efficiency_fixed.csv`, uniform rows), so the panel plots exactly the values tabulated in Table 1. The bracket marks the 10.9× pretrained-over-scratch ratio at the smallest budget; that ratio is a property of the fixed cut and not of the representation, and it does not survive threshold selection or threshold-free scoring (Figure 6). Note also that the pretrained arm does not lead the DeepSV baseline at this budget — the two are tied.]({{artifact:art_6b3657d8-5b3f-4b2c-b2ad-1df2139e7a24}})
 
 ### 4.2 A hand-crafted-feature control bounds what this benchmark can demonstrate
 

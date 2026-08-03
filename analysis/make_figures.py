@@ -121,15 +121,26 @@ def pct_axis(ax, x, total=21016):
 
 # ------------------------------------------------------------------ figure 1
 def figure1(res: Path, out: Path) -> None:
-    rows = read(res / "table1_label_efficiency.csv")
-    arms = ["AlignSSL-combined", "AlignSSL-scratch", "DeepSV-representation"]
+    """Label efficiency exactly as the manuscript's Table 1 reports it.
+
+    Sourced from the uniform rows of table12 (f1_at_half columns), NOT from
+    the superseded table1_label_efficiency.csv. Both tabulate F1 at a fixed
+    0.5 cut, but table1 predates the equal-budget correction of Section 4.8
+    and disagrees with the manuscript at the 1% budget (it separates the
+    pretrained arm from the DeepSV baseline, 0.514 vs 0.435, where the
+    corrected run has them tied at 0.478 vs 0.479). The figure must agree
+    with the table it sits under.
+    """
+    rows = [r for r in read(res / "table12_label_efficiency_fixed.csv")
+            if r.get("benchmark") == "uniform"]
+    arms = ["AlignSSL-pretrained", "AlignSSL-scratch", "DeepSV-representation"]
     g = by_arm([r for r in rows if r["arm"] in arms], "arm",
-               "label_frac", "F1_mean", "F1_sd")
+               "label_frac", "f1_at_half_mean", "f1_at_half_sd")
     fig, ax = plt.subplots(figsize=(5.0, 3.4))
     for arm in arms:
         x, y, sd = g[arm]
         ax.plot(x, y, "-o", color=COLOUR[arm], label=LABEL[arm],
-                zorder=3 if arm == "AlignSSL-combined" else 2)
+                zorder=3 if arm == "AlignSSL-pretrained" else 2)
         ax.fill_between(x, y - sd, y + sd, color=COLOUR[arm], alpha=0.15,
                         linewidth=0)
     x = g[arms[0]][0]
@@ -137,12 +148,12 @@ def figure1(res: Path, out: Path) -> None:
     ax.set_ylabel("Deletion F1 (held-out chr12–22)")
     ax.set_ylim(0, 1.0)
     # annotate the headline gap at the smallest budget
-    lo_p = g["AlignSSL-combined"][1][0]
+    lo_p = g["AlignSSL-pretrained"][1][0]
     lo_s = g["AlignSSL-scratch"][1][0]
     ax.annotate("", xy=(x[0], lo_p), xytext=(x[0], lo_s),
                 arrowprops=dict(arrowstyle="<->", lw=0.9, color="0.25",
                                 shrinkA=2, shrinkB=2))
-    ax.annotate(f"{lo_p / max(lo_s, 1e-9):.0f}\u00d7 at 1% labels —\n"
+    ax.annotate(f"{lo_p / max(lo_s, 1e-9):.1f}\u00d7 at 1% labels —\n"
                 "but only at this fixed\ncut (see Figure 6)",
                 xy=(x[0], (lo_p + lo_s) / 2), xytext=(x[0] * 1.35, 0.18),
                 fontsize=8, color="0.25", va="center",
