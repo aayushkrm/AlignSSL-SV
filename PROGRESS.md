@@ -696,8 +696,56 @@ Data-fidelity fixes in the same pass: Figure 3's title claimed length *degradati
 
 **Second-order failure.** `deepsv2_new` has no pytest, so the gate's top-level `import pytest` aborted with `ModuleNotFoundError` before the pytest-free `__main__` block could run — job 1556926 died in 7 s with the gate never executing. The import is now optional (a shim supplies the one decorator the module uses). Verified both paths: 9 passed under `pytest tests/`, and the PASS line prints when the file runs as a script with pytest blocked from `sys.meta_path`. Confirmed in `deepsv2_new` on the cluster before resubmitting.
 
-### Chain currently running
+### Chain outcome: the candidate-filtered benchmark, settled
 
-`1556929` (hnext4, amd_256M) → `1556930` (hncls2, amd_256M) → `1556931_[0-2]` (hndeep2, gpu_T4, batch 96). Both pre-extraction gates passed in the cluster environment: quantile matching removes the depth-ratio shortcut (uniform-negative AUC 0.951 → quantile-matched 0.504, pos median 0.429 vs matched median 0.429), and the extractors agree on the shard schema. The classical/separability arm is deliberately sequenced *before* the GPU arms so a still-separable benchmark costs ~2 CPU-minutes instead of GPU-hours; `hn_single_feature_auc.csv` compared against `results/table6_single_feature_auc.csv` is the number that says whether the depth leak is closed.
+`1556929` (hnext4) → `1556930` (hncls2) → `1556931_[0-2]` (hndeep2) all completed.
+Both pre-extraction gates passed in the cluster environment. The results are
+aggregated into `results/` (tables 7-9, 12-15, `stats_hardneg.csv`,
+`stats_multiplicity.csv`) and written into the manuscript. Three things came out
+of it, and two of them are negative results about our own method.
 
-**Next:** on completion run `analysis/aggregate_hardneg.py` (→ table7, table8, `stats_hardneg.csv`), state whether the leak is closed, regenerate figures, and update the manuscript and README — including restoring or permanently withdrawing the two claims currently marked withdrawn (calibration superiority, cross-ancestry robustness). Then Phase 4 (GIAB HG002 + Truvari), still blocked on staging: HG002 is not on the cluster, Truvari is not installed in `deepsv2_new`, and the reference is GRCh37/hs37d5 while the GIAB v4.2.1 SV benchmark ships for GRCh38.
+**1. The depth shortcut is reduced but not eliminated.** Quantile-matching the
+negatives moves the single strongest hand-crafted feature from
+`depth_centre_flank_ratio` oriented AUC **0.9554 → 0.7168**
+(`table6_single_feature_auc.csv` → `table9_hardneg_single_feature_auc.csv`), and
+`clip_rate` from 0.8023 → 0.6296. So the uniform benchmark was largely a
+depth-ratio detector, and the candidate-filtered one is not — but 0.72 from one
+scalar is still substantial residual separability. The honest statement is
+"materially harder, not hard", and that is what the manuscript says.
+
+**2. Self-supervised pretraining buys nothing once the negatives are hard.**
+On the candidate-filtered benchmark, AlignSSL-pretrained vs AlignSSL-scratch is a
+**tie at every one of the six label budgets, on both AUPRC and F1 at the selected
+threshold** — all 12 verdicts in `table15_hardneg_arm_contrasts.csv` read `tie`.
+The closest is 1% F1 (0.2405 ± 0.1036 vs 0.0084 ± 0.0145, *p* = 0.058), and it
+does not survive multiplicity correction. This directly overturns the headline the
+earlier drafts carried.
+
+**3. What does survive is a representation claim, not an SSL claim.** Both
+alignment-tensor arms beat the DeepSV RGB representation from the 25% budget
+upward, and this survives Holm correction at several budgets — e.g. scratch vs
+DeepSV-representation at full labels, AUPRC 0.8849 ± 0.0217 vs 0.6562 ± 0.0094,
+*p*_Holm = 0.0048. The learned multi-channel tensor is the contribution; the
+self-supervised objective is not, on this benchmark.
+
+**Consequently the three withdrawn claims stay withdrawn permanently**, and the
+paper is reframed around the benchmark-construction finding plus the
+representation comparison. §I.2 above lists them; the manuscript's abstract,
+contributions and conclusion now state four documented evaluation defects rather
+than a performance result.
+
+### Open, deferred by decision
+
+- **Phase 4 (GIAB HG002 + Truvari)** — deferred by the user until after the
+  preprint. Blockers when it resumes: HG002 is not on the cluster, Truvari is not
+  installed in `deepsv2_new`, and our reference is GRCh37/hs37d5 while the GIAB
+  v4.2.1 SV benchmark ships for GRCh38, so it needs either a lift-over or a
+  GRCh38 re-run of the whole pipeline.
+- **Cross-ancestry sweep re-run** — `scripts/cross_pop_lowlabel.py` is now
+  migrated to the shared label protocol, but Table 5 was generated before that
+  migration and is labelled pre-correction in its caption. Deliberately not
+  re-run: §4.6 claims no cross-ancestry effect at any budget, and a re-run cannot
+  change a withdrawn claim.
+- Breakpoint-regression head, deep-ensemble / conformal uncertainty,
+  repeat-and-segdup stratification, coverage-robustness downsampling, and a
+  Zenodo weights release — all post-preprint.
