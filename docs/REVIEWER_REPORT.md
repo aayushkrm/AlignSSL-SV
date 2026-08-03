@@ -57,8 +57,12 @@ seeds** as the deep arms.
 | AlignSSL (no pretraining) | 0.050 | 0.734 | 0.763 | 0.854 | 0.912 | 0.944 |
 | DeepSV-style representation | 0.434 | 0.591 | 0.662 | 0.834 | 0.856 | 0.707 |
 
-The 12-feature model **beats or matches every deep arm at every label budget**,
-and at 1% of labels (210 windows) it exceeds the best deep arm by 0.31 F1.
+The 12-feature model **beats or matches every deep arm at every label budget**
+under the fixed 0.5 cut used here, and at 1% of labels (210 windows) it exceeds
+the best deep arm by 0.31 F1. Under the corrected, threshold-free comparison
+(`results/table14_control_vs_deep.csv`) the control's lead is significant only
+in the two label-scarce cells and *reverses* at full supervision — a weaker but
+better-founded version of the same finding.
 
 Worse, no training is needed at all. Single-feature discrimination on the
 held-out test set (n = 9,196; 2,299 positive):
@@ -72,8 +76,13 @@ held-out test set (n = 9,196; 2,299 positive):
 | depth s.d. | 0.686 |
 
 **Consequence for the paper's thesis.** The headline result — pretrained F1 0.514
-vs from-scratch 0.050 at 1% labels — is real, reproducible, and statistically
-solid (paired *t* = 13.27, *p* = 9.2 × 10⁻⁴). But its interpretation collapses.
+vs from-scratch 0.050 at 1% labels — is reproducible and statistically solid
+*as a fixed-threshold measurement* (paired *t* = 13.27, *p* = 9.2 × 10⁻⁴). Its
+interpretation collapses on two independent grounds. The first is the control
+documented in this section. The second, found later and recorded in §8 below,
+is that the measurement itself is threshold-dependent: under threshold-free
+scoring the gap disappears entirely (AUPRC ratio 1.23, *p* = 0.35), so the
+claim is **withdrawn** rather than merely reinterpreted.
 It does not show that pretraining buys label efficiency for deletion calling. It
 shows that a randomly-initialised CNN needs more than 210 labels to learn a
 depth-ratio threshold, and pretraining supplies that inductive bias sooner. A

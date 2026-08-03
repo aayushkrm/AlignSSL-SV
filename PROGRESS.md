@@ -2,39 +2,42 @@
 
 _Last updated: 2026-07-24 (**pre-submission HARDENING DAG COMPLETE — all 16 jobs exit 0; audit asymmetries A/B/C fixed; all arms now batch-96, error bars across pretraining seeds; manuscript + README + docs harmonized to the final numbers and pushed**). Panel frozen at 6 labeled samples + NA12878 test; SSL corpus 3 samples / 120K windows / 60 shards; 4-seed re-pretrain complete; GitHub repo public at github.com/aayushkrm/AlignSSL-SV. Maps to the Phase 0–5 plan in `project.md`. **See the 2026-07-24 section at the bottom for the current, authoritative numbers — earlier tables in this file are pre-hardening and superseded.**_
 
-> ### ⚠️ 2026-07-30 — EVERY NUMBER BELOW IS UNDER RECOMPUTATION
+> ### ⚠️ 2026-07-31 — THE HEADLINE CLAIM IS WITHDRAWN
 >
 > A second audit pass examined *how* the numbers were produced rather than what
-> they claim, and found three defects in the shared evaluation path. See
-> `docs/REVIEWER_REPORT.md` §8 for the full account. In short:
+> they claim, and found three defects in the shared evaluation path
+> (`docs/REVIEWER_REPORT.md` §8):
 >
 > 1. **The decision threshold was fixed at 0.5 for every arm**, with no
 >    threshold selection anywhere. For models trained on tens of labels on a
 >    class-imbalanced task, this conflates *ranking quality* with *sigmoid
 >    placement*.
 > 2. **The label budget differed between the deep arms and the classical
->    control** on the candidate-filtered benchmark (the deep arms silently
->    received 2.8× the labels at the 1% point).
-> 3. **The validation split was gated on batch size**, so the low-label cells
->    fell back to the fixed cut.
+>    control** (the deep arms silently received up to 2.8x the labels at the 1%
+>    point), because a batch-size floor gated the validation split.
+> 3. **The benchmark itself is near-trivially separable** - a single
+>    *untrained* centre-vs-flank depth ratio reaches ROC-AUC 0.955.
 >
-> Defects 2 and 3 share a root cause: batch size had leaked from an
-> implementation detail into the experimental protocol. All three are fixed in
-> `alignssl/metrics.py` and `alignssl/protocol.py`, with 20 regression guards
-> that encode the defects rather than only the corrected behaviour.
+> Defects 1 and 2 are fixed in `alignssl/metrics.py` and `alignssl/protocol.py`,
+> with 20 regression guards that encode the defects rather than only the
+> corrected behaviour. The uniform benchmark has been fully re-scored.
 >
-> **First recomputed evidence contradicts the headline claim below.** Uniform
-> benchmark, 1% labels, threshold-free: from-scratch AUPRC **0.484** vs
-> pretrained **0.463** — the from-scratch model ranks the test set *at least as
-> well*, and its F1@0.5 of 0.035 reflects only that it places nearly every
-> probability under 0.5. On the filtered benchmark at 1% the two arms' AUPRC
-> distributions overlap (pretrained 0.302 ± 0.053, n=3; scratch 0.252 ± 0.039,
-> n=5; Welch *p* = 0.24) and one from-scratch seed's F1 (0.416) exceeds every
-> pretrained seed.
+> **Outcome: the "~10x" label-efficiency result does not survive.** Under
+> threshold-free scoring (AUPRC) on the corrected protocol, the pretrained arm
+> **never significantly leads at any label budget** (AUPRC ratio 1.23 at 1%,
+> *p* = 0.35), and at 5% labels it is significantly *behind* from-scratch
+> (ratio 0.80, *p* = 0.015). The apparent 10.9x F1 gap at 1% labels exists only
+> at the fixed 0.5 cut; move to a tuned cut and it falls to 1.17x
+> (*p* = 0.41). The gap was a property of the decision threshold, not of the
+> representation.
 >
-> The "~10×" headline is therefore, on present evidence, largely an artefact of
-> an unstated thresholding convention. Treat the tables below as the
-> fixed-threshold record until the re-run completes.
+> **Every table below this banner is the superseded fixed-threshold record.**
+> Current numbers: `results/table12_label_efficiency_fixed.csv` (fixed cut,
+> corrected protocol), `results/table13_threshold_sensitivity.csv` (three
+> scoring rules), `results/table14_control_vs_deep.csv` (control vs best deep
+> arm, threshold-free). The manuscript and README are rewritten around the
+> withdrawal; this file is kept as the dated laboratory record of what was
+> believed when.
 
 ---
 
@@ -44,7 +47,7 @@ _Last updated: 2026-07-24 (**pre-submission HARDENING DAG COMPLETE — all 16 jo
 
 ## Where I am right now (one line)
 
-**All experiments through Phase 4.3 are complete and hardened.** The 6-sample labeled panel (`tensors_all6`: train chr1–11 = 21,016 windows; test chr12–22 = 9,196) and the 3-sample / 120,000-window SSL corpus are extracted and validated (no chromosomal leakage — pretrain shards are chr1–11 only). Four SSL encoders (`encoder_ssl_seed0–3.pt`) are pretrained. The **pre-submission hardening DAG (16 SLURM jobs) completed with every job at exit 0**, fixing all three reviewer-audit asymmetries: every arm now fine-tunes at **batch 96**, and ablation error bars are computed across **pretraining** seeds rather than fine-tune seeds. Final harmonized results: **1%-label F1 0.514 ± 0.055 pretrained vs 0.050 ± 0.040 from-scratch (~10×)**; the DeepSV RGB+CNN baseline is beaten at all six label fractions and is ~10× worse calibrated; the low-label cross-population (CEU) sweep is done. Manuscript, README, and docs are harmonized to these numbers and pushed. **Next: Phase 4 GIAB HG002 + Truvari** (blocked — no HG002 data on the cluster, Truvari not installed, reference is GRCh37/hs37d5).
+**All experiments through Phase 4.3 are complete and hardened.** The 6-sample labeled panel (`tensors_all6`: train chr1–11 = 21,016 windows; test chr12–22 = 9,196) and the 3-sample / 120,000-window SSL corpus are extracted and validated (no chromosomal leakage — pretrain shards are chr1–11 only). Four SSL encoders (`encoder_ssl_seed0–3.pt`) are pretrained. The **pre-submission hardening DAG (16 SLURM jobs) completed with every job at exit 0**, fixing all three reviewer-audit asymmetries: every arm now fine-tunes at **batch 96**, and ablation error bars are computed across **pretraining** seeds rather than fine-tune seeds. Harmonized results as of that date: 1%-label F1 0.514 ± 0.055 pretrained vs 0.050 ± 0.040 from-scratch (~10×). **That result has since been withdrawn** — see the 2026-07-31 banner above; it was an artefact of a fixed 0.5 decision cut and unequal label budgets, and does not survive threshold-free re-scoring. The paper's contribution is now the benchmark-and-protocol critique, not a label-efficiency gain. **Next: complete the candidate-filtered re-run (job 1563734), then Phase 4 GIAB HG002 + Truvari** (blocked — no HG002 data on the cluster, Truvari not installed, reference is GRCh37/hs37d5).
 
 **Fine-tune performance bug fixed today (real, fixed):** the first seed jobs (1514992/93/94) timed out at 4 h having done only ~2 of 6 fractions because `ShardDataset.__getitem__` re-ran `np.load`+decompression of a ~1 MB `.npz` on nearly every access under shuffle. Fix: preload the whole labeled set (~25 MB) into contiguous in-RAM arrays at init → `__getitem__` is now a pure slice. Result: a fraction that took >1 h now takes ~3 min; jobs relaunched as 1515265/66/67.
 
@@ -52,7 +55,7 @@ _Last updated: 2026-07-24 (**pre-submission HARDENING DAG COMPLETE — all 16 jo
 
 ---
 
-## 🔑 HEADLINE RESULT (HARDENED full sweep — mean±sd, all arms batch-96)
+## 🔑 HEADLINE RESULT — **WITHDRAWN 2026-07-31** (superseded fixed-threshold record)
 
 Test set = chr12–22 of the 6-sample panel (`tensors_all6` split=test, 9,196 windows). Numbers are DEL-vs-non-DEL F1 (mean ± sd). SSL-pretrained and from-scratch arms use **4 seeds** (pretraining seeds 0–3); the DeepSV baseline uses **3 seeds**. All arms fine-tune at **batch 96** (harmonized). Per-seed numbers in `results/results_label_efficiency_4seed.csv`; figure `results/fig_label_efficiency_hardened.png`.
 
@@ -65,7 +68,7 @@ Test set = chr12–22 of the 6-sample panel (`tensors_all6` split=test, 9,196 wi
 | 50% | 10,508 | 0.913 ± 0.014 | 0.912 ± 0.022 | 0.856 ± 0.033 |
 | 100% | 21,016 | 0.934 ± 0.004 | 0.944 ± 0.003 | 0.707 ± 0.140 |
 
-**Interpretation:** at **1% labels the from-scratch model nearly collapses (F1 = 0.05 ± 0.04)** while the pretrained encoder recovers real deletions at F1 = 0.514 ± 0.055 — a ~10× advantage, the project's central claim. At 10% the pretrained arm leads cleanly (0.813 vs 0.763); by 25–100% the two converge and the from-scratch arm edges ahead at full supervision (0.944 vs 0.934). This is the expected label-efficiency signature: pretraining buys the most when labels are scarcest. **Honest paper story = the low-label rescue + convergence, not a blanket "always wins."**
+**Interpretation (as believed on 2026-07-24; now withdrawn — the 1% gap is a thresholding artefact, see banner):** at **1% labels the from-scratch model nearly collapses (F1 = 0.05 ± 0.04)** while the pretrained encoder recovers real deletions at F1 = 0.514 ± 0.055 — a ~10× advantage, the project's central claim. At 10% the pretrained arm leads cleanly (0.813 vs 0.763); by 25–100% the two converge and the from-scratch arm edges ahead at full supervision (0.944 vs 0.934). This is the expected label-efficiency signature: pretraining buys the most when labels are scarcest. **Honest paper story = the low-label rescue + convergence, not a blanket "always wins."**
 
 **Calibration @ 100% labels (mean±sd):** pretrained ECE = 0.008 ± 0.002 (T = 0.63); scratch ECE = 0.007 ± 0.000 (T = 0.59); DeepSV ECE = 0.072 ± 0.068 (T = 1.41). Both learned-tensor arms are ~10× better calibrated than the DeepSV RGB baseline. See `results/results_calibration_hardened.csv`.
 

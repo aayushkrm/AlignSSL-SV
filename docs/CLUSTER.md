@@ -310,10 +310,15 @@ trusted for extraction.
   cross-population jobs `xp6_s{0..3}` (jobs 1518002–1518005) are shorter and
   completed on the first pass. Only 3 GPUs run concurrently (the 4th T4 is
   occupied by another user), so jobs queue in pairs.
-- **Headline (4-seed mean ± s.d.)**: at 1% labels Deletion F1 = 0.514 ± 0.055
-  (pretrained) vs 0.050 ± 0.040 (from scratch) — a ~10× low-label gain; arms
-  converge by 50–100% labels. Full tables/figure: `PROGRESS.md`,
-  `results_*_4seed.csv`, `fig_label_efficiency_4seed.png`.
+- **Headline — WITHDRAWN (2026-07-31).** These runs reported at 1% labels
+  Deletion F1 = 0.514 ± 0.055 (pretrained) vs 0.050 ± 0.040 (from scratch), a
+  "~10× low-label gain". That number was computed at a **fixed 0.5 decision
+  cut** and under **unequal label budgets**, and does not survive threshold-free
+  re-scoring: the pretrained arm never significantly leads at any budget
+  (`results/table13_threshold_sensitivity.csv`). See
+  `docs/AlignSSL_SV_manuscript.md` §4.8. The run mechanics recorded above
+  (walltimes, job ids, the `--time=300` truncation gotcha) remain accurate and
+  are why this section is kept.
 - **Next**: run cross-population eval at *low* label fractions (the OOD/CEU
   advantage, if any, should appear there — at full labels it does not); refresh
   the length-strata figure; update `project.md` + manuscript with these numbers
