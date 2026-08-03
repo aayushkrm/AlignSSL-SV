@@ -1,32 +1,68 @@
 family,test,m_family,p_raw,p_holm,q_bh,nominal_0.05,survives_holm_0.05,survives_bh_0.05,verdict
-uniform: label-efficiency and ablation,headline low-label gain | combined vs scratch @1% labels,7,0.000924,0.00462,0.002156,True,True,True,survives Holm
-uniform: label-efficiency and ablation,low-label gain (combined) | combined vs scratch @1%,7,4.22e-05,0.0002954,0.00014805,True,True,True,survives Holm
-uniform: label-efficiency and ablation,low-label gain (MAM-only) | MAM-only vs scratch @1%,7,0.0172,0.0688,0.0301,True,False,True,survives BH only
-uniform: label-efficiency and ablation,low-label gain (VICReg-only) | VICReg-only vs scratch @1%,7,4.23e-05,0.0002954,0.00014805,True,True,True,survives Holm
-uniform: label-efficiency and ablation,convergence at full supervision | combined vs scratch @100%,7,0.0246,0.0738,0.03444,True,False,True,survives BH only
-uniform: label-efficiency and ablation,ablation @100% | combined vs MAM-only @100%,7,0.2088,0.4176,0.2436,False,False,False,not significant
-uniform: label-efficiency and ablation,ablation @1% | MAM-only vs combined @1%,7,0.4771,0.4771,0.4771,False,False,False,not significant
-uniform: cross-ancestry sweep,"cross-ancestry @0.01 | combined vs scratch, held-out CEU F1",6,0.1102,0.4408,0.2204,False,False,False,not significant
-uniform: cross-ancestry sweep,"cross-ancestry @0.05 | combined vs scratch, held-out CEU F1",6,0.537,1,0.5839,False,False,False,not significant
-uniform: cross-ancestry sweep,"cross-ancestry @0.1 | combined vs scratch, held-out CEU F1",6,0.0282,0.1692,0.1692,True,False,False,LOST to multiplicity
-uniform: cross-ancestry sweep,"cross-ancestry @0.25 | combined vs scratch, held-out CEU F1",6,0.5839,1,0.5839,False,False,False,not significant
-uniform: cross-ancestry sweep,"cross-ancestry @0.5 | combined vs scratch, held-out CEU F1",6,0.0836,0.418,0.2204,False,False,False,not significant
-uniform: cross-ancestry sweep,"cross-ancestry @1 | combined vs scratch, held-out CEU F1",6,0.1818,0.5454,0.2727,False,False,False,not significant
-candidate-filtered: pretrained vs Classical-GBT,pretrained vs Classical-GBT @0.01,6,0.0161,0.0966,0.0738,True,False,False,LOST to multiplicity
-candidate-filtered: pretrained vs Classical-GBT,pretrained vs Classical-GBT @0.05,6,0.1034,0.4136,0.2068,False,False,False,not significant
-candidate-filtered: pretrained vs Classical-GBT,pretrained vs Classical-GBT @0.1,6,0.0246,0.123,0.0738,True,False,False,LOST to multiplicity
-candidate-filtered: pretrained vs Classical-GBT,pretrained vs Classical-GBT @0.25,6,0.1516,0.4548,0.2274,False,False,False,not significant
-candidate-filtered: pretrained vs Classical-GBT,pretrained vs Classical-GBT @0.5,6,0.2017,0.4548,0.24204,False,False,False,not significant
-candidate-filtered: pretrained vs Classical-GBT,pretrained vs Classical-GBT @1.0,6,0.7411,0.7411,0.7411,False,False,False,not significant
-candidate-filtered: pretrained vs DeepSV-representation,pretrained vs DeepSV-representation @0.01,6,0.4378,1,0.5979,False,False,False,not significant
-candidate-filtered: pretrained vs DeepSV-representation,pretrained vs DeepSV-representation @0.05,6,0.5979,1,0.5979,False,False,False,not significant
-candidate-filtered: pretrained vs DeepSV-representation,pretrained vs DeepSV-representation @0.1,6,0.5622,1,0.5979,False,False,False,not significant
-candidate-filtered: pretrained vs DeepSV-representation,pretrained vs DeepSV-representation @0.25,6,0.2503,1,0.5006,False,False,False,not significant
-candidate-filtered: pretrained vs DeepSV-representation,pretrained vs DeepSV-representation @0.5,6,0.2483,1,0.5006,False,False,False,not significant
-candidate-filtered: pretrained vs DeepSV-representation,pretrained vs DeepSV-representation @1.0,6,0.0179,0.1074,0.1074,True,False,False,LOST to multiplicity
-candidate-filtered: pretrained vs scratch,pretrained vs scratch @0.01,6,0.0161,0.0966,0.0966,True,False,False,LOST to multiplicity
-candidate-filtered: pretrained vs scratch,pretrained vs scratch @0.05,6,0.069,0.345,0.207,False,False,False,not significant
-candidate-filtered: pretrained vs scratch,pretrained vs scratch @0.1,6,0.6987,1,0.6987,False,False,False,not significant
-candidate-filtered: pretrained vs scratch,pretrained vs scratch @0.25,6,0.2085,0.834,0.417,False,False,False,not significant
-candidate-filtered: pretrained vs scratch,pretrained vs scratch @0.5,6,0.4109,1,0.61635,False,False,False,not significant
-candidate-filtered: pretrained vs scratch,pretrained vs scratch @1.0,6,0.5808,1,0.69696,False,False,False,not significant
+uniform (pre-correction): label-efficiency and ablation,headline low-label gain | combined vs scratch @1% labels,7,0.000924,0.00462,0.002156,True,True,True,survives Holm
+uniform (pre-correction): label-efficiency and ablation,low-label gain (combined) | combined vs scratch @1%,7,4.22e-05,0.0002954,0.00014805,True,True,True,survives Holm
+uniform (pre-correction): label-efficiency and ablation,low-label gain (MAM-only) | MAM-only vs scratch @1%,7,0.0172,0.0688,0.0301,True,False,True,survives BH only
+uniform (pre-correction): label-efficiency and ablation,low-label gain (VICReg-only) | VICReg-only vs scratch @1%,7,4.23e-05,0.0002954,0.00014805,True,True,True,survives Holm
+uniform (pre-correction): label-efficiency and ablation,convergence at full supervision | combined vs scratch @100%,7,0.0246,0.0738,0.03444,True,False,True,survives BH only
+uniform (pre-correction): label-efficiency and ablation,ablation @100% | combined vs MAM-only @100%,7,0.2088,0.4176,0.2436,False,False,False,not significant
+uniform (pre-correction): label-efficiency and ablation,ablation @1% | MAM-only vs combined @1%,7,0.4771,0.4771,0.4771,False,False,False,not significant
+uniform (pre-correction): cross-ancestry sweep,"cross-ancestry @0.01 | combined vs scratch, held-out CEU F1",6,0.1102,0.4408,0.2204,False,False,False,not significant
+uniform (pre-correction): cross-ancestry sweep,"cross-ancestry @0.05 | combined vs scratch, held-out CEU F1",6,0.537,1,0.5839,False,False,False,not significant
+uniform (pre-correction): cross-ancestry sweep,"cross-ancestry @0.1 | combined vs scratch, held-out CEU F1",6,0.0282,0.1692,0.1692,True,False,False,LOST to multiplicity
+uniform (pre-correction): cross-ancestry sweep,"cross-ancestry @0.25 | combined vs scratch, held-out CEU F1",6,0.5839,1,0.5839,False,False,False,not significant
+uniform (pre-correction): cross-ancestry sweep,"cross-ancestry @0.5 | combined vs scratch, held-out CEU F1",6,0.0836,0.418,0.2204,False,False,False,not significant
+uniform (pre-correction): cross-ancestry sweep,"cross-ancestry @1 | combined vs scratch, held-out CEU F1",6,0.1818,0.5454,0.2727,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.01 (F1@0.5),6,0.0091,0.0546,0.0546,True,False,False,LOST to multiplicity
+"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.05 (F1@0.5),6,0.1083,0.5415,0.2808,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.1 (F1@0.5),6,0.2321,0.6963,0.34815,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.25 (F1@0.5),6,0.9112,0.9112,0.9112,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.5 (F1@0.5),6,0.1404,0.5616,0.2808,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @1.0 (F1@0.5),6,0.4095,0.819,0.4914,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.01 (F1@tau),6,0.407,0.9654,0.4884,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.05 (F1@tau),6,0.0232,0.1392,0.1392,True,False,False,LOST to multiplicity
+"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.1 (F1@tau),6,0.0655,0.3275,0.1965,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.25 (F1@tau),6,0.5843,0.9654,0.5843,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.5 (F1@tau),6,0.1842,0.7368,0.3684,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @1.0 (F1@tau),6,0.3218,0.9654,0.4827,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.01 (AUPRC),6,0.3485,0.697,0.4182,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.05 (AUPRC),6,0.0153,0.0918,0.0918,True,False,False,LOST to multiplicity
+"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.1 (AUPRC),6,0.1103,0.5515,0.2896,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.25 (AUPRC),6,0.4473,0.697,0.4473,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.5 (AUPRC),6,0.1448,0.5792,0.2896,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @1.0 (AUPRC),6,0.2262,0.6786,0.3393,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.01 (auprc),6,0.6659,1,0.79908,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.05 (auprc),6,0.9027,1,0.9027,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.1 (auprc),6,0.5167,1,0.77505,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.25 (auprc),6,0.1388,0.8328,0.4431,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.5 (auprc),6,0.3745,1,0.749,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @1.0 (auprc),6,0.1477,0.8328,0.4431,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.01 (f1_at_tau),6,0.0579,0.3474,0.3474,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.05 (f1_at_tau),6,0.6368,1,0.6368,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.1 (f1_at_tau),6,0.2735,0.8484,0.41025,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.25 (f1_at_tau),6,0.1543,0.7715,0.41025,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.5 (f1_at_tau),6,0.6307,1,0.6368,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @1.0 (f1_at_tau),6,0.2121,0.8484,0.41025,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.01 (auprc),6,0.4831,0.8534,0.4831,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.05 (auprc),6,0.4267,0.8534,0.4831,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.1 (auprc),6,0.1969,0.5907,0.29535,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.25 (auprc),6,0.0153,0.0612,0.0306,True,False,True,survives BH only
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.5 (auprc),6,0.0111,0.0555,0.0306,True,False,True,survives BH only
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @1.0 (auprc),6,0.0059,0.0354,0.0306,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.01 (f1_at_tau),6,0.5155,1,0.77325,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.05 (f1_at_tau),6,0.9363,1,0.9939,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.1 (f1_at_tau),6,0.9939,1,0.9939,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.25 (f1_at_tau),6,0.0676,0.2704,0.1352,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.5 (f1_at_tau),6,0.0076,0.0456,0.0339,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @1.0 (f1_at_tau),6,0.0113,0.0565,0.0339,True,False,True,survives BH only
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.01 (auprc),6,0.2209,0.6627,0.33135,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.05 (auprc),6,0.4521,0.7566,0.4521,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.1 (auprc),6,0.3783,0.7566,0.4521,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.25 (auprc),6,0.0107,0.049,0.0214,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.5 (auprc),6,0.0098,0.049,0.0214,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @1.0 (auprc),6,0.0008,0.0048,0.0048,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.01 (f1_at_tau),6,0.1653,0.4512,0.19836,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.05 (f1_at_tau),6,0.4015,0.4512,0.4015,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.1 (f1_at_tau),6,0.1504,0.4512,0.19836,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.25 (f1_at_tau),6,0.0192,0.0768,0.0384,True,False,True,survives BH only
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.5 (f1_at_tau),6,0.0081,0.0405,0.0243,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @1.0 (f1_at_tau),6,0.0008,0.0048,0.0048,True,True,True,survives Holm

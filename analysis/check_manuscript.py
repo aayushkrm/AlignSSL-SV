@@ -139,7 +139,9 @@ def check_pvalues(md: str, results: Path) -> list[str]:
     Section 4 quotes stats_tests.csv; Section 6 (the candidate-filtered
     benchmark) quotes stats_hardneg.csv, whose p-column is named `p`;
     Section 4.8 quotes the three per-rule p-columns of table13; Section 4.2
-    quotes the control-versus-deep p-column of table14. All are pooled so the
+    quotes the control-versus-deep p-column of table14; Section 4.9 quotes
+    Holm-adjusted and BH-adjusted values from stats_multiplicity.csv, which
+    are NOT raw p-values and appear in no other file. All are pooled so the
     check covers the whole manuscript.
     """
     src = []
@@ -152,7 +154,9 @@ def check_pvalues(md: str, results: Path) -> list[str]:
     for name, cols in (("table13_threshold_sensitivity.csv",
                         ("p_F1@0.5", "p_F1@tau", "p_AUPRC")),
                        ("table14_control_vs_deep.csv", ("p_value",)),
-                       ("table15_hardneg_arm_contrasts.csv", ("p",))):
+                       ("table15_hardneg_arm_contrasts.csv", ("p",)),
+                       ("stats_multiplicity.csv",
+                        ("p_raw", "p_holm", "q_bh"))):
         f = results / name
         if not f.exists():
             continue

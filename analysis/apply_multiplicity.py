@@ -29,6 +29,22 @@ The headline low-label contrast is deliberately left in a family with the
 ablation contrasts rather than given a family of its own, so it is corrected
 against its own neighbourhood rather than privileged.
 
+Source files and the correction of Sections 3.8/4.8
+--------------------------------------------------
+An earlier version of this script drew the candidate-filtered families from
+`stats_hardneg.csv`, which predates the equal-budget and budgeted-threshold
+corrections. Its p-values disagree with the corrected run: pretrained vs
+scratch at the 1% budget was 0.016 there and is 0.666 (AUPRC) / 0.058 (F1 at
+the selected threshold) in `table15_hardneg_arm_contrasts.csv`. Correcting a
+stale p-value for multiplicity produces a stale verdict, so the candidate-
+filtered families now come from table15 (one family per arm pair per metric),
+and the corrected uniform label-efficiency contrast comes from
+`table13_threshold_sensitivity.csv` (one family per metric). The
+pre-correction `stats_tests.csv` families are retained and labelled as such,
+because Sections 4.5 and 4.6 -- the ablation and the cross-ancestry sweep --
+are themselves reported under the pre-correction protocol and those are the
+p-values they quote. `stats_hardneg.csv` is used only if table15 is absent.
+
 Usage
 -----
     python analysis/apply_multiplicity.py --results-dir results
@@ -82,15 +98,36 @@ def build_families(results_dir):
             item = (f"{r['claim']} | {r['comparison']}", float(r["p_value"]))
             (xanc if r["claim"].startswith("cross-ancestry") else core).append(item)
         if core:
-            fams["uniform: label-efficiency and ablation"] = core
+            fams["uniform (pre-correction): label-efficiency and ablation"] = core
         if xanc:
-            fams["uniform: cross-ancestry sweep"] = xanc
+            fams["uniform (pre-correction): cross-ancestry sweep"] = xanc
 
+    # Corrected uniform label-efficiency contrast: pretrained vs scratch across
+    # the budget sweep, one family per scoring rule.
+    p_ts = os.path.join(results_dir, "table13_threshold_sensitivity.csv")
+    if os.path.exists(p_ts):
+        rows = [r for r in csv.DictReader(open(p_ts)) if r["benchmark"] == "uniform"]
+        for col, metric in (("p_F1@0.5", "F1@0.5"), ("p_F1@tau", "F1@tau"),
+                            ("p_AUPRC", "AUPRC")):
+            fams[f"uniform (corrected): pretrained vs scratch, {metric}"] = [
+                (f"pretrained vs scratch @{r['label_frac']} ({metric})", float(r[col]))
+                for r in rows]
+
+    # Candidate-filtered families: corrected source preferred.
+    p_t15 = os.path.join(results_dir, "table15_hardneg_arm_contrasts.csv")
     p_hn = os.path.join(results_dir, "stats_hardneg.csv")
-    if os.path.exists(p_hn):
+    if os.path.exists(p_t15):
+        rows = list(csv.DictReader(open(p_t15)))
+        keys = sorted({(r["arm_a"], r["arm_b"], r["metric"]) for r in rows})
+        for arm_a, arm_b, metric in keys:
+            fams[f"candidate-filtered (corrected): {arm_a} vs {arm_b}, {metric}"] = [
+                (f"{arm_a} vs {arm_b} @{r['label_frac']} ({metric})", float(r["p"]))
+                for r in rows
+                if (r["arm_a"], r["arm_b"], r["metric"]) == (arm_a, arm_b, metric)]
+    elif os.path.exists(p_hn):
         rows = list(csv.DictReader(open(p_hn)))
         for comp in sorted({r["comparison"] for r in rows}):
-            fams[f"candidate-filtered: {comp}"] = [
+            fams[f"candidate-filtered (PRE-CORRECTION FALLBACK): {comp}"] = [
                 (f"{comp} @{r['label_frac']}", float(r["p"]))
                 for r in rows if r["comparison"] == comp]
     return fams
