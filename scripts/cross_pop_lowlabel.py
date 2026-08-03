@@ -20,8 +20,21 @@ For pretrained vs scratch, averaged over seeds by the caller. The gap (A - B)
 at each label fraction quantifies whether SSL pretraining buys ancestry
 robustness specifically when labels are scarce.
 
-Training subsampling is identical to finetune_eval.py: same rng(seed),
-same n = max(batch_size, int(frac*len(train))), same permutation slice.
+Label accounting is delegated to `alignssl.protocol`, the same module
+finetune_eval.py imports, so this arm cannot drift from the label-efficiency
+curves it is compared against: `label_budget` sets the budget with no
+batch-size floor, `split_budget` carves the threshold-selection split OUT OF
+that budget, and `loader_params` sizes the loader so no subset is padded up to
+a batch. An earlier version of this script used
+`n = max(batch_size, int(frac * len(train)))`, which is the inflated-budget
+defect diagnosed in Section 3.8 of the manuscript: at the 1% point it granted
+96 labels where the protocol grants far fewer, and it granted the validation
+split for free on top of the budget.
+
+The decision threshold tau is selected on the in-distribution validation split
+and then applied UNCHANGED to both test sets. Selecting a separate threshold on
+the cross-population set would use held-out-ancestry labels that a deployment
+would not have, and would measure a different quantity than transfer.
 """
 from __future__ import annotations
 import argparse, os, time, json
@@ -34,6 +47,8 @@ from alignssl.data import ShardDataset
 from alignssl.encoder import AlignEncoder
 from alignssl.heads import (SVHeads, finetune_loss, TemperatureScaler,
                             expected_calibration_error)
+from alignssl.metrics import score_arm, prf1_at, select_threshold
+from alignssl.protocol import label_budget, split_budget, loader_params
 
 
 class Model(nn.Module):
@@ -86,32 +101,21 @@ def collect_logits(model, dl, dev):
     return torch.cat(logits), torch.cat(labels), torch.cat(lens)
 
 
-def prf1(pred, label):
-    tp = int(((pred == 1) & (label == 1)).sum())
-    fp = int(((pred == 1) & (label == 0)).sum())
-    fn = int(((pred == 0) & (label == 1)).sum())
-    p = tp / (tp + fp) if tp + fp else 0.0
-    r = tp / (tp + fn) if tp + fn else 0.0
-    f = 2 * p * r / (p + r) if p + r else 0.0
-    return p, r, f
-
-
-def auprc(prob_pos, label):
-    from sklearn.metrics import average_precision_score
-    y = label.numpy() if hasattr(label, "numpy") else np.asarray(label)
-    pp = prob_pos.numpy() if hasattr(prob_pos, "numpy") else np.asarray(prob_pos)
-    if int(y.sum()) == 0 or int(y.sum()) == len(y):
-        return float("nan")
-    return float(average_precision_score(y, pp))
-
-
-def eval_on(model, dl, dev, with_cal=False):
+def eval_on(model, dl, dev, with_cal=False, tau=None):
+    """Score one test set. `tau` is the threshold selected on the
+    in-distribution validation split; it is applied unchanged here so the
+    in-distribution and cross-population numbers are directly comparable.
+    Passing tau=None falls back to the fixed 0.5 cut and the record says so
+    via `tau_selected: False`."""
     logits, labels, lens = collect_logits(model, dl, dev)
-    pred = logits.argmax(1)
-    p, r, f = prf1(pred, labels)
     probs_raw = torch.softmax(logits, 1)[:, 1]
-    out = {"P": p, "R": r, "F1": f, "AUPRC": auprc(probs_raw, labels),
-           "n_pos": int((labels == 1).sum()), "n_total": int(labels.numel())}
+    out = score_arm(probs_raw, labels)
+    if tau is not None:
+        pt, rt, ft = prf1_at(probs_raw, labels, tau)
+        out.update({"tau": float(tau), "P_at_tau": pt, "R_at_tau": rt,
+                    "f1_at_tau": ft, "tau_selected": True})
+    out.update({"n_pos": int((labels == 1).sum()),
+                "n_total": int(labels.numel())})
     if with_cal:
         ts = TemperatureScaler()
         ts.fit(logits, labels)
@@ -134,6 +138,9 @@ def main():
     ap.add_argument("--lr", type=float, default=3e-4)
     ap.add_argument("--d-model", type=int, default=128)
     ap.add_argument("--label-fracs", default="0.01,0.05,0.1,0.25,0.5,1.0")
+    ap.add_argument("--val-frac", type=float, default=0.2,
+                    help="share of the LABEL BUDGET carved out for "
+                         "threshold selection (not granted for free)")
     ap.add_argument("--num-workers", type=int, default=2)
     ap.add_argument("--seed", type=int, default=0)
     args = ap.parse_args()
@@ -155,18 +162,30 @@ def main():
     xpop_dl = DataLoader(xpop_ds, **dl_kw)
 
     fracs = [float(x) for x in args.label_fracs.split(",")]
-    # identical subsampling to finetune_eval.py
+    # Label accounting delegated to alignssl.protocol -- identical to
+    # finetune_eval.py, so this arm and the label-efficiency curves cannot
+    # drift apart. See the module docstring.
     rng = np.random.default_rng(args.seed)
     results = {"label_efficiency": [], "config": vars(args)}
 
     for frac in fracs:
-        n = max(args.batch_size, int(frac * len(train_ds)))
+        n = label_budget(frac, len(train_ds))
         idx = rng.permutation(len(train_ds))[:n]
-        sub = Subset(train_ds, idx.tolist())
-        dl = DataLoader(sub, batch_size=args.batch_size, shuffle=True,
+        # The threshold-selection split is carved OUT OF the budget.
+        n_val, _n_tr, _did = split_budget(n, args.val_frac)
+        val_idx, tr_idx = idx[:n_val], idx[n_val:]
+        sub = Subset(train_ds, tr_idx.tolist())
+        _bs, _drop = loader_params(len(tr_idx), args.batch_size)
+        dl = DataLoader(sub, batch_size=_bs, shuffle=True,
                         collate_fn=collate, num_workers=args.num_workers,
-                        drop_last=True)
-        row = {"frac": frac, "n": int(n)}
+                        drop_last=_drop)
+        val_dl = (DataLoader(Subset(train_ds, val_idx.tolist()),
+                             batch_size=max(1, min(args.batch_size, len(val_idx))),
+                             collate_fn=collate, num_workers=args.num_workers)
+                  if len(val_idx) else None)
+        row = {"frac": frac, "n": int(n), "n_train": int(len(tr_idx)),
+               "n_val": int(len(val_idx)), "batch_size_eff": int(_bs),
+               "drop_last": bool(_drop)}
         for mode in ["pretrained", "scratch"]:
             if mode == "pretrained" and not args.encoder:
                 continue
@@ -175,14 +194,24 @@ def main():
                 ck = torch.load(args.encoder, map_location=dev)
                 model.enc.load_state_dict(ck["encoder"])
             train_one(model, dl, dev, args.epochs, args.lr)
-            indist = eval_on(model, indist_dl, dev,
-                             with_cal=abs(frac - 1.0) < 1e-9)
-            xpop = eval_on(model, xpop_dl, dev,
-                           with_cal=abs(frac - 1.0) < 1e-9)
+            # tau is selected ONCE, on the in-distribution validation split,
+            # and reused for both test sets (see module docstring).
+            tau = None
+            if val_dl is not None:
+                v_logits, v_labels, _ = collect_logits(model, val_dl, dev)
+                v_probs = torch.softmax(v_logits, 1)[:, 1]
+                tau = float(select_threshold(v_probs, v_labels))
+            cal = abs(frac - 1.0) < 1e-9
+            indist = eval_on(model, indist_dl, dev, with_cal=cal, tau=tau)
+            xpop = eval_on(model, xpop_dl, dev, with_cal=cal, tau=tau)
             row[mode] = {"in_dist": indist, "xpop": xpop,
-                         "gap_F1": indist["F1"] - xpop["F1"]}
-            print(f"  frac={frac} {mode}: in-dist F1={indist['F1']:.3f} "
-                  f"xpop F1={xpop['F1']:.3f} gap={row[mode]['gap_F1']:.3f}",
+                         "gap_F1": indist["f1_at_tau"] - xpop["f1_at_tau"],
+                         "gap_auprc": indist["auprc"] - xpop["auprc"],
+                         "gap_F1_at_half": indist["f1_at_half"] - xpop["f1_at_half"]}
+            print(f"  frac={frac} {mode}: in-dist F1@tau={indist['f1_at_tau']:.3f} "
+                  f"xpop F1@tau={xpop['f1_at_tau']:.3f} "
+                  f"gap={row[mode]['gap_F1']:.3f} "
+                  f"xpop AUPRC={xpop['auprc']:.3f} tau={indist['tau']:.3f}",
                   flush=True)
         results["label_efficiency"].append(row)
 

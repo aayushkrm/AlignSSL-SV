@@ -363,7 +363,7 @@ result than the one originally written, and a more useful one.
 
 All run under pytest or as plain scripts, because the cluster environment has
 no pytest. Every cluster job now gates on them before training, so a
-recurrence fails in seconds rather than after GPU-hours. Full suite: 35 passed.
+recurrence fails in seconds rather than after GPU-hours. Full suite: 47 passed (see 8.8 for the twelve most recent checks).
 
 ### 8.6 No significance claim was corrected for multiplicity
 
@@ -426,3 +426,66 @@ recomputed from the CSV by `check_manuscript.check_cross_ancestry_count`,
 which requires the manuscript to state the number in words. Verified in both
 directions: it passes on the corrected text and fails with the reverted
 count.
+
+### 8.8 One evaluator never adopted the shared protocol, and it feeds a published table
+
+Section 3.8 fixed two label-accounting defects by moving the rules into
+`alignssl/protocol.py` and importing it from every evaluator. Three evaluators
+were migrated. `scripts/cross_pop_lowlabel.py` was not: it still computed
+
+    n = max(args.batch_size, int(frac * len(train_ds)))
+
+and drew no threshold-selection split at all.
+
+The consequence is not hypothetical. That script writes
+`xpopll_results_seed*.json`, which `analysis/aggregate_all.py` reads to build
+`results/table5_cross_ancestry.csv` — Table 5, Section 4.6 — and the
+cross-ancestry rows of `results/stats_tests.csv`. So a published table was
+generated under the very defect the paper's Section 3.8 is about, and at the
+smallest label fractions its cells received `batch_size` labels rather than
+the nominal share. The table is not regenerated, because Section 4.6's
+conclusion is that no cross-ancestry effect is claimed at any budget and a
+re-run cannot change a withdrawn claim; but the caption now states the defect,
+the mechanism, and the generating script by name.
+
+Two further inaccuracies surfaced while fixing this. First, Section 3.8
+asserted that Sections 4.3–4.7 "are labelled accordingly" — only Table 4
+actually carried a label; Tables 2, 3 and 5 carried none. All four now do.
+Second, the reason 3.8 gave was wrong for Table 5: it attributed the
+pre-correction gap to an unbudgeted validation split, which is the mechanism
+for the full-supervision tables, whereas for a label *sweep* the consequential
+defect is the batch-size floor. Both mechanisms are now stated and each caption
+names the applicable one.
+
+The migration itself follows `finetune_eval.py` exactly — `label_budget` for
+the budget, `split_budget` to carve the threshold split out of it,
+`loader_params` to size the loader — with one addition specific to this script:
+the threshold is selected once on the in-distribution validation split and
+applied unchanged to both test sets, because selecting a separate threshold on
+the held-out-ancestry set would consume labels a deployment would not have and
+would measure something other than transfer. Two locally duplicated metric
+helpers were deleted in favour of the shared `score_arm`.
+
+The guard is `tests/test_evaluator_protocol_adoption.py`, and it is structural
+rather than numerical, because a unit test on `protocol.py` cannot detect a
+caller that never calls it. For every label-sweep evaluator it requires the
+protocol imports, requires that `label_budget` is actually called (an unused
+import is not adoption), and forbids the retired floor idiom syntactically.
+Two narrowing rounds were needed, both driven by the guard firing on correct
+code: matching any `max()` over a batch-size name flagged the sanctioned
+`max(1, min(batch_size, len(val_idx)))` that sizes a validation loader in three
+evaluators, so the rule now requires a batch-size name *and* a label-fraction
+name in the same call; and requiring `loader_params` of every evaluator flagged
+the scikit-learn classical control, which has no loader, so that requirement is
+now conditional on the file constructing one. A guard that fires on correct
+code gets disabled, which is why both narrowings are recorded in the test's
+docstring.
+
+All three checks were verified to fire. Removing the protocol import trips the
+import check; reverting the budget line trips the call-site check. Because the
+call-site check short-circuits the standalone runner before the floor check
+runs, the floor check was additionally exercised in isolation against the
+subtlest form of the defect — `max(batch_size, label_budget(frac, n))`, where
+adoption is present and a floor is layered on top — and it fires. Full suite:
+47 passed. The migrated script was smoke-run end to end on synthetic shards
+before any cluster time was committed.
