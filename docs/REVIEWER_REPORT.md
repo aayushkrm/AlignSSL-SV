@@ -248,10 +248,12 @@ support the claims made from it.
 ## 8. Evaluation-protocol audit (second pass)
 
 The first pass audited *what the numbers claim*. This pass audited *how the
-numbers were produced*, and found three defects in the shared evaluation path.
+numbers were produced*, and found four defects in the shared evaluation path.
 Two are arithmetic and were silent; the third invalidates the paper's headline
-framing. All three are fixed in code, with regression tests that encode the
-defect rather than only the corrected behaviour.
+framing; the fourth (§8.6) shows that even under the framing that produces the
+headline, its significance does not survive correction for the sweep it was
+selected from. All four are fixed in code, with regression tests that encode
+the defect rather than only the corrected behaviour.
 
 ### 8.1 The decision threshold was fixed at 0.5 for every arm
 
@@ -361,4 +363,66 @@ result than the one originally written, and a more useful one.
 
 All run under pytest or as plain scripts, because the cluster environment has
 no pytest. Every cluster job now gates on them before training, so a
-recurrence fails in seconds rather than after GPU-hours. Full suite: 26 passed.
+recurrence fails in seconds rather than after GPU-hours. Full suite: 35 passed.
+
+### 8.6 No significance claim was corrected for multiplicity
+
+Every *p*-value in the manuscript is drawn from a sweep — six label budgets
+per contrast, two scoring rules on the candidate-filtered benchmark — and was
+reported one test at a time. In a family of six simultaneous tests at
+α = 0.05 the probability of at least one false positive is
+1 − 0.95⁶ ≈ 0.26, which is roughly the strength of evidence the headline
+claim rested on.
+
+`analysis/apply_multiplicity.py` declares one family per sweep per contrast
+per scoring rule and applies Holm–Bonferroni (family-wise error) and
+Benjamini–Hochberg (false discovery). The table it writes,
+`results/stats_multiplicity.csv`, already existed and the manuscript never
+cited it; worse, it was stale — its candidate-filtered families were read
+from `stats_hardneg.csv`, which predates the equal-budget and
+budgeted-threshold corrections, and whose p-values disagree sharply with the
+corrected `table15_hardneg_arm_contrasts.csv` (0.016 versus 0.666/0.058 at
+the 1% budget). Correcting a stale p-value for multiplicity produces a stale
+verdict, so `build_families` now prefers the corrected sources and retains
+the pre-correction families under explicit labels, because Sections 4.5 and
+4.6 are themselves reported under that protocol and quote those values.
+
+Regenerated: 67 tests in 11 families, 20 nominally significant, 16 surviving
+BH, 10 surviving Holm. Three consequences:
+
+- The headline claim fails a second time. Its *p* = 0.009 becomes Holm
+  *p* = 0.055 against the five other budgets it was selected from.
+- The cross-ancestry claim is withdrawn outright, not merely hedged: its one
+  nominally significant fraction is what a family of six yields by chance
+  (Holm *p* = 0.169).
+- The corrections' own strongest findings survive: both deep arms beat the
+  DeepSV representation on the repaired benchmark at the largest budgets
+  (Holm *p* = 0.005–0.049), and no pretrained-versus-scratch contrast
+  survives anywhere — consistent with §6.3's conclusion that the two are
+  tied there.
+
+One disclosure. This is the single claim whose verdict depends on family
+assignment: grouped with the objective-ablation contrasts it survives Holm at
+0.005, grouped with its own budget sweep it does not (0.055). Section 4.9
+reports both and argues for the sweep on selection grounds rather than on
+which answer it gives — a claim must be corrected against the comparisons
+that could have produced it, not against a neighbouring set of different
+questions.
+
+A caveat on the correction itself: Holm and BH assume exchangeability within
+a family, whereas budgets in a sweep share seeds, encoders and test windows
+and are positively dependent. Both remain valid under positive dependence
+(BH provably, Holm conservatively), so the adjusted values are conservative
+bounds, not exact — stated in Limitations.
+
+### 8.7 A counted claim drifted from its own table
+
+Section 4.6's prose said the pretrained arm's held-out CEU F1 exceeds the
+from-scratch arm's "at four of six fractions". `table5_cross_ancestry.csv`
+shows five of six — only the 50% fraction inverts, which the same sentence
+already called out. A hand-counted claim sitting beside the table that
+refutes it is the first thing a referee checks, so the count is now
+recomputed from the CSV by `check_manuscript.check_cross_ancestry_count`,
+which requires the manuscript to state the number in words. Verified in both
+directions: it passes on the corrected text and fails with the reverted
+count.

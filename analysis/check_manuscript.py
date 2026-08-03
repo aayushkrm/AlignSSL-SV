@@ -133,6 +133,33 @@ def check_calibration(md: str, results: Path) -> list[str]:
     return errs
 
 
+def check_cross_ancestry_count(md: str, results: Path) -> list[str]:
+    """Section 4.6 states how many of six fractions favour pretraining.
+
+    That count is a claim about table5_cross_ancestry.csv and drifted from it
+    once already: the prose said four where the table shows five, with only
+    the 50% fraction inverted. A hand-counted claim sitting beside its own
+    table is exactly what a referee checks first, so recompute it rather than
+    trust it.
+    """
+    f = results / "table5_cross_ancestry.csv"
+    if not f.exists():
+        return []
+    pre: dict[str, float] = {}
+    scr: dict[str, float] = {}
+    with open(f) as fh:
+        for r in csv.DictReader(fh):
+            tgt = scr if r["arm"] == "AlignSSL-scratch" else pre
+            tgt[r["label_frac"]] = float(r["heldout_CEU_F1_mean"])
+    n = sum(1 for k in pre if k in scr and pre[k] > scr[k])
+    words = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six"}
+    want = f"exceeds the from-scratch model's at {words.get(n, n)} of six"
+    if want not in md:
+        return [f"Cross-ancestry: table5 has pretrained ahead at {n} of "
+                f"{len(pre)} fractions; manuscript does not say '{want}'"]
+    return []
+
+
 def check_pvalues(md: str, results: Path) -> list[str]:
     """Every p-value quoted in prose must appear in a stats CSV.
 
@@ -334,6 +361,7 @@ def main() -> int:
     errs += check_table1(md, load_table1(res))
     errs += check_table13(md, load_table13(res))
     errs += check_calibration(md, res)
+    errs += check_cross_ancestry_count(md, res)
     errs += check_pvalues(md, res)
     errs += check_single_feature_auc(md, res)
     errs += check_hardneg_tables(md, res)

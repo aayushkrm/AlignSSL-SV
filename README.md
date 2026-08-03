@@ -1,13 +1,13 @@
 # AlignSSL-SV
 
-**Three controls for evaluating deep structural-variant callers, and a worked demonstration that their absence manufactured our own headline result.**
+**Four controls for evaluating deep structural-variant callers, and a worked demonstration that their absence manufactured our own headline result.**
 
 AlignSSL-SV is a deletion caller for short-read whole-genome sequencing and a direct extension of **DeepSV** (Cai, Wu & Gao, *BMC Bioinformatics* 2019, 20:665). DeepSV renders the read pileup as a hand-designed RGB image and trains a fully supervised CNN. AlignSSL-SV replaces both halves of that design:
 
 1. **An alignment tensor instead of an image.** Reads are encoded directly into a `(C=18, R=64, W=256)` tensor whose channels carry depth, mapping quality, insert-size deviation, orientation, clip signal and base identity. Nothing is quantised into three colour planes, so no information is discarded at the encoding step.
 2. **Self-supervised pretraining.** A masked-alignment-modelling (MAM) objective learns a pileup representation from *unlabelled* windows, so the supervised classifier needs far fewer labels. A VICReg-style invariance objective and a combined objective are evaluated as ablations.
 
-We built this to test whether that design improves label efficiency, calibration and ancestry robustness. It appeared to: at 1% of labels the pretrained encoder beat the identical from-scratch encoder ~11-fold in F1 (*p* = 0.009). **That result does not survive our own controls, and this repository now exists mainly to document why.** Every performance claim the project once made has been withdrawn. What remains is the three controls, the code that implements them, and the evidence that each defect is a property of the standard evaluation design rather than of this implementation.
+We built this to test whether that design improves label efficiency, calibration and ancestry robustness. It appeared to: at 1% of labels the pretrained encoder beat the identical from-scratch encoder ~11-fold in F1 (*p* = 0.009). **That result does not survive our own controls, and this repository now exists mainly to document why.** Every performance claim the project once made has been withdrawn. What remains is the four controls, the code that implements them, and the evidence that each defect is a property of the standard evaluation design rather than of this implementation.
 
 ## Headline results (1000 Genomes phase-3 deletions; test = chr12–22)
 
@@ -29,6 +29,8 @@ The advantage exists under one scoring rule and no other. At every larger label 
 
 A second, independent defect was in our own evaluators: a batch-size floor granted the deep arms up to **2.8× the labels** the classical control received, concentrated in exactly the low-label cells carrying the claim. Both are corrected in `alignssl/protocol.py` (equal budgets, validation labels carved out of the budget rather than granted free) and `analysis/threshold_sensitivity.py`.
 
+A third defect is statistical rather than procedural: that *p* = 0.009 was the strongest cell of a six-budget sweep, reported as though it were one test. Corrected for the family it was selected from, it is **0.055** — so even under the one scoring rule that produces the effect, it does not clear 0.05. Across the whole paper, 20 nominally significant tests in 11 pre-declared families fall to 10 under Holm–Bonferroni and 16 under Benjamini–Hochberg (`analysis/apply_multiplicity.py` → `results/stats_multiplicity.csv`). The corrections' own strongest findings do survive: both deep arms beat the DeepSV representation on the repaired benchmark at the largest budgets (Holm *p* = 0.005–0.049), and no pretrained-versus-scratch contrast survives anywhere.
+
 ### The control that reframes the paper: the benchmark is shortcut-solvable
 
 A twelve-feature gradient-boosted tree on hand-computed summary statistics is **at its ceiling from the smallest label budget onward**: AUPRC 0.937 ± 0.009 at 1% labels, gaining only **+0.038** from a hundred-fold increase in supervision. Worse, a *single untrained feature* — the ratio of mean depth in the window centre to its flanks — separates the classes at **ROC-AUC = 0.955** with no fitting at all. A task that twelve scalars solve to 96% of asymptote after 210 examples cannot discriminate between learned representations.
@@ -46,7 +48,7 @@ Scored threshold-free under the corrected protocol. An earlier draft claimed the
 
 This is a property of how positive and negative windows are drawn, not of any model. Uniformly sampled negatives sit at background depth while heterozygous and homozygous deletions sit below it, so the centre-versus-flank depth contrast is nearly sufficient on its own. Mean depth alone is uninformative (AUC 0.502) — the leak is specifically in the *localised* contrast that the extraction protocol builds into every positive window. Two non-depth features also reach substantial discrimination independently, so neutralising depth alone would not be enough.
 
-Consequently **we make no performance claim on this benchmark.** Three claims earlier drafts made are formally withdrawn: superior calibration, cross-ancestry robustness, and — as of the thresholding analysis above — label efficiency, which was the headline.
+Consequently **we make no performance claim on this benchmark.** Three claims earlier drafts made are formally withdrawn: superior calibration, cross-ancestry robustness, and — as of the thresholding analysis above — label efficiency, which was the headline. The cross-ancestry withdrawal is now settled rather than cautionary: its single nominally significant label fraction does not survive correction for the six simultaneous tests of the sweep (Holm *p* = 0.169).
 
 ### The repaired benchmark: the shortcut is attenuated, and the result is mixed
 
