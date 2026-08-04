@@ -12,7 +12,7 @@ Correspondence: aayush.kumarm.3myself@gmail.com · Code: https://github.com/aayu
 
 ## Abstract
 
-**Motivation.** Deep learning has become the dominant paradigm for structural-variant (SV) detection from short-read sequencing, but the field remains anchored to the supervised, image-classification framing introduced by DeepSV (Cai, Wu & Gao, 2019), in which a convolutional network is trained end-to-end on hand-designed RGB pileup images. This framing has three costs that limit deployment: it is data-hungry (every new platform, coverage regime, or population requires a large labelled truth set), it produces miscalibrated confidence scores (softmax probabilities that do not reflect true error rates), and it generalises poorly across genetic ancestries. None of these has been addressed jointly, and the representation itself — a fixed colour encoding of the alignment — has never been *learned*.
+**Motivation.** Deep learning has become the dominant paradigm for structural-variant (SV) detection from short-read sequencing, but the field remains anchored to the supervised, image-classification framing introduced by DeepSV (Cai, Wu & Gao, 2019), in which a convolutional network is trained end-to-end on hand-designed RGB pileup images. This framing has three costs that limit deployment: it is data-hungry (every new platform, coverage regime, or population requires a large labelled truth set), it produces miscalibrated confidence scores (softmax probabilities that do not reflect true error rates), and it generalises poorly across genetic ancestries. None of these has been addressed jointly, and the representation itself — a fixed colour encoding of the alignment — is only rarely *learned* rather than hand-designed.
 
 **Results.** We present AlignSSL-SV, a framework that (i) replaces the fixed RGB pileup with a multi-channel alignment tensor and a learned encoder, (ii) pretrains that encoder by masked-alignment modelling (a self-supervised objective on read alignments, requiring no SV labels), and (iii) attaches a calibrated deletion head. Evaluated on 1000 Genomes high-coverage PCR-free data (a six-sample panel spanning five continental ancestries) under the conventions this literature inherits from DeepSV, the framework appears to deliver a large low-label gain: deletion F1 of 0.48 at 1% of labels (210 windows) against 0.04 for an identically-architected from-scratch model, a ≈11× improvement attributable to self-supervised initialisation alone (*p* = 0.009).
 
@@ -25,7 +25,7 @@ Correspondence: aayush.kumarm.3myself@gmail.com · Code: https://github.com/aayu
 
 We then repair the benchmark itself: quantile-matched candidate negatives attenuate the depth shortcut from ROC-AUC 0.955 to 0.717, and the same twelve-feature control that was saturated on the uniform benchmark now starts at chance (AUPRC 0.250) and climbs +0.619 across the label range, confirming that headroom is restored.
 
-Re-run under all three corrections, what survives is narrow. Self-supervised pretraining confers no threshold-free advantage at any label budget on either benchmark. The hand-crafted control is not beaten where labels are scarce — the regime the deep method is proposed for — though its lead is significant at only two of six budgets per benchmark rather than at all of them, and at full supervision on the uniform benchmark the from-scratch network does edge ahead (AUPRC 0.979 vs 0.975, *p* = 0.003) by a margin too small to matter in practice.
+Re-run under all three corrections, what survives is narrow but not empty. Self-supervised pretraining confers no threshold-free advantage at any label budget on either benchmark. The *representation* does: tested directly against the DeepSV RGB pileup across 72 paired comparisons (Section 4.10), the learned alignment tensor is ahead in mean in 59 and separates after Holm correction in 8, with seven of those eight belonging to the *from-scratch* arm — so the advantage is attributable to the multi-channel encoding rather than to self-supervision on it. In 53 of the 64 non-separating cells the observed difference is below the minimum effect this three-seed design could detect at 80% power, so most of that grid is uninformative rather than negative. The hand-crafted control is not beaten where labels are scarce — the regime the deep method is proposed for — though its lead is significant at only two of six budgets per benchmark rather than at all of them, and at full supervision on the uniform benchmark the from-scratch network does edge ahead (AUPRC 0.979 vs 0.975, *p* = 0.003) by a margin too small to matter in practice.
 
 **Conclusion.** We report this as a methodological result rather than a method paper. Each defect is individually mundane and each is, by a coded audit of 14 papers from this literature (Section 7), the field's default: benchmarks built from randomly-sampled negatives, F1 reported at a fixed cut, and label budgets computed per-arm are all standard practice in this literature. Together they were sufficient to produce a confident, statistically significant, entirely artefactual headline. We publish the corrections, the controls, and the code that implements them so that the next paper in this lineage can be checked against them.
 
@@ -55,10 +55,11 @@ What follows is therefore an audit rather than a method paper. We report the fra
 - **A demonstration that F1 at a fixed probability cut manufactures initialisation gaps** (Section 4.8): the headline result exists under that cut and under no other scoring rule, because a from-scratch network trained on 210 labels ranks competently while scoring timidly. Any label-efficiency claim scored this way is measuring calibration, not representation quality.
 - **A protocol correction establishing equal label budgets across arms** (Section 3.8): a batch-size floor in the deep evaluators had granted them up to 2.8× the labels the classical control received in the low-label cells that carry the headline claims.
 - **A family-wise multiplicity audit of every significance claim in the paper** (Section 4.9): a label-efficiency sweep is a multiple-comparison procedure whether or not it is analysed as one. Under Holm–Bonferroni within pre-declared families, the 20 nominally significant tests across this paper fall to 10, and the headline claim is not among the survivors.
+- **A direct, power-annotated test of the learned representation against the RGB pileup** (Section 4.10): across 72 paired comparisons spanning both benchmarks, three metrics, two arms and six label budgets, the alignment tensor is ahead in mean in 59 cells and separates after Holm correction in 8 — but seven of those eight are the *from-scratch* arm, locating the gain in the representation rather than in self-supervision. Every non-separating cell reports the effect the design could have detected at 80% power, so nulls are not reported as equivalence.
 - A controlled ablation (3–4 seeds, error bars computed across *pretraining* seeds) isolating the contribution of each self-supervised objective (Section 4.5).
 - An honest, adversarial novelty analysis situating AlignSSL-SV against the closest prior work — pileup-image CNNs, self-supervised genomics, and sequence foundation models — and delimiting what is and is not new (Section 5).
 
-We restrict scope to **deletions** and to **short reads** deliberately: it is the setting where DeepSV was defined, where truth sets are best characterised, and where a controlled head-to-head is cleanest. Section 7 discusses the extension to other SV classes and to long reads.
+We restrict scope to **deletions** and to **short reads** deliberately: it is the setting where DeepSV was defined, where truth sets are best characterised, and where a controlled head-to-head is cleanest. Section 8 discusses the extension to other SV classes and to long reads.
 
 ---
 
@@ -126,13 +127,13 @@ All three rules live in a single module (`alignssl/protocol.py`) imported by eve
 
 ## 4. Results
 
-All models are evaluated on identical alignment tensors and identical chromosome-disjoint splits (train chr1–11, test chr12–22) and at an identical fine-tuning batch size (96), on a six-sample panel spanning five continental ancestries (train pool 21,016 labelled windows; test 9,196). We report mean ± standard deviation across random seeds — four for the combined-objective arm, three for every other arm. Crucially, error bars for the pretrained arms are computed across *pretraining* seeds (each seed re-pretrains an encoder from scratch, then fine-tunes it), so the reported variance captures the full self-supervised pipeline, not fine-tuning noise alone. The task is binary deletion calling on genome-wide candidate windows.
+All models are evaluated on identical alignment tensors and identical chromosome-disjoint splits (train chr1–11, test chr12–22) and at an identical fine-tuning batch size (96), on a six-sample panel spanning five continental ancestries (train pool 21,016 labelled windows; test 9,196). We report mean ± standard deviation across random seeds. Seed counts differ by protocol and are stated in every caption: the pre-correction runs (Tables 2–5) use four seeds for the combined-objective and from-scratch arms and three for every other arm, while the corrected-protocol runs (Tables 1, 7, 12–14) use three seeds for each deep arm and ten for the classical controls, whose cost per fit is negligible. Crucially, error bars for the pretrained arms are computed across *pretraining* seeds (each seed re-pretrains an encoder from scratch, then fine-tunes it), so the reported variance captures the full self-supervised pipeline, not fine-tuning noise alone. The task is binary deletion calling on genome-wide candidate windows.
 
 ### 4.1 Under the conventional scoring rule, pretraining appears strongly label-efficient
 
 We report this section as it stood before the corrections of Sections 4.8 and 3.8, because the corrections are only interpretable against the claim they overturn. Every number here is scored the way this literature scores: deletion F1 obtained by thresholding the positive-class probability at a fixed 0.5.
 
-Table 1 reports that F1 as a function of the fraction of the labelled training set made available to the fine-tuning head. The apparent result is in the **low-label regime**: at 1% of labels (210 windows), the pretrained model reaches F1 = 0.478 ± 0.100, whereas the identically-architected from-scratch model all but collapses to 0.044 ± 0.041 — a **≈11× improvement in F1** from self-supervised initialisation alone, significant at *p* = 0.009 — a figure Section 4.9 shows does not survive multiplicity correction either (though not after correcting for the six budgets of the sweep — Section 4.9). As labels increase the from-scratch model catches up and overtakes; by 5% it is already ahead (0.714 vs 0.576).
+Table 1 reports that F1 as a function of the fraction of the labelled training set made available to the fine-tuning head. The apparent result is in the **low-label regime**: at 1% of labels (210 windows), the pretrained model reaches F1 = 0.478 ± 0.100, whereas the identically-architected from-scratch model all but collapses to 0.044 ± 0.041 — a **≈11× improvement in F1** from self-supervised initialisation alone, nominally significant at *p* = 0.009 — though Section 4.9 shows that this *p* does not survive correction for the six budgets of the sweep it was selected from (Holm *p* = 0.055). As labels increase the from-scratch model catches up and overtakes; by 5% it is already ahead (0.714 vs 0.576).
 
 Two features of the table are worth noting before it is dismantled, because neither is compatible with the story it is usually told to support. First, the DeepSV-representation baseline matches the pretrained tensor model at 1% (0.479 ± 0.035) — whatever the pretrained arm is doing at the smallest budget, a hand-designed RGB encoding does it too, which already argues against a representation-quality explanation. Second, the from-scratch arm's collapse is confined to that single cell: one budget later it leads every arm in the table. A representation deficit that vanishes between 210 and 1,051 labels is a strange kind of deficit.
 
@@ -330,6 +331,64 @@ Third, and pulling the other way, **the corrections' own findings are not immune
 The general point is the same one Section 4.8 makes about thresholds, in a different register. A label-efficiency sweep is a multiple-comparison procedure whether or not it is analysed as one. Reporting the single budget at which a difference reaches *p* < 0.05, out of six tested, is a garden-of-forking-paths result presented as a confirmatory one. We have found no deep SV-detection paper that corrects for this, ourselves included until this audit.
 
 ---
+
+### 4.10 The primary claim, tested directly: the learned tensor beats the RGB pileup, but pretraining is not what does it
+
+Sections 4.1–4.9 examine what self-supervision contributes. They do not test the
+project's other, more basic claim: that a *learned* multi-channel alignment tensor
+is a better substrate for deletion calling than DeepSV's fixed RGB pileup
+encoding. That contrast is tested here directly, over both benchmarks (uniform and
+candidate-filtered), all three threshold-free or budgeted-threshold metrics
+(AUPRC, ROC-AUC, F1 at the budgeted cut), both AlignSSL arms, and all six label
+budgets — 72 paired comparisons in total, each across the seeds of the corrected
+protocol, with Holm–Bonferroni applied within metric-by-benchmark families
+(Table 20).
+
+Two results, and the second matters more than the first.
+
+**The learned tensor is better, but only 8 of 72 cells separate after
+correction.** The direction of the mean effect favours AlignSSL in 59 of 72 cells,
+which is far from the 36 expected under no difference; but only 8 survive
+multiplicity correction. Reading the 64 nulls as evidence of *equivalence* would be
+the error this paper spends Section 4.9 warning against, so each row also reports
+`mde80`, the difference this design could have detected at 80% power given its
+observed seed variance. The median is 0.160 — larger than most of the differences
+being tested — and in 53 of the 64 nulls the observed difference is smaller than
+`mde80`. Those cells are uninformative rather than negative. The remaining 11 are
+genuine failures to separate at a difference the design could have caught. The
+best-powered null illustrates how tight this is: uniform AUPRC, from-scratch arm at
+5% labels, difference +0.228 against an `mde80` of 0.247 — a large effect that three
+seeds still cannot resolve.
+
+**Seven of the eight surviving wins are the *from-scratch* arm.** Only one belongs
+to the pretrained arm (uniform AUPRC at 10% labels, difference +0.110, Holm
+*p* = 0.038); the other seven are AlignSSL trained from random initialisation, and
+the from-scratch difference against DeepSV exceeds the pretrained difference in 29
+of 36 matched cells. The advantage over the RGB pileup is therefore attributable to
+the *representation* — 18 continuous alignment channels rather than three colour
+channels — and not to self-supervised pretraining on it. This is the same
+conclusion Section 4.8 reaches from the opposite direction: once scored without a
+fixed 0.5 cut, pretraining's apparent contribution largely disappears, while the
+representation's contribution does not. The two analyses are independent and agree.
+
+| Benchmark | Metric | Arm | Labels | AlignSSL | DeepSV | Difference | Holm *p* |
+|---|---|---|---|---|---|---|---|
+| uniform | auprc | pretrained | 0.1 | 0.825 | 0.714 | +0.110 | 0.038 |
+| uniform | auprc | scratch | 0.1 | 0.912 | 0.714 | +0.199 | 0.047 |
+| candidate-filtered | auprc | scratch | 0.25 | 0.734 | 0.511 | +0.223 | 0.040 |
+| candidate-filtered | auprc | scratch | 1 | 0.885 | 0.656 | +0.229 | 0.042 |
+| candidate-filtered | roc_auc | scratch | 0.5 | 0.890 | 0.734 | +0.155 | 0.040 |
+| candidate-filtered | roc_auc | scratch | 1 | 0.942 | 0.822 | +0.120 | 0.031 |
+| candidate-filtered | f1_at_tau | scratch | 0.5 | 0.665 | 0.501 | +0.163 | 0.049 |
+| candidate-filtered | f1_at_tau | scratch | 1 | 0.814 | 0.614 | +0.200 | 0.010 |
+
+**Table 20.** AlignSSL against the DeepSV RGB-pileup representation under the corrected protocol: the 8 of 72 paired comparisons that survive Holm–Bonferroni within metric-by-benchmark families. `f1_at_tau` is F1 at the budgeted threshold. Of the 64 non-separating cells, 53 have an observed difference smaller than the minimum detectable effect at 80% power and are therefore uninformative rather than negative. Three seeds per deep arm. Full 72-row grid with per-cell `mde80` and confidence intervals: `results/table20_alignssl_vs_deepsv.csv`, generated by `analysis/alignssl_vs_deepsv.py`.
+
+The honest summary of the project's primary claim is thus: the learned alignment
+tensor outperforms the fixed RGB encoding under threshold-free scoring, the effect
+is concentrated in the candidate-filtered benchmark and at larger label budgets,
+and self-supervision is not the mechanism. A three-seed design is underpowered for
+most of this grid, which bounds how strongly even the positive part may be stated.
 
 ## 5. Novelty and positioning
 

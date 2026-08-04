@@ -183,7 +183,8 @@ def check_pvalues(md: str, results: Path) -> list[str]:
                        ("table14_control_vs_deep.csv", ("p_value",)),
                        ("table15_hardneg_arm_contrasts.csv", ("p",)),
                        ("stats_multiplicity.csv",
-                        ("p_raw", "p_holm", "q_bh"))):
+                        ("p_raw", "p_holm", "q_bh")),
+                       ("table20_alignssl_vs_deepsv.csv", ("p", "p_holm"))):
         f = results / name
         if not f.exists():
             continue
@@ -348,6 +349,109 @@ def check_markers(md: str) -> list[str]:
     return [f"unresolved artifact placeholder: {b}" for b in bad]
 
 
+def check_table20(md: str, results: Path) -> list[str]:
+    """Table 20 must show exactly the Holm-surviving rows, with true cells.
+
+    Section 4.10 reports the paper's primary claim (learned alignment tensor
+    vs the DeepSV RGB pileup). The manuscript block lists only the cells that
+    survive Holm correction, so two things can silently drift: a cell value,
+    and set membership -- if a re-aggregation flips a comparison's verdict,
+    a row must appear or disappear. Check both.
+    """
+    src = results / "table20_alignssl_vs_deepsv.csv"
+    if not src.exists():
+        return ["Table 20: missing source table20_alignssl_vs_deepsv.csv"]
+    with src.open(newline="", encoding="utf-8-sig") as fh:
+        rows = list(csv.DictReader(fh))
+    want = {}
+    for r in rows:
+        if r["verdict"] != "AlignSSL better":
+            continue
+        key = (r["benchmark"], r["metric"],
+               r["arm"].replace("AlignSSL-", ""), f"{float(r['label_frac']):g}")
+        want[key] = (f"{float(r['mean_a']):.3f}", f"{float(r['mean_b']):.3f}",
+                     f"{float(r['diff']):+.3f}", f"{float(r['p_holm']):.3f}")
+    m = re.search(r"\|\s*Benchmark\s*\|\s*Metric\s*\|\s*Arm\s*\|\s*Labels\s*\|"
+                  r".*?\n((?:\|.*\n)+)", md)
+    if not m:
+        return ["Table 20 block not found in manuscript"]
+    seen = set()
+    errs = []
+    for line in m.group(1).strip().splitlines():
+        c = [x.strip() for x in line.strip().strip("|").split("|")]
+        if len(c) != 8 or set(c[0]) <= set("-: "):
+            continue
+        key = (c[0], c[1], c[2], c[3])
+        if key not in want:
+            errs.append(f"Table 20 shows row {key}, which is not a "
+                        f"Holm-surviving cell in the source")
+            continue
+        seen.add(key)
+        for got, exp, what in zip(c[4:8], want[key],
+                                  ("AlignSSL", "DeepSV", "difference", "Holm p")):
+            if got != exp:
+                errs.append(f"Table 20 {key} {what}: shows '{got}', "
+                            f"source '{exp}'")
+    for key in sorted(set(want) - seen):
+        errs.append(f"Table 20 omits Holm-surviving cell {key}")
+    # the prose counts must match the source too
+    n_win, n_tot = len(want), len(rows)
+    if not re.search(rf"\b{n_win} of {n_tot}\b", md):
+        errs.append(f"Table 20: prose does not state the '{n_win} of {n_tot}' "
+                    f"surviving-cell count")
+    return errs
+
+
+def check_seed_counts(md: str, results: Path) -> list[str]:
+    # A seed count asserted in prose or a caption is a claim about a source
+    # table, and it drifts silently when a seed-expansion run lands: the
+    # numbers are re-aggregated but the sentence describing them is not.
+    # This has happened (a preamble claimed "four for the combined-objective
+    # arm, three for every other arm" after the corrected protocol had settled
+    # on 3 deep / 10 classical). Reconcile every stated count against the
+    # n_seeds column of the table family it describes.
+    errs: list[str] = []
+    fams = {
+        "pre-correction": ("table1_label_efficiency.csv", None),
+        "corrected": ("table12_label_efficiency_fixed.csv",
+                      lambda r: r.get("benchmark") == "uniform"),
+    }
+    allowed: set[int] = set()
+    per_fam: dict[str, set[int]] = {}
+    for fam, (fn, filt) in fams.items():
+        path = results / fn
+        if not path.exists():
+            errs.append(f"seed check: missing source table {fn}")
+            continue
+        with path.open(newline="", encoding="utf-8-sig") as fh:
+            got = {int(r["n_seeds"]) for r in csv.DictReader(fh)
+                   if not filt or filt(r)}
+        per_fam[fam] = got
+        allowed |= got
+    if not allowed:
+        return errs
+    # Every "<n> seeds" / "<word> seeds" token in the manuscript must name a
+    # seed count that some source table actually uses. A token naming a count
+    # no table uses is either stale prose or a typo; both are errors.
+    words = {"two": 2, "three": 3, "four": 4, "five": 5,
+             "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10,
+             "eleven": 11, "twelve": 12}
+    toks: list[tuple[str, int]] = []
+    for m in re.finditer(r"\b(\d{1,2})\s+seeds\b", md):
+        toks.append((m.group(0), int(m.group(1))))
+    for w, n in words.items():
+        for m in re.finditer(rf"\b{w}\s+seeds\b", md, re.I):
+            toks.append((m.group(0), n))
+    for tok, n in toks:
+        if n not in allowed:
+            errs.append(f"seed count '{tok}' names {n} seeds, but no source "
+                        f"table uses that count (tables use "
+                        f"{sorted(allowed)}); per family: "
+                        + "; ".join(f"{k}={sorted(v)}"
+                                    for k, v in per_fam.items()))
+    return errs
+
+
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--md", default="docs/AlignSSL_SV_manuscript.md")
@@ -366,6 +470,8 @@ def main() -> int:
     errs += check_single_feature_auc(md, res)
     errs += check_hardneg_tables(md, res)
     errs += check_markers(md)
+    errs += check_table20(md, res)
+    errs += check_seed_counts(md, res)
 
     if errs:
         print(f"FAIL: {len(errs)} manuscript/source mismatches")
