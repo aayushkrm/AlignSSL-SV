@@ -511,8 +511,8 @@ failing to state its protocol. Full quotations in
 
 The four axes behave differently.
 
-**Multiplicity correction is universal in its absence.** 14 of
-14 papers apply no family-wise correction to any significance claim.
+**No coded paper corrects for multiplicity.** All 14 coded
+papers apply no family-wise correction to any significance claim.
 1 reports multi-seed variability without correcting; the remaining
 13 report neither.
 
@@ -542,7 +542,7 @@ reporting failure rather than as evidence of easy negatives, which is why the
 strict defect count in Table 17 is conservative: it credits a paper with the
 safeguard whenever the text is silent.
 
-Taken together, no paper in the population reports all four safeguards, and none
+Taken together, no coded paper reports all four safeguards, and none
 omits fewer than two. 9 of 14 omit at
 least three on the strict count, and 2 omit all four.
 Under the lenient count that treats non-statement as omission,
@@ -553,10 +553,20 @@ Under the lenient count that treats non-statement as omission,
 ### 7.4 What this does and does not license
 
 It licenses the generality claim in a bounded form: the four defects documented
-in this manuscript are not idiosyncratic to our pipeline. They are the default
-evaluation design of the deep short-read SV-calling literature, absent in at
-least 11 of
-14 retrievable papers for three of the four axes.
+in this manuscript are not idiosyncratic to our pipeline. Among the 14 papers we
+could retrieve and code, three of the four axes are absent in at least 11.
+
+Three boundaries on that statement. First, the population is a **convenience
+sample** drawn from this project's related-work survey rather than a systematic
+search; an independent 2,334-record corpus screen identified five apparently
+eligible short-read SV papers absent from it, which leaves the *majority* claim
+below provisional (Section 8). Second, 5 of the 19 eligible papers were
+paywalled and are uncoded, so the coded set may be non-representative in an
+unmeasured direction. Third, "the paper does not report it" is not "the authors
+did not do it": coding is bounded by what a paper states. Accordingly we claim
+that these safeguards are **rarely reported** in this literature, not that they
+are never performed, and the per-axis counts should be read as statements about
+the 14 coded papers rather than as field-wide rates.
 
 It does not license a claim that the affected papers' *conclusions* are wrong.
 We did not re-run any of them. Section 4.2 shows that a benchmark can be
@@ -586,6 +596,7 @@ resolved in the audited papers' favour.
 - **No demonstrated value from pretraining.** Under the corrected protocol and threshold-free scoring, the pretrained arm does not significantly exceed from-scratch training at *any* label budget on the uniform benchmark, and is significantly behind at 5% (Section 4.8). We report the pretraining machinery because it is the object the paper set out to evaluate, not because the evaluation vindicated it.
 - **Single-panel pretraining corpus.** The unlabelled pretraining corpus comes from three samples; corpus-size and diversity scaling are untested.
 - **Candidate filtering is a partial repair, and its benchmark is single-sample.** The repaired benchmark of Section 6 attenuates the depth shortcut to ROC-AUC 0.717 but does not eliminate it; a threshold baseline on the residual signal remains available to any method. It is also single-sample — NA20845 (GIH) for train and in-distribution test, NA12878 (CEU) held out — with 1,516 test windows against 9,196 for the uniform benchmark, because a mid-study loss of the shared reference directory left only two of the six panel alignments recoverable. Section 6's error bars are correspondingly wider than Section 4's, and with three seeds per deep arm its ties should be read as *underpowered* rather than as demonstrated equivalence: the pretrained-versus-scratch contrast at full supervision (*p* = 0.148) would need more seeds to exclude a small effect. What that section can support is the absence of the *large* low-label advantage originally claimed, which the uniform benchmark independently rejects at ten times the test-set size.
+- **The field audit's population is a convenience sample, and its majority claim is not robust to that.** The 19-paper audit population of Section 7 was derived from the 62-paper related-work survey assembled for this project, not from a systematic pre-registered search. To test its completeness we screened an independently assembled 2,334-record corpus (OpenAlex phrase queries, citation-graph expansion from anchor callers, and PubMed, restricted to 2018+) against Section 7's own inclusion rule, and found five short-read SV papers that appear eligible and are absent from the population: `10.1093/bib/bbaa370`, `10.1534/g3.119.400596`, `10.1038/s41551-022-00980-5`, `10.1101/gr.274845.120`, and `10.1186/s12920-020-00733-w` (eligibility judged from abstracts only; full-text coding would be required to confirm). This matters for one specific claim. The universal findings are unaffected in direction — an additional five papers cannot make "14 of 14 apply no multiplicity correction" false for the papers already coded — but the *majority* claim is fragile: "9 of 14 omit at least three safeguards" (0.64) becomes 9/19 = 0.47 if all five newly identified papers turn out to omit none, and 14/19 = 0.74 if all five omit three or more. Because the adversarial case crosses one half, **Section 7's majority claim should be read as provisional pending full-text coding of those five papers**, while its per-axis counts remain statements about the 14 papers actually coded. We report this rather than re-running the audit because the five full texts were not retrievable within this study, and a partial re-code would substitute a different unquantified bias for a stated one. The screen is released as `results/table21_audit_completeness_screen.csv`.
 - **Single coverage regime.** All alignments are high-coverage (~30x) PCR-free Illumina. Robustness to lower coverage, PCR-positive libraries, or different read lengths is untested; the depth-derived channels are the ones most likely to be coverage-sensitive.
 - **One held-out population.** Cross-ancestry generalisation is measured against a single held-out population (NA12878, CEU). A single held-out ancestry cannot distinguish population-specific transfer loss from sample-specific idiosyncrasy.
 
@@ -612,7 +623,23 @@ We therefore do not offer a new SV caller, and we make no performance claim. We 
 
 ## Data and code availability
 
-The tensor-extraction pipeline, encoder and head implementations, pretraining and fine-tuning scripts, cluster job scripts, aggregation and manuscript-reconciliation tooling, result tables, and figures are available at https://github.com/aayushkrm/AlignSSL-SV under the MIT licence. Trained encoder checkpoints are available from the authors on request pending a Zenodo deposit. Sequencing data are from the 1000 Genomes Project (high-coverage PCR-free alignments, GRCh37/hs37d5) and are publicly available from the EBI 1000 Genomes FTP. The deletion truth set is the 1000 Genomes phase-3 integrated SV call set.
+The tensor-extraction pipeline, encoder and head implementations, pretraining and fine-tuning scripts, cluster job scripts, aggregation and manuscript-reconciliation tooling, result tables, and figures are available at https://github.com/aayushkrm/AlignSSL-SV under the MIT licence. Trained encoder checkpoints are available from the author on request pending a Zenodo deposit. Sequencing data are from the 1000 Genomes Project (high-coverage PCR-free alignments, GRCh37/hs37d5) and are publicly available from the EBI 1000 Genomes FTP. The deletion truth set is the 1000 Genomes phase-3 integrated SV call set.
+
+The full texts coded in Section 7 are the published articles cited in Table 17; they are not redistributed here. `results/table19_field_audit_quotes.csv` releases the verbatim span supporting each of the 56 codes so that every coding decision can be checked against its source without access to a subscription.
+
+## Declarations
+
+**Ethics approval and consent to participate.** Not applicable. This study analyses only publicly released, de-identified sequencing data from the 1000 Genomes Project, for which consent for open data release was obtained by the original consortium. No new human or animal data were collected.
+
+**Consent for publication.** Not applicable.
+
+**Competing interests.** The author declares no competing interests.
+
+**Funding.** This work received no dedicated funding. Computation was performed on a university high-performance-computing cluster under a standard student allocation.
+
+**Author contributions.** A.K. conceived the study, implemented the pipeline, designed and executed the evaluation and its corrections, performed the literature coding of Section 7, and wrote the manuscript.
+
+**Acknowledgements.** The author thanks the operators of the university HPC facility. A partial loss of a shared scratch filesystem during the study restricted the candidate-filtered benchmark to two samples; this is recorded in Section 8.
 
 ## References
 

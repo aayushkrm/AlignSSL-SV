@@ -130,7 +130,11 @@ def test_no_paper_reports_all_four_safeguards(audit, md):
     """The section's strongest sentence must be true of the table."""
     clean = [r for r in audit if int(r["n_strict"]) == 0]
     assert not clean, f"manuscript says none is clean, but {[r['citation'] for r in clean]} are"
-    assert "no paper in the population reports all four safeguards" in md.lower()
+    # Phrasing was scoped from "no paper in the population" to "no coded paper" when the
+    # audit population was found to be a convenience sample (Section 8). Accept either,
+    # since the semantic claim under test -- no paper has n_strict == 0 -- is unchanged.
+    assert ("no coded paper reports all four safeguards" in md.lower()
+            or "no paper in the population reports all four safeguards" in md.lower())
     fewest = min(int(r["n_strict"]) for r in audit)
     assert fewest == 2, f"prose says none omits fewer than two; minimum is {fewest}"
     assert "none\nomits fewer than two" in md or "none omits fewer than two" in md
