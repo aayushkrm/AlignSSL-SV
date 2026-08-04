@@ -1,0 +1,63 @@
+citation,year,doi,venue,theme,architecture,platform,sv_types,eligible,deep,reason
+Poplin et al. 2018,2018,10.1038/nbt.4235,Nature Biotechnology,A,Inception-v2 CNN,Illumina short-read; extended to PacBio/ONT,"SNV, short indel",False,True,"target is SNV/short indel, not SV"
+Cai et al. 2019,2019,10.1186/s12859-019-3299-y,BMC Bioinformatics,A,"Custom CNN (TensorFlow), 256x256 images",Illumina short-read (10x-60x),Long deletions (>50 bp),True,True,SV caller (filed Theme A); the paper this audit extends
+Torracinta & Campagne 2016,2016,10.1101/097469,bioRxiv (preprint),A,Feedforward/CNN,Illumina,SNV genotype,False,True,"target is SNV/short indel, not SV"
+Luo et al. 2018,2018,10.1101/310458,bioRxiv (preprint),A,Multi-task CNN,Illumina; PacBio; ONT,"SNV, indel",False,True,"target is SNV/short indel, not SV"
+Luo et al. 2019,2019,10.1038/s41467-019-09025-z,Nature Communications,A,Multi-task CNN (Clairvoyante),"PacBio, ONT","SNV, indel",False,True,"target is SNV/short indel, not SV"
+Zheng et al. 2022,2022,10.1038/s43588-022-00387-x,Nature Computational Science,A,Pyramid CNN (Clair3),"ONT, PacBio HiFi, Illumina","SNV, indel",False,True,"target is SNV/short indel, not SV"
+Shafin et al. 2021,2021,10.1038/s41592-021-01299-w,Nature Methods,A,RNN (PEPPER) + CNN (DeepVariant) + Margin,ONT,"SNV, indel",False,True,"target is SNV/short indel, not SV"
+Yun et al. 2020,2020,10.1093/bioinformatics/btaa1081,Bioinformatics,A,CNN + GLnexus joint genotyping,Illumina,"SNV, indel",False,True,"target is SNV/short indel, not SV"
+Khazeeva et al. 2022,2022,10.1093/nar/gkac511,Nucleic Acids Research,A,CNN (DeNovoCNN),Illumina,De novo SNV/indel,False,True,"target is SNV/short indel, not SV"
+Luo et al. 2023,2023,10.3389/fgene.2023.1189775,Frontiers in Genetics,B,CNN (LSnet),Illumina short-read,Deletions + genotyping,True,True,SV caller; trains a classifier on alignment-derived input
+Yang et al. 2024,2024,10.3103/s0146411624700147,Automatic Control and Computer Sciences,B,ResNet + attention module,Illumina short-read,Deletions,True,True,SV caller; trains a classifier on alignment-derived input
+Hu et al. 2022,2022,10.1016/j.ymeth.2022.08.001,Methods,B,Ensemble CNN,Illumina short-read,Large deletions,True,True,SV caller; trains a classifier on alignment-derived input
+Santuari et al. 2024,2024,10.1101/2024.10.17.618894,bioRxiv (preprint),B,1-D CNN (sv-channels),Illumina short-read,Deletions,True,True,SV caller; trains a classifier on alignment-derived input
+Hu et al. 2021,2021,10.1109/bibm52615.2021.9669571,2021 IEEE International Conference on Bioinformatics and Biomedicine (BIBM),B,Ensemble deep learning,10x linked-reads,Large deletions,True,False,SV caller; trains a classifier on alignment-derived input
+Yu et al. 2023,2023,10.2174/1574893618666230224160716,Current Bioinformatics,B,ML/DL hybrid (MaxDEL),Long-read,Deletions,True,False,SV caller; trains a classifier on alignment-derived input
+Linderman et al. 2024,2024,10.1093/bioinformatics/btae129,Bioinformatics,B,CNN (NPSV-deep),Illumina short-read,SV genotyping (DEL/INS),True,True,SV caller; trains a classifier on alignment-derived input
+Luo et al. 2021,2021,10.1186/s12859-021-04499-5,BMC Bioinformatics,B,CNN + BiLSTM (BreakNet),"ONT, PacBio",Deletions,True,True,SV caller; trains a classifier on alignment-derived input
+Ma et al. 2023,2023,10.1186/s12859-023-05243-x,BMC Bioinformatics,B,CNN (cnnLSV),"PacBio, ONT","DEL, INS, DUP, INV",True,True,SV caller; trains a classifier on alignment-derived input
+Zheng & Shang 2023,2023,10.1186/s12859-023-05324-x,BMC Bioinformatics,B,CNN (SVcnn),"PacBio, ONT","DEL, INS, DUP, INV",True,True,SV caller; trains a classifier on alignment-derived input
+Lin et al. 2022,2022,10.1038/s41592-022-01609-w,Nature Methods,B,CNN + segmentation (SVision),"PacBio, ONT","Complex SVs, DEL/INS/DUP/INV/translocation",True,True,SV caller; trains a classifier on alignment-derived input
+Wang et al. 2024,2024,10.1038/s41587-024-02190-7,Nature Biotechnology,B,"CNN (SVision-pro), instance segmentation","PacBio, ONT",Somatic/de novo complex SV,True,True,SV caller; trains a classifier on alignment-derived input
+Popic et al. 2023,2023,10.1038/s41592-023-01799-x,Nature Methods,B,"CNN (stacked hourglass, keypoint detection)","Illumina, long-read","DEL, DUP, INV, INS, translocation",True,True,SV caller; trains a classifier on alignment-derived input
+Gao et al. 2025,2025,10.1093/bib/bbaf203,Briefings in Bioinformatics,B,Transformer (SVHunter),"ONT, PacBio","DEL, INS, DUP, INV",True,True,SV caller; trains a classifier on alignment-derived input
+Guo et al. 2025,2025,10.1093/bib/bbaf200,Briefings in Bioinformatics,B,Relational Graph Convolutional Network (GKNnet),Long-read,SV detection/genotyping,True,True,SV caller; trains a classifier on alignment-derived input
+Xia et al. 2024,2024,10.1093/bioinformatics/btae539,Bioinformatics,B,CNN filter (CSV-Filter),"PacBio, ONT",SV filtering (all types),True,True,SV caller; trains a classifier on alignment-derived input
+Hu et al. 2024,2024,10.1093/bib/bbae336,Briefings in Bioinformatics,B,Autoencoder + classifier (SVDF),"ONT, PacBio",SV filtering,True,True,SV caller; trains a classifier on alignment-derived input
+Shi et al. 2025,2025,10.1093/bib/bbaf430,Briefings in Bioinformatics,B,Sparse-attention Transformer,ONT,Indels (family trios),False,True,"target is indels in family trios, not SV (criterion b) - corrected after full-text read"
+Cai et al. 2017,2017,10.1504/ijdmb.2017.10005212,Int. J. Data Mining and Bioinformatics,B,SVM (Concod),Illumina short-read,Deletions,True,False,SV caller; trains a classifier on alignment-derived input
+Jiang et al. 2020,2020,10.1186/s13059-020-02107-y,Genome biology,C,Heuristic clustering (cuteSV),"ONT, PacBio","DEL, INS, DUP, INV, BND",False,False,no trained classifier (heuristic/statistical/assembly/k-mer)
+Smolka et al. 2024,2024,10.1038/s41587-023-02024-y,Nature Biotechnology,C,Heuristic + Gaussian modeling (Sniffles2),"ONT, PacBio",All SV types incl. mosaic,False,False,no trained classifier (heuristic/statistical/assembly/k-mer)
+Tham et al. 2020,2020,10.1186/s13059-020-01968-7,Genome biology,C,Heuristic + shallow NN (NanoVar),ONT low-depth,All SV types,False,False,no trained classifier (heuristic/statistical/assembly/k-mer)
+Denti et al. 2022,2022,10.1038/s41592-022-01674-1,Nature Methods,C,Specific String algorithm (SVDSS),PacBio HiFi,"DEL, INS",False,False,no trained classifier (heuristic/statistical/assembly/k-mer)
+Chen et al. 2019,2019,10.1186/s13059-019-1909-7,Genome biology,C,Graph genotyper (Paragraph),Illumina short-read,SV genotyping,False,False,no trained classifier (heuristic/statistical/assembly/k-mer)
+Sirén et al. 2021,2021,10.1126/science.abg8871,Science,C,PanGenie k-mer genotyper,Illumina short-read,SV genotyping,False,False,no trained classifier (heuristic/statistical/assembly/k-mer)
+Talevich et al. 2016,2016,10.1371/journal.pcbi.1004873,PLoS Computational Biology,C,Statistical CBS (CNVkit),Illumina,CNV / large DEL-DUP,False,False,no trained classifier (heuristic/statistical/assembly/k-mer)
+Luo et al. 2024,2024,10.1038/s41467-024-51282-0,Nature Communications,C,Assembly-based (VolcanoSV),PacBio HiFi,All SV types,False,False,no trained classifier (heuristic/statistical/assembly/k-mer)
+Chen et al. 2023,2023,10.1038/s41467-023-35996-1,Nature Communications,C,Algorithmic breakpoint refinement,"PacBio, ONT",SV breakpoints,False,False,no trained classifier (heuristic/statistical/assembly/k-mer)
+Zook et al. 2020,2020,10.1038/s41587-020-0538-8,Nature Biotechnology,D,Benchmark truth set,Multi-platform,"DEL, INS",False,False,"benchmark or truth-set paper, not a method"
+Kosugi et al. 2019,2019,10.1186/s13059-019-1720-5,Genome biology,D,Benchmark of 69 callers,Short-read,All SV,False,False,"benchmark or truth-set paper, not a method"
+Chaisson et al. 2019,2019,10.1038/s41467-018-08148-z,Nature Communications,D,Ensemble of callers,"Illumina, PacBio, Strand-seq",All SV,False,False,"benchmark or truth-set paper, not a method"
+Ebert et al. 2021,2021,10.1126/science.abf7117,Science,D,Ensemble/assembly,Multi-platform,All SV,False,False,"benchmark or truth-set paper, not a method"
+Duan et al. 2022,2022,10.1186/s12864-022-08548-y,BMC Genomics,D,Benchmark of genotypers,Long-read,SV genotyping,False,False,"benchmark or truth-set paper, not a method"
+Mahmoud et al. 2019,2019,10.1186/s13059-019-1828-7,Genome biology,E,N/A (review),Short & long read,All SV,False,False,review or survey
+Olson et al. 2023,2023,10.1038/s41576-023-00590-0,Nature Reviews Genetics,E,Review,All platforms,All variants,False,False,review or survey
+Ahsan et al. 2023,2023,10.1038/s41592-023-01932-w,Nature Methods,E,Survey of long-read SV algorithms,Long-read,All SV,False,False,review or survey
+Liu et al. 2024,2024,10.1038/s41467-024-46614-z,Nature Communications,E,Comparison of alignment vs assembly,Long-read,All SV,False,False,review or survey
+Belzen et al. 2021,2021,10.1038/s41698-021-00155-6,npj Precision Oncology,E,Review,Short & long read,Somatic SV,False,False,review or survey
+Alharbi & Rashid 2022,2022,10.1186/s40246-022-00396-x,Human Genomics,E,Review of DL in genomics,NGS,All variants,False,False,review or survey
+Junjun et al. 2024,2024,10.1093/bfgp/elae003,Briefings in Functional Genomics,E,Review of DL variant callers,All,SNV/indel/SV,False,False,review or survey
+Eraslan et al. 2019,2019,10.1038/s41576-019-0122-6,Nature Reviews Genetics,E,Review of DL architectures,N/A,N/A,False,False,review or survey
+Zou et al. 2018,2018,10.1038/s41588-018-0295-5,Nature Genetics,E,Tutorial/primer,N/A,N/A,False,False,review or survey
+Choi & Lee 2023,2023,10.3390/biology12071033,Biology,E,Review of transformers/attention in genomics,All,N/A,False,True,review or survey
+Ji et al. 2021,2021,10.1093/bioinformatics/btab083,Bioinformatics,F,BERT Transformer (DNABERT),Reference sequence,N/A (representation),False,True,genomic language model; target is not SV
+Zhou et al. 2023,2023,10.48550/arxiv.2306.15006,arXiv (Cornell University),F,Transformer (DNABERT-2),Reference,N/A,False,True,genomic language model; target is not SV
+Dalla-Torre et al. 2024,2024,10.1038/s41592-024-02523-z,Nature Methods,F,Transformer foundation model (Nucleotide Transformer),Reference,N/A,False,True,genomic language model; target is not SV
+Benegas et al. 2023,2023,10.1073/pnas.2311219120,Proceedings of the National Academy of Sciences,F,Convolutional LM (GPN),Reference,Variant effect (SNV),False,False,genomic language model; target is not SV
+Benegas et al. 2025,2025,10.1016/j.tig.2024.11.013,Trends in Genetics,F,Review of genomic LMs,N/A,N/A,False,False,genomic language model; target is not SV
+Tang et al. 2025,2025,10.1186/s13059-025-03674-8,Genome biology,F,Eval of pre-trained DNA LMs,Reference,N/A,False,False,genomic language model; target is not SV
+Gu & Dao 2023,2023,10.48550/arxiv.2312.00752,arXiv (Cornell University),F,Selective State Space Model (Mamba),N/A,N/A,False,False,genomic language model; target is not SV
+Zhou & Troyanskaya 2015,2015,10.1038/nmeth.3547,Nature Methods,F,Deep CNN (DeepSEA),Reference,Noncoding variant effect,False,True,genomic language model; target is not SV
+Alipanahi et al. 2015,2015,10.1038/nbt.3300,Nature Biotechnology,F,CNN (DeepBind),Reference,Binding specificity,False,True,genomic language model; target is not SV
+Kelley et al. 2016,2016,10.1101/gr.200535.115,Genome Research,F,CNN (Basset),Reference,Accessibility,False,True,genomic language model; target is not SV

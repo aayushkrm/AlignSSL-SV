@@ -512,6 +512,70 @@ def figure8(res: Path, out: Path) -> None:
     plt.close(fig)
 
 
+def figure9(res: Path, out: Path) -> None:
+    """The coded field audit (Section 7).
+
+    Left: how many audited papers exhibit each of the four practices. Right:
+    per-paper count of safeguards omitted, on the STRICT definition that does
+    not charge a paper for failing to state its protocol -- so both panel
+    titles are claims the plotted rows actually support. The panels use
+    different denominators for different things and are therefore labelled
+    with explicit n/N rather than bare percentages.
+    """
+    rows = read(res / "table18_field_audit.csv")
+    n = len(rows)
+
+    practice = [
+        ("Negative sampling\nnot stated", lambda r: r["A_negative_sampling"] == "unclear"),
+        ("Fixed 0.5 decision\nthreshold", lambda r: int(r["D2_strict"])),
+        ("No model-free\ncontrol", lambda r: int(r["D3_strict"])),
+        ("No multiplicity\ncorrection", lambda r: int(r["D4_strict"])),
+    ]
+    labs = [lbl for lbl, _ in practice]
+    ns = [sum(bool(fn(r)) for r in rows) for _, fn in practice]
+    vals = [100.0 * k / n for k in ns]
+
+    fig, (axL, axR) = plt.subplots(
+        1, 2, figsize=(7.2, 3.4), gridspec_kw={"width_ratios": [1, 1.25]}
+    )
+    y = np.arange(len(labs))[::-1]
+    axL.hlines(y, 0, vals, color="#8c8c8c", lw=1.0, zorder=1)
+    axL.scatter(vals, y, s=46, color=COLOUR["AlignSSL-combined"], zorder=3)
+    for yy, v, k in zip(y, vals, ns):
+        axL.text(v + 4.5, yy, f"{k}/{n}", va="center", ha="left", fontsize=6)
+    axL.set_yticks(y)
+    axL.set_yticklabels(labs)
+    axL.set_xlim(0, 125)
+    axL.set_xticks([0, 25, 50, 75, 100])
+    axL.set_xticklabels(["0", "25", "50", "75", "100%"])
+    axL.set_xlabel("Papers exhibiting the practice")
+    axL.set_title("Each safeguard is absent from most\nof the audited literature", loc="left")
+    axL.grid(False)
+    axL.spines["left"].set_visible(False)
+    axL.tick_params(axis="y", length=0)
+
+    order = sorted(rows, key=lambda r: (int(r["n_strict"]), int(r["year"])))
+    shade = {0: "#e8e8e8", 1: "#c4c4c4", 2: "#8f9fb0", 3: "#4d6a86", 4: "#1f4e79"}
+    yy = np.arange(len(order))
+    axR.barh(yy, [int(r["n_strict"]) for r in order],
+             color=[shade[int(r["n_strict"])] for r in order], height=0.68, edgecolor="none")
+    axR.set_yticks(yy)
+    axR.set_yticklabels([r["citation"] for r in order], fontsize=6)
+    axR.set_xlim(0, 4.4)
+    axR.set_xticks([0, 1, 2, 3, 4])
+    axR.set_xlabel("Number of the four safeguards omitted")
+    ge3 = sum(int(r["n_strict"]) >= 3 for r in rows)
+    fewest = min(int(r["n_strict"]) for r in rows)
+    axR.set_title(f"{ge3} of {n} omit at least three;\nnone omits fewer than {fewest}", loc="left")
+    axR.grid(False)
+    axR.spines["left"].set_visible(False)
+    axR.tick_params(axis="y", length=0)
+
+    fig.tight_layout()
+    fig.savefig(out / "figure9_field_audit.png")
+    plt.close(fig)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--results-dir", default="results")
@@ -519,7 +583,7 @@ def main() -> int:
     res = Path(a.results_dir)
     with plt.rc_context(RC):
         for fn in (figure1, figure2, figure3, figure4, figure5,
-                   figure6, figure7, figure8):
+                   figure6, figure7, figure8, figure9):
             fn(res, res)
             print(f"{fn.__name__} ok")
     return 0

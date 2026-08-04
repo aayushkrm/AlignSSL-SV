@@ -1,0 +1,57 @@
+citation,doi,axis,code,quote,verified,verify_mode
+Cai et al. 2019,10.1186/s12859-019-3299-y,negative_sampling,unclear,1-labeled images are taken within the known deletions and 0-labeled images are from outside the deletions.,1,literal
+Cai et al. 2019,10.1186/s12859-019-3299-y,threshold_rule,unclear,"To measure the performance of deletion calling, we use the following statistics: precision, sensitivity, and the F-score.",1,literal
+Cai et al. 2019,10.1186/s12859-019-3299-y,model_free_control,no,NO EVIDENCE IN TEXT,1,literal
+Cai et al. 2019,10.1186/s12859-019-3299-y,multiplicity,none,NO EVIDENCE IN TEXT,1,literal
+Luo et al. 2021,10.1186/s12859-021-04499-5,negative_sampling,unclear,"Then, we label the subregions that overlap with the real deletion as 1, while the rest are labelled as 0.",1,literal
+Luo et al. 2021,10.1186/s12859-021-04499-5,threshold_rule,fixed_default,"If the final output is greater than 0.5, the related subregion is a deletion; otherwise, this subregion is not a deletion.",1,literal
+Luo et al. 2021,10.1186/s12859-021-04499-5,model_free_control,no,NO EVIDENCE IN TEXT,1,literal
+Luo et al. 2021,10.1186/s12859-021-04499-5,multiplicity,none,NO EVIDENCE IN TEXT,1,literal
+Lin et al. 2022,10.1038/s41592-022-01609-w,negative_sampling,unclear,"The CNN model in SVision is trained with both real and simulated simple SVs of DEL, INV, INS, DUP, and tDUP, to avoid usually unbalanced numbers of SV types in real data.",1,literal
+Lin et al. 2022,10.1038/s41592-022-01609-w,threshold_rule,fixed_default,"Sniffles (v1.0.12), cuteSV (v1.0.10), pbsv (v2.2.2), SVision (v1.3.6), and SVIM (v1.4.0) were applied to the pbmm2 aligned file with default parameters.",1,literal
+Lin et al. 2022,10.1038/s41592-022-01609-w,model_free_control,no,NO EVIDENCE IN TEXT,1,literal
+Lin et al. 2022,10.1038/s41592-022-01609-w,multiplicity,none,NO EVIDENCE IN TEXT,1,literal
+Luo et al. 2023,10.3389/fgene.2023.1189775,negative_sampling,unclear,"Deletion re-gions were set to 1, and other regions were set to 0.",1,literal
+Luo et al. 2023,10.3389/fgene.2023.1189775,threshold_rule,fixed_default,"If the final output result is greater than 0.5, the associated sub-region is considered as a deletion; otherwise, it is not a deletion.",1,"split_by_pdf_layout: both halves verbatim, separated by an interleaved figure caption"
+Luo et al. 2023,10.3389/fgene.2023.1189775,model_free_control,no,NO EVIDENCE IN TEXT,1,literal
+Luo et al. 2023,10.3389/fgene.2023.1189775,multiplicity,none,NO EVIDENCE IN TEXT,1,literal
+Ma et al. 2023,10.1186/s12859-023-05243-x,negative_sampling,caller_candidate,"compare Cset1 with the ground truth set containing real variant information during the training model to obtain the training sets, and select true positives and false positives as the positive Fig. 1 Excuting procedure of our proposed method. Conv and FC represent convolutional layer and fully connected layer, respectively Ma et al. BMC Bioinformatics (2023) 24:119 Page 4 of 19 and negative training samples respectively.",1,literal
+Ma et al. 2023,10.1186/s12859-023-05243-x,threshold_rule,fixed_default,"If the final output value of the model is greater than 0.5, the image represents a true positive; otherwise, a false positive.",1,literal
+Ma et al. 2023,10.1186/s12859-023-05243-x,model_free_control,no,NO EVIDENCE IN TEXT,1,literal
+Ma et al. 2023,10.1186/s12859-023-05243-x,multiplicity,none,NO EVIDENCE IN TEXT,1,literal
+Popic et al. 2023,10.1038/s41592-023-01799-x,negative_sampling,unclear,"Since high-quality labeled SV callsets in real genomes are still scarce, we have trained our current models entirely on SVs modeled in silico.",1,literal
+Popic et al. 2023,10.1038/s41592-023-01799-x,threshold_rule,fixed_default,we detect all local maxima in each regressed confidence map using a maximum filter and thresholding (i.e. only values above a certain threshold are kept as candidates; we use 0.4 as the threshold in our experiments),1,literal
+Popic et al. 2023,10.1038/s41592-023-01799-x,model_free_control,no,NO EVIDENCE IN TEXT,1,literal
+Popic et al. 2023,10.1038/s41592-023-01799-x,multiplicity,none,NO EVIDENCE IN TEXT,1,literal
+Zheng & Shang 2023,10.1186/s12859-023-05324-x,negative_sampling,matched,"In addition, we also find 7138 regions without SVs in the reference and label them as noSV.",1,literal
+Zheng & Shang 2023,10.1186/s12859-023-05324-x,threshold_rule,fixed_default,"If the support_rate is greater than 20% and the number of supporting reads is greater than 3 (by default), we consider these SVs as true SVs and output them.",1,literal
+Zheng & Shang 2023,10.1186/s12859-023-05324-x,model_free_control,yes,"we developed an SV detection program called SVnocnn, which excluded the conversion of SV regions into images and did not undergo filtration by our trained LetNet model.",1,literal
+Zheng & Shang 2023,10.1186/s12859-023-05324-x,multiplicity,none,NO EVIDENCE IN TEXT,1,literal
+Hu et al. 2024,10.1093/bib/bbae336,negative_sampling,unclear,the classification results (DEL/INS/false case) are output,1,literal
+Hu et al. 2024,10.1093/bib/bbae336,threshold_rule,fixed_default,"The clustering threshold was set to 0.3 (default), indicating that signatures with a similarity of less than 0.3 were further merged into the same cluster.",1,literal
+Hu et al. 2024,10.1093/bib/bbae336,model_free_control,no,NO EVIDENCE IN TEXT,1,literal
+Hu et al. 2024,10.1093/bib/bbae336,multiplicity,none,NO EVIDENCE IN TEXT,1,literal
+Linderman et al. 2024,10.1093/bioinformatics/btae129,negative_sampling,simulated,"For each SV, we generated 3+ image pairs comprising a common image of the actual data and images of 1+ simulated replicates of each genotype, labeled 1 if the simulated genotype matches the HGSVC2-reported genotype and 0 otherwise.",1,literal
+Linderman et al. 2024,10.1093/bioinformatics/btae129,threshold_rule,fixed_default,"We determine the final genotype from the closest pair among the three possible genotypes: homozygous reference, heterozygous and homozygous alternate",1,literal
+Linderman et al. 2024,10.1093/bioinformatics/btae129,model_free_control,no,NO EVIDENCE IN TEXT,1,literal
+Linderman et al. 2024,10.1093/bioinformatics/btae129,multiplicity,seeds_no_correction,"the standard deviation in genotype concordance for GIAB Tier 1 SVs across 10 runs was &lt; 0.11 percentage points; given that small variance, we report all results for a single run.",1,literal
+Santuari et al. 2024,10.1101/2024.10.17.618894,negative_sampling,caller_candidate,"Window-pairs are labeled based on the overlap of the two intervals with DEL calls from a high-quality truth set, either with the “DEL” for deletions supported by the truth set or “noDEL” for false positive calls",1,literal
+Santuari et al. 2024,10.1101/2024.10.17.618894,threshold_rule,fixed_default,Manta DELs were filtered with sv-channels by retaining only calls with SV QUAL (sv-channels posterior probabilities) equal or greater than 0.5.,1,literal
+Santuari et al. 2024,10.1101/2024.10.17.618894,model_free_control,no,NO EVIDENCE IN TEXT,1,literal
+Santuari et al. 2024,10.1101/2024.10.17.618894,multiplicity,none,NO EVIDENCE IN TEXT,1,literal
+Wang et al. 2024,10.1038/s41587-024-02190-7,negative_sampling,unclear,NO EVIDENCE IN TEXT,1,literal
+Wang et al. 2024,10.1038/s41587-024-02190-7,threshold_rule,fixed_default,the minimum SV supporting read number set to ten,1,literal
+Wang et al. 2024,10.1038/s41587-024-02190-7,model_free_control,yes,SVision-pro identifies candidate SV loci by collecting and clustering abnormal read alignments in a model-free way that avoids searching for specific aberrant patterns of read alignments,1,literal
+Wang et al. 2024,10.1038/s41587-024-02190-7,multiplicity,none,NO EVIDENCE IN TEXT,1,literal
+Xia et al. 2024,10.1093/bioinformatics/btae539,negative_sampling,simulated,"The negative samples were generated using the probability density function of the Poisson distribution, as shown in equation 1",1,literal
+Xia et al. 2024,10.1093/bioinformatics/btae539,threshold_rule,fixed_default,The classification result of the SV is determined by selecting the SV type with the highest probability value.,1,literal
+Xia et al. 2024,10.1093/bioinformatics/btae539,model_free_control,no,NO EVIDENCE IN TEXT,1,literal
+Xia et al. 2024,10.1093/bioinformatics/btae539,multiplicity,none,NO EVIDENCE IN TEXT,1,literal
+Gao et al. 2025,10.1093/bib/bbaf203,negative_sampling,unclear,NO EVIDENCE IN TEXT,1,literal
+Gao et al. 2025,10.1093/bib/bbaf203,threshold_rule,unclear,NO EVIDENCE IN TEXT,1,literal
+Gao et al. 2025,10.1093/bib/bbaf203,model_free_control,no,NO EVIDENCE IN TEXT,1,literal
+Gao et al. 2025,10.1093/bib/bbaf203,multiplicity,none,NO EVIDENCE IN TEXT,1,literal
+Guo et al. 2025,10.1093/bib/bbaf200,negative_sampling,unclear,"The main types of nodes in the graph include match, insertion, deletion, and clipping, labeled as 0, 1, 2, and 3, respectively.",1,literal
+Guo et al. 2025,10.1093/bib/bbaf200,threshold_rule,unclear,with the label having the highest probability chosen as the output for each node,1,literal
+Guo et al. 2025,10.1093/bib/bbaf200,model_free_control,no,NO EVIDENCE IN TEXT,1,literal
+Guo et al. 2025,10.1093/bib/bbaf200,multiplicity,none,NO EVIDENCE IN TEXT,1,literal

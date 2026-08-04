@@ -1,0 +1,15 @@
+year,citation,doi,A_negative_sampling,B_threshold_rule,C_model_free_control,D_multiplicity,mentions_threshold_free_metric,D1_strict,D2_strict,D3_strict,D4_strict,n_strict
+2019,Cai et al. 2019,10.1186/s12859-019-3299-y,unclear,unclear,no,none,0,0,0,1,1,2
+2021,Luo et al. 2021,10.1186/s12859-021-04499-5,unclear,fixed_default,no,none,1,0,1,1,1,3
+2022,Lin et al. 2022,10.1038/s41592-022-01609-w,unclear,fixed_default,no,none,0,0,1,1,1,3
+2023,Luo et al. 2023,10.3389/fgene.2023.1189775,unclear,fixed_default,no,none,0,0,1,1,1,3
+2023,Ma et al. 2023,10.1186/s12859-023-05243-x,caller_candidate,fixed_default,no,none,1,0,1,1,1,3
+2023,Popic et al. 2023,10.1038/s41592-023-01799-x,unclear,fixed_default,no,none,0,0,1,1,1,3
+2023,Zheng & Shang 2023,10.1186/s12859-023-05324-x,matched,fixed_default,yes,none,0,0,1,0,1,2
+2024,Hu et al. 2024,10.1093/bib/bbae336,unclear,fixed_default,no,none,0,0,1,1,1,3
+2024,Linderman et al. 2024,10.1093/bioinformatics/btae129,simulated,fixed_default,no,seeds_no_correction,0,1,1,1,1,4
+2024,Santuari et al. 2024,10.1101/2024.10.17.618894,caller_candidate,fixed_default,no,none,1,0,1,1,1,3
+2024,Wang et al. 2024,10.1038/s41587-024-02190-7,unclear,fixed_default,yes,none,0,0,1,0,1,2
+2024,Xia et al. 2024,10.1093/bioinformatics/btae539,simulated,fixed_default,no,none,1,1,1,1,1,4
+2025,Gao et al. 2025,10.1093/bib/bbaf203,unclear,unclear,no,none,0,0,0,1,1,2
+2025,Guo et al. 2025,10.1093/bib/bbaf200,unclear,unclear,no,none,0,0,0,1,1,2
