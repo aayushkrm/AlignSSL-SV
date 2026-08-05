@@ -12,57 +12,57 @@ uniform (pre-correction): cross-ancestry sweep,"cross-ancestry @0.1 | combined v
 uniform (pre-correction): cross-ancestry sweep,"cross-ancestry @0.25 | combined vs scratch, held-out CEU F1",6,0.5839,1,0.5839,False,False,False,not significant
 uniform (pre-correction): cross-ancestry sweep,"cross-ancestry @0.5 | combined vs scratch, held-out CEU F1",6,0.0836,0.418,0.2204,False,False,False,not significant
 uniform (pre-correction): cross-ancestry sweep,"cross-ancestry @1 | combined vs scratch, held-out CEU F1",6,0.1818,0.5454,0.2727,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.01 (F1@0.5),6,0.0091,0.0546,0.0546,True,False,False,LOST to multiplicity
-"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.05 (F1@0.5),6,0.1083,0.5415,0.2808,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.1 (F1@0.5),6,0.2321,0.6963,0.34815,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.25 (F1@0.5),6,0.9112,0.9112,0.9112,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.5 (F1@0.5),6,0.1404,0.5616,0.2808,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @1.0 (F1@0.5),6,0.4095,0.819,0.4914,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.01 (F1@tau),6,0.407,0.9654,0.4884,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.05 (F1@tau),6,0.0232,0.1392,0.1392,True,False,False,LOST to multiplicity
-"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.1 (F1@tau),6,0.0655,0.3275,0.1965,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.25 (F1@tau),6,0.5843,0.9654,0.5843,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.5 (F1@tau),6,0.1842,0.7368,0.3684,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @1.0 (F1@tau),6,0.3218,0.9654,0.4827,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.01 (AUPRC),6,0.3485,0.697,0.4182,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.05 (AUPRC),6,0.0153,0.0918,0.0918,True,False,False,LOST to multiplicity
-"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.1 (AUPRC),6,0.1103,0.5515,0.2896,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.25 (AUPRC),6,0.4473,0.697,0.4473,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.5 (AUPRC),6,0.1448,0.5792,0.2896,False,False,False,not significant
-"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @1.0 (AUPRC),6,0.2262,0.6786,0.3393,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.01 (auprc),6,0.6659,1,0.79908,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.05 (auprc),6,0.9027,1,0.9027,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.1 (auprc),6,0.5167,1,0.77505,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.25 (auprc),6,0.1388,0.8328,0.4431,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.5 (auprc),6,0.3745,1,0.749,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @1.0 (auprc),6,0.1477,0.8328,0.4431,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.01 (f1_at_tau),6,0.0579,0.3474,0.3474,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.05 (f1_at_tau),6,0.6368,1,0.6368,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.1 (f1_at_tau),6,0.2735,0.8484,0.41025,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.25 (f1_at_tau),6,0.1543,0.7715,0.41025,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.5 (f1_at_tau),6,0.6307,1,0.6368,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @1.0 (f1_at_tau),6,0.2121,0.8484,0.41025,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.01 (auprc),6,0.4831,0.8534,0.4831,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.05 (auprc),6,0.4267,0.8534,0.4831,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.1 (auprc),6,0.1969,0.5907,0.29535,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.25 (auprc),6,0.0153,0.0612,0.0306,True,False,True,survives BH only
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.5 (auprc),6,0.0111,0.0555,0.0306,True,False,True,survives BH only
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @1.0 (auprc),6,0.0059,0.0354,0.0306,True,True,True,survives Holm
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.01 (f1_at_tau),6,0.5155,1,0.77325,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.05 (f1_at_tau),6,0.9363,1,0.9939,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.1 (f1_at_tau),6,0.9939,1,0.9939,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.25 (f1_at_tau),6,0.0676,0.2704,0.1352,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.5 (f1_at_tau),6,0.0076,0.0456,0.0339,True,True,True,survives Holm
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @1.0 (f1_at_tau),6,0.0113,0.0565,0.0339,True,False,True,survives BH only
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.01 (auprc),6,0.2209,0.6627,0.33135,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.05 (auprc),6,0.4521,0.7566,0.4521,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.1 (auprc),6,0.3783,0.7566,0.4521,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.25 (auprc),6,0.0107,0.049,0.0214,True,True,True,survives Holm
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.5 (auprc),6,0.0098,0.049,0.0214,True,True,True,survives Holm
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @1.0 (auprc),6,0.0008,0.0048,0.0048,True,True,True,survives Holm
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.01 (f1_at_tau),6,0.1653,0.4512,0.19836,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.05 (f1_at_tau),6,0.4015,0.4512,0.4015,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.1 (f1_at_tau),6,0.1504,0.4512,0.19836,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.25 (f1_at_tau),6,0.0192,0.0768,0.0384,True,False,True,survives BH only
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.5 (f1_at_tau),6,0.0081,0.0405,0.0243,True,True,True,survives Holm
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @1.0 (f1_at_tau),6,0.0008,0.0048,0.0048,True,True,True,survives Holm
+"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.01 (F1@0.5),6,0.0002,0.0012,0.0012,True,True,True,survives Holm
+"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.05 (F1@0.5),6,0.1361,0.6805,0.3862,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.1 (F1@0.5),6,0.1931,0.7724,0.3862,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.25 (F1@0.5),6,0.4017,1,0.48204,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @0.5 (F1@0.5),6,0.3875,1,0.48204,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@0.5",pretrained vs scratch @1.0 (F1@0.5),6,0.6432,1,0.6432,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.01 (F1@tau),6,0.5273,1,0.63276,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.05 (F1@tau),6,0.0184,0.092,0.0552,True,False,False,LOST to multiplicity
+"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.1 (F1@tau),6,0.0125,0.075,0.0552,True,False,False,LOST to multiplicity
+"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.25 (F1@tau),6,0.2919,0.8757,0.43785,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @0.5 (F1@tau),6,0.1281,0.5124,0.2562,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, F1@tau",pretrained vs scratch @1.0 (F1@tau),6,0.7342,1,0.7342,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.01 (AUPRC),6,0.8526,1,0.8526,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.05 (AUPRC),6,0.0524,0.3144,0.1653,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.1 (AUPRC),6,0.0551,0.3144,0.1653,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.25 (AUPRC),6,0.2463,0.7389,0.36945,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.5 (AUPRC),6,0.1503,0.6012,0.3006,False,False,False,not significant
+"uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @1.0 (AUPRC),6,0.7538,1,0.8526,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.01 (auprc),6,0.4167,1,0.58776,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.05 (auprc),6,0.7891,1,0.7891,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.1 (auprc),6,0.4898,1,0.58776,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.25 (auprc),6,0.0026,0.0156,0.0156,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.5 (auprc),6,0.0735,0.3675,0.2205,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @1.0 (auprc),6,0.4314,1,0.58776,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.01 (f1_at_tau),6,0.0374,0.2244,0.2244,True,False,False,LOST to multiplicity
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.05 (f1_at_tau),6,0.6886,1,0.7418,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.1 (f1_at_tau),6,0.7418,1,0.7418,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.25 (f1_at_tau),6,0.0765,0.3825,0.2295,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @0.5 (f1_at_tau),6,0.1721,0.6884,0.3442,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, f1_at_tau",AlignSSL-pretrained vs AlignSSL-scratch @1.0 (f1_at_tau),6,0.3684,1,0.5526,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.01 (auprc),6,0.5423,0.8386,0.5423,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.05 (auprc),6,0.1553,0.4659,0.23295,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.1 (auprc),6,0.4193,0.8386,0.50316,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.25 (auprc),6,0.0002,0.001,0.0004,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.5 (auprc),6,0.0002,0.001,0.0004,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @1.0 (auprc),6,0,0,0,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.01 (f1_at_tau),6,0.6474,1,0.7443,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.05 (f1_at_tau),6,0.7443,1,0.7443,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.1 (f1_at_tau),6,0.5088,1,0.7443,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.25 (f1_at_tau),6,0.0034,0.0136,0.0068,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.5 (f1_at_tau),6,0.0015,0.0075,0.0045,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @1.0 (f1_at_tau),6,0,0,0,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.01 (auprc),6,0.0333,0.0924,0.03996,True,False,True,survives BH only
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.05 (auprc),6,0.0308,0.0924,0.03996,True,False,True,survives BH only
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.1 (auprc),6,0.2679,0.2679,0.2679,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.25 (auprc),6,0,0,0,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.5 (auprc),6,0,0,0,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @1.0 (auprc),6,0,0,0,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.01 (f1_at_tau),6,0.0751,0.2253,0.11265,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.05 (f1_at_tau),6,0.8667,0.8667,0.8667,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.1 (f1_at_tau),6,0.1667,0.3334,0.20004,False,False,False,not significant
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.25 (f1_at_tau),6,0,0,0,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.5 (f1_at_tau),6,0,0,0,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @1.0 (f1_at_tau),6,0,0,0,True,True,True,survives Holm

@@ -15,9 +15,10 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader, Subset
 
-from alignssl.data import ShardDataset
+from alignssl.data import open_shards
 from alignssl.encoder import AlignEncoder
-from alignssl.heads import (SVHeads, finetune_loss, TemperatureScaler,
+from alignssl.features import batch_features, FeatureNormalizer
+from alignssl.heads import (SVHeads, FusionSVHead, finetune_loss, TemperatureScaler,
                             expected_calibration_error, ConformalBinary)
 from alignssl.protocol import label_budget, split_budget, loader_params
 from alignssl.metrics import score_arm
@@ -31,6 +32,52 @@ class Model(nn.Module):
 
     def forward(self, x):
         return self.heads(self.enc(x))
+
+
+class FusionModel(nn.Module):
+    """Encoder + gated late fusion of the twelve control statistics.
+
+    Deliberately the SAME encoder and the SAME training loop as ``Model``;
+    the only difference is that the classification head additionally sees the
+    exact feature vector the classical control is given. This makes the
+    comparison against Classical-GBT an inclusion rather than a substitution:
+    the network cannot be beaten by information it was not shown.
+
+    ``feat_mean``/``feat_var`` come from the pretraining checkpoint when one is
+    supplied, so the standardisation matches what the encoder saw; otherwise
+    they are estimated on the labelled training subset only (never the test
+    chromosomes).
+    """
+
+    def __init__(self, d_model=128):
+        super().__init__()
+        self.enc = AlignEncoder(d_model=d_model)
+        self.heads = SVHeads(d_model)          # keeps bp/geno aux losses
+        self.fuse = FusionSVHead(d_model)
+        self.norm = FeatureNormalizer()
+
+    def forward(self, x):
+        z = self.enc(x)
+        out = self.heads(z)
+        with torch.no_grad():
+            f = self.norm(batch_features(x))
+        out["cls_logits"] = self.fuse(z, f)     # fusion head owns the decision
+        return out
+
+
+# Arm registry. "sas" and "sas_fusion" load an encoder pretrained by
+# scripts/pretrain_sas.py; "pretrained" loads one from scripts/pretrain_ssl.py.
+# The caller supplies the right checkpoint via --encoder; the arm name only
+# controls whether an encoder is loaded and whether the fusion head is used.
+# Keeping all four in one script guarantees they share the label budget, the
+# validation carve-out, the threshold selection and the scoring code.
+ARMS = {
+    "pretrained":     {"needs_encoder": True,  "fusion": False},
+    "scratch":        {"needs_encoder": False, "fusion": False},
+    "sas":            {"needs_encoder": True,  "fusion": False},
+    "fusion_scratch": {"needs_encoder": False, "fusion": True},
+    "sas_fusion":     {"needs_encoder": True,  "fusion": True},
+}
 
 
 def collate(batch):
@@ -106,6 +153,8 @@ def main():
     ap.add_argument("--lr", type=float, default=3e-4)
     ap.add_argument("--d-model", type=int, default=128)
     ap.add_argument("--freeze-encoder", action="store_true")
+    ap.add_argument("--arms", default="pretrained,scratch",
+                    help="comma-separated subset of " + ",".join(ARMS))
     ap.add_argument("--label-fracs", default="0.01,0.05,0.1,0.25,0.5,1.0")
     ap.add_argument("--num-workers", type=int, default=8)
     ap.add_argument("--seed", type=int, default=0)
@@ -118,8 +167,8 @@ def main():
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"[{time.strftime('%H:%M:%S')}] device={dev}", flush=True)
 
-    train_ds = ShardDataset(args.shard_dir, split="train", labeled=True)
-    test_ds = ShardDataset(args.shard_dir, split="test", labeled=True)
+    train_ds = open_shards(args.shard_dir, split="train", labeled=True)
+    test_ds = open_shards(args.shard_dir, split="test", labeled=True)
     print(f"  train={len(train_ds)} test={len(test_ds)}", flush=True)
     test_dl = DataLoader(test_ds, batch_size=args.batch_size, collate_fn=collate,
                          num_workers=args.num_workers)
@@ -150,13 +199,28 @@ def main():
         row = {"frac": frac, "n": int(n), "n_train": int(len(tr_idx)),
                "n_val": int(len(val_idx)), "batch_size_eff": int(_bs),
                "drop_last": bool(_drop)}
-        for mode in ["pretrained", "scratch"]:
-            if mode == "pretrained" and not args.encoder:
+        for mode in [m.strip() for m in args.arms.split(",") if m.strip()]:
+            if mode not in ARMS:
+                raise SystemExit(f"unknown arm {mode!r}; choose from {ARMS}")
+            if ARMS[mode]["needs_encoder"] and not args.encoder:
                 continue
-            model = Model(args.d_model).to(dev)
-            if mode == "pretrained":
+            fusion = ARMS[mode]["fusion"]
+            model = (FusionModel if fusion else Model)(args.d_model).to(dev)
+            if ARMS[mode]["needs_encoder"]:
                 ck = torch.load(args.encoder, map_location=dev)
                 model.enc.load_state_dict(ck["encoder"])
+                if fusion and "feat_mean" in ck:
+                    # reuse the pretraining normaliser so fine-tuning
+                    # standardises with exactly the values the encoder saw
+                    model.norm.mean.copy_(ck["feat_mean"].to(dev))
+                    model.norm.var.copy_(ck["feat_var"].to(dev))
+                    model.norm.n_seen.fill_(1.0)
+            if fusion and float(model.norm.n_seen) == 0.0:
+                # no pretraining stats available: estimate on the LABELLED
+                # training subset only -- never the test chromosomes
+                with torch.no_grad():
+                    for _b in dl:
+                        model.norm.observe(batch_features(_b["x"].to(dev)))
             train_one(model, dl, dev, args.epochs, args.lr,
                       freeze_encoder=args.freeze_encoder)
             logits, labels, lens = collect_logits(model, test_dl, dev)
@@ -194,9 +258,15 @@ def main():
                   f"AUPRC={row[mode]['auprc']:.3f} F1@0.5={row[mode]['f1_at_half']:.3f}",
                   flush=True)
         results["label_efficiency"].append(row)
+        # Write after EVERY fraction, not once at the end.  A wall-clock
+        # timeout at the last fraction previously discarded all six -- four
+        # array tasks lost 12 h each that way.  Atomic rename so a reader
+        # never sees a half-written file.
+        _tmp = args.out + ".tmp"
+        with open(_tmp, "w") as f:
+            json.dump(results, f, indent=2)
+        os.replace(_tmp, args.out)
 
-    with open(args.out, "w") as f:
-        json.dump(results, f, indent=2)
     print(f"[{time.strftime('%H:%M:%S')}] wrote {args.out}", flush=True)
 
 

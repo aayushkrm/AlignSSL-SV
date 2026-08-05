@@ -18,7 +18,7 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader, Subset
 
-from alignssl.data import ShardDataset
+from alignssl.data import open_shards
 from alignssl.deepsv_baseline import DeepSVNet
 from alignssl.protocol import label_budget, split_budget, loader_params
 from alignssl.metrics import score_arm
@@ -91,8 +91,8 @@ def main():
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"[{time.strftime('%H:%M:%S')}] device={dev}", flush=True)
 
-    train_ds = ShardDataset(args.shard_dir, split="train", labeled=True)
-    test_ds = ShardDataset(args.shard_dir, split="test", labeled=True)
+    train_ds = open_shards(args.shard_dir, split="train", labeled=True)
+    test_ds = open_shards(args.shard_dir, split="test", labeled=True)
     print(f"  train={len(train_ds)} test={len(test_ds)}", flush=True)
     test_dl = DataLoader(test_ds, batch_size=args.batch_size, collate_fn=collate,
                          num_workers=args.num_workers)

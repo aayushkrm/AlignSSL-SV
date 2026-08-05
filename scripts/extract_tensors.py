@@ -14,16 +14,40 @@ import numpy as np
 import pysam
 
 from alignssl.tensorize import build_tensor, N_CHANNELS
-from alignssl.data import load_truth_dels, bin_for_len, estimate_isize, CHROM_SPLIT
+from alignssl.data import (load_truth_dels, load_truth_giab, load_bed,
+                           interval_contains, interval_overlaps,
+                           bin_for_len, estimate_isize, CHROM_SPLIT)
 
 
-def build_items(truth_by_chrom, fa, win_width, n_neg_per_pos, multiscale, seed):
+def build_items(truth_by_chrom, fa, win_width, n_neg_per_pos, multiscale, seed,
+                confident=None, exclude=None):
+    """Positive windows on truth deletions plus matched negative windows.
+
+    ``confident`` and ``exclude`` are optional and only used for truth sets
+    that declare where they are authoritative (GIAB Tier1).  When given:
+
+      * a negative window must lie WHOLLY inside a confident interval -- a
+        window straddling the boundary is partly unlabelled territory;
+      * a negative window must not touch ANY record in ``exclude``, which
+        holds every VCF record regardless of filter or SV type, not just the
+        deletions that became positives.  Non-PASS records are unresolved
+        calls; scoring a model as correct for calling them reference would
+        credit it for agreeing with a label the truth set never asserted.
+
+    With both None the behaviour is the original one: negatives avoid only the
+    positive deletions themselves.
+    """
     rng = np.random.default_rng(seed)
     items = []  # (chrom, start, width, bin_size, label, geno, bp0, bp1, del_len)
+    n_neg_failed = 0
     for chrom, dels in truth_by_chrom.items():
         if not dels:
             continue
         clen = fa.get_reference_length(chrom)
+        conf = None if confident is None else confident.get(chrom)
+        exc = None if exclude is None else exclude.get(chrom)
+        if confident is not None and (conf is None or len(conf) == 0):
+            continue
         bins_used, pos_spans = set(), []
         for (ds, de, geno) in dels:
             ln = de - ds
@@ -39,12 +63,35 @@ def build_items(truth_by_chrom, fa, win_width, n_neg_per_pos, multiscale, seed):
         for _ in range(len(dels) * n_neg_per_pos):
             bs = int(rng.choice(bins_used))
             span = win_width * bs
-            for _try in range(30):
-                s = int(rng.integers(0, max(1, clen - span)))
-                if not any(s < de and s + span > ds for ds, de, _ in dels) and \
-                   not any(abs(s - ps) < span for ps, _ in pos_spans):
-                    items.append((chrom, s, win_width, bs, 0, 0, np.nan, np.nan, 0))
-                    break
+            placed = False
+            # More tries when confident regions constrain placement: with
+            # ~86% of the genome confident, 30 tries is ample, but small
+            # chromosomes with sparse coverage need headroom.
+            for _try in range(30 if conf is None else 200):
+                if conf is not None:
+                    k = int(rng.integers(0, len(conf)))
+                    lo, hi = int(conf[k, 0]), int(conf[k, 1])
+                    if hi - lo < span:
+                        continue
+                    s = int(rng.integers(lo, hi - span + 1))
+                else:
+                    s = int(rng.integers(0, max(1, clen - span)))
+                if any(s < de and s + span > ds for ds, de, _ in dels):
+                    continue
+                if any(abs(s - ps) < span for ps, _ in pos_spans):
+                    continue
+                if conf is not None and not interval_contains(conf, s, s + span):
+                    continue
+                if exc is not None and interval_overlaps(exc, s, s + span):
+                    continue
+                items.append((chrom, s, win_width, bs, 0, 0, np.nan, np.nan, 0))
+                placed = True
+                break
+            if not placed:
+                n_neg_failed += 1
+    if n_neg_failed:
+        print(f"  WARNING: {n_neg_failed} negative windows could not be placed "
+              f"under the confident/exclusion constraints", flush=True)
     return items
 
 
@@ -65,6 +112,16 @@ def main():
     ap.add_argument("--limit", type=int, default=0, help="0 = no limit (smoke test)")
     ap.add_argument("--no-multiscale", action="store_true")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--truth-mode", choices=["genotyped", "giab"],
+                    default="genotyped",
+                    help="'genotyped': per-sample GT from a multi-sample VCF "
+                         "(1000G). 'giab': single-sample Tier1 call set -- "
+                         "PASS-only positives, all records excluded from "
+                         "negative sampling, negatives confined to "
+                         "--confident-bed.")
+    ap.add_argument("--confident-bed", default=None,
+                    help="BED of regions the truth set is authoritative in "
+                         "(required for --truth-mode giab)")
     args = ap.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)
@@ -74,14 +131,29 @@ def main():
         chroms = CHROM_SPLIT[args.split]
 
     print(f"[{time.strftime('%H:%M:%S')}] loading truth for {args.sample} "
-          f"split={args.split} ({len(chroms)} chroms)", flush=True)
-    truth = load_truth_dels(args.vcf, args.sample, chroms=chroms)
+          f"split={args.split} ({len(chroms)} chroms) mode={args.truth_mode}",
+          flush=True)
+    confident = exclude = None
+    if args.truth_mode == "giab":
+        truth, exclude = load_truth_giab(args.vcf, chroms=chroms,
+                                         sample=args.sample)
+        if not args.confident_bed:
+            raise SystemExit("--truth-mode giab requires --confident-bed")
+        confident = load_bed(args.confident_bed, chroms=chroms)
+        n_conf = sum(int((a[:, 1] - a[:, 0]).sum()) for a in confident.values())
+        n_exc = sum(len(a) for a in exclude.values())
+        print(f"  confident: {n_conf/1e9:.3f} Gb over "
+              f"{sum(len(a) for a in confident.values())} intervals; "
+              f"exclusion records: {n_exc}", flush=True)
+    else:
+        truth = load_truth_dels(args.vcf, args.sample, chroms=chroms)
     n_dels = sum(len(v) for v in truth.values())
     print(f"  truth DELs: {n_dels} across {len(truth)} chroms", flush=True)
 
     fa = pysam.FastaFile(args.fasta)
     items = build_items(truth, fa, args.win_width, args.n_neg_per_pos,
-                        not args.no_multiscale, args.seed)
+                        not args.no_multiscale, args.seed,
+                        confident=confident, exclude=exclude)
     # deterministic shuffle so shards mix pos/neg and chroms
     rng = np.random.default_rng(args.seed + 1)
     perm = rng.permutation(len(items))

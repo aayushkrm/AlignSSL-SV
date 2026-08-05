@@ -20,7 +20,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 
-from alignssl.data import ShardDataset
+from alignssl.data import open_shards
 from alignssl.encoder import AlignEncoder
 from alignssl.heads import (SVHeads, finetune_loss, TemperatureScaler,
                             expected_calibration_error)
@@ -128,9 +128,9 @@ def main():
     dev = "cuda" if torch.cuda.is_available() else "cpu"
     print(f"[{time.strftime('%H:%M:%S')}] device={dev}", flush=True)
 
-    train_ds = ShardDataset(args.shard_dir, split="train", labeled=True)
-    indist_ds = ShardDataset(args.shard_dir, split="test", labeled=True)
-    xpop_ds = ShardDataset(args.xpop_shard_dir, split="test", labeled=True)
+    train_ds = open_shards(args.shard_dir, split="train", labeled=True)
+    indist_ds = open_shards(args.shard_dir, split="test", labeled=True)
+    xpop_ds = open_shards(args.xpop_shard_dir, split="test", labeled=True)
     print(f"  train={len(train_ds)} in-dist-test={len(indist_ds)} "
           f"xpop-test={len(xpop_ds)}", flush=True)
 

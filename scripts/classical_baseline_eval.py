@@ -29,7 +29,7 @@ import argparse, json, sys, time
 import numpy as np
 
 sys.path.insert(0, "/scratch/igorno-alignssl_sv/code")
-from alignssl.data import ShardDataset
+from alignssl.data import open_shards
 from alignssl.protocol import label_budget, split_budget
 from alignssl.metrics import score_arm  # noqa: E402
 
@@ -73,7 +73,7 @@ def featurise(x: np.ndarray) -> np.ndarray:
 
 
 def build(shard_dir: str, split: str):
-    ds = ShardDataset(shard_dir, split=split, labeled=True)
+    ds = open_shards(shard_dir, split=split, labeled=True)
     n = len(ds)
     X = np.zeros((n, len(FEAT_NAMES)), dtype=np.float64)
     y = np.zeros(n, dtype=np.int64)

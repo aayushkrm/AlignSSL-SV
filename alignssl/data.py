@@ -33,6 +33,115 @@ TEST_CHROMS = [str(i) for i in range(12, 23)]
 CHROM_SPLIT = {"train": TRAIN_CHROMS, "test": TEST_CHROMS}
 
 
+def load_bed(path, chroms=None):
+    """BED -> {chrom: (N,2) int64 array of sorted, merged half-open intervals}.
+
+    Used for GIAB Tier1 confident regions: outside these intervals the truth
+    set makes no claim, so a window there is neither a positive nor a
+    legitimate negative.
+    """
+    raw = {}
+    want = set(chroms) if chroms is not None else None
+    with open(path) as fh:
+        for line in fh:
+            if not line.strip() or line.startswith(("#", "track", "browser")):
+                continue
+            f = line.split()
+            c = f[0][3:] if f[0].startswith("chr") else f[0]
+            if want is not None and c not in want:
+                continue
+            raw.setdefault(c, []).append((int(f[1]), int(f[2])))
+    out = {}
+    for c, iv in raw.items():
+        iv.sort()
+        merged = [list(iv[0])]
+        for s, e in iv[1:]:
+            if s <= merged[-1][1]:
+                merged[-1][1] = max(merged[-1][1], e)
+            else:
+                merged.append([s, e])
+        out[c] = np.asarray(merged, dtype=np.int64)
+    return out
+
+
+def interval_contains(arr, s, e):
+    """True iff [s, e) lies wholly inside one interval of `arr` ((N,2), sorted)."""
+    if arr is None or len(arr) == 0:
+        return False
+    i = int(np.searchsorted(arr[:, 0], s, side="right")) - 1
+    return i >= 0 and s >= arr[i, 0] and e <= arr[i, 1]
+
+
+def interval_overlaps(arr, s, e):
+    """True iff [s, e) intersects any interval of `arr` ((N,2), sorted)."""
+    if arr is None or len(arr) == 0:
+        return False
+    i = int(np.searchsorted(arr[:, 0], e, side="left"))
+    j = max(0, i - 2)
+    return bool(np.any((arr[j:i, 0] < e) & (arr[j:i, 1] > s)))
+
+
+def load_truth_giab(vcf_path, chroms=None, min_len=50, max_len=1_000_000,
+                    sample=None):
+    """GIAB HG002 Tier1 SV truth -> (positives, exclusion_zones).
+
+    Differs from ``load_truth_dels`` in two ways that matter for scoring:
+
+      * Only FILTER == PASS records become positives.  The GIAB v0.6 call set
+        carries ~25k non-PASS records (``NoConsensusGT``, ``ClusteredCalls``,
+        ``LongReadHomRef``, ``lt50bp``); these are *unresolved*, not absent.
+      * Every record of ANY type and ANY filter -- plus INS, which perturbs
+        local alignment just as DEL does -- goes into the exclusion zone.
+        Sampling a negative on top of an unresolved call would train and score
+        the model against a label the truth set does not actually assert.
+
+    Returns ``(truth_by_chrom, exclude_by_chrom)`` where truth is the same
+    ``{chrom: [(start0, end0, geno)]}`` shape ``load_truth_dels`` returns and
+    exclude is ``{chrom: (N,2) sorted array}`` suitable for
+    ``interval_overlaps``.
+    """
+    truth, excl = {}, {}
+    vcf = pysam.VariantFile(vcf_path)
+    if sample is None:
+        sample = list(vcf.header.samples)[0]
+    want = set(chroms) if chroms is not None else None
+    for rec in vcf.fetch():
+        c = rec.chrom[3:] if rec.chrom.startswith("chr") else rec.chrom
+        if want is not None and c not in want:
+            continue
+        start0, end0 = rec.start, rec.stop
+        svlen = rec.info.get("SVLEN")
+        if svlen is not None:
+            svlen = abs(int(svlen[0] if isinstance(svlen, tuple) else svlen))
+        # Every record, whatever its filter or type, is an exclusion zone.
+        # An insertion has no reference span, so give it the SVLEN-wide
+        # footprint its reads actually disturb.
+        e_end = max(end0, start0 + (svlen or 1))
+        excl.setdefault(c, []).append((start0, e_end))
+
+        if rec.info.get("SVTYPE") != "DEL":
+            continue
+        if set(rec.filter.keys()) - {"PASS"}:
+            continue
+        if end0 <= start0 and svlen:
+            end0 = start0 + svlen
+        ln = end0 - start0
+        if ln < min_len or ln > max_len:
+            continue
+        gt = rec.samples[sample].get("GT")
+        if gt is None or all(a in (None, 0) for a in gt):
+            continue
+        geno = 2 if all(a == 1 for a in gt if a is not None) else 1
+        truth.setdefault(c, []).append((start0, end0, geno))
+
+    for c, iv in excl.items():
+        a = np.asarray(sorted(iv), dtype=np.int64)
+        excl[c] = a
+    for c in truth:
+        truth[c].sort()
+    return truth, excl
+
+
 def load_truth_dels(vcf_path, sample, chroms=None, min_len=50, max_len=1_000_000):
     """Per-sample non-reference DELETIONs from a genotyped SV VCF.
 
@@ -251,6 +360,78 @@ def _chrom_ints(split):
     return set(int(c) for c in names)
 
 
+class MemmapShardDataset(Dataset):
+    """Drop-in replacement for :class:`ShardDataset` backed by a flat memmap.
+
+    Why this exists
+    ---------------
+    ``ShardDataset`` decompresses one .npz shard at a time and caches exactly
+    one.  Under a *shuffled* DataLoader consecutive indices land in different
+    shards, so the cache never hits and every item costs a full shard
+    decompression (~1.25 s for a 9 MB shard here).  That is invisible on the
+    large benchmark, where an epoch touches each shard many times in a row by
+    luck of the draw, but on a small benchmark it dominates: the
+    candidate-filtered arm made no progress in 11.8 GPU-hours while the
+    uniform arm finished all six label fractions in 2.4 h on the SAME code.
+
+    A raw float16 memmap gives O(1) random reads from the OS page cache, so
+    shuffling is free.  Emits exactly the keys ``ShardDataset`` emits, so
+    call sites need no change.
+
+    Build the memmap with ``scripts/build_memmap.py`` (which carries the full
+    label schema, not just the SSL subset).
+    """
+
+    def __init__(self, prefix, split="all", labeled=True):
+        meta = np.load(prefix + ".meta.npz")
+        shape = tuple(int(v) for v in meta["shape"])
+        self.X = np.lib.format.open_memmap(prefix + ".f16", mode="r")
+        if self.X.shape != shape:
+            raise ValueError(f"memmap shape {self.X.shape} != meta {shape}")
+        self.labeled = labeled
+        self.meta = {k: meta[k] for k in meta.files if k != "shape"}
+        want = _chrom_ints(split)
+        chrom = self.meta["chrom"]
+        self.index = np.array([j for j in range(len(chrom))
+                               if int(chrom[j]) in want], dtype=np.int64)
+
+    def __len__(self):
+        return len(self.index)
+
+    def __getitem__(self, i):
+        j = int(self.index[i])
+        X = torch.from_numpy(np.asarray(self.X[j], dtype=np.float32))
+        if not self.labeled:
+            return X
+        m = self.meta
+        return {
+            "x": X,
+            "label": torch.tensor(int(m["label"][j]), dtype=torch.long),
+            "geno": torch.tensor(int(m["geno"][j]), dtype=torch.long),
+            "bp": torch.from_numpy(np.asarray(m["bp"][j], dtype=np.float32)),
+            "bin_size": torch.tensor(int(m["bin_size"][j]), dtype=torch.long),
+            "del_len": torch.tensor(int(m["del_len"][j]), dtype=torch.long),
+        }
+
+
+def open_shards(path, split="all", labeled=True):
+    """Open ``path`` as a memmap if one was built for it, else as .npz shards.
+
+    ``path`` may be a shard directory or a memmap prefix.  A directory
+    containing ``mm.f16``/``mm.meta.npz`` is opened via the memmap path.
+    This keeps every call site identical while letting the fast path be
+    adopted per-benchmark.
+    """
+    if os.path.isdir(path):
+        pre = os.path.join(path, "mm")
+        if os.path.exists(pre + ".f16") and os.path.exists(pre + ".meta.npz"):
+            return MemmapShardDataset(pre, split=split, labeled=labeled)
+        return ShardDataset(path, split=split, labeled=labeled)
+    if os.path.exists(path + ".f16"):
+        return MemmapShardDataset(path, split=split, labeled=labeled)
+    raise FileNotFoundError(f"neither shard dir nor memmap prefix: {path}")
+
+
 class ShardDataset(Dataset):
     """Read precomputed .npz shards (from scripts/extract_tensors.py).
 
@@ -265,6 +446,13 @@ class ShardDataset(Dataset):
     def __init__(self, shard_dir, split="all", labeled=True, glob_pat="*.npz"):
         import glob as _glob
         self.files = sorted(_glob.glob(os.path.join(shard_dir, glob_pat)))
+        # A memmap built in-place (scripts/build_memmap.py) writes
+        # ``mm.meta.npz`` alongside the shards, and it matches "*.npz".
+        # Left in, it is read as an extra shard and every window is served
+        # TWICE -- silently doubling the dataset and leaking test
+        # chromosomes into the train split.  Excluded by name.
+        self.files = [f for f in self.files
+                      if not os.path.basename(f).startswith("mm.")]
         if not self.files:
             raise FileNotFoundError(f"no shards in {shard_dir}/{glob_pat}")
         self.labeled = labeled

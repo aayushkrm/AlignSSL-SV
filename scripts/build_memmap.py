@@ -23,6 +23,8 @@ def main():
     args = ap.parse_args()
 
     files = sorted(glob.glob(os.path.join(args.shard_dir, args.glob)))
+    # Never ingest our own metadata sidecar (or a previous run's) as a shard.
+    files = [f for f in files if not os.path.basename(f).startswith("mm.")]
     if not files:
         raise FileNotFoundError(f"no shards in {args.shard_dir}/{args.glob}")
 
@@ -39,10 +41,20 @@ def main():
     mm = np.lib.format.open_memmap(
         args.out + ".f16", mode="w+", dtype=np.float16,
         shape=(n_total,) + tuple(shp))
+    # Carry EVERY field the labelled loader reads, not just the four the SSL
+    # path needed.  ShardDataset.__getitem__ returns
+    # x/label/geno/bp/bin_size/del_len; a memmap missing any of them is not a
+    # drop-in replacement, and the substitution then fails only at training
+    # time -- which is how we lost 12 GPU-hours to a per-item decompression
+    # stall before.  Fields absent from a shard (unlabelled pretrain shards)
+    # are filled with sentinels, never silently dropped.
     chrom = np.empty(n_total, np.int64)
     binsz = np.empty(n_total, np.int64)
     start = np.empty(n_total, np.int64)
     label = np.empty(n_total, np.int64)
+    geno = np.full(n_total, -1, np.int64)
+    dellen = np.full(n_total, -1, np.int64)
+    bp = np.full((n_total, 2), np.nan, np.float32)
 
     off = 0
     t0 = time.time()
@@ -54,12 +66,19 @@ def main():
             binsz[off:off + n] = d["bin_size"]
             start[off:off + n] = d["start"]
             label[off:off + n] = d["label"] if "label" in d else -1
+            if "geno" in d:
+                geno[off:off + n] = d["geno"]
+            if "del_len" in d:
+                dellen[off:off + n] = d["del_len"]
+            if "bp" in d:
+                bp[off:off + n] = d["bp"]
         off += n
         if fi % 5 == 0:
             print(f"  {fi+1}/{len(files)} off={off} {time.time()-t0:.0f}s", flush=True)
     mm.flush()
     np.savez(args.out + ".meta.npz", chrom=chrom, bin_size=binsz,
-             start=start, label=label, shape=np.array((n_total,) + tuple(shp)))
+             start=start, label=label, geno=geno, del_len=dellen, bp=bp,
+             shape=np.array((n_total,) + tuple(shp)))
     print(f"DONE memmap -> {args.out}.f16  ({off} windows, {time.time()-t0:.0f}s)", flush=True)
 
 

@@ -68,6 +68,42 @@ def finetune_loss(out, batch, a=1.0, b=1.0, g=0.0, focal_gamma=2.0):
 
 
 # ----------------------- calibration -----------------------
+class FusionSVHead(nn.Module):
+    """Deletion head over [pooled embedding ; twelve summary statistics].
+
+    The control experiment (manuscript Section 4.2) shows a gradient-boosted
+    tree on twelve scalars matching or beating every deep arm.  Rather than
+    treat that as a ceiling, this head gives the network the same twelve
+    numbers explicitly and asks what the learned representation adds on top.
+
+    The statistics pass through their own encoder before concatenation so that
+    a 12-dimensional input is not swamped by a 128-dimensional embedding, and
+    a learned gate lets the model down-weight either stream per window --
+    which is what allows it to fall back on the statistics where they suffice
+    and on context where they do not.
+    """
+
+    def __init__(self, d_model: int, n_feat: int = 12, d_feat: int = 64,
+                 p_drop: float = 0.2):
+        super().__init__()
+        self.feat_enc = nn.Sequential(
+            nn.Linear(n_feat, d_feat), nn.GELU(),
+            nn.Linear(d_feat, d_feat), nn.GELU(),
+        )
+        d = d_model + d_feat
+        self.gate = nn.Sequential(nn.Linear(d, d), nn.Sigmoid())
+        self.trunk = nn.Sequential(
+            nn.Dropout(p_drop), nn.Linear(d, 256), nn.GELU(),
+            nn.Dropout(p_drop),
+        )
+        self.cls = nn.Linear(256, 2)
+
+    def forward(self, z, feats):
+        h = torch.cat([z, self.feat_enc(feats)], dim=1)
+        h = h * self.gate(h)
+        return self.cls(self.trunk(h))
+
+
 class TemperatureScaler(nn.Module):
     """Post-hoc temperature scaling (Guo et al. 2017)."""
 
