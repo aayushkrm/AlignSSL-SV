@@ -106,10 +106,16 @@ def patched(monkeypatch):
     return dels
 
 
-def _run(dels, confident=None, exclude=None, seed=0):
-    return hn.build_items({"1": dels}, _FakeFasta(), _FakeBam(dels),
-                          WIN, 3, True, seed, 12,
-                          confident=confident, exclude=exclude)
+def _run(dels, confident=None, exclude=None, seed=0, max_offset=1e9):
+    # max_offset defaults to effectively-disabled here on purpose.  The
+    # absolute guard is meaningful only against a real candidate pool (see the
+    # comment on it in the extractor); these fixtures test the relative claim.
+    # test_match_guard_fires below exercises the guard itself.
+    items, _stats = hn.build_items({"1": dels}, _FakeFasta(), _FakeBam(dels),
+                                   WIN, 3, True, seed, 12,
+                                   confident=confident, exclude=exclude,
+                                   max_offset=max_offset)
+    return items
 
 
 def _negatives(items):
@@ -190,3 +196,22 @@ def test_depth_ratio_still_matched(patched):
             f"uniform offset {uniform_off:.3f} -- matching is not working")
         print(f"    bin {bs}: matched offset {matched_off:.3f} vs "
               f"uniform {uniform_off:.3f}")
+
+
+def test_match_guard_fires(patched):
+    """The absolute max_offset guard must actually raise, not just print.
+
+    The guard lives in the extractor rather than here because a meaningful
+    threshold needs a real candidate pool.  What IS testable in a fixture is
+    that the guard is wired up: an impossible threshold must fail extraction
+    rather than emit a benchmark whose negatives are still depth-separable.
+    A guard that only reports is a guard that gets ignored in a log tail.
+    """
+    dels = patched
+    with pytest.raises(AssertionError, match="depth-ratio matching failed"):
+        _run(dels, max_offset=0.0)
+
+    # And it must not fire when the achieved match is within tolerance --
+    # otherwise the guard would block every legitimate extraction.
+    items = _run(dels, max_offset=1e9)
+    assert sum(1 for it in items if it[4] == 0) > 0

@@ -157,7 +157,7 @@ def match_strata(pos, neg, n_keep, rng, n_strata=10):
 
 def build_items(truth_by_chrom, fa, bam, win_width, n_neg_per_pos, multiscale,
                 seed, pool_mult, n_strata=10, log_every=20000,
-                confident=None, exclude=None):
+                confident=None, exclude=None, max_offset=0.25):
     """Positives centred on truth deletions; negatives drawn so that their
     centre/flank depth-ratio distribution MATCHES the positives'.
 
@@ -289,10 +289,38 @@ def build_items(truth_by_chrom, fa, bam, win_width, n_neg_per_pos, multiscale,
 
     if stats:
         dp = np.array([abs(s[5] - s[6]) for s in stats])
+        med = float(np.median(dp))
         print(f"  MATCH QUALITY: median |pos-neg| depth-ratio offset "
-              f"{np.median(dp):.4f} over {len(stats)} chrom x scale groups "
+              f"{med:.4f} over {len(stats)} chrom x scale groups "
               f"(0 = perfectly matched)", flush=True)
-    return items
+        # Enforce the match on REAL data, not just report it.
+        #
+        # tests/test_hardneg_giab.py deliberately asserts only the relative
+        # claim (matched negatives sit closer to the positives than negatives
+        # drawn uniformly from the same grid), because achievable match quality
+        # is bounded by what the candidate pool contains and a synthetic
+        # fixture's pool is not the genome's -- an absolute threshold there
+        # would pin a fixture artefact.  Here the pool IS the genome, so the
+        # absolute check is meaningful and this is the right place for it.
+        #
+        # Rationale for the default: an unmatched (uniformly sampled) negative
+        # set sits at offset ~0.5-0.7 because most of the genome is at the
+        # reference depth ratio while a heterozygous deletion is near 0.5 and a
+        # homozygous one near 0.  A benchmark whose median offset exceeds
+        # max_offset has not removed the depth shortcut and would reproduce the
+        # separability we are trying to eliminate, so failing extraction is
+        # correct: a silently unmatched benchmark yields a plausible-looking
+        # but meaningless accuracy number.
+        if med > max_offset:
+            raise AssertionError(
+                f"depth-ratio matching failed: median |pos-neg| offset {med:.4f} "
+                f"exceeds max_offset {max_offset:.4f} over {len(stats)} groups. "
+                f"The negatives are still separable by depth alone -- this "
+                f"benchmark would not test representation learning. Inspect the "
+                f"per-group lines above; a likely cause is too small a candidate "
+                f"pool (raise --pool-mult) or a coverage profile with no "
+                f"low-ratio windows to draw from.")
+    return items, stats
 
 
 def flush_shard(out_dir, sample, split, shard_idx, shard, meta, manifest):
@@ -328,6 +356,10 @@ def main():
     ap.add_argument("--n-neg-per-pos", type=int, default=3)
     ap.add_argument("--pool-mult", type=int, default=12,
                     help="candidates scored per negative kept; higher = harder")
+    ap.add_argument("--max-offset", type=float, default=0.25,
+                    help="fail extraction if the median |pos-neg| depth-ratio "
+                         "offset exceeds this; guards against silently "
+                         "producing a depth-separable benchmark")
     ap.add_argument("--shard-size", type=int, default=1024)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--no-multiscale", action="store_true")
@@ -362,9 +394,10 @@ def main():
 
     fa = pysam.FastaFile(args.fasta)
     bam = pysam.AlignmentFile(args.bam, "rb", index_filename=args.bai)
-    items = build_items(truth, fa, bam, args.win_width, args.n_neg_per_pos,
-                        not args.no_multiscale, args.seed, args.pool_mult,
-                        confident=confident, exclude=exclude)
+    items, match_stats = build_items(
+        truth, fa, bam, args.win_width, args.n_neg_per_pos,
+        not args.no_multiscale, args.seed, args.pool_mult,
+        confident=confident, exclude=exclude, max_offset=args.max_offset)
     rng = np.random.default_rng(args.seed + 1)
     items = [items[i] for i in rng.permutation(len(items))]
     if args.limit > 0:
