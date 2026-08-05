@@ -1,0 +1,11 @@
+arm_a,arm_b,label_frac,n_a,n_b,delta_auprc,welch_p,significant_at_0.05
+AlignSSL-SAS-fusion (pretrained),Classical GBT (12 scalars),1.0,4,5,+0.0328,0.1339,no
+AlignSSL-SAS-fusion (pretrained),Classical GBT (12 scalars),0.5,4,5,-0.0065,0.4018,no
+AlignSSL-SAS-fusion (pretrained),Classical GBT (12 scalars),0.05,4,5,+0.0429,0.3306,no
+AlignSSL-SAS-fusion (pretrained),DeepSV-representation (RGB pileup CNN),1.0,4,4,+0.3304,0.0001,yes
+AlignSSL-SAS-fusion (pretrained),DeepSV-representation (RGB pileup CNN),0.05,4,4,+0.2688,0.0003,yes
+AlignSSL-SAS-fusion (pretrained),AlignSSL-fusion (scratch),0.05,4,4,+0.1943,0.0189,yes
+AlignSSL-SAS-fusion (pretrained),AlignSSL-fusion (scratch),0.1,4,4,+0.1494,0.0125,yes
+AlignSSL-SAS-fusion (pretrained),AlignSSL-fusion (scratch),1.0,4,4,+0.0538,0.2309,no
+Classical GBT (12 scalars),DeepSV-representation (RGB pileup CNN),1.0,5,4,+0.2976,0.0013,yes
+Classical logistic regression (12 scalars),DeepSV-representation (RGB pileup CNN),1.0,5,4,+0.0587,0.1079,no
