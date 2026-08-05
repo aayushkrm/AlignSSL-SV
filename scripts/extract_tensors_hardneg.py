@@ -35,7 +35,9 @@ import numpy as np
 import pysam
 
 from alignssl.tensorize import build_tensor, N_CHANNELS
-from alignssl.data import load_truth_dels, bin_for_len, estimate_isize, CHROM_SPLIT
+from alignssl.data import (load_truth_dels, load_truth_giab, load_bed,
+                           interval_contains, interval_overlaps,
+                           bin_for_len, estimate_isize, CHROM_SPLIT)
 
 
 def chrom_to_int(c):
@@ -154,7 +156,8 @@ def match_strata(pos, neg, n_keep, rng, n_strata=10):
 
 
 def build_items(truth_by_chrom, fa, bam, win_width, n_neg_per_pos, multiscale,
-                seed, pool_mult, n_strata=10, log_every=20000):
+                seed, pool_mult, n_strata=10, log_every=20000,
+                confident=None, exclude=None):
     """Positives centred on truth deletions; negatives drawn so that their
     centre/flank depth-ratio distribution MATCHES the positives'.
 
@@ -182,6 +185,15 @@ def build_items(truth_by_chrom, fa, bam, win_width, n_neg_per_pos, multiscale,
 
     Positive geometry, channel layout, multi-scale binning, chromosome split
     and shard format are untouched, so arms remain comparable.
+
+    Truth-source independence
+    -------------------------
+    ``confident``/``exclude`` (both ``{chrom: (N,2)}`` or None) carry the GIAB
+    Tier1 semantics: a negative must lie WHOLLY inside a confident interval
+    and must not touch ANY called variant of any type or filter status.  With
+    both None the function behaves exactly as before on the 1000G genotyped
+    VCF, so the candidate-filtering task is defined identically on either
+    truth source and the two are directly comparable.
     """
     rng = np.random.default_rng(seed)
     items = []
@@ -189,6 +201,12 @@ def build_items(truth_by_chrom, fa, bam, win_width, n_neg_per_pos, multiscale,
     stats = []
     for chrom, dels in truth_by_chrom.items():
         if not dels:
+            continue
+        conf_c = None if confident is None else confident.get(chrom)
+        excl_c = None if exclude is None else exclude.get(chrom)
+        if confident is not None and (conf_c is None or len(conf_c) == 0):
+            print(f"  chrom {chrom}: no confident intervals, skipped",
+                  flush=True)
             continue
         clen = fa.get_reference_length(chrom)
         cov = chrom_coverage(bam, chrom, clen)
@@ -232,6 +250,23 @@ def build_items(truth_by_chrom, fa, bam, win_width, n_neg_per_pos, multiscale,
             for (ps, pspan) in pos_spans:
                 keepmask &= ~(np.abs(cand - ps) < max(span, pspan))
             cand = cand[keepmask]
+            # GIAB Tier1 semantics, applied to the SAME candidate grid so the
+            # depth-ratio matching still operates on a legitimate pool: a
+            # negative must sit wholly inside a confident interval and must
+            # not touch any called variant of any type or filter status.
+            # Sampling outside the confident regions would label a window the
+            # truth set makes no claim about.
+            if conf_c is not None or excl_c is not None:
+                ok = np.ones(cand.size, dtype=bool)
+                for k, s0 in enumerate(cand):
+                    s0 = int(s0)
+                    if conf_c is not None and not interval_contains(
+                            conf_c, s0, s0 + span):
+                        ok[k] = False
+                    elif excl_c is not None and interval_overlaps(
+                            excl_c, s0, s0 + span):
+                        ok[k] = False
+                cand = cand[ok]
             if cand.size == 0:
                 continue
             cr = ratio_from_profile(cov, cand, span)
@@ -297,6 +332,14 @@ def main():
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--no-multiscale", action="store_true")
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--truth-mode", choices=["genotyped", "giab"],
+                    default="genotyped",
+                    help="genotyped = 1000G phase-3 per-sample GT; "
+                         "giab = GIAB Tier1 PASS-only, requires "
+                         "--confident-bed.")
+    ap.add_argument("--confident-bed", default=None,
+                    help="GIAB Tier1 confident-region BED "
+                         "(required for --truth-mode giab)")
     args = ap.parse_args()
 
     os.makedirs(args.out_dir, exist_ok=True)
@@ -304,13 +347,24 @@ def main():
               if args.split == "all" else CHROM_SPLIT[args.split])
     print(f"[{time.strftime('%H:%M:%S')}] HARD-NEG extraction {args.sample} "
           f"split={args.split} pool_mult={args.pool_mult}", flush=True)
-    truth = load_truth_dels(args.vcf, args.sample, chroms=chroms)
+    confident = exclude = None
+    if args.truth_mode == "giab":
+        if not args.confident_bed:
+            raise SystemExit("--truth-mode giab requires --confident-bed")
+        truth, exclude = load_truth_giab(args.vcf, chroms=chroms)
+        confident = load_bed(args.confident_bed, chroms=chroms)
+        print(f"  confident intervals: "
+              f"{sum(len(v) for v in confident.values())}; exclusion zones: "
+              f"{sum(len(v) for v in exclude.values())}", flush=True)
+    else:
+        truth = load_truth_dels(args.vcf, args.sample, chroms=chroms)
     print(f"  truth DELs: {sum(len(v) for v in truth.values())}", flush=True)
 
     fa = pysam.FastaFile(args.fasta)
     bam = pysam.AlignmentFile(args.bam, "rb", index_filename=args.bai)
     items = build_items(truth, fa, bam, args.win_width, args.n_neg_per_pos,
-                        not args.no_multiscale, args.seed, args.pool_mult)
+                        not args.no_multiscale, args.seed, args.pool_mult,
+                        confident=confident, exclude=exclude)
     rng = np.random.default_rng(args.seed + 1)
     items = [items[i] for i in rng.permutation(len(items))]
     if args.limit > 0:
