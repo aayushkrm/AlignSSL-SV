@@ -33,6 +33,35 @@ TEST_CHROMS = [str(i) for i in range(12, 23)]
 CHROM_SPLIT = {"train": TRAIN_CHROMS, "test": TEST_CHROMS}
 
 
+def merge_intervals(arr):
+    """Sort and union an (N,2) interval array into DISJOINT sorted intervals.
+
+    Both ``interval_contains`` and ``interval_overlaps`` locate candidates by
+    binary search on the start column, which is only exact when no interval
+    is nested inside or overlapping another. GIAB exclusion zones violate that
+    routinely -- a 20 kb Tier1 deletion record contains several smaller INS and
+    non-PASS records -- and the previous implementations silently returned
+    False for a query deep inside such a long early interval, because the
+    binary search landed many rows past it. A missed exclusion means a window
+    the truth set makes no claim about gets labelled a confident negative, so
+    this is a labelling error, not a performance detail.
+
+    Merging at load time makes the union semantics explicit (which is exactly
+    what an exclusion zone means) and restores the binary search's validity.
+    """
+    if arr is None or len(arr) == 0:
+        return np.zeros((0, 2), dtype=np.int64)
+    a = np.asarray(arr, dtype=np.int64)
+    a = a[np.lexsort((a[:, 1], a[:, 0]))]
+    out = [[int(a[0, 0]), int(a[0, 1])]]
+    for s, e in a[1:]:
+        if s <= out[-1][1]:                       # touching or overlapping
+            out[-1][1] = max(out[-1][1], int(e))
+        else:
+            out.append([int(s), int(e)])
+    return np.asarray(out, dtype=np.int64)
+
+
 def load_bed(path, chroms=None):
     """BED -> {chrom: (N,2) int64 array of sorted, merged half-open intervals}.
 
@@ -51,34 +80,37 @@ def load_bed(path, chroms=None):
             if want is not None and c not in want:
                 continue
             raw.setdefault(c, []).append((int(f[1]), int(f[2])))
-    out = {}
-    for c, iv in raw.items():
-        iv.sort()
-        merged = [list(iv[0])]
-        for s, e in iv[1:]:
-            if s <= merged[-1][1]:
-                merged[-1][1] = max(merged[-1][1], e)
-            else:
-                merged.append([s, e])
-        out[c] = np.asarray(merged, dtype=np.int64)
-    return out
+    return {c: merge_intervals(iv) for c, iv in raw.items()}
 
 
 def interval_contains(arr, s, e):
-    """True iff [s, e) lies wholly inside one interval of `arr` ((N,2), sorted)."""
+    """True iff [s, e) lies wholly inside one interval of `arr`.
+
+    `arr` must be (N,2), sorted and DISJOINT -- use ``merge_intervals`` on any
+    array that may contain nested or overlapping rows.
+    """
     if arr is None or len(arr) == 0:
         return False
     i = int(np.searchsorted(arr[:, 0], s, side="right")) - 1
-    return i >= 0 and s >= arr[i, 0] and e <= arr[i, 1]
+    # bool() is deliberate: numpy comparisons yield np.bool_, which fails an
+    # `is True` identity check and silently changes JSON/CSV serialisation.
+    return bool(i >= 0 and s >= arr[i, 0] and e <= arr[i, 1])
 
 
 def interval_overlaps(arr, s, e):
-    """True iff [s, e) intersects any interval of `arr` ((N,2), sorted)."""
+    """True iff [s, e) intersects any interval of `arr`.
+
+    `arr` must be (N,2), sorted and DISJOINT (see ``merge_intervals``). With
+    disjoint intervals at most two rows can intersect the query: the last one
+    starting at or before `s`, and the first one starting after it.
+    """
     if arr is None or len(arr) == 0:
         return False
-    i = int(np.searchsorted(arr[:, 0], e, side="left"))
-    j = max(0, i - 2)
-    return bool(np.any((arr[j:i, 0] < e) & (arr[j:i, 1] > s)))
+    i = int(np.searchsorted(arr[:, 0], s, side="right")) - 1
+    if i >= 0 and arr[i, 1] > s:
+        return True
+    j = i + 1
+    return bool(j < len(arr) and arr[j, 0] < e and arr[j, 1] > s)  # np.bool_ -> bool
 
 
 def load_truth_giab(vcf_path, chroms=None, min_len=50, max_len=1_000_000,
@@ -134,9 +166,13 @@ def load_truth_giab(vcf_path, chroms=None, min_len=50, max_len=1_000_000,
         geno = 2 if all(a == 1 for a in gt if a is not None) else 1
         truth.setdefault(c, []).append((start0, end0, geno))
 
+    # Exclusion zones MUST be merged: Tier1 records nest (a long DEL contains
+    # smaller INS and non-PASS records), and interval_overlaps' binary search
+    # is only exact on disjoint intervals. Unmerged, a window deep inside a
+    # long record read as NOT excluded -- i.e. was labelled a confident
+    # negative at a locus the truth set makes no claim about.
     for c, iv in excl.items():
-        a = np.asarray(sorted(iv), dtype=np.int64)
-        excl[c] = a
+        excl[c] = merge_intervals(iv)
     for c in truth:
         truth[c].sort()
     return truth, excl
