@@ -42,6 +42,28 @@ would actually run -- the filtering step after candidate generation -- which
 is the task DeepSV's own evaluation framed but its uniform negatives did not
 realise.
 
+Which caller file to point at
+-----------------------------
+Manta writes two DEL sets, and the choice decides whether the benchmark is
+measurable at all. Measured on HG002 hs37d5 (job 1570466, image digest
+sha256:48d0c246..., 29 min, 16 threads):
+
+  diploidSV.vcf.gz, PASS only   3408 candidates in range -> 2063 TP / 55 FP
+  candidateSV.vcf.gz            10414 candidates in range
+
+The PASS set is 97.4% true, so ``--min-pos-frac`` correctly refuses it: a
+callset with 55 false positives cannot measure a filtering model, and reporting
+an AUPRC on it would be reporting noise. That is not a defect in Manta -- it is
+what a well-tuned FILTER column is for.
+
+The benchmark therefore uses ``candidateSV.vcf.gz``, the pool BEFORE Manta
+scores and filters. That is the correct pool on the merits, not just for class
+balance: candidate generation is deliberately high-recall and low-precision,
+and the filtering step is the learned part a user would actually want to
+replace. Evaluating on the post-filter set would ask the model to improve on a
+decision the caller has already made well. Candidate records carry FILTER "."
+(no filter applied), which ``pass_only`` accepts.
+
 Ambiguity handling
 ------------------
 A caller call that overlaps a NON-PASS Tier1 record (``NoConsensusGT``,

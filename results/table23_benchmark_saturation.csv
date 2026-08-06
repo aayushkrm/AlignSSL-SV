@@ -1,0 +1,4 @@
+negative_sampler,truth_source,sample_and_coverage,region_scope,n_test,n_pos,best_single_feature,best_single_feature_auc,classical_gbt_auprc_100pct,gbt_sd,n_seeds
+uniform negatives,1000G genotyped,6 samples (~30x),whole genome,9196,2299,depth_centre_flank_ratio,0.9554,0.9749,0.0013,10
+candidate-filtered (quantile-matched depth),1000G genotyped,NA20845 (~30x),whole genome,1516,379,depth_centre_flank_ratio,0.7168,0.8688,0.0059,10
+candidate-filtered (quantile-matched depth),GIAB Tier1 v0.6,HG002 (60x),Tier1 confident,6916,1729,clip_rate,0.8002,0.9145,0.0021,5

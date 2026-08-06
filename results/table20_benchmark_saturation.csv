@@ -1,3 +1,0 @@
-benchmark,n_test,best_single_feature,best_single_feature_auc,classical_gbt_auprc_100pct_labels,n_seeds,verdict
-"uniform negatives (1000G, 6 samples)",1516,depth_centre_flank_ratio,0.7168,0.8700 +/- 0.0070,5,saturated: 12 scalars reach 0.87
-"depth-matched negatives, GIAB Tier1 truth (HG002)",6916,clip_rate,0.8002,0.9139 +/- 0.0021,5,MORE saturated: matching one statistic relocated the shortcut
