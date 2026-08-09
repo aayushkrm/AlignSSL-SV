@@ -1,0 +1,5 @@
+family,test,benchmark,metric,label_frac,mean_a,sd_a,n_a,mean_b,sd_b,n_b,p_raw,p_holm,family_size,nominal_0.05,survives_holm_0.05
+caller-candidate pretrained-vs-scratch (roc_auc),"pretrained vs scratch @0.01 (caller-candidate), ROC-AUC",caller-candidate,roc_auc,0.01,0.7776,0.0449,3,0.5451,0.0413,3,0.0028,0.0112,4,True,True
+caller-candidate pretrained-vs-scratch (roc_auc),"pretrained vs scratch @0.05 (caller-candidate), ROC-AUC",caller-candidate,roc_auc,0.05,0.8518,0.0203,3,0.6133,0.2579,3,0.2498,0.4996,4,False,False
+caller-candidate pretrained-vs-scratch (roc_auc),"pretrained vs scratch @0.1 (caller-candidate), ROC-AUC",caller-candidate,roc_auc,0.1,0.891,0.0381,3,0.8243,0.0407,3,0.1074,0.3222,4,False,False
+caller-candidate pretrained-vs-scratch (roc_auc),"pretrained vs scratch @0.25 (caller-candidate), ROC-AUC",caller-candidate,roc_auc,0.25,0.9185,0.0164,3,0.9329,0.0086,3,0.2684,0.4996,4,False,False

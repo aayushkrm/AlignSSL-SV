@@ -23,9 +23,9 @@ Correspondence: aayush.kumarm.3myself@gmail.com · Code: https://github.com/aayu
 3. **The label budgets were not equal.** A batch-size floor in the deep evaluators granted the deep arms 96 labels where the classical control received 35 on the candidate-filtered benchmark — a 2.8× advantage in exactly the cell carrying the headline claim.
 4. **No significance claim carried a multiplicity adjustment.** Every *p*-value in this literature, ours included, is drawn from a sweep of six or more simultaneous tests and reported as if it were one. Under Holm–Bonferroni within pre-declared families (67 tests, 11 families), 25 nominal hits fall to 17. The headline low-label effect is among the survivors (Holm *p* = 0.0012), so multiplicity is not what dismantles it — the scoring rule is; the cross-ancestry effect we had already declined to claim is settled as chance (Holm *p* = 0.169).
 
-We then repair the benchmark itself: quantile-matched candidate negatives attenuate the depth shortcut from ROC-AUC 0.955 to 0.717, and the same twelve-feature control that was saturated on the uniform benchmark now starts at chance (AUPRC 0.250) and climbs +0.619 across the label range, confirming that headroom is restored.
+We then repair the benchmark itself, twice. Quantile-matched candidate negatives attenuate the depth shortcut from ROC-AUC 0.955 to 0.717, and the same twelve-feature control that was saturated on the uniform benchmark now starts at chance (AUPRC 0.250) and climbs +0.619 across the label range, confirming that headroom is restored. A third benchmark removes our hand from the negative set entirely — positives and negatives are both DEL candidates emitted by Manta on GIAB HG002, labelled against the Tier1 v0.6 truth set — and delivers the more surprising result: the depth shortcut is *barely attenuated* there (ROC-AUC 0.942), because a caller's own candidate generation is depth-driven. Realism of the negative set and absence of a shortcut are independent properties, and a candidate-filtering benchmark needs the single-feature control reported on it regardless of how its negatives were obtained.
 
-Re-run under all three corrections, what survives is narrow but not empty. Self-supervised pretraining confers no threshold-free advantage at any label budget on either benchmark. The *representation* does: tested directly against the DeepSV RGB pileup across 72 paired comparisons (Section 4.10), the learned alignment tensor separates after Holm correction in 24, with 22 of those 24 belonging to the *from-scratch* arm — so the advantage is attributable to the multi-channel encoding rather than to self-supervision on it. In 42 of the 48 non-separating cells the observed difference is below the minimum effect this four-seed design could detect at 80% power, so much of that grid is uninformative rather than negative. The hand-crafted control is never beaten by any deep arm at any budget on either benchmark, and its lead is statistically significant across most of the label range — decisively so where labels are scarce, the regime the deep method is proposed for.
+Re-run under all three corrections, what survives is narrow but not empty. Self-supervised pretraining confers no threshold-free advantage at any label budget on either constructed-negative benchmark; the sole exception is on the caller-candidate benchmark at 33 labels, where it leads from-scratch training at ROC-AUC 0.778 versus 0.545 and survives correction within its family (Holm *p* = 0.011) — one cell, not persisting past 10% labels, and with both arms behind the hand-crafted control at that budget. The *representation* does: tested directly against the DeepSV RGB pileup across 72 paired comparisons (Section 4.10), the learned alignment tensor separates after Holm correction in 24, with 22 of those 24 belonging to the *from-scratch* arm — so the advantage is attributable to the multi-channel encoding rather than to self-supervision on it. In 42 of the 48 non-separating cells the observed difference is below the minimum effect this four-seed design could detect at 80% power, so much of that grid is uninformative rather than negative. The hand-crafted control is never beaten by any deep arm at any budget on any of the three benchmarks, and its lead is statistically significant across most of the label range — decisively so where labels are scarce, the regime the deep method is proposed for.
 
 **Conclusion.** We report this as a methodological result rather than a method paper. Each defect is individually mundane and each is, by a coded audit of 14 papers from this literature (Section 7), the field's default: benchmarks built from randomly-sampled negatives, F1 reported at a fixed cut, and label budgets computed per-arm are all standard practice in this literature. Together they were sufficient to produce a confident, statistically significant, entirely artefactual headline. We publish the corrections, the controls, and the code that implements them so that the next paper in this lineage can be checked against them.
 
@@ -500,7 +500,106 @@ Second, **the representation result**: a continuous multi-channel alignment tens
 
 Third, **the negative result about hand-crafted controls**, in its corrected and narrower form: on a benchmark where no single feature exceeds ROC-AUC 0.72, twelve scalar features still lead every deep arm in the label-scarce regime and tie it elsewhere. A field that reports deep SV callers without this control cannot distinguish a learned representation from a threshold.
 
-Candidate filtering by quantile matching is a necessary but not sufficient benchmark repair; a fully shortcut-free protocol will likely require matching on a vector of alignment statistics rather than on the single strongest one. Two extensions remain deferred: a coverage-robustness experiment (downsampling via `samtools view -s`) and a Truvari-based comparison against GIAB HG002 curated calls, which provides an orthogonal truth set free of the consensus-caller circularity of the 1000 Genomes call set. Both become worthwhile now that a non-degenerate benchmark exists; neither would have been informative on the uniform one.
+Candidate filtering by quantile matching is a necessary but not sufficient benchmark repair; a fully shortcut-free protocol will likely require matching on a vector of alignment statistics rather than on the single strongest one. Section 6.5 tests the natural alternative — stop constructing negatives at all — on an orthogonal truth set. One extension remains deferred: a coverage-robustness experiment (downsampling via `samtools view -s`), which becomes worthwhile now that a non-degenerate benchmark exists and would not have been informative on the uniform one.
+
+### 6.5 Removing our hand from the negative set: a production caller's candidate list
+
+Every negative used so far is one we drew. Section 6.2 showed why that is a
+structural weakness rather than a tuning problem: quantile matching on the
+strongest statistic *relocates* the shortcut onto the statistics it does not
+match, and enumerating the statistics to match is exactly the problem the
+learned representation was supposed to solve. The only construction that
+escapes the regress is one in which we choose neither class.
+
+We therefore built a third benchmark in which both classes come from a
+production caller's own output. Manta was run on GIAB HG002 (hs37d5,
+`candidateSV.vcf.gz` — the pool *before* Manta scores and filters), and each
+DEL candidate was labelled by reciprocal overlap against the GIAB Tier1 v0.6
+PASS deletions, restricted to the Tier1 confident regions. A candidate that
+reciprocally overlaps a Tier1 PASS record is a positive; a candidate inside
+the confident regions with no truth support is a negative — a false positive
+the deployed pipeline actually makes. Candidates overlapping non-PASS Tier1
+records, or falling outside the confident regions, are discarded rather than
+scored as negatives: GIAB asserts nothing at those loci, and scoring them
+would manufacture labels. This yields 3,346 training and 1,490 test
+candidates. Two properties follow that matter for interpretation.
+
+*The truth set is orthogonal.* GIAB Tier1 is assembly- and long-read-derived,
+so it does not share the consensus-short-read-caller circularity of the 1000
+Genomes call set used in Sections 4 and 6.1–6.4. A result that reproduces
+across both truth sets is not an artefact of either.
+
+*AUPRC is inadmissible here.* The positive rate is 0.805, because Manta's
+pre-filter candidate pool on a well-covered genome is mostly right. AUPRC has
+a floor at the positive rate, so a constant predictor scores 0.805 on this
+benchmark and looks strong. We therefore rank on ROC-AUC, which is invariant
+to class balance and scores a constant predictor at 0.5, and we do not report
+AUPRC comparisons on this benchmark at all. This is a property of the
+benchmark, not a change of preferred metric: on the two earlier benchmarks
+(positive rates 0.05 and 0.25) AUPRC remains the more informative summary and
+is what Sections 4 and 6.3 report.
+
+**The shortcut is not removed — it is barely touched.** The centre-versus-flank
+depth ratio, untrained, reaches orientation-corrected ROC-AUC **0.942** on this
+benchmark, against 0.955 on the uniform benchmark and 0.717 under quantile
+matching. Two further depth statistics clear 0.79 (depth standard deviation
+0.794, maximum depth drop 0.792). The negatives a real caller emits are
+therefore *not* depth-matched to its true calls, and the reason is mechanical:
+Manta's candidate generation is itself driven by depth and paired-end
+signatures, so the candidates it wrongly emits are the loci where those
+signals are weak, and the ones it rightly emits are where they are strong. The
+caller's own selection re-imposes the very axis the benchmark was meant to
+neutralise.
+
+This is the single most useful thing this benchmark tells us, and it cuts
+against the obvious reading of Section 6.2. One might conclude there that
+synthetic negatives are the problem and real caller candidates are the fix.
+They are not. **Realism of the negative set and absence of a shortcut are
+independent properties.** A benchmark can be perfectly realistic — these are
+the exact windows a deployed pipeline gets wrong — and still be solvable by
+one untrained scalar. Anyone proposing a candidate-filtering model should
+report the single-feature control on their own candidate set before claiming
+the task is hard.
+
+**Table 24. Best control arm versus best deep arm on the caller-candidate
+benchmark (ROC-AUC; three seeds per deep arm and five per control arm — the
+control is CPU-only and cheap to replicate, the deep arms are not; both families
+reduced by best-of-family so neither side gains a best-of-K advantage the other
+lacks; Welch's *t* over seeds, which does not assume equal group sizes).**
+
+| Labels | Control arm | Control ROC-AUC | Best deep arm | Deep ROC-AUC | Deep − control | *p* | Leader |
+|---|---|---|---|---|---|---|---|
+| 33 (1%) | Classical-logreg | 0.922 ± 0.030 | AlignSSL-pretrained | 0.778 ± 0.045 | -0.144 | 0.0148 | **control** |
+| 167 (5%) | Classical-GBT | 0.957 ± 0.013 | AlignSSL-pretrained | 0.852 ± 0.020 | -0.105 | 0.0041 | **control** |
+| 335 (10%) | Classical-GBT | 0.969 ± 0.003 | AlignSSL-pretrained | 0.891 ± 0.038 | -0.078 | 0.0705 | tie |
+| 836 (25%) | Classical-GBT | 0.980 ± 0.002 | AlignSSL-scratch | 0.933 ± 0.009 | -0.047 | 0.0093 | **control** |
+
+The negative result reproduces a third time, on an orthogonal truth set and a
+negative set we did not construct: **the hand-crafted control is never beaten,
+and leads significantly at three of the four budgets measured.** It is worth
+stating how large the margin is at the smallest budget — 0.922 against 0.778,
+with the control's *thirty-three* labelled examples. The control at 33 labels
+does not even beat the untrained single feature (0.942), which is the cleanest
+possible statement of what this benchmark measures: nothing trained on it so
+far has improved on one scalar computed with no labels at all.
+
+**The one place pretraining survives every correction.** Against that, the
+pretrained-versus-scratch contrast at 33 labels is 0.778 ± 0.045 versus
+0.545 ± 0.041 (Welch's *t*, *p* = 0.003). This is the only cell in the paper
+where the pretraining advantage is significant under a metric that is
+simultaneously threshold-free and base-rate-free, on a benchmark whose
+negatives we did not choose. We flag it as the strongest surviving evidence
+for the paper's original hypothesis, with three qualifications that keep it
+from reversing the withdrawal. It is one cell of a four-budget family, so we
+correct it against that family rather than reporting it alone — and unlike the
+uniform-benchmark contrast of Section 4.9, it survives: Holm-adjusted
+*p* = 0.011, the only budget in the family to do so. It does not persist: by 25% labels the from-scratch arm
+is marginally ahead (0.933 versus 0.918, *p* = 0.268). And it is a contrast
+between two deep arms both of which lose to twelve scalar features at the same
+budget — pretraining helps a deep model reach a level the control reached
+without it. The honest summary is that self-supervision buys label efficiency
+*relative to random initialisation* on a realistic candidate set, and that this
+is not the same as buying deployable performance.
 
 ---
 
@@ -683,14 +782,16 @@ We set out to test whether learning the alignment representation and pretraining
 
 It fails four controls, none of which is exotic:
 
-1. **Benchmark separability.** Twelve scalar alignment features on the identical windows reach AUPRC 0.937 from 210 labels and gain only +0.038 from a hundred-fold increase in supervision, and a single centre-versus-flank depth ratio separates the classes at ROC-AUC 0.955 with no training at all. The cause is the uniformly-sampled negatives standard in this benchmark family. A task that is 96% solved by twelve features after 210 examples cannot discriminate between representations.
+1. **Benchmark separability.** Twelve scalar alignment features on the identical windows reach AUPRC 0.937 from 210 labels and gain only +0.038 from a hundred-fold increase in supervision, and a single centre-versus-flank depth ratio separates the classes at ROC-AUC 0.955 with no training at all. The cause is the uniformly-sampled negatives standard in this benchmark family. A task that is 96% solved by twelve features after 210 examples cannot discriminate between representations. Nor is this confined to synthetic negatives: on a real caller's candidate list the same depth ratio still reaches ROC-AUC 0.942 untrained (Section 6.5), so realism of the negative set and absence of a shortcut are independent properties.
 2. **Unequal label budgets.** A batch-size floor in our own deep evaluators granted the deep arms up to 2.8× the labels the classical control received, concentrated in precisely the low-label cells that carry the headline claim.
 3. **The decision threshold.** Scoring F1 at a fixed 0.5 probability cut — the convention inherited from DeepSV — conflates ranking quality with calibration. Re-run under equal budgets and re-scored at a validation-selected threshold or threshold-free, the ten-fold gap becomes 1.06× (*p* = 0.527) and 1.02× (*p* = 0.853) respectively; at every larger budget the from-scratch arm is ahead. The from-scratch model was never degenerate. It ranked competently and scored timidly, and a fixed cut reads timidity as failure.
 4. **Multiplicity.** The fixed-cut result was the strongest cell of a six-budget sweep, reported as though it were a single test. Corrected for the family it was selected from it does survive (Holm *p* = 0.0012) — multiplicity is not what dismantles it, and we report that against our own expectation. Across the whole paper, 25 nominally significant tests in 11 pre-declared families reduce to 17 under Holm–Bonferroni, and the cross-ancestry effect reduces to chance.
 
 Each defect is individually mundane, each is the default in this literature — no paper in the audited population reports all four safeguards and 9 of 14 omit at least three (Section 7) — and each is invisible without the control that exposes it. Three concern how the numbers were measured; the fourth concerns how they were tested. Jointly they were sufficient to manufacture a large, statistically significant, entirely artefactual headline result — one we believed, wrote up, and would have submitted.
 
-What survives is narrower and, we think, more useful. Where labels are scarce — the regime self-supervised pretraining is proposed for — no deep arm we trained beats twelve hand-crafted features on either benchmark. Repairing the benchmark helps but does not rescue the claim: quantile-matched candidate negatives attenuate the shortcut from ROC-AUC 0.955 to 0.717 and restore headroom (the same control now starts at chance and climbs +0.619 across the label range), yet the control still leads where it matters. And the corrections cut in both directions: at full supervision on the uniform benchmark the from-scratch network narrowly *beats* the control (AUPRC 0.979 vs 0.975, *p* = 0.003), a reversal of an earlier claim of ours that the control dominated everywhere.
+What survives is narrower and, we think, more useful. Where labels are scarce — the regime self-supervised pretraining is proposed for — no deep arm we trained beats twelve hand-crafted features on any of the three benchmarks. Repairing the benchmark helps but does not rescue the claim: quantile-matched candidate negatives attenuate the shortcut from ROC-AUC 0.955 to 0.717 and restore headroom (the same control now starts at chance and climbs +0.619 across the label range), yet the control still leads where it matters. Nor does abandoning synthetic negatives altogether: on a third benchmark whose positives and negatives are both real Manta candidates labelled against GIAB Tier1 — a negative set we did not construct, and an orthogonal truth set — the control leads at three of four budgets and is never beaten (Section 6.5).
+
+One finding runs the other way, and we report it as such. On that third benchmark the pretrained arm beats the from-scratch arm at 33 labels by ROC-AUC 0.778 versus 0.545 (*p* = 0.0028; Holm *p* = 0.0112 within its four-budget family) — the only cell in the paper where the pretraining advantage is significant under a metric that is simultaneously threshold-free and base-rate-free, on negatives we did not choose. It does not persist past 10% labels, and both arms lose to the hand-crafted control at the same budget, so it does not reinstate the headline. It is, however, the strongest surviving evidence that self-supervision buys label efficiency *relative to random initialisation*, and the natural target for a follow-up powered to test it. And the corrections cut in both directions: at full supervision on the uniform benchmark the from-scratch network narrowly *beats* the control (AUPRC 0.979 vs 0.975, *p* = 0.003), a reversal of an earlier claim of ours that the control dominated everywhere.
 
 We therefore do not offer a new SV caller, and we make no performance claim. We offer four controls, the code that implements them, and a worked demonstration of what their absence costs. Before the next architecture is proposed for short-read deletion calling, we would ask of it the four questions this paper failed: what does a hand-crafted-feature model score on the same windows, do all arms receive the same labels, does the result survive a change of decision threshold, and does its significance survive correction for the sweep it was selected from.
 

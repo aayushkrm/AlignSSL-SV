@@ -184,6 +184,10 @@ def check_pvalues(md: str, results: Path) -> list[str]:
                        ("table15_hardneg_arm_contrasts.csv", ("p",)),
                        ("stats_multiplicity.csv",
                         ("p_raw", "p_holm", "q_bh")),
+                       # Section 6.5: the caller-candidate benchmark's
+                       # pretrained-vs-scratch family, Holm-corrected within
+                       # its own four budgets.
+                       ("stats_caller_candidate.csv", ("p_raw", "p_holm")),
                        ("table20_alignssl_vs_deepsv.csv", ("p", "p_holm"))):
         f = results / name
         if not f.exists():
