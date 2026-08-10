@@ -10,6 +10,16 @@ by `analysis/aggregate_all.py`; every comparative claim was subjected to the
 hypothesis test it implies; and one control experiment was run to test the
 benchmark itself.
 
+> **STATUS: DATED RECORD, NOT A CURRENT RESULTS DOCUMENT.** This is the review
+> as written on 2026-07-25. Several numbers in it were superseded by the
+> equal-budget protocol correction (`alignssl/protocol.py`) and by the
+> regenerated multiplicity audit that the review itself demanded. Superseded
+> figures are **not** rewritten here — a review whose findings are edited after
+> the fact is no longer evidence that the findings were made. They are marked
+> inline with dated correction notes. For current numbers use
+> `docs/AlignSSL_SV_manuscript.md` and `results/`, which are machine-checked
+> against source by `analysis/check_manuscript.py`; this document is not.
+
 ---
 
 ## Recommendation
@@ -83,6 +93,11 @@ documented in this section. The second, found later and recorded in §8 below,
 is that the measurement itself is threshold-dependent: under threshold-free
 scoring the gap disappears entirely (AUPRC ratio 1.23, *p* = 0.35), so the
 claim is **withdrawn** rather than merely reinterpreted.
+<!-- correction 2026-08-10 --> **Superseded figure.** Under the equal-budget
+protocol the same cell reads AUPRC ratio 1.02, *p* = 0.853
+(`results/table13_threshold_sensitivity.csv`, row `uniform,0.01`). The
+conclusion is unchanged and in fact strengthened: the threshold-free gap is
+nearer parity than this review estimated.
 It does not show that pretraining buys label efficiency for deletion calling. It
 shows that a randomly-initialised CNN needs more than 210 labels to learn a
 depth-ratio threshold, and pretraining supplies that inductive bias sooner. A
@@ -389,6 +404,19 @@ the pre-correction families under explicit labels, because Sections 4.5 and
 
 Regenerated: 67 tests in 11 families, 20 nominally significant, 16 surviving
 BH, 10 surviving Holm. Three consequences:
+
+<!-- correction 2026-08-10 --> **Superseded tallies and verdict.** Re-running
+`analysis/apply_multiplicity.py` against the corrected sources gives 67 tests
+in 11 families, **25** nominally significant, **21** surviving BH, **17**
+surviving Holm. The first bullet below inverts under those sources: the
+fixed-cut headline test is raw *p* = 0.0002, Holm *p* = 0.0012 — it
+**survives** correction. Multiplicity is therefore not a second ground for
+withdrawing the claim; the scoring rule (§8.1) is the only ground, and it is
+sufficient. This correction moves against the review's own argument, which is
+why it is recorded rather than quietly folded in. The third bullet is also
+narrowed: exactly one pretrained-versus-scratch contrast survives Holm — AUPRC
+at 25% labels on the repaired benchmark — and it favours the *from-scratch*
+arm.
 
 - The headline claim fails a second time. Its *p* = 0.009 becomes Holm
   *p* = 0.055 against the five other budgets it was selected from.

@@ -877,6 +877,52 @@ def check_threshold_triple(md: str, readme: Path, progress: Path,
     return errs
 
 
+
+def check_dated_record_banners(root: Path) -> list[str]:
+    """Dated records must say so, and must not be silently gated.
+
+    docs/REVIEWER_REPORT.md is a fifth rendering of results numbers, and an
+    audit found it carrying superseded figures including the inverted
+    multiplicity verdict (Holm 0.055 for a test that survives at 0.0012).
+
+    Rewriting it was rejected: a review whose findings are edited after the
+    fact is no longer evidence that the findings were made. Gating its numbers
+    was also rejected, for the same reason it would be wrong to gate a
+    chronological log -- honest superseded entries would become build failures.
+
+    What is gated instead is the *disclaimer*: the document must carry a status
+    banner marking it as a dated record and pointing at the machine-checked
+    sources, and every superseded figure must carry a dated correction note.
+    A reader who trusts an ungated document needs to be told it is ungated.
+    """
+    path = root / "docs" / "REVIEWER_REPORT.md"
+    if not path.exists():
+        return ["reviewer report: docs/REVIEWER_REPORT.md not found"]
+    text = path.read_text(encoding="utf-8")
+    errs: list[str] = []
+    if "STATUS: DATED RECORD" not in text:
+        errs.append("reviewer report: missing 'STATUS: DATED RECORD' banner; an "
+                    "ungated results-bearing document must declare itself one")
+    if "check_manuscript.py" not in text:
+        errs.append("reviewer report: banner must point readers at the "
+                    "machine-checked sources")
+    # every site quoting a superseded value needs a dated correction note
+    SUPERSEDED = {"0.055": "inverted multiplicity verdict",
+                  "1.23": "pre-correction AUPRC ratio",
+                  "20 nominally significant": "pre-correction tally"}
+    for needle, what in SUPERSEDED.items():
+        if needle not in text:
+            continue
+        idx = text.index(needle)
+        # a correction note must appear within the surrounding section
+        window = text[max(0, idx - 3000):idx + 3000]
+        if "correction 2026" not in window:
+            errs.append(f"reviewer report: quotes superseded value "
+                        f"'{needle}' ({what}) with no dated correction note "
+                        f"nearby")
+    return errs
+
+
 def check_progress_headline(progress: Path, results: Path) -> list[str]:
     """PROGRESS.md Part I declares itself authoritative, so gate its numbers.
 
@@ -1281,6 +1327,7 @@ def main() -> int:
     errs += check_caller_candidate_table(md, Path(a.readme), res)
     errs += check_readme_tables(Path(a.readme), res)
     errs += check_progress_headline(Path(a.progress), res)
+    errs += check_dated_record_banners(Path(a.readme).parent)
     errs += check_threshold_triple(md, Path(a.readme), Path(a.progress),
                                    Path(a.project), res)
 

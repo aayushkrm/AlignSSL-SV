@@ -152,3 +152,45 @@ def test_standard_deviation_0055_is_not_a_false_positive():
         "if it is gone this test no longer guards anything"
     )
     assert run_checker().stdout.startswith("PASS")
+
+
+def test_dated_record_banner_gate_fires_when_banner_removed(patch_doc, tmp_path):
+    """docs/REVIEWER_REPORT.md is a dated record and is deliberately ungated.
+
+    Its numbers are not checked against source, because rewriting a review's
+    findings after the fact would destroy the evidence that they were made.
+    What IS checked is that the document declares itself a dated record and
+    points at the machine-checked sources -- a reader who trusts an ungated
+    results document needs to be told it is one.
+    """
+    path = ROOT / "docs" / "REVIEWER_REPORT.md"
+    backup = tmp_path / "rr.bak"
+    shutil.copy(path, backup)
+    try:
+        text = path.read_text(encoding="utf-8")
+        needle = "> **STATUS: DATED RECORD, NOT A CURRENT RESULTS DOCUMENT.**"
+        assert text.count(needle) == 1
+        path.write_text(text.replace(needle, "> **Review notes.**"),
+                        encoding="utf-8")
+        r = run_checker()
+        assert r.stdout.startswith("FAIL"), r.stdout
+        assert "missing 'STATUS: DATED RECORD' banner" in r.stdout, r.stdout
+    finally:
+        shutil.copy(backup, path)
+
+
+def test_superseded_value_needs_a_dated_correction_note(tmp_path):
+    """A superseded figure may stay, but only if marked as superseded."""
+    path = ROOT / "docs" / "REVIEWER_REPORT.md"
+    backup = tmp_path / "rr2.bak"
+    shutil.copy(path, backup)
+    try:
+        text = path.read_text(encoding="utf-8")
+        needle = "<!-- correction 2026-08-10 --> **Superseded tallies and verdict.**"
+        assert text.count(needle) == 1
+        path.write_text(text.replace(needle, "**Note.**"), encoding="utf-8")
+        r = run_checker()
+        assert r.stdout.startswith("FAIL"), r.stdout
+        assert "no dated correction note" in r.stdout, r.stdout
+    finally:
+        shutil.copy(backup, path)
