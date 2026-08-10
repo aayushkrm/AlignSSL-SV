@@ -1,0 +1,13 @@
+feature,n_test,n_pos,auc,auc_oriented,deletion_side
+depth_centre_flank_ratio,1490,1200,0.0582,0.9418,low
+depth_sd,1490,1200,0.7943,0.7943,high
+depth_max_drop,1490,1200,0.7924,0.7924,high
+depth_min,1490,1200,0.3158,0.6842,low
+isize_absz_mean,1490,1200,0.6831,0.6831,high
+clip_rate,1490,1200,0.678,0.678,high
+isize_absz_max,1490,1200,0.6551,0.6551,high
+mapq_mean,1490,1200,0.4368,0.5632,low
+depth_mean,1490,1200,0.4696,0.5304,low
+discordant_rate,1490,1200,0.5178,0.5178,high
+valid_frac,1490,1200,0.5054,0.5054,high
+n_read_rows,1490,1200,0.4993,0.5007,low

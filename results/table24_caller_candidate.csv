@@ -3,3 +3,4 @@ label_frac,n_labelled,control_arm,control_roc_auc,control_sd,control_n_seeds,dee
 0.05,167,Classical-GBT,0.9565,0.0127,5,AlignSSL-pretrained,0.8518,0.0203,3,-0.1047,0.0041,control
 0.1,335,Classical-GBT,0.9692,0.0028,5,AlignSSL-pretrained,0.891,0.0381,3,-0.0782,0.0705,tie
 0.25,836,Classical-GBT,0.9796,0.0021,5,AlignSSL-scratch,0.9329,0.0086,3,-0.0467,0.0093,control
+0.5,1673,Classical-GBT,0.9822,0.0019,5,AlignSSL-scratch,0.9529,0.0099,3,-0.0293,0.0337,control

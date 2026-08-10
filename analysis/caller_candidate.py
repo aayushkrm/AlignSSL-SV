@@ -22,9 +22,20 @@ Two consequences for scoring, both of which change which metric is admissible:
   * ROC-AUC is invariant to the positive rate and is the metric we report.
     A constant predictor scores 0.5 regardless of class balance.
 
-Emits results/table24_caller_candidate.csv: per label budget, the best
-control arm and the best deep arm on ROC-AUC, the signed difference, and a
-Welch test over seeds.
+Emits two files:
+
+  * results/table24_caller_candidate.csv -- per label budget, the best control
+    arm and the best deep arm on ROC-AUC, the signed difference, and a Welch
+    test over seeds.
+  * results/stats_caller_candidate.csv -- the pretrained-vs-scratch contrast
+    at every budget, Holm-corrected *within this benchmark's budget family*.
+    This file backs the one cell in the paper where self-supervised
+    pretraining shows a threshold-free, base-rate-free advantage, so the
+    family size must be derived from the budgets actually present rather than
+    fixed in prose: adding a budget moves the adjusted p-value of every
+    member, including that cell. It was previously written by hand, which
+    made the claim unreproducible from the repository -- the reason it is
+    computed here now.
 
 Usage:
     python analysis/caller_candidate.py --json-dir ../handoff/cand
@@ -87,6 +98,8 @@ def main():
     ap.add_argument("--deep-glob", default="handoff/cand/cand_pre_*.json")
     ap.add_argument("--control-glob", default="handoff/cand/cls_cand_seed*.json")
     ap.add_argument("--out", default="results/table24_caller_candidate.csv")
+    ap.add_argument("--stats-out",
+                    default="results/stats_caller_candidate.csv")
     args = ap.parse_args()
 
     deep_files = sorted(glob.glob(args.deep_glob))
@@ -141,11 +154,72 @@ def main():
         w = csv.DictWriter(fh, fieldnames=list(out_rows[0]))
         w.writeheader()
         w.writerows(out_rows)
+    write_stats(deep_files, fracs, args.stats_out)
     print(f"wrote {args.out} ({len(out_rows)} budgets)")
     for r in out_rows:
         print(f"  frac={r['label_frac']:<5} n={r['n_labelled']:<5} "
               f"control={r['control_roc_auc']:.3f} deep={r['deep_roc_auc']:.3f} "
               f"p={r['p']} {r['verdict']}")
+
+
+def write_stats(deep_files, fracs, path):
+    """Pretrained-vs-scratch at each budget, Holm-corrected within the family.
+
+    The family is the set of budgets at which BOTH arms have >1 seed -- a
+    budget with one arm missing is not a test and must not inflate the
+    denominator. Holm is applied to the sorted raw p-values in the standard
+    step-down form; `family_size` is written into every row so a reader can
+    check the correction without rerunning it.
+    """
+    tests = []
+    for frac in fracs:
+        pre = _seed_values(deep_files, frac, "pretrained")
+        scr = _seed_values(deep_files, frac, "scratch")
+        if pre.size < 2 or scr.size < 2:
+            continue
+        p = float(stats.ttest_ind(pre, scr, equal_var=False).pvalue)
+        tests.append((frac, pre, scr, p))
+    if not tests:
+        return
+    m = len(tests)
+    order = sorted(range(m), key=lambda i: tests[i][3])
+    holm, running = [0.0] * m, 0.0
+    for rank, i in enumerate(order):
+        running = max(running, (m - rank) * tests[i][3])
+        holm[i] = min(1.0, running)
+
+    fam = f"caller-candidate pretrained-vs-scratch ({METRIC})"
+    rows = []
+    for i, (frac, pre, scr, p) in enumerate(tests):
+        rows.append({
+            "family": fam,
+            "test": (f"pretrained vs scratch @{frac} (caller-candidate), "
+                     f"{'ROC-AUC' if METRIC == 'roc_auc' else METRIC}"),
+            "benchmark": "caller-candidate",
+            "metric": METRIC,
+            "label_frac": frac,
+            "mean_a": round(float(pre.mean()), 4),
+            "sd_a": round(float(pre.std(ddof=1)), 4),
+            "n_a": int(pre.size),
+            "mean_b": round(float(scr.mean()), 4),
+            "sd_b": round(float(scr.std(ddof=1)), 4),
+            "n_b": int(scr.size),
+            "p_raw": round(p, 4),
+            "p_holm": round(holm[i], 4),
+            "family_size": m,
+            "nominal_0.05": p < 0.05,
+            "survives_holm_0.05": holm[i] < 0.05,
+        })
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(rows[0]))
+        w.writeheader()
+        w.writerows(rows)
+    print(f"wrote {path} (family size {m})")
+    for r in rows:
+        print(f"  @{r['label_frac']:<5} pre={r['mean_a']:.3f} "
+              f"scr={r['mean_b']:.3f} p={r['p_raw']} holm={r['p_holm']} "
+              f"{'SURVIVES' if r['survives_holm_0.05'] else '-'}")
 
 
 if __name__ == "__main__":

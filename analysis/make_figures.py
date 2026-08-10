@@ -18,6 +18,8 @@ Emits, overwriting in place:
     figure7_control_threshold_free.png  Control AUPRC vs labels, both benchmarks
     figure6_threshold_sensitivity.png   Pretrained/scratch ratio by scoring rule
     figure8_hardneg_benchmark.png       Candidate-filtered arm set + shortcut attenuation
+    figure9_field_audit.png             Evaluation practices across the field
+    figure10_shortcut_across_benchmarks.png  Untrained separability, all 3 benchmarks
 """
 from __future__ import annotations
 
@@ -576,6 +578,100 @@ def figure9(res: Path, out: Path) -> None:
     plt.close(fig)
 
 
+def figure10(res: Path, out: Path) -> None:
+    """Untrained single-feature separability across all three benchmarks.
+
+    Figure 8's right panel pairs two benchmarks and shows the depth shortcut
+    attenuating under quantile matching. That invites the reading that the
+    shortcut is an artefact of *synthetic* negatives and that a real caller's
+    candidate list would not have one. It would. Adding the third benchmark
+    to the same axes is the only honest way to show it: the depth ratio is
+    0.955 on uniform negatives, 0.717 under quantile matching, and 0.942 on
+    negatives we did not construct at all.
+
+    Features are ordered by their uniform-benchmark value so the eye reads
+    down a monotone baseline; the connector segments span each feature's
+    range across benchmarks, which is what makes the depth row's reversal
+    visible without a second panel.
+    """
+    paths = {
+        "Uniform": res / "table6_single_feature_auc.csv",
+        "Candidate-filtered": res / "table9_hardneg_single_feature_auc.csv",
+        "Caller-candidate":
+            res / "table25_caller_candidate_single_feature_auc.csv",
+    }
+    if not all(p.exists() for p in paths.values()):
+        return
+    auc = {k: {r["feature"]: float(r["auc_oriented"]) for r in read(p)}
+           for k, p in paths.items()}
+    feats = [f for f in sorted(auc["Uniform"], key=lambda f: -auc["Uniform"][f])
+             if all(f in d for d in auc.values())]
+
+    pretty = {
+        "depth_centre_flank_ratio": "Depth: centre / flank ratio",
+        "depth_sd": "Depth: std. dev.",
+        "depth_max_drop": "Depth: max drop",
+        "depth_min": "Depth: minimum",
+        "depth_mean": "Depth: mean",
+        "isize_absz_mean": "Insert size: mean |z|",
+        "isize_absz_max": "Insert size: max |z|",
+        "clip_rate": "Soft-clip rate",
+        "mapq_mean": "Mapping quality: mean",
+        "discordant_rate": "Discordant-pair rate",
+        "valid_frac": "Valid-read fraction",
+        "n_read_rows": "Read rows retained",
+    }
+    style = {
+        "Uniform": dict(colour=COLOUR["DeepSV-representation"],
+                        marker="o", size=26),
+        "Candidate-filtered": dict(colour=COLOUR["AlignSSL-scratch"],
+                                 marker="s", size=26),
+        "Caller-candidate": dict(colour=COLOUR["AlignSSL-combined"],
+                                  marker="D", size=34),
+    }
+    fig, ax = plt.subplots(figsize=(6.4, 4.5))
+    y = list(range(len(feats)))[::-1]
+    for i, f in enumerate(feats):
+        vals = [auc[k][f] for k in auc]
+        ax.plot([min(vals), max(vals)], [y[i], y[i]],
+                color="#8c8c8c", linewidth=0.8, zorder=1)
+    for name, d in auc.items():
+        s = style[name]
+        ax.scatter([d[f] for f in feats], y, s=s["size"], marker=s["marker"],
+                   color=s["colour"], zorder=3, label=name,
+                   edgecolor="white", linewidth=0.6)
+    ax.axvline(0.5, color="#8c8c8c", linestyle="--", linewidth=0.8, zorder=0)
+    ax.text(0.502, -0.8, "chance", ha="left", va="center",
+            color="#8c8c8c", fontsize=6)
+
+    top, f0 = y[0], feats[0]
+    ax.annotate("", xy=(auc["Caller-candidate"][f0], top),
+                xytext=(auc["Candidate-filtered"][f0], top),
+                arrowprops=dict(arrowstyle="<->", color=COLOUR["AlignSSL-combined"],
+                                lw=1.0, shrinkA=4, shrinkB=4), zorder=4)
+    ax.text(0.885, len(feats) - 8.4,
+            "Matching negatives to the positive\n"
+            f"depth distribution attenuates it ({auc['Candidate-filtered'][f0]:.2f}).\n"
+            "Real caller candidates restore it "
+            f"({auc['Caller-candidate'][f0]:.2f}).",
+            ha="center", va="center", fontsize=6.5,
+            color=COLOUR["AlignSSL-combined"], linespacing=1.5)
+
+    ax.set_yticks(y)
+    ax.set_yticklabels([pretty.get(f, f) for f in feats])
+    ax.set_xlabel("ROC-AUC of one untrained feature (orientation-corrected)")
+    ax.set_title("A realistic negative set does not remove the depth shortcut",
+                 loc="left", pad=8)
+    ax.set_xlim(0.45, 1.03)
+    ax.set_ylim(-1.5, len(feats) - 0.3)
+    ax.grid(False)
+    ax.legend(loc="lower center", bbox_to_anchor=(0.5, -0.30), ncol=3,
+              frameon=False, fontsize=7)
+    fig.tight_layout()
+    fig.savefig(out / "figure10_shortcut_across_benchmarks.png")
+    plt.close(fig)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--results-dir", default="results")
@@ -583,7 +679,7 @@ def main() -> int:
     res = Path(a.results_dir)
     with plt.rc_context(RC):
         for fn in (figure1, figure2, figure3, figure4, figure5,
-                   figure6, figure7, figure8, figure9):
+                   figure6, figure7, figure8, figure9, figure10):
             fn(res, res)
             print(f"{fn.__name__} ok")
     return 0

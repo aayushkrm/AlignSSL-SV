@@ -15,11 +15,26 @@ look like a deletion, so the task measured "is there a depth drop here", not
 
 This script replaces uniform negatives with the false positives of a
 depth-based candidate generator, which is the decision an SV caller actually
-faces. For each chromosome we draw a large pool of non-truth windows, score
-each by the same centre/flank depth ratio, and keep the most deletion-like
-ones. Negatives are therefore, by construction, windows where the shortcut
-feature fires. The task becomes: given that a depth dip was proposed here,
-is it a real deletion?
+faces. For each chromosome we draw a large pool of non-truth windows and score
+each by the same centre/flank depth ratio.
+
+Selection is then *distribution matching*, not top-k. An earlier version of
+this script kept the most deletion-like candidates -- the lowest depth ratios
+-- and that rule does not remove the shortcut, it inverts it: negatives end up
+with a *deeper* dip than the true deletions, so the feature separates the
+classes just as well with its sign flipped (manuscript Section 6.1). What
+`match_strata` does instead is draw negatives so their depth-ratio
+distribution matches the positives' quantile for quantile, which is the only
+version of the rule that makes the feature uninformative rather than
+informative-in-reverse. Negatives are therefore windows where the shortcut
+feature fires *to the same degree it fires on real deletions*. The task
+becomes: given that a depth dip was proposed here, is it a real deletion?
+
+Terminology: the manuscript calls this the *candidate-filtered* benchmark. Its
+candidate generator is synthetic -- a depth statistic computed here, not a
+production caller. It is distinct from the *caller-candidate* benchmark
+(`scripts/extract_tensors_candidates.py`), whose negatives are real Manta
+candidate records that no code of ours selected.
 
 The positive set, window geometry, channel layout, multi-scale binning,
 chromosome split, and shard format are unchanged, so results are directly
