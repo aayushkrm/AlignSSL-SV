@@ -37,14 +37,14 @@ A twelve-feature gradient-boosted tree on hand-computed summary statistics is **
 
 | Labels | Classical GBT | Best deep arm | its AUPRC | *p* | Leader |
 |-------:|:-------------:|:--------------|:---------:|----:|:------|
-| 1% | 0.937 ± 0.009 | AlignSSL-pretrained | 0.524 ± 0.052 | 0.005 | control |
-| 5% | 0.958 ± 0.006 | AlignSSL-scratch | 0.866 ± 0.022 | 0.016 | control |
-| 10% | 0.967 ± 0.004 | AlignSSL-scratch | 0.912 ± 0.030 | 0.087 | tie |
-| 25% | 0.971 ± 0.002 | AlignSSL-scratch | 0.936 ± 0.023 | 0.121 | tie |
-| 50% | 0.974 ± 0.002 | AlignSSL-scratch | 0.974 ± 0.001 | 0.671 | tie |
-| 100% | 0.975 ± 0.001 | AlignSSL-scratch | 0.979 ± 0.001 | 0.003 | **deep** |
+| 1% | 0.937 ± 0.009 | AlignSSL-pretrained | 0.504 ± 0.060 | 0.0006 | control |
+| 5% | 0.958 ± 0.006 | AlignSSL-scratch | 0.824 ± 0.118 | 0.006 | control |
+| 10% | 0.966 ± 0.004 | AlignSSL-scratch | 0.905 ± 0.024 | <0.001 | control |
+| 25% | 0.971 ± 0.002 | AlignSSL-scratch | 0.949 ± 0.024 | 0.017 | control |
+| 50% | 0.974 ± 0.002 | AlignSSL-scratch | 0.969 ± 0.010 | 0.127 | tie |
+| 100% | 0.975 ± 0.001 | AlignSSL-pretrained | 0.962 ± 0.014 | 0.174 | tie |
 
-Scored threshold-free under the corrected protocol. An earlier draft claimed the control dominated at every budget; it does not. Its lead is significant where labels are scarce — which is the regime pretraining is proposed for — decays to a tie by 10%, and reverses at full supervision.
+Scored threshold-free under the corrected protocol. The control's lead is significant at the four sparsest budgets — including the label-scarce regime pretraining is proposed for — and decays to a tie only at 50% and full supervision. No deep arm beats it at any budget.
 
 This is a property of how positive and negative windows are drawn, not of any model. Uniformly sampled negatives sit at background depth while heterozygous and homozygous deletions sit below it, so the centre-versus-flank depth contrast is nearly sufficient on its own. Mean depth alone is uninformative (AUC 0.502) — the leak is specifically in the *localised* contrast that the extraction protocol builds into every positive window. Two non-depth features also reach substantial discrimination independently, so neutralising depth alone would not be enough.
 
@@ -56,18 +56,18 @@ We re-extracted the labelled set with **per-scale quantile-matched candidate neg
 
 | Labels | AlignSSL (pretrained) | AlignSSL (scratch) | DeepSV repr. | Classical GBT | Classical logreg |
 |-------:|:---:|:---:|:---:|:---:|:---:|
-| 1% (n=35) | 0.302 ± 0.053 | 0.283 ± 0.046 | 0.330 ± 0.025 | 0.250 ± 0.000 | **0.476 ± 0.076** |
-| 5% (n=173) | 0.368 ± 0.072 | 0.359 ± 0.095 | 0.411 ± 0.036 | **0.626 ± 0.054** | 0.596 ± 0.025 |
-| 10% (n=345) | 0.446 ± 0.024 | 0.510 ± 0.140 | 0.419 ± 0.018 | **0.719 ± 0.029** | 0.615 ± 0.026 |
-| 25% (n=863) | 0.649 ± 0.024 | 0.734 ± 0.065 | 0.511 ± 0.043 | **0.803 ± 0.013** | 0.624 ± 0.016 |
-| 50% (n=1726) | 0.722 ± 0.010 | 0.763 ± 0.063 | 0.538 ± 0.040 | **0.845 ± 0.012** | 0.629 ± 0.007 |
-| 100% (n=3452) | 0.844 ± 0.032 | **0.885 ± 0.022** | 0.656 ± 0.009 | 0.869 ± 0.006 | 0.631 ± 0.005 |
+| 1% (n=35) | 0.300 ± 0.044 | 0.278 ± 0.042 | 0.316 ± 0.032 | 0.250 ± 0.000 | **0.476 ± 0.076** |
+| 5% (n=173) | 0.353 ± 0.066 | 0.364 ± 0.061 | 0.415 ± 0.026 | **0.626 ± 0.054** | 0.596 ± 0.025 |
+| 10% (n=345) | 0.451 ± 0.022 | 0.473 ± 0.093 | 0.434 ± 0.053 | **0.718 ± 0.029** | 0.615 ± 0.026 |
+| 25% (n=863) | 0.641 ± 0.026 | 0.724 ± 0.055 | 0.530 ± 0.043 | **0.803 ± 0.013** | 0.624 ± 0.016 |
+| 50% (n=1726) | 0.744 ± 0.045 | 0.803 ± 0.046 | 0.546 ± 0.072 | **0.845 ± 0.012** | 0.630 ± 0.007 |
+| 100% (n=3452) | 0.856 ± 0.035 | 0.836 ± 0.054 | 0.614 ± 0.047 | **0.869 ± 0.006** | 0.631 ± 0.005 |
 
-AUPRC on the held-out chromosomes, scored threshold-free under the corrected protocol with equal label budgets across arms (Table 12); bold marks the best arm at each budget. Three findings:
+AUPRC on the held-out chromosomes, scored threshold-free under the corrected protocol with equal label budgets across arms (manuscript Table 13); bold marks the best arm at each budget. Three findings:
 
-1. **The shortcut repair does not rescue the pretraining claim.** At 1% labels the pretrained encoder (0.302 ± 0.053) is indistinguishable from from-scratch (0.283 ± 0.046), and from 10% upward the from-scratch arm is *ahead* at every budget. Pretraining buys nothing once the fixed-threshold artefact is removed.
-2. **The hand-crafted control still leads where labels are scarce.** It wins significantly at 1% and 5% (*p* = 0.0003, 0.0004) and ties at the remaining four budgets, including full supervision where the from-scratch network is nominally ahead (0.885 ± 0.022 versus 0.869 ± 0.006, *p* = 0.329). Twelve scalars remain competitive with a pretrained convolutional–attention encoder on a benchmark built so that no single feature exceeds ROC-AUC 0.72.
-3. **The learned tensor beats the RGB encoding only once labels suffice.** DeepSV-representation is *ahead* of both tensor arms at the two sparsest budgets (0.330 and 0.411) and only falls behind from 10% upward — so the encoding comparison, the one original claim that survives, is itself budget-dependent.
+1. **The shortcut repair does not rescue the pretraining claim.** At 1% labels the pretrained encoder (0.300 ± 0.044) is indistinguishable from from-scratch (0.278 ± 0.042), and from 5% through 50% the from-scratch arm is nominally *ahead*; only at full supervision does pretraining lead (0.856 ± 0.035 versus 0.836 ± 0.054), well inside seed noise. Pretraining buys nothing once the fixed-threshold artefact is removed.
+2. **The hand-crafted control still leads where labels are scarce.** It wins significantly at the five sparsest budgets (*p* < 0.001 at 1–10%, 0.0013 at 25%, 0.018 at 50%) and ties only at full supervision, where it is still nominally ahead of the best deep arm (0.869 ± 0.006 versus 0.856 ± 0.035, *p* = 0.514). Twelve scalars remain competitive with a pretrained convolutional–attention encoder on a benchmark built so that no single feature exceeds ROC-AUC 0.72.
+3. **The learned tensor beats the RGB encoding only once labels suffice.** DeepSV-representation is *ahead* of both tensor arms at the two sparsest budgets (0.316 and 0.415) and only falls behind from 10% upward — so the encoding comparison, the one original claim that survives, is itself budget-dependent.
 
 What does not depend on any scoring convention: quantile-matched candidate negatives attenuate the depth shortcut from ROC-AUC 0.955 to 0.717 without changing the positive set, and every arm's score falls, confirming a genuinely harder task. See `docs/AlignSSL_SV_manuscript.md` §6.
 
