@@ -50,9 +50,11 @@ applied.
    depth — reaches ROC-AUC 0.955 on the uniform benchmark; the leak is not
    confined to depth (soft-clip rate 0.802, discordant-pair rate 0.732), so repairing only the depth statistic would leave two shortcuts intact.
    `results/table6_single_feature_auc.csv`.
-3. **The protocol diagnosis.** The same runs, re-scored three ways at 210 labels:
-   F1@0.5 ratio 10.9x (*p* = 0.009), F1@selected-tau 1.17x (*p* = 0.407),
-   AUPRC 1.23x (*p* = 0.348). `results/table13_threshold_sensitivity.csv`.
+3. **The protocol diagnosis.** The same runs, re-scored three ways at 210 labels
+   under equal budgets: F1@0.5 ratio 4.38x (*p* = 0.0002), F1@selected-tau 1.06x
+   (*p* = 0.527), AUPRC 1.02x (*p* = 0.853). The effect is confined to one
+   scoring rule; it is not dispatched by multiplicity (Holm *p* = 0.0012).
+   `results/table13_threshold_sensitivity.csv`.
 4. **A harder benchmark, released.** Depth-matched negatives attenuate the
    shortcut from 0.955 to 0.717 and drop every arm's absolute score, confirming
    the task is harder rather than relabelled. `results/table9_hardneg_single_feature_auc.csv`.

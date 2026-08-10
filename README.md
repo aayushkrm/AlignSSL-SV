@@ -7,7 +7,7 @@ AlignSSL-SV is a deletion caller for short-read whole-genome sequencing and a di
 1. **An alignment tensor instead of an image.** Reads are encoded directly into a `(C=18, R=64, W=256)` tensor whose channels carry depth, mapping quality, insert-size deviation, orientation, clip signal and base identity. Nothing is quantised into three colour planes, so no information is discarded at the encoding step.
 2. **Self-supervised pretraining.** A masked-alignment-modelling (MAM) objective learns a pileup representation from *unlabelled* windows, so the supervised classifier needs far fewer labels. A VICReg-style invariance objective and a combined objective are evaluated as ablations.
 
-We built this to test whether that design improves label efficiency, calibration and ancestry robustness. It appeared to: at 1% of labels the pretrained encoder beat the identical from-scratch encoder ~11-fold in F1 (*p* = 0.009). **That result does not survive our own controls, and this repository now exists mainly to document why.** Every performance claim the project once made has been withdrawn. What remains is the four controls, the code that implements them, and the evidence that each defect is a property of the standard evaluation design rather than of this implementation.
+We built this to test whether that design improves label efficiency, calibration and ancestry robustness. It appeared to: at 1% of labels the pretrained encoder beat the identical from-scratch encoder 10.4-fold in F1 (0.514 versus 0.050, paired *p* = 0.0009). **That result does not survive our own controls, and this repository now exists mainly to document why.** Every performance claim the project once made has been withdrawn. What remains is the four controls, the code that implements them, and the evidence that each defect is a property of the standard evaluation design rather than of this implementation.
 
 ## Headline results (1000 Genomes phase-3 deletions; test = chr12–22)
 
@@ -15,21 +15,21 @@ All deep arms use a harmonised fine-tuning batch size of 96. Error bars span 3�
 
 ### The headline result, and why it is an artefact
 
-At the smallest label budget (1% ≈ 210 windows) the pretrained encoder reaches F1 0.478 while the identical from-scratch encoder collapses to 0.044 — a 10.89× gap at *p* = 0.009. Those F1s are computed by cutting the positive-class probability at a fixed 0.5, the convention this literature inherits from DeepSV.
+At the smallest label budget (1% ≈ 210 windows) the pretrained encoder reaches F1 0.464 while the identical from-scratch encoder collapses to 0.106 — a 4.38× gap at *p* = 0.0002. (Before the equal-budget correction below, the same cell read 0.514 versus 0.050, a 10.4× gap.) Those F1s are computed by cutting the positive-class probability at a fixed 0.5, the convention this literature inherits from DeepSV.
 
 A fixed cut conflates ranking quality with calibration. Re-scoring the identical runs three ways:
 
 | Scoring rule | pretrained | scratch | ratio | *p* |
 |---|---:|---:|---:|---:|
-| F1 at fixed 0.5 cut | 0.478 | 0.044 | **10.89×** | **0.009** |
-| F1 at validation-selected τ | 0.483 | 0.413 | 1.17× | 0.407 |
-| AUPRC (threshold-free) | 0.524 | 0.427 | 1.23× | 0.348 |
+| F1 at fixed 0.5 cut | 0.464 | 0.106 | **4.38×** | **0.0002** |
+| F1 at validation-selected τ | 0.481 | 0.456 | 1.06× | 0.527 |
+| AUPRC (threshold-free) | 0.504 | 0.495 | 1.02× | 0.853 |
 
 The advantage exists under one scoring rule and no other. At every larger label budget the from-scratch arm is *ahead*. It was never degenerate — it ranked competently and scored timidly, and a fixed cut reads timidity as failure.
 
 A second, independent defect was in our own evaluators: a batch-size floor granted the deep arms up to **2.8× the labels** the classical control received, concentrated in exactly the low-label cells carrying the claim. Both are corrected in `alignssl/protocol.py` (equal budgets, validation labels carved out of the budget rather than granted free) and `analysis/threshold_sensitivity.py`.
 
-A third defect is statistical rather than procedural: that *p* = 0.009 was the strongest cell of a six-budget sweep, reported as though it were one test. Corrected for the family it was selected from, it is **0.055** — so even under the one scoring rule that produces the effect, it does not clear 0.05. Across the whole paper, 20 nominally significant tests in 11 pre-declared families fall to 10 under Holm–Bonferroni and 16 under Benjamini–Hochberg (`analysis/apply_multiplicity.py` → `results/stats_multiplicity.csv`). The corrections' own strongest findings do survive: both deep arms beat the DeepSV representation on the repaired benchmark at the largest budgets (Holm *p* = 0.005–0.049), and no pretrained-versus-scratch contrast survives anywhere.
+A third defect is statistical rather than procedural: the fixed-cut *p* was the strongest cell of a six-budget sweep, reported as though it were one test. Here the correction cuts the other way, and we report it against our own interest: adjusted for the family it was selected from, the fixed-cut result **survives** (raw *p* = 0.0002, Holm *p* = 0.0012). Multiplicity is not what dispatches the headline — the scoring rule is. Across the whole paper, 25 nominally significant tests in 11 pre-declared families fall to 17 under Holm–Bonferroni and 21 under Benjamini–Hochberg (67 tests total; `analysis/apply_multiplicity.py` → `results/stats_multiplicity.csv`). What survives is chiefly the corrections' own findings: both deep arms beat the DeepSV representation on the repaired benchmark at the three largest budgets, under both threshold-free and selected-threshold scoring (Holm *p* ≤ 0.014, 12 contrasts). Exactly one pretrained-versus-scratch contrast survives correction under threshold-free scoring — at 25% labels on the repaired benchmark — and it favours **from-scratch** (AUPRC 0.724 ± 0.055 versus 0.641 ± 0.026, Holm *p* = 0.016).
 
 ### The control that reframes the paper: the benchmark is shortcut-solvable
 

@@ -303,7 +303,7 @@ We therefore re-scored the identical runs and seeds three ways: at the fixed 0.5
 | Scoring rule | AlignSSL-pretrained | AlignSSL-scratch | Ratio | *p* |
 |---|---|---|---|---|
 | F1 at fixed 0.5 cut | 0.464 | 0.106 | 4.38× | 0.000 |
-| F1 at selected τ | 0.481 | 0.456 | 1.05× | 0.527 |
+| F1 at selected τ | 0.481 | 0.456 | 1.06× | 0.527 |
 | AUPRC (threshold-free) | 0.504 | 0.495 | 1.02× | 0.853 |
 
 The advantage exists under the fixed cut and nowhere else. Under both alternatives the two arms are statistically indistinguishable at the smallest budget (*p* = 0.527 at τ, *p* = 0.853 threshold-free), and at each of the five larger budgets the from-scratch arm is *ahead* — significantly so at 5% and 10% under the selected-threshold rule (*p* = 0.018 and *p* = 0.013), though neither survives correction across the six budgets of that sweep (Holm *p* = 0.092 and 0.075). The from-scratch model was never degenerate: at 210 labels it reaches AUPRC 0.495 against the pretrained model's 0.504 — a difference of 0.009, which is no deficit at all. It ranks essentially as well and scores timidly, and the fixed cut reads timidity as failure.

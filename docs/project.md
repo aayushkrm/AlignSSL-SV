@@ -615,12 +615,20 @@ benchmark, at the smallest budget where the ~10x gap was claimed:
 
 | Scoring rule | Pretrained | From scratch | Ratio | *p* |
 |---|---|---|---|---|
-| F1 at a fixed 0.5 cut (as originally scored) | 0.476 | 0.045 | 10.5x | 0.009 |
-| F1 at a validation-selected threshold | 0.481 | 0.413 | 1.16x | 0.407 |
-| AUPRC (threshold-free) | 0.524 | 0.427 | 1.23x | 0.348 |
+| F1 at a fixed 0.5 cut (as originally scored) | 0.464 | 0.106 | 4.38x | 0.0002 |
+| F1 at a validation-selected threshold | 0.481 | 0.456 | 1.06x | 0.527 |
+| AUPRC (threshold-free) | 0.504 | 0.495 | 1.02x | 0.853 |
+
+Source: `results/table13_threshold_sensitivity.csv`, row `uniform,0.01`. These
+are post-correction figures (equal label budgets across arms, `alignssl/protocol.py`);
+the pre-correction sweep reported 0.514 vs 0.050 at this cell, a 10.4x ratio.
 
 The gap exists at exactly one budget under exactly one scoring rule. It is a
-property of sigmoid placement, not of representation quality.
+property of sigmoid placement, not of representation quality. Note that the
+fixed-cut result is *not* dispatched by multiplicity — corrected against the
+six-budget family it was selected from it survives (Holm *p* = 0.0012). The
+scoring rule is what dispatches it: under either alternative rule the two arms
+are indistinguishable at this budget.
 
 ### 16.3 A harder benchmark was built, and the negative result holds on it
 

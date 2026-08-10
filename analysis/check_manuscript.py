@@ -21,7 +21,7 @@ from __future__ import annotations
 
 import argparse
 import csv
-from decimal import Decimal, ROUND_HALF_EVEN, ROUND_HALF_UP
+from decimal import Decimal, ROUND_HALF_EVEN, ROUND_HALF_UP, ROUND_DOWN
 import re
 import sys
 from pathlib import Path
@@ -84,9 +84,17 @@ def check_table13(md: str, src: dict) -> list[str]:
             want = fmt(src[key])
             if shown != want:
                 errs.append(f"Table 13 {label} {key}: '{shown}' != source '{want}'")
-        want_ratio = f"{float(src[kr]):.2f}\u00d7"
-        if cells[2] != want_ratio:
-            errs.append(f"Table 13 {label} ratio: '{cells[2]}' != '{want_ratio}'")
+        # Tie-tolerant, matching check_readme_tables: an exact tie at display
+        # precision (source 1.055 -> 1.05 or 1.06) is genuinely ambiguous, and
+        # f"{1.055:.2f}" answers 1.05 only as a binary-float artifact. Decimal
+        # rounding says 1.06. Accept either neighbour rather than encode one
+        # side of a float representation quirk as ground truth.
+        d = Decimal(src[kr])
+        want_ratios = {f"{d.quantize(Decimal('1.00'), rounding=m)}\u00d7"
+                       for m in (ROUND_HALF_EVEN, ROUND_HALF_UP, ROUND_DOWN)}
+        if cells[2] not in want_ratios:
+            errs.append(f"Table 13 {label} ratio: '{cells[2]}' not in "
+                        f"{sorted(want_ratios)} (source {src[kr]})")
         want_p = f"{float(src[kpv]):.3f}"
         if cells[3] != want_p:
             errs.append(f"Table 13 {label} p: '{cells[3]}' != '{want_p}'")
@@ -728,6 +736,147 @@ def check_seed_counts(md: str, results: Path) -> list[str]:
     return errs
 
 
+def check_threshold_triple(md: str, readme: Path, progress: Path,
+                           project: Path, results: Path) -> list[str]:
+    """Gate the three-scoring-rule table wherever it is rendered.
+
+    This table is the paper's central negative result: the 1%-label advantage
+    exists under a fixed 0.5 cut and vanishes under both a selected threshold
+    and a threshold-free metric. It is rendered in FOUR documents. Only the
+    manuscript was gated, and the other three had all drifted to
+    *pre-correction* figures -- 0.478/0.044 at a 10.89x ratio (README),
+    0.476/0.045 at 10.5x (project plan), 10.9x (progress record) -- against a
+    source that says 0.464/0.106 at 4.38x. None of the quoted values existed in
+    any results file.
+
+    Worse, the README's accompanying prose asserted the fixed-cut result
+    *fails* multiplicity correction at p = 0.055. Source says it survives
+    (raw 0.0002, Holm 0.0012). That inverts the paper's own argument: the
+    result is dispatched by the scoring rule, not by multiplicity. An
+    understated claim is still a wrong claim, and a reviewer who checks it
+    finds the repository contradicting the manuscript.
+
+    Checks, per document that renders the table: the two arm means under each
+    of the three scoring rules, the ratio, and the p-value -- all against
+    results/table13_threshold_sensitivity.csv row (uniform, 0.01). Also
+    asserts no document quotes the withdrawn Holm value 0.055 alongside the
+    fixed-cut test.
+
+    Documents are matched loosely on row label because each renders the rule
+    names differently ("F1 at fixed 0.5 cut" vs "F1 at a fixed 0.5 cut
+    (as originally scored)"); the discriminator is the rule keyword, not the
+    exact label.
+    """
+    src = results / "table13_threshold_sensitivity.csv"
+    if not src.exists():
+        return ["threshold triple: missing source table13_threshold_sensitivity.csv"]
+    row = None
+    with src.open(newline="", encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            if r["benchmark"] == "uniform" and r["label_frac"] == "0.01":
+                row = r
+                break
+    if row is None:
+        return ["threshold triple: no (uniform, 0.01) row in source"]
+
+    def r_any(v: str, places: int) -> set[str]:
+        d = Decimal(v)
+        q = Decimal("1." + "0" * places) if places else Decimal("1")
+        return {str(d.quantize(q, rounding=m))
+                for m in (ROUND_HALF_EVEN, ROUND_HALF_UP)}
+
+    # keyword -> (pretrained col, scratch col, ratio col, p col)
+    RULES = [
+        ("0.5 cut", "AlignSSL-pretrained_F1@0.5", "AlignSSL-scratch_F1@0.5",
+         "ratio_F1@0.5", "p_F1@0.5"),
+        ("selected", "AlignSSL-pretrained_F1@tau", "AlignSSL-scratch_F1@tau",
+         "ratio_F1@tau", "p_F1@tau"),
+        ("AUPRC", "AlignSSL-pretrained_AUPRC", "AlignSSL-scratch_AUPRC",
+         "ratio_AUPRC", "p_AUPRC"),
+    ]
+
+    docs = [("manuscript", md),
+            ("README", readme.read_text(encoding="utf-8") if readme.exists() else None),
+            ("progress record", progress.read_text(encoding="utf-8") if progress.exists() else None),
+            ("project plan", project.read_text(encoding="utf-8") if project.exists() else None)]
+
+    errs: list[str] = []
+    for label, text in docs:
+        if text is None:
+            errs.append(f"{label}: file not found")
+            continue
+        # Locate the table block: the contiguous run of pipe-rows containing
+        # the fixed-cut rule. Searching the whole document per keyword picks up
+        # unrelated tables that happen to mention "AUPRC".
+        lines = text.splitlines()
+        anchor = next((i for i, ln in enumerate(lines)
+                       if ln.lstrip().startswith("|") and "0.5 cut" in ln), None)
+        if anchor is None:
+            # Some documents render the triple as prose rather than a table
+            # (e.g. "F1@0.5 ratio 4.38x (*p* = 0.0002), ..."). Check the
+            # ratio/p pairs in whatever order they appear.
+            prose = " ".join(lines)
+            pairs = re.findall(r"([\d.]+)x?\s*\(\*?p\*?\s*=\s*([\d.]+)\)", prose)
+            if not pairs:
+                errs.append(f"{label}: renders the threshold triple in neither "
+                            f"table nor prose form")
+                continue
+            for kw, cp, cs, cr, cpv in RULES:
+                want_r = {v.rstrip("0").rstrip(".") for v in r_any(row[cr], 2)}
+                want_pv = {v for pl in (3, 4) for v in r_any(row[cpv], pl)}
+                if not any(gr.rstrip("0").rstrip(".") in want_r
+                           and gp.lstrip("0") in {w.lstrip("0") for w in want_pv}
+                           for gr, gp in pairs):
+                    errs.append(f"{label} threshold prose [{kw}]: no "
+                                f"ratio/p pair matching source "
+                                f"({row[cr]}, {row[cpv]}); found {pairs}")
+            continue
+        lo = anchor
+        while lo > 0 and lines[lo - 1].lstrip().startswith("|"):
+            lo -= 1
+        hi = anchor
+        while hi + 1 < len(lines) and lines[hi + 1].lstrip().startswith("|"):
+            hi += 1
+        block = lines[lo:hi + 1]
+        for kw, cp, cs, cr, cpv in RULES:
+            line = next((ln for ln in block if kw in ln), None)
+            if line is None:
+                errs.append(f"{label} threshold table: no row for rule '{kw}'")
+                continue
+            cells = [c.strip().replace("*", "") for c in line.strip().strip("|").split("|")]
+            nums = [c for c in cells if re.fullmatch(r"[\d.]+[x\u00d7]?", c)]
+            if len(nums) < 4:
+                errs.append(f"{label} threshold table [{kw}]: "
+                            f"expected 4 numeric cells, found {nums}")
+                continue
+            got_p, got_s, got_r, got_pv = nums[0], nums[1], nums[2], nums[3]
+            want_p = r_any(row[cp], len(got_p.split(".")[-1]) if "." in got_p else 0)
+            want_s = r_any(row[cs], len(got_s.split(".")[-1]) if "." in got_s else 0)
+            rnum = got_r.rstrip("x\u00d7")
+            want_r = r_any(row[cr], len(rnum.split(".")[-1]) if "." in rnum else 0)
+            want_pv = r_any(row[cpv], len(got_pv.split(".")[-1]) if "." in got_pv else 0)
+            for name, got, want, col in (("pretrained", got_p, want_p, cp),
+                                         ("scratch", got_s, want_s, cs),
+                                         ("ratio", rnum, want_r, cr),
+                                         ("p", got_pv, want_pv, cpv)):
+                if got not in want:
+                    errs.append(f"{label} threshold table [{kw}]: {name} "
+                                f"'{got}' != source {sorted(want)} ({col}={row[col]})")
+
+    # the withdrawn multiplicity value, which inverted the paper's argument
+    for label, text in docs:
+        if text is None:
+            continue
+        for ln in text.splitlines():
+            if re.search(r"(?:is|=|it is)\s*\**0\.055\**", ln) and (
+                    "Holm" in ln or "family it was selected" in ln
+                    or "does not clear" in ln):
+                errs.append(f"{label}: quotes withdrawn Holm value 0.055 for the "
+                            f"fixed-cut test (source: raw 0.0002, Holm 0.0012 -- "
+                            f"it survives): {ln.strip()[:90]}")
+    return errs
+
+
 def check_progress_headline(progress: Path, results: Path) -> list[str]:
     """PROGRESS.md Part I declares itself authoritative, so gate its numbers.
 
@@ -1108,6 +1257,7 @@ def main() -> int:
     p.add_argument("--results", default="results")
     p.add_argument("--readme", default="README.md")
     p.add_argument("--progress", default="PROGRESS.md")
+    p.add_argument("--project", default="docs/project.md")
     a = p.parse_args()
 
     md = Path(a.md).read_text()
@@ -1131,6 +1281,8 @@ def main() -> int:
     errs += check_caller_candidate_table(md, Path(a.readme), res)
     errs += check_readme_tables(Path(a.readme), res)
     errs += check_progress_headline(Path(a.progress), res)
+    errs += check_threshold_triple(md, Path(a.readme), Path(a.progress),
+                                   Path(a.project), res)
 
     if errs:
         print(f"FAIL: {len(errs)} manuscript/source mismatches")
