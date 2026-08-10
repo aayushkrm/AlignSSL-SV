@@ -95,7 +95,12 @@ def _best_of_family(files, frac, family):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--deep-glob", default="handoff/cand/cand_pre_*.json")
+    # Matches both layouts the deep arms have been written in: the early
+    # multi-budget runs (`cand_pre_seed*.json`, several fracs per file, both
+    # arms per row) and the later one-arm-one-budget-per-job runs
+    # (`cand_arm_<arm>_s<seed>_f<frac>.json`), which were split so a single
+    # budget could occupy a whole GPU. `cls_cand_*` is excluded by the prefix.
+    ap.add_argument("--deep-glob", default="handoff/cand/cand_*.json")
     ap.add_argument("--control-glob", default="handoff/cand/cls_cand_seed*.json")
     ap.add_argument("--out", default="results/table24_caller_candidate.csv")
     ap.add_argument("--stats-out",

@@ -81,15 +81,16 @@ Both benchmarks above build their negatives ourselves, so a reviewer can reasona
 | 167 (5%) | Classical-GBT | **0.957 ± 0.013** | AlignSSL-pretrained | 0.852 ± 0.020 | 0.0041 | control |
 | 335 (10%) | Classical-GBT | 0.969 ± 0.003 | AlignSSL-pretrained | 0.891 ± 0.038 | 0.0705 | tie |
 | 836 (25%) | Classical-GBT | **0.980 ± 0.002** | AlignSSL-scratch | 0.933 ± 0.009 | 0.0093 | control |
-| 1,673 (50%) | Classical-GBT | **0.982 ± 0.002** | AlignSSL-scratch | 0.953 ± 0.005 | 0.0337 | control |
+| 1,673 (50%) | Classical-GBT | **0.982 ± 0.002** | AlignSSL-scratch | 0.953 ± 0.010 | 0.0337 | control |
+| 3,346 (100%) | Classical-GBT | **0.982 ± 0.001** | AlignSSL-scratch | 0.956 ± 0.010 | 0.0455 | control |
 
 Three findings, one of which runs against the rest of the paper:
 
-1. **The negative result reproduces a third time, on a negative set we did not build.** The control leads significantly at four of the five budgets and is never beaten by any deep arm. At 33 labels the control does not even beat the *untrained* single depth feature (0.942), which is the cleanest available statement of what this benchmark measures.
+1. **The negative result reproduces a third time, on a negative set we did not build.** The control leads significantly at five of the six budgets — including full supervision, where 3,346 labels do not close the gap — and is never beaten by any deep arm. At 33 labels the control does not even beat the *untrained* single depth feature (0.942), which is the cleanest available statement of what this benchmark measures.
 2. **Realism does not imply absence of a shortcut.** The centre-versus-flank depth ratio still reaches ROC-AUC **0.942** untrained here, against 0.717 under quantile matching. Manta's candidate generation is itself depth-driven, so the loci it wrongly emits are where depth evidence is weak and the ones it rightly emits are where it is strong: the caller's own selection re-imposes the axis that matching removed. Realism of the negative set and absence of a shortcut are independent properties.
-3. **The one place pretraining survives every correction — and its limit.** At 33 labels the pretrained arm beats from-scratch at ROC-AUC 0.778 ± 0.045 versus 0.545 ± 0.041 (*p* = 0.003; Holm *p* = 0.014 within the five-budget family). This is the only cell in the project where the pretraining advantage is significant under a metric that is simultaneously threshold-free and base-rate-free, on negatives we did not choose. It does not persist, and past 10% labels it **inverts**: from-scratch is ahead at 25% (0.933 vs 0.918) and at 50% (0.953 ± 0.005 vs 0.922 ± 0.014, *p* = 0.029, Holm *p* = 0.114). Both arms lose to twelve scalar features at every budget. We report it as the strongest surviving evidence for the original hypothesis and as the natural target of a follow-up powered to test it — not as a reinstatement of the headline.
+3. **The one place pretraining survives every correction — and its limit.** At 33 labels the pretrained arm beats from-scratch at ROC-AUC 0.778 ± 0.045 versus 0.545 ± 0.041 (*p* = 0.003; Holm *p* = 0.017 within the six-budget family). This is the only cell in the project where the pretraining advantage is significant under a metric that is simultaneously threshold-free and base-rate-free, on negatives we did not choose. It does not persist, and past 10% labels it **inverts**: from-scratch is ahead at 25% (0.933 vs 0.918), at 50% (0.953 ± 0.010 vs 0.922 ± 0.002, *p* = 0.029, Holm *p* = 0.143) and at full supervision (0.956 ± 0.010 vs 0.939 ± 0.003, *p* = 0.098). Both arms lose to twelve scalar features at every budget. We report it as the strongest surviving evidence for the original hypothesis and as the natural target of a follow-up powered to test it — not as a reinstatement of the headline.
 
-The 100% budget is still running; the table will gain a row. See `docs/AlignSSL_SV_manuscript.md` §6.5.
+See `docs/AlignSSL_SV_manuscript.md` §6.5.
 
 ### Self-supervised objective ablation
 

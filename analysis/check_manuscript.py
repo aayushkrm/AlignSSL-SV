@@ -728,6 +728,120 @@ def check_seed_counts(md: str, results: Path) -> list[str]:
     return errs
 
 
+def check_caller_candidate_table(md: str, readme: Path,
+                                 results: Path) -> list[str]:
+    """The caller-candidate table must reconcile with source in BOTH documents.
+
+    This gate exists because of a defect it would have caught. Section 6.5's
+    Table 14 and the README's third-benchmark table are the *same* table
+    rendered twice, and until this check was added neither was compared to
+    source cell by cell -- check_pvalues gated only the p-values quoted in
+    prose. So when the full-supervision arms finished and the family grew from
+    five budgets to six, both documents kept a row count, a "four of the five
+    budgets" tally and a Holm-adjusted p-value that source no longer supported,
+    and both passed the suite. A table duplicated across documents is exactly
+    where staleness hides: the reader of the front page and the reader of the
+    manuscript must not be shown different numbers.
+
+    Checked against `results/table24_caller_candidate.csv`, per budget:
+    control arm name, control mean/sd, best deep arm name, deep mean/sd, and
+    the leader verdict. Row *membership* is checked too -- a budget present in
+    source and absent from a document (or vice versa) is an error, which is
+    the specific failure that occurred here.
+
+    p-values are compared as rendered by each document (4 decimals) because
+    both render them identically from the same column; unlike the README's
+    other tables there is no abbreviation convention to accommodate.
+
+    Rounding follows check_readme_tables: exact three-decimal ties accept
+    either neighbour, since `f"{x:.3f}"` resolves them by binary
+    representation rather than by a rule.
+    """
+    src = results / "table24_caller_candidate.csv"
+    if not src.exists():
+        return ["caller-candidate: missing source table24_caller_candidate.csv"]
+    with src.open(newline="", encoding="utf-8-sig") as fh:
+        rows = list(csv.DictReader(fh))
+    if not rows:
+        return ["caller-candidate: source table24 is empty"]
+
+    def r3(v: str) -> set[str]:
+        d = Decimal(v)
+        return {str(d.quantize(Decimal("1.000"), rounding=m))
+                for m in (ROUND_HALF_EVEN, ROUND_HALF_UP)}
+
+    want: dict[str, dict] = {}
+    for r in rows:
+        n = int(r["n_labelled"])
+        want[f"{n:,}"] = {
+            "control_arm": r["control_arm"],
+            "control": (r["control_roc_auc"], r["control_sd"]),
+            "deep_arm": r["deep_arm"],
+            "deep": (r["deep_roc_auc"], r["deep_sd"]),
+            "p": f"{float(r['p']):.4f}",
+            "verdict": r["verdict"],
+        }
+
+    errs: list[str] = []
+    docs = [("manuscript Table 14", md)]
+    if readme.exists():
+        docs.append(("README third-benchmark table",
+                     readme.read_text(encoding="utf-8")))
+    else:
+        errs.append("caller-candidate: README.md not found")
+
+    for label, text in docs:
+        seen: set[str] = set()
+        for line in text.splitlines():
+            if not line.startswith("|"):
+                continue
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            # 7 columns in the README, 8 in the manuscript (which carries an
+            # extra "Deep - control" difference column). Both end in Leader.
+            if len(cells) not in (7, 8):
+                continue
+            m = re.match(r"^([\d,]+) \((?:100|\d{1,2})%\)$", cells[0])
+            if not m:
+                continue
+            n = m.group(1)
+            if n not in want:
+                errs.append(f"{label}: budget n={n} is not in source table24")
+                continue
+            w = want[n]
+            seen.add(n)
+
+            def plain(c: str) -> str:
+                return c.replace("**", "").strip()
+
+            got = [plain(c) for c in cells[1:]]
+            checks = [
+                ("control arm", got[0], {w["control_arm"]}),
+                ("control ROC-AUC", got[1],
+                 {f"{a} ± {b}" for a in r3(w["control"][0])
+                  for b in r3(w["control"][1])}),
+                ("deep arm", got[2], {w["deep_arm"]}),
+                ("deep ROC-AUC", got[3],
+                 {f"{a} ± {b}" for a in r3(w["deep"][0])
+                  for b in r3(w["deep"][1])}),
+                ("leader", got[-1], {w["verdict"]}),
+            ]
+            # The manuscript carries an extra "Deep - control" column before
+            # p; the README does not. Locate p as the cell matching a p-value
+            # shape among the remaining two.
+            pcands = [g for g in got[4:-1] if re.fullmatch(r"0\.\d{3,4}", g)]
+            if w["p"] not in pcands:
+                errs.append(f"{label} n={n}: p {pcands} != {w['p']}")
+            for what, g, ok in checks:
+                if g not in ok:
+                    errs.append(f"{label} n={n}: {what} {g!r} "
+                                f"not in {sorted(ok)}")
+        missing = set(want) - seen
+        if missing:
+            errs.append(f"{label}: omits budgets present in source: "
+                        f"{sorted(missing)}")
+    return errs
+
+
 def check_readme_tables(readme: Path, results: Path) -> list[str]:
     """The README's two results tables must reconcile with source.
 
@@ -896,6 +1010,7 @@ def main() -> int:
     errs += check_table_numbering(md)
     errs += check_narrative_tallies(md, res)
     errs += check_prose_number_provenance(md, res)
+    errs += check_caller_candidate_table(md, Path(a.readme), res)
     errs += check_readme_tables(Path(a.readme), res)
 
     if errs:
