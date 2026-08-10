@@ -406,6 +406,80 @@ def check_table20(md: str, results: Path) -> list[str]:
     return errs
 
 
+def check_prose_number_provenance(md: str, results: Path) -> list[str]:
+    """Every decimal quoted in prose must appear in some results table.
+
+    The targeted checks each verify one known claim. This one is the
+    net underneath them: it takes every 2-4 decimal number in the body
+    text and requires it to exist somewhere in results/*.csv, at some
+    rounding. A number present nowhere in the sources is either a
+    transcription error or a value that has drifted from a re-aggregation
+    -- both of which we shipped before this check existed.
+
+    It found three: Figure 2's caption claimed the control was overtaken
+    at full supervision (0.979, a value in no table, contradicting the
+    paper's central negative result), a Table 4 caveat quoted a
+    superseded Table 1 entry (0.478 for 0.464), and the candidate-filtered
+    full-supervision AUPRC was quoted as 0.844 for 0.856.
+
+    Deliberately coarse: it proves a number *exists* in the sources, not
+    that it is the right one for its sentence. Cheap, and it catches the
+    class that targeted checks cannot enumerate.
+
+    Measured limitation, not a supposed one: substituting 1.41 for a
+    correct 1.05 does NOT fail this check, because 1.41 happens to occur
+    in table2_calibration.csv. Any claim whose *value* matters must also
+    have a targeted check above. Treat a pass here as "no fabricated
+    numbers", never as "every number is the right one".
+    """
+    src: set[str] = set()
+    for path in sorted(results.glob("*.csv")):
+        with path.open(newline="", encoding="utf-8-sig") as fh:
+            for row in csv.reader(fh):
+                for cell in row:
+                    cell = cell.strip()
+                    # per-seed fields are ';'-joined
+                    for tok in cell.split(";"):
+                        tok = tok.strip()
+                        try:
+                            v = float(tok)
+                        except ValueError:
+                            continue
+                        src.add(tok)
+                        src.add(f"{v:g}")
+                        for nd in range(5):
+                            # Python's format() rounds half-to-even; prose
+                            # is written half-up (0.5035 -> "0.504"). Index
+                            # both so the gate does not flag a correctly
+                            # rounded quotation.
+                            q = Decimal(1).scaleb(-nd)
+                            for r in (f"{v:.{nd}f}",
+                                      str(Decimal(tok).quantize(q, ROUND_HALF_UP))):
+                                src.add(r)
+                                src.add(r.rstrip("0").rstrip(".") or "0")
+    if not src:
+        return ["prose provenance: no numeric values found in results/"]
+
+    body = re.sub(r"^\|.*$", "", md, flags=re.M)          # tables: gated above
+    body = re.sub(r"```.*?```", "", body, flags=re.S)     # code fences
+    body = re.sub(r"\{\{artifact:[^}]*\}\}", "", body)    # embed markers
+    body = re.sub(r"10\.\d{4,}/\S+", "", body)            # DOIs
+    body = re.sub(r"\[[^\]]*\]\([^)]*\)", "", body)       # link targets
+    body = re.sub(r"Section\s+\d+\.\d+", "", body)        # section numbers
+    body = re.sub(r"^#{1,6}\s*\d+(\.\d+)*", "", body, flags=re.M)  # heading numbers
+    body = re.sub(r"\d+\.\d+\s*[\u2013-]\s*\d+\.\d+", "", body)  # ranges
+
+    errs = []
+    for n in sorted({m for m in re.findall(r"(?<![\w.])(\d+\.\d{2,4})(?![\w])", body)}):
+        if n in src:
+            continue
+        m = re.search(r"[^.\n]*(?<![\w.])" + re.escape(n) + r"(?![\w])[^.\n]*", body)
+        ctx = (m.group(0).strip()[:110] + "...") if m else ""
+        errs.append(f"prose provenance: {n} appears in no results/*.csv "
+                    f"-- \u201c{ctx}\u201d")
+    return errs
+
+
 def check_narrative_tallies(md: str, results: Path) -> list[str]:
     """Prose tallies derived from a results table must match that table.
 
@@ -567,6 +641,7 @@ def main() -> int:
     errs += check_table20(md, res)
     errs += check_seed_counts(md, res)
     errs += check_narrative_tallies(md, res)
+    errs += check_prose_number_provenance(md, res)
 
     if errs:
         print(f"FAIL: {len(errs)} manuscript/source mismatches")
