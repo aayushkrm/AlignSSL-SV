@@ -728,6 +728,123 @@ def check_seed_counts(md: str, results: Path) -> list[str]:
     return errs
 
 
+def check_progress_headline(progress: Path, results: Path) -> list[str]:
+    """PROGRESS.md Part I declares itself authoritative, so gate its numbers.
+
+    Part I of the progress record is a *third* rendering of the two benchmark
+    headline tables, after the manuscript and the README. It carried no check
+    until this gate was added, and by then it had drifted badly: every deep-arm
+    cell was stale, four of six leader verdicts disagreed with source, the
+    caller-candidate benchmark was absent entirely, and the uniform
+    full-supervision sentence had the *direction of the comparison reversed*
+    (it reported from-scratch ahead of pretrained where source has the
+    opposite). A document that says "read this, it is authoritative" is the
+    worst place for stale numbers, because it is the one a reader trusts
+    without cross-checking.
+
+    Part II is a dated chronological log and is deliberately NOT gated:
+    superseded entries there are historical record, corrected by appended
+    dated notes rather than by rewriting. Only text above the Part II heading
+    is checked.
+
+    Checks, per budget, for both headline tables:
+    control arm name, control mean/sd, deep arm name, deep mean/sd, rendered
+    p-value, leader verdict, and row membership in both directions.
+
+    Rounding follows check_readme_tables: exact three-decimal ties accept
+    either neighbour.
+    """
+    if not progress.exists():
+        return ["progress: PROGRESS.md not found"]
+    text = progress.read_text(encoding="utf-8")
+    marker = "# PART II"
+    part1 = text.split(marker)[0] if marker in text else text
+    if marker not in text:
+        return ["progress: no '# PART II' heading; cannot scope Part I"]
+
+    def r3(v: str) -> set[str]:
+        d = Decimal(v)
+        return {str(d.quantize(Decimal("1.000"), rounding=m))
+                for m in (ROUND_HALF_EVEN, ROUND_HALF_UP)}
+
+    # (label, source csv, column names) for each gated table
+    specs = [
+        ("progress candidate-filtered table",
+         "table14_control_vs_deep.csv",
+         dict(n="n_labelled", ca="control_arm", cm="control_auprc_mean",
+              cs="control_auprc_sd", da="best_deep_arm",
+              dm="best_deep_auprc_mean", ds="best_deep_auprc_sd",
+              p="p_value", v="leader", filt=("benchmark", "candidate-filtered"))),
+        ("progress caller-candidate table",
+         "table24_caller_candidate.csv",
+         dict(n="n_labelled", ca="control_arm", cm="control_roc_auc",
+              cs="control_sd", da="deep_arm", dm="deep_roc_auc",
+              ds="deep_sd", p="p", v="verdict", filt=None)),
+    ]
+
+    errs: list[str] = []
+    for label, fname, col in specs:
+        src = results / fname
+        if not src.exists():
+            errs.append(f"{label}: missing source {fname}")
+            continue
+        with src.open(newline="", encoding="utf-8-sig") as fh:
+            rows = list(csv.DictReader(fh))
+        if col["filt"]:
+            k, v = col["filt"]
+            rows = [r for r in rows if r[k] == v]
+        if not rows:
+            errs.append(f"{label}: no source rows in {fname}")
+            continue
+
+        want = {}
+        for r in rows:
+            want[f"{int(r[col['n']]):,}"] = {
+                "ca": r[col["ca"]], "cm": r[col["cm"]], "cs": r[col["cs"]],
+                "da": r[col["da"]], "dm": r[col["dm"]], "ds": r[col["ds"]],
+                "p": f"{float(r[col['p']]):.4f}", "v": r[col["v"]],
+            }
+
+        seen: set[str] = set()
+        for line in part1.splitlines():
+            if not line.startswith("|"):
+                continue
+            cells = [c.strip() for c in line.strip().strip("|").split("|")]
+            if len(cells) != 8:
+                continue
+            n = cells[1].replace(",", "")
+            if not n.isdigit():
+                continue
+            key = f"{int(n):,}"
+            if key not in want:
+                continue
+            w = want[key]
+            # Both gated tables share this column order; the arm names
+            # disambiguate which table a row belongs to when budgets collide.
+            if cells[2] != w["ca"] or cells[4] != w["da"]:
+                continue
+            seen.add(key)
+            for idx, (mv, sv, which) in ((3, (w["cm"], w["cs"], "control")),
+                                         (5, (w["dm"], w["ds"], "deep"))):
+                got = cells[idx]
+                ok = any(got == f"{m} ± {s}"
+                         for m in r3(mv) for s in r3(sv))
+                if not ok:
+                    errs.append(f"{label} n={key}: {which} "
+                                f"'{got}' != {sorted(r3(mv))[0]} ± "
+                                f"{sorted(r3(sv))[0]}")
+            if cells[6] != w["p"]:
+                errs.append(f"{label} n={key}: p '{cells[6]}' != {w['p']}")
+            if cells[7] != w["v"]:
+                errs.append(f"{label} n={key}: leader '{cells[7]}' "
+                            f"!= '{w['v']}'")
+        missing = sorted(set(want) - seen)
+        if missing:
+            errs.append(f"{label}: omits budgets present in source: "
+                        f"{missing}")
+    return errs
+
+
 def check_caller_candidate_table(md: str, readme: Path,
                                  results: Path) -> list[str]:
     """The caller-candidate table must reconcile with source in BOTH documents.
@@ -990,6 +1107,7 @@ def main() -> int:
     p.add_argument("--md", default="docs/AlignSSL_SV_manuscript.md")
     p.add_argument("--results", default="results")
     p.add_argument("--readme", default="README.md")
+    p.add_argument("--progress", default="PROGRESS.md")
     a = p.parse_args()
 
     md = Path(a.md).read_text()
@@ -1012,6 +1130,7 @@ def main() -> int:
     errs += check_prose_number_provenance(md, res)
     errs += check_caller_candidate_table(md, Path(a.readme), res)
     errs += check_readme_tables(Path(a.readme), res)
+    errs += check_progress_headline(Path(a.progress), res)
 
     if errs:
         print(f"FAIL: {len(errs)} manuscript/source mismatches")

@@ -57,34 +57,56 @@ applied.
    shortcut from 0.955 to 0.717 and drop every arm's absolute score, confirming
    the task is harder rather than relabelled. `results/table9_hardneg_single_feature_auc.csv`.
 5. **Learned tensor > DeepSV RGB encoding — with a caveat.** On the uniform
-   benchmark the DeepSV-representation arm is **last at five of six budgets**
-   (and 4th of 5 at the sparsest). On the candidate-filtered benchmark the
-   picture is *not* uniform: at 1% and 5% labels it is mid-pack and actually
-   **ahead of both tensor arms** (0.330 versus 0.302/0.283 at 1%), falling behind
-   them from 10% upward. The defensible claim is that the learned tensor beats the
-   RGB encoding once there are enough labels to train it, not at every budget.
-   This is the original comparison that comes closest to holding up, and it is
-   still narrower than first reported.
+   benchmark the DeepSV-representation arm is **last of five arms at every one of
+   the six budgets**. On the candidate-filtered benchmark the picture is *not*
+   uniform: at 1% and 5% labels it is **ahead of both tensor arms** (0.316 versus
+   0.300 pretrained / 0.278 from-scratch at 1%), falling behind them from 10%
+   upward. The defensible claim is that the learned tensor beats the RGB encoding
+   once there are enough labels to train it, not at every budget. This is the
+   original comparison that comes closest to holding up, and it is still narrower
+   than first reported.
 6. **Length-consistent recall** for the tensor models across five length strata,
    where the RGB baseline's per-stratum s.d. is up to 4x larger.
 
-## I.4 Headline numbers (corrected protocol, threshold-free AUPRC)
+## I.4 Headline numbers (corrected protocol, threshold-free)
 
-Candidate-filtered benchmark, held-out chr12–22, best-of-family per budget:
+Every cell below is generated from `results/` and checked by
+`check_progress_headline` in `analysis/check_manuscript.py`; do not hand-edit.
 
-| Budget | *n* labels | Hand-crafted control | Best deep arm | *p* | Leader |
-|---|---|---|---|---|---|
-| 1% | 35 | 0.476 ± 0.076 | 0.330 ± 0.025 | 0.0003 | control |
-| 5% | 173 | 0.626 ± 0.054 | 0.411 ± 0.036 | 0.0004 | control |
-| 10% | 345 | 0.719 ± 0.029 | 0.510 ± 0.140 | 0.1211 | tie |
-| 25% | 863 | 0.803 ± 0.013 | 0.734 ± 0.065 | 0.2052 | tie |
-| 50% | 1726 | 0.845 ± 0.012 | 0.763 ± 0.063 | 0.1484 | tie |
-| 100% | 3452 | 0.869 ± 0.006 | 0.885 ± 0.022 | 0.3285 | tie |
+**Candidate-filtered benchmark** (depth-matched negatives), AUPRC on held-out
+chr12–22, best-of-family per budget — `results/table14_control_vs_deep.csv`:
+
+| Budget | *n* labels | Control arm | Control AUPRC | Best deep arm | Deep AUPRC | *p* | Leader |
+|---|---|---|---|---|---|---|---|
+| 1% | 35 | Classical-logreg | 0.476 ± 0.076 | DeepSV-representation | 0.316 ± 0.032 | 0.0000 | control |
+| 5% | 173 | Classical-GBT | 0.626 ± 0.054 | DeepSV-representation | 0.415 ± 0.026 | 0.0000 | control |
+| 10% | 345 | Classical-GBT | 0.719 ± 0.029 | AlignSSL-scratch | 0.473 ± 0.093 | 0.0000 | control |
+| 25% | 863 | Classical-GBT | 0.803 ± 0.013 | AlignSSL-scratch | 0.724 ± 0.055 | 0.0013 | control |
+| 50% | 1726 | Classical-GBT | 0.845 ± 0.012 | AlignSSL-scratch | 0.803 ± 0.046 | 0.0176 | control |
+| 100% | 3452 | Classical-GBT | 0.869 ± 0.006 | AlignSSL-pretrained | 0.856 ± 0.035 | 0.5140 | tie |
+
+**Caller-candidate benchmark** (positives *and* negatives are real caller
+candidates, labelled against the truth set — the hardest of the three), ROC-AUC
+— `results/table24_caller_candidate.csv`:
+
+| Budget | *n* labels | Control arm | Control ROC-AUC | Deep arm | Deep ROC-AUC | *p* | Leader |
+|---|---|---|---|---|---|---|---|
+| 1% | 33 | Classical-logreg | 0.922 ± 0.030 | AlignSSL-pretrained | 0.778 ± 0.045 | 0.0148 | control |
+| 5% | 167 | Classical-GBT | 0.957 ± 0.013 | AlignSSL-pretrained | 0.852 ± 0.020 | 0.0041 | control |
+| 10% | 335 | Classical-GBT | 0.969 ± 0.003 | AlignSSL-pretrained | 0.891 ± 0.038 | 0.0705 | tie |
+| 25% | 836 | Classical-GBT | 0.980 ± 0.002 | AlignSSL-scratch | 0.933 ± 0.009 | 0.0093 | control |
+| 50% | 1673 | Classical-GBT | 0.982 ± 0.002 | AlignSSL-scratch | 0.953 ± 0.010 | 0.0337 | control |
+| 100% | 3346 | Classical-GBT | 0.982 ± 0.001 | AlignSSL-scratch | 0.956 ± 0.010 | 0.0455 | control |
+
+The control leads at five of six budgets on this benchmark and is never behind:
+the hand-crafted-feature result is *strongest* on the hardest negative set, which
+is the opposite of what a "the benchmark was too easy" defence of the deep arms
+would predict.
 
 Pretrained versus from-scratch on the **uniform** benchmark, the contrast the
-project was built to test: 0.524 ± 0.052 versus 0.427 ± 0.138
-at 1% labels, and 0.962 ± 0.018 versus 0.979 ± 0.001
-at full supervision. Neither difference is significant.
+project was built to test (AUPRC, `results/table12_label_efficiency_fixed.csv`):
+0.504 ± 0.060 versus 0.495 ± 0.113 at 1% labels, and 0.962 ± 0.015 versus
+0.955 ± 0.068 at full supervision. Neither difference is significant.
 
 ## I.5 Reconciliation against `docs/project.md` (the plan)
 
@@ -112,8 +134,8 @@ the DeepSV-representation head-to-head (§1.1) both survived every correction.
 | # | Item | Status |
 |---|---|---|
 | 1 | Manuscript consistency gate (`analysis/check_manuscript.py`) | ✅ passes |
-| 2 | Test suite (26 tests, incl. 20 regression guards for the two protocol defects) | ✅ passes |
-| 3 | All 8 figures regenerate from `results/` via one script | ✅ `analysis/make_figures.py` |
+| 2 | Test suite (120 tests, incl. regression guards for every protocol defect found) | ✅ passes |
+| 3 | All 10 figures regenerate from `results/` via one script | ✅ `analysis/make_figures.py` |
 | 4 | `docs/project.md` reconciled with the withdrawal | ✅ §16 |
 | 5 | Rewrite §12.3-style framing in the manuscript Discussion around the negative result | 🟡 |
 | 6 | Zenodo weights + data-availability statement | ⬜ |
@@ -128,7 +150,8 @@ the DeepSV-representation head-to-head (§1.1) both survived every correction.
   `cluster/README_hardneg_rebenchmark.md`.
 - **Truth set.** 1000G Phase 3 genotypes, not GIAB HG002 (caveat C1).
 - **Evaluation.** Direct genotype scoring, not Truvari (caveat C2).
-- **Seeds.** 3 per deep arm, 10 per classical arm. Sufficient to *fail* to
+- **Seeds.** 3-4 per deep arm; 10 per classical arm on the uniform and
+  candidate-filtered benchmarks, 5 on the caller-candidate benchmark. Sufficient to *fail* to
   separate arms, and that asymmetry is stated rather than hidden — but it does
   limit how strongly the negative result can be phrased.
 - **Deletions only**, short reads only, one reference build (hs37d5).
@@ -762,14 +785,20 @@ had no producer anywhere in the repository. `analysis/caller_candidate.py`
 computes it now, deriving the Holm family from the budgets actually present.
 Folding in the 50% budget grew the family from 4 tests to 5 and moved the
 adjusted value from 0.011 to 0.014; the cell still survives.
+_[Superseded 2026-08-10: the 100% budget completed, growing the family to 6 and
+moving the adjusted value to 0.0168. The cell still survives. Part I §I.4 and the
+manuscript carry the current figures.]_
 
 **And the effect inverts.** At 50% labels from-scratch beats pretrained
-(0.953 ± 0.005 vs 0.922 ± 0.014, *p* = 0.029; Holm *p* = 0.114). The pretraining
+(0.953 ± 0.010 vs 0.922 ± 0.002, *p* = 0.029; Holm *p* = 0.143). The pretraining
 advantage does not merely decay past 10% labels — it changes sign. The 100%
-budget is rerunning one arm per array task: the previous array ran both arms per
+budget was rerun one arm per array task: the previous array ran both arms per
 task and lost every 100% result to the 12-hour wall clock after the pretrained
 arm alone had consumed ~10h, which is a scheduling defect rather than a
 scientific one, but it cost three GPU-days.
+_[Completed 2026-08-10: at full supervision from-scratch leads 0.956 ± 0.010 to
+0.939 ± 0.003 (Holm p = 0.3904), and the hand-crafted control leads both
+(0.982 ± 0.001, Holm p = 0.0455). The reversal holds at the top of the range.]_
 
 Static guard added in `tests/test_figure_sources.py`: every CSV a figure reads
 must be tracked by git. Figure 10 was briefly written against a table that
