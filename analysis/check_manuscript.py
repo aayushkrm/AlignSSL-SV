@@ -406,6 +406,96 @@ def check_table20(md: str, results: Path) -> list[str]:
     return errs
 
 
+def check_narrative_tallies(md: str, results: Path) -> list[str]:
+    """Prose tallies derived from a results table must match that table.
+
+    check_table20 verifies the table *rows* and asserts that the correct
+    "N of M" string appears somewhere. Neither catches the failure mode we
+    actually hit: a stale tally surviving elsewhere in the prose while the
+    correct one is present too. The abstract said the headline claim
+    survives Holm correction and an introduction bullet said it does not;
+    Section 4.10 carried "8 of 72" in a heading with "24 of 72" spliced
+    into the same paragraph. Both files reconciled, both gates passed.
+
+    So: for each tally, compute the true value from the source and reject
+    any *other* value appearing in the same grammatical frame. A tally is
+    wrong not only when absent but when contradicted.
+    """
+    errs = []
+
+    t20 = results / "table20_alignssl_vs_deepsv.csv"
+    if t20.exists():
+        with t20.open(newline="", encoding="utf-8-sig") as fh:
+            rows = list(csv.DictReader(fh))
+        n_tot = len(rows)
+        sep = [r for r in rows if float(r["p_holm"]) < 0.05]
+        ahead = [r for r in rows if float(r["diff"]) > 0]
+        ns = [r for r in rows if float(r["p_holm"]) >= 0.05]
+        und = [r for r in ns
+               if abs(float(r["diff"])) < float(r["mde80"])]
+        scr = [r for r in sep if r["arm"] == "AlignSSL-scratch"]
+        # "N of 72" must always be a true count of that grid
+        legal = {len(sep), len(ahead), len(ns), len(und), len(scr), n_tot}
+        for got in re.findall(rf"\b(\d+) of {n_tot}\b", md):
+            if int(got) not in legal:
+                errs.append(
+                    f"narrative tally: '{got} of {n_tot}' is not a true "
+                    f"count of the Table 20 grid "
+                    f"(separating={len(sep)}, ahead={len(ahead)}, "
+                    f"non-separating={len(ns)}, underpowered={len(und)})")
+        # arm attribution: "K of those N" / "K of the N surviving"
+        for got, tot in re.findall(r"\b(\d+) of (?:those|the) (\d+)\b", md):
+            if int(tot) == len(sep) and int(got) != len(scr):
+                errs.append(
+                    f"narrative tally: '{got} of {tot}' surviving cells "
+                    f"attributed to one arm, but {len(scr)} of {len(sep)} "
+                    f"are the from-scratch arm")
+        # underpowered accounting
+        for got, tot in re.findall(r"\b(\d+) of the (\d+) non-separating\b", md):
+            if (int(got), int(tot)) != (len(und), len(ns)):
+                errs.append(
+                    f"narrative tally: '{got} of the {tot} non-separating' "
+                    f"contradicts source ({len(und)} of {len(ns)})")
+
+    mult = results / "stats_multiplicity.csv"
+    if mult.exists():
+        with mult.open(newline="", encoding="utf-8-sig") as fh:
+            rows = list(csv.DictReader(fh))
+        n_tests = len(rows)
+        n_fam = len({r["family"] for r in rows})
+        nom = sum(1 for r in rows if float(r["p_raw"]) < 0.05)
+        hol = sum(1 for r in rows if float(r["p_holm"]) < 0.05)
+        for a, b in re.findall(r"\b(\d+) nominal(?:ly significant)? "
+                               r"(?:hits |tests )?(?:across this paper )?"
+                               r"(?:in \d+ pre-declared families )?"
+                               r"(?:fall|reduce) to (\d+)\b", md):
+            if (int(a), int(b)) != (nom, hol):
+                errs.append(
+                    f"narrative tally: '{a} nominal -> {b}' contradicts "
+                    f"stats_multiplicity.csv ({nom} nominal, {hol} survive "
+                    f"Holm)")
+        for a, b in re.findall(r"\b(\d+) tests in (\d+) families\b", md):
+            if (int(a), int(b)) != (n_tests, n_fam):
+                errs.append(
+                    f"narrative tally: '{a} tests in {b} families' "
+                    f"contradicts source ({n_tests} tests, {n_fam} families)")
+        # The headline claim's survival status is asserted in three places;
+        # they must agree with each other and with the source.
+        head = [r for r in rows
+                if "pretrained vs scratch @0.01 (F1@0.5)" in r["test"]]
+        if head:
+            survives = float(head[0]["p_holm"]) < 0.05
+            claims_not = re.findall(
+                r"headline claim is not among the survivors", md)
+            if survives and claims_not:
+                errs.append(
+                    "narrative tally: manuscript states the headline claim "
+                    "is not among the Holm survivors, but "
+                    f"stats_multiplicity.csv gives Holm p="
+                    f"{float(head[0]['p_holm']):.4f} (< 0.05, it survives)")
+    return errs
+
+
 def check_seed_counts(md: str, results: Path) -> list[str]:
     # A seed count asserted in prose or a caption is a claim about a source
     # table, and it drifts silently when a seed-expansion run lands: the
@@ -476,6 +566,7 @@ def main() -> int:
     errs += check_markers(md)
     errs += check_table20(md, res)
     errs += check_seed_counts(md, res)
+    errs += check_narrative_tallies(md, res)
 
     if errs:
         print(f"FAIL: {len(errs)} manuscript/source mismatches")

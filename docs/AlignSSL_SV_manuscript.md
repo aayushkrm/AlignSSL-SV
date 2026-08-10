@@ -54,8 +54,8 @@ What follows is therefore an audit rather than a method paper. We report the fra
 - **A hand-crafted-feature control that bounds what the benchmark can show** (Section 4.2): twelve alignment features reach AUPRC 0.937 from 210 labels and gain +0.038 across a 100× label increase, and one depth-ratio feature reaches ROC-AUC 0.955 untrained. We report this as a negative result about the random-negative evaluation protocol, which is widely used in this literature and, to our knowledge, has not previously been subjected to such a control.
 - **A demonstration that F1 at a fixed probability cut manufactures initialisation gaps** (Section 4.8): the headline result exists under that cut and under no other scoring rule, because a from-scratch network trained on 210 labels ranks competently while scoring timidly. Any label-efficiency claim scored this way is measuring calibration, not representation quality.
 - **A protocol correction establishing equal label budgets across arms** (Section 3.8): a batch-size floor in the deep evaluators had granted them up to 2.8× the labels the classical control received in the low-label cells that carry the headline claims.
-- **A family-wise multiplicity audit of every significance claim in the paper** (Section 4.9): a label-efficiency sweep is a multiple-comparison procedure whether or not it is analysed as one. Under Holm–Bonferroni within pre-declared families, the 20 nominally significant tests across this paper fall to 10, and the headline claim is not among the survivors.
-- **A direct, power-annotated test of the learned representation against the RGB pileup** (Section 4.10): across 72 paired comparisons spanning both benchmarks, three metrics, two arms and six label budgets, the alignment tensor is ahead in mean in 59 cells and separates after Holm correction in 8 — but seven of those eight are the *from-scratch* arm, locating the gain in the representation rather than in self-supervision. Every non-separating cell reports the effect the design could have detected at 80% power, so nulls are not reported as equivalence.
+- **A family-wise multiplicity audit of every significance claim in the paper** (Section 4.9): a label-efficiency sweep is a multiple-comparison procedure whether or not it is analysed as one. Under Holm–Bonferroni within 11 pre-declared families spanning 67 tests, the 25 nominally significant tests across this paper fall to 17. The headline claim is among the survivors (Holm *p* = 0.0012) — multiplicity is not what dismantles it, the scoring rule is (Section 4.8) — while the cross-ancestry effect reduces to chance.
+- **A direct, power-annotated test of the learned representation against the RGB pileup** (Section 4.10): across 72 paired comparisons spanning both benchmarks, three metrics, two arms and six label budgets, the alignment tensor is ahead in mean in 61 cells and separates after Holm correction in 24 — but 22 of those 24 are the *from-scratch* arm, locating the gain in the representation rather than in self-supervision. Every non-separating cell reports the effect the design could have detected at 80% power, so nulls are not reported as equivalence; 42 of the 48 are uninformative rather than negative.
 - A controlled ablation (3–4 seeds, error bars computed across *pretraining* seeds) isolating the contribution of each self-supervised objective (Section 4.5).
 - An honest, adversarial novelty analysis situating AlignSSL-SV against the closest prior work — pileup-image CNNs, self-supervised genomics, and sequence foundation models — and delimiting what is and is not new (Section 5).
 
@@ -344,25 +344,27 @@ protocol, with Holm–Bonferroni applied within metric-by-benchmark families
 
 Two results, and the second matters more than the first.
 
-**The learned tensor is better, but only 8 of 72 cells separate after
-correction.** The direction of the mean effect favours AlignSSL in 59 of 72 cells,
-which is far from the 36 expected under no difference; but only 8 survive
-multiplicity correction. Reading the 64 nulls as evidence of *equivalence* would be
-the error this paper spends Section 4.9 warning against, so each row also reports
-`mde80`, the difference this design could have detected at 80% power given its
-observed seed variance. The median is 0.160 — larger than most of the differences
-being tested — and in 53 of the 64 nulls the observed difference is smaller than
-`mde80`. Those cells are uninformative rather than negative. The remaining 11 are
-genuine failures to separate at a difference the design could have caught. The
-best-powered null illustrates how tight this is: uniform AUPRC, from-scratch arm at
-5% labels, difference +0.228 against an `mde80` of 0.247 — a large effect that three
-seeds still cannot resolve.
+**The learned tensor is better, and 24 of 72 cells separate after
+correction.** The direction of the mean effect favours AlignSSL in 61 of 72 cells,
+which is far from the 36 expected under no difference; 24 survive multiplicity
+correction. Reading the 48 nulls as evidence of *equivalence* would be the error
+this paper spends Section 4.9 warning against, so each row also reports `mde80`,
+the difference this design could have detected at 80% power given its observed
+seed variance. The median is 0.091 — comparable to the differences being tested —
+and in 42 of the 48 nulls the observed difference is smaller than `mde80`. Those
+cells are uninformative rather than negative. The remaining 6 are genuine failures
+to separate at a difference the design could have caught. The best-powered of those
+illustrates how tight the design is even where it has power: uniform ROC-AUC,
+pretrained arm at 10% labels, difference +0.058 against an `mde80` of 0.046 — the
+difference exceeds what four seeds could detect, yet it does not survive correction
+within its family.
 
-**Seven of the eight surviving wins are the *from-scratch* arm.** Only one belongs
-to the pretrained arm (uniform AUPRC at 10% labels, difference +0.110, Holm
-*p* = 0.038); the other seven are AlignSSL trained from random initialisation, and
-the from-scratch difference against DeepSV exceeds the pretrained difference in 21
-of 36 matched cells, and 22 of the 24 surviving cells are the from-scratch arm. The advantage over the RGB pileup is therefore attributable to
+**Twenty-two of the 24 surviving wins are the *from-scratch* arm.** Only two belong
+to the pretrained arm, both on the uniform benchmark at 10% labels (AUPRC,
+difference +0.109, Holm *p* = 0.002; F1 at the budgeted threshold, difference
++0.089, Holm *p* = 0.042); the other 22 are AlignSSL trained from random
+initialisation, and the from-scratch difference against DeepSV exceeds the
+pretrained difference in 21 of 36 matched cells. The advantage over the RGB pileup is therefore attributable to
 the *representation* — 18 continuous alignment channels rather than three colour
 channels — and not to self-supervised pretraining on it. This is the same
 conclusion Section 4.8 reaches from the opposite direction: once scored without a
