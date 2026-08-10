@@ -551,7 +551,7 @@ signals are weak, and the ones it rightly emits are where they are strong. The
 caller's own selection re-imposes the very axis the benchmark was meant to
 neutralise.
 
-![Figure 10. Untrained single-feature separability on all three benchmarks, paired per feature; source `results/table6_single_feature_auc.csv`, `results/table9_hardneg_single_feature_auc.csv` and `results/table25_caller_candidate_single_feature_auc.csv`. Features are ordered by their value on the uniform benchmark. Quantile-matching negatives to the positives' depth distribution attenuates the leading shortcut from 0.955 to 0.717, but negatives drawn from a real caller's candidate list restore it to 0.942 — realism of the negative set and absence of a shortcut are independent properties, and the caller's own depth-driven selection re-imposes the axis that matching removed.]({{artifact:art_2d3f5793-bb01-4eab-b147-f83571f44592}})
+![Figure 9. Untrained single-feature separability on all three benchmarks, paired per feature; source `results/table6_single_feature_auc.csv`, `results/table9_hardneg_single_feature_auc.csv` and `results/table25_caller_candidate_single_feature_auc.csv`. Features are ordered by their value on the uniform benchmark. Quantile-matching negatives to the positives' depth distribution attenuates the leading shortcut from 0.955 to 0.717, but negatives drawn from a real caller's candidate list restore it to 0.942 — realism of the negative set and absence of a shortcut are independent properties, and the caller's own depth-driven selection re-imposes the axis that matching removed.]({{artifact:art_2d3f5793-bb01-4eab-b147-f83571f44592}})
 
 This is the single most useful thing this benchmark tells us, and it cuts
 against the obvious reading of Section 6.2. One might conclude there that
@@ -730,7 +730,7 @@ least three on the strict count, and 2 omit all four.
 Under the lenient count that treats non-statement as omission,
 10 of 14 omit all four.
 
-![Figure 9. Left: the fraction of audited papers exhibiting each of the four evaluation practices. Right: per-paper count of safeguards omitted on the strict definition, which does not penalise a paper for failing to state its protocol. Population: 14 retrievable full texts from the 19 papers that meet the inclusion rule, 2019–2025. Sources and quotations in `results/table18_field_audit.csv` and `results/table19_field_audit_quotes.csv`.]({{artifact:art_50ca4ee6-e9c3-41f5-a745-8eed2ac1ff40}})
+![Figure 10. Left: the fraction of audited papers exhibiting each of the four evaluation practices. Right: per-paper count of safeguards omitted on the strict definition, which does not penalise a paper for failing to state its protocol. Population: 14 retrievable full texts from the 19 papers that meet the inclusion rule, 2019–2025. Sources and quotations in `results/table18_field_audit.csv` and `results/table19_field_audit_quotes.csv`.]({{artifact:art_50ca4ee6-e9c3-41f5-a745-8eed2ac1ff40}})
 
 ### 7.4 What this does and does not license
 
