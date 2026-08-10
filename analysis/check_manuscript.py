@@ -480,6 +480,115 @@ def check_prose_number_provenance(md: str, results: Path) -> list[str]:
     return errs
 
 
+def check_corrected_label_efficiency(md: str, results: Path) -> list[str]:
+    """Table 2 = the Table 1 runs rescored threshold-free (AUPRC).
+
+    Table 1 (fixed-0.5 F1) and Table 2 (AUPRC, corrected protocol) are the
+    paper's central before/after pair, so every cell of both must be
+    gated. Located by column header rather than by table number, because
+    table numbers are assigned in document order and shift when a table
+    is inserted.
+
+    Also enforces that the bolded cell per row is the arm with the highest
+    source mean -- a stale bold would misattribute the leader.
+    """
+    src = {}
+    path = results / "table12_label_efficiency_fixed.csv"
+    if not path.exists():
+        return [f"Table 2: missing source {path.name}"]
+    with path.open(newline="", encoding="utf-8-sig") as fh:
+        for r in csv.DictReader(fh):
+            if r["benchmark"] != "uniform":
+                continue
+            src[(float(r["label_frac"]), r["arm"])] = (
+                float(r["auprc_mean"]), float(r["auprc_sd"]))
+    arms = ["Classical-GBT", "Classical-logreg", "AlignSSL-pretrained",
+            "AlignSSL-scratch", "DeepSV-representation"]
+    m = re.search(r"\| Label fraction \| n labels \| Classical-GBT \| "
+                  r"Classical-logreg \|.*?\n\n", md, re.S)
+    if m is None:
+        return ["Table 2 block not found in manuscript"]
+    errs = []
+    seen = set()
+    for line in m.group(0).splitlines():
+        if not line.startswith("| ") or "---" in line or "Label fraction" in line:
+            continue
+        cells = [c.strip() for c in line.strip("|").split("|")]
+        frac = float(cells[0].rstrip("%")) / 100
+        seen.add(frac)
+        avail = [a for a in arms if (frac, a) in src]
+        if not avail:
+            errs.append(f"Table 2: no source rows at {frac}")
+            continue
+        best = max(avail, key=lambda a: src[(frac, a)][0])
+        for i, arm in enumerate(arms):
+            raw = cells[2 + i]
+            shown = raw.replace("**", "")
+            if (frac, arm) not in src:
+                errs.append(f"Table 2: no source row for {arm} @ {frac}")
+                continue
+            sm, ss = src[(frac, arm)]
+            want = f"{q3(sm)} ± {q3(ss)}"
+            if shown != want:
+                errs.append(f"Table 2 {arm} @{frac}: manuscript '{shown}' "
+                            f"!= source '{want}'")
+            bolded = raw.startswith("**")
+            if bolded != (arm == best):
+                errs.append(f"Table 2 @{frac}: bold marks "
+                            f"{'' if bolded else 'not '}{arm}, "
+                            f"source leader is {best}")
+    missing = {f for f, _ in src} - seen
+    if missing:
+        errs.append(f"Table 2 omits label fractions present in source: "
+                    f"{sorted(missing)}")
+    return errs
+
+
+def check_table_numbering(md: str) -> list[str]:
+    """Table captions must be numbered 1..N in document order.
+
+    Numbers were originally inherited from source CSV filenames, so a
+    reviewer met Table 1, then Table 14, then Table 6, and two in-text
+    references pointed at a table that had no caption at all. Journals
+    require sequential numbering; this makes the property enforced rather
+    than periodically repaired.
+    """
+    errs = []
+    order = [int(x) for x in re.findall(r"^\*\*Table (\d+)[.\s*]", md, flags=re.M)]
+    if not order:
+        return ["table numbering: no '**Table N' captions found"]
+    want = list(range(1, len(order) + 1))
+    if order != want:
+        errs.append(f"table numbering: captions appear as {order}, "
+                    f"expected {want} in document order")
+    # Every in-text reference must resolve to a caption. Mask source
+    # filenames first (results/table12_x.csv is not a cross-reference).
+    masked = re.sub(r"table\d+[a-z0-9_]*\.csv", "CSVFILE", md)
+    refs = {int(x) for x in re.findall(r"Table\s+(\d+)", masked)}
+    dangling = sorted(refs - set(order))
+    if dangling:
+        errs.append(f"table numbering: in-text references to tables with no "
+                    f"caption: {dangling}")
+
+    # Figures are currently sequential; gate them so a renumbering round
+    # cannot silently break them the way the tables were broken.
+    forder = [int(x) for x in re.findall(r"!\[Figure (\d+)\.", md)]
+    if not forder:
+        errs.append("figure numbering: no '![Figure N.' captions found")
+    else:
+        fwant = list(range(1, len(forder) + 1))
+        if forder != fwant:
+            errs.append(f"figure numbering: captions appear as {forder}, "
+                        f"expected {fwant} in document order")
+        fmasked = re.sub(r"figure\d+[a-z0-9_]*\.png", "PNGFILE", md)
+        frefs = {int(x) for x in re.findall(r"Figure\s+(\d+)", fmasked)}
+        fdangling = sorted(frefs - set(forder))
+        if fdangling:
+            errs.append(f"figure numbering: in-text references to figures "
+                        f"with no caption: {fdangling}")
+    return errs
+
+
 def check_narrative_tallies(md: str, results: Path) -> list[str]:
     """Prose tallies derived from a results table must match that table.
 
@@ -640,6 +749,8 @@ def main() -> int:
     errs += check_markers(md)
     errs += check_table20(md, res)
     errs += check_seed_counts(md, res)
+    errs += check_corrected_label_efficiency(md, res)
+    errs += check_table_numbering(md)
     errs += check_narrative_tallies(md, res)
     errs += check_prose_number_provenance(md, res)
 
