@@ -19,6 +19,7 @@ Real-data helpers:
     CHROM_SPLIT        : DeepSV convention train chr1-11 / test chr12-22.
 """
 from __future__ import annotations
+from collections import OrderedDict
 import os
 import numpy as np
 import pysam
@@ -479,7 +480,20 @@ class ShardDataset(Dataset):
     labeled=True  -> returns dict with label/geno/bp/bin_size/del_len.
     """
 
-    def __init__(self, shard_dir, split="all", labeled=True, glob_pat="*.npz"):
+    # Decompressed-shard cache budget, in bytes, per dataset instance.
+    # A shard of 1024 windows at 18x64x256 float16 is ~604 MB decompressed
+    # from ~8 MB on disk (75x). With a ONE-slot cache and a shuffled sampler
+    # over S shards, ~(1 - 1/S) of items pay a full 604 MB zlib inflate to
+    # serve one 1.18 MB window -- for a 6-shard, 3.3k-window benchmark that
+    # is ~1.7 TB of redundant decompression per epoch, which starves the GPU
+    # (measured: main process 1.4% CPU, workers 99%, GPU 0% utilisation).
+    # 4 GiB holds ~6 such shards, so after the first epoch every read hits.
+    # Note each DataLoader worker holds its own cache: budget x (workers+1)
+    # must fit the job's --mem.
+    CACHE_BYTES = int(os.environ.get("ALIGNSSL_SHARD_CACHE_BYTES", 4 << 30))
+
+    def __init__(self, shard_dir, split="all", labeled=True, glob_pat="*.npz",
+                 cache_bytes=None):
         import glob as _glob
         self.files = sorted(_glob.glob(os.path.join(shard_dir, glob_pat)))
         # A memmap built in-place (scripts/build_memmap.py) writes
@@ -502,14 +516,29 @@ class ShardDataset(Dataset):
             keep = [j for j in range(len(chrom)) if int(chrom[j]) in want]
             for j in keep:
                 self.index.append((fi, j))
-        self._cur_fi = None
-        self._cur = None
+        self._cache = OrderedDict()          # fi -> decompressed dict
+        self._cache_bytes = 0
+        self._budget = (self.CACHE_BYTES if cache_bytes is None
+                        else int(cache_bytes))
 
     def _load(self, fi):
-        if self._cur_fi != fi:
-            self._cur = dict(np.load(self.files[fi]))
-            self._cur_fi = fi
-        return self._cur
+        c = self._cache
+        if fi in c:
+            c.move_to_end(fi)
+            return c[fi]
+        d = dict(np.load(self.files[fi]))
+        n = sum(v.nbytes for v in d.values() if hasattr(v, "nbytes"))
+        # Always admit the requested shard, then evict LRU until under budget
+        # but never evict the shard just inserted (a single shard larger than
+        # the budget degrades to the old one-slot behaviour rather than
+        # thrashing on every access).
+        c[fi] = d
+        self._cache_bytes += n
+        while len(c) > 1 and self._cache_bytes > self._budget:
+            _, old = c.popitem(last=False)
+            self._cache_bytes -= sum(v.nbytes for v in old.values()
+                                     if hasattr(v, "nbytes"))
+        return d
 
     def __len__(self):
         return len(self.index)
