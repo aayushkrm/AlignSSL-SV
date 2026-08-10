@@ -23,6 +23,7 @@ a real string literal reaching a `read(...)`-style call counts.
 from __future__ import annotations
 
 import ast
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -78,6 +79,30 @@ def test_figure_does_not_read_superseded_table(name):
         f"{name} reads superseded table(s) {sorted(bad)}; use the corrected "
         f"replacement (table12/13/14/15) so the figure agrees with the "
         f"manuscript table it accompanies"
+    )
+
+
+def test_named_csvs_are_committed():
+    """Every CSV a figure reads must be tracked by git, not merely on disk.
+
+    A figure that names a results table which exists in the working tree but
+    was never committed regenerates for whoever wrote it and fails for
+    everybody else. That is the harder failure to notice, because the author
+    sees a working pipeline. The superseded-table test above cannot catch it:
+    an uncommitted table is not superseded, it is absent.
+    """
+    root = FIGURES.resolve().parents[1]
+    tracked = set(subprocess.run(
+        ["git", "ls-files", "results"], cwd=root, check=True,
+        capture_output=True, text=True).stdout.split())
+    named = {s for fn in figure_functions().values()
+             for stmt in fn.body for s in _string_literals(stmt)
+             if s.endswith(".csv")}
+    missing = sorted(n for n in named
+                     if f"results/{n}" not in tracked and n not in tracked)
+    assert not missing, (
+        f"figures read results table(s) not tracked by git: {missing}; "
+        f"commit them so the figure regenerates from a fresh clone"
     )
 
 
