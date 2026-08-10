@@ -71,6 +71,26 @@ AUPRC on the held-out chromosomes, scored threshold-free under the corrected pro
 
 What does not depend on any scoring convention: quantile-matched candidate negatives attenuate the depth shortcut from ROC-AUC 0.955 to 0.717 without changing the positive set, and every arm's score falls, confirming a genuinely harder task. See `docs/AlignSSL_SV_manuscript.md` §6.
 
+### The third benchmark: negatives we did not construct
+
+Both benchmarks above build their negatives ourselves, so a reviewer can reasonably ask whether the finding is an artefact of our negative-sampling code. We therefore built a third benchmark in which we choose nothing. Positives and negatives are both **candidates that Manta actually emitted on GIAB HG002**, and the label is whether a candidate overlaps the GIAB Tier1 v0.6 truth set inside the Tier1 confident regions — an orthogonal truth set as well as an unconstructed negative set. The positive rate is 0.805, so AUPRC has a floor at 0.805 here and is near-uninformative; we rank on ROC-AUC, which is invariant to the base rate.
+
+| Labels | Best control | Control ROC-AUC | Best deep arm | Deep ROC-AUC | *p* | Leader |
+|---:|:---|:---:|:---|:---:|:---:|:---:|
+| 33 (1%) | Classical-logreg | **0.922 ± 0.030** | AlignSSL-pretrained | 0.778 ± 0.045 | 0.0148 | control |
+| 167 (5%) | Classical-GBT | **0.957 ± 0.013** | AlignSSL-pretrained | 0.852 ± 0.020 | 0.0041 | control |
+| 335 (10%) | Classical-GBT | 0.969 ± 0.003 | AlignSSL-pretrained | 0.891 ± 0.038 | 0.0705 | tie |
+| 836 (25%) | Classical-GBT | **0.980 ± 0.002** | AlignSSL-scratch | 0.933 ± 0.009 | 0.0093 | control |
+| 1,673 (50%) | Classical-GBT | **0.982 ± 0.002** | AlignSSL-scratch | 0.953 ± 0.005 | 0.0337 | control |
+
+Three findings, one of which runs against the rest of the paper:
+
+1. **The negative result reproduces a third time, on a negative set we did not build.** The control leads significantly at four of the five budgets and is never beaten by any deep arm. At 33 labels the control does not even beat the *untrained* single depth feature (0.942), which is the cleanest available statement of what this benchmark measures.
+2. **Realism does not imply absence of a shortcut.** The centre-versus-flank depth ratio still reaches ROC-AUC **0.942** untrained here, against 0.717 under quantile matching. Manta's candidate generation is itself depth-driven, so the loci it wrongly emits are where depth evidence is weak and the ones it rightly emits are where it is strong: the caller's own selection re-imposes the axis that matching removed. Realism of the negative set and absence of a shortcut are independent properties.
+3. **The one place pretraining survives every correction — and its limit.** At 33 labels the pretrained arm beats from-scratch at ROC-AUC 0.778 ± 0.045 versus 0.545 ± 0.041 (*p* = 0.003; Holm *p* = 0.014 within the five-budget family). This is the only cell in the project where the pretraining advantage is significant under a metric that is simultaneously threshold-free and base-rate-free, on negatives we did not choose. It does not persist, and past 10% labels it **inverts**: from-scratch is ahead at 25% (0.933 vs 0.918) and at 50% (0.953 ± 0.005 vs 0.922 ± 0.014, *p* = 0.029, Holm *p* = 0.114). Both arms lose to twelve scalar features at every budget. We report it as the strongest surviving evidence for the original hypothesis and as the natural target of a follow-up powered to test it — not as a reinstatement of the headline.
+
+The 100% budget is still running; the table will gain a row. See `docs/AlignSSL_SV_manuscript.md` §6.5.
+
 ### Self-supervised objective ablation
 
 MAM-only leads at 1% labels (0.588 ± 0.117) and the combined objective leads at full supervision (0.934 ± 0.004 vs 0.915 ± 0.014), but the seed-level intervals overlap throughout, so **we do not claim an ordering** among the three objectives. These are F1 at a fixed 0.5 cut on the uniform benchmark, so both defects above apply: the "low-label effect" all three appeared to deliver is the thresholding artefact, and the benchmark they are measured on is shortcut-solvable. The ablation is reported for completeness and supports no claim about the objectives.

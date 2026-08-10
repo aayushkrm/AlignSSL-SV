@@ -734,6 +734,49 @@ representation comparison. §I.2 above lists them; the manuscript's abstract,
 contributions and conclusion now state four documented evaluation defects rather
 than a performance result.
 
+### The third benchmark, and the provenance defect it exposed
+
+`scripts/extract_tensors_candidates.py` builds a benchmark whose positives and
+negatives are both real Manta candidates on GIAB HG002, labelled against GIAB
+Tier1 v0.6 inside the Tier1 confident regions. Neither the negative set nor the
+truth set is ours. It exists to answer the obvious reviewer question about the
+first two benchmarks: is the negative result an artefact of our own
+negative-sampling code? It is not. The hand-crafted control leads significantly
+at four of five budgets and is never beaten (Table 24, §6.5).
+
+Two things worth recording because neither was anticipated:
+
+**Realism and shortcut-freedom are independent.** The centre-versus-flank depth
+ratio reaches untrained ROC-AUC 0.942 on the *real* candidate list, against
+0.717 under our quantile matching and 0.955 uniform. Manta selects candidates
+using depth, so its false candidates sit where depth evidence is weak and its
+true ones where it is strong. A caller's own selection re-imposes the axis that
+matching removes. Figure 10 shows all three benchmarks paired per feature.
+
+**The one surviving positive claim had no producer.** At 33 labels pretraining
+beats from-scratch (0.778 vs 0.545, Holm *p* = 0.014) — the only cell in the
+project where the pretraining advantage survives a metric that is both
+threshold-free and base-rate-free, on negatives we did not pick. That claim was
+backed by `results/stats_caller_candidate.csv`, which was written by hand and
+had no producer anywhere in the repository. `analysis/caller_candidate.py`
+computes it now, deriving the Holm family from the budgets actually present.
+Folding in the 50% budget grew the family from 4 tests to 5 and moved the
+adjusted value from 0.011 to 0.014; the cell still survives.
+
+**And the effect inverts.** At 50% labels from-scratch beats pretrained
+(0.953 ± 0.005 vs 0.922 ± 0.014, *p* = 0.029; Holm *p* = 0.114). The pretraining
+advantage does not merely decay past 10% labels — it changes sign. The 100%
+budget is rerunning one arm per array task: the previous array ran both arms per
+task and lost every 100% result to the 12-hour wall clock after the pretrained
+arm alone had consumed ~10h, which is a scheduling defect rather than a
+scientific one, but it cost three GPU-days.
+
+Static guard added in `tests/test_figure_sources.py`: every CSV a figure reads
+must be tracked by git. Figure 10 was briefly written against a table that
+existed only in the working tree, which regenerates for the author and fails for
+every other clone — the harder failure to notice, because the author sees a
+working pipeline.
+
 ### Open, deferred by decision
 
 - **Phase 4 (GIAB HG002 + Truvari)** — deferred by the user until after the
