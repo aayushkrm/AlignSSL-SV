@@ -43,18 +43,24 @@ def _synthetic(json_dir: Path, bump_frac: float = 0.1, bump: float = 0.25):
     """Write a sweep with a KNOWN effect: pretrained beats scratch on AUPRC at
     one budget only. Anything the aggregator reports beyond that is spurious."""
     json_dir.mkdir(parents=True, exist_ok=True)
-    for arm in ("pre", "scratch"):
+    # Arm keys are the REAL ones written by scripts/cross_pop_lowlabel.py
+    # ("pretrained", "scratch"), verified against ckpt/xpopll_pre_seed0.json on
+    # the cluster. An earlier version of this fixture used a made-up key and
+    # passed only because the aggregator selected arms positionally; once
+    # selection became by name, the fixture's wrongness surfaced as an empty
+    # table. Keep these names in sync with the sweep script, not with taste.
+    for family, arm in (("pre", "pretrained"), ("scratch", "scratch")):
         for seed in range(3):
             rows = []
             for f in FRACS:
-                b = bump if (arm == "pre" and abs(f - bump_frac) < 1e-9) else 0.0
+                b = bump if (arm == "pretrained" and abs(f - bump_frac) < 1e-9) else 0.0
                 def cell(shift):
                     return {"f1_at_half": 0.60 + shift, "f1_at_tau": 0.60 + shift,
                             "auprc": 0.60 + b + shift, "n_pos": 100, "n_total": 900}
                 rows.append({"frac": f,
-                             "combined": {"in_dist": cell(0.05 + 0.001 * seed),
-                                          "xpop": cell(0.001 * seed)}})
-            (json_dir / f"xpopll_{arm}_seed{seed}.json").write_text(
+                             arm: {"in_dist": cell(0.05 + 0.001 * seed),
+                                   "xpop": cell(0.001 * seed)}})
+            (json_dir / f"xpopll_{family}_seed{seed}.json").write_text(
                 json.dumps({"label_efficiency": rows}))
 
 

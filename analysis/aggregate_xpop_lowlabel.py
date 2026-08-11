@@ -73,21 +73,30 @@ def load(json_dir: str, arm: str) -> list[dict]:
     return [json.load(open(p)) for p in paths]
 
 
-def cell(runs: list[dict], frac: float, site: str, rule: str) -> np.ndarray:
-    """Per-seed values for one (budget, test site, scoring rule) cell."""
+def cell(runs: list[dict], frac: float, site: str, rule: str,
+         mode: str) -> np.ndarray:
+    """Per-seed values for one (budget, test site, scoring rule) cell.
+
+    ``mode`` names the arm explicitly ("pretrained" or "scratch"). An earlier
+    version picked ``[k for k in row if isinstance(row[k], dict)][0]``, i.e. the
+    first arm in dict-insertion order. That happened to be right, because
+    ``cross_pop_lowlabel.py`` iterates ``["pretrained", "scratch"]`` and the
+    pretrained-encoder invocation therefore writes ``pretrained`` first --- but it
+    made the identity of the arm depend on the *key order of a JSON file*. Reorder
+    that loop, or hand-edit a JSON, and the pretrained column would silently fill
+    with from-scratch numbers with no error raised anywhere. The arm is named here
+    instead, and a run that does not contain it contributes nothing.
+    """
     vals = []
     for r in runs:
         rows = [x for x in r["label_efficiency"]
                 if abs(x["frac"] - frac) < 1e-9]
         if not rows:
             continue
-        # the sweep script nests arm results under a mode key; a single-arm
-        # run has exactly one such key besides the bookkeeping fields
-        modes = [k for k, v in rows[0].items()
-                 if isinstance(v, dict) and site in v]
-        if not modes:
+        got = rows[0].get(mode)
+        if not isinstance(got, dict) or site not in got:
             continue
-        vals.append(float(rows[0][modes[0]][site][rule]))
+        vals.append(float(got[site][rule]))
     return np.asarray(vals, dtype=float)
 
 
@@ -115,7 +124,8 @@ def main() -> None:
     for frac in FRACS:
         for rule in RULES:
             for site in ("in_dist", "xpop"):
-                p_v, s_v = cell(pre, frac, site, rule), cell(scr, frac, site, rule)
+                p_v = cell(pre, frac, site, rule, "pretrained")
+                s_v = cell(scr, frac, site, rule, "scratch")
                 if p_v.size == 0 or s_v.size == 0:
                     continue
                 t, pval = stats.ttest_ind(p_v, s_v, equal_var=False)
@@ -138,7 +148,9 @@ def main() -> None:
         for rule in RULES:
             for key, arm in ARMS.items():
                 runs = pre if key == "pre" else scr
-                ind, xp = cell(runs, frac, "in_dist", rule), cell(runs, frac, "xpop", rule)
+                mode = "pretrained" if key == "pre" else "scratch"
+                ind = cell(runs, frac, "in_dist", rule, mode)
+                xp = cell(runs, frac, "xpop", rule, mode)
                 if ind.size == 0 or xp.size == 0 or ind.size != xp.size:
                     continue
                 gap = ind - xp
