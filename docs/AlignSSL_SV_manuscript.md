@@ -27,7 +27,7 @@ We then repair the benchmark itself, twice. Quantile-matched candidate negatives
 
 Re-run under all three corrections, what survives is narrow but not empty. Self-supervised pretraining confers no threshold-free advantage at any label budget on either constructed-negative benchmark; the sole exception is on the caller-candidate benchmark at 33 labels, where it leads from-scratch training at ROC-AUC 0.778 versus 0.545 and survives correction within its family (Holm *p* = 0.017) — one cell, not persisting past 10% labels and reversing by 50%, and with both arms behind the hand-crafted control at that budget. The *representation* does: tested directly against the DeepSV RGB pileup across 72 paired comparisons (Section 4.10), the learned alignment tensor separates after Holm correction in 24, with 22 of those 24 belonging to the *from-scratch* arm — so the advantage is attributable to the multi-channel encoding rather than to self-supervision on it. In 42 of the 48 non-separating cells the observed difference is below the minimum effect this four-seed design could detect at 80% power, so much of that grid is uninformative rather than negative. The hand-crafted control is never beaten by any deep arm at any budget on any of the three benchmarks, and its lead is statistically significant across most of the label range — decisively so where labels are scarce, the regime the deep method is proposed for.
 
-**Conclusion.** We report this as a methodological result rather than a method paper. Each defect is individually mundane and each is, by a coded audit of 14 papers from this literature (Section 7), the field's default: benchmarks built from randomly-sampled negatives, F1 reported at a fixed cut, and label budgets computed per-arm are all standard practice in this literature. Together they were sufficient to produce a confident, statistically significant, entirely artefactual headline. We publish the corrections, the controls, and the code that implements them so that the next paper in this lineage can be checked against them.
+**Conclusion.** We report this as a methodological result rather than a method paper. Each defect is individually mundane and each is, by a coded audit of 18 papers from this literature (Section 7), the field's default: benchmarks built from randomly-sampled negatives, F1 reported at a fixed cut, and label budgets computed per-arm are all standard practice in this literature. Together they were sufficient to produce a confident, statistically significant, entirely artefactual headline. We publish the corrections, the controls, and the code that implements them so that the next paper in this lineage can be checked against them.
 
 **Availability.** Code, the tensor-extraction pipeline, result tables and figures are at https://github.com/aayushkrm/AlignSSL-SV (MIT licence).
 
@@ -648,11 +648,17 @@ were excluded for a recorded reason: target is SNV or short indel rather than SV
 survey row had filed it under the SV theme); no trained classifier, i.e.
 heuristic, statistical, assembly- or *k*-mer-based (9); benchmark or truth-set
 paper rather than a method (5); review or survey (10); genomic language model
-whose target is not SV (10). The rule admits 19 papers spanning 2017–2025,
-including the DeepSV paper this work extends. Of these, 14 had a
-full text we could retrieve through open-access routes; 5 were paywalled
-with no available route and are recorded as uncoded rather than guessed at. The
-coded set spans 7 venues (BMC Bioinformatics × 4, Briefings in Bioinformatics × 3, Nature Methods × 2, Bioinformatics × 2, Frontiers in Genetics × 1, bioRxiv (preprint) × 1, Nature Biotechnology × 1).
+whose target is not SV (10). The rule admits 24 papers spanning 2017–2025,
+including the DeepSV paper this work extends. Of these, 18 had a
+full text we could retrieve through open-access routes; 6 had none and
+are recorded as uncoded rather than guessed at.
+Four of the 18 were added on 2026-08-11: they satisfy the pre-registered rule
+but were surfaced by the independent completeness screen of Section 8 rather than
+by the 62-paper survey, and are marked as such in the `provenance` column of
+`results/table17_audit_population.csv`. Their eligibility was decided from full
+text, and recorded with supporting quotations, before their evaluation axes were
+coded, so inclusion could not be conditioned on which way a paper moves the result. The
+coded set spans 11 venues (BMC Bioinformatics × 4, Briefings in Bioinformatics × 3, Bioinformatics × 2, Nature Methods × 2, BMC Medical Genomics, Frontiers in Genetics, G3, Genome Research, Nature Biomedical Engineering, Nature Biotechnology, bioRxiv (preprint)).
 The full population with per-row inclusion status and reason is
 `results/table17_audit_population.csv`.
 
@@ -688,7 +694,11 @@ than folding into the defect count.
 | Paper | Year | Venue | Negative sampling | Threshold rule | Model-free control | Multiplicity | Safeguards omitted |
 |---|---|---|---|---|---|---|---|
 | Cai et al. 2019 | 2019 | BMC Bioinformatics | not stated | not stated | no | none | 2 |
+| dudeML (Hill & Unckless 2019) | 2019 | G3 | simulated | fixed 0.5 | yes | seeds, uncorrected | 3 |
+| Mixgenotype (Zheng et al. 2020) | 2020 | BMC Medical Genomics | simulated | fixed 0.5 | no | seeds, uncorrected | 4 |
 | Luo et al. 2021 | 2021 | BMC Bioinformatics | not stated | fixed 0.5 | no | none | 3 |
+| DECoNT (Özden et al. 2022) | 2022 | Genome Research | not stated | fixed 0.5 | yes | none | 2 |
+| ETCHING (Choi et al. 2022) | 2022 | Nature Biomedical Engineering | caller candidates | tuned on validation | no | seeds, uncorrected | 2 |
 | Lin et al. 2022 | 2022 | Nature Methods | not stated | fixed 0.5 | no | none | 3 |
 | Luo et al. 2023 | 2023 | Frontiers in Genetics | not stated | fixed 0.5 | no | none | 3 |
 | Ma et al. 2023 | 2023 | BMC Bioinformatics | caller candidates | fixed 0.5 | no | none | 3 |
@@ -702,7 +712,7 @@ than folding into the defect count.
 | Gao et al. 2025 | 2025 | Briefings in Bioinformatics | not stated | not stated | no | none | 2 |
 | Guo et al. 2025 | 2025 | Briefings in Bioinformatics | not stated | not stated | no | none | 2 |
 
-**Table 15. Coded evaluation design of the 14 retrievable papers in the audit
+**Table 15. Coded evaluation design of the 18 retrievable papers in the audit
 population. "Safeguards omitted" counts the strict defects only — documented
 easy negatives, a documented fixed threshold, absence of a model-free control,
 and absence of multiplicity correction — and does not penalise a paper for
@@ -711,58 +721,62 @@ failing to state its protocol. Full quotations in
 
 The four axes behave differently.
 
-**No coded paper corrects for multiplicity.** All 14 coded
-papers apply no family-wise correction to any significance claim.
-1 reports multi-seed variability without correcting; the remaining
-13 report neither.
+**No coded paper corrects for multiplicity.** 18 of 18
+coded papers — that is, all of them — apply no family-wise correction to any
+significance claim.
+4 report multi-seed variability without correcting; the remaining
+14 report neither.
 
-**A model-free control is nearly as rare.** 12 of 14
-report no non-learned reference of any kind. The 2 exceptions are
-Zheng & Shang 2023 and Wang et al. 2024. Without such a control, a paper cannot
+**A model-free control is nearly as rare.** 14 of 18
+report no non-learned reference of any kind. The 4 exceptions are
+Zheng & Shang 2023, Wang et al. 2024, dudeML (Hill & Unckless 2019) and DECoNT
+(Özden et al. 2022). Without such a control, a paper cannot
 distinguish what its architecture contributes from what its benchmark gives
 away — which is exactly the measurement that changed this project's conclusion
 (Section 4.2).
 
-**Thresholding is dominated by the fixed 0.5 cut.** 11 of 14
-papers report their headline metric at a fixed default probability cut, and
+**Thresholding is dominated by the fixed 0.5 cut.** 14 of 18
+papers report their headline metric at a fixed default probability cut,
+1 tunes the cut on a validation split (ETCHING), and
 3 do not state a rule. No paper in the population reports its headline
 comparison threshold-free. As an independent mechanical check, we searched each
 full text for any mention of a threshold-free metric (AUC, AUROC, AUPRC,
 average precision, precision–recall curve):
-10 of 14
+13 of 18
 never mention one anywhere in the paper.
 
 **Negative-sampling protocol is most often simply not stated.** Only
-5 of 14 papers state how their negative
-training examples were obtained: 2 draw them from
-caller candidates, 2 from simulation, and
+8 of 18 papers state how their negative
+training examples were obtained: 3 draw them from
+caller candidates, 4 from simulation, and
 1 — Zheng & Shang 2023 — matches negatives to positives.
-The remaining 9 do not say. We count non-statement as a
+The remaining 10 do not say. We count non-statement as a
 reporting failure rather than as evidence of easy negatives, which is why the
 strict defect count in Table 15 is conservative: it credits a paper with the
 safeguard whenever the text is silent.
 
 Taken together, no coded paper reports all four safeguards, and none
-omits fewer than two. 9 of 14 omit at
-least three on the strict count, and 2 omit all four.
+omits fewer than two. 11 of 18 omit at
+least three on the strict count, and 3 omit all four.
 Under the lenient count that treats non-statement as omission,
-10 of 14 omit all four.
+14 of 18 omit all four.
 
-![Figure 10. Left: the fraction of audited papers exhibiting each of the four evaluation practices. Right: per-paper count of safeguards omitted on the strict definition, which does not penalise a paper for failing to state its protocol. Population: 14 retrievable full texts from the 19 papers that meet the inclusion rule, 2019–2025. Sources and quotations in `results/table18_field_audit.csv` and `results/table19_field_audit_quotes.csv`.]({{artifact:art_50ca4ee6-e9c3-41f5-a745-8eed2ac1ff40}})
+![Figure 10. Left: the fraction of audited papers exhibiting each of the four evaluation practices. Right: per-paper count of safeguards omitted on the strict definition, which does not penalise a paper for failing to state its protocol. Population: 18 retrievable full texts from the 24 papers that meet the inclusion rule, 2019–2025. Sources and quotations in `results/table18_field_audit.csv` and `results/table19_field_audit_quotes.csv`.]({{artifact:art_50ca4ee6-e9c3-41f5-a745-8eed2ac1ff40}})
 
 ### 7.4 What this does and does not license
 
 It licenses the generality claim in a bounded form: the four defects documented
-in this manuscript are not idiosyncratic to our pipeline. Among the 14 papers we
-could retrieve and code, three of the four axes are absent in at least 11.
+in this manuscript are not idiosyncratic to our pipeline. Among the 18 papers we
+could retrieve and code, three of the four axes are absent in at least 14.
 
-Three boundaries on that statement. First, the population is a **convenience
+Three boundaries on that statement. First, the population began as a **convenience
 sample** drawn from this project's related-work survey rather than a systematic
 search; an independent 2,334-record corpus screen identified five apparently
-eligible short-read SV papers absent from it, which leaves the *majority* claim
-below provisional (Section 8). Second, 5 of the 19 eligible papers were
-paywalled and are uncoded, so the coded set may be non-representative in an
-unmeasured direction. Third, "the paper does not report it" is not "the authors
+eligible short-read SV papers absent from it, four of which we retrieved and
+coded under the same instrument, leaving the *majority* claim bounded rather
+than settled (Section 8). Second, 6 of 24 eligible papers have no
+retrievable full text and are uncoded, so the coded set may be non-representative
+in an unmeasured direction. Third, "the paper does not report it" is not "the authors
 did not do it": coding is bounded by what a paper states. Accordingly we claim
 that these safeguards are **rarely reported** in this literature, not that they
 are never performed, and the per-axis counts should be read as statements about
@@ -796,7 +810,8 @@ resolved in the audited papers' favour.
 - **No demonstrated value from pretraining.** Under the corrected protocol and threshold-free scoring, the pretrained arm does not significantly exceed from-scratch training at *any* label budget on the uniform benchmark, and is significantly behind at 5% (Section 4.8). We report the pretraining machinery because it is the object the paper set out to evaluate, not because the evaluation vindicated it.
 - **Single-panel pretraining corpus.** The unlabelled pretraining corpus comes from three samples; corpus-size and diversity scaling are untested.
 - **Candidate filtering is a partial repair, and its benchmark is single-sample.** The repaired benchmark of Section 6 attenuates the depth shortcut to ROC-AUC 0.717 but does not eliminate it; a threshold baseline on the residual signal remains available to any method. It is also single-sample — NA20845 (GIH) for train and in-distribution test, NA12878 (CEU) held out — with 1,516 test windows against 9,196 for the uniform benchmark, because a mid-study loss of the shared reference directory left only two of the six panel alignments recoverable. Section 6's error bars are correspondingly wider than Section 4's, and with three seeds per deep arm its ties should be read as *underpowered* rather than as demonstrated equivalence: the pretrained-versus-scratch contrast at full supervision (*p* = 0.431) would need more seeds to exclude a small effect. What that section can support is the absence of the *large* low-label advantage originally claimed, which the uniform benchmark independently rejects at ten times the test-set size.
-- **The field audit's population is a convenience sample, and its majority claim is not robust to that.** The 19-paper audit population of Section 7 was derived from the 62-paper related-work survey assembled for this project, not from a systematic pre-registered search. To test its completeness we screened an independently assembled 2,334-record corpus (OpenAlex phrase queries, citation-graph expansion from anchor callers, and PubMed, restricted to 2018+) against Section 7's own inclusion rule, and found five short-read SV papers that appear eligible and are absent from the population: `10.1093/bib/bbaa370`, `10.1534/g3.119.400596`, `10.1038/s41551-022-00980-5`, `10.1101/gr.274845.120`, and `10.1186/s12920-020-00733-w` (eligibility judged from abstracts only; full-text coding would be required to confirm). This matters for one specific claim. The universal findings are unaffected in direction — an additional five papers cannot make "14 of 14 apply no multiplicity correction" false for the papers already coded — but the *majority* claim is fragile: "9 of 14 omit at least three safeguards" (0.64) becomes 9/19 = 0.47 if all five newly identified papers turn out to omit none, and 14/19 = 0.74 if all five omit three or more. Because the adversarial case crosses one half, **Section 7's majority claim should be read as provisional pending full-text coding of those five papers**, while its per-axis counts remain statements about the 14 papers actually coded. We report this rather than re-running the audit because the five full texts were not retrievable within this study, and a partial re-code would substitute a different unquantified bias for a stated one. The screen is released as `results/table21_audit_completeness_screen.csv`.
+- **The field audit's population was a convenience sample; four of the five papers the completeness screen surfaced have since been coded, and the majority claim remains bounded rather than settled.** The audit population of Section 7 was derived from the 62-paper related-work survey assembled for this project, not from a systematic pre-registered search. To test its completeness we screened an independently assembled 2,334-record corpus (OpenAlex phrase queries, citation-graph expansion from anchor callers, and PubMed, restricted to 2018+) against Section 7's own inclusion rule, and found five short-read SV papers that appeared eligible and were absent from the population. We then attempted retrieval of all five: four were obtained (`10.1534/g3.119.400596`, `10.1038/s41551-022-00980-5`, `10.1101/gr.274845.120`, `10.1186/s12920-020-00733-w`) and have been coded under the same instrument, verified quotations and pre-registered eligibility rule as the original set; one (`10.1093/bib/bbaa370`) has no open-access full text and is recorded in the population as eligible-but-uncoded. Coding the four moved the observed majority from 9 of 14 (0.64) to 11 of 18 (0.61) — a slight decline that stays above one half — so the claim survived the test that prompted it rather than being defended by argument. Two of the four additions also break patterns the original 14 made look universal: ETCHING is the first coded paper to tune its decision threshold on a validation split rather than take a default, and dudeML and DECoNT double the number of papers carrying any model-free control. Both corrections move against this manuscript's own rhetorical interest and are reported for that reason. It is nonetheless still bounded rather than settled: 6 of 24 eligible papers remain uncoded for want of an accessible full text, and the adversarial bound is 11/24 = 0.46 if every uncoded paper omits no safeguard and 17/24 = 0.71 if every one omits three or more. Because that interval still crosses one half, **Section 7's majority claim should be read as an estimate over the coded set with a stated worst case, not as a population claim**; its per-axis counts are statements about the 18 papers actually coded. The universal findings are unaffected in direction: no coded paper corrects for multiplicity, and no additional paper can make that false for the papers already coded. The screen is released as `results/table21_audit_completeness_screen.csv` and the per-row provenance of every audit population entry as `results/table17_audit_population.csv`.
+
 - **Single coverage regime.** All alignments are high-coverage (~30x) PCR-free Illumina. Robustness to lower coverage, PCR-positive libraries, or different read lengths is untested; the depth-derived channels are the ones most likely to be coverage-sensitive.
 - **One held-out population.** Cross-ancestry generalisation is measured against a single held-out population (NA12878, CEU). A single held-out ancestry cannot distinguish population-specific transfer loss from sample-specific idiosyncrasy.
 
@@ -813,7 +828,7 @@ It fails four controls, none of which is exotic:
 3. **The decision threshold.** Scoring F1 at a fixed 0.5 probability cut — the convention inherited from DeepSV — conflates ranking quality with calibration. Re-run under equal budgets and re-scored at a validation-selected threshold or threshold-free, the ten-fold gap becomes 1.05× (*p* = 0.527) and 1.02× (*p* = 0.853) respectively; at every larger budget the from-scratch arm is ahead. The from-scratch model was never degenerate. It ranked competently and scored timidly, and a fixed cut reads timidity as failure.
 4. **Multiplicity.** The fixed-cut result was the strongest cell of a six-budget sweep, reported as though it were a single test. Corrected for the family it was selected from it does survive (Holm *p* = 0.0012) — multiplicity is not what dismantles it, and we report that against our own expectation. Across the whole paper, 25 nominally significant tests in 11 pre-declared families reduce to 17 under Holm–Bonferroni, and the cross-ancestry effect reduces to chance.
 
-Each defect is individually mundane, each is the default in this literature — no paper in the audited population reports all four safeguards and 9 of 14 omit at least three (Section 7) — and each is invisible without the control that exposes it. Three concern how the numbers were measured; the fourth concerns how they were tested. Jointly they were sufficient to manufacture a large, statistically significant, entirely artefactual headline result — one we believed, wrote up, and would have submitted.
+Each defect is individually mundane, each is the default in this literature — no paper in the audited population reports all four safeguards and 11 of 18 omit at least three (Section 7) — and each is invisible without the control that exposes it. Three concern how the numbers were measured; the fourth concerns how they were tested. Jointly they were sufficient to manufacture a large, statistically significant, entirely artefactual headline result — one we believed, wrote up, and would have submitted.
 
 What survives is narrower and, we think, more useful. Where labels are scarce — the regime self-supervised pretraining is proposed for — no deep arm we trained beats twelve hand-crafted features on any of the three benchmarks. Repairing the benchmark helps but does not rescue the claim: quantile-matched candidate negatives attenuate the shortcut from ROC-AUC 0.955 to 0.717 and restore headroom (the same control now starts at chance and climbs +0.619 across the label range), yet the control still leads where it matters. Nor does abandoning synthetic negatives altogether: on a third benchmark whose positives and negatives are both real Manta candidates labelled against GIAB Tier1 — a negative set we did not construct, and an orthogonal truth set — the control leads at five of six budgets and is never beaten (Section 6.5).
 

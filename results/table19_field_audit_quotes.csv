@@ -55,3 +55,19 @@ Guo et al. 2025,10.1093/bib/bbaf200,negative_sampling,unclear,"The main types of
 Guo et al. 2025,10.1093/bib/bbaf200,threshold_rule,unclear,with the label having the highest probability chosen as the output for each node,1,literal
 Guo et al. 2025,10.1093/bib/bbaf200,model_free_control,no,NO EVIDENCE IN TEXT,1,literal
 Guo et al. 2025,10.1093/bib/bbaf200,multiplicity,none,NO EVIDENCE IN TEXT,1,literal
+dudeML (Hill & Unckless 2019),10.1534/g3.119.400596,negative_sampling,simulated,We generated chromosomes containing simulated CNVs and simulated reads for these chromosomes using WGsim ( Li 2011 ),1,literal
+dudeML (Hill & Unckless 2019),10.1534/g3.119.400596,threshold_rule,fixed_default,"This number of false-positives is reduced by filtering out CNVs with low predicted probabilities (less than 95% probability), but still produced a similar number of false-positives to true-positives",1,literal
+dudeML (Hill & Unckless 2019),10.1534/g3.119.400596,model_free_control,yes,as well as pure coverage for samples of decreasing coverage or increasing poolsize,1,literal
+dudeML (Hill & Unckless 2019),10.1534/g3.119.400596,multiplicity,seeds_no_correction,We generated 100 independent training sets across both the Iso-1 and A4 reference genomes to create 100 independent classifiers.,1,literal
+DECoNT (Özden et al. 2022),10.1101/gr.274845.120,negative_sampling,unclear,We downloaded matched WGS data to obtain the ground-truth calls for the CNV events called on 802 WES samples of the same individuals in the 1000 Genomes Project data,1,literal
+DECoNT (Özden et al. 2022),10.1101/gr.274845.120,threshold_rule,fixed_default,The option with the highest probability is returned as the prediction.,1,literal
+DECoNT (Özden et al. 2022),10.1101/gr.274845.120,model_free_control,yes,We used SVM and logistic regression for the discrete prediction case and polynomial regression for the exact prediction (rounded). We showed that these models actually deteriorate the baseline caller performance,1,literal
+DECoNT (Özden et al. 2022),10.1101/gr.274845.120,multiplicity,none,NO EVIDENCE IN TEXT,1,no_evidence
+ETCHING (Choi et al. 2022),10.1038/s41551-022-00980-5,negative_sampling,caller_candidate,"Of 315,949 SV candidates predicted by the Caller module in 31 training samples, 10,736 SVs were simultaneously predicted by at least three SV callers",1,literal
+ETCHING (Choi et al. 2022),10.1038/s41551-022-00980-5,threshold_rule,tuned_on_val,We then searched the optimal classification cutoffs of RF and XGB scores using the VA set,1,literal
+ETCHING (Choi et al. 2022),10.1038/s41551-022-00980-5,model_free_control,no,NO EVIDENCE IN TEXT,1,no_evidence
+ETCHING (Choi et al. 2022),10.1038/s41551-022-00980-5,multiplicity,seeds_no_correction,Our training procedure consists of an outer 10-fold cross-validation (CV) loop for training and an inner 10-fold CV loop for model selection,1,hyphen_insensitive
+Mixgenotype (Zheng et al. 2020),10.1186/s12920-020-00733-w,negative_sampling,simulated,"we sampled a random 1 Mbps region from the reference (version:hg19), and then randomly planted 300 structural variants for each dataset",1,literal
+Mixgenotype (Zheng et al. 2020),10.1186/s12920-020-00733-w,threshold_rule,fixed_default,"Note that the index set of the output vector is I ={N, G1, G2, G3, G4}, and M-RVM finally output the genotype with the highest probability.",1,literal
+Mixgenotype (Zheng et al. 2020),10.1186/s12920-020-00733-w,model_free_control,no,NO EVIDENCE IN TEXT,1,no_evidence
+Mixgenotype (Zheng et al. 2020),10.1186/s12920-020-00733-w,multiplicity,seeds_no_correction,Each result was an average of five repeated experiments.,1,literal
