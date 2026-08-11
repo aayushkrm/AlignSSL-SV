@@ -816,10 +816,17 @@ working pipeline.
   v4.2.1 SV benchmark ships for GRCh38, so it needs either a lift-over or a
   GRCh38 re-run of the whole pipeline.
 - **Cross-ancestry sweep re-run** — `scripts/cross_pop_lowlabel.py` is now
-  migrated to the shared label protocol, but Table 5 was generated before that
-  migration and is labelled pre-correction in its caption. Deliberately not
-  re-run: §4.6 claims no cross-ancestry effect at any budget, and a re-run cannot
-  change a withdrawn claim.
+  migrated to the shared label protocol, but Table 8 was generated before that
+  migration and is labelled pre-correction in its caption. Deferred, not
+  dismissed. The earlier rationale recorded here — "a re-run cannot change a
+  withdrawn claim" — was wrong, and is corrected rather than deleted. It holds
+  for a withdrawn *positive* claim; it does not hold for §4.6, which also
+  asserts a **null** (no cross-ancestry effect at any budget). A null is
+  falsifiable by a re-run, and the equal-budget correction reversed the
+  direction of the headline contrast elsewhere, so it could create an effect
+  here as easily as leave the null standing. §4.6 now states that
+  provisionality explicitly. This is the cheapest open item in the paper and
+  the first thing to run post-preprint.
 - Breakpoint-regression head, deep-ensemble / conformal uncertainty,
   repeat-and-segdup stratification, coverage-robustness downsampling, and a
   Zenodo weights release — all post-preprint.
