@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import csv
 import re
+from collections import Counter
 from pathlib import Path
 
 import pytest
@@ -33,6 +34,11 @@ QUOTES = ROOT / "results" / "table19_field_audit_quotes.csv"
 POPULATION = ROOT / "results" / "table17_audit_population.csv"
 
 AXES = ("negative_sampling", "threshold_rule", "model_free_control", "multiplicity")
+
+# The escape string the coding instrument was required to emit when a source says
+# nothing on an axis. It must be exact: a paraphrase here would let an unevidenced
+# code pass as evidenced.
+NO_EVIDENCE = "NO EVIDENCE IN TEXT"
 
 # The strict defect definition, mirrored from analysis. "unclear" is deliberately
 # NOT a defect on axes A and B -- see the module docstring.
@@ -86,6 +92,69 @@ def test_every_code_has_a_verified_quote(audit):
         assert q["quote"].strip(), f"{q['citation']} [{q['axis']}]: empty quote"
     seen = {(q["doi"], q["axis"]) for q in quotes}
     assert len(seen) == 4 * len(audit), "duplicate or missing (paper, axis) pairs"
+
+
+def test_manuscript_states_the_quote_provenance_counts(audit, md):
+    """Section 7.2 and the availability statement quote four counts about the
+    quotation file: total codes, how many carry a verified literal span, how many
+    record no evidence, and how many needed a relaxed normaliser. All four drifted
+    silently when the audit population grew from 14 papers to 18, because nothing
+    recomputed them from the CSV. This gate does.
+    """
+    quotes = _rows(QUOTES)
+    n_total = len(quotes)
+    n_noev = sum(1 for q in quotes if q["verify_mode"] == "no_evidence")
+    n_lit = n_total - n_noev
+    n_hyph = sum(1 for q in quotes if q["verify_mode"] == "hyphen_insensitive")
+    n_split = sum(1 for q in quotes if q["verify_mode"].startswith("split_by_pdf_layout"))
+
+    # Every row is accounted for by exactly one disposition.
+    assert n_lit + n_noev == n_total
+    # A no-evidence row must not smuggle in a fake quotation, and an evidenced row
+    # must actually carry one.
+    for q in quotes:
+        if q["verify_mode"] == "no_evidence":
+            assert q["quote"].strip() == NO_EVIDENCE, (q["citation"], q["axis"], q["quote"][:60])
+        else:
+            assert q["quote"].strip() != NO_EVIDENCE, (q["citation"], q["axis"])
+
+    by_axis = Counter(q["axis"] for q in quotes if q["verify_mode"] == "no_evidence")
+    # The manuscript is hard-wrapped, so a phrase the gate requires may be split
+    # across a line break. Match on collapsed whitespace so the gate tests the
+    # prose, not the wrap column.
+    flat = re.sub(r"\s+", " ", md)
+
+    assert f"Each of the {n_lit} quotations was then" in flat, (
+        f"Section 7.2 must state the {n_lit} evidenced quotations")
+    assert f"Of the {n_total} codes, {n_lit} are supported by a verified verbatim span and" in flat, (
+        f"Section 7.2 must account for all {n_total} codes")
+    assert f"{n_noev} record that the source says nothing on that axis" in flat, (
+        f"Section 7.2 must state that {n_noev} codes record no evidence")
+    assert f"({n_hyph} code, matched" in flat, "the hyphen-insensitive count must be stated"
+    assert f"({n_split} code, both halves verbatim)" in flat, "the split-quote count must be stated"
+    assert f"supporting each of the {n_lit} presence codes" in flat, (
+        "the availability statement must state the presence-code count")
+
+    # The per-axis split matters: it is what shows the unquotable codes are
+    # concentrated on the two axes whose defect code is itself an absence. If that
+    # concentration ever breaks, the prose explanation stops being true.
+    for axis, phrase in (("model_free_control", "on the model-free control"),
+                         ("multiplicity", "on multiplicity")):
+        assert f"{by_axis[axis]} {phrase}" in flat, (
+            f"Section 7.2 must state {by_axis[axis]} unquotable codes {phrase}")
+    absence_axes = by_axis["model_free_control"] + by_axis["multiplicity"]
+    assert f"{absence_axes} of those {n_noev} sit on the two axes" in flat, (
+        "the availability statement must state how many unquotable codes sit on the absence axes")
+    assert absence_axes >= 0.8 * n_noev, (
+        f"only {absence_axes}/{n_noev} unquotable codes sit on the absence axes; the "
+        "prose explanation that silence is confined to absence codes no longer holds")
+
+    # Relaxed normalisers are the exception, not the rule: if they ever become
+    # common, the prose above stops being an adequate disclosure.
+    relaxed = n_hyph + n_split
+    assert relaxed <= 0.1 * n_total, (
+        f"{relaxed}/{n_total} quotes needed a relaxed normaliser; disclose this as a "
+        "systematic limitation rather than two named exceptions")
 
 
 def test_quote_codes_agree_with_the_audit_table(audit):

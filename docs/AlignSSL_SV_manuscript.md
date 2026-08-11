@@ -675,13 +675,37 @@ was reported (comparison against another published *learned* caller does not
 count); (D) whether multiple significance claims received any family-wise
 correction. Codes were constrained to the enumerated values by a forced output
 schema rather than parsed from free text, and every code was required to carry a
-supporting quotation. Each of the 56 quotations was then verified
-mechanically to be a literal span of its own source document after Unicode and
-line-break normalisation; codes whose quotation could not be located were
-re-coded against a stricter verbatim instruction and re-verified, and the three
-that changed under re-coding were changed toward *less* confident codes, never
-toward a defect. All 56 codes in the final table carry a verified
-quotation; the quotations are released in
+supporting quotation, or the explicit string `NO EVIDENCE IN TEXT` where the
+paper makes no statement on that axis. Each of the 41 quotations was then
+verified mechanically to be a literal span of its own source document after
+Unicode and line-break normalisation; codes whose quotation could not be located
+were re-coded against a stricter verbatim instruction and re-verified, and the
+three that changed under re-coding were changed toward *less* confident codes,
+never toward a defect. Two verifications required a relaxed normaliser, and which
+one was used is recorded per quotation in the `verify_mode` column rather than
+left implicit: one source hyphenates a term across a line break where the
+quotation does not (1 code, matched hyphen-insensitively on both sides),
+and in one the PDF interleaves a figure caption mid-sentence (1 code,
+both halves verbatim). In each case a deliberately fabricated quotation was
+confirmed to still fail verification under the relaxation, so the relaxation
+admits layout artefacts and not paraphrase.
+
+Quote-verification is, however, only available for codes that assert a *presence*,
+and we state its reach precisely rather than implying it covers the whole table.
+Of the 72 codes, 41 are supported by a verified verbatim span and
+31 record that the source says nothing on that axis. The silence is not
+spread evenly: it falls almost entirely on the two axes whose defect code *is* an
+absence — 14 on the model-free control and
+14 on multiplicity, against 2
+and 1 on negative sampling and the threshold rule. A
+paper that reports no model-free control and no multiplicity adjustment offers
+nothing to quote, so for those codes the evidence is the absence of any matching
+statement in the full text, which a reader can only check by reading the paper.
+This is a real asymmetry in the instrument: presence codes are externally
+verifiable from `results/table19_field_audit_quotes.csv` alone, absence codes are
+not. It is also why we report *not stated* separately from a defect on axes A and
+B (Section 7.1) instead of treating silence as evidence there. The
+quotations are released in
 `results/table19_field_audit_quotes.csv` so that every code in this section can
 be checked against its source.
 
@@ -842,7 +866,7 @@ We therefore do not offer a new SV caller, and we make no performance claim. We 
 
 The tensor-extraction pipeline, encoder and head implementations, pretraining and fine-tuning scripts, cluster job scripts, aggregation and manuscript-reconciliation tooling, result tables, and figures are available at https://github.com/aayushkrm/AlignSSL-SV under the MIT licence. Trained encoder checkpoints are available from the author on request pending a Zenodo deposit. Sequencing data are from the 1000 Genomes Project (high-coverage PCR-free alignments, GRCh37/hs37d5) and are publicly available from the EBI 1000 Genomes FTP. The deletion truth set is the 1000 Genomes phase-3 integrated SV call set.
 
-The full texts coded in Section 7 are the published articles cited in Table 15; they are not redistributed here. `results/table19_field_audit_quotes.csv` releases the verbatim span supporting each of the 56 codes so that every coding decision can be checked against its source without access to a subscription.
+The full texts coded in Section 7 are the published articles cited in Table 15; they are not redistributed here. `results/table19_field_audit_quotes.csv` releases the verbatim span supporting each of the 41 presence codes — with the normaliser used for each recorded in `verify_mode` — so that every coding decision can be checked against its source without access to a subscription. The remaining 31 codes record that the source is silent on that axis; as Section 7.2 explains, 28 of those 31 sit on the two axes whose defect code is itself an absence and therefore admit no quotable span.
 
 ## Declarations
 
