@@ -1,0 +1,4 @@
+extraction,sample,split,n_windows,n_pos,n_groups,median_abs_offset,max_offset_guard
+hard-negative,NA20845,train,3452,863,77,0.0092,0.25
+hard-negative,NA20845,test,1516,379,75,0.0114,0.25
+hard-negative,NA12878,test,1448,362,75,0.0150,0.25

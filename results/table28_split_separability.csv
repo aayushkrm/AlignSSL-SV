@@ -1,0 +1,5 @@
+benchmark,split,n,n_pos,auc_raw,auc_oriented,median_pos,median_neg
+uniform,train,21016,5254,0.0516,0.9484,0.5365,1.0
+uniform,test,9196,2299,0.0444,0.9556,0.5233,1.0
+candidate-filtered,train,3452,863,0.285,0.715,0.5248,0.723
+candidate-filtered,test,1516,379,0.2815,0.7185,0.524,0.754
