@@ -1046,3 +1046,66 @@ Falsifications now perturb the document the way the defect actually appeared,
 not the way the gate happens to read.
 
 Suite: 176 tests. `analysis/check_manuscript.py` PASS.
+
+### 2026-08-12e — Two figure defects, a preprint eight days stale, and a third dead gate
+
+**Figure 6 could print an impossible p-value.** Its annotation used a fixed
+three-decimal format, so the headline contrast's raw *p* = 0.0002 rendered as
+`p = 0.000` — a value no p-value can take, and one a referee would flag on
+sight. Replaced with a formatter that falls back to one significant figure
+below 0.001.
+
+**Figure 6 also picked the row it plots by position.** It read `rows[0]` from
+`results/table13_threshold_sensitivity.csv`, which holds two benchmarks
+crossed with six label budgets. Any re-sort of that CSV would have silently
+swapped the candidate-filtered numbers into a panel the text reads as uniform.
+Now selected by `benchmark == "uniform"` and `label_frac == 0.01`, with a gate
+asserting exactly one such row exists and that its p-value is still small
+enough for the formatter gate to remain load-bearing.
+
+**Two figure functions were named for panels they did not write.**
+`figure6()` wrote `figure8_hardneg_benchmark.png` and `figure8()` wrote
+`figure6_threshold_sensitivity.png`. This surfaced only because a new gate
+written against `def figure6` inspected the wrong panel and failed on a clean
+tree — the failure was the test working, not the test being wrong. Renamed;
+verified behaviour-neutral by regenerating all ten figures and confirming
+byte-identical output. A gate now asserts every `figureN()` writes only
+`figureN_*.png`, with a count assertion so a silently added or removed
+function cannot pass unnoticed.
+
+**The shipped preprint PDF was 18 manuscript commits stale.** Built eight days
+earlier, it predated a withdrawn claim, the hard-negative re-benchmark, and
+the field-audit section — and nothing in the suite could notice, because a
+binary diff cannot show that a PDF has fallen behind its sources. Rebuilt, and
+`analysis/build_preprint.py` now emits `docs/preprint_build.json` recording
+digests of the manuscript and every embedded figure at build time;
+`tests/test_preprint_current.py` reconciles that record against the working
+tree. Deliberately **not** gated: the PDF's own bytes against a fresh render,
+because the builder stamps the build date into a footer, so a byte-equality
+gate would fail daily and be disabled inside a week.
+
+**The README justified the cross-ancestry withdrawal with the superseded
+run.** It cited only the pre-correction sweep and named neither the corrected
+re-run nor its backing files. Rewritten to cite both, with the re-run's family
+structure, its most extreme cell, and the fact that that cell favours the
+from-scratch arm — every number read from `results/stats_xpop_lowlabel.csv`
+rather than recalled.
+
+**A third gate was dead, same shape as the first two.** The new README
+statistics gate had four assertions; three passed while the document was
+wrong. Two used bare substring membership, and the digits also occur inside
+unrelated decimals elsewhere in the file. The third required two values
+adjacently — but the README states that claim in two separate passages, so
+corrupting one left the other to satisfy an existence check. Fixed by matching
+counts as counted quantities and extracting *every* statement of the claim,
+requiring all of them to agree with the source CSVs. The falsification set now
+perturbs each statement separately plus a case that deletes one outright, so
+an existence check cannot silently reappear.
+
+Three gate-design failures in two days, all one shape: the assertion and its
+falsification shared an assumption, so the falsification could not expose the
+bug. Standing rule recorded — falsify a gate by reproducing the defect as it
+actually appeared in the document, never as the gate happens to read it.
+
+Commits: `35ad5b1`, `f6cef43`, `a0a8f51`. Suite: 184 tests.
+`analysis/check_manuscript.py` PASS.
