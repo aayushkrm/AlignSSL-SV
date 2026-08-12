@@ -108,6 +108,17 @@ def by_arm(rows, key: str, xkey: str, ykey: str, sdkey: str | None):
     return out
 
 
+def p_fmt(v):
+    """Render a p-value without collapsing a small one to '0.000'.
+
+    Motivating defect (2026-08-12): the raw p of the headline 1%-label
+    contrast is 0.0002 and printed as 'p = 0.000' under a fixed 3-decimal
+    format -- a value no p-value can take. Below 0.001 we switch to one
+    significant figure so the magnitude survives.
+    """
+    return f"{v:.3f}" if v >= 0.001 else f"{v:.1g}"
+
+
 def pct_axis(ax, x, total=21016):
     """Log x-axis of label fractions.
 
@@ -282,32 +293,47 @@ def figure4(res: Path, out: Path) -> None:
 
 # ------------------------------------------------------------------ figure 5
 def figure5(res: Path, out: Path) -> None:
-    rows = read(res / "table5_cross_ancestry.csv")
-    fig, ax = plt.subplots(figsize=(5.4, 3.4))
-    for arm in ["AlignSSL-combined", "AlignSSL-scratch"]:
-        sub = sorted([r for r in rows if r["arm"] == arm],
-                     key=lambda r: float(r["label_frac"]))
-        x = np.array([float(r["label_frac"]) for r in sub])
-        ind = np.array([float(r["in_dist_F1_mean"]) for r in sub])
-        ceu = np.array([float(r["heldout_CEU_F1_mean"]) for r in sub])
-        ceu_sd = np.array([float(r["heldout_CEU_F1_sd"]) for r in sub])
-        ax.plot(x, ind, "--o", color=COLOUR[arm], alpha=0.55,
-                label=f"{LABEL[arm]} — in-distribution")
-        ax.plot(x, ceu, "-s", color=COLOUR[arm],
-                label=f"{LABEL[arm]} — held-out CEU")
-        ax.fill_between(x, ceu - ceu_sd, ceu + ceu_sd, color=COLOUR[arm],
-                        alpha=0.14, linewidth=0)
-    pct_axis(ax, x)
-    ax.set_ylabel("Deletion F1")
+    """Cross-ancestry transfer under the CORRECTED label-accounting protocol.
+
+    Deliberately reads table26 (the corrected re-run), not table5 (the
+    pre-correction run retained in the manuscript as Table 9 for the record).
+    The earlier version of this figure plotted table5 while the section's
+    primary claim had already moved to the corrected sweep, and carried an
+    on-image title ("transfer tracks in-distribution F1") asserting exactly
+    the robustness claim Section 4.6 withdraws. Scoring rule is fixed at the
+    0.5 cut so the panel is directly comparable to Figure 1.
+    """
+    rows = [r for r in read(res / "table26_xpop_lowlabel.csv")
+            if r["rule"] == "f1_at_half" and r["site"] in ("in_dist", "xpop")]
+    arms = [("pretrained", "AlignSSL-combined"), ("scratch", "AlignSSL-scratch")]
+    fig, ax = plt.subplots(figsize=(5.8, 3.6))
+    for col, arm in arms:
+        for site, style, alpha, tag in (("in_dist", "--o", 0.55, "in-distribution"),
+                                        ("xpop", "-s", 1.0, "held-out CEU")):
+            sub = sorted([r for r in rows if r["site"] == site],
+                         key=lambda r: float(r["label_frac"]))
+            x = np.array([float(r["label_frac"]) for r in sub])
+            y = np.array([float(r[f"{col}_mean"]) for r in sub])
+            sd = np.array([float(r[f"{col}_sd"]) for r in sub])
+            ax.plot(x, y, style, color=COLOUR[arm], alpha=alpha,
+                    label=f"{LABEL[arm]} — {tag}")
+            if site == "xpop":
+                ax.fill_between(x, y - sd, y + sd, color=COLOUR[arm],
+                                alpha=0.14, linewidth=0)
+    # 21,016 = the 100% cell of this sweep's own budget ladder
+    # (results/json_xpop_lowlabel/*.json, frac=1.0 -> n=21016), not inherited
+    # from Figure 1's benchmark. Passed explicitly per pct_axis's contract.
+    pct_axis(ax, x, total=21016)
+    ax.set_ylabel("Deletion F1 (fixed 0.5 cut)")
     ax.set_ylim(0, 1.0)
-    ax.set_title("Transfer to held-out ancestry tracks in-distribution F1")
+    ax.set_title("Corrected protocol: no contrast survives multiplicity correction")
     ax.legend(loc="lower right", frameon=False, fontsize=7)
     fig.savefig(out / "figure5_cross_ancestry.png")
     plt.close(fig)
 
 
 # ------------------------------------------------------------------ figure 6
-def figure6(res: Path, out: Path) -> None:
+def figure8(res: Path, out: Path) -> None:
     """Candidate-filtered benchmark: arm ordering, and shortcut attenuation.
 
     Left panel is the direct analogue of figure2's left panel but on the
@@ -446,7 +472,7 @@ def figure7(res: Path, out: Path) -> None:
     plt.close(fig)
 
 
-def figure8(res: Path, out: Path) -> None:
+def figure6(res: Path, out: Path) -> None:
     """The headline gap is a thresholding effect.
 
     Same runs, same seeds, three scoring rules. Left: the pretrained-over-
@@ -487,7 +513,12 @@ def figure8(res: Path, out: Path) -> None:
                   "under one scoring rule", loc="left")
     axl.legend(loc="upper right", frameon=False, fontsize=8)
 
-    lo = rows[0]
+    # table13 holds both benchmarks; Section 4.3 discusses the uniform
+    # benchmark's smallest budget, so select it by key rather than position.
+    lo = [r for r in rows if r["benchmark"] == "uniform"
+          and float(r["label_frac"]) == 0.01]
+    assert len(lo) == 1, f"expected 1 uniform/1% row, got {len(lo)}"
+    lo = lo[0]
     names = [n for _, n in (("f1_at_half", "F1@0.5"), ("f1_at_tau", "F1@tau"),
                             ("auprc", "AUPRC"))]
     idx = np.arange(len(names))
@@ -499,7 +530,7 @@ def figure8(res: Path, out: Path) -> None:
     for i, n in enumerate(names):
         pv = lo.get(f"p_{n}", "")
         if pv not in ("", None):
-            axr.annotate(f"p = {float(pv):.3f}", xy=(i, 0.02), ha="center",
+            axr.annotate(f"raw $p$ = {p_fmt(float(pv))}", xy=(i, 0.02), ha="center",
                          fontsize=8, color="#333333")
     axr.set_xticks(idx)
     axr.set_xticklabels(names)

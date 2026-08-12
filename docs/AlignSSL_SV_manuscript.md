@@ -317,7 +317,7 @@ We train on the in-distribution panel and evaluate both in-distribution and on a
 | 50% | 0.679 ± 0.075 | 0.834 ± 0.030 | 0.084 | +0.224 | +0.081 |
 | 100% | 0.784 ± 0.028 | 0.742 ± 0.022 | 0.182 | +0.148 | +0.124 |
 
-![Figure 5. Cross-ancestry transfer across the label-fraction sweep. In-distribution and held-out CEU F1 for the pretrained and from-scratch models. The difference is significant at only one fraction (10% labels, p = 0.028); at 1% the means favour pretraining but the from-scratch variance is large (one seed of three learning nothing), and at 50% the direction inverts. Read as a suggestive, underpowered effect, not a robustness claim.]({{artifact:art_9c67fdcc-feb9-4135-86b2-87196632fc61}})
+![Figure 5. Cross-ancestry transfer under the corrected label-accounting protocol (Table 8; the pre-correction run of Table 9 is not plotted). Deletion F1 at a fixed 0.5 cut, in-distribution (dashed) and on held-out CEU (solid), 3 seeds; bands are ±1 s.d. of the held-out arm. The transfer gap (held-out minus in-distribution) is negative at four of six budgets for the pretrained arm and five of six for from-scratch, and widens as the label budget grows (pretrained −0.214 at 100% labels); at 1% labels both arms score marginally higher on CEU than in-distribution, at F1 levels where both are near-uninformative. No contrast survives Holm correction over the 36 tests of this sweep — smallest adjusted p = 0.339 across the whole sweep, 0.372 among the fixed-cut contrasts plotted here, both at 1% labels. This panel is presented as a null result: it does not support a cross-ancestry robustness claim for pretraining.]({{artifact:art_9c67fdcc-feb9-4135-86b2-87196632fc61}})
 
 ### 4.7 Data-integrity control
 
