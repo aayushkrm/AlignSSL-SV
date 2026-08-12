@@ -343,6 +343,33 @@ The general point is the same one Section 4.8 makes about thresholds, in a diffe
 
 ---
 
+### 4.9.1 A fifth defect: "seed" confounds two variance components, and the smaller one is not small
+
+Every error bar in this paper is a standard deviation over three seeds, and a seed here sets two things at once: the labelled subset drawn at each budget, and the torch RNG stream that drives weight initialisation, batch shuffling and dropout. A single spread over three seeds estimates their *sum*. It cannot say which dominates — and that is what determines the smallest effect the design can detect.
+
+The low-label cross-population sweep answers this by accident of how it was run. `cross_pop_lowlabel.py` seeds once and then loops over the two arms, so the from-scratch arm inherits a torch stream already advanced by the pretrained arm. Because the sweep was invoked twice per seed — once with a pretrained encoder, evaluating both arms, and once without, evaluating from-scratch alone — there are **two from-scratch runs per seed that share the labelled subset exactly** (it is drawn from a generator re-created per invocation from the same seed; the recorded per-budget subset sizes are identical) **and differ only in the torch stream.** That is a controlled contrast, and we report it rather than discard it as a redundant run (`analysis/variance_components.py`, `results/table27_variance_components.csv`).
+
+The two runs never agree: across 108 (seed, budget, test set, scoring rule) cells not one matches, and AUPRC differs by up to 0.30. Decomposed over 36 (rule, test set, budget) cells, run-to-run noise at a *fixed* data split is the same size as split-to-split variation — median ratio 1.02, with run noise the larger component in 19 of 36 cells and accounting for a median 51% of total variance. Seeding the data split, in other words, controls about half of what the error bar contains.
+
+The consequence is a power ceiling. Given the observed total spread, a paired three-seed design detects a median difference of **0.24 AUPRC** at α = 0.05 with 80% power. Most differences this paper reports are far smaller. The correct reading of a null result in this work is therefore *underpowered*, not *absent*: the design was never able to resolve the effects being argued about, and no amount of re-analysis of three seeds will change that.
+
+This also disposes of a tempting analysis we ran and discarded. Comparing the paired from-scratch runs cell by cell, the first appears systematically higher (mean +0.025, sign test *p* = 0.005 over 108 cells). That *p*-value is pseudo-replication: the 108 cells are six budgets × two test sets × three scoring rules computed from only 18 independent training runs, and three rules scored on the same predictions are not three observations. At the correct unit the effect is 13 of 18, *p* = 0.096 — nothing. We report the discarded analysis because the error is easy to make and the corrected version is what licenses treating the two runs as exchangeable replicates.
+
+**Table 10a. Variance decomposition of the from-scratch arm at fixed data split, AUPRC (full 36-cell table in `results/table27_variance_components.csv`).**
+
+| Budget | Test set | sd within split (run only) | sd between splits | run-noise share | MDE, paired *n* = 3 |
+|---|---|---|---|---|---|
+| 1% | in-distribution | 0.035 | 0.123 | 0.07 | 0.395 |
+| 10% | in-distribution | 0.027 | 0.011 | 0.86 | 0.089 |
+| 100% | in-distribution | 0.028 | 0.036 | 0.37 | 0.142 |
+| 1% | cross-population | 0.065 | 0.047 | 0.66 | 0.248 |
+| 10% | cross-population | 0.020 | 0.041 | 0.19 | 0.141 |
+| 100% | cross-population | 0.037 | 0.033 | 0.56 | 0.152 |
+
+The fix is not more seeds of the present kind. It is to vary the two sources independently — replicate training runs within a fixed split to estimate run noise, and vary the split to estimate data noise — and to report the two separately. We did not design the experiments that way, and say so rather than present a single spread whose composition we now know is roughly half attributable to a source no reader would have assumed it contained.
+
+---
+
 ### 4.10 The primary claim, tested directly: the learned tensor beats the RGB pileup, but pretraining is not what does it
 
 Sections 4.1–4.9 examine what self-supervision contributes. They do not test the

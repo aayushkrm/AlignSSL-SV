@@ -835,3 +835,52 @@ working pipeline.
 - Breakpoint-regression head, deep-ensemble / conformal uncertainty,
   repeat-and-segdup stratification, coverage-robustness downsampling, and a
   Zenodo weights release — all post-preprint.
+
+### 2026-08-12 — Weights release closed; cross-population low-label sweep landed; a fifth design defect found
+
+**Weights release (closed).** The 22-checkpoint archive (`alignssl_sv_weights_v0.1.0.tar.gz`,
+52,913,192 B, SHA-256 `9a62ea51…0eb84d`) is published as a GitHub release asset at tag
+`v0.1.0-weights` and verified live at exactly that byte count. It is deliberately *not*
+committed: 52 MB of binaries would take the clone from 8.7 MB to ~61 MB permanently.
+GitHub's asset-upload host is denylisted from the analysis sandbox, so the tag and notes
+were created via the API and the asset attached by the author locally after a digest check.
+Both availability statements (abstract + data availability) now name the tag rather than
+claiming the archive sits "alongside the code", which read as "in the repository" and was
+false. `tests/test_weights_manifest.py` gates tag, digest and byte count across the
+manuscript and `release/README.md`, verified by falsification.
+
+**Cross-population low-label sweep (jobs 1571441_[0-2], all COMPLETED, ~7.1 h each).**
+Six result JSONs retrieved. `aggregate_xpop_lowlabel.py`: **36 tests, 5 nominally
+significant, 0 survive Holm** → `results/table26_xpop_lowlabel.csv`,
+`results/stats_xpop_lowlabel.csv`. No cross-population claim is supportable at any budget.
+
+**Fifth design defect (new Section 4.9.1).** The sweep was invoked twice per seed — once
+with `--encoder` (both arms) and once without (scratch only) — which by accident yields two
+from-scratch runs per seed that **share the labelled subset exactly** (drawn from a
+generator re-created per invocation; recorded `n_train` identical at every budget) and
+differ **only** in the torch RNG stream, because `cross_pop_lowlabel.py` seeds once and then
+loops over arms, so arm 2 inherits an advanced stream. Findings:
+
+- The two runs never agree: 0 of 108 cells match; AUPRC differs by up to 0.30.
+- Decomposed (`analysis/variance_components.py` → `results/table27_variance_components.csv`):
+  run noise at fixed data ≈ split-to-split noise. Median ratio **1.02**; run noise larger in
+  **19/36** cells; median **51%** of total variance. "Seed" controls about half of what the
+  error bar contains.
+- Power ceiling: paired *n*=3 detects a median **0.24 AUPRC** at α=.05, power .80 — larger
+  than most differences this paper argues about. Null results here are *underpowered*, not
+  *absent*.
+- Same defect present in `finetune_eval.py`, `deepsv_baseline_eval.py`, `cross_pop_eval.py`
+  (seed once, then loop arms). Documented, not silently repaired: rerunning is out of scope
+  pre-preprint, and the decomposition applies to all of them.
+
+**Self-correction recorded in the paper.** A first pass found the paired runs "systematically"
+different (mean +0.025, sign test *p*=0.005 over 108 cells). That was pseudo-replication —
+108 cells come from 18 training runs, and three scoring rules on the same predictions are not
+three observations. At the correct unit: 13/18, *p*=0.096, i.e. nothing. Both numbers are in
+§4.9.1 because the corrected version is what licenses treating the runs as exchangeable.
+
+**Gate bug found by falsification.** `test_scratch_runs_are_not_duplicates` originally pooled
+cells across seeds with a <50% identical threshold — so one *fully duplicated seed* out of
+three read as 33% and passed. Duplication is a per-pair property; the test now asserts per
+pair, plus `test_no_within_split_sd_is_degenerate`. Verified: one duplicated seed now FAILS.
+Suite: 165 tests.
