@@ -43,7 +43,11 @@ and the corrected uniform label-efficiency contrast comes from
 pre-correction `stats_tests.csv` families are retained and labelled as such,
 because Sections 4.5 and 4.6 -- the ablation and the cross-ancestry sweep --
 are themselves reported under the pre-correction protocol and those are the
-p-values they quote. `stats_hardneg.csv` is used only if table15 is absent.
+p-values they quote. `stats_hardneg.csv` is used only if table15 is absent. The corrected
+cross-ancestry re-run (`stats_xpop_lowlabel.csv`) is corrected separately
+from the pre-correction sweep, one family per evaluation site per scoring
+rule, because Section 4.6 reports both runs and each must be corrected
+against the family it was actually selected from.
 
 Usage
 -----
@@ -112,6 +116,23 @@ def build_families(results_dir):
             fams[f"uniform (corrected): pretrained vs scratch, {metric}"] = [
                 (f"pretrained vs scratch @{r['label_frac']} ({metric})", float(r[col]))
                 for r in rows]
+
+    # Corrected cross-ancestry re-run (Section 4.6). The pre-correction sweep
+    # above is retained separately because Section 4.6 quotes both. This run
+    # tests six budgets x three scoring rules x two evaluation sites; the family
+    # is the whole sweep at one site under one rule, because that is the unit a
+    # reader would select a "best cell" from. Added 2026-08-12 after the audit
+    # found Section 4.6 quoting a Holm value this script had never produced.
+    p_xll = os.path.join(results_dir, "stats_xpop_lowlabel.csv")
+    if os.path.exists(p_xll):
+        rows = [r for r in csv.DictReader(open(p_xll)) if r.get("p_raw")]
+        for site in sorted({r["site"] for r in rows}):
+            for rule in sorted({r["rule"] for r in rows}):
+                sel = [r for r in rows if r["site"] == site and r["rule"] == rule]
+                if sel:
+                    fams[f"cross-ancestry (corrected re-run): {site}, {rule}"] = [
+                        (f"pretrained vs scratch @{r['label_frac']} ({site}, {rule})",
+                         float(r["p_raw"])) for r in sel]
 
     # Candidate-filtered families: corrected source preferred.
     p_t15 = os.path.join(results_dir, "table15_hardneg_arm_contrasts.csv")

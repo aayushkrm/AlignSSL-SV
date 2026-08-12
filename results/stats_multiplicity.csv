@@ -30,6 +30,42 @@ uniform (pre-correction): cross-ancestry sweep,"cross-ancestry @1 | combined vs 
 "uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.25 (AUPRC),6,0.2463,0.7389,0.36945,False,False,False,not significant
 "uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @0.5 (AUPRC),6,0.1503,0.6012,0.3006,False,False,False,not significant
 "uniform (corrected): pretrained vs scratch, AUPRC",pretrained vs scratch @1.0 (AUPRC),6,0.7538,1,0.8526,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, auprc","pretrained vs scratch @0.01 (in_dist, auprc)",6,0.353437,1,0.447486,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, auprc","pretrained vs scratch @0.05 (in_dist, auprc)",6,0.128029,0.512116,0.256058,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, auprc","pretrained vs scratch @0.1 (in_dist, auprc)",6,0.030675,0.153375,0.092025,True,False,False,LOST to multiplicity
+"cross-ancestry (corrected re-run): in_dist, auprc","pretrained vs scratch @0.25 (in_dist, auprc)",6,0.009406,0.056436,0.056436,True,False,False,LOST to multiplicity
+"cross-ancestry (corrected re-run): in_dist, auprc","pretrained vs scratch @0.5 (in_dist, auprc)",6,0.788185,1,0.788185,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, auprc","pretrained vs scratch @1.0 (in_dist, auprc)",6,0.372905,1,0.447486,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, f1_at_half","pretrained vs scratch @0.01 (in_dist, f1_at_half)",6,0.015509,0.093054,0.093054,True,False,False,LOST to multiplicity
+"cross-ancestry (corrected re-run): in_dist, f1_at_half","pretrained vs scratch @0.05 (in_dist, f1_at_half)",6,0.30847,1,0.581956,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, f1_at_half","pretrained vs scratch @0.1 (in_dist, f1_at_half)",6,0.148474,0.74237,0.445422,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, f1_at_half","pretrained vs scratch @0.25 (in_dist, f1_at_half)",6,0.903396,1,0.903396,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, f1_at_half","pretrained vs scratch @0.5 (in_dist, f1_at_half)",6,0.786057,1,0.903396,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, f1_at_half","pretrained vs scratch @1.0 (in_dist, f1_at_half)",6,0.387971,1,0.581956,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, f1_at_tau","pretrained vs scratch @0.01 (in_dist, f1_at_tau)",6,0.52886,1,0.634632,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, f1_at_tau","pretrained vs scratch @0.05 (in_dist, f1_at_tau)",6,0.272663,1,0.502098,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, f1_at_tau","pretrained vs scratch @0.1 (in_dist, f1_at_tau)",6,0.05991,0.29955,0.17973,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, f1_at_tau","pretrained vs scratch @0.25 (in_dist, f1_at_tau)",6,0.018168,0.109008,0.109008,True,False,False,LOST to multiplicity
+"cross-ancestry (corrected re-run): in_dist, f1_at_tau","pretrained vs scratch @0.5 (in_dist, f1_at_tau)",6,0.790741,1,0.790741,False,False,False,not significant
+"cross-ancestry (corrected re-run): in_dist, f1_at_tau","pretrained vs scratch @1.0 (in_dist, f1_at_tau)",6,0.334732,1,0.502098,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, auprc","pretrained vs scratch @0.01 (xpop, auprc)",6,0.077232,0.463392,0.38629,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, auprc","pretrained vs scratch @0.05 (xpop, auprc)",6,0.6603,1,0.748089,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, auprc","pretrained vs scratch @0.1 (xpop, auprc)",6,0.193145,0.77258,0.38629,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, auprc","pretrained vs scratch @0.25 (xpop, auprc)",6,0.147007,0.735035,0.38629,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, auprc","pretrained vs scratch @0.5 (xpop, auprc)",6,0.748089,1,0.748089,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, auprc","pretrained vs scratch @1.0 (xpop, auprc)",6,0.29973,0.89919,0.449595,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, f1_at_half","pretrained vs scratch @0.01 (xpop, f1_at_half)",6,0.010627,0.063762,0.063762,True,False,False,LOST to multiplicity
+"cross-ancestry (corrected re-run): xpop, f1_at_half","pretrained vs scratch @0.05 (xpop, f1_at_half)",6,0.347993,1,0.962681,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, f1_at_half","pretrained vs scratch @0.1 (xpop, f1_at_half)",6,0.500187,1,0.962681,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, f1_at_half","pretrained vs scratch @0.25 (xpop, f1_at_half)",6,0.962681,1,0.962681,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, f1_at_half","pretrained vs scratch @0.5 (xpop, f1_at_half)",6,0.832443,1,0.962681,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, f1_at_half","pretrained vs scratch @1.0 (xpop, f1_at_half)",6,0.682517,1,0.962681,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, f1_at_tau","pretrained vs scratch @0.01 (xpop, f1_at_tau)",6,0.138724,0.69362,0.416172,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, f1_at_tau","pretrained vs scratch @0.05 (xpop, f1_at_tau)",6,0.102629,0.615774,0.416172,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, f1_at_tau","pretrained vs scratch @0.1 (xpop, f1_at_tau)",6,0.78574,1,0.78574,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, f1_at_tau","pretrained vs scratch @0.25 (xpop, f1_at_tau)",6,0.444184,1,0.666276,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, f1_at_tau","pretrained vs scratch @0.5 (xpop, f1_at_tau)",6,0.780845,1,0.78574,False,False,False,not significant
+"cross-ancestry (corrected re-run): xpop, f1_at_tau","pretrained vs scratch @1.0 (xpop, f1_at_tau)",6,0.397566,1,0.666276,False,False,False,not significant
 "candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.01 (auprc),6,0.4167,1,0.58776,False,False,False,not significant
 "candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.05 (auprc),6,0.7891,1,0.7891,False,False,False,not significant
 "candidate-filtered (corrected): AlignSSL-pretrained vs AlignSSL-scratch, auprc",AlignSSL-pretrained vs AlignSSL-scratch @0.1 (auprc),6,0.4898,1,0.58776,False,False,False,not significant

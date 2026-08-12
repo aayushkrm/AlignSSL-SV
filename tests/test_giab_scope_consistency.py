@@ -15,10 +15,44 @@ import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+
+# PROGRESS.md is an append-only log, so it necessarily *quotes* the wrong
+# phrasings these gates forbid -- the entry that records fixing "Tier1 paired
+# with GRCh38" has to contain that string. Blocks fenced by the marker below are
+# excluded from scanning. The marker is deliberately verbose and greppable: an
+# author silencing a real defect with it leaves an obvious audit trail, which a
+# looser regex would not. Nothing outside PROGRESS.md may use it.
+EXEMPT_OPEN = "<!-- giab-scope-gate: quoted-history-below -->"
+EXEMPT_CLOSE = "<!-- giab-scope-gate: quoted-history-above -->"
+
+
+def _strip_exempt(text: str) -> str:
+    return re.sub(
+        re.escape(EXEMPT_OPEN) + r".*?" + re.escape(EXEMPT_CLOSE),
+        " ",
+        text,
+        flags=re.S,
+    )
+
+
 MS = (ROOT / "docs" / "AlignSSL_SV_manuscript.md").read_text()
 README = (ROOT / "README.md").read_text()
-PROGRESS = (ROOT / "PROGRESS.md").read_text()
+PROGRESS_RAW = (ROOT / "PROGRESS.md").read_text()
+PROGRESS = _strip_exempt(PROGRESS_RAW)
 DOCS = {"manuscript": MS, "README": README, "PROGRESS": PROGRESS}
+
+
+def test_exemption_marker_is_confined_to_the_progress_log():
+    """Only the append-only log may quote forbidden phrasings."""
+    for name, path in (("manuscript", "docs/AlignSSL_SV_manuscript.md"),
+                       ("README", "README.md")):
+        text = (ROOT / path).read_text()
+        assert EXEMPT_OPEN not in text, (
+            f"{name} uses the quoted-history exemption; it is for PROGRESS.md only"
+        )
+    assert PROGRESS_RAW.count(EXEMPT_OPEN) == PROGRESS_RAW.count(EXEMPT_CLOSE), (
+        "unbalanced quoted-history markers in PROGRESS.md"
+    )
 
 
 def test_no_document_calls_the_giab_truth_set_deferred():

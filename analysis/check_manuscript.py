@@ -160,10 +160,14 @@ def check_cross_ancestry_count(md: str, results: Path) -> list[str]:
             tgt[r["label_frac"]] = float(r["heldout_CEU_F1_mean"])
     n = sum(1 for k in pre if k in scr and pre[k] > scr[k])
     words = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six"}
-    want = f"exceeds the from-scratch model's at {words.get(n, n)} of six"
-    if want not in md:
+    # Tense-flexible: Section 4.6 was rewritten to lead with the corrected
+    # re-run, which pushed this sentence into the past tense ("exceeded"). The
+    # count is the claim under test, not the verb, so accept either form.
+    stem = f"the from-scratch model's at {words.get(n, n)} of six"
+    if not re.search(r"exceed(s|ed) " + re.escape(stem), md):
         return [f"Cross-ancestry: table5 has pretrained ahead at {n} of "
-                f"{len(pre)} fractions; manuscript does not say '{want}'"]
+                f"{len(pre)} fractions; manuscript does not say "
+                f"'exceeds/exceeded {stem}'"]
     return []
 
 
@@ -195,6 +199,13 @@ def check_pvalues(md: str, results: Path) -> list[str]:
                        # pretrained-vs-scratch family, Holm-corrected within
                        # its own four budgets.
                        ("stats_caller_candidate.csv", ("p_raw", "p_holm")),
+                       # Section 4.6: the corrected cross-ancestry re-run. Its
+                       # p_holm is the aggregator's whole-sweep family (m = 36);
+                       # the same tests corrected under the paper's declared
+                       # per-site-per-rule convention (m = 6) land in
+                       # stats_multiplicity.csv above. Section 4.6 quotes both,
+                       # so both files must be provenance sources.
+                       ("stats_xpop_lowlabel.csv", ("p_raw", "p_holm")),
                        ("table20_alignssl_vs_deepsv.csv", ("p", "p_holm"))):
         f = results / name
         if not f.exists():

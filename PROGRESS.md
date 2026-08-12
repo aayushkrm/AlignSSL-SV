@@ -896,6 +896,8 @@ three read as 33% and passed. Duplication is a per-pair property; the test now a
 pair, plus `test_no_within_split_sd_is_degenerate`. Verified: one duplicated seed now FAILS.
 Suite: 165 tests.
 
+<!-- giab-scope-gate: quoted-history-below -->
+
 ### 2026-08-12b — GIAB scope reconciled across the three documents
 
 Auditing the deferred list before preprint surfaced an internal contradiction:
@@ -939,3 +941,59 @@ period, so every window truncated to `Tier1 v0` and the test could never see a
 build name. It passed only because it was blind. Fixed to a fixed-width window;
 re-falsified, and all five now fail on their own defect and pass when restored.
 Suite: 170 tests.
+
+<!-- giab-scope-gate: quoted-history-above -->
+
+### 2026-08-12c — Corrected cross-ancestry re-run promoted to primary; multiplicity audit extended
+
+**Table numbering was broken and is now gated.** The corrected cross-ancestry
+sweep was inserted as "Table 26", borrowing the number from its results CSV
+(`table26_xpop_lowlabel.csv`). Manuscript tables are numbered by *reading*
+order; `results/tableNN_*.csv` are numbered by *production* order. The two
+sequences are unrelated and the manuscript has no Table 16-26, so the reference
+dangled. The table is now manuscript **Table 8**, superseding Table 9 (the
+pre-correction run), with the old 8-15 shifted up by one. Results CSVs keep
+their own names -- `table26_*.csv` backing manuscript Table 8 is expected.
+
+`tests/test_table_numbering.py` (5 gates): captions are 1..N in document order;
+every `Table N` reference resolves; the corrected table precedes and explicitly
+supersedes the pre-correction one; no document still calls the re-run deferred;
+and every p-value quoted in Section 4.6 is parsed *positionally* out of its own
+sentence and compared to the CSV.
+
+**A gate of mine was dead and falsification caught it.** The p-value gate first
+asserted only that each number appeared *somewhere* in the manuscript. Perturbing
+a quoted p from 0.500 to 0.400 did not trip it, because "0.500" occurs elsewhere
+in the document. Rewritten to regex the two sentences that quote triples of
+p-values and compare each in position; both misquote perturbations now FAIL.
+
+**Multiplicity audit extended to the corrected re-run.** Section 4.6 quoted a
+Holm value that `apply_multiplicity.py` had never produced -- the corrected
+re-run was not in the audit at all. Its 36 tests are now built into
+`build_families()`, one family per evaluation site per scoring rule (the paper's
+declared convention, m = 6). The audit grew 67 -> 103 tests, 11 -> 17 families,
+25 -> 30 nominal hits; survivors under Holm unchanged at 17. Four narrative
+tallies were updated from the recomputed CSV, not by hand.
+
+The verdict does not depend on how the family is drawn: the most extreme cell
+(in-distribution AUPRC @25%) is raw p = 0.009, Holm p = 0.056 at m = 6 and
+Holm p = 0.339 under the aggregator's whole-sweep family (m = 36). Best held-out
+CEU cell: raw p = 0.011, Holm p = 0.064. No cell survives at any budget, rule or
+site under either convention. Section 4.9's withdrawal paragraph now states both
+family definitions and Table 11 carries a row for each run.
+
+**check_manuscript.py**: added `stats_xpop_lowlabel.csv` as a p-value provenance
+source, and made the cross-ancestry count check tense-flexible (the Section 4.6
+rewrite pushed that sentence into the past tense; the count is the claim, not
+the verb).
+
+**PROGRESS.md is append-only and therefore quotes phrasings the GIAB gates
+forbid** -- the entry recording the fix of "Tier1 paired with GRCh38" must
+contain that string. Added a fenced, greppable exemption
+(`<!-- giab-scope-gate: quoted-history-below/above -->`) that excludes quoted
+history from scanning, plus a gate confining the marker to PROGRESS.md and
+requiring balanced fences. Falsified three ways: a live defect appended outside
+the fence still FAILS, the manuscript using the marker FAILS, an unbalanced
+fence FAILS.
+
+Suite: 176 tests. `analysis/check_manuscript.py` PASS.
