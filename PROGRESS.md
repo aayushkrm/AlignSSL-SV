@@ -136,11 +136,11 @@ the DeepSV-representation head-to-head (§1.1) both survived every correction.
 | # | Item | Status |
 |---|---|---|
 | 1 | Manuscript consistency gate (`analysis/check_manuscript.py`) | ✅ passes |
-| 2 | Test suite (120 tests, incl. regression guards for every protocol defect found) | ✅ passes |
+| 2 | Test suite (157 tests, incl. regression guards for every protocol defect found) | ✅ passes |
 | 3 | All 10 figures regenerate from `results/` via one script | ✅ `analysis/make_figures.py` |
 | 4 | `docs/project.md` reconciled with the withdrawal | ✅ §16 |
-| 5 | Rewrite §12.3-style framing in the manuscript Discussion around the negative result | 🟡 |
-| 6 | Zenodo weights + data-availability statement | ⬜ |
+| 5 | Rewrite §12.3-style framing in the manuscript Discussion around the negative result | ✅ abstract Motivation rewritten to lead with the evaluation conventions under test; body already reframed |
+| 6 | Weights release + data-availability statement | ✅ all 22 checkpoints bundled + `release/WEIGHTS_MANIFEST.tsv`, gated by `tests/test_weights_manifest.py` |
 | 7 | Phase 4 GIAB HG002 + Truvari external validation | ⬜ deferred to post-preprint by decision |
 
 ## I.7 Standing caveats a reviewer will raise
@@ -157,6 +157,11 @@ the DeepSV-representation head-to-head (§1.1) both survived every correction.
   separate arms, and that asymmetry is stated rather than hidden — but it does
   limit how strongly the negative result can be phrased.
 - **Deletions only**, short reads only, one reference build (hs37d5).
+- **Nine of the 22 released checkpoints serve no reported number** (three
+  superseded-corpus ablations, one first single-seed run, and the eight
+  statistic-anchored encoders, which no reported section uses). They are
+  released and labelled as such in `release/WEIGHTS_MANIFEST.tsv` rather than
+  dropped, so nothing in the archive is unattributed.
 
 ---
 

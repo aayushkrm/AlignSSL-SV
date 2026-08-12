@@ -72,3 +72,21 @@ separable by a single depth heuristic, and the paper's finding is that
 self-supervised initialisation does **not** measurably help once that shortcut is
 attenuated and scoring is threshold-free. They are released so that result can be
 reproduced and contested, not as a recommended production initialisation.
+
+## Where the archive lives
+
+The archive is published as a GitHub release asset, not committed to the repository
+(52 MB of binary weights do not belong in git history):
+
+    https://github.com/aayushkrm/AlignSSL-SV/releases/tag/v0.1.0-weights
+
+Download and verify before use:
+
+    curl -L -o alignssl_sv_weights_v0.1.0.tar.gz \
+      https://github.com/aayushkrm/AlignSSL-SV/releases/download/v0.1.0-weights/alignssl_sv_weights_v0.1.0.tar.gz
+    shasum -a 256 alignssl_sv_weights_v0.1.0.tar.gz
+    # expect 9a62ea5199c51336779d57489587f56fe0f60f22103698eeb95106284e0eb84d
+    tar xzf alignssl_sv_weights_v0.1.0.tar.gz
+
+If the digest does not match, the download is truncated or corrupt — do not use the
+checkpoints, because a silently truncated `.pt` can still deserialise partially.

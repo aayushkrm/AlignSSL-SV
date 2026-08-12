@@ -142,3 +142,29 @@ def test_ablation_seed_count_matches_table4():
 
     # no dedicated combined ablation checkpoint on the reported corpus generation
     assert not [f for f in files if "abl_combined_120k" in f]
+
+
+def test_release_url_consistent_across_docs():
+    """The manuscript, the release README and the archive digest must name one release.
+
+    The archive is a GitHub release asset rather than a committed file, so nothing
+    in the build would otherwise catch the manuscript pointing at a tag that does
+    not exist or at a stale digest.
+    """
+    import pathlib
+
+    TAG = "v0.1.0-weights"
+    DIGEST = "9a62ea5199c51336779d57489587f56fe0f60f22103698eeb95106284e0eb84d"
+    SIZE = "52,913,192"
+
+    ms = pathlib.Path("docs/AlignSSL_SV_manuscript.md").read_text()
+    rd = pathlib.Path("release/README.md").read_text()
+
+    # Both availability statements (abstract + data availability) name the tag.
+    assert ms.count(TAG) >= 2, ms.count(TAG)
+    assert TAG in rd
+    # The digest and size are stated once in the manuscript and must match the README.
+    assert DIGEST in ms and DIGEST in rd
+    assert SIZE in ms
+    # No stale "alongside the code" phrasing implying the archive is committed.
+    assert "alongside the code" not in ms
