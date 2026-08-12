@@ -45,17 +45,45 @@ def test_corrected_xpop_table_supersedes_the_precorrection_one():
     assert f"Supersedes Table {p}" in MS, "corrected caption must say it supersedes the older one"
 
 
+# PROGRESS.md quotes its own superseded reasoning; those blocks are fenced with
+# the same marker the GIAB gates use and are excluded here too.
+EXEMPT = re.compile(
+    r"<!-- giab-scope-gate: quoted-history-below -->.*?"
+    r"<!-- giab-scope-gate: quoted-history-above -->",
+    re.S,
+)
+
+
 def test_no_document_still_calls_the_xpop_rerun_deferred():
-    """The re-run was performed; nothing may still list it as the cheapest open item."""
+    """The re-run was performed; nothing may still list it as an open item.
+
+    Scope note: this gate was first written per *sentence*, and it missed the
+    real defect it exists for. PROGRESS.md's deferral bullet named the sweep in
+    one sentence and called it "the cheapest open item in the paper" two
+    sentences later, so no single sentence contained both halves. It passed
+    while the document was wrong, and only looked healthy because the
+    falsification injected both halves into one sentence. The unit of a claim
+    like this is the paragraph (here, the markdown bullet), so scan paragraphs.
+    """
+    DEFER = re.compile(
+        r"cheapest .{0,40}open item|has not been re-?run|did not re-?run"
+        r"|remains? (?:to be )?re-?run|deferred, not dismissed",
+        re.I,
+    )
+    # A paragraph may carry the phrase only while explicitly marking it as past.
+    SUPERSEDED = re.compile(
+        r"\bDONE\b|superseding|superseded|has since been|was wrong|kept for audit",
+        re.I,
+    )
     for name in ("docs/AlignSSL_SV_manuscript.md", "README.md", "PROGRESS.md"):
-        text = (ROOT / name).read_text()
-        for sentence in re.split(r"(?<=[.!?])\s+", text):
-            if not re.search(r"cross[- ]ancestry|cross[- ]population", sentence, re.I):
+        text = EXEMPT.sub(" ", (ROOT / name).read_text())
+        for para in re.split(r"\n\s*\n|\n(?=[-*] )", text):
+            if not re.search(r"cross[- ]ancestry|cross[- ]population", para, re.I):
                 continue
-            if re.search(r"cheapest .{0,40}open item|has not been re-?run|did not re-?run", sentence, re.I):
-                # allowed only when explicitly narrated as a superseded past state
-                assert re.search(r"earlier draft|has since been|was wrong|corrected", sentence, re.I), (
-                    f"{name} still defers the cross-ancestry re-run: {sentence.strip()[:180]}"
+            if DEFER.search(para):
+                assert SUPERSEDED.search(para), (
+                    f"{name} still defers the cross-ancestry re-run:\n"
+                    f"{para.strip()[:300]}"
                 )
 
 

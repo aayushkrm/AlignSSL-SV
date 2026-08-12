@@ -831,21 +831,35 @@ working pipeline.
   genotype, so there is no VCF to match. Truvari is also not installed in
   `deepsv2_new`. Section 6.5 scores candidate classification; it is not call-set
   recall, and the manuscript's limitations section now says so explicitly.
-- **Cross-ancestry sweep re-run** — `scripts/cross_pop_lowlabel.py` is now
-  migrated to the shared label protocol, but Table 8 was generated before that
-  migration and is labelled pre-correction in its caption. Deferred, not
-  dismissed. The earlier rationale recorded here — "a re-run cannot change a
-  withdrawn claim" — was wrong, and is corrected rather than deleted. It holds
-  for a withdrawn *positive* claim; it does not hold for §4.6, which also
-  asserts a **null** (no cross-ancestry effect at any budget). A null is
-  falsifiable by a re-run, and the equal-budget correction reversed the
-  direction of the headline contrast elsewhere, so it could create an effect
-  here as easily as leave the null standing. §4.6 now states that
-  provisionality explicitly. This is the cheapest open item in the paper and
-  the first thing to run post-preprint.
+- **Cross-ancestry sweep re-run** — **DONE (2026-08-12), superseding the
+  deferral recorded below.** `scripts/cross_pop_lowlabel.py` was migrated to the
+  shared label protocol and re-run for three seeds across all six budgets under
+  all three scoring rules at both evaluation sites. The result is manuscript
+  Table 8 (`results/table26_xpop_lowlabel.csv`,
+  `results/stats_xpop_lowlabel.csv`); the pre-migration run is retained as
+  Table 9 and labelled pre-correction.
+  <!-- giab-scope-gate: quoted-history-below -->
+  The reasoning recorded here before the re-run is kept for audit. It ran: a
+  re-run cannot change a withdrawn claim — which was wrong, and was corrected in
+  place at the time. It holds for a withdrawn *positive* claim; it does not hold
+  for §4.6, which also asserts a **null** (no cross-ancestry effect at any
+  budget). A null is falsifiable by a re-run, and the equal-budget correction had
+  reversed the direction of the headline contrast elsewhere, so it could have
+  created an effect here as easily as left the null standing. That was then
+  called the cheapest open item in the paper.
+  <!-- giab-scope-gate: quoted-history-above -->
+  The re-run left the null standing and strengthened it. No cell survives Holm
+  under either family convention, the pre-correction run's single nominal hit at
+  10% does not replicate at that cell under any rule, and the nominal hits
+  relocate to the 1% budget where they exist only at a fixed 0.5 decision cut
+  and evaporate threshold-free — an independent reproduction, inside this sweep,
+  of the threshold artifact documented in §4.8. Two runs of one design now agree
+  that the effect is not there.
 - Breakpoint-regression head, deep-ensemble / conformal uncertainty,
-  repeat-and-segdup stratification, coverage-robustness downsampling, and a
-  Zenodo weights release — all post-preprint.
+  repeat-and-segdup stratification, and coverage-robustness downsampling —
+  all post-preprint. (A weights release is no longer on this list: the
+  checkpoints ship as a GitHub release asset at tag `v0.1.0-weights`. A
+  DOI-bearing mirror remains optional, not blocking.)
 
 ### 2026-08-12 — Weights release closed; cross-population low-label sweep landed; a fifth design defect found
 
@@ -987,6 +1001,8 @@ source, and made the cross-ancestry count check tense-flexible (the Section 4.6
 rewrite pushed that sentence into the past tense; the count is the claim, not
 the verb).
 
+<!-- giab-scope-gate: quoted-history-below -->
+
 **PROGRESS.md is append-only and therefore quotes phrasings the GIAB gates
 forbid** -- the entry recording the fix of "Tier1 paired with GRCh38" must
 contain that string. Added a fenced, greppable exemption
@@ -995,5 +1011,38 @@ history from scanning, plus a gate confining the marker to PROGRESS.md and
 requiring balanced fences. Falsified three ways: a live defect appended outside
 the fence still FAILS, the manuscript using the marker FAILS, an unbalanced
 fence FAILS.
+
+<!-- giab-scope-gate: quoted-history-above -->
+
+Suite: 176 tests. `analysis/check_manuscript.py` PASS.
+
+### 2026-08-12d — Cross-ancestry deferral retired; a second gate found dead by scope
+
+The "cross-ancestry sweep re-run" bullet in *Open, deferred by decision* was
+stale: the re-run landed earlier the same day and is manuscript Table 8. The
+bullet now records it as DONE, keeps its own superseded reasoning inside the
+quoted-history fence, and states the outcome — the null stood and strengthened;
+the pre-correction run's 10% hit does not replicate; the nominal hits relocate
+to 1% where they exist only at a fixed 0.5 cut and evaporate threshold-free,
+reproducing §4.8's threshold artifact inside this sweep.
+
+The Zenodo item was also retired: the checkpoints already ship as a GitHub
+release asset at `v0.1.0-weights`. A DOI-bearing mirror is optional, not
+blocking.
+
+**A second gate was dead, and for a different reason than the first.**
+`test_no_document_still_calls_the_xpop_rerun_deferred` scanned per *sentence*.
+The real defect spanned two: the bullet named the sweep in one sentence and
+called it "the cheapest open item in the paper" two sentences later, so no
+single sentence held both halves. It passed while the document was wrong. It
+only looked healthy because my falsification had injected both halves into one
+sentence — the perturbation was easier to detect than the bug. Rescoped to
+paragraphs (markdown bullets), with the reason in its docstring; re-falsified
+with a genuine two-sentence bullet, which now FAILS.
+
+Two gate bugs in two days, both of the same shape: the test and the
+falsification shared an assumption, so the falsification could not expose it.
+Falsifications now perturb the document the way the defect actually appeared,
+not the way the gate happens to read.
 
 Suite: 176 tests. `analysis/check_manuscript.py` PASS.
