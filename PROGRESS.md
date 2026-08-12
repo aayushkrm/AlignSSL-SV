@@ -141,7 +141,7 @@ the DeepSV-representation head-to-head (§1.1) both survived every correction.
 | 4 | `docs/project.md` reconciled with the withdrawal | ✅ §16 |
 | 5 | Rewrite §12.3-style framing in the manuscript Discussion around the negative result | ✅ abstract Motivation rewritten to lead with the evaluation conventions under test; body already reframed |
 | 6 | Weights release + data-availability statement | ✅ all 22 checkpoints bundled + `release/WEIGHTS_MANIFEST.tsv`, gated by `tests/test_weights_manifest.py` |
-| 7 | Phase 4 GIAB HG002 + Truvari external validation | ⬜ deferred to post-preprint by decision |
+| 7 | Phase 4 GIAB HG002 + Truvari external validation | 🟡 **partly done**: HG002 + GIAB Tier1 v0.6 (GRCh37) is now the Section 6.5 benchmark; the *call-set-level* Truvari comparison remains deferred (needs a breakpoint + genotype head) |
 
 ## I.7 Standing caveats a reviewer will raise
 
@@ -698,6 +698,8 @@ The earlier full-label-only cross-population run suggested SSL nearly eliminates
 
 **Next:** Phase 4 GIAB HG002 + Truvari headline benchmark. Still blocked on data/tooling: HG002 is not staged on the cluster, Truvari is not installed in `deepsv2_new`, and the reference build is GRCh37/hs37d5 (the GIAB v4.2.1 SV benchmark is distributed for GRCh38, so either a GRCh37-lifted benchmark or a GRCh38 re-alignment path is needed). This requires a storage/staging decision before submission.
 
+> ⚠️ **CORRECTION (2026-08-12) — two of the three blockers above were wrong.** HG002 was subsequently staged and is now the Section 6.5 benchmark, and the reference-build blocker was a misidentification: **v4.2.1 is GIAB's *small-variant* benchmark** (GRCh38), whereas the SV benchmark this work uses is **Tier1 v0.6**, which is distributed for **GRCh37** and needs no lift-over. No re-alignment path was ever required. Only the Truvari half is genuinely outstanding, and its blocker is model capability (no breakpoint or genotype head, therefore no VCF to match) rather than data or reference build. Left in place rather than deleted so the mistaken blocker analysis stays auditable.
+
 ---
 
 ## ✅ Update: 2026-07-25 — data-loss accounting; figure consolidation; hard-negative chain unblocked
@@ -815,11 +817,20 @@ working pipeline.
 
 ### Open, deferred by decision
 
-- **Phase 4 (GIAB HG002 + Truvari)** — deferred by the user until after the
-  preprint. Blockers when it resumes: HG002 is not on the cluster, Truvari is not
-  installed in `deepsv2_new`, and our reference is GRCh37/hs37d5 while the GIAB
-  v4.2.1 SV benchmark ships for GRCh38, so it needs either a lift-over or a
-  GRCh38 re-run of the whole pipeline.
+- **Phase 4 (GIAB HG002 + Truvari)** — **partly retired, and the original
+  blocker list was wrong.** HG002 *is* on the cluster and *is* used: Section 6.5
+  runs Manta on HG002 (hs37d5) and labels its candidate pool against **GIAB Tier1
+  v0.6**, which ships for **GRCh37** and therefore needs no lift-over. (The earlier
+  note named v4.2.1, which is the *small-variant* benchmark and is indeed GRCh38 —
+  that was the error.) So the orthogonal-truth-set half of Phase 4 is done, and the
+  depth shortcut reproduces there, which is the stronger result.
+  What genuinely remains deferred is the **call-set-level** comparison: emit a VCF
+  and match it to GIAB with Truvari, reporting breakpoint precision and genotype
+  concordance. That is blocked on model capability, not on data — the current head
+  classifies a candidate window and emits neither a refined breakpoint nor a
+  genotype, so there is no VCF to match. Truvari is also not installed in
+  `deepsv2_new`. Section 6.5 scores candidate classification; it is not call-set
+  recall, and the manuscript's limitations section now says so explicitly.
 - **Cross-ancestry sweep re-run** — `scripts/cross_pop_lowlabel.py` is now
   migrated to the shared label protocol, but Table 8 was generated before that
   migration and is labelled pre-correction in its caption. Deferred, not
@@ -884,3 +895,47 @@ cells across seeds with a <50% identical threshold — so one *fully duplicated 
 three read as 33% and passed. Duplication is a per-pair property; the test now asserts per
 pair, plus `test_no_within_split_sd_is_degenerate`. Verified: one duplicated seed now FAILS.
 Suite: 165 tests.
+
+### 2026-08-12b — GIAB scope reconciled across the three documents
+
+Auditing the deferred list before preprint surfaced an internal contradiction:
+Section 6.5 *builds* a GIAB HG002 benchmark (Manta candidate pool, labelled
+against Tier1 v0.6 inside the confident regions), while the limitations list
+still said "a curated orthogonal benchmark (GIAB HG002) remains deferred",
+PROGRESS said HG002 was not staged on the cluster, and the README called it
+Phase-4 future work. Three documents disagreed with the experiment.
+
+A second, worse error sat inside the blocker analysis: all three cited GIAB
+**v4.2.1** as GRCh38-only and therefore requiring a lift-over or a full GRCh38
+re-run. **v4.2.1 is GIAB's small-variant benchmark.** The SV benchmark this work
+uses is **Tier1 v0.6**, distributed for **GRCh37**. No lift-over was ever needed,
+and a re-alignment path was scoped against a benchmark we were not using.
+
+Corrected, with the distinction that actually holds:
+- The orthogonal **truth set** is done (Section 6.5), and the depth shortcut
+  reproduces on it — the stronger result, since it is not an artefact of either
+  truth set.
+- The **call-set-level Truvari** comparison is genuinely outstanding, and its
+  blocker is **model capability, not data**: the head classifies a candidate
+  window and emits neither a refined breakpoint nor a genotype, so there is no
+  VCF to match. Truvari is also not installed in `deepsv2_new`.
+- The manuscript's production-caller bullet was likewise too absolute: such a
+  comparison is uninformative on the shortcut-laden benchmarks but *meaningful*
+  on Section 6.5, where Manta's own score and PASS filter partition the same
+  candidate pool. Stated as undone with its real cost, not as inapplicable.
+
+Historical entries were superseded in place with dated correction notes rather
+than deleted, so the mistaken blocker analysis stays auditable.
+
+**New gate** `tests/test_giab_scope_consistency.py` (5 tests) ties the three
+documents together: no document may defer GIAB itself, each must scope the
+deferral to call-set/Truvari, the Truvari blocker must be stated as a missing
+breakpoint/genotype head, v4.2.1 may not be called the SV benchmark, and Tier1
+may never be paired with GRCh38.
+
+**Falsification found a bug in the gate itself.** The build-consistency test
+scanned `Tier1[^.\n]{0,120}` to stay within one sentence — but "v0.6" contains a
+period, so every window truncated to `Tier1 v0` and the test could never see a
+build name. It passed only because it was blind. Fixed to a fixed-width window;
+re-falsified, and all five now fail on their own defect and pass when restored.
+Suite: 170 tests.

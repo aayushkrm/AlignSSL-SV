@@ -170,7 +170,7 @@ requirements.txt     Python dependencies
 - This repository does not hold the BAM files, because each file is 150–260 GB. To get the BAM files again, use `scripts/pfetch_bam.sh` and `cluster/*.sbatch`.
 - To reproduce the full pipeline on the cluster — filesystem layout, conda environments, job submission, and all practical steps — read `docs/CLUSTER.md`.
 
-The Phase-4 headline evaluation will use GIAB HG002 and Truvari. For more data, see `docs/project.md` §15.
+GIAB HG002 is the third benchmark above, labelled against GIAB Tier1 v0.6 on GRCh37. What is still missing is the call-set-level comparison — emitting a VCF and matching it to GIAB with Truvari, with breakpoint precision and genotype concordance. That is blocked on the model, not the data: the head classifies a candidate window and emits neither a refined breakpoint nor a genotype, so there is no VCF to match. For the full deferred list, see `docs/project.md` §15.
 
 ## Relationship to prior work
 
