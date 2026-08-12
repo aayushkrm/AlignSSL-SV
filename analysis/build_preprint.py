@@ -30,6 +30,8 @@ from __future__ import annotations
 import argparse
 import base64
 import datetime as _dt
+import hashlib
+import json
 import mimetypes
 import re
 from pathlib import Path
@@ -121,6 +123,10 @@ li { margin-bottom: 2.5pt; }
 """
 
 
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
 def _data_uri(path: Path) -> str:
     mime = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
     return f"data:{mime};base64,{base64.b64encode(path.read_bytes()).decode()}"
@@ -195,7 +201,25 @@ def main() -> None:
     out = Path(args.out)
     out.parent.mkdir(parents=True, exist_ok=True)
     HTML(string=html, base_url=str(src.parent.resolve())).write_pdf(out)
+
+    # Record what this PDF was built from. The shipped PDF went 18 manuscript
+    # commits stale before anyone noticed (2026-08-12), because nothing tied
+    # the binary to its sources. tests/test_preprint_current.py compares this
+    # manifest against the working tree, so a manuscript or figure edit that
+    # is not followed by a rebuild now fails the suite.
+    manifest = {
+        "built": stamp,
+        "pdf": {"path": out.as_posix(), "size_bytes": out.stat().st_size,
+                "sha256": _sha256(out)},
+        "manuscript": {"path": src.as_posix(), "sha256": _sha256(src)},
+        "figures": {str(n): {"path": figs[n].as_posix(), "sha256": _sha256(figs[n])}
+                    for n in sorted(figs)},
+    }
+    man_path = out.with_name("preprint_build.json")
+    man_path.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
+
     print(f"wrote {out} ({out.stat().st_size} bytes)")
+    print(f"wrote {man_path} ({len(figs)} figures recorded)")
     for n in sorted(figs):
         print(f"  figure {n}: {figs[n].as_posix()}")
 

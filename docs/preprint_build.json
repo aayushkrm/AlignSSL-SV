@@ -1,0 +1,54 @@
+{
+  "built": "2026-08-12",
+  "figures": {
+    "1": {
+      "path": "results/figure1_label_efficiency.png",
+      "sha256": "9007918458f93c8bec1049a22c9afcfc604824967210061602dcd9a2eba8dee4"
+    },
+    "10": {
+      "path": "results/figure10_field_audit.png",
+      "sha256": "8f31d09f5a7b27f8f68ff1850d6570f801838fd4b785ea34fd8cf7a8f4dc14d5"
+    },
+    "2": {
+      "path": "results/figure2_classical_control.png",
+      "sha256": "f50b52161fbedacbeff892fa7eaea3f79ed616d8101a99ad0aa84f1801bb53b2"
+    },
+    "3": {
+      "path": "results/figure3_length_strata.png",
+      "sha256": "bf972360e6b04b92b80bac2de95c6332d87d127a855623355359b49535bd1889"
+    },
+    "4": {
+      "path": "results/figure4_ssl_ablation.png",
+      "sha256": "31ced706da0d18c6b3090a248fa868f97763b9934f01fd6ec9f95d8f02b2b876"
+    },
+    "5": {
+      "path": "results/figure5_cross_ancestry.png",
+      "sha256": "7b481a854078b88a44bec4445feaf6260dfc9933e566b8b800eec9f3722e74b2"
+    },
+    "6": {
+      "path": "results/figure6_threshold_sensitivity.png",
+      "sha256": "c94d12f854ba02d8b638ea6f1f5748bdbbf116fc8c09bf7b0aa53a2c001c6297"
+    },
+    "7": {
+      "path": "results/figure7_control_threshold_free.png",
+      "sha256": "fbc90f6e69a35e2c68ab520d548ea21b080d25444906c90d6ee4d590f34da392"
+    },
+    "8": {
+      "path": "results/figure8_hardneg_benchmark.png",
+      "sha256": "fd6495e63790085a0824480adda06dc2446f64f0dfcfea6857b5bee7c3390f7c"
+    },
+    "9": {
+      "path": "results/figure9_shortcut_across_benchmarks.png",
+      "sha256": "f8edb350d6d19338ee7f4b1d5c09cde669b0176fd2e4f12db4a49d97be9ec2a3"
+    }
+  },
+  "manuscript": {
+    "path": "docs/AlignSSL_SV_manuscript.md",
+    "sha256": "68353fb7d7fea9ae310a816500805fd64d1ec46fcff744d23f40a390c780f785"
+  },
+  "pdf": {
+    "path": "docs/AlignSSL_SV_preprint.pdf",
+    "sha256": "0c26f4e17c828d29462223fabaead01c519863cd52eb917dc64eebb727efe6e6",
+    "size_bytes": 1495297
+  }
+}
