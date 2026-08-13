@@ -76,8 +76,52 @@ command has a 60-second wall-clock cap; keep remote commands short (a long
 ## 2. Filesystem layout
 
 There are two storage areas: **scratch** (fast, per-user working space, where all
-job I/O happens) and **beegfs** (shared dataset workspaces). The beegfs
-workspace this project used has since expired and been reclaimed — see §2.1.
+job I/O happens) and **beegfs** (shared dataset workspaces). **Both are
+time-limited workspaces, and both expired on this project** — beegfs first
+(§2.1), then scratch (§2.0). Neither is durable storage. Read §2.0 before
+planning any run whose outputs you would not want to recompute.
+
+### 2.0 Scratch is a cache, not a store — it expired once on this project
+
+> On 13 Aug 2026 the scratch workspace `/scratch/igorno-alignssl_sv` vanished:
+> every tensor directory, every checkpoint, every per-seed result JSON, gone in
+> the same instant. Nothing was deleted by a job. The workspace simply reached
+> its expiry date and the directory was reclaimed whole.
+
+`/scratch/<user>-<name>` is not a plain directory. It is a **workspace** managed
+by `ws_allocate` / `ws_list` / `ws_restore`, allocated for a fixed number of days
+(30 maximum here — `ws_allocate -d 60` is silently clamped and prints
+`setting to allowed maximum of 30`). When it expires the whole tree disappears,
+and it disappears from `ws_list` too, which makes the loss look permanent.
+
+It is not immediately permanent. `ws_restore -l` lists expired-but-recoverable
+snapshots as `<user>-<name>-<epoch>` with an "unavailable since" date, and there
+is a grace window in which the data can still be pulled back:
+
+```bash
+ws_allocate -n alignssl_sv -d 30 -r 7 -m you@example.org   # target must exist first
+ws_restore -l                                              # find the snapshot name
+ws_restore -n igorno-alignssl_sv-<epoch> -t alignssl_sv    # NOTE: name as printed by -l
+```
+
+**`ws_restore` must be run by a human, interactively, on the login node.** It
+prints `to verify that you are human, please type '<word>'` and reads the answer
+from the controlling terminal — an intentional control on a bulk data move, and
+not something to script around. (It is also setuid-root dropping to a service
+account, so it cannot write its prompt to a normal user-owned pty; and the
+binary does not exist on compute nodes, so it cannot be submitted as a batch
+job either.) Run it under `screen` or `tmux`; a large restore takes a while.
+
+**Prevention, in order of value:**
+
+1. Allocate with a reminder — `-r 7 -m <address>`. This project's workspace had
+   none, which is the whole reason it expired unnoticed.
+2. `ws_list` shows remaining time. Check it before a multi-day run.
+3. **Copy irreplaceable outputs off scratch as they are produced.** Per-seed
+   result JSONs are the critical case: a summary table does not carry enough
+   information to reconstruct the per-seed values behind it, so losing the JSONs
+   can permanently censor a number even when the table survives. This project
+   lost eight p-values exactly that way (see `PROGRESS.md`).
 
 ### 2.1 Reference data — was on `beegfs`, now re-staged to scratch
 
