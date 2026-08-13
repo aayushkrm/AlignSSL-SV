@@ -44,11 +44,11 @@
   },
   "manuscript": {
     "path": "docs/AlignSSL_SV_manuscript.md",
-    "sha256": "1d49b89c7c83610e584b149ebc9f86db33230ca92d693ebe1134ffd5f387c7ee"
+    "sha256": "0be2f7a3dff94f5ccdf1e5eda289c77dafc553c19f6aa052b906ed3e5e596c4c"
   },
   "pdf": {
     "path": "docs/AlignSSL_SV_preprint.pdf",
-    "sha256": "66d03ddde181f9064a9f562e8c75c92ec36fa807c883a6188bfa236c1cf4a96c",
-    "size_bytes": 1503536
+    "sha256": "b84414934a22dcbc09bd1718355268f3c423e446ee2dfdac7444758f3a2babe9",
+    "size_bytes": 1504051
   }
 }

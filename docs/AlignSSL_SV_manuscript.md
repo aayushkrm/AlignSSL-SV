@@ -212,7 +212,7 @@ This does not invalidate the comparisons in Section 4.1, which are internally co
 
 **We therefore report the benchmark-separability finding as a first-class contribution.** The control costs minutes of CPU time, applies to any pileup-style SV benchmark, and to our knowledge has not previously been run. Its implication is that published low-label and architecture-comparison results on random-negative SV benchmarks — a family that includes DeepSV's own evaluation and much of what followed — may be measuring threshold-learning speed rather than caller quality.
 
-![Figure 2. Left: deletion AUPRC versus labelled-data fraction for all five arms on the uniform benchmark, scored threshold-free under the corrected protocol (Table 2). The gradient-boosted 12-feature control (heavy line) leads by +0.433 AUPRC at 1% and +0.134 at 5%, and narrows to a statistical tie at 50% (*p* = 0.127) and at full supervision (0.975 versus 0.962, *p* = 0.174); it is never overtaken, but the earlier claim of *significant* dominance at every budget is withdrawn (Table 3). Right: single-feature discrimination on the held-out test set with no training — the centre-versus-flank depth ratio alone reaches ROC-AUC 0.955.]({{artifact:art_38410a53-1025-43c4-a9af-0a3521eb07d9}})
+![Figure 2. Left: deletion AUPRC versus labelled-data fraction for all five arms on the uniform benchmark, scored threshold-free under the corrected protocol (Table 2). The gradient-boosted 12-feature control (heavy line) leads by +0.433 AUPRC at 1% and +0.134 at 5%, and narrows to a statistical tie at 50% (*p* = 0.127) and at full supervision (0.975 versus 0.962, *p* = 0.174); it is never overtaken, but the earlier claim of *significant* dominance at every budget is withdrawn (Table 3). Right: single-feature discrimination on the held-out test set with no training — the centre-versus-flank depth ratio alone reaches ROC-AUC 0.955. Sources: `results/table12_label_efficiency_fixed.csv`, `results/table6_single_feature_auc.csv`.]({{artifact:art_38410a53-1025-43c4-a9af-0a3521eb07d9}})
 
 ### 4.3 Calibration is a property of the representation, not of self-supervision
 
@@ -242,7 +242,7 @@ Deletion callers are notoriously length-dependent. Table 6 stratifies full-super
 | 1k–5k | 799 | 0.926 ± 0.024 | 0.954 ± 0.006 | 0.899 ± 0.116 |
 | 5k+ | 245 | 0.857 ± 0.061 | 0.881 ± 0.071 | 0.918 ± 0.070 |
 
-![Figure 3. Length-stratified deletion recall at full supervision. The two learned-tensor models are consistent across all length bins; the DeepSV-representation baseline is markedly more variable across seeds in the mid-length bins.]({{artifact:art_cf7645c0-8b8d-46e9-9a50-95509162a99d}})
+![Figure 3. Length-stratified deletion recall at full supervision. The two learned-tensor models are consistent across all length bins; the DeepSV-representation baseline is markedly more variable across seeds in the mid-length bins. Source: `results/table3_length_strata.csv`.]({{artifact:art_cf7645c0-8b8d-46e9-9a50-95509162a99d}})
 
 ### 4.5 Ablation over self-supervised objectives: all three help, but they cannot be ranked at this seed count
 
@@ -267,7 +267,7 @@ Two caveats bound how far this section's significance statements should be read.
 
 The three self-supervised arms and the DeepSV-representation baseline are plotted together in Figure 4. The mean ordering — MAM ahead below 10% labels, the combined objective ahead above 25% — is visible, and so are the overlapping error bars that are the reason we do not claim it.
 
-![Figure 4. Self-supervised objective ablation: MAM-only, VICReg-only, and combined (MAM+VICReg), with the DeepSV-representation baseline for reference. Error bars are standard deviations across independent pretraining seeds. All three self-supervised arms separate clearly from the baseline; they do not separate from one another.]({{artifact:art_c7f8fab3-85e1-4313-9025-0bf9cd1f94e1}})
+![Figure 4. Self-supervised objective ablation: MAM-only, VICReg-only, and combined (MAM+VICReg), with the DeepSV-representation baseline for reference. Error bars are standard deviations across independent pretraining seeds. All three self-supervised arms separate clearly from the baseline; they do not separate from one another. Source: `results/table4_ablation.csv`.]({{artifact:art_c7f8fab3-85e1-4313-9025-0bf9cd1f94e1}})
 
 ### 4.6 Cross-ancestry transfer: a suggestive but statistically weak effect
 
@@ -317,7 +317,7 @@ We train on the in-distribution panel and evaluate both in-distribution and on a
 | 50% | 0.679 ± 0.075 | 0.834 ± 0.030 | 0.084 | +0.224 | +0.081 |
 | 100% | 0.784 ± 0.028 | 0.742 ± 0.022 | 0.182 | +0.148 | +0.124 |
 
-![Figure 5. Cross-ancestry transfer under the corrected label-accounting protocol (Table 8; the pre-correction run of Table 9 is not plotted). Deletion F1 at a fixed 0.5 cut, in-distribution (dashed) and on held-out CEU (solid), 3 seeds; bands are ±1 s.d. of the held-out arm. The transfer gap (held-out minus in-distribution) is negative at four of six budgets for the pretrained arm and five of six for from-scratch, and widens as the label budget grows (pretrained −0.214 at 100% labels); at 1% labels both arms score marginally higher on CEU than in-distribution, at F1 levels where both are near-uninformative. No contrast survives Holm correction over the 36 tests of this sweep — smallest adjusted p = 0.339 across the whole sweep, 0.372 among the fixed-cut contrasts plotted here, both at 1% labels. This panel is presented as a null result: it does not support a cross-ancestry robustness claim for pretraining.]({{artifact:art_9c67fdcc-feb9-4135-86b2-87196632fc61}})
+![Figure 5. Cross-ancestry transfer under the corrected label-accounting protocol (Table 8; the pre-correction run of Table 9 is not plotted). Deletion F1 at a fixed 0.5 cut, in-distribution (dashed) and on held-out CEU (solid), 3 seeds; bands are ±1 s.d. of the held-out arm. The transfer gap (held-out minus in-distribution) is negative at four of six budgets for the pretrained arm and five of six for from-scratch, and widens as the label budget grows (pretrained −0.214 at 100% labels); at 1% labels both arms score marginally higher on CEU than in-distribution, at F1 levels where both are near-uninformative. No contrast survives Holm correction over the 36 tests of this sweep — smallest adjusted p = 0.339 across the whole sweep, 0.372 among the fixed-cut contrasts plotted here, both at 1% labels. This panel is presented as a null result: it does not support a cross-ancestry robustness claim for pretraining. Source: `results/table26_xpop_lowlabel.csv`.]({{artifact:art_9c67fdcc-feb9-4135-86b2-87196632fc61}})
 
 ### 4.7 Data-integrity control
 
@@ -339,7 +339,7 @@ We therefore re-scored the identical runs and seeds three ways: at the fixed 0.5
 
 The advantage exists under the fixed cut and nowhere else. Under both alternatives the two arms are statistically indistinguishable at the smallest budget (*p* = 0.527 at τ, *p* = 0.853 threshold-free), and at each of the five larger budgets the from-scratch arm is *ahead* — significantly so at 5% and 10% under the selected-threshold rule (*p* = 0.018 and *p* = 0.013), though neither survives correction across the six budgets of that sweep (Holm *p* = 0.092 and 0.075). The from-scratch model was never degenerate: at 210 labels it reaches AUPRC 0.495 against the pretrained model's 0.504 — a difference of 0.009, which is no deficit at all. It ranks essentially as well and scores timidly, and the fixed cut reads timidity as failure.
 
-![Figure 6. Pretrained-to-scratch ratio by label budget under two thresholding rules (left), and absolute scores at the smallest budget under all three (right). The ratio departs from parity at exactly one budget under exactly one rule.]({{artifact:art_72cb364e-16f1-446e-9c35-db499a6b8fb3}})
+![Figure 6. Pretrained-to-scratch ratio by label budget under two thresholding rules (left), and absolute scores at the smallest budget under all three (right). The ratio departs from parity at exactly one budget under exactly one rule. Source: `results/table13_threshold_sensitivity.csv`.]({{artifact:art_72cb364e-16f1-446e-9c35-db499a6b8fb3}})
 
 The consequence extends past this paper. Any comparison of initialisation schemes, architectures, or pretraining objectives that reports F1 at a fixed probability cut, and whose arms plausibly differ in calibration, is at risk of reporting a calibration difference as a representation difference. The remedy is cheap: report a threshold-free ranking metric alongside, and select any threshold on held-out training data rather than fixing it a priori. We supply both in `analysis/threshold_sensitivity.py`.
 
@@ -569,7 +569,7 @@ Every arm-versus-arm contrast is tested over seeds in `results/table15_hardneg_a
 
 One protocol caveat must be stated. At the smallest candidate-filtered budget (35 labels) there are too few examples to hold out a validation split, so the threshold-selection rule of Section 3.8 degenerates and F1 at the selected threshold equals F1 at the fixed cut by construction, not by result. That cell's F1 columns are therefore uninformative about thresholding; its AUPRC column is not, and the finding above rests on AUPRC.
 
-![Figure 8. Left: AUPRC versus labelled-data fraction on the candidate-filtered benchmark under the corrected protocol, the direct analogue of Figure 7 on the harder task. Right: untrained single-feature separability on the uniform and candidate-filtered benchmarks, paired per feature; the depth shortcut is attenuated from 0.955 to 0.717 but not removed.]({{artifact:art_0b8b1b59-6de7-4036-bebf-cef7955b70ed}})
+![Figure 8. Left: AUPRC versus labelled-data fraction on the candidate-filtered benchmark under the corrected protocol, the direct analogue of Figure 7 on the harder task. Right: untrained single-feature separability on the uniform and candidate-filtered benchmarks, paired per feature; the depth shortcut is attenuated from 0.955 to 0.717 but not removed. Sources: `results/table12_label_efficiency_fixed.csv`, `results/table6_single_feature_auc.csv`, `results/table9_hardneg_single_feature_auc.csv`.]({{artifact:art_0b8b1b59-6de7-4036-bebf-cef7955b70ed}})
 
 ### 6.4 What this changes
 
