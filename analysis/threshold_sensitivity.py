@@ -103,7 +103,9 @@ def main() -> None:
                 sv = per_seed(a.json_dir, bkey[bench], "scr", frac, key)
                 if len(pv) > 1 and len(sv) > 1:
                     _, pval = stats.ttest_ind(pv, sv, equal_var=False)
-                    rec[f"p_{name}"] = round(float(pval), 4)
+                    # Full precision; see control_vs_deep.py -- rounding
+                    # a p-value at write time destroys it irrecoverably.
+                    rec[f"p_{name}"] = float(pval)
                 else:
                     rec[f"p_{name}"] = ""
             rows.append(rec)

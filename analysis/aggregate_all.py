@@ -180,7 +180,12 @@ def main():
                 w.writerow([f, lbl, len(ind), f"{np.mean(ind):.4f}", f"{np.std(ind):.4f}",
                             f"{np.mean(xp):.4f}", f"{np.std(xp):.4f}",
                             f"{np.mean(ind) - np.mean(xp):+.4f}",
-                            f"{p:.4f}" if arm == "pretrained" else ""])
+                            # Full precision: f"{p:.4f}" renders any p
+                            # below 5e-05 as "0.0000", which is not a
+                            # value a p-value can take and cannot be
+                            # recovered from the file afterwards.
+                            (repr(float(p)) if arm == "pretrained"
+                             else "")])
 
     # ---- statistical tests behind every claim -------------------------------
     T = []
@@ -202,25 +207,26 @@ def main():
     s100 = [pick(d, 1.0, "scratch", "F1") for d in ft6]
     r = stats.ttest_rel(a100, s100)
     T.append(["convergence at full supervision", "combined vs scratch @100%",
-              "paired t-test (same 4 seeds)", f"{r.statistic:.3f}", f"{r.pvalue:.4f}",
+              "paired t-test (same 4 seeds)", f"{r.statistic:.3f}",
+              repr(float(r.pvalue)),   # full precision; round at render time
               f"{np.mean(a100):.4f} vs {np.mean(s100):.4f}",
               f"scratch higher by {np.mean(s100)-np.mean(a100):.4f}"])
     m100 = [pick(d, 1.0, "pretrained", "F1") for d in mam]
     r = stats.ttest_ind(a100, m100, equal_var=False)
     T.append(["ablation @100%", "combined vs MAM-only @100%", "Welch t-test",
-              f"{r.statistic:.3f}", f"{r.pvalue:.4f}",
+              f"{r.statistic:.3f}", repr(float(r.pvalue)),
               f"{np.mean(a100):.4f} vs {np.mean(m100):.4f}", "not significant"])
     m1 = [pick(d, 0.01, "pretrained", "F1") for d in mam]
     r = stats.ttest_ind(m1, a1, equal_var=False)
     T.append(["ablation @1%", "MAM-only vs combined @1%", "Welch t-test",
-              f"{r.statistic:.3f}", f"{r.pvalue:.4f}",
+              f"{r.statistic:.3f}", repr(float(r.pvalue)),
               f"{np.mean(m1):.4f} vs {np.mean(a1):.4f}", "not significant"])
     for f in FRACS:
         pc = [pick(d, f, "pretrained")["xpop"]["F1"] for d in xll]
         sc = [pick(d, f, "scratch")["xpop"]["F1"] for d in xll]
         r = stats.ttest_ind(pc, sc, equal_var=False)
         T.append([f"cross-ancestry @{f:g}", "combined vs scratch, held-out CEU F1",
-                  "Welch t-test", f"{r.statistic:.3f}", f"{r.pvalue:.4f}",
+                  "Welch t-test", f"{r.statistic:.3f}", repr(float(r.pvalue)),
                   f"{np.mean(pc):.4f} vs {np.mean(sc):.4f}",
                   "significant" if r.pvalue < 0.05 else "not significant"])
     with open(f"{O}/stats_tests.csv", "w", newline="") as fh:

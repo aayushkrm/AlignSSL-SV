@@ -59,8 +59,12 @@ CASES = [
     ),
     (
         "dropped sparsest row (candidate-filtered)",
+        # The p here reads '<0.0001', not '0.0000': the true value was
+        # destroyed by an older script's write-time rounding, so the
+        # source records the censoring bound and the table renders the
+        # inequality. Anchor on the document as it actually reads.
         "| 1% | 35 | Classical-logreg | 0.476 ± 0.076 "
-        "| DeepSV-representation | 0.316 ± 0.032 | 0.0000 | control |\n",
+        "| DeepSV-representation | 0.316 ± 0.032 | <0.0001 | control |\n",
         "",
     ),
 ]

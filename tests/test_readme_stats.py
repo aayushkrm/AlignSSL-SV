@@ -16,9 +16,14 @@ from __future__ import annotations
 
 import csv
 import re
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+# One p-value renderer for the whole project (see analysis/pfmt.py).
+sys.path.insert(0, str(ROOT / "analysis"))
+from pfmt import p_fmt  # noqa: E402
+
 README = (ROOT / "README.md").read_text()
 RESULTS = ROOT / "results"
 
@@ -39,11 +44,16 @@ def test_readme_cites_the_corrected_xpop_rerun_not_only_the_original():
 def test_readme_xpop_extreme_cell_matches_the_stats_csv():
     rows = _rows("stats_xpop_lowlabel.csv")
     best = min(rows, key=lambda r: float(r["p_raw"]))
-    assert f"{float(best['p_raw']):.4f}" in README, (
-        f"README must quote the most extreme raw p = {float(best['p_raw']):.4f}"
+    # Render through the shared rule, not a bare fixed format: if this p
+    # ever falls below 5e-05 a bare f"{p:.4f}" would demand the README
+    # print "0.0000", which is not a value a p-value can take.
+    want_raw = p_fmt(float(best["p_raw"]), 4)
+    assert want_raw in README, (
+        f"README must quote the most extreme raw p = {want_raw}"
     )
-    assert f"{float(best['p_holm']):.3f}" in README, (
-        f"README must quote its Holm p = {float(best['p_holm']):.3f}"
+    want_holm = p_fmt(float(best["p_holm"]))
+    assert want_holm in README, (
+        f"README must quote its Holm p = {want_holm}"
     )
     assert best["survives_holm_0.05"] == "False", (
         "a cell now survives Holm; the README's null claim must be revisited"

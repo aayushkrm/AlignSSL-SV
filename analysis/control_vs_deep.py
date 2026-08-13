@@ -27,6 +27,10 @@ Usage:
     python analysis/control_vs_deep.py --json-dir ../handoff/deep
 """
 from __future__ import annotations
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent))
+from pfmt import p_fmt  # one p-value renderer for the project
+
 
 import argparse
 import csv
@@ -135,7 +139,13 @@ def main() -> int:
                 "best_deep_auprc_sd": round(float(np.std(best_vals, ddof=1)), 4),
                 "best_deep_n_seeds": len(best_vals),
                 "deep_minus_control": round(diff, 4),
-                "p_value": round(float(pval), 4),
+                # NOT rounded. round(p, 4) sends any p below 5e-5 to exactly
+                # 0.0, and a p-value cannot be zero. The manuscript rendered
+                # one such cell as "0.000" and the true value was no longer
+                # recoverable from this file, because the per-seed JSONs it
+                # was computed from were lost with the cluster scratch
+                # workspace. Store full precision; round at render time.
+                "p_value": float(pval),
                 # A lead is only claimed where the contrast clears 0.05; the
                 # column exists so prose can never assert a lead the test
                 # does not support.
@@ -160,7 +170,7 @@ def main() -> int:
             print(f"  {r['label_frac']:>5}  n={r['n_labelled']:>6}  "
                   f"{r['control_arm']:<17s} {r['control_auprc_mean']:.3f}  "
                   f"{r['best_deep_arm']:<22s} {r['best_deep_auprc_mean']:.3f}  "
-                  f"p={r['p_value']:.4f}  -> {r['leader']}")
+                  f"p={p_fmt(float(r['p_value']), places=4)}  -> {r['leader']}")
         n_ctrl = sum(1 for r in sel if r["leader"] == "control")
         print(f"  control leads significantly at {n_ctrl} of {len(sel)} budgets")
     print(f"\nwrote {a.out}  ({len(rows)} rows)")

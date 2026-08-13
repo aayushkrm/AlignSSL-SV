@@ -15,9 +15,13 @@ expected, not a bug.
 import csv
 import pathlib
 import re
+import sys
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 MS = (ROOT / "docs" / "AlignSSL_SV_manuscript.md").read_text()
+sys.path.insert(0, str(ROOT / "analysis"))
+from pfmt import p_fmt  # noqa: E402
+
 
 CAPTIONS = [(m.start(), int(m.group(1))) for m in re.finditer(r"^\*\*Table (\d+)\.", MS, re.M)]
 
@@ -110,9 +114,11 @@ def test_manuscript_xpop_numbers_match_the_results_csv():
     )
     assert ten, "the 10%-cell sentence quoting three p-values is missing or reworded"
     for rule, quoted in zip(RULES, ten.groups()):
-        got = round(float(rows[("0.1", rule)]["p_raw"]), 3)
-        assert abs(float(quoted) - got) < 5e-4, (
-            f"10% {rule}: manuscript quotes p={quoted}, CSV says {got:.3f}"
+        # Compare against the shared renderer, not round(): a rounded
+        # comparison would demand "0.000" if this p ever got small.
+        want = p_fmt(float(rows[("0.1", rule)]["p_raw"]))
+        assert quoted == want, (
+            f"10% {rule}: manuscript quotes p={quoted}, CSV renders {want}"
         )
 
     one = re.search(
@@ -122,9 +128,11 @@ def test_manuscript_xpop_numbers_match_the_results_csv():
     )
     assert one, "the 1%-cell sentence quoting three p-values is missing or reworded"
     for rule, quoted in zip(RULES, one.groups()):
-        got = round(float(rows[("0.01", rule)]["p_raw"]), 3)
-        assert abs(float(quoted) - got) < 5e-4, (
-            f"1% {rule}: manuscript quotes p={quoted}, CSV says {got:.3f}"
+        # Compare against the shared renderer, not round(): a rounded
+        # comparison would demand "0.000" if this p ever got small.
+        want = p_fmt(float(rows[("0.01", rule)]["p_raw"]))
+        assert quoted == want, (
+            f"1% {rule}: manuscript quotes p={quoted}, CSV renders {want}"
         )
 
     # No cell may survive Holm -- the section's central claim.

@@ -138,7 +138,11 @@ def main() -> None:
                     "n_seeds_pre": int(p_v.size), "n_seeds_scratch": int(s_v.size),
                     "leader": ("pretrained" if p_v.mean() > s_v.mean()
                                else "scratch" if s_v.mean() > p_v.mean() else "tie"),
-                    "t": round(float(t), 4), "p_raw": round(float(pval), 6),
+                    # p_raw is NOT rounded. round(p, 6) sends any p below
+                    # 5e-7 to 0.0, which is not a value a p-value can take
+                    # and cannot be recovered afterwards. Round at render
+                    # time, never at write time.
+                    "t": round(float(t), 4), "p_raw": float(pval),
                 })
                 tests.append(float(pval))
 

@@ -19,7 +19,7 @@ Correspondence: aayush.kumarm.3myself@gmail.com · Code: https://github.com/aayu
 **That result does not survive scrutiny, and neither do several others.** We identify four defects in the evaluation design and correct each:
 
 1. **The benchmark is separable without a model.** Twelve hand-crafted alignment features fed to a gradient-boosted tree reach AUPRC = 0.937 from the same 210 labels and gain only +0.038 across a 100× increase in labels; the single centre-versus-flank read-depth ratio separates the classes at ROC-AUC = 0.955 untrained. The uniformly-sampled negatives are a depth heuristic, saturated before any deep model is trained.
-2. **Scoring at a fixed probability cut manufactures the low-label gap.** Re-scoring the identical runs at a threshold selected on a validation split, the 4.38× advantage becomes 1.05× and loses significance (0.481 vs 0.456, *p* = 0.527); threshold-free, it is 1.02× (*p* = 0.853). At every one of the five larger label budgets the from-scratch arm is *ahead*. The from-scratch model was never degenerate — it ranks competently (AUPRC 0.495 against the pretrained arm's 0.504), and its scores simply are not centred where a fixed cut expects them. This is the paper's sharpest methodological point: the effect is statistically real and survives multiplicity correction, yet it is an effect on *where the probabilities sit*, not on ranking quality — which is what a deletion caller is actually asked to supply.
+2. **Scoring at a fixed probability cut manufactures the low-label gap.** Re-scoring the identical runs at a threshold selected on a validation split, the 4.38× advantage becomes 1.06× and loses significance (0.481 vs 0.456, *p* = 0.527); threshold-free, it is 1.02× (*p* = 0.853). At every one of the five larger label budgets the from-scratch arm is *ahead*. The from-scratch model was never degenerate — it ranks competently (AUPRC 0.495 against the pretrained arm's 0.504), and its scores simply are not centred where a fixed cut expects them. This is the paper's sharpest methodological point: the effect is statistically real and survives multiplicity correction, yet it is an effect on *where the probabilities sit*, not on ranking quality — which is what a deletion caller is actually asked to supply.
 3. **The label budgets were not equal.** A batch-size floor in the deep evaluators granted the deep arms 96 labels where the classical control received 35 on the candidate-filtered benchmark — a 2.8× advantage in exactly the cell carrying the headline claim.
 4. **No significance claim carried a multiplicity adjustment.** Every *p*-value in this literature, ours included, is drawn from a sweep of six or more simultaneous tests and reported as if it were one. Under Holm–Bonferroni within pre-declared families (103 tests, 17 families), 30 nominal hits fall to 17. The headline low-label effect is among the survivors (Holm *p* = 0.0012), so multiplicity is not what dismantles it — the scoring rule is; the cross-ancestry effect we had already declined to claim is settled as chance (Holm *p* = 0.169).
 
@@ -177,7 +177,7 @@ From the same alignment tensors, identical shards, identical chromosome split, i
 |---|---|---|---|---|---|---|
 | 1% | 210 | 0.937 ± 0.009 | AlignSSL-pretrained | 0.504 ± 0.060 | 0.001 | control |
 | 5% | 1,051 | 0.958 ± 0.006 | AlignSSL-scratch | 0.824 ± 0.118 | 0.006 | control |
-| 10% | 2,102 | 0.967 ± 0.004 | AlignSSL-scratch | 0.905 ± 0.024 | 0.000 | control |
+| 10% | 2,102 | 0.967 ± 0.004 | AlignSSL-scratch | 0.905 ± 0.024 | <0.0001 | control |
 | 25% | 5,254 | 0.971 ± 0.002 | AlignSSL-scratch | 0.949 ± 0.024 | 0.017 | control |
 | 50% | 10,508 | 0.974 ± 0.002 | AlignSSL-scratch | 0.969 ± 0.010 | 0.127 | tie |
 | 100% | 21,016 | 0.975 ± 0.001 | AlignSSL-pretrained | 0.962 ± 0.015 | 0.174 | tie |
@@ -333,7 +333,7 @@ We therefore re-scored the identical runs and seeds three ways: at the fixed 0.5
 
 | Scoring rule | AlignSSL-pretrained | AlignSSL-scratch | Ratio | *p* |
 |---|---|---|---|---|
-| F1 at fixed 0.5 cut | 0.464 | 0.106 | 4.38× | 0.000 |
+| F1 at fixed 0.5 cut | 0.464 | 0.106 | 4.38× | 0.0002 |
 | F1 at selected τ | 0.481 | 0.456 | 1.06× | 0.527 |
 | AUPRC (threshold-free) | 0.504 | 0.495 | 1.02× | 0.853 |
 
@@ -447,28 +447,28 @@ representation's contribution does not. The two analyses are independent and agr
 |---|---|---|---|---|---|---|---|
 | uniform | auprc | pretrained | 0.1 | 0.830 | 0.722 | +0.109 | 0.002 |
 | uniform | auprc | scratch | 0.05 | 0.824 | 0.608 | +0.216 | 0.003 |
-| uniform | auprc | scratch | 0.1 | 0.905 | 0.703 | +0.201 | 0.000 |
+| uniform | auprc | scratch | 0.1 | 0.905 | 0.703 | +0.201 | 0.0001 |
 | uniform | auprc | scratch | 0.25 | 0.949 | 0.839 | +0.110 | 0.037 |
-| uniform | auprc | scratch | 0.5 | 0.969 | 0.889 | +0.080 | 0.000 |
+| uniform | auprc | scratch | 0.5 | 0.969 | 0.889 | +0.080 | 0.0005 |
 | uniform | roc_auc | scratch | 0.05 | 0.922 | 0.799 | +0.123 | 0.003 |
-| uniform | roc_auc | scratch | 0.1 | 0.955 | 0.851 | +0.105 | 0.000 |
+| uniform | roc_auc | scratch | 0.1 | 0.955 | 0.851 | +0.105 | 0.0002 |
 | uniform | roc_auc | scratch | 0.25 | 0.978 | 0.919 | +0.059 | 0.021 |
 | uniform | roc_auc | scratch | 0.5 | 0.986 | 0.938 | +0.047 | 0.015 |
 | uniform | roc_auc | scratch | 1 | 0.983 | 0.941 | +0.042 | 0.015 |
 | uniform | f1_at_tau | pretrained | 0.1 | 0.759 | 0.671 | +0.089 | 0.042 |
 | uniform | f1_at_tau | scratch | 0.05 | 0.756 | 0.576 | +0.180 | 0.004 |
-| uniform | f1_at_tau | scratch | 0.1 | 0.826 | 0.656 | +0.170 | 0.000 |
+| uniform | f1_at_tau | scratch | 0.1 | 0.826 | 0.656 | +0.170 | 0.0001 |
 | uniform | f1_at_tau | scratch | 0.5 | 0.922 | 0.838 | +0.085 | 0.001 |
 | uniform | f1_at_tau | scratch | 1 | 0.915 | 0.824 | +0.091 | 0.046 |
-| candidate-filtered | auprc | scratch | 0.25 | 0.724 | 0.530 | +0.193 | 0.000 |
-| candidate-filtered | auprc | scratch | 0.5 | 0.803 | 0.546 | +0.257 | 0.000 |
-| candidate-filtered | auprc | scratch | 1 | 0.836 | 0.614 | +0.222 | 0.000 |
-| candidate-filtered | roc_auc | scratch | 0.25 | 0.863 | 0.739 | +0.124 | 0.000 |
-| candidate-filtered | roc_auc | scratch | 0.5 | 0.907 | 0.746 | +0.162 | 0.000 |
-| candidate-filtered | roc_auc | scratch | 1 | 0.919 | 0.789 | +0.130 | 0.000 |
+| candidate-filtered | auprc | scratch | 0.25 | 0.724 | 0.530 | +0.193 | 2e-05 |
+| candidate-filtered | auprc | scratch | 0.5 | 0.803 | 0.546 | +0.257 | 9e-05 |
+| candidate-filtered | auprc | scratch | 1 | 0.836 | 0.614 | +0.222 | 7e-06 |
+| candidate-filtered | roc_auc | scratch | 0.25 | 0.863 | 0.739 | +0.124 | 0.0003 |
+| candidate-filtered | roc_auc | scratch | 0.5 | 0.907 | 0.746 | +0.162 | 0.0005 |
+| candidate-filtered | roc_auc | scratch | 1 | 0.919 | 0.789 | +0.130 | 0.0003 |
 | candidate-filtered | f1_at_tau | scratch | 0.25 | 0.636 | 0.507 | +0.129 | 0.002 |
-| candidate-filtered | f1_at_tau | scratch | 0.5 | 0.711 | 0.513 | +0.198 | 0.000 |
-| candidate-filtered | f1_at_tau | scratch | 1 | 0.753 | 0.579 | +0.174 | 0.000 |
+| candidate-filtered | f1_at_tau | scratch | 0.5 | 0.711 | 0.513 | +0.198 | 4e-05 |
+| candidate-filtered | f1_at_tau | scratch | 1 | 0.753 | 0.579 | +0.174 | 0.0001 |
 
 **Table 12.** AlignSSL against the DeepSV RGB-pileup representation under the corrected protocol: the 24 of 72 paired comparisons that survive Holm–Bonferroni within metric-by-benchmark families. `f1_at_tau` is F1 at the budgeted threshold. Of the 48 non-separating cells, 42 have an observed difference smaller than the minimum detectable effect at 80% power and are therefore uninformative rather than negative. Seeds are paired per comparison: 4 for the pretrained-versus-DeepSV rows and 10 for the from-scratch-versus-DeepSV rows. The classical controls do not appear in this table — they are compared against the deep arms in Tables 3 and 16. Full 72-row grid with per-cell `mde80` and confidence intervals: `results/table20_alignssl_vs_deepsv.csv`, generated by `analysis/alignssl_vs_deepsv.py`.
 
@@ -918,7 +918,7 @@ It fails four controls, none of which is exotic:
 
 1. **Benchmark separability.** Twelve scalar alignment features on the identical windows reach AUPRC 0.937 from 210 labels and gain only +0.038 from a hundred-fold increase in supervision, and a single centre-versus-flank depth ratio separates the classes at ROC-AUC 0.955 with no training at all. The cause is the uniformly-sampled negatives standard in this benchmark family. A task that is 96% solved by twelve features after 210 examples cannot discriminate between representations. Nor is this confined to synthetic negatives: on a real caller's candidate list the same depth ratio still reaches ROC-AUC 0.942 untrained (Section 6.5), so realism of the negative set and absence of a shortcut are independent properties.
 2. **Unequal label budgets.** A batch-size floor in our own deep evaluators granted the deep arms up to 2.8× the labels the classical control received, concentrated in precisely the low-label cells that carry the headline claim.
-3. **The decision threshold.** Scoring F1 at a fixed 0.5 probability cut — the convention inherited from DeepSV — conflates ranking quality with calibration. Re-run under equal budgets and re-scored at a validation-selected threshold or threshold-free, the ten-fold gap becomes 1.05× (*p* = 0.527) and 1.02× (*p* = 0.853) respectively; at every larger budget the from-scratch arm is ahead. The from-scratch model was never degenerate. It ranked competently and scored timidly, and a fixed cut reads timidity as failure.
+3. **The decision threshold.** Scoring F1 at a fixed 0.5 probability cut — the convention inherited from DeepSV — conflates ranking quality with calibration. Re-run under equal budgets and re-scored at a validation-selected threshold or threshold-free, the ten-fold gap becomes 1.06× (*p* = 0.527) and 1.02× (*p* = 0.853) respectively; at every larger budget the from-scratch arm is ahead. The from-scratch model was never degenerate. It ranked competently and scored timidly, and a fixed cut reads timidity as failure.
 4. **Multiplicity.** The fixed-cut result was the strongest cell of a six-budget sweep, reported as though it were a single test. Corrected for the family it was selected from it does survive (Holm *p* = 0.0012) — multiplicity is not what dismantles it, and we report that against our own expectation. Across the whole paper, 30 nominally significant tests in 17 pre-declared families reduce to 17 under Holm–Bonferroni, and the cross-ancestry effect reduces to chance.
 
 Each defect is individually mundane, each is the default in this literature — no paper in the audited population reports all four safeguards and 11 of 18 omit at least three (Section 7) — and each is invisible without the control that exposes it. Three concern how the numbers were measured; the fourth concerns how they were tested. Jointly they were sufficient to manufacture a large, statistically significant, entirely artefactual headline result — one we believed, wrote up, and would have submitted.

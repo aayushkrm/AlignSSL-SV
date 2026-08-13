@@ -19,6 +19,10 @@ Usage:
     python analysis/hardneg_arm_contrasts.py --json-dir ../handoff/deep
 """
 from __future__ import annotations
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent))
+from pfmt import p_fmt  # one p-value renderer for the project
+
 
 import argparse
 import csv
@@ -90,7 +94,10 @@ def main() -> int:
                     "mean_b": round(float(np.mean(y)), 4),
                     "sd_b": round(float(np.std(y, ddof=1)), 4),
                     "a_minus_b": round(diff, 4),
-                    "p": round(float(p), 4),
+                    # Full precision: round(p, 4) collapses any p below
+                    # 5e-5 to 0.0, which is not a value a p-value can
+                    # take. Round at render time, never at write time.
+                    "p": float(p),
                     # Prose may only assert a difference where this says so.
                     "verdict": ("a" if diff > 0 and p < 0.05 else
                                 "b" if diff < 0 and p < 0.05 else "tie"),
@@ -112,7 +119,7 @@ def main() -> int:
             print(f"  {r['label_frac']:>5} n={r['n_labelled']:>5}  "
                   f"{r['arm_a']:<22s}{r['mean_a']:.3f}  vs  "
                   f"{r['arm_b']:<22s}{r['mean_b']:.3f}  "
-                  f"p={r['p']:.4f}  -> {r['verdict']}")
+                  f"p={p_fmt(float(r['p']), places=4)}  -> {r['verdict']}")
     print(f"\nwrote {a.out}  ({len(rows)} rows)")
     return 0
 

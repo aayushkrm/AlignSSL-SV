@@ -83,22 +83,22 @@ uniform (pre-correction): cross-ancestry sweep,"cross-ancestry @1 | combined vs 
 "candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.1 (auprc),6,0.4193,0.8386,0.50316,False,False,False,not significant
 "candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.25 (auprc),6,0.0002,0.001,0.0004,True,True,True,survives Holm
 "candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @0.5 (auprc),6,0.0002,0.001,0.0004,True,True,True,survives Holm
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @1.0 (auprc),6,0,0,0,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, auprc",AlignSSL-pretrained vs DeepSV-representation @1.0 (auprc),6,5e-05,0.0003,0.0003,True,True,True,survives Holm
 "candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.01 (f1_at_tau),6,0.6474,1,0.7443,False,False,False,not significant
 "candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.05 (f1_at_tau),6,0.7443,1,0.7443,False,False,False,not significant
 "candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.1 (f1_at_tau),6,0.5088,1,0.7443,False,False,False,not significant
 "candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.25 (f1_at_tau),6,0.0034,0.0136,0.0068,True,True,True,survives Holm
 "candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @0.5 (f1_at_tau),6,0.0015,0.0075,0.0045,True,True,True,survives Holm
-"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @1.0 (f1_at_tau),6,0,0,0,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-pretrained vs DeepSV-representation, f1_at_tau",AlignSSL-pretrained vs DeepSV-representation @1.0 (f1_at_tau),6,5e-05,0.0003,0.0003,True,True,True,survives Holm
 "candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.01 (auprc),6,0.0333,0.0924,0.03996,True,False,True,survives BH only
 "candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.05 (auprc),6,0.0308,0.0924,0.03996,True,False,True,survives BH only
 "candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.1 (auprc),6,0.2679,0.2679,0.2679,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.25 (auprc),6,0,0,0,True,True,True,survives Holm
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.5 (auprc),6,0,0,0,True,True,True,survives Holm
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @1.0 (auprc),6,0,0,0,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.25 (auprc),6,5e-05,0.0003,0.0001,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @0.5 (auprc),6,5e-05,0.0003,0.0001,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, auprc",AlignSSL-scratch vs DeepSV-representation @1.0 (auprc),6,5e-05,0.0003,0.0001,True,True,True,survives Holm
 "candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.01 (f1_at_tau),6,0.0751,0.2253,0.11265,False,False,False,not significant
 "candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.05 (f1_at_tau),6,0.8667,0.8667,0.8667,False,False,False,not significant
 "candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.1 (f1_at_tau),6,0.1667,0.3334,0.20004,False,False,False,not significant
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.25 (f1_at_tau),6,0,0,0,True,True,True,survives Holm
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.5 (f1_at_tau),6,0,0,0,True,True,True,survives Holm
-"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @1.0 (f1_at_tau),6,0,0,0,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.25 (f1_at_tau),6,5e-05,0.0003,0.0001,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @0.5 (f1_at_tau),6,5e-05,0.0003,0.0001,True,True,True,survives Holm
+"candidate-filtered (corrected): AlignSSL-scratch vs DeepSV-representation, f1_at_tau",AlignSSL-scratch vs DeepSV-representation @1.0 (f1_at_tau),6,5e-05,0.0003,0.0001,True,True,True,survives Holm

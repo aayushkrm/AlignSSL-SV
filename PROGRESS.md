@@ -80,9 +80,9 @@ chr12–22, best-of-family per budget — `results/table14_control_vs_deep.csv`:
 
 | Budget | *n* labels | Control arm | Control AUPRC | Best deep arm | Deep AUPRC | *p* | Leader |
 |---|---|---|---|---|---|---|---|
-| 1% | 35 | Classical-logreg | 0.476 ± 0.076 | DeepSV-representation | 0.316 ± 0.032 | 0.0000 | control |
-| 5% | 173 | Classical-GBT | 0.626 ± 0.054 | DeepSV-representation | 0.415 ± 0.026 | 0.0000 | control |
-| 10% | 345 | Classical-GBT | 0.719 ± 0.029 | AlignSSL-scratch | 0.473 ± 0.093 | 0.0000 | control |
+| 1% | 35 | Classical-logreg | 0.476 ± 0.076 | DeepSV-representation | 0.316 ± 0.032 | <0.0001 | control |
+| 5% | 173 | Classical-GBT | 0.626 ± 0.054 | DeepSV-representation | 0.415 ± 0.026 | <0.0001 | control |
+| 10% | 345 | Classical-GBT | 0.719 ± 0.029 | AlignSSL-scratch | 0.473 ± 0.093 | <0.0001 | control |
 | 25% | 863 | Classical-GBT | 0.803 ± 0.013 | AlignSSL-scratch | 0.724 ± 0.055 | 0.0013 | control |
 | 50% | 1726 | Classical-GBT | 0.845 ± 0.012 | AlignSSL-scratch | 0.803 ± 0.046 | 0.0176 | control |
 | 100% | 3452 | Classical-GBT | 0.869 ± 0.006 | AlignSSL-pretrained | 0.856 ± 0.035 | 0.5140 | tie |

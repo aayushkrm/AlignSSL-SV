@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import sys
 from collections import defaultdict
 from pathlib import Path
 
@@ -108,15 +109,13 @@ def by_arm(rows, key: str, xkey: str, ykey: str, sdkey: str | None):
     return out
 
 
-def p_fmt(v):
-    """Render a p-value without collapsing a small one to '0.000'.
-
-    Motivating defect (2026-08-12): the raw p of the headline 1%-label
-    contrast is 0.0002 and printed as 'p = 0.000' under a fixed 3-decimal
-    format -- a value no p-value can take. Below 0.001 we switch to one
-    significant figure so the magnitude survives.
-    """
-    return f"{v:.3f}" if v >= 0.001 else f"{v:.1g}"
+# p_fmt lived here until 2026-08-13, when the identical defect was found
+# in the manuscript's own tables and in the checker that validates them --
+# three copies of one rule, two of them wrong. It now has exactly one
+# definition, in analysis/pfmt.py, which every renderer and every gate
+# imports. Re-exported here so existing callers and tests keep working.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from pfmt import p_fmt, p_bound_fmt, p_render  # noqa: E402,F401
 
 
 def pct_axis(ax, x, total=21016):

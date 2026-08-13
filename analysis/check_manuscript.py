@@ -26,6 +26,13 @@ import re
 import sys
 from pathlib import Path
 
+# One p-value renderer for the whole project. Until 2026-08-13 this
+# checker demanded f"{p:.3f}", which renders any p below 0.0005 as
+# '0.000' -- so the gate that validates the manuscript was requiring
+# the very defect the manuscript had just been corrected for.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from pfmt import p_fmt, p_render  # noqa: E402
+
 # Table 1 now reports the three deep arms under the conventional fixed-0.5
 # scoring, sourced from the corrected-protocol runs (table12) rather than from
 # table1_label_efficiency.csv, which predates the protocol correction. The
@@ -95,7 +102,7 @@ def check_table13(md: str, src: dict) -> list[str]:
         if cells[2] not in want_ratios:
             errs.append(f"Table 13 {label} ratio: '{cells[2]}' not in "
                         f"{sorted(want_ratios)} (source {src[kr]})")
-        want_p = f"{float(src[kpv]):.3f}"
+        want_p = p_fmt(float(src[kpv]))
         if cells[3] != want_p:
             errs.append(f"Table 13 {label} p: '{cells[3]}' != '{want_p}'")
     return errs
@@ -392,7 +399,7 @@ def check_table20(md: str, results: Path) -> list[str]:
         key = (r["benchmark"], r["metric"],
                r["arm"].replace("AlignSSL-", ""), f"{float(r['label_frac']):g}")
         want[key] = (f"{float(r['mean_a']):.3f}", f"{float(r['mean_b']):.3f}",
-                     f"{float(r['diff']):+.3f}", f"{float(r['p_holm']):.3f}")
+                     f"{float(r['diff']):+.3f}", p_fmt(float(r['p_holm'])))
     m = re.search(r"\|\s*Benchmark\s*\|\s*Metric\s*\|\s*Arm\s*\|\s*Labels\s*\|"
                   r".*?\n((?:\|.*\n)+)", md)
     if not m:
@@ -693,7 +700,7 @@ def check_narrative_tallies(md: str, results: Path) -> list[str]:
                     "narrative tally: manuscript states the headline claim "
                     "is not among the Holm survivors, but "
                     f"stats_multiplicity.csv gives Holm p="
-                    f"{float(head[0]['p_holm']):.4f} (< 0.05, it survives)")
+                    f"{p_fmt(float(head[0]['p_holm']), places=4)} (< 0.05, it survives)")
     return errs
 
 
@@ -1008,7 +1015,13 @@ def check_progress_headline(progress: Path, results: Path) -> list[str]:
             want[f"{int(r[col['n']]):,}"] = {
                 "ca": r[col["ca"]], "cm": r[col["cm"]], "cs": r[col["cs"]],
                 "da": r[col["da"]], "dm": r[col["dm"]], "ds": r[col["ds"]],
-                "p": f"{float(r[col['p']]):.4f}", "v": r[col["v"]],
+                # A censored p (the true value was destroyed by an older
+                # script's write-time rounding) is a bound, not a
+                # measurement, and must render as one.
+                "p": p_render(r[col['p']],
+                              r.get(col['p'] + "_is_upper_bound", False),
+                              places=4),
+                "v": r[col["v"]],
             }
 
         seen: set[str] = set()
@@ -1101,7 +1114,7 @@ def check_caller_candidate_table(md: str, readme: Path,
             "control": (r["control_roc_auc"], r["control_sd"]),
             "deep_arm": r["deep_arm"],
             "deep": (r["deep_roc_auc"], r["deep_sd"]),
-            "p": f"{float(r['p']):.4f}",
+            "p": p_render(r["p"], r.get("p_is_upper_bound", False), places=4),
             "verdict": r["verdict"],
         }
 

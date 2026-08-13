@@ -185,7 +185,8 @@ def main():
             return
         t, p = stats.ttest_ind(x, y, equal_var=False)
         rows.append([label, frac, len(x), len(y),
-                     f"{np.mean(x) - np.mean(y):+.4f}", f"{t:.3f}", f"{p:.4f}",
+                     f"{np.mean(x) - np.mean(y):+.4f}", f"{t:.3f}",
+                     repr(float(p)),   # full precision; round at render time
                      "significant at 0.05" if p < 0.05 else "not significant"])
 
     for i, f in enumerate(FRACS):
