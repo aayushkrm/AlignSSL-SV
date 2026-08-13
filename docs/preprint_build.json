@@ -1,5 +1,5 @@
 {
-  "built": "2026-08-12",
+  "built": "2026-08-13",
   "figures": {
     "1": {
       "path": "results/figure1_label_efficiency.png",
@@ -44,11 +44,11 @@
   },
   "manuscript": {
     "path": "docs/AlignSSL_SV_manuscript.md",
-    "sha256": "139f4ffc2e050d8c537e0c81520cba468583a905ca1f8680f6805190de1e0a76"
+    "sha256": "1d49b89c7c83610e584b149ebc9f86db33230ca92d693ebe1134ffd5f387c7ee"
   },
   "pdf": {
     "path": "docs/AlignSSL_SV_preprint.pdf",
-    "sha256": "e8dcb5f56e45c646618a81a92a1f3cf69dd59cb9e1d2110f49589023d2575dbe",
-    "size_bytes": 1501106
+    "sha256": "66d03ddde181f9064a9f562e8c75c92ec36fa807c883a6188bfa236c1cf4a96c",
+    "size_bytes": 1503536
   }
 }

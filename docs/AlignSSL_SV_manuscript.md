@@ -171,7 +171,7 @@ Every deep-learning SV paper we are aware of, DeepSV included, compares deep arc
 
 From the same alignment tensors, identical shards, identical chromosome split, identical label fractions and identical seeds, we computed twelve scalar summary features per window — mean, standard deviation and minimum of the depth profile; centre-versus-flank depth ratio; maximum sustained depth drop; discordant-pair rate; soft-clip rate; mean and maximum insert-size |z|; mean mapping quality; occupied read-row count; and valid-base fraction — and fitted an ℓ2-regularised logistic regression and a gradient-boosted tree (`Classical-logreg`, `Classical-GBT`; Table 3 and `results/table11_control_threshold_free.csv`). The tree is at its ceiling from the smallest label budget onward. At 1% labels (210 windows), where the paper's headline claim lives, it reaches **AUPRC = 0.937 ± 0.009** against 0.504 ± 0.060 for the pretrained network and 0.495 ± 0.056 from scratch. Increasing its labels one hundred-fold, to the full 21,016 windows, buys it **+0.038** (0.975 ± 0.001). A benchmark on which twelve scalar features are 96% of the way to their asymptote after 210 examples cannot discriminate between representation-learning methods, because there is almost nothing left for a representation to contribute. Its variance across seeds is one to two orders of magnitude smaller than any deep arm's.
 
-**Table 3. Control versus best deep arm, threshold-free, corrected protocol (uniform benchmark; AUPRC, 4–10 seeds per arm; leader named only where Welch's *t* clears 0.05).**
+**Table 3. Control versus best deep arm, threshold-free, corrected protocol (uniform benchmark; AUPRC, 4–10 seeds per arm; leader named only where Welch's *t* clears 0.05). Source: `results/table14_control_vs_deep.csv`.**
 
 | Label fraction | n labels | Classical-GBT | Best deep arm | its AUPRC | *p* | Leader |
 |---|---|---|---|---|---|---|
@@ -187,7 +187,7 @@ We initially reported this control as dominating every deep arm at every budget.
 
 We then localised the cause. Scoring each feature individually on the held-out test set, *with no training whatsoever* and no fitted parameter of any kind, the **centre-versus-flank read-depth ratio alone attains ROC-AUC = 0.955** (Table 4). The benchmark is therefore separable by a single depth heuristic that requires no model at all.
 
-**Table 4.** Untrained single-feature discrimination on the held-out test split (chr12–22, *n* = 9,196; 2,299 deletions). ROC-AUC is the exact rank statistic. A feature can be informative with either polarity — for depth-like features the *low* tail is deletion-like — so the oriented column reports max(AUC, 1 − AUC), the magnitude of the information leak; 0.5 is uninformative. Reproduced by `scripts/single_feature_auc.py`.
+**Table 4.** Untrained single-feature discrimination on the held-out test split (chr12–22, *n* = 9,196; 2,299 deletions). ROC-AUC is the exact rank statistic. A feature can be informative with either polarity — for depth-like features the *low* tail is deletion-like — so the oriented column reports max(AUC, 1 − AUC), the magnitude of the information leak; 0.5 is uninformative. Reproduced by `scripts/single_feature_auc.py`; source: `results/table6_single_feature_auc.csv`.
 
 | Feature | ROC-AUC | Oriented | Deletion side |
 |---|---|---|---|
@@ -220,7 +220,7 @@ Beyond point accuracy, we ask whether the models' confidence scores are *trustwo
 
 The defensible reading is that calibration tracks the *representation* rather than self-supervision: pretrained and from-scratch tensor models are indistinguishable here, so the difference is attributable to the multi-channel encoding versus the fixed RGB pileup, not to the pretraining objective.
 
-**Table 5. Calibration at full supervision, pre-correction protocol (ECE ↓ after temperature scaling; pretrained/scratch = 4 seeds, DeepSV = 3 seeds). Per-seed values given because the DeepSV mean is outlier-driven.**
+**Table 5. Calibration at full supervision, pre-correction protocol (ECE ↓ after temperature scaling; pretrained/scratch = 4 seeds, DeepSV = 3 seeds). Per-seed values given because the DeepSV mean is outlier-driven. Source: `results/table2_calibration.csv`.**
 
 | Model | ECE mean ↓ | ECE median ↓ | Temperature | ECE per seed |
 |---|---|---|---|---|
@@ -232,7 +232,7 @@ The defensible reading is that calibration tracks the *representation* rather th
 
 Deletion callers are notoriously length-dependent. Table 6 stratifies full-supervision test recall by deletion length across all three models. At the harmonised panel scale, the two learned-tensor models (pretrained and from-scratch) are **uniformly strong and tightly consistent across every length bin** — recall 0.86–0.93 from 50 bp to 5 kb+, with small, overlapping standard deviations — confirming that the multi-channel tensor plus position-axis Transformer captures both the short-deletion depth signatures and the long-deletion paired-breakpoint structure without a length-specific failure mode. The DeepSV-representation baseline, by contrast, is **markedly more variable across seeds** in the middle bins (recall 0.841 ± 0.165 at 200–500 bp and 0.850 ± 0.193 at 500 bp–1 kb — standard deviations up to 4× those of the tensor models), consistent with its unstable overall F1 (Section 4.1) and miscalibration (Section 4.3). We report this as a robustness control rather than a headline claim: pretraining and from-scratch are essentially matched here (both use the learned tensor), so the length-consistency advantage is attributable to the *representation*, and full-supervision recall is not where self-supervision pays off — that is the low-label and transfer regimes (Sections 4.1, 4.6).
 
-**Table 6. Length-stratified recall at full supervision, pre-correction protocol (recall at a fixed 0.5 cut; test; pretrained/scratch = 4 seeds, DeepSV = 3 seeds).**
+**Table 6. Length-stratified recall at full supervision, pre-correction protocol (recall at a fixed 0.5 cut; test; pretrained/scratch = 4 seeds, DeepSV = 3 seeds). Source: `results/table3_length_strata.csv`.**
 
 | Deletion length | n test | Pretrained recall | Scratch recall | DeepSV-repr. recall |
 |---|---|---|---|---|
@@ -254,7 +254,7 @@ Ranking the objectives *against one another*, however, is **not supported at the
 
 Two caveats bound how far this section's significance statements should be read. Both scoring defects diagnosed in Sections 3.8 and 4.8 apply to every number in Table 7: F1 is taken at a fixed 0.5 cut, and the runs predate the equal-budget correction, so the 1%-label significance of each objective against from-scratch training inherits exactly the artefact that dissolved the headline claim. The visible symptom is that the combined arm's 1% entry here (0.514 ± 0.055) does not match the pretrained arm's 1% entry in Table 1 (0.464 ± 0.087), which is the same objective under the corrected budget. We did not re-run the ablation under the corrected protocol because its only surviving conclusion is a negative one — that the objectives cannot be separated at this seed count — and that conclusion is robust to the scoring rule, since it rests on overlapping error bars rather than on any arm's absolute score.
 
-**Table 7. Self-supervised objective ablation (deletion F1 at a fixed 0.5 cut, pre-correction protocol; combined = 4 seeds, MAM-only / VICReg-only = 3 seeds; error bars across pretraining seeds).**
+**Table 7. Self-supervised objective ablation (deletion F1 at a fixed 0.5 cut, pre-correction protocol; combined = 4 seeds, MAM-only / VICReg-only = 3 seeds; error bars across pretraining seeds). Source: `results/table4_ablation.csv`.**
 
 | Label fraction | MAM-only | VICReg-only | Combined (MAM+VICReg) |
 |---|---|---|---|
@@ -306,7 +306,7 @@ We train on the in-distribution panel and evaluate both in-distribution and on a
 
 **The pre-correction run (Table 9), for the record.** Across that sweep the pretrained model's held-out CEU F1 exceeded the from-scratch model's at five of six fractions — every fraction except 50%, where the direction inverted — and the difference was nominally significant at only one: 10% labels (*t* = 3.38, *p* = 0.028), which did not survive correction for the six simultaneous tests of that sweep (Holm *p* = 0.169; Section 4.9). At 1% the direction favoured pretraining by a wide margin of means (0.518 vs. 0.179) with enormous from-scratch variance (± 0.185, one seed of three learning nothing); at 50% the direction inverted (0.834 vs. 0.679, *p* = 0.084). The corrected re-run above retains none of this structure: the 10% hit is gone, and the five-of-six mean ordering holds under the fixed-cut rule but not threshold-free. We report both runs because the disagreement is the point — an underpowered sweep with a defective label budget produced a suggestive pattern at one cell, and a corrected re-run of the same design put it somewhere else. Neither supports a cross-ancestry claim, and the instability across two runs of one design is a stronger argument for the limitation than either run alone. It is stated as a limitation (Section 7), not a contribution.
 
-**Table 9. Cross-ancestry transfer, pre-correction protocol (train in-distribution → test held-out CEU, 3 seeds), all label fractions. *p* from Welch's *t*-test on held-out CEU F1 at a fixed 0.5 cut, pretrained vs. from-scratch. These runs predate the label-accounting correction of Section 3.8 in the specific way that matters for a label sweep: the generating evaluator (`scripts/cross_pop_lowlabel.py`) applied a batch-size floor to the budget and drew no validation split, so the low-fraction cells received more labels than the nominal fraction. The evaluator now imports the shared protocol, and the design has since been re-run under it: see Table 8, which supersedes this table as the section's primary result. Table 9 is retained because the two runs disagree about which cell is nominally significant, and that instability is itself evidence for the limitation.**
+**Table 9. Cross-ancestry transfer, pre-correction protocol (train in-distribution → test held-out CEU, 3 seeds), all label fractions. *p* from Welch's *t*-test on held-out CEU F1 at a fixed 0.5 cut, pretrained vs. from-scratch. These runs predate the label-accounting correction of Section 3.8 in the specific way that matters for a label sweep: the generating evaluator (`scripts/cross_pop_lowlabel.py`) applied a batch-size floor to the budget and drew no validation split, so the low-fraction cells received more labels than the nominal fraction. The evaluator now imports the shared protocol, and the design has since been re-run under it: see Table 8, which supersedes this table as the section's primary result. Table 9 is retained because the two runs disagree about which cell is nominally significant, and that instability is itself evidence for the limitation. Source: `results/table5_cross_ancestry.csv`.**
 
 | Label fraction | Pretrained CEU F1 | Scratch CEU F1 | *p* | Gap (pre) | Gap (scr) |
 |---|---|---|---|---|---|
@@ -514,7 +514,7 @@ Table 13 repeats the untrained single-feature measurement of Table 4 on the cand
 
 But 0.717 is not 0.5, and the residue is not a train/test generalisation artefact. Measuring the tensor-side depth ratio on both splits of both benchmarks (Table 14) gives 0.715 on the matched *training* pool against 0.719 on the held-out test pool — the same value, where the uniform benchmark likewise gives 0.948 against 0.956. There is no asymmetry to appeal to: matching leaves the same residual separability everywhere it is measured, so the residue is a property of the selection rule rather than of what transfers across chromosomes. Its source is visible in the class medians. On the uniform benchmark the negative median is 1.000 — copy-neutral by construction — against 0.523 for positives, which is why a single threshold nearly solves that task. Under matching the negative median falls to 0.754 while the positive median is unchanged at 0.524: the negatives have moved most of the way toward the positives but not onto them. Two mechanisms are sufficient to explain the gap and we cannot separate them here — matching is per-stratum rather than exact, and it is applied to the profile-derived statistic while the residual is measured on the tensor-derived one, which is a correlated but not identical estimator. We therefore report the benchmark as **substantially harder**, not as shortcut-free. A benchmark on which one raw statistic reaches 0.717 still admits a threshold baseline that any deep method should be required to beat.
 
-**Table 13.** Untrained single-feature separability, uniform versus candidate-filtered negatives (orientation-corrected ROC-AUC; source `results/table9_hardneg_single_feature_auc.csv`).
+**Table 13.** Untrained single-feature separability, uniform versus candidate-filtered negatives (orientation-corrected ROC-AUC; the uniform column is `results/table6_single_feature_auc.csv`, the candidate-filtered column `results/table9_hardneg_single_feature_auc.csv`, and Change is their difference).
 
 | Feature | Uniform | Candidate-filtered | Change |
 |---|---|---|---|
@@ -650,7 +650,8 @@ the task is hard.
 benchmark (ROC-AUC; three seeds per deep arm and five per control arm — the
 control is CPU-only and cheap to replicate, the deep arms are not; both families
 reduced by best-of-family so neither side gains a best-of-K advantage the other
-lacks; Welch's *t* over seeds, which does not assume equal group sizes).**
+lacks; Welch's *t* over seeds, which does not assume equal group sizes). Source:
+`results/table24_caller_candidate.csv`.**
 
 | Labels | Control arm | Control ROC-AUC | Best deep arm | Deep ROC-AUC | Deep − control | *p* | Leader |
 |---|---|---|---|---|---|---|---|
