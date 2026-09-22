@@ -2,8 +2,8 @@
 
 **Date:** 2026-09-23
 **Status:** development benchmark and HGSVC3 callset staged and checked;
-63 HGSVC3 donors have matching public 30× CRAM index entries, but the
-independent-donor plan still requires reference and callable-region checks.
+63 HGSVC3 donors have matching public 30× CRAM index entries, but bulk transfer
+is on hold after reference-M5 and callable-region checks failed their gates.
 
 ## Decision
 
@@ -73,6 +73,17 @@ at least `chr4` primary contig names, with `chr1` length 248,956,422 and M5
 a file-integrity or complete reference-compatibility verification. One 15.7 GB
 donor already makes full-cohort transfer a sizeable decision.
 
+Subsequent primary-source audits found no donor-wide callable BED in the
+inspected HGSVC3 v1.0 release inventories and an exact M5 mismatch between the
+HGSVC VCF header and the official IGSR CRAM reference dictionary on 18 of 25
+canonical contigs, despite equal lengths. The chr1 mismatch was independently
+reproduced from the staged VCF header and official dictionary. See the
+[callability](2026-09-23-hgsvc3-callability-audit.md) and
+[reference](2026-09-23-hgsvc3-reference-audit.md) audits. The reason for the
+digest differences and availability of PAV callable output in uninspected
+working archives remain unknown. Do not bulk-download the 30× cohort on the
+assumption that GRCh38 naming alone proves compatibility.
+
 NIST calls v5.0q a **draft**, assembly-derived benchmark and recommends using
 the VCF and BED together. Its [README](https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/v5.0q/NIST_HG002_v5.0q_variant-benchmarksets_README.md)
 warns that complex variants and different representations need careful
@@ -103,13 +114,15 @@ by simple interval overlap alone.
    truth. If HGSVC3 lacks a usable negative/confident mask, obtain or derive one
    from the assembly alignment with a documented validation gate, or select a
    different orthogonal benchmark.
-4. **Bounded transfer before bulk download.** Stage manifests and one donor's
-   indexed alignment from the official source, verify published checksums or a
-   complete read traversal, reference sequence MD5s, contig names, coverage,
-   and Manta output. Determine the actual compressed size and transfer speed
-   from this run, then scale to the locked cohort. The past parallel range
-   downloader produced corrupt full-size BAMs, so byte count and `quickcheck`
-   alone are insufficient.
+4. **Reference gate before alignment transfer.** Obtain the exact HGSVC
+   `hg38.no_alt.fa.gz` or authoritative dictionary, reconcile its M5s with the
+   IGSR reference, and locate or validate donor-specific callable regions.
+   Only then stage one donor's indexed alignment from the official source,
+   verify published checksums or a complete read traversal, reference sequence
+   MD5s, contig names, coverage, and Manta output. Determine compressed size
+   and transfer speed before scaling. The past parallel range downloader
+   produced corrupt full-size BAMs, so byte count and `quickcheck` alone are
+   insufficient.
 5. **Compute gate.** Run caller-score, depth-only, logistic regression, random
    forest, and gradient-boosted-tree baselines on the frozen candidate manifest
    before spending substantial GPU time. Only a fair scratch versus SSL

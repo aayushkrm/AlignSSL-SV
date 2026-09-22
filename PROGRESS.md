@@ -77,6 +77,13 @@ effect. Its current evidence and design are indexed in
   64,428 DEL records ≥50 bp, with 9,003–12,165 carrier records per donor and
   substantial partial/complete no-calls. This is an inventory only: reference
   genotypes at listed sites do not establish genome-wide confident negatives.
+- ⚠️ The inspected HGSVC3 v1.0 variant and assembly-info releases contain no
+  donor-wide callable BED. Its GRCh38-NoALT VCF header and the official IGSR
+  CRAM reference dictionary have equal lengths but different M5s on 18 of 25
+  canonical contigs, independently confirmed for chr1. This is a scientific
+  compatibility gate, not an established cause: the exact HGSVC reference
+  sequence and working PAV archives still need inspection. Bulk 30× CRAM
+  download is on hold; see the paired callability/reference audits.
 
 This restart deliberately preserves failed and null results. The aim is a
 reproducible improvement, but an infrastructure repair or a preprocessing

@@ -91,6 +91,14 @@ Infrastructure repairs alone do not satisfy that objective.
   records ≥50 bp and 9,003–12,165 carrier records per donor, with substantial
   missing genotype calls. See `2026-09-23-hgsvc3-genotype-audit.md`; these
   record-level counts do not define confident-negative regions.
+- The inspected HGSVC3 v1.0 release inventories have no donor-wide callable
+  BED, although PAV documents callable output and the larger working archives
+  are not yet inspected. A primary-source metadata comparison found 18 of 25
+  canonical contigs with matching lengths but mismatched M5s between the HGSVC
+  VCF and IGSR/NYGC reference; chr1 was reproduced independently. Read the
+  paired `2026-09-23-hgsvc3-callability-audit.md` and
+  `2026-09-23-hgsvc3-reference-audit.md`. Do not bulk-download the matched
+  CRAMs until the reference and negative-region gates resolve.
 - Manta fixture job `1598015` failed before application startup on `hydra-n12`
   with signal 53. Its replacement `1598016` is pending on `hydra-n1`; no
   candidate output exists yet. Do not duplicate that job while it is live.

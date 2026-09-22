@@ -16,6 +16,8 @@ results.
 | [`2026-09-22-literature-directions.md`](2026-09-22-literature-directions.md) | Nearby work and falsifiable research directions | Core primary-source ledger complete; BASILISC methods unresolved |
 | [`2026-09-23-data-decision.md`](2026-09-23-data-decision.md) | Verified holdings, current GIAB benchmark, and staged new-data plan | 63 public CRAM index matches; callable-region gate pending |
 | [`2026-09-23-hgsvc3-genotype-audit.md`](2026-09-23-hgsvc3-genotype-audit.md) | Reproducible per-donor deletion genotype inventory | 64,428 DEL loci ≥50 bp; no confident-negative inference |
+| [`2026-09-23-hgsvc3-callability-audit.md`](2026-09-23-hgsvc3-callability-audit.md) | Primary-source search for donor-wide callable regions and negative-label gate | No mask in inspected v1.0 inventories; working archives unresolved |
+| [`2026-09-23-hgsvc3-reference-audit.md`](2026-09-23-hgsvc3-reference-audit.md) | HGSVC truth versus IGSR/NYGC CRAM reference metadata comparison | 18 primary-contig M5 mismatches; bulk transfer on hold |
 
 ## Evidence rules
 
