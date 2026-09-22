@@ -46,8 +46,14 @@ effect. Its current evidence and design are indexed in
   verification is unavailable and remains recorded as a provenance limitation.
   This is an infrastructure and development diagnostic, not a confirmation
   benchmark.
-- 🟡 Literature verification is incomplete. Candidate directions are hypotheses
-  until the primary-source ledger is finished.
+- ✅ Core literature verification is complete for DeepSV, DeepSVFilter,
+  CSV-Filter, BASILISC, Cue, NPSV-deep, LSnet, sv-channels, and a 2026
+  cross-paradigm filtering preprint. Firecrawl gaps were cross-checked through
+  Exa, scite, Europe PMC/publisher records, and official repositories. The
+  resulting protocol now uses an unmodified frozen caller-candidate population
+  as primary; depth matching is diagnostic only. BASILISC's institutional
+  abstract is verified, but its full split/negative protocol remains unavailable
+  and is explicitly marked unresolved.
 - ⬜ No corrected-depth training comparison has run yet. A positive-result claim
   requires matched scratch/SSL/classical controls, independent seeds,
   threshold-free primary metrics, and untouched confirmation data.
