@@ -61,6 +61,7 @@ def build_tensor(
     depth_norm: float = 60.0,
     bin_size: int = 1,
     rng: np.random.Generator | None = None,
+    depth_mode: str = "legacy",
 ):
     """Build the [C, R, W] alignment tensor for one window.
 
@@ -81,11 +82,18 @@ def build_tensor(
         channels (base one-hot, base quality) are averaged within a bin;
         depth is summed then normalised; read-level channels (mapq, strand,
         discordant, clip, isize) are averaged over the read's bins.
+    depth_mode : "legacy" preserves the published encoding (reads touching
+        each bin divided by bin size). "mean_base_coverage" sums aligned
+        bases in each bin and divides by its width and depth_norm. The latter
+        measures mean per-base coverage before row subsampling. Re-extract
+        inputs and retrain models before comparing these representations.
 
     Returns
     -------
     X : float32 array [C, R, W].
     """
+    if depth_mode not in {"legacy", "mean_base_coverage"}:
+        raise ValueError(f"Unknown depth_mode: {depth_mode}")
     if rng is None:
         rng = np.random.default_rng(0)
     W = int(win_width)
@@ -117,10 +125,14 @@ def build_tensor(
         row = _read_row(read, win_start, W, isize_mean, isize_sd, b)
         if row is not None:
             rows.append(row)
-            # accumulate per-column depth (each covered bin counts once/read)
-            depth[row["ucols"]] += 1.0
+            if depth_mode == "mean_base_coverage":
+                depth += row["cnt"]
+            else:
+                # Historical representation retained for released checkpoints.
+                depth[row["ucols"]] += 1.0
 
-    # depth channel (broadcast), normalised by bin size so coarse bins stay ~[0,1]
+    # Corrected mode: average aligned bases per reference base, normalized.
+    # Legacy mode: touching-read count divided by bin width (not base depth).
     dnorm = np.clip(depth / (depth_norm * b), 0.0, 1.0)
     X[Q_DEPTH, :, :] = dnorm[None, :]
 

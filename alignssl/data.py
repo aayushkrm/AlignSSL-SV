@@ -27,6 +27,7 @@ import torch
 from torch.utils.data import Dataset
 
 from .tensorize import build_tensor, N_CHANNELS
+from .encoding import read_depth_mode, require_same_depth_mode
 
 # DeepSV convention: train on chr1-11, held-out test on chr12-22.
 TRAIN_CHROMS = [str(i) for i in range(1, 12)]
@@ -421,6 +422,7 @@ class MemmapShardDataset(Dataset):
 
     def __init__(self, prefix, split="all", labeled=True):
         meta = np.load(prefix + ".meta.npz")
+        self.depth_mode = read_depth_mode(meta)
         shape = tuple(int(v) for v in meta["shape"])
         self.X = np.lib.format.open_memmap(prefix + ".f16", mode="r")
         if self.X.shape != shape:
@@ -510,9 +512,14 @@ class ShardDataset(Dataset):
         # build a flat index of (file_idx, row_idx) keeping only wanted chroms
         self.index = []
         self._meta_cache = {}
+        self.depth_mode = None
         for fi, f in enumerate(self.files):
             with np.load(f) as d:
                 chrom = d["chrom"]
+                mode = read_depth_mode(d)
+            if self.depth_mode is None:
+                self.depth_mode = mode
+            require_same_depth_mode(self.depth_mode, mode)
             keep = [j for j in range(len(chrom)) if int(chrom[j]) in want]
             for j in keep:
                 self.index.append((fi, j))
@@ -571,6 +578,7 @@ class MemmapDataset(Dataset):
 
     def __init__(self, prefix, split="all", labeled=False):
         meta = np.load(prefix + ".meta.npz")
+        self.depth_mode = read_depth_mode(meta)
         self.shape = tuple(int(x) for x in meta["shape"])
         self.X = np.load(prefix + ".f16", mmap_mode="r")
         assert self.X.shape == self.shape, (self.X.shape, self.shape)

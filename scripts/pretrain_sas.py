@@ -118,6 +118,7 @@ def main():
                 hist.append({"step": step, "loss": float(loss), **parts})
             step += 1
         torch.save({"encoder": enc.state_dict(), "epoch": ep,
+                    "depth_mode": ds.depth_mode,
                     "d_model": args.d_model, "objective": "sas",
                     "feat_mean": norm.mean.cpu(), "feat_var": norm.var.cpu()},
                    args.out)

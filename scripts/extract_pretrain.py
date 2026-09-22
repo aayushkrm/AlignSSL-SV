@@ -29,6 +29,10 @@ def main():
     ap.add_argument("--n-windows", type=int, default=100_000)
     ap.add_argument("--win-width", type=int, default=256)
     ap.add_argument("--max-rows", type=int, default=64)
+    ap.add_argument("--depth-mode",
+                    choices=["legacy", "mean_base_coverage"],
+                    default="legacy",
+                    help="depth-channel encoding passed to build_tensor")
     ap.add_argument("--bin-sizes", default="1,2,4,8,16,32,64")
     ap.add_argument("--bin-weights", default="0.35,0.25,0.15,0.10,0.08,0.05,0.02",
                     help="sampling weights per bin_size; small-biased to match the "
@@ -89,13 +93,15 @@ def main():
         ref = fa.fetch(chrom, s, s + span)
         im, isd = get_isize(chrom)
         X = build_tensor(reads, ref, s, W, max_rows=args.max_rows,
-                         isize_mean=im, isize_sd=isd, bin_size=bs)
+                         isize_mean=im, isize_sd=isd, bin_size=bs,
+                         depth_mode=args.depth_mode)
         shard.append(X.astype(np.float16))
         meta.append((bs, chrom_to_int(chrom), s))
         kept += 1
         if len(shard) >= args.shard_size:
             shard_idx = flush(args.out_dir, args.sample, args.split,
-                              shard_idx, shard, meta, manifest)
+                              shard_idx, shard, meta, manifest,
+                              depth_mode=args.depth_mode)
             shard, meta = [], []
         if kept % 2000 == 0:
             dt = time.time() - t0
@@ -103,7 +109,8 @@ def main():
                   f"({kept/dt:.1f}/s, {tried-kept} skipped)", flush=True)
     if shard:
         shard_idx = flush(args.out_dir, args.sample, args.split,
-                          shard_idx, shard, meta, manifest)
+                          shard_idx, shard, meta, manifest,
+                          depth_mode=args.depth_mode)
 
     man = os.path.join(args.out_dir, f"pretrain_manifest_{args.sample}_{args.split}.tsv")
     with open(man, "w") as f:
@@ -122,13 +129,15 @@ def chrom_to_int(c):
     return int(c) if c.isdigit() else -1
 
 
-def flush(out_dir, sample, split, idx, shard, meta, manifest):
+def flush(out_dir, sample, split, idx, shard, meta, manifest,
+          depth_mode="legacy"):
     X = np.stack(shard).astype(np.float16)
     M = np.array(meta, dtype=np.int64)
     fn = os.path.join(out_dir, f"pretrain_{sample}_{split}_shard{idx:04d}.npz")
     # store dummy label/chrom fields so ShardDataset can filter by chrom
     np.savez_compressed(fn, X=X, bin_size=M[:, 0], chrom=M[:, 1], start=M[:, 2],
-                        label=np.full(len(shard), -1, dtype=np.int64))
+                        label=np.full(len(shard), -1, dtype=np.int64),
+                        depth_mode=np.asarray(depth_mode, dtype="<U32"))
     manifest.append((os.path.basename(fn), len(shard)))
     return idx + 1
 

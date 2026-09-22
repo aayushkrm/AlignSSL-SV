@@ -1,12 +1,54 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-08-03**. Structure: **Part I** is the current, authoritative
+_Last updated: **2026-09-22**. Structure: **Part I** is the current, authoritative
 status — read this. **Part II** is the dated chronological log, kept for
 provenance; where Part I and Part II disagree, Part I is correct. Maps to the
 Phase 0–5 plan in `docs/project.md`, whose §16 carries the matching
 audit outcome._
 
 **Legend:** ✅ done & verified · 🟡 in progress · ⬜ not started · ⚠️ decision/caveat for you
+
+---
+
+## 2026-09-22 research restart
+
+The prior negative result remains the authoritative published-project outcome;
+no new performance gain is claimed. A new, explicitly prospective workstream
+is testing whether representation and protocol defects obscured a useful SSL
+effect. Its current evidence and design are indexed in
+[`docs/research/README.md`](docs/research/README.md).
+
+- ✅ Recreated a reproducible local Python 3.11 environment and passed the
+  repository baseline before new edits (289 passed, 29 skipped).
+- ✅ Verified the released 52,913,192-byte weights archive against its published
+  SHA-256 digest.
+- ✅ Identified and analytically tested a coarse-bin depth defect. The historical
+  representation remains the default for compatibility; corrected mean-base
+  coverage is an explicit, provenance-tracked experimental arm.
+- ✅ Removed direct test-label leakage from temperature calibration. Calibration
+  is now fit only on the validation subset already counted inside the label
+  budget; unusable validation sets are reported as skipped.
+- ✅ Added representation provenance to shards, memmaps, pretraining checkpoints,
+  and evaluation output, with hard failures on mixed encodings.
+- ✅ Recovered a small public HG002/hs37d5 pilot under SLURM job `1597947`:
+  1,293,795 reads from three fixed 1-Mb regions. Ten manifest hashes and BAM
+  integrity passed. The BAM declares hs37d5 and its contig lengths match the
+  reference; its header lacks sequence MD5 tags, so exact sequence-identity
+  verification is unavailable and remains recorded as a provenance limitation.
+  This is an infrastructure and development diagnostic, not a confirmation
+  benchmark.
+- 🟡 Literature verification is incomplete. Candidate directions are hypotheses
+  until the primary-source ledger is finished.
+- ⬜ No corrected-depth training comparison has run yet. A positive-result claim
+  requires matched scratch/SSL/classical controls, independent seeds,
+  threshold-free primary metrics, and untouched confirmation data.
+
+This restart deliberately preserves failed and null results. The aim is a
+reproducible improvement, but an infrastructure repair or a preprocessing
+change by itself is not evidence that SSL works.
+
+Verification at this checkpoint: 326 tests passed and 29 skipped; the
+manuscript/result consistency checker passed.
 
 ---
 

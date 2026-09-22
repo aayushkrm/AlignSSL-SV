@@ -105,7 +105,7 @@ def main():
                              "mae": float(l_mae), "vic": float(l_vic)})
             step += 1
         torch.save({"encoder": enc.state_dict(), "epoch": ep,
-                    "d_model": args.d_model}, args.out)
+                    "d_model": args.d_model, "depth_mode": ds.depth_mode}, args.out)
         with open(args.out + ".hist.json", "w") as f:
             json.dump(hist, f)
         if hist:

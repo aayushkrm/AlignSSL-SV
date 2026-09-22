@@ -13,6 +13,7 @@ Writes:
 from __future__ import annotations
 import argparse, glob, os, time
 import numpy as np
+from alignssl.encoding import read_depth_mode, require_same_depth_mode
 
 
 def main():
@@ -31,8 +32,13 @@ def main():
     # first pass: total N and per-window shape
     n_total = 0
     shp = None
+    depth_mode = None
     for f in files:
         with np.load(f) as d:
+            mode = read_depth_mode(d)
+            if depth_mode is None:
+                depth_mode = mode
+            require_same_depth_mode(depth_mode, mode)
             n_total += d["X"].shape[0]
             if shp is None:
                 shp = d["X"].shape[1:]
@@ -77,6 +83,7 @@ def main():
             print(f"  {fi+1}/{len(files)} off={off} {time.time()-t0:.0f}s", flush=True)
     mm.flush()
     np.savez(args.out + ".meta.npz", chrom=chrom, bin_size=binsz,
+             depth_mode=np.asarray(depth_mode),
              start=start, label=label, geno=geno, del_len=dellen, bp=bp,
              shape=np.array((n_total,) + tuple(shp)))
     print(f"DONE memmap -> {args.out}.f16  ({off} windows, {time.time()-t0:.0f}s)", flush=True)

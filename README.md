@@ -178,4 +178,4 @@ AlignSSL-SV does **not** claim to be the first to use self-supervised learning f
 
 ## Status
 
-Research code under active development; a preprint is in preparation. The Section 4 results come from the six-sample multi-ancestry panel with CEU held out; the candidate-filtered benchmark is single-sample for the data-availability reason above. For current state and open items see `PROGRESS.md`.
+Research code under active development; a preprint is in preparation. The Section 4 results come from the six-sample multi-ancestry panel with CEU held out; the candidate-filtered benchmark is single-sample for the data-availability reason above. For the authoritative historical status and current restart checkpoint, see [`PROGRESS.md`](PROGRESS.md). Prospective restart plans, diagnostics, literature notes, and independent audit findings are indexed in [`docs/research/README.md`](docs/research/README.md); they do not constitute a new positive result.

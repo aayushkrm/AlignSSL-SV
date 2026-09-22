@@ -107,6 +107,10 @@ def main():
     ap.add_argument("--out-dir", required=True)
     ap.add_argument("--win-width", type=int, default=256)
     ap.add_argument("--max-rows", type=int, default=64)
+    ap.add_argument("--depth-mode",
+                    choices=["legacy", "mean_base_coverage"],
+                    default="legacy",
+                    help="depth-channel encoding passed to build_tensor")
     ap.add_argument("--n-neg-per-pos", type=int, default=3)
     ap.add_argument("--shard-size", type=int, default=1024)
     ap.add_argument("--limit", type=int, default=0, help="0 = no limit (smoke test)")
@@ -183,13 +187,14 @@ def main():
         ref = fa.fetch(chrom, s, s + span)
         im, isd = get_isize(chrom)
         X = build_tensor(reads, ref, s, w, max_rows=args.max_rows,
-                         isize_mean=im, isize_sd=isd, bin_size=bs)
+                         isize_mean=im, isize_sd=isd, bin_size=bs,
+                         depth_mode=args.depth_mode)
         shard.append(X.astype(np.float16))
         meta.append((label, geno, bp0, bp1, bs, ln, int(chrom_to_int(chrom)), s))
         if len(shard) >= args.shard_size:
             shard_idx, n_written = flush_shard(
                 args.out_dir, args.sample, args.split, shard_idx, shard, meta,
-                manifest)
+                manifest, depth_mode=args.depth_mode)
             shard, meta = [], []
         if (k + 1) % 500 == 0:
             dt = time.time() - t0
@@ -198,7 +203,7 @@ def main():
     if shard:
         shard_idx, n_written = flush_shard(
             args.out_dir, args.sample, args.split, shard_idx, shard, meta,
-            manifest)
+            manifest, depth_mode=args.depth_mode)
 
     # write manifest
     man_path = os.path.join(
@@ -220,7 +225,8 @@ def chrom_to_int(c):
     return int(c) if c.isdigit() else -1
 
 
-def flush_shard(out_dir, sample, split, idx, shard, meta, manifest):
+def flush_shard(out_dir, sample, split, idx, shard, meta, manifest,
+                depth_mode="legacy"):
     X = np.stack(shard).astype(np.float16)
     M = np.array(meta, dtype=np.float64)
     fn = os.path.join(out_dir, f"{sample}_{split}_shard{idx:04d}.npz")
@@ -229,7 +235,8 @@ def flush_shard(out_dir, sample, split, idx, shard, meta, manifest):
         label=M[:, 0].astype(np.int64), geno=M[:, 1].astype(np.int64),
         bp=M[:, 2:4].astype(np.float32), bin_size=M[:, 4].astype(np.int64),
         del_len=M[:, 5].astype(np.int64), chrom=M[:, 6].astype(np.int64),
-        start=M[:, 7].astype(np.int64))
+        start=M[:, 7].astype(np.int64),
+        depth_mode=np.asarray(depth_mode, dtype="<U32"))
     n_pos = int((M[:, 0] == 1).sum())
     manifest.append((os.path.basename(fn), len(shard), n_pos))
     return idx + 1, len(shard)

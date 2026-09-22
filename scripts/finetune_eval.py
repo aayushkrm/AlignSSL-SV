@@ -4,7 +4,8 @@
 Produces the two headline results:
   (1) label-efficiency curve  : F1 vs label-fraction, pretrained vs scratch
   (2) length-stratified table  : F1 by deletion-size bin (amendment 1)
-Plus calibration (temperature scaling, ECE, conformal coverage).
+Plus validation-fitted calibration (temperature scaling and ECE). This
+entrypoint does not report conformal coverage.
 
 Trains on TRAIN chroms (chr1-11), evaluates on TEST chroms (chr12-22).
 """
@@ -16,10 +17,11 @@ import torch.nn as nn
 from torch.utils.data import DataLoader, Subset
 
 from alignssl.data import open_shards
+from alignssl.encoding import read_depth_mode, require_same_depth_mode
 from alignssl.encoder import AlignEncoder
 from alignssl.features import batch_features, FeatureNormalizer
 from alignssl.heads import (SVHeads, FusionSVHead, finetune_loss, TemperatureScaler,
-                            expected_calibration_error, ConformalBinary)
+                            expected_calibration_error)
 from alignssl.protocol import label_budget, split_budget, loader_params
 from alignssl.metrics import score_arm
 
@@ -120,6 +122,56 @@ def collect_logits(model, dl, dev):
     return (torch.cat(logits), torch.cat(labels), torch.cat(lens))
 
 
+def build_result_config(args, depth_mode):
+    """Copy CLI provenance and record the tensor representation actually used."""
+    config = vars(args).copy()
+    config["depth_mode"] = depth_mode
+    return config
+
+
+def require_checkpoint_depth_mode(train_depth_mode, checkpoint):
+    """Reject a pretrained encoder built from a different tensor encoding."""
+    checkpoint_depth_mode = read_depth_mode(checkpoint)
+    require_same_depth_mode(train_depth_mode, checkpoint_depth_mode)
+    return checkpoint_depth_mode
+
+
+def fit_temperature_on_validation(val_logits, val_labels):
+    """Fit temperature only when the in-budget validation set is usable."""
+    if (val_logits is None or val_labels is None
+            or val_logits.numel() == 0 or val_labels.numel() == 0):
+        return None, {
+            "calibration_status": "skipped_no_validation",
+            "calibration_source": None,
+            "temperature": None,
+        }
+    if torch.unique(val_labels.detach()).numel() < 2:
+        return None, {
+            "calibration_status": "skipped_single_class",
+            "calibration_source": None,
+            "temperature": None,
+        }
+    scaler = TemperatureScaler()
+    temperature = scaler.fit(val_logits, val_labels)
+    return scaler, {
+        "calibration_status": "fit_validation",
+        "calibration_source": "validation",
+        "temperature": float(temperature),
+    }
+
+
+def calibrate_test_from_validation(val_logits, val_labels,
+                                   test_logits, test_labels):
+    """Score test calibration using a temperature fit on validation labels."""
+    scaler, record = fit_temperature_on_validation(val_logits, val_labels)
+    if scaler is None:
+        record["ece"] = None
+        return record
+    test_probs = torch.softmax(scaler(test_logits), dim=1)
+    record["ece"] = float(expected_calibration_error(test_probs, test_labels))
+    return record
+
+
 def prf1(pred, label):
     tp = int(((pred == 1) & (label == 1)).sum())
     fp = int(((pred == 1) & (label == 0)).sum())
@@ -169,13 +221,16 @@ def main():
 
     train_ds = open_shards(args.shard_dir, split="train", labeled=True)
     test_ds = open_shards(args.shard_dir, split="test", labeled=True)
+    require_same_depth_mode(train_ds.depth_mode, test_ds.depth_mode)
+    depth_mode = train_ds.depth_mode
     print(f"  train={len(train_ds)} test={len(test_ds)}", flush=True)
     test_dl = DataLoader(test_ds, batch_size=args.batch_size, collate_fn=collate,
                          num_workers=args.num_workers)
 
     fracs = [float(x) for x in args.label_fracs.split(",")]
     rng = np.random.default_rng(args.seed)
-    results = {"label_efficiency": [], "config": vars(args)}
+    results = {"label_efficiency": [],
+               "config": build_result_config(args, depth_mode)}
 
     for frac in fracs:
         # Exact budget from the shared protocol -- NO batch-size floor, so
@@ -208,6 +263,7 @@ def main():
             model = (FusionModel if fusion else Model)(args.d_model).to(dev)
             if ARMS[mode]["needs_encoder"]:
                 ck = torch.load(args.encoder, map_location=dev)
+                require_checkpoint_depth_mode(train_ds.depth_mode, ck)
                 model.enc.load_state_dict(ck["encoder"])
                 if fusion and "feat_mean" in ck:
                     # reuse the pretraining normaliser so fine-tuning
@@ -236,11 +292,11 @@ def main():
             p, r = row[mode]["P_at_tau"], row[mode]["R_at_tau"]
             # calibration + length strata only for the full-label runs
             if abs(frac - 1.0) < 1e-9:
-                ts = TemperatureScaler()
-                ts.fit(logits, labels)
-                probs = torch.softmax(ts(logits), 1)[:, 1]
-                ece = expected_calibration_error(
-                    torch.softmax(ts(logits), 1), labels)
+                calibration = calibrate_test_from_validation(
+                    v_logits if val_dl is not None else None,
+                    v_labels if val_dl is not None else None,
+                    logits, labels)
+                row[mode].update(calibration)
                 strat = {}
                 for (lo, hi) in SIZE_BINS:
                     m = (labels == 1) & (lens >= lo) & (lens < hi)
@@ -248,12 +304,17 @@ def main():
                         continue
                     recall = float((pred[m] == 1).float().mean())
                     strat[f"{lo}-{hi}"] = {"n": int(m.sum()), "recall": recall}
-                row[mode]["ece"] = float(ece)
-                row[mode]["temperature"] = float(ts.log_T.exp().item())
                 row[mode]["length_strata"] = strat
                 _dump = os.path.splitext(args.out)[0] + f"_logits_{mode}.npz"
                 np.savez_compressed(_dump, logits=logits.numpy(),
                     labels=labels.numpy(), lens=lens.numpy())
+            else:
+                row[mode].update({
+                    "calibration_status": "not_run_label_fraction",
+                    "calibration_source": None,
+                    "temperature": None,
+                    "ece": None,
+                })
             print(f"  frac={frac} {mode}: F1@tau={f:.3f} P={p:.3f} R={r:.3f} tau={row[mode]['tau']:.3f} "
                   f"AUPRC={row[mode]['auprc']:.3f} F1@0.5={row[mode]['f1_at_half']:.3f}",
                   flush=True)
