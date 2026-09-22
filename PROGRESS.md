@@ -73,12 +73,16 @@ effect. Its current evidence and design are indexed in
   pedigree-safe donor splits, and confident-negative regions remain the cohort
   gate before bulk downloading.
   Manta fixture job `1598016` is queued after a node-start failure in `1598015`.
+- ✅ Audited all 176,231 HGSVC3 SV records and 65 donor genotypes. There are
+  64,428 DEL records ≥50 bp, with 9,003–12,165 carrier records per donor and
+  substantial partial/complete no-calls. This is an inventory only: reference
+  genotypes at listed sites do not establish genome-wide confident negatives.
 
 This restart deliberately preserves failed and null results. The aim is a
 reproducible improvement, but an infrastructure repair or a preprocessing
 change by itself is not evidence that SSL works.
 
-Verification at this checkpoint: 340 tests passed and 29 skipped; the
+Verification at this checkpoint: 342 tests passed and 29 skipped; the
 manuscript/result consistency checker passed.
 
 ---

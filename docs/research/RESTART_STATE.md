@@ -87,6 +87,10 @@ Infrastructure repairs alone do not satisfy that objective.
   A remote HG00512 CRAM/CRAI availability and header check passed (15.7 GB CRAM).
   Full reference compatibility, pedigree-safe splits, and per-donor
   confident-negative regions remain to be verified before cohort selection.
+  A reproducible `scripts/audit_hgsvc3_genotypes.py` pass counted 64,428 DEL
+  records ≥50 bp and 9,003–12,165 carrier records per donor, with substantial
+  missing genotype calls. See `2026-09-23-hgsvc3-genotype-audit.md`; these
+  record-level counts do not define confident-negative regions.
 - Manta fixture job `1598015` failed before application startup on `hydra-n12`
   with signal 53. Its replacement `1598016` is pending on `hydra-n1`; no
   candidate output exists yet. Do not duplicate that job while it is live.
