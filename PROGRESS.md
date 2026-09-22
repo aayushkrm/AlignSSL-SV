@@ -80,16 +80,18 @@ effect. Its current evidence and design are indexed in
 - ⚠️ The inspected HGSVC3 v1.0 variant and assembly-info releases contain no
   donor-wide callable BED. Its GRCh38-NoALT VCF header and the official IGSR
   CRAM reference dictionary have equal lengths but different M5s on 18 of 25
-  canonical contigs, independently confirmed for chr1. This is a scientific
-  compatibility gate, not an established cause: the exact HGSVC reference
-  sequence and working PAV archives still need inspection. Bulk 30× CRAM
-  download is on hold; see the paired callability/reference audits.
+  canonical contigs. The publisher-verified HGSVC no-ALT FASTA now matches all
+  194 HGSVC VCF shared-contig canonical digests but only 176 IGSR digests, so
+  these are genuine reference-sequence differences, not case or stale header
+  artifacts. Their base-level extent and the working PAV callable archives
+  still need inspection. Bulk 30× CRAM download is on hold; see the paired
+  callability/reference audits and reconciliation.
 
 This restart deliberately preserves failed and null results. The aim is a
 reproducible improvement, but an infrastructure repair or a preprocessing
 change by itself is not evidence that SSL works.
 
-Verification at this checkpoint: 342 tests passed and 29 skipped; the
+Verification at this checkpoint: 344 tests passed and 29 skipped; the
 manuscript/result consistency checker passed.
 
 ---

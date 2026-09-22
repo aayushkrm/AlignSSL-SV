@@ -18,6 +18,7 @@ results.
 | [`2026-09-23-hgsvc3-genotype-audit.md`](2026-09-23-hgsvc3-genotype-audit.md) | Reproducible per-donor deletion genotype inventory | 64,428 DEL loci ≥50 bp; no confident-negative inference |
 | [`2026-09-23-hgsvc3-callability-audit.md`](2026-09-23-hgsvc3-callability-audit.md) | Primary-source search for donor-wide callable regions and negative-label gate | No mask in inspected v1.0 inventories; working archives unresolved |
 | [`2026-09-23-hgsvc3-reference-audit.md`](2026-09-23-hgsvc3-reference-audit.md) | HGSVC truth versus IGSR/NYGC CRAM reference metadata comparison | 18 primary-contig M5 mismatches; bulk transfer on hold |
+| [`2026-09-23-reference-reconciliation.md`](2026-09-23-reference-reconciliation.md) | Publisher-verified HGSVC no-ALT FASTA versus HGSVC VCF and IGSR dictionary | 194/194 HGSVC matches; 18 IGSR sequence mismatches |
 
 ## Evidence rules
 

@@ -21,15 +21,26 @@ The project’s prior [data decision](2026-09-23-data-decision.md) records a bou
 
 ## Compatibility assessment and limits
 
-At the published metadata level, shared names and lengths are insufficient: 18 primary contigs have different canonical M5s. Because the SAM and VCF standards use the same case-normalized digest, lowercase soft-masking alone cannot explain these differences. If the published digests are accurate, those reference sequences are not byte-identical after SAM canonicalization. The precise source of the discrepancy is unresolved because the HGSVC release does not include the exact `hg38.no_alt.fa.gz` or its checksum; the VCF header itself could also be stale or wrong. No sequence-level comparison or REF-allele validation was done.
+At the published metadata level, shared names and lengths are insufficient: 18 primary contigs have different canonical M5s. Because the SAM and VCF standards use the same case-normalized digest, lowercase soft-masking alone cannot explain these differences. This initial audit could not distinguish true sequence differences from stale header metadata; the later publisher-verified FASTA check below resolves that identity question. A base-by-base difference map and REF-allele validation have not yet been done.
 
-Only the `HG00512` sample row and its prior recorded header check were used here; I did not read every donor’s CRAM header. The 698 cohort is related-sample data, so the technical pilot donor is not evidence of independent-donor eligibility. The HGSVC `.` genotype annotation is not a callable-region mask. Even after resolving primary-contig M5s, reads aligned to IGSR-only ALT, patch, decoy, or HLA contigs need explicit handling. No full CRAM or reference FASTA was downloaded, the VCF content beyond its header was not inspected, and the manifest MD5 was not independently recomputed.
+Only the `HG00512` sample row and its prior recorded header check were used here; I did not read every donor’s CRAM header. The 698 cohort is related-sample data, so the technical pilot donor is not evidence of independent-donor eligibility. The HGSVC `.` genotype annotation is not a callable-region mask. Reads aligned to IGSR-only ALT, patch, decoy, or HLA contigs need explicit handling. This initial audit downloaded no full CRAM or reference FASTA and did not inspect VCF records beyond the header; the later reconciliation separately obtained and checked the first-party HGSVC FASTA.
 
-## M5 comparison plan and next transfer gate
+## Original M5 comparison plan and next transfer gate
+
+The sequence-identity portion of steps 1–2 below is now completed by the later
+reconciliation; the list is retained to show the decision path. Base-level
+difference mapping and the callability gate remain open.
 
 1. **Hold bulk transfer.** First obtain the exact HGSVC `hg38.no_alt.fa.gz` used for call generation, or an authoritative dictionary/checksum tied to it. The HGSVC v1.0 manifest currently does not supply either.
 2. **Reconcile references without reads.** Compare the exact HGSVC reference and IGSR dictionary on the intersection of contig names using SAM M5 normalization (remove whitespace/non-printing bytes, uppercase, MD5); report missing names, length differences, and M5 differences separately. Preserve `chr` aliases explicitly rather than silently renaming. Resolve the 18 primary-contig differences before using VCF coordinates or REF alleles against these CRAMs.
 3. **Only after that passes or a remapping plan is fixed, run one bounded donor pilot.** Read the complete `@SQ` header of an indexed CRAM with htslib, then process one predeclared small interval using the exact agreed reference. Check interval REF alleles, callable labels, and caller output. HG00512 is suitable for this technical pilot only; account for its trio relationships before any train/validation split.
 4. **Open cohort transfer only if the pilot demonstrates the chosen path.** Require either exact shared-contig M5 identity or a documented remapping/reference-conversion procedure validated on the bounded pilot. If neither is available, stop the HGSVC3/IGSR pairing and select a compatible reference/data source.
 
-Until step 1–2 resolves the digest conflict, the safe gate is **metadata only; no cohort CRAM transfer**.
+**Later resolution of the identity question:** The first-party HGSVC no-ALT
+FASTA was subsequently downloaded and publisher-MD5 verified. Its canonical
+M5 matches all 194 HGSVC VCF contigs shared with the IGSR dictionary, whereas
+18 IGSR M5s differ. Thus the discrepancy is a real difference between the
+available reference sequences, not simply a stale HGSVC header or masking-case
+artifact. See [the reproducible reconciliation](2026-09-23-reference-reconciliation.md).
+The *positions and effect* of the differences still need measurement; the
+callable-negative gate also remains unresolved. **No cohort CRAM transfer.**
