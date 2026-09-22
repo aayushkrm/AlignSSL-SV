@@ -38,13 +38,16 @@ Infrastructure repairs alone do not satisfy that objective.
 - Read thinning and row pooling now have opt-in corrected modes with checkpoint
   provenance and compatibility guards. Historical modes remain the default;
   the required objective ablation has not run.
-- The literature worker reached its usage limit after persisting a preliminary
-  note. Its external paper verification is incomplete and the note says so.
+- The core external literature ledger is verified in
+  `2026-09-22-literature-directions.md`; BASILISC's full methods remain
+  inaccessible and are marked unresolved.
 - The extraction and review workers also reached their usage limit after
   persisting code/tests. Their output is being independently inspected and
   tested before inclusion.
-- The `alignssl-scientific-review` automation remains active every six hours and
-  requests an independent Luna/max audit at meaningful milestones.
+- The `alignssl-scientific-review` automation remains active every two hours and
+  requests a GPT-6 Sol/high scientific audit at meaningful milestones. The
+  automation prompt records actual model dispatch because the heartbeat itself
+  does not expose a model selector.
 
 ## Cluster recovery state
 
@@ -68,6 +71,25 @@ Infrastructure repairs alone do not satisfy that objective.
   comparison and confirms the slice must remain a representation/infrastructure
   diagnostic. Expansion must be selected by a label-blind rule and use an
   upstream candidate set rather than truth-centred windows for the main pilot.
+- The current NIST HG002 v5.0q GRCh37 structural-variant VCF/BED is staged in
+  `/scratch/igorno-alignssl_restart_20260922/giab-hg002-v5-grch37`. The three
+  data files match NIST MD5 values. The README MD5 disagrees with NIST's own
+  checksum listing and is documented in `2026-09-23-data-decision.md`. The
+  three pilot windows contain only 11 v5.0q deletion records of at least 50 bp.
+- The final Manta 1.6.0 container is frozen at
+  `/home/igorno/alignssl_restart_20260922/tools/manta-1.6.0--py27h9948957_6.sif`
+  (SHA-256 `283022f0b46085579be8f13c356e7b513763cbb3d4f01fd3be392260d0ab330f`).
+  No new candidate pool has been generated yet.
+- The HGSVC3 v1.0 GRCh38 sequence-resolved SV VCF, index, README, and manifest
+  are staged at `/scratch/igorno-alignssl_restart_20260922/hgsvc3-v1-grch38-sv`
+  and pass the release MD5 checks. It contains 65 sample columns; 63 have exact
+  public 30× Illumina CRAM index matches, with NA21487 and NA24385 unmatched.
+  A remote HG00512 CRAM/CRAI availability and header check passed (15.7 GB CRAM).
+  Full reference compatibility, pedigree-safe splits, and per-donor
+  confident-negative regions remain to be verified before cohort selection.
+- Manta fixture job `1598015` failed before application startup on `hydra-n12`
+  with signal 53. Its replacement `1598016` is pending on `hydra-n1`; no
+  candidate output exists yet. Do not duplicate that job while it is live.
 
 ## Verification checkpoint
 
@@ -85,7 +107,8 @@ Infrastructure repairs alone do not satisfy that objective.
 
 1. Obtain independent review of the corrected view/pooling implementation and
    freeze its ablation before treating VICReg results as biological evidence.
-2. Finish primary-source literature verification and freeze one pilot endpoint.
+2. Select independent donors using assembly-derived truth, compatible short
+   reads, and validated callable regions. Then freeze the pilot endpoint.
 3. Run diagnostics, then a fair matched pilot; retain per-example predictions,
    every seed, timings, environment, source hash, and split provenance.
 4. Reviewer assesses pilot before expanding to independent samples and testing

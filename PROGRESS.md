@@ -46,6 +46,11 @@ effect. Its current evidence and design are indexed in
   verification is unavailable and remains recorded as a provenance limitation.
   This is an infrastructure and development diagnostic, not a confirmation
   benchmark.
+- ✅ Staged the current NIST HG002 v5.0q GRCh37 SV VCF, index, and benchmark
+  BED. All three match the NIST MD5 listing; NIST's README checksum disagrees
+  with the served README and is logged. The same 3-Mb pilot has only 11 v5.0q
+  deletion records ≥50 bp. A frozen Manta 1.6.0 container is available; its
+  candidate run and new multi-donor data acquisition remain outstanding.
 - ✅ Core literature verification is complete for DeepSV, DeepSVFilter,
   CSV-Filter, BASILISC, Cue, NPSV-deep, LSnet, sv-channels, and a 2026
   cross-paradigm filtering preprint. Firecrawl gaps were cross-checked through
@@ -57,12 +62,23 @@ effect. Its current evidence and design are indexed in
 - ⬜ No corrected-depth training comparison has run yet. A positive-result claim
   requires matched scratch/SSL/classical controls, independent seeds,
   threshold-free primary metrics, and untouched confirmation data.
+- 🟡 New raw alignments are required. The old multi-sample source workspaces
+  expired and surviving tensors encode the historical representation. The
+  staged acquisition criteria and source links are in
+  `docs/research/2026-09-23-data-decision.md`.
+- ✅ Staged the official HGSVC3 v1.0 GRCh38 sequence-resolved SV callset and
+  index with manifest MD5 checks. Its 65 samples have 63 exact public 30×
+  Illumina CRAM index matches; NA21487 and NA24385 are unmatched. A remote
+  CRAM/CRAI access and header check passed for HG00512. Reference compatibility,
+  pedigree-safe donor splits, and confident-negative regions remain the cohort
+  gate before bulk downloading.
+  Manta fixture job `1598016` is queued after a node-start failure in `1598015`.
 
 This restart deliberately preserves failed and null results. The aim is a
 reproducible improvement, but an infrastructure repair or a preprocessing
 change by itself is not evidence that SSL works.
 
-Verification at this checkpoint: 337 tests passed and 29 skipped; the
+Verification at this checkpoint: 340 tests passed and 29 skipped; the
 manuscript/result consistency checker passed.
 
 ---
