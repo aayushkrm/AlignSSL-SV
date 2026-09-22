@@ -64,21 +64,23 @@ Infrastructure repairs alone do not satisfy that objective.
 ## Verification checkpoint
 
 - Baseline before edits: 289 passed, 29 skipped.
-- Current suite from the repository root: 326 passed, 29 skipped in 141.95s.
+- Current suite from the repository root: 330 passed, 29 skipped in 130.08s.
 - `analysis/check_manuscript.py`: passed.
 - Released checkpoint archive: 52,913,192 bytes; SHA-256 matches the release
   manifest.
+- Real-read depth oracle: job `1597949` checked 63 HG002 windows at bin sizes
+  1–64; corrected maximum absolute error 0 and zero mismatched columns. Raw
+  record: `results/diagnostics/depth_oracle_hg002_20260923.json`. Failed launch
+  `1597948` is retained in the record and produced no scientific output.
 
 ## Immediate next gates
 
-1. Validate corrected depth on the recovered real reads against an independent
-   per-base coverage oracle.
-2. Resolve the audit's coverage-view and mask-aware pooling finding before
+1. Resolve the audit's coverage-view and mask-aware pooling finding before
    treating VICReg results as biological evidence.
-3. Finish primary-source literature verification and freeze one pilot endpoint.
-4. Run diagnostics, then a fair matched pilot; retain per-example predictions,
+2. Finish primary-source literature verification and freeze one pilot endpoint.
+3. Run diagnostics, then a fair matched pilot; retain per-example predictions,
    every seed, timings, environment, source hash, and split provenance.
-5. Reviewer assesses pilot before expanding to independent samples and testing
+4. Reviewer assesses pilot before expanding to independent samples and testing
    a frozen primary hypothesis on an untouched confirmation set.
 
 Scientific improvement and publication readiness remain unproven.

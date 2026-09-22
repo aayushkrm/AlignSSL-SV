@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-09-22**. Structure: **Part I** is the current, authoritative
+_Last updated: **2026-09-23**. Structure: **Part I** is the current, authoritative
 status — read this. **Part II** is the dated chronological log, kept for
 provenance; where Part I and Part II disagree, Part I is correct. Maps to the
 Phase 0–5 plan in `docs/project.md`, whose §16 carries the matching
@@ -25,6 +25,11 @@ effect. Its current evidence and design are indexed in
 - ✅ Identified and analytically tested a coarse-bin depth defect. The historical
   representation remains the default for compatibility; corrected mean-base
   coverage is an explicit, provenance-tracked experimental arm.
+- ✅ Validated corrected depth on 63 label-blind HG002 windows across bin sizes
+  1–64 against a separate pileup traversal: zero mismatched columns and maximum
+  absolute error 0. Legacy depth matched at bin size 1 but its mean absolute
+  error rose to 0.927 at bin size 64. This validates the representation formula,
+  not predictive performance.
 - ✅ Removed direct test-label leakage from temperature calibration. Calibration
   is now fit only on the validation subset already counted inside the label
   budget; unusable validation sets are reported as skipped.
@@ -47,7 +52,7 @@ This restart deliberately preserves failed and null results. The aim is a
 reproducible improvement, but an infrastructure repair or a preprocessing
 change by itself is not evidence that SSL works.
 
-Verification at this checkpoint: 326 tests passed and 29 skipped; the
+Verification at this checkpoint: 330 tests passed and 29 skipped; the
 manuscript/result consistency checker passed.
 
 ---

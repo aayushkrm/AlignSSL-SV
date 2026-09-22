@@ -152,10 +152,12 @@ without converting infrastructure repairs into a scientific claim.
 
 ## Resolution status — 2026-09-22
 
-- **Depth provenance: implemented, experiment pending.** Extraction tools expose
+- **Depth provenance and fidelity: implemented; learning experiment pending.** Extraction tools expose
   the mode; shards and memmaps record it; loaders reject mixtures; pretraining
   checkpoints and evaluation configurations record it; fine-tuning rejects a
-  checkpoint whose representation differs from its tensors.
+  checkpoint whose representation differs from its tensors. A 63-window HG002
+  pileup diagnostic found exact agreement for corrected depth across bin sizes
+  1–64; this verifies encoding fidelity but not predictive benefit.
 - **Calibration leakage: repaired in code, historical outputs unchanged.** The
   evaluation entrypoint fits temperature on the in-budget validation subset and
   applies it once to test logits. It explicitly skips calibration when that
