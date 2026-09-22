@@ -11,6 +11,7 @@ results.
 | [`RESTART_STATE.md`](RESTART_STATE.md) | Operational state, cluster recovery, and next gates | Living checkpoint |
 | [`RESEARCH_PLAN.md`](RESEARCH_PLAN.md) | Prospective experiment design and acceptance criteria | Preliminary; freeze before training |
 | [`2026-09-22-depth-diagnostic.md`](2026-09-22-depth-diagnostic.md) | Analytic and real-read evidence for the binned-depth defect and required factorial test | Encoding verified; performance unknown |
+| [`2026-09-23-row-semantics.md`](2026-09-23-row-semantics.md) | Read-thinning and mask-aware pooling defect, correction, and ablation | Opt-in correction tested; performance unknown |
 | [`2026-09-22-independent-audit.md`](2026-09-22-independent-audit.md) | Independent scientific/code review and resolution ledger | Two engineering findings addressed; one open |
 | [`2026-09-22-literature-directions.md`](2026-09-22-literature-directions.md) | Nearby work and falsifiable research directions | Primary-source verification incomplete |
 

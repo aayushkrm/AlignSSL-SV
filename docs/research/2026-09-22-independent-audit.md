@@ -163,9 +163,12 @@ without converting infrastructure repairs into a scientific claim.
   applies it once to test logits. It explicitly skips calibration when that
   subset is absent or single-class. Historical calibration numbers must still
   be treated as invalid until rerun.
-- **Coverage-view/pooling semantics: unresolved.** No claim relying on VICReg
-  coverage invariance should be promoted until this gate has tests and an
-  ablation.
+- **Coverage-view/pooling semantics: engineering correction implemented;
+  ablation unresolved.** The opt-in view preserves broadcast globals and
+  compacts retained reads. Mask-aware pooling gates padding throughout the CNN
+  and excludes it from row reduction; behavioural tests include padding
+  invariance. No claim relying on VICReg coverage invariance should be promoted
+  until the registered ablation measures downstream effects.
 
 These resolutions are engineering status only. No biological performance gain
 has yet been measured.

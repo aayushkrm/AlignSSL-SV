@@ -10,6 +10,7 @@ from scripts.finetune_eval import (
     calibrate_test_from_validation,
     fit_temperature_on_validation,
     require_checkpoint_depth_mode,
+    require_checkpoint_row_pool_mode,
 )
 
 
@@ -82,6 +83,18 @@ def test_checkpoint_depth_mode_must_match_training_shards():
         require_checkpoint_depth_mode(
             "mean_base_coverage", {"depth_mode": np.asarray("legacy")}
         )
+
+
+def test_checkpoint_row_pool_mode_must_match_encoder():
+    assert require_checkpoint_row_pool_mode(
+        "mask_aware", {"row_pool_mode": np.asarray("mask_aware")}
+    ) == "mask_aware"
+    with pytest.raises(ValueError, match="Mixed row-pooling"):
+        require_checkpoint_row_pool_mode(
+            "mask_aware", {"row_pool_mode": np.asarray("legacy")}
+        )
+    # Released checkpoints predate this field and retain historical behavior.
+    assert require_checkpoint_row_pool_mode("legacy", {}) == "legacy"
 
 
 def test_result_config_records_depth_mode():

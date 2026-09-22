@@ -35,6 +35,10 @@ effect. Its current evidence and design are indexed in
   budget; unusable validation sets are reported as skipped.
 - ✅ Added representation provenance to shards, memmaps, pretraining checkpoints,
   and evaluation output, with hard failures on mixed encodings.
+- ✅ Added opt-in physically consistent read thinning and mask-aware row pooling.
+  Tests prove global depth/reference preservation and invariance to appended
+  padding; released checkpoints retain strict-compatible legacy behavior. No
+  downstream gain is claimed until the registered ablation runs.
 - ✅ Recovered a small public HG002/hs37d5 pilot under SLURM job `1597947`:
   1,293,795 reads from three fixed 1-Mb regions. Ten manifest hashes and BAM
   integrity passed. The BAM declares hs37d5 and its contig lengths match the
@@ -52,7 +56,7 @@ This restart deliberately preserves failed and null results. The aim is a
 reproducible improvement, but an infrastructure repair or a preprocessing
 change by itself is not evidence that SSL works.
 
-Verification at this checkpoint: 330 tests passed and 29 skipped; the
+Verification at this checkpoint: 337 tests passed and 29 skipped; the
 manuscript/result consistency checker passed.
 
 ---

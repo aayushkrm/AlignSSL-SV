@@ -35,6 +35,9 @@ Infrastructure repairs alone do not satisfy that objective.
 - Temperature scaling now uses validation labels only. The validation subset
   remains inside the declared labelled budget; missing or single-class
   validation sets produce an explicit skipped-calibration record.
+- Read thinning and row pooling now have opt-in corrected modes with checkpoint
+  provenance and compatibility guards. Historical modes remain the default;
+  the required objective ablation has not run.
 - The literature worker reached its usage limit after persisting a preliminary
   note. Its external paper verification is incomplete and the note says so.
 - The extraction and review workers also reached their usage limit after
@@ -60,11 +63,16 @@ Infrastructure repairs alone do not satisfy that objective.
   independently proven from its header; retain that limitation in run
   manifests. This dataset is development-only and cannot establish a
   publication claim.
+- The three regions contain 30 Tier1 records marked `SVTYPE=DEL`, but only 14
+  are at least 50 bp. That is insufficient for a credible train/test learning
+  comparison and confirms the slice must remain a representation/infrastructure
+  diagnostic. Expansion must be selected by a label-blind rule and use an
+  upstream candidate set rather than truth-centred windows for the main pilot.
 
 ## Verification checkpoint
 
 - Baseline before edits: 289 passed, 29 skipped.
-- Current suite from the repository root: 330 passed, 29 skipped in 130.08s.
+- Current suite from the repository root: 337 passed, 29 skipped in 132.12s.
 - `analysis/check_manuscript.py`: passed.
 - Released checkpoint archive: 52,913,192 bytes; SHA-256 matches the release
   manifest.
@@ -75,8 +83,8 @@ Infrastructure repairs alone do not satisfy that objective.
 
 ## Immediate next gates
 
-1. Resolve the audit's coverage-view and mask-aware pooling finding before
-   treating VICReg results as biological evidence.
+1. Obtain independent review of the corrected view/pooling implementation and
+   freeze its ablation before treating VICReg results as biological evidence.
 2. Finish primary-source literature verification and freeze one pilot endpoint.
 3. Run diagnostics, then a fair matched pilot; retain per-example predictions,
    every seed, timings, environment, source hash, and split provenance.

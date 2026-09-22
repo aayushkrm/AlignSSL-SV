@@ -28,6 +28,7 @@ from .tensorize import (
 
 CONT_CHANNELS = [Q_BASEQUAL, Q_MAPQ, Q_ISIZE, Q_DEPTH]
 BIN_CHANNELS = [Q_STRAND, Q_DISC, Q_CLIP]
+ROW_VIEW_MODES = frozenset({"legacy", "preserve_globals_compact"})
 
 
 # --------------------------- MAE ---------------------------
@@ -137,9 +138,19 @@ def vicreg_loss(z1, z2, sim_coef=25.0, var_coef=25.0, cov_coef=1.0, eps=1e-4):
     }
 
 
-def subsample_rows(x, keep_frac: float, generator=None):
+def subsample_rows(x, keep_frac: float, generator=None, mode: str = "legacy"):
     """Coverage-invariance augmentation: randomly keep a fraction of the
-    real read rows (mask channel gates which rows are real)."""
+    real read rows (mask channel gates which rows are real).
+
+    ``legacy`` zeros every channel in dropped rows. The corrected mode keeps
+    broadcast depth/reference channels unchanged, compacts retained row-local
+    evidence in original order, and represents removed reads as ordinary
+    padding. It does not pretend that physical depth changed.
+    """
+    if mode not in ROW_VIEW_MODES:
+        raise ValueError(f"Unknown row view mode: {mode}")
+    if not 0 < keep_frac <= 1:
+        raise ValueError("keep_frac must be in (0, 1]")
     B, C, R, W = x.shape
     out = x.clone()
     for b in range(B):
@@ -147,7 +158,18 @@ def subsample_rows(x, keep_frac: float, generator=None):
         if len(real) == 0:
             continue
         n_keep = max(1, int(round(keep_frac * len(real))))
+        if n_keep == len(real):
+            continue
         perm = torch.randperm(len(real), generator=generator, device=x.device)
-        drop = real[perm[n_keep:]]
-        out[b, :, drop, :] = 0.0
+        if mode == "legacy":
+            drop = real[perm[n_keep:]]
+            out[b, :, drop, :] = 0.0
+        else:
+            keep = real[perm[:n_keep]].sort().values
+            kept_local = x[b, :Q_DEPTH, keep, :].clone()
+            kept_mask = x[b, Q_MASK, keep, :].clone()
+            out[b, :Q_DEPTH, :, :] = 0.0
+            out[b, Q_MASK, :, :] = 0.0
+            out[b, :Q_DEPTH, :n_keep, :] = kept_local
+            out[b, Q_MASK, :n_keep, :] = kept_mask
     return out

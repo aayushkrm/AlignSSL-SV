@@ -17,7 +17,9 @@ import torch.nn as nn
 from torch.utils.data import DataLoader, Subset
 
 from alignssl.data import open_shards
-from alignssl.encoding import read_depth_mode, require_same_depth_mode
+from alignssl.encoding import (ROW_POOL_MODES, read_depth_mode,
+                               read_row_pool_mode, require_same_depth_mode,
+                               require_same_row_pool_mode)
 from alignssl.encoder import AlignEncoder
 from alignssl.features import batch_features, FeatureNormalizer
 from alignssl.heads import (SVHeads, FusionSVHead, finetune_loss, TemperatureScaler,
@@ -27,9 +29,9 @@ from alignssl.metrics import score_arm
 
 
 class Model(nn.Module):
-    def __init__(self, d_model=128):
+    def __init__(self, d_model=128, row_pool_mode="legacy"):
         super().__init__()
-        self.enc = AlignEncoder(d_model=d_model)
+        self.enc = AlignEncoder(d_model=d_model, row_pool_mode=row_pool_mode)
         self.heads = SVHeads(d_model)
 
     def forward(self, x):
@@ -51,9 +53,9 @@ class FusionModel(nn.Module):
     chromosomes).
     """
 
-    def __init__(self, d_model=128):
+    def __init__(self, d_model=128, row_pool_mode="legacy"):
         super().__init__()
-        self.enc = AlignEncoder(d_model=d_model)
+        self.enc = AlignEncoder(d_model=d_model, row_pool_mode=row_pool_mode)
         self.heads = SVHeads(d_model)          # keeps bp/geno aux losses
         self.fuse = FusionSVHead(d_model)
         self.norm = FeatureNormalizer()
@@ -136,6 +138,13 @@ def require_checkpoint_depth_mode(train_depth_mode, checkpoint):
     return checkpoint_depth_mode
 
 
+def require_checkpoint_row_pool_mode(expected, checkpoint):
+    """Reject loading weights under different row/padding semantics."""
+    checkpoint_mode = read_row_pool_mode(checkpoint)
+    require_same_row_pool_mode(expected, checkpoint_mode)
+    return checkpoint_mode
+
+
 def fit_temperature_on_validation(val_logits, val_labels):
     """Fit temperature only when the in-budget validation set is usable."""
     if (val_logits is None or val_labels is None
@@ -204,6 +213,9 @@ def main():
     ap.add_argument("--batch-size", type=int, default=128)
     ap.add_argument("--lr", type=float, default=3e-4)
     ap.add_argument("--d-model", type=int, default=128)
+    ap.add_argument("--row-pool-mode", choices=sorted(ROW_POOL_MODES),
+                    default="legacy",
+                    help="must match the pretrained checkpoint when one is used")
     ap.add_argument("--freeze-encoder", action="store_true")
     ap.add_argument("--arms", default="pretrained,scratch",
                     help="comma-separated subset of " + ",".join(ARMS))
@@ -260,10 +272,12 @@ def main():
             if ARMS[mode]["needs_encoder"] and not args.encoder:
                 continue
             fusion = ARMS[mode]["fusion"]
-            model = (FusionModel if fusion else Model)(args.d_model).to(dev)
+            model = (FusionModel if fusion else Model)(
+                args.d_model, row_pool_mode=args.row_pool_mode).to(dev)
             if ARMS[mode]["needs_encoder"]:
                 ck = torch.load(args.encoder, map_location=dev)
                 require_checkpoint_depth_mode(train_ds.depth_mode, ck)
+                require_checkpoint_row_pool_mode(args.row_pool_mode, ck)
                 model.enc.load_state_dict(ck["encoder"])
                 if fusion and "feat_mean" in ck:
                     # reuse the pretraining normaliser so fine-tuning

@@ -22,6 +22,7 @@ import torch
 from torch.utils.data import DataLoader
 
 from alignssl.data import ShardDataset, MemmapDataset
+from alignssl.encoding import ROW_POOL_MODES
 from alignssl.encoder import AlignEncoder
 from alignssl.features import batch_features, FeatureNormalizer
 from alignssl.ssl import Projector
@@ -46,6 +47,9 @@ def main():
     ap.add_argument("--w-vicreg", type=float, default=W_VICREG_DEFAULT)
     ap.add_argument("--num-workers", type=int, default=2)
     ap.add_argument("--d-model", type=int, default=128)
+    ap.add_argument("--row-pool-mode", choices=sorted(ROW_POOL_MODES),
+                    default="legacy",
+                    help="encoder row reduction; legacy preserves released weights")
     ap.add_argument("--log-every", type=int, default=50)
     ap.add_argument("--seed", type=int, default=0)
     args = ap.parse_args()
@@ -67,7 +71,8 @@ def main():
                     persistent_workers=(nw > 0))
     print(f"  pretrain windows: {len(ds)}", flush=True)
 
-    enc = AlignEncoder(d_model=args.d_model).to(dev)
+    enc = AlignEncoder(d_model=args.d_model,
+                       row_pool_mode=args.row_pool_mode).to(dev)
     head = StatHead(args.d_model).to(dev)
     proj = Projector(args.d_model).to(dev)
     norm = FeatureNormalizer().to(dev)
@@ -119,6 +124,7 @@ def main():
             step += 1
         torch.save({"encoder": enc.state_dict(), "epoch": ep,
                     "depth_mode": ds.depth_mode,
+                    "row_pool_mode": args.row_pool_mode,
                     "d_model": args.d_model, "objective": "sas",
                     "feat_mean": norm.mean.cpu(), "feat_var": norm.var.cpu()},
                    args.out)

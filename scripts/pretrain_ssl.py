@@ -12,9 +12,10 @@ import torch
 from torch.utils.data import DataLoader
 
 from alignssl.data import ShardDataset, MemmapDataset
+from alignssl.encoding import ROW_POOL_MODES
 from alignssl.encoder import AlignEncoder
 from alignssl.ssl import (MAEDecoder, column_targets, mae_mask, mae_loss,
-                          Projector, vicreg_loss, subsample_rows)
+                          Projector, ROW_VIEW_MODES, vicreg_loss, subsample_rows)
 
 
 def main():
@@ -34,6 +35,12 @@ def main():
     ap.add_argument("--w-vicreg", type=float, default=1.0)
     ap.add_argument("--view-keep", type=float, default=0.5,
                     help="row keep-fraction for the second (coverage) view")
+    ap.add_argument("--row-view-mode", choices=sorted(ROW_VIEW_MODES),
+                    default="legacy",
+                    help="coverage-view semantics; legacy preserves published runs")
+    ap.add_argument("--row-pool-mode", choices=sorted(ROW_POOL_MODES),
+                    default="legacy",
+                    help="encoder row reduction; legacy preserves released weights")
     ap.add_argument("--num-workers", type=int, default=8)
     ap.add_argument("--d-model", type=int, default=128)
     ap.add_argument("--log-every", type=int, default=50)
@@ -57,7 +64,8 @@ def main():
                     persistent_workers=(nw > 0))
     print(f"  pretrain windows: {len(ds)}", flush=True)
 
-    enc = AlignEncoder(d_model=args.d_model).to(dev)
+    enc = AlignEncoder(d_model=args.d_model,
+                       row_pool_mode=args.row_pool_mode).to(dev)
     dec = MAEDecoder(args.d_model).to(dev)
     proj = Projector(args.d_model).to(dev)
     params = list(enc.parameters()) + list(dec.parameters()) + list(proj.parameters())
@@ -89,8 +97,8 @@ def main():
                 tgt = column_targets(x)
                 l_mae = mae_loss(pred, tgt, colmask)
                 # --- VICReg branch: two coverage views ---
-                v1 = subsample_rows(x, 1.0)
-                v2 = subsample_rows(x, args.view_keep)
+                v1 = subsample_rows(x, 1.0, mode=args.row_view_mode)
+                v2 = subsample_rows(x, args.view_keep, mode=args.row_view_mode)
                 z1 = proj(enc(v1)); z2 = proj(enc(v2))
                 l_vic, _vic_parts = vicreg_loss(z1, z2)
                 loss = args.w_mae * l_mae + args.w_vicreg * l_vic
@@ -105,7 +113,9 @@ def main():
                              "mae": float(l_mae), "vic": float(l_vic)})
             step += 1
         torch.save({"encoder": enc.state_dict(), "epoch": ep,
-                    "d_model": args.d_model, "depth_mode": ds.depth_mode}, args.out)
+                    "d_model": args.d_model, "depth_mode": ds.depth_mode,
+                    "row_pool_mode": args.row_pool_mode,
+                    "row_view_mode": args.row_view_mode}, args.out)
         with open(args.out + ".hist.json", "w") as f:
             json.dump(hist, f)
         if hist:
