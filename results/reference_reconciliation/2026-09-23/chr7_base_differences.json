@@ -1,0 +1,34 @@
+{
+  "contig": "chr7",
+  "difference_types": {
+    "N>R": 1,
+    "N>S": 1,
+    "N>Y": 2
+  },
+  "first_differences": [
+    {
+      "left": "N",
+      "position_1based": 154575459,
+      "right": "R"
+    },
+    {
+      "left": "N",
+      "position_1based": 154578614,
+      "right": "Y"
+    },
+    {
+      "left": "N",
+      "position_1based": 154578615,
+      "right": "S"
+    },
+    {
+      "left": "N",
+      "position_1based": 154578679,
+      "right": "Y"
+    }
+  ],
+  "left_fasta": "/scratch/igorno-alignssl_restart_20260922/hgsvc-noalt-reference/hg38.no_alt.fa.gz",
+  "length": 159345973,
+  "n_different_bases": 4,
+  "right_fasta": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa"
+}

@@ -83,15 +83,22 @@ effect. Its current evidence and design are indexed in
   canonical contigs. The publisher-verified HGSVC no-ALT FASTA now matches all
   194 HGSVC VCF shared-contig canonical digests but only 176 IGSR digests, so
   these are genuine reference-sequence differences, not case or stale header
-  artifacts. Their base-level extent and the working PAV callable archives
-  still need inspection. Bulk 30× CRAM download is on hold; see the paired
+  artifacts. The complete 18-contig BED map verifies 13,923,221 differing
+  bases in 152 intervals, mainly HGSVC A/C/G/T versus IGSR `N` on six
+  contigs. Raw JSON/BED artifacts and verification hashes are preserved in
+  `results/reference_reconciliation/2026-09-23/`. An independent check found
+  shared-`N` sequence between mismatch intervals, so this BED is not a
+  callability or safe-exclusion mask. The map does not prove coordinate-safe
+  scoring or donor-specific confident negatives; overlap with
+  truth/candidates/flanks and the working PAV callable archives still need
+  inspection. Bulk 30× CRAM download remains on hold; see the paired
   callability/reference audits and reconciliation.
 
 This restart deliberately preserves failed and null results. The aim is a
 reproducible improvement, but an infrastructure repair or a preprocessing
 change by itself is not evidence that SSL works.
 
-Verification at this checkpoint: 344 tests passed and 29 skipped; the
+Verification at this checkpoint: 349 tests passed and 29 skipped; the
 manuscript/result consistency checker passed.
 
 ---

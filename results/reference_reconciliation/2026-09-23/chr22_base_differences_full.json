@@ -1,0 +1,121 @@
+{
+  "contig": "chr22",
+  "difference_bed_path": "/scratch/igorno-alignssl_restart_20260922/hgsvc-noalt-reference/chr22_base_differences.bed",
+  "difference_bed_sha256": "7fffc816c6e6cbcb2b1dc8b4d96f6c6ae9d8d4f04084a676c1f45f01fc4bd1fd",
+  "difference_types": {
+    "A>N": 627652,
+    "C>N": 356913,
+    "G>N": 447141,
+    "N>R": 2,
+    "N>W": 1,
+    "N>Y": 2,
+    "T>N": 656091
+  },
+  "first_differences": [
+    {
+      "left": "A",
+      "position_1based": 12954789,
+      "right": "N"
+    },
+    {
+      "left": "G",
+      "position_1based": 12954790,
+      "right": "N"
+    },
+    {
+      "left": "C",
+      "position_1based": 12954791,
+      "right": "N"
+    },
+    {
+      "left": "A",
+      "position_1based": 12954792,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 12954793,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 12954794,
+      "right": "N"
+    },
+    {
+      "left": "C",
+      "position_1based": 12954795,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 12954796,
+      "right": "N"
+    },
+    {
+      "left": "G",
+      "position_1based": 12954797,
+      "right": "N"
+    },
+    {
+      "left": "A",
+      "position_1based": 12954798,
+      "right": "N"
+    },
+    {
+      "left": "G",
+      "position_1based": 12954799,
+      "right": "N"
+    },
+    {
+      "left": "A",
+      "position_1based": 12954800,
+      "right": "N"
+    },
+    {
+      "left": "A",
+      "position_1based": 12954801,
+      "right": "N"
+    },
+    {
+      "left": "A",
+      "position_1based": 12954802,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 12954803,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 12954804,
+      "right": "N"
+    },
+    {
+      "left": "A",
+      "position_1based": 12954805,
+      "right": "N"
+    },
+    {
+      "left": "C",
+      "position_1based": 12954806,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 12954807,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 12954808,
+      "right": "N"
+    }
+  ],
+  "left_fasta": "/scratch/igorno-alignssl_restart_20260922/hgsvc-noalt-reference/hg38.no_alt.fa.gz",
+  "length": 50818468,
+  "n_difference_intervals": 22,
+  "n_different_bases": 2087802,
+  "right_fasta": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa"
+}

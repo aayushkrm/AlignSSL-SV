@@ -1,0 +1,2 @@
+source=https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/technical/reference/20200513_hg38_NoALT
+purpose=HGSVC3_reference_reconciliation_only

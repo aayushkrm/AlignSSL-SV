@@ -18,7 +18,10 @@ results.
 | [`2026-09-23-hgsvc3-genotype-audit.md`](2026-09-23-hgsvc3-genotype-audit.md) | Reproducible per-donor deletion genotype inventory | 64,428 DEL loci ≥50 bp; no confident-negative inference |
 | [`2026-09-23-hgsvc3-callability-audit.md`](2026-09-23-hgsvc3-callability-audit.md) | Primary-source search for donor-wide callable regions and negative-label gate | No mask in inspected v1.0 inventories; working archives unresolved |
 | [`2026-09-23-hgsvc3-reference-audit.md`](2026-09-23-hgsvc3-reference-audit.md) | HGSVC truth versus IGSR/NYGC CRAM reference metadata comparison | 18 primary-contig M5 mismatches; bulk transfer on hold |
-| [`2026-09-23-reference-reconciliation.md`](2026-09-23-reference-reconciliation.md) | Publisher-verified HGSVC no-ALT FASTA versus HGSVC VCF and IGSR dictionary | 194/194 HGSVC matches; 18 IGSR sequence mismatches |
+| [`2026-09-23-reference-reconciliation.md`](2026-09-23-reference-reconciliation.md) | Publisher-verified HGSVC no-ALT FASTA versus HGSVC VCF and IGSR dictionary; complete map | 194/194 HGSVC matches; 13,923,221 unequal bases in 152 intervals; bridge unresolved |
+| [`2026-09-23-scientific-review-5762726.md`](2026-09-23-scientific-review-5762726.md) | Independent cohort/protocol review of the acquisition milestone | Transfer, callability, fairness, and untouched-test gates remain open |
+| [`2026-09-23-scientific-review-reference-map.md`](2026-09-23-scientific-review-reference-map.md) | Sol/high audit of the complete map and its scientific limits | Integrity passed; shared-`N` sequence means difference BED is not a callability mask |
+| [`2026-09-23-alternative-cohorts.md`](2026-09-23-alternative-cohorts.md) | Primary-source readiness comparison for GIAB, HGSVC3, HGSVC2, and HPRC | No independent cohort is end-to-end verified |
 
 ## Evidence rules
 

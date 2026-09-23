@@ -97,11 +97,18 @@ Infrastructure repairs alone do not satisfy that objective.
   canonical contigs with matching lengths but mismatched M5s between the HGSVC
   VCF and IGSR/NYGC reference. A publisher-MD5-verified HGSVC no-ALT FASTA
   matches all 194 HGSVC VCF shared-contig digests but only 176 IGSR digests;
-  the difference is genuine, though its base-level extent is not yet mapped.
+  the difference is genuine. A complete 18-contig base-difference map from
+  completed job `1598070` records 13,923,221 unequal bases in 152 verified
+  BED intervals, mirrored with JSON, hashes, and job logs in
+  `results/reference_reconciliation/2026-09-23/`. An independent review found
+  shared-`N` sequence between mismatch intervals; the BED is not a callability
+  or safe-exclusion mask. Job `1598069` failed before comparison because its
+  `samtools` executable lacked a runtime library; that log is preserved.
   Read `2026-09-23-hgsvc3-callability-audit.md`,
   `2026-09-23-hgsvc3-reference-audit.md`, and
-  `2026-09-23-reference-reconciliation.md`. Do not bulk-download the matched
-  CRAMs until the reference and negative-region gates resolve.
+  `2026-09-23-reference-reconciliation.md` and the map review. Do not
+  bulk-download the matched CRAMs until the reference and negative-region gates
+  resolve.
 - Manta fixture job `1598015` failed before application startup on `hydra-n12`
   with signal 53. Its replacement `1598016` is pending on `hydra-n1`; no
   candidate output exists yet. Do not duplicate that job while it is live.
@@ -109,7 +116,8 @@ Infrastructure repairs alone do not satisfy that objective.
 ## Verification checkpoint
 
 - Baseline before edits: 289 passed, 29 skipped.
-- Current suite from the repository root: 337 passed, 29 skipped in 132.12s.
+- Current suite from the repository root: 349 passed, 29 skipped in 213.47s
+  using `../.venv/bin/python -m pytest -q`.
 - `analysis/check_manuscript.py`: passed.
 - Released checkpoint archive: 52,913,192 bytes; SHA-256 matches the release
   manifest.
