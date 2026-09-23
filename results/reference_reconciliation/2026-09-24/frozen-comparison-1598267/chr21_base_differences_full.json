@@ -1,0 +1,120 @@
+{
+  "contig": "chr21",
+  "difference_bed_path": "/scratch/igorno-alignssl_restart_20260922/reference-ambiguity/frozen-comparison-1598267/chr21_base_differences.bed",
+  "difference_bed_sha256": "b8c8905c207231f2b98af3edb5e828e220751cfbdae79944dc3b29853d3f4105",
+  "difference_types": {
+    "A>N": 616450,
+    "C>N": 348100,
+    "G>N": 441654,
+    "N>M": 2,
+    "N>R": 1,
+    "T>N": 643844
+  },
+  "first_differences": [
+    {
+      "left": "A",
+      "position_1based": 10864561,
+      "right": "N"
+    },
+    {
+      "left": "G",
+      "position_1based": 10864562,
+      "right": "N"
+    },
+    {
+      "left": "C",
+      "position_1based": 10864563,
+      "right": "N"
+    },
+    {
+      "left": "A",
+      "position_1based": 10864564,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 10864565,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 10864566,
+      "right": "N"
+    },
+    {
+      "left": "C",
+      "position_1based": 10864567,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 10864568,
+      "right": "N"
+    },
+    {
+      "left": "G",
+      "position_1based": 10864569,
+      "right": "N"
+    },
+    {
+      "left": "A",
+      "position_1based": 10864570,
+      "right": "N"
+    },
+    {
+      "left": "G",
+      "position_1based": 10864571,
+      "right": "N"
+    },
+    {
+      "left": "A",
+      "position_1based": 10864572,
+      "right": "N"
+    },
+    {
+      "left": "A",
+      "position_1based": 10864573,
+      "right": "N"
+    },
+    {
+      "left": "A",
+      "position_1based": 10864574,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 10864575,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 10864576,
+      "right": "N"
+    },
+    {
+      "left": "A",
+      "position_1based": 10864577,
+      "right": "N"
+    },
+    {
+      "left": "C",
+      "position_1based": 10864578,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 10864579,
+      "right": "N"
+    },
+    {
+      "left": "T",
+      "position_1based": 10864580,
+      "right": "N"
+    }
+  ],
+  "left_fasta": "/scratch/igorno-alignssl_restart_20260922/hgsvc-noalt-reference/hg38.no_alt.fa.gz",
+  "length": 46709983,
+  "n_difference_intervals": 16,
+  "n_different_bases": 2050051,
+  "right_fasta": "/scratch/igorno-alignssl_restart_20260922/igsr-reference/GRCh38_full_analysis_set_plus_decoy_hla.fa"
+}

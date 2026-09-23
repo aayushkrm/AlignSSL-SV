@@ -119,8 +119,11 @@ by simple interval overlap alone.
    different orthogonal benchmark.
 4. **Reference gate before alignment transfer.** The first-party HGSVC
    `hg38.no_alt.fa.gz` has been staged, publisher-MD5 verified, and shown to
-   match the VCF on all 194 shared contigs. Next map the 18 IGSR sequence
-   differences and locate or validate donor-specific callable regions. Only
+   match the VCF on all 194 shared contigs. The complete 18-contig difference
+   map and both non-ACGT masks now exist; frozen-source re-comparison job
+   `1598267` reproduced every BED byte and scientific summary field, closing
+   the saved map's prior URL-input provenance gap. A sequence bridge
+   and donor-specific callable regions remain unvalidated. Only
    after a defensible compatibility path is documented, stage one donor's
    indexed alignment from the official source,
    verify published checksums or a complete read traversal, reference sequence
@@ -134,9 +137,12 @@ by simple interval overlap alone.
    comparison can establish value from pretraining.
 
 The bounded Manta fixture job `1598015` failed before startup on `hydra-n12`
-with scheduler signal 53. A single replacement job, `1598016`, is queued on
-`hydra-n1` in the `galaxy` partition; it has produced no candidate VCF yet.
-The fixture run is deliberately too small for a scientific score.
+with scheduler signal 53. Its replacement `1598016` also failed before startup
+on `hydra-n1` with the same signal. Neither produced a candidate VCF. The
+[`sacct` record](../../results/cluster_jobs/2026-09-24-manta-fixture-sacct.txt)
+preserves both failures. A third identical submission is not justified without
+a launch-failure diagnosis and renewed scientific reason; the fixture is
+deliberately too small for a scientific score.
 
 The exact confirmation donors and full-data transfer size remain open until
 per-donor callable masks, pedigree separation, and complete reference

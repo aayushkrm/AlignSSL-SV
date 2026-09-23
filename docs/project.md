@@ -1,5 +1,12 @@
 # RESEARCH ROADMAP & EXECUTION PLAN
 
+> **2026-09-23 scope note:** This is the preserved historical plan and audit
+> record, not the next research program. The revised objective explicitly
+> rejects DeepSV as the foundation of new work and asks for competing,
+> publication-relevant structural-variant directions, including non-SSL ones.
+> See [`PROGRESS.md`](../PROGRESS.md) and [`docs/research/`](research/README.md)
+> for current decisions. No fresh performance gain has been established.
+
 ## AlignSSL-SV: Self-Supervised Pretraining on Read Alignments with Calibrated Uncertainty for Structural-Variant Deletion Calling
 
 > ### ⚠️ STATUS BANNER — REVISED 2026-08-03: THE HEADLINE CLAIM IS WITHDRAWN

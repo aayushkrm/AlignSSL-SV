@@ -1,0 +1,17 @@
+Cluster login-node verification, 2026-09-24.
+The files below are preserved on /home/igorno/alignssl_restart_20260922/references/.
+Checks were run with low-priority I/O; no FASTA bytes are committed to Git.
+
+Command:
+cd /home/igorno/alignssl_restart_20260922/references/igsr-3b103f4742ab && ionice -c3 nice -n 19 sha256sum --check SHA256SUMS
+Output:
+GRCh38_full_analysis_set_plus_decoy_hla.fa: OK
+GRCh38_full_analysis_set_plus_decoy_hla.fa.fai: OK
+GRCh38_full_analysis_set_plus_decoy_hla.dict: OK
+
+Command:
+cd /home/igorno/alignssl_restart_20260922/references/hgsvc-noalt-90f1dcdb28a8 && ionice -c3 nice -n 19 sha256sum --check SHA256SUMS
+Output:
+hg38.no_alt.fa.gz: OK
+hg38.no_alt.fa.gz.fai: OK
+hg38.no_alt.fa.gz.gzi: OK

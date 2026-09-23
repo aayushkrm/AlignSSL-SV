@@ -1,5 +1,15 @@
 # AlignSSL-SV research renewal
 
+**Status update, 2026-09-23:** This is a preserved *preliminary SSL-focused
+option*, not the approved forward protocol. The revised project objective calls
+for comparing stronger research questions across structural-variant calling,
+genotyping, breakpoint refinement, difficult regions, and realistic evaluation;
+it explicitly rules out DeepSV as the scientific foundation and permits leaving
+SSL entirely. DeepSV below is only a historical or comparator baseline. Do not
+launch E1–E3 or a large GPU campaign from this document without a new
+literature-grounded direction decision and independent Sol/high review. The
+small Manta fixture remains an engineering check, not endorsement of this plan.
+
 Version: 2026-09-22, preliminary protocol before new biological outcomes.
 The literature and independent audit will refine hypotheses before a pilot is
 frozen. Historical numbers are preserved and are not targets to optimize against.
@@ -104,8 +114,8 @@ claims. A pilot gain is not publication readiness.
 
 ## Review and stopping decisions
 
-An independent Luna/max agent reviews each material data/protocol/code/result
-milestone; the six-hour task heartbeat triggers review when new evidence exists.
+An independent Sol/high agent reviews material data/protocol/code/result
+milestones; the two-hour task heartbeat triggers review when new evidence exists.
 Reject contaminated or unfair comparisons before interpreting their scores.
 If a hypothesis fails its predeclared criterion, record the result and move to
 the next justified hypothesis; do not change the scoring rule after seeing the

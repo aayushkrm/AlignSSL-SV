@@ -1,0 +1,4 @@
+source=https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa
+fetched_utc=2026-09-23T07:06:49Z
+expected_fasta_bytes=3263683042
+expected_fai_bytes=154196

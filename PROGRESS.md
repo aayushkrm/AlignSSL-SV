@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-09-23**. Structure: **Part I** is the current, authoritative
+_Last updated: **2026-09-24**. Structure: **Part I** is the current, authoritative
 status — read this. **Part II** is the dated chronological log, kept for
 provenance; where Part I and Part II disagree, Part I is correct. Maps to the
 Phase 0–5 plan in `docs/project.md`, whose §16 carries the matching
@@ -13,9 +13,12 @@ audit outcome._
 ## 2026-09-22 research restart
 
 The prior negative result remains the authoritative published-project outcome;
-no new performance gain is claimed. A new, explicitly prospective workstream
-is testing whether representation and protocol defects obscured a useful SSL
-effect. Its current evidence and design are indexed in
+no new performance gain is claimed. The 2026-09-23 objective revision opens a
+**research-direction reset**: compare important structural-variant problems and
+permit leaving SSL entirely. DeepSV is historical context or a necessary
+baseline, not the foundation of new work. The earlier SSL factorial is
+suspended as a preliminary option until competing directions and novelty are
+reviewed; its evidence and design remain indexed in
 [`docs/research/README.md`](docs/research/README.md).
 
 - ✅ Recreated a reproducible local Python 3.11 environment and passed the
@@ -59,6 +62,12 @@ effect. Its current evidence and design are indexed in
   as primary; depth matching is diagnostic only. BASILISC's institutional
   abstract is verified, but its full split/negative protocol remains unavailable
   and is explicitly marked unresolved.
+- 🟡 A broader primary-source comparison ranks candidate-generation recall
+  failure in difficult SV strata as a promising lead over another post-hoc
+  filter. This is a research hypothesis, not a selected method or result. Its
+  proposed first gate is a frozen, callability-aware caller-union miss audit on
+  one donor, with unrelated-donor confirmation only if misses are actionable.
+  See `docs/research/2026-09-23-research-pivots.md`.
 - ⬜ No corrected-depth training comparison has run yet. A positive-result claim
   requires matched scratch/SSL/classical controls, independent seeds,
   threshold-free primary metrics, and untouched confirmation data.
@@ -71,8 +80,11 @@ effect. Its current evidence and design are indexed in
   Illumina CRAM index matches; NA21487 and NA24385 are unmatched. A remote
   CRAM/CRAI access and header check passed for HG00512. Reference compatibility,
   pedigree-safe donor splits, and confident-negative regions remain the cohort
-  gate before bulk downloading.
-  Manta fixture job `1598016` is queued after a node-start failure in `1598015`.
+  gate before bulk downloading. Both Manta engineering fixture jobs `1598015`
+  and `1598016` failed at startup with scheduler signal 53 on different nodes;
+  no candidate set exists. The `sacct` record is in
+  `results/cluster_jobs/2026-09-24-manta-fixture-sacct.txt`. A third identical
+  submission is not justified while the research direction is being reset.
 - ✅ Audited all 176,231 HGSVC3 SV records and 65 donor genotypes. There are
   64,428 DEL records ≥50 bp, with 9,003–12,165 carrier records per donor and
   substantial partial/complete no-calls. This is an inventory only: reference
@@ -90,15 +102,39 @@ effect. Its current evidence and design are indexed in
   shared-`N` sequence between mismatch intervals, so this BED is not a
   callability or safe-exclusion mask. The map does not prove coordinate-safe
   scoring or donor-specific confident negatives; overlap with
-  truth/candidates/flanks and the working PAV callable archives still need
-  inspection. Bulk 30× CRAM download remains on hold; see the paired
-  callability/reference audits and reconciliation.
+  truth/candidates/flanks and donor callable regions still need inspection.
+  Bulk 30× CRAM download remains on hold; see the paired callability/reference
+  audits and reconciliation. A reported member-header survey of both named
+  `20240307_PAV_VCF` working TARs found no callable BED member; other sources
+  or a validated PAV rerun remain open. The survey's raw member
+  log and runnable scanner still need archival before independent replication.
+- ✅ Jobs `1598077` and `1598079` staged and verified the full IGSR FASTA and
+  scanned complete HGSVC/IGSR non-ACGT intervals with sequence M5 checks.
+  Their raw artifacts and a verified joint BED are in
+  `results/reference_ambiguity/2026-09-23/`. All 13,923,221 reference-unequal
+  bases fall inside the 165,046,090-base joint ambiguity territory across the
+  194 shared contigs. Source FASTAs and indexes are hash-verified in durable
+  cluster home storage. A compute-node preservation attempt `1598082` failed
+  on a read-only home mount; the login-node copy succeeded. See
+  `docs/research/2026-09-23-reference-ambiguity.md`. This is **not** donor
+  callability, a safe SV scoring mask, or a performance result. The new
+  [independent review](docs/research/2026-09-24-scientific-review-reference-ambiguity.md)
+  permits only the narrow sequence interpretation and leaves cohort selection
+  closed. Frozen-input re-comparison job `1598267` exactly reproduced all 18
+  BEDs and scientific summary fields from hashed FASTAs, closing the saved
+  map's URL-input provenance gap. See
+  `docs/research/2026-09-24-frozen-reference-replay.md`. Both 3-Mb Manta fixture attempts
+  failed at scheduler startup; no caller result exists.
+- ⚠️ GIAB HG005/HG007 have public WGS alignments and v4.2.1 small-variant
+  benchmark VCF/BED pairs, but no v5.x SV truth/BED pair was found. They are
+  first-degree relatives and cannot serve as two independent SV confirmation
+  donors. See `docs/research/2026-09-24-giab-multidonor-feasibility.md`.
 
 This restart deliberately preserves failed and null results. The aim is a
 reproducible improvement, but an infrastructure repair or a preprocessing
 change by itself is not evidence that SSL works.
 
-Verification at this checkpoint: 349 tests passed and 29 skipped; the
+Verification at this checkpoint: 357 tests passed and 29 skipped; the
 manuscript/result consistency checker passed.
 
 ---

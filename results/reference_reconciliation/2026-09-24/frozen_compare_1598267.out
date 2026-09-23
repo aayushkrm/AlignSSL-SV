@@ -1,0 +1,23 @@
+GRCh38_full_analysis_set_plus_decoy_hla.fa: OK
+GRCh38_full_analysis_set_plus_decoy_hla.fa.fai: OK
+GRCh38_full_analysis_set_plus_decoy_hla.dict: OK
+/scratch/igorno-alignssl_restart_20260922/hgsvc-noalt-reference/hg38.no_alt.fa.gz: OK
+chr1: 2 / 248956422 bases differ
+chr2: 9 / 242193529 bases differ
+chr3: 7 / 198295559 bases differ
+chr5: 2282185 / 181538259 bases differ
+chr6: 1 / 170805979 bases differ
+chr7: 4 / 159345973 bases differ
+chr9: 3 / 138394717 bases differ
+chr10: 36 / 133797422 bases differ
+chr12: 3 / 133275309 bases differ
+chr13: 3 / 114364328 bases differ
+chr14: 2050048 / 107043718 bases differ
+chr16: 1 / 90338345 bases differ
+chr17: 12 / 83257441 bases differ
+chr19: 2674361 / 58617616 bases differ
+chr21: 2050051 / 46709983 bases differ
+chr22: 2087802 / 50818468 bases differ
+chrX: 5 / 156040895 bases differ
+chrY: 2778688 / 57227415 bases differ
+Frozen comparison complete: /scratch/igorno-alignssl_restart_20260922/reference-ambiguity/frozen-comparison-1598267

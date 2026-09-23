@@ -1,5 +1,12 @@
 # AlignSSL-SV
 
+> **Research-direction reset (2026-09-23):** The material below documents the
+> historical DeepSV-derived SSL project and its negative result. It is not the
+> scientific foundation or approved plan for the next research phase. The new
+> objective is to compare broader structural-variant questions, potentially
+> leaving SSL and candidate filtering entirely. See [current progress](PROGRESS.md)
+> and [research notes](docs/research/README.md); no new method or gain is claimed.
+
 **Four controls for evaluating deep structural-variant callers, and a worked demonstration that their absence manufactured our own headline result.**
 
 AlignSSL-SV is a deletion caller for short-read whole-genome sequencing and a direct extension of **DeepSV** (Cai, Wu & Gao, *BMC Bioinformatics* 2019, 20:665). DeepSV renders the read pileup as a hand-designed RGB image and trains a fully supervised CNN. AlignSSL-SV replaces both halves of that design:

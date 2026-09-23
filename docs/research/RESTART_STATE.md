@@ -2,12 +2,14 @@
 
 ## Objective and evidence standard
 
-Improve self-supervised read-alignment learning for structural-variant deletion
-calling and develop publication-worthy evidence. Seek a reproducible gain over
-matched from-scratch and strong classical controls, without guaranteeing that
-the hypothesis will succeed. Keep the original representation, label-efficiency,
-calibration, generalization and eventual call-set evaluation aims visible.
-Infrastructure repairs alone do not satisfy that objective.
+Develop a genuinely novel, scientifically rigorous structural-variant research
+contribution with meaningful evidence. The 2026-09-23 objective revision
+explicitly permits leaving SSL, the current architecture, benchmark, and even
+candidate filtering; it rules out using DeepSV as the new scientific
+foundation. Preserve prior negative results and infrastructure as evidence,
+but compare alternative research questions before substantial compute. No
+positive result is guaranteed. Infrastructure repairs alone do not satisfy
+the objective.
 
 ## Verified starting state
 
@@ -48,6 +50,11 @@ Infrastructure repairs alone do not satisfy that objective.
   requests a GPT-6 Sol/high scientific audit at meaningful milestones. The
   automation prompt records actual model dispatch because the heartbeat itself
   does not expose a model selector.
+- The 2026-09-22 SSL-focused [`RESEARCH_PLAN.md`](RESEARCH_PLAN.md) is now a
+  suspended preliminary option, not the approved next experiment. The
+  primary-source comparison in `2026-09-23-research-pivots.md` ranks
+  candidate-recall failure in difficult strata as a lead for a cheap
+  falsification test, not an approved method or positive result.
 
 ## Cluster recovery state
 
@@ -92,8 +99,11 @@ Infrastructure repairs alone do not satisfy that objective.
   missing genotype calls. See `2026-09-23-hgsvc3-genotype-audit.md`; these
   record-level counts do not define confident-negative regions.
 - The inspected HGSVC3 v1.0 release inventories have no donor-wide callable
-  BED, although PAV documents callable output and the larger working archives
-  are not yet inspected. A primary-source metadata comparison found 18 of 25
+  BED. A reported member-header survey of both named `20240307_PAV_VCF`
+  working TARs found no callable BED member; independent replay is pending,
+  and this says nothing about other archives or rerunning PAV. PAV's smoothed
+  `_500` BED can bridge unaligned gaps, so raw alignment coverage is required
+  for any negative label. A primary-source metadata comparison found 18 of 25
   canonical contigs with matching lengths but mismatched M5s between the HGSVC
   VCF and IGSR/NYGC reference. A publisher-MD5-verified HGSVC no-ALT FASTA
   matches all 194 HGSVC VCF shared-contig digests but only 176 IGSR digests;
@@ -109,14 +119,36 @@ Infrastructure repairs alone do not satisfy that objective.
   `2026-09-23-reference-reconciliation.md` and the map review. Do not
   bulk-download the matched CRAMs until the reference and negative-region gates
   resolve.
-- Manta fixture job `1598015` failed before application startup on `hydra-n12`
-  with signal 53. Its replacement `1598016` is pending on `hydra-n1`; no
-  candidate output exists yet. Do not duplicate that job while it is live.
+- Manta fixture jobs `1598015` (`hydra-n12`) and `1598016` (`hydra-n1`) both
+  failed in four seconds with scheduler signal 53 before application startup.
+  No Manta-named output directory was found in the scratch workspace. The
+  `sacct` evidence is in `results/cluster_jobs/2026-09-24-manta-fixture-sacct.txt`.
+  No candidate set exists; do not submit a third identical fixture without a
+  revised scientific need and launch-failure diagnosis.
+- IGSR full-reference snapshot job `1598077` and dependent ambiguity-scan job
+  `1598079` completed and verified the 3,263,683,042-byte IGSR FASTA, all
+  3,366 IGSR and 194 HGSVC sequence M5s, and separate complete non-ACGT BEDs.
+  On the 194 shared contigs, the 165,046,090-base joint ambiguity BED contains
+  all 13,923,221 unequal bases; it is **not** a donor-callability or safe SV
+  exclusion mask. The source FASTAs and indexes were hash-verified after
+  preservation in `/home/igorno/alignssl_restart_20260922/references/`.
+  SLURM preserve job `1598082` failed on a compute-node read-only home mount;
+  the login-node copy succeeded and the archive hashes passed again on
+  2026-09-24. An independent reviewer accepted only the narrow saved-map
+  sequence claim and left cohort selection blocked; its requested Sol/high
+  configuration was not independently attested by the reviewer runtime.
+  Frozen-input re-comparison job `1598267` completed in 1m29s and exactly
+  reproduced all 18 BEDs and scientific summary fields from hashed FASTAs:
+  13,923,221 unequal bases in 152 intervals. This closes the saved map's
+  earlier live-URL provenance gap, not the cohort-compatibility gate. See
+  `2026-09-23-reference-ambiguity.md`,
+  `2026-09-24-frozen-reference-replay.md`, and
+  `2026-09-24-scientific-review-reference-ambiguity.md`.
 
 ## Verification checkpoint
 
 - Baseline before edits: 289 passed, 29 skipped.
-- Current suite from the repository root: 349 passed, 29 skipped in 213.47s
+- Current suite from the repository root: 357 passed, 29 skipped in 174.64s
   using `../.venv/bin/python -m pytest -q`.
 - `analysis/check_manuscript.py`: passed.
 - Released checkpoint archive: 52,913,192 bytes; SHA-256 matches the release
@@ -125,16 +157,24 @@ Infrastructure repairs alone do not satisfy that objective.
   1–64; corrected maximum absolute error 0 and zero mismatched columns. Raw
   record: `results/diagnostics/depth_oracle_hg002_20260923.json`. Failed launch
   `1597948` is retained in the record and produced no scientific output.
+- A first-party feasibility check found no GIAB v5.x SV truth/BED pair for
+  HG005 or HG007 despite public large WGS BAMs and v4.2.1 **small-variant**
+  benchmarks. These related donors are no-go as independent v5.x SV truth for
+  the proposed cheap recall pilot; see `2026-09-24-giab-multidonor-feasibility.md`.
 
 ## Immediate next gates
 
-1. Obtain independent review of the corrected view/pooling implementation and
-   freeze its ablation before treating VICReg results as biological evidence.
-2. Select independent donors using assembly-derived truth, compatible short
-   reads, and validated callable regions. Then freeze the pilot endpoint.
-3. Run diagnostics, then a fair matched pilot; retain per-example predictions,
-   every seed, timings, environment, source hash, and split provenance.
-4. Reviewer assesses pilot before expanding to independent samples and testing
-   a frozen primary hypothesis on an untouched confirmation set.
+1. Compare several important SV research directions and their closest prior
+   art; choose a high-information, cheap falsification diagnostic before any
+   large training campaign. Obtain independent Sol/high review of that choice.
+2. Finish reference provenance/ambiguity and donor-callability gates before
+   using HGSVC3/IGSR for candidate labels. The ambiguity BED is not a
+   confident-negative mask.
+3. Diagnose the two scheduler-startup failures before any revised Manta
+   fixture. Do not relaunch the same job unchanged or assume the eventual
+   research question is SSL candidate filtering.
+4. Once a direction is chosen, freeze its baselines, split/test protection,
+   label and compute budgets, metrics, uncertainty, and reproducible artifacts
+   before confirmatory experiments.
 
 Scientific improvement and publication readiness remain unproven.

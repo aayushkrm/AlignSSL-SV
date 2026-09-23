@@ -1,0 +1,11 @@
+Command (cluster login node, 2026-09-24):
+sacct -j 1598015,1598016 --format=JobID,JobName,State,ExitCode,Elapsed,NodeList -n -P
+
+1598015|alignssl-manta-fixture|FAILED|0:53|00:00:04|hydra-n12
+1598015.batch|batch|CANCELLED|0:53|00:00:04|hydra-n12
+1598016|alignssl-manta-fixture|FAILED|0:53|00:00:04|hydra-n1
+1598016.batch|batch|CANCELLED|0:53|00:00:04|hydra-n1
+
+An inspection of /scratch/igorno-alignssl_restart_20260922 at depth <= 3
+found no Manta-named output directory or slurm-159801*.out file. These jobs
+failed at startup; no caller result was interpreted.
