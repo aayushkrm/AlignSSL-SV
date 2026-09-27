@@ -1,0 +1,25 @@
+{
+  "archive": "20240307_PAV_VCF_hs1_mm2.tar",
+  "bed_members": [],
+  "callable_name_members": [],
+  "etag": "\"2fe5a9000-614032d9d39c0\"",
+  "interpretation": "Header-only inventory of this archive, not a donor-callability assessment",
+  "last_modified": "Tue, 19 Mar 2024 13:09:03 GMT",
+  "member_count": 391,
+  "member_payload_bytes_requested": 0,
+  "member_type_counts": {
+    "0": 390,
+    "5": 1
+  },
+  "official_manifest_md5": "167bb858385c36e64d27ab68ef4472cb",
+  "official_manifest_size": 12857282560,
+  "range_requests": 393,
+  "suffix_counts": {
+    ".tbi": 195,
+    ".vcf.gz": 195,
+    "other": 1
+  },
+  "tar_header_bytes_requested": 201216,
+  "url": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC3/working/20240307_PAV_VCF/20240307_PAV_VCF_hs1_mm2.tar",
+  "whole_archive_md5_verified": false
+}

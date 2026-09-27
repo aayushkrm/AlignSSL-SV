@@ -8,4 +8,7 @@ sacct -j 1598015,1598016 --format=JobID,JobName,State,ExitCode,Elapsed,NodeList 
 
 An inspection of /scratch/igorno-alignssl_restart_20260922 at depth <= 3
 found no Manta-named output directory or slurm-159801*.out file. These jobs
-failed at startup; no caller result was interpreted.
+were initially described as having failed at startup; no caller result was
+interpreted. Correction after read-only recheck: `0:53` confirms signal
+termination after four seconds but does not prove the script never began.
+See 2026-09-24-manta-signal53-recheck.txt.

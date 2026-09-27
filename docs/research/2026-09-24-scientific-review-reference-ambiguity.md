@@ -63,5 +63,8 @@ FASTA source hashes and reproduced every BED byte and scientific summary field
 of the prior 18-contig map. This resolves finding 2 for the *saved map*; it
 does not change finding 1 or authorize a cohort. The successful archived-FASTA
 checksum record and final-analysis manifest resolve the missing bundle
-evidence in finding 4. The PAV TAR member-log/scanner and all donor-callability
-and read-alignment gates remain open.
+evidence in finding 4. A subsequent
+[PAV TAR replay](2026-09-24-pav-tar-header-replay.md) supplied the missing
+scanner and member logs for the two named archives, resolving finding 3 only
+for that narrow absence claim. All donor-callability and read-alignment gates
+remain open.

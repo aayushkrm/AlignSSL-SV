@@ -1,0 +1,6 @@
+Source: https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC3/working/20240307_PAV_VCF/MANIFEST_20231211_Freeze1_20240307
+Fetched as small text metadata on 2026-09-24. Columns: path, bytes, MD5.
+
+./20240307_PAV_VCF_hs1_mm2.tar 12857282560 167bb858385c36e64d27ab68ef4472cb
+./README_20240307_PAV_VCF 495 3705cffdcbe46b2b55f092ec6407dfbd
+./20240307_PAV_VCF_hg38_mm2.tar 12630108160 c4d379205f4fb3162de89a09abb12dca

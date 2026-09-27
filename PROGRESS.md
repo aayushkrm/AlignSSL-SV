@@ -81,8 +81,9 @@ reviewed; its evidence and design remain indexed in
   CRAM/CRAI access and header check passed for HG00512. Reference compatibility,
   pedigree-safe donor splits, and confident-negative regions remain the cohort
   gate before bulk downloading. Both Manta engineering fixture jobs `1598015`
-  and `1598016` failed at startup with scheduler signal 53 on different nodes;
-  no candidate set exists. The `sacct` record is in
+  and `1598016` terminated after four seconds with signal 53 on different
+  nodes; the execution point and signal sender are unresolved. No candidate
+  set exists. The `sacct` record is in
   `results/cluster_jobs/2026-09-24-manta-fixture-sacct.txt`. A third identical
   submission is not justified while the research direction is being reset.
 - ✅ Audited all 176,231 HGSVC3 SV records and 65 donor genotypes. There are
@@ -104,10 +105,14 @@ reviewed; its evidence and design remain indexed in
   scoring or donor-specific confident negatives; overlap with
   truth/candidates/flanks and donor callable regions still need inspection.
   Bulk 30× CRAM download remains on hold; see the paired callability/reference
-  audits and reconciliation. A reported member-header survey of both named
-  `20240307_PAV_VCF` working TARs found no callable BED member; other sources
-  or a validated PAV rerun remain open. The survey's raw member
-  log and runnable scanner still need archival before independent replication.
+  audits and reconciliation. A [reproducible header-only survey](docs/research/2026-09-24-pav-tar-header-replay.md)
+  of both named `20240307_PAV_VCF` working TARs found no BED or `callable`
+  member. Its scanner, member logs, and hashes are archived; other sources
+  or a validated PAV rerun remain open. A
+  [first-party source check](docs/research/2026-09-24-pav-callable-source-options.md)
+  found a concrete assembly route but no ready verified PAV 2.4.0.1 BED;
+  HG00514's corrected assembly must not be paired automatically with older
+  merged calls.
 - ✅ Jobs `1598077` and `1598079` staged and verified the full IGSR FASTA and
   scanned complete HGSVC/IGSR non-ACGT intervals with sequence M5 checks.
   Their raw artifacts and a verified joint BED are in
@@ -124,7 +129,9 @@ reviewed; its evidence and design remain indexed in
   BEDs and scientific summary fields from hashed FASTAs, closing the saved
   map's URL-input provenance gap. See
   `docs/research/2026-09-24-frozen-reference-replay.md`. Both 3-Mb Manta fixture attempts
-  failed at scheduler startup; no caller result exists.
+  ended after four seconds with signal 53; no caller result exists. The
+  [read-only diagnosis](docs/research/2026-09-24-manta-signal53-diagnosis.md)
+  does not establish that the batch script never started.
 - ⚠️ GIAB HG005/HG007 have public WGS alignments and v4.2.1 small-variant
   benchmark VCF/BED pairs, but no v5.x SV truth/BED pair was found. They are
   first-degree relatives and cannot serve as two independent SV confirmation
@@ -134,7 +141,7 @@ This restart deliberately preserves failed and null results. The aim is a
 reproducible improvement, but an infrastructure repair or a preprocessing
 change by itself is not evidence that SSL works.
 
-Verification at this checkpoint: 357 tests passed and 29 skipped; the
+Verification at this checkpoint: 367 tests passed and 29 skipped; the
 manuscript/result consistency checker passed.
 
 ---

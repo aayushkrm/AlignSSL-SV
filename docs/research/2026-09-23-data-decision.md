@@ -136,13 +136,15 @@ by simple interval overlap alone.
    before spending substantial GPU time. Only a fair scratch versus SSL
    comparison can establish value from pretraining.
 
-The bounded Manta fixture job `1598015` failed before startup on `hydra-n12`
-with scheduler signal 53. Its replacement `1598016` also failed before startup
-on `hydra-n1` with the same signal. Neither produced a candidate VCF. The
+The bounded Manta fixture job `1598015` terminated on `hydra-n12` after four
+seconds with signal 53. Its replacement `1598016` did the same on `hydra-n1`.
+The exact execution point and signal sender remain unknown; neither produced
+a candidate VCF. The
 [`sacct` record](../../results/cluster_jobs/2026-09-24-manta-fixture-sacct.txt)
-preserves both failures. A third identical submission is not justified without
-a launch-failure diagnosis and renewed scientific reason; the fixture is
-deliberately too small for a scientific score.
+preserves both failures; the [recheck](2026-09-24-manta-signal53-diagnosis.md)
+corrects the earlier "before startup" inference. A third identical submission
+is not justified without a launch-failure diagnosis and renewed scientific
+reason; the fixture is deliberately too small for a scientific score.
 
 The exact confirmation donors and full-data transfer size remain open until
 per-donor callable masks, pedigree separation, and complete reference

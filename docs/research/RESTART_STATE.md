@@ -99,9 +99,9 @@ the objective.
   missing genotype calls. See `2026-09-23-hgsvc3-genotype-audit.md`; these
   record-level counts do not define confident-negative regions.
 - The inspected HGSVC3 v1.0 release inventories have no donor-wide callable
-  BED. A reported member-header survey of both named `20240307_PAV_VCF`
-  working TARs found no callable BED member; independent replay is pending,
-  and this says nothing about other archives or rerunning PAV. PAV's smoothed
+  BED. A [reproducible member-header survey](2026-09-24-pav-tar-header-replay.md)
+  of both named `20240307_PAV_VCF` working TARs found no BED or `callable`
+  member. This says nothing about other archives or rerunning PAV. PAV's smoothed
   `_500` BED can bridge unaligned gaps, so raw alignment coverage is required
   for any negative label. A primary-source metadata comparison found 18 of 25
   canonical contigs with matching lengths but mismatched M5s between the HGSVC
@@ -120,9 +120,12 @@ the objective.
   bulk-download the matched CRAMs until the reference and negative-region gates
   resolve.
 - Manta fixture jobs `1598015` (`hydra-n12`) and `1598016` (`hydra-n1`) both
-  failed in four seconds with scheduler signal 53 before application startup.
+  terminated in four seconds with signal 53; the execution point and sender
+  are unresolved.
   No Manta-named output directory was found in the scratch workspace. The
-  `sacct` evidence is in `results/cluster_jobs/2026-09-24-manta-fixture-sacct.txt`.
+  `sacct` evidence is in `results/cluster_jobs/2026-09-24-manta-fixture-sacct.txt`;
+  a [read-only recheck](2026-09-24-manta-signal53-diagnosis.md) documents a
+  related GIAB job with the same signal and corrects the earlier startup claim.
   No candidate set exists; do not submit a third identical fixture without a
   revised scientific need and launch-failure diagnosis.
 - IGSR full-reference snapshot job `1598077` and dependent ambiguity-scan job
@@ -148,7 +151,7 @@ the objective.
 ## Verification checkpoint
 
 - Baseline before edits: 289 passed, 29 skipped.
-- Current suite from the repository root: 357 passed, 29 skipped in 174.64s
+- Current suite from the repository root: 367 passed, 29 skipped in 233.18s
   using `../.venv/bin/python -m pytest -q`.
 - `analysis/check_manuscript.py`: passed.
 - Released checkpoint archive: 52,913,192 bytes; SHA-256 matches the release
@@ -167,10 +170,10 @@ the objective.
 1. Compare several important SV research directions and their closest prior
    art; choose a high-information, cheap falsification diagnostic before any
    large training campaign. Obtain independent Sol/high review of that choice.
-2. Finish reference provenance/ambiguity and donor-callability gates before
-   using HGSVC3/IGSR for candidate labels. The ambiguity BED is not a
-   confident-negative mask.
-3. Diagnose the two scheduler-startup failures before any revised Manta
+2. Finish the donor-callability and read-alignment bridge before using
+   HGSVC3/IGSR for candidate labels. The reference-ambiguity and two-TAR
+   inventories are complete but neither supplies a confident-negative mask.
+3. Diagnose the two signal-53 terminations before any revised Manta
    fixture. Do not relaunch the same job unchanged or assume the eventual
    research question is SSL candidate filtering.
 4. Once a direction is chosen, freeze its baselines, split/test protection,

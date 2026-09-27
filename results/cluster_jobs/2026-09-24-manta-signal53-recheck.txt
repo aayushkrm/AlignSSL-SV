@@ -1,0 +1,22 @@
+Read-only cluster accounting recheck, 2026-09-24:
+ssh scc 'sacct -j 1598013,1598015,1598016,1598070,1598267 --format=JobID,JobName,State,ExitCode,Elapsed,NodeList,Start,End -n -P'
+
+1598013|alignssl-giab-v5|FAILED|0:53|00:00:04|hydra-n12|2026-09-23T05:29:22|2026-09-23T05:29:26
+1598013.batch|batch|CANCELLED|0:53|00:00:04|hydra-n12|2026-09-23T05:29:22|2026-09-23T05:29:26
+1598015|alignssl-manta-fixture|FAILED|0:53|00:00:04|hydra-n12|2026-09-23T05:36:18|2026-09-23T05:36:22
+1598015.batch|batch|CANCELLED|0:53|00:00:04|hydra-n12|2026-09-23T05:36:18|2026-09-23T05:36:22
+1598016|alignssl-manta-fixture|FAILED|0:53|00:00:04|hydra-n1|2026-09-23T15:19:11|2026-09-23T15:19:15
+1598016.batch|batch|CANCELLED|0:53|00:00:04|hydra-n1|2026-09-23T15:19:11|2026-09-23T15:19:15
+1598070|alignssl-reference-map|COMPLETED|0:0|00:17:21|hydra-n12|2026-09-23T13:14:54|2026-09-23T13:32:15
+1598070.batch|batch|COMPLETED|0:0|00:17:21|hydra-n12|2026-09-23T13:14:54|2026-09-23T13:32:15
+1598267|alignssl-frozen-reference-map|COMPLETED|0:0|00:01:29|hydra-n1|2026-09-24T00:34:14|2026-09-24T00:35:43
+1598267.batch|batch|COMPLETED|0:0|00:01:29|hydra-n1|2026-09-24T00:34:14|2026-09-24T00:35:43
+
+Read-only configuration check, 2026-09-24:
+ssh scc 'scontrol show config | awk "/^[[:space:]]*Prolog[[:space:]]*=|^[[:space:]]*PrologSlurmctld[[:space:]]*=/"'
+
+Prolog                  = (null)
+PrologSlurmctld         = (null)
+
+Interpretation: signal termination is recorded, not the exact execution point
+or signal sender. No caller output was found; do not infer a Manta result.
