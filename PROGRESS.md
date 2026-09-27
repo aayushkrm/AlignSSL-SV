@@ -153,6 +153,14 @@ reviewed; its evidence and design remain indexed in
   released outputs cannot establish an internal candidate-generation ceiling,
   and that the proposed thresholds/denominators are not ready to freeze.
   **No controlled recall experiment or large compute campaign is approved.**
+- ⚠️ A [bounded first-party check](docs/research/2026-09-28-zenodo-sv-package-gate.md)
+  of the newer 2026 benchmark found that its 3.33-GB `sv.gz` package is a
+  concatenated gzip stream, with no published per-caller member index. Only
+  its first 4 MiB were read; the first members are HG002 long-read indexes and
+  an incomplete long-read VCF. The paper documents processed MetaSV output,
+  DRAGEN, and Dysgu, not released raw candidates from the six component
+  callers. This package is not currently an actionable cheap candidate-stage
+  panel; the short-read members remain uninspected.
 
 This restart deliberately preserves failed and null results. The aim is a
 reproducible improvement, but an infrastructure repair or a preprocessing

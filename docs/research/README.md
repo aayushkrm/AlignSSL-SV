@@ -18,6 +18,7 @@ results.
 | [`2026-09-27-hg002-precomputed-callsets.md`](2026-09-27-hg002-precomputed-callsets.md) | First-party inventory of small published HG002 caller VCFs | Historical Parliament2/HitSV outputs found; exact source/reference and modern panel gates open |
 | [`2026-09-27-direction-triage.md`](2026-09-27-direction-triage.md) | Conditional high-impact decision on the next no-training falsifier | Candidate-union recall favored, but only after compatible inputs and independent protocol review |
 | [`2026-09-28-parliament2-header-gate.md`](2026-09-28-parliament2-header-gate.md) | Pinned nine-file VCF header and independent protocol gate | Exact reference/candidate-stage provenance absent; no controlled ceiling experiment frozen |
+| [`2026-09-28-zenodo-sv-package-gate.md`](2026-09-28-zenodo-sv-package-gate.md) | First-party 2026 SV data package/prefix audit | No per-caller member manifest or proven raw MetaSV component candidates; 4-MiB prefix only |
 | [`2026-09-23-data-decision.md`](2026-09-23-data-decision.md) | Verified holdings, current GIAB benchmark, and staged new-data plan | 63 public CRAM index matches; callable-region gate pending |
 | [`2026-09-23-hgsvc3-genotype-audit.md`](2026-09-23-hgsvc3-genotype-audit.md) | Reproducible per-donor deletion genotype inventory | 64,428 DEL loci ≥50 bp; no confident-negative inference |
 | [`2026-09-23-hgsvc3-callability-audit.md`](2026-09-23-hgsvc3-callability-audit.md) | Primary-source search for donor-wide callable regions and negative-label gate | No mask in inspected v1.0 inventories; two working TARs assessed separately |
@@ -47,3 +48,17 @@ results.
    and calibration are selected only from training-side data.
 5. Null and failed runs stay in the record. Publication language changes only
    after an independent review of a frozen analysis.
+
+## Research-source workflow
+
+Use connected research tools to discover and cross-check leads, then anchor
+load-bearing claims to publisher papers, official repositories, benchmark
+manifests, and first-party dataset records. In the 2026-09-28 source audit,
+the ChatGPT Firecrawl paper-index plugin located article metadata, Scite
+returned targeted full-text/citation context, and Exa surfaced a newer
+candidate dataset lead. A Firecrawl page scrape could not pass a PMC cookie
+policy, so the first-party Europe PMC full-text XML supplied the methods;
+Zenodo's API and bounded HTTP ranges supplied package evidence. These are
+distinct roles: search snippets, citation classifications, plugin toggle
+states, and VCF filenames alone do not establish run provenance or biological
+validity. Firecrawl here is a connected plugin, not an assumed CLI.

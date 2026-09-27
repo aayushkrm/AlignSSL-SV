@@ -61,7 +61,11 @@ the objective.
   [nine-file Parliament2 header audit](2026-09-28-parliament2-header-gate.md)
   verifies the published bytes but does not establish exact reference,
   sample, or emitted-candidate identity. An independent review left the
-  candidate-generation experiment unfrozen.
+  candidate-generation experiment unfrozen. A
+  [first-party 2026 package check](2026-09-28-zenodo-sv-package-gate.md) found
+  only a concatenated gzip stream behind the 3.33-GB `sv.gz` file and no
+  published per-caller member index; the associated paper describes processed
+  MetaSV/DRAGEN/Dysgu callsets, not raw component candidates.
 
 ## Cluster recovery state
 

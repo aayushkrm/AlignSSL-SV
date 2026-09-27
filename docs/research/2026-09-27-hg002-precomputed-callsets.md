@@ -81,3 +81,10 @@ records were scored and no raw VCF was saved. See the
 [header gate](2026-09-28-parliament2-header-gate.md). Its no-go for a
 controlled candidate-generation ceiling supersedes the exploratory-go wording
 above; this inventory remains a source-discovery record.
+
+The [Zenodo package prefix check](2026-09-28-zenodo-sv-package-gate.md) further
+shows that `sv.gz` is a concatenation of gzip members rather than a top-level
+per-caller download manifest. Its first four names are indexes/long-read data;
+the full package and short-read members remain uninspected. The associated
+paper documents processed MetaSV output, not released component-caller raw
+candidates, so this source also remains outside the candidate-stage gate.

@@ -80,3 +80,11 @@ several have no contig/reference declaration. An independent reviewer found
 the candidate-generation estimand untestable with these released outputs and
 the proposed thresholds unjustified. The no-go and review gates are in
 [`2026-09-28-parliament2-header-gate.md`](2026-09-28-parliament2-header-gate.md).
+
+**Literature refresh:** The August 2026 [SVkhor medRxiv preprint](https://www.medrxiv.org/content/10.64898/2026.07.30.26359319v1)
+already presents caller-aware normalization, within-technology merging, and
+cross-technology integration of short-read, long-read, and optical-mapping SV
+callsets, with HG002 benchmarking. It does not resolve our raw candidate-stage
+input problem, but it further weakens an undifferentiated “merge more SV
+callers” novelty claim. Its clinical-trio individual-level data are not public,
+so they are not an immediately usable independent confirmation cohort.
