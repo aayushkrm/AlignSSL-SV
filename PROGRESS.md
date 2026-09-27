@@ -1,10 +1,9 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-09-24**. Structure: **Part I** is the current, authoritative
-status — read this. **Part II** is the dated chronological log, kept for
-provenance; where Part I and Part II disagree, Part I is correct. Maps to the
-Phase 0–5 plan in `docs/project.md`, whose §16 carries the matching
-audit outcome._
+_Last updated: **2026-09-28**. The research-restart section immediately below
+is authoritative for the new direction; Part I and Part II retain the
+historical SSL study and its negative result. Maps to the Phase 0–5 plan in
+`docs/project.md`, whose §16 carries the historical audit outcome._
 
 **Legend:** ✅ done & verified · 🟡 in progress · ⬜ not started · ⚠️ decision/caveat for you
 
@@ -136,12 +135,30 @@ reviewed; its evidence and design remain indexed in
   benchmark VCF/BED pairs, but no v5.x SV truth/BED pair was found. They are
   first-degree relatives and cannot serve as two independent SV confirmation
   donors. See `docs/research/2026-09-24-giab-multidonor-feasibility.md`.
+- 🟡 A [first-party inventory](docs/research/2026-09-27-hg002-precomputed-callsets.md)
+  found small published HG002 caller VCFs: nine Parliament2 files from six
+  historical caller families on nominal hs37d5, plus HitSV GRCh38 outputs.
+  Exact reference sequence and per-file run provenance are not verified; these
+  do not yet form a controlled contemporary candidate panel. A conditional
+  [direction triage](docs/research/2026-09-27-direction-triage.md) favors a
+  no-training candidate-union recall falsifier with truth/matcher sensitivity,
+  but only after compatible inputs and independent protocol review. No new
+  caller result or performance gain is claimed.
+- ⚠️ A [pinned nine-file header audit](docs/research/2026-09-28-parliament2-header-gate.md)
+  verified 9,232,207 Parliament2 VCF bytes against Git blob IDs and recorded
+  SHA-256/header metadata without scoring variants or saving VCFs. None of the
+  nine headers has contig-sequence M5 provenance; BreakDancer and CNVnator do
+  not provide an HG002 sample column, and several files lack any reference or
+  contig declaration. An independent reviewer found that these historical
+  released outputs cannot establish an internal candidate-generation ceiling,
+  and that the proposed thresholds/denominators are not ready to freeze.
+  **No controlled recall experiment or large compute campaign is approved.**
 
 This restart deliberately preserves failed and null results. The aim is a
 reproducible improvement, but an infrastructure repair or a preprocessing
 change by itself is not evidence that SSL works.
 
-Verification at this checkpoint: 367 tests passed and 29 skipped; the
+Verification at this checkpoint: 372 tests passed and 29 skipped; the
 manuscript/result consistency checker passed.
 
 ---

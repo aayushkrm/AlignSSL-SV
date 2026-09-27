@@ -1,0 +1,15 @@
+{
+  "purpose": "Header and Git-blob integrity audit only; no variant scoring or raw VCF preservation",
+  "base_url": "https://raw.githubusercontent.com/slzarate/parliament2/b6bd509e954cf5aeae508ce1d03bdd6690c3bdb6/benchmarking_data/hg002_benchmarks/sv_caller_outputs/",
+  "files": [
+    {"name": "HG002-NA24385-50x.70_percent.markdup.realigned.breakdancer.vcf", "bytes": 736797, "git_blob_sha1": "42a6cee49cd96ed03a222694c66b372aa7264a9b"},
+    {"name": "HG002-NA24385-50x.70_percent.markdup.realigned.breakseq.vcf", "bytes": 256452, "git_blob_sha1": "67996cd25993db00292b3a9fd0d242d1783de65c"},
+    {"name": "HG002-NA24385-50x.70_percent.markdup.realigned.cnvnator.vcf", "bytes": 1283026, "git_blob_sha1": "597a44c5af988bc647dc4478221d6243c5d6b3ba"},
+    {"name": "HG002-NA24385-50x.70_percent.markdup.realigned.delly.deletion.vcf", "bytes": 2864514, "git_blob_sha1": "84a419159c591686962c511fcdbe893221ccae86"},
+    {"name": "HG002-NA24385-50x.70_percent.markdup.realigned.delly.duplication.vcf", "bytes": 579671, "git_blob_sha1": "fff5ca2f5839a9d20f2d19f258a0cceb55975f21"},
+    {"name": "HG002-NA24385-50x.70_percent.markdup.realigned.delly.insertion.vcf", "bytes": 1581178, "git_blob_sha1": "48245056f6378da25317c7e0060e8dbb44117c9a"},
+    {"name": "HG002-NA24385-50x.70_percent.markdup.realigned.delly.inversion.vcf", "bytes": 614297, "git_blob_sha1": "7613f82a62f3618cd9d5f383f766e17e080e5e75"},
+    {"name": "HG002-NA24385-50x.70_percent.markdup.realigned.lumpy.vcf", "bytes": 503986, "git_blob_sha1": "1a5a3602f88eeabf9de13c7c4ce803235196f042"},
+    {"name": "HG002-NA24385-50x.70_percent.markdup.realigned.manta.diploidSV.vcf.gz", "bytes": 812286, "git_blob_sha1": "0d3cbe9c5e625de07fd17cb240f0e75c2bb831af"}
+  ]
+}

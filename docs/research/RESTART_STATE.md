@@ -54,10 +54,21 @@ the objective.
   suspended preliminary option, not the approved next experiment. The
   primary-source comparison in `2026-09-23-research-pivots.md` ranks
   candidate-recall failure in difficult strata as a lead for a cheap
-  falsification test, not an approved method or positive result.
+  falsification test, not an approved method or positive result. The
+  [conditional direction triage](2026-09-27-direction-triage.md) favors a
+  no-training recall audit with truth/matcher sensitivity, but not a campaign
+  until caller and reference compatibility are verified. The
+  [nine-file Parliament2 header audit](2026-09-28-parliament2-header-gate.md)
+  verifies the published bytes but does not establish exact reference,
+  sample, or emitted-candidate identity. An independent review left the
+  candidate-generation experiment unfrozen.
 
 ## Cluster recovery state
 
+- Read-only `squeue -u igorno` on 2026-09-28 showed no queued or running jobs.
+  `ws_list` confirmed the restart scratch directory expires 2026-10-22
+  23:02:50 cluster-local time, with one extension available. No cluster job or
+  bulk transfer was launched for the Parliament2 header gate.
 - Fresh scratch workspace: `/scratch/igorno-alignssl_restart_20260922`, expiring
   2026-10-22 unless extended.
 - SLURM job `1597945` failed before application startup on `hydra-n4` with
@@ -151,7 +162,7 @@ the objective.
 ## Verification checkpoint
 
 - Baseline before edits: 289 passed, 29 skipped.
-- Current suite from the repository root: 367 passed, 29 skipped in 233.18s
+- Current suite from the repository root: 372 passed, 29 skipped in 164.25s
   using `../.venv/bin/python -m pytest -q`.
 - `analysis/check_manuscript.py`: passed.
 - Released checkpoint archive: 52,913,192 bytes; SHA-256 matches the release
@@ -167,9 +178,13 @@ the objective.
 
 ## Immediate next gates
 
-1. Compare several important SV research directions and their closest prior
-   art; choose a high-information, cheap falsification diagnostic before any
-   large training campaign. Obtain independent Sol/high review of that choice.
+1. The small published HG002 Parliament2 VCFs have passed a byte/header audit
+   but lack exact reference and candidate-stage provenance. Search for a
+   compatible contemporary same-reads/same-reference candidate panel or
+   construct one under a bounded protocol. If one exists, freeze the
+   candidate-union recall falsifier and obtain independent Sol/high protocol
+   review before compute. If not, record the input-feasibility failure rather
+   than treating historical final calls as an internal candidate ceiling.
 2. Finish the donor-callability and read-alignment bridge before using
    HGSVC3/IGSR for candidate labels. The reference-ambiguity and two-TAR
    inventories are complete but neither supplies a confident-negative mask.

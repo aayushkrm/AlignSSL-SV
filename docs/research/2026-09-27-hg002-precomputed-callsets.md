@@ -74,3 +74,10 @@ The older Parliament2 calls and modern HitSV callsets differ in data provenance,
 - 2026 Genome Biology [paper](https://doi.org/10.1186/s13059-026-04048-4) and [Zenodo record metadata](https://zenodo.org/records/18868532).
 
 Only web pages, repository trees, file metadata, manifests, and LFS pointers were read. No candidate VCF body, BAM/CRAM, reference FASTA, or multi-gigabyte archive was downloaded; no cluster resource was used.
+
+**Subsequent check (2026-09-28):** The small Parliament2 VCF bytes were later
+fetched transiently for Git-blob verification and header parsing; no variant
+records were scored and no raw VCF was saved. See the
+[header gate](2026-09-28-parliament2-header-gate.md). Its no-go for a
+controlled candidate-generation ceiling supersedes the exploratory-go wording
+above; this inventory remains a source-discovery record.

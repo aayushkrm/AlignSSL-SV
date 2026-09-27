@@ -15,6 +15,9 @@ results.
 | [`2026-09-22-independent-audit.md`](2026-09-22-independent-audit.md) | Independent scientific/code review and resolution ledger | Two engineering findings addressed; one open |
 | [`2026-09-22-literature-directions.md`](2026-09-22-literature-directions.md) | Nearby work and falsifiable research directions | Core primary-source ledger complete; BASILISC methods unresolved |
 | [`2026-09-23-research-pivots.md`](2026-09-23-research-pivots.md) | Comparison of broader SV questions and closest prior art | Candidate-recall failure in difficult strata is a lead, not a selected method or result |
+| [`2026-09-27-hg002-precomputed-callsets.md`](2026-09-27-hg002-precomputed-callsets.md) | First-party inventory of small published HG002 caller VCFs | Historical Parliament2/HitSV outputs found; exact source/reference and modern panel gates open |
+| [`2026-09-27-direction-triage.md`](2026-09-27-direction-triage.md) | Conditional high-impact decision on the next no-training falsifier | Candidate-union recall favored, but only after compatible inputs and independent protocol review |
+| [`2026-09-28-parliament2-header-gate.md`](2026-09-28-parliament2-header-gate.md) | Pinned nine-file VCF header and independent protocol gate | Exact reference/candidate-stage provenance absent; no controlled ceiling experiment frozen |
 | [`2026-09-23-data-decision.md`](2026-09-23-data-decision.md) | Verified holdings, current GIAB benchmark, and staged new-data plan | 63 public CRAM index matches; callable-region gate pending |
 | [`2026-09-23-hgsvc3-genotype-audit.md`](2026-09-23-hgsvc3-genotype-audit.md) | Reproducible per-donor deletion genotype inventory | 64,428 DEL loci ≥50 bp; no confident-negative inference |
 | [`2026-09-23-hgsvc3-callability-audit.md`](2026-09-23-hgsvc3-callability-audit.md) | Primary-source search for donor-wide callable regions and negative-label gate | No mask in inspected v1.0 inventories; two working TARs assessed separately |
