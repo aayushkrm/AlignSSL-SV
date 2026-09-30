@@ -1,0 +1,53 @@
+{
+  "record_type": "authored operational evidence ledger, not biological results",
+  "date_utc": "2026-09-30",
+  "failed_remote_inventories_accepted": false,
+  "range_failure": {
+    "reason": "HEAD Last-Modified validator omitted by the 206 Range response",
+    "guo_api_route": "https://zenodo.org/api/records/20410726/files/linear-NA12878.zip/content",
+    "guo_public_route": "https://zenodo.org/records/20410726/files/linear-NA12878.zip",
+    "svupp_pipeline_public_route": "https://zenodo.org/records/17227287/files/SVUPP.zip",
+    "auditor_terminal_probe_requested_bytes": 22,
+    "auditor_response_body_consumed_before_rejection": 0,
+    "separate_curl_header_diagnostic": "Guo API returned 206, Content-Length 22 and correct Content-Range but no Last-Modified/ETag; 22-byte body discarded"
+  },
+  "verified_whole_archives": [
+    {
+      "local_name": "guo-20410726-linear-NA12878.zip",
+      "bytes": 434544359,
+      "published_and_actual_md5": "cef8268e5dc77d9881b35f90875151c0",
+      "member_count": 103,
+      "vcf_headers_inspected": 14,
+      "unzip_t_exit_code": 0
+    },
+    {
+      "local_name": "svupp-17227287.zip",
+      "bytes": 118468,
+      "published_and_actual_md5": "72a522927785cdbe9a528d2202738f3a",
+      "member_count": 95,
+      "vcf_headers_inspected": 0,
+      "unzip_t_exit_code": 0
+    },
+    {
+      "local_name": "svupp-17569072-paper.zip",
+      "bytes": 47443427,
+      "published_and_actual_md5": "5469337ca9249691b2b376ceb9b67e1d",
+      "member_count": 26,
+      "vcf_headers_inspected": 5,
+      "unzip_t_exit_code": 0
+    }
+  ],
+  "local_archive_directory": "/Users/akm/aayushkrm-AlignSSL/data/source_archives",
+  "archives_tracked_in_git": false,
+  "archive_integrity_command": "unzip -t <exact local archive>; no extraction",
+  "biological_records_parsed": 0,
+  "truth_genotypes_compared": false,
+  "performance_tables_or_plots_inspected": false,
+  "bundled_code_executed": false,
+  "follow_on_genomic_acquisition_authorized_by_this_checkpoint": false,
+  "limitations": [
+    "Checksum/integrity verification does not validate biological labels or run provenance.",
+    "The pipeline and assessment archives are distinct versions of the same SVUPP source package.",
+    "Available SVUPP genotype predictions are pedigree development data, not unrelated-donor confirmation."
+  ]
+}

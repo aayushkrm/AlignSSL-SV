@@ -1,0 +1,788 @@
+{
+  "actual_bytes": 118468,
+  "actual_md5": "72a522927785cdbe9a528d2202738f3a",
+  "biological_records_parsed": 0,
+  "downloaded_code_executed": false,
+  "limits": [
+    "Names and header declarations do not establish caller stage or callability.",
+    "Header declarations do not establish score calibration or record completeness.",
+    "No internal-candidate ceiling, genotype accuracy or publication claim."
+  ],
+  "max_uncompressed_header_bytes_per_member": 1048576,
+  "member_count": 95,
+  "member_extraction_performed": false,
+  "members": [
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 0,
+      "name": "SVUPP/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 1573,
+      "compression_method": 8,
+      "crc32": "03ec87e5",
+      "header_offset": 68,
+      "name": "SVUPP/.gitignore",
+      "uncompressed_size": 3513
+    },
+    {
+      "compressed_size": 630,
+      "compression_method": 8,
+      "crc32": "57c434c4",
+      "header_offset": 1735,
+      "name": "SVUPP/LICENSE",
+      "uncompressed_size": 1066
+    },
+    {
+      "compressed_size": 2963,
+      "compression_method": 8,
+      "crc32": "29b7907f",
+      "header_offset": 2456,
+      "name": "SVUPP/README.org",
+      "uncompressed_size": 8082
+    },
+    {
+      "compressed_size": 747,
+      "compression_method": 8,
+      "crc32": "6933b4d2",
+      "header_offset": 5513,
+      "name": "SVUPP/main.nf",
+      "uncompressed_size": 2468
+    },
+    {
+      "compressed_size": 1083,
+      "compression_method": 8,
+      "crc32": "181d94f1",
+      "header_offset": 6351,
+      "name": "SVUPP/nextflow.config",
+      "uncompressed_size": 6213
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 7533,
+      "name": "SVUPP/.git/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 63,
+      "compression_method": 8,
+      "crc32": "1f078b37",
+      "header_offset": 7606,
+      "name": "SVUPP/.git/description",
+      "uncompressed_size": 73
+    },
+    {
+      "compressed_size": 1940,
+      "compression_method": 8,
+      "crc32": "30604658",
+      "header_offset": 7769,
+      "name": "SVUPP/.git/index",
+      "uncompressed_size": 3829
+    },
+    {
+      "compressed_size": 193,
+      "compression_method": 8,
+      "crc32": "dfb13a5d",
+      "header_offset": 9803,
+      "name": "SVUPP/.git/config",
+      "uncompressed_size": 279
+    },
+    {
+      "compressed_size": 132,
+      "compression_method": 8,
+      "crc32": "68255662",
+      "header_offset": 10091,
+      "name": "SVUPP/.git/packed-refs",
+      "uncompressed_size": 177
+    },
+    {
+      "compressed_size": 23,
+      "compression_method": 8,
+      "crc32": "576463b5",
+      "header_offset": 10323,
+      "name": "SVUPP/.git/HEAD",
+      "uncompressed_size": 21
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 10439,
+      "name": "SVUPP/.git/info/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 173,
+      "compression_method": 8,
+      "crc32": "21cd3d77",
+      "header_offset": 10517,
+      "name": "SVUPP/.git/info/exclude",
+      "uncompressed_size": 240
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 10791,
+      "name": "SVUPP/.git/hooks/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 701,
+      "compression_method": 8,
+      "crc32": "f90a0f0f",
+      "header_offset": 10870,
+      "name": "SVUPP/.git/hooks/pre-push.sample",
+      "uncompressed_size": 1374
+    },
+    {
+      "compressed_size": 1791,
+      "compression_method": 8,
+      "crc32": "6398b950",
+      "header_offset": 11681,
+      "name": "SVUPP/.git/hooks/fsmonitor-watchman.sample",
+      "uncompressed_size": 4655
+    },
+    {
+      "compressed_size": 279,
+      "compression_method": 8,
+      "crc32": "09f84f85",
+      "header_offset": 13592,
+      "name": "SVUPP/.git/hooks/applypatch-msg.sample",
+      "uncompressed_size": 478
+    },
+    {
+      "compressed_size": 329,
+      "compression_method": 8,
+      "crc32": "96f8c492",
+      "header_offset": 13987,
+      "name": "SVUPP/.git/hooks/pre-receive.sample",
+      "uncompressed_size": 544
+    },
+    {
+      "compressed_size": 744,
+      "compression_method": 8,
+      "crc32": "303613ed",
+      "header_offset": 14429,
+      "name": "SVUPP/.git/hooks/prepare-commit-msg.sample",
+      "uncompressed_size": 1492
+    },
+    {
+      "compressed_size": 1173,
+      "compression_method": 8,
+      "crc32": "06fcf0d9",
+      "header_offset": 15293,
+      "name": "SVUPP/.git/hooks/update.sample",
+      "uncompressed_size": 3650
+    },
+    {
+      "compressed_size": 265,
+      "compression_method": 8,
+      "crc32": "024cc0cf",
+      "header_offset": 16574,
+      "name": "SVUPP/.git/hooks/pre-applypatch.sample",
+      "uncompressed_size": 424
+    },
+    {
+      "compressed_size": 503,
+      "compression_method": 8,
+      "crc32": "10caf8e9",
+      "header_offset": 16955,
+      "name": "SVUPP/.git/hooks/commit-msg.sample",
+      "uncompressed_size": 896
+    },
+    {
+      "compressed_size": 138,
+      "compression_method": 8,
+      "crc32": "c0f70c9a",
+      "header_offset": 17570,
+      "name": "SVUPP/.git/hooks/post-update.sample",
+      "uncompressed_size": 189
+    },
+    {
+      "compressed_size": 1254,
+      "compression_method": 8,
+      "crc32": "f00806d3",
+      "header_offset": 17821,
+      "name": "SVUPP/.git/hooks/push-to-checkout.sample",
+      "uncompressed_size": 2783
+    },
+    {
+      "compressed_size": 255,
+      "compression_method": 8,
+      "crc32": "5ef33f44",
+      "header_offset": 19193,
+      "name": "SVUPP/.git/hooks/pre-merge-commit.sample",
+      "uncompressed_size": 416
+    },
+    {
+      "compressed_size": 908,
+      "compression_method": 8,
+      "crc32": "0c32b3ef",
+      "header_offset": 19566,
+      "name": "SVUPP/.git/hooks/pre-commit.sample",
+      "uncompressed_size": 1643
+    },
+    {
+      "compressed_size": 2015,
+      "compression_method": 8,
+      "crc32": "5158ec84",
+      "header_offset": 20586,
+      "name": "SVUPP/.git/hooks/pre-rebase.sample",
+      "uncompressed_size": 4898
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 22713,
+      "name": "SVUPP/.git/branches/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 22795,
+      "name": "SVUPP/.git/refs/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 22873,
+      "name": "SVUPP/.git/refs/heads/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 41,
+      "compression_method": 8,
+      "crc32": "c7855b19",
+      "header_offset": 22957,
+      "name": "SVUPP/.git/refs/heads/main",
+      "uncompressed_size": 41
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 23102,
+      "name": "SVUPP/.git/refs/tags/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 23185,
+      "name": "SVUPP/.git/refs/remotes/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 23271,
+      "name": "SVUPP/.git/refs/remotes/origin/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 32,
+      "compression_method": 8,
+      "crc32": "6542ed44",
+      "header_offset": 23364,
+      "name": "SVUPP/.git/refs/remotes/origin/HEAD",
+      "uncompressed_size": 30
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 23509,
+      "name": "SVUPP/.git/objects/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 23590,
+      "name": "SVUPP/.git/objects/pack/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 51852,
+      "compression_method": 8,
+      "crc32": "af6269c6",
+      "header_offset": 23676,
+      "name": "SVUPP/.git/objects/pack/pack-d8e1f0baf38dd8e236dd708866ccd22c104fae2f.pack",
+      "uncompressed_size": 57338
+    },
+    {
+      "compressed_size": 9347,
+      "compression_method": 8,
+      "crc32": "a7a9945a",
+      "header_offset": 75680,
+      "name": "SVUPP/.git/objects/pack/pack-d8e1f0baf38dd8e236dd708866ccd22c104fae2f.idx",
+      "uncompressed_size": 10144
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 85178,
+      "name": "SVUPP/.git/objects/info/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 85264,
+      "name": "SVUPP/.git/logs/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 130,
+      "compression_method": 8,
+      "crc32": "ff4aa812",
+      "header_offset": 85342,
+      "name": "SVUPP/.git/logs/HEAD",
+      "uncompressed_size": 178
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 85570,
+      "name": "SVUPP/.git/logs/refs/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 85653,
+      "name": "SVUPP/.git/logs/refs/remotes/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 85744,
+      "name": "SVUPP/.git/logs/refs/remotes/origin/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 130,
+      "compression_method": 8,
+      "crc32": "ff4aa812",
+      "header_offset": 85842,
+      "name": "SVUPP/.git/logs/refs/remotes/origin/HEAD",
+      "uncompressed_size": 178
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 86090,
+      "name": "SVUPP/.git/logs/refs/heads/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 130,
+      "compression_method": 8,
+      "crc32": "ff4aa812",
+      "header_offset": 86179,
+      "name": "SVUPP/.git/logs/refs/heads/main",
+      "uncompressed_size": 178
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 86418,
+      "name": "SVUPP/.github/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 86494,
+      "name": "SVUPP/.github/workflows/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 649,
+      "compression_method": 8,
+      "crc32": "ded0973a",
+      "header_offset": 86580,
+      "name": "SVUPP/.github/workflows/main.yml",
+      "uncompressed_size": 1292
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 87339,
+      "name": "SVUPP/containers/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 761,
+      "compression_method": 8,
+      "crc32": "106be706",
+      "header_offset": 87418,
+      "name": "SVUPP/containers/Dockerfile",
+      "uncompressed_size": 1855
+    },
+    {
+      "compressed_size": 338,
+      "compression_method": 8,
+      "crc32": "21287986",
+      "header_offset": 88284,
+      "name": "SVUPP/containers/README.org",
+      "uncompressed_size": 655
+    },
+    {
+      "compressed_size": 769,
+      "compression_method": 8,
+      "crc32": "29755aa0",
+      "header_offset": 88727,
+      "name": "SVUPP/containers/svupp.def",
+      "uncompressed_size": 2093
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 89600,
+      "name": "SVUPP/modules/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 89676,
+      "name": "SVUPP/modules/cuteSV2/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 89760,
+      "name": "SVUPP/modules/cuteSV2/force_calling/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 217,
+      "compression_method": 8,
+      "crc32": "1bff922c",
+      "header_offset": 89858,
+      "name": "SVUPP/modules/cuteSV2/force_calling/environment.yaml",
+      "uncompressed_size": 321
+    },
+    {
+      "compressed_size": 478,
+      "compression_method": 8,
+      "crc32": "d6d4d75a",
+      "header_offset": 90205,
+      "name": "SVUPP/modules/cuteSV2/force_calling/main.nf",
+      "uncompressed_size": 1135
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 90804,
+      "name": "SVUPP/modules/quilt2/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 90887,
+      "name": "SVUPP/modules/quilt2/chunk/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 193,
+      "compression_method": 8,
+      "crc32": "0242391a",
+      "header_offset": 90976,
+      "name": "SVUPP/modules/quilt2/chunk/environment.yaml",
+      "uncompressed_size": 290
+    },
+    {
+      "compressed_size": 832,
+      "compression_method": 8,
+      "crc32": "4e354816",
+      "header_offset": 91290,
+      "name": "SVUPP/modules/quilt2/chunk/main.nf",
+      "uncompressed_size": 1810
+    },
+    {
+      "compressed_size": 932,
+      "compression_method": 8,
+      "crc32": "024b747e",
+      "header_offset": 92234,
+      "name": "SVUPP/modules/quilt2/chunk/meta.yaml",
+      "uncompressed_size": 2281
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 93280,
+      "name": "SVUPP/modules/quilt2/impute/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 193,
+      "compression_method": 8,
+      "crc32": "0242391a",
+      "header_offset": 93370,
+      "name": "SVUPP/modules/quilt2/impute/environment.yaml",
+      "uncompressed_size": 290
+    },
+    {
+      "compressed_size": 1014,
+      "compression_method": 8,
+      "crc32": "a24922ed",
+      "header_offset": 93685,
+      "name": "SVUPP/modules/quilt2/impute/main.nf",
+      "uncompressed_size": 2491
+    },
+    {
+      "compressed_size": 1942,
+      "compression_method": 8,
+      "crc32": "6d9b2356",
+      "header_offset": 94812,
+      "name": "SVUPP/modules/quilt2/impute/meta.yaml",
+      "uncompressed_size": 6702
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 96869,
+      "name": "SVUPP/modules/quilt2/phasing/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 203,
+      "compression_method": 8,
+      "crc32": "85a732c2",
+      "header_offset": 96960,
+      "name": "SVUPP/modules/quilt2/phasing/environment.yaml",
+      "uncompressed_size": 313
+    },
+    {
+      "compressed_size": 902,
+      "compression_method": 8,
+      "crc32": "2ab1717e",
+      "header_offset": 97286,
+      "name": "SVUPP/modules/quilt2/phasing/main.nf",
+      "uncompressed_size": 2022
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 98302,
+      "name": "SVUPP/modules/quilt2/prepare_refpanel/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 193,
+      "compression_method": 8,
+      "crc32": "0242391a",
+      "header_offset": 98402,
+      "name": "SVUPP/modules/quilt2/prepare_refpanel/environment.yaml",
+      "uncompressed_size": 290
+    },
+    {
+      "compressed_size": 709,
+      "compression_method": 8,
+      "crc32": "802a75aa",
+      "header_offset": 98727,
+      "name": "SVUPP/modules/quilt2/prepare_refpanel/main.nf",
+      "uncompressed_size": 1577
+    },
+    {
+      "compressed_size": 1081,
+      "compression_method": 8,
+      "crc32": "2a9fe7f3",
+      "header_offset": 99559,
+      "name": "SVUPP/modules/quilt2/prepare_refpanel/meta.yaml",
+      "uncompressed_size": 2977
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 100765,
+      "name": "SVUPP/scripts/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 569,
+      "compression_method": 8,
+      "crc32": "395cbdf2",
+      "header_offset": 100841,
+      "name": "SVUPP/scripts/download-examples.sh",
+      "uncompressed_size": 2073
+    },
+    {
+      "compressed_size": 1409,
+      "compression_method": 8,
+      "crc32": "e1efe8d4",
+      "header_offset": 101522,
+      "name": "SVUPP/scripts/sim.R",
+      "uncompressed_size": 5199
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 103028,
+      "name": "SVUPP/subworkflows/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 103109,
+      "name": "SVUPP/subworkflows/cutesv2_run/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 439,
+      "compression_method": 8,
+      "crc32": "b9421967",
+      "header_offset": 103202,
+      "name": "SVUPP/subworkflows/cutesv2_run/main.nf",
+      "uncompressed_size": 1238
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 103757,
+      "name": "SVUPP/subworkflows/quilt2_prepare/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 568,
+      "compression_method": 8,
+      "crc32": "4e580728",
+      "header_offset": 103853,
+      "name": "SVUPP/subworkflows/quilt2_prepare/main.nf",
+      "uncompressed_size": 1328
+    },
+    {
+      "compressed_size": 633,
+      "compression_method": 8,
+      "crc32": "09e9eaa7",
+      "header_offset": 104540,
+      "name": "SVUPP/subworkflows/quilt2_prepare/meta.yaml",
+      "uncompressed_size": 1355
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 105294,
+      "name": "SVUPP/subworkflows/quilt2_run/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 644,
+      "compression_method": 8,
+      "crc32": "6d9c7bda",
+      "header_offset": 105386,
+      "name": "SVUPP/subworkflows/quilt2_run/main.nf",
+      "uncompressed_size": 1702
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 106145,
+      "name": "SVUPP/tests/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 515,
+      "compression_method": 8,
+      "crc32": "136a23e1",
+      "header_offset": 106219,
+      "name": "SVUPP/tests/README.org",
+      "uncompressed_size": 1322
+    },
+    {
+      "compressed_size": 448,
+      "compression_method": 8,
+      "crc32": "387c58bd",
+      "header_offset": 106834,
+      "name": "SVUPP/tests/prepared_reference_rdata.csv",
+      "uncompressed_size": 1378
+    },
+    {
+      "compressed_size": 140,
+      "compression_method": 8,
+      "crc32": "3d5301a2",
+      "header_offset": 107400,
+      "name": "SVUPP/tests/refpanel.csv",
+      "uncompressed_size": 245
+    },
+    {
+      "compressed_size": 91,
+      "compression_method": 8,
+      "crc32": "ac14b113",
+      "header_offset": 107642,
+      "name": "SVUPP/tests/samples.csv",
+      "uncompressed_size": 161
+    },
+    {
+      "compressed_size": 80,
+      "compression_method": 8,
+      "crc32": "67cccda1",
+      "header_offset": 107834,
+      "name": "SVUPP/tests/samples2.csv",
+      "uncompressed_size": 148
+    },
+    {
+      "compressed_size": 107,
+      "compression_method": 8,
+      "crc32": "f31b69c5",
+      "header_offset": 108016,
+      "name": "SVUPP/tests/samples_read_labels.csv",
+      "uncompressed_size": 114
+    }
+  ],
+  "official_md5": "72a522927785cdbe9a528d2202738f3a",
+  "purpose": "Source inventory and header semantics only",
+  "schema_version": 1,
+  "sha256": "fcb20a0fa368b7f1fd6eac153f53cda9b00ab32e5c6d3a4006fb0c719dcb3eff",
+  "source_archive_name": "svupp-17227287.zip",
+  "source_manifest_bytes": 118468,
+  "source_url": "https://zenodo.org/records/17227287/files/SVUPP.zip",
+  "source_url_query_redacted": true,
+  "truth_or_performance_outputs_scored": false,
+  "vcf_headers": [],
+  "whole_archive_md5_verification": "VERIFIED",
+  "whole_archive_payload_downloaded": true
+}

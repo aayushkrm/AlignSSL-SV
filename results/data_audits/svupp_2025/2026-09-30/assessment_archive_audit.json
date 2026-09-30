@@ -1,0 +1,236 @@
+{
+  "actual_bytes": 47443427,
+  "actual_md5": "5469337ca9249691b2b376ceb9b67e1d",
+  "biological_records_parsed": 0,
+  "downloaded_code_executed": false,
+  "limits": [
+    "Names and header declarations do not establish caller stage or callability.",
+    "Header declarations do not establish score calibration or record completeness.",
+    "No internal-candidate ceiling, genotype accuracy or publication claim."
+  ],
+  "max_uncompressed_header_bytes_per_member": 1048576,
+  "member_count": 26,
+  "member_extraction_performed": false,
+  "members": [
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 0,
+      "name": "SVUPP_paper/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 1012,
+      "compression_method": 8,
+      "crc32": "ddb26a34",
+      "header_offset": 74,
+      "name": "SVUPP_paper/README.md",
+      "uncompressed_size": 2835
+    },
+    {
+      "compressed_size": 202618,
+      "compression_method": 8,
+      "crc32": "89cfa19a",
+      "header_offset": 1185,
+      "name": "SVUPP_paper/README.pdf",
+      "uncompressed_size": 206247
+    },
+    {
+      "compressed_size": 856,
+      "compression_method": 8,
+      "crc32": "dd33d3f0",
+      "header_offset": 203903,
+      "name": "SVUPP_paper/README.org",
+      "uncompressed_size": 2262
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 204859,
+      "name": "SVUPP_paper/samplesheet/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 171,
+      "compression_method": 8,
+      "crc32": "c8356708",
+      "header_offset": 204945,
+      "name": "SVUPP_paper/samplesheet/platinum-ont-ul.csv",
+      "uncompressed_size": 1568
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 205237,
+      "name": "SVUPP_paper/pipeline/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 1011,
+      "compression_method": 8,
+      "crc32": "d37fd103",
+      "header_offset": 205320,
+      "name": "SVUPP_paper/pipeline/reads-phasing-quilt2-ukb.sh",
+      "uncompressed_size": 2454
+    },
+    {
+      "compressed_size": 1828,
+      "compression_method": 8,
+      "crc32": "b208fc82",
+      "header_offset": 206457,
+      "name": "SVUPP_paper/pipeline/bench-sv-calling-truvari.nf",
+      "uncompressed_size": 7488
+    },
+    {
+      "compressed_size": 1692,
+      "compression_method": 8,
+      "crc32": "484b02f9",
+      "header_offset": 208411,
+      "name": "SVUPP_paper/pipeline/bench-force-calling.nf",
+      "uncompressed_size": 6496
+    },
+    {
+      "compressed_size": 1606,
+      "compression_method": 8,
+      "crc32": "9b056ad1",
+      "header_offset": 210224,
+      "name": "SVUPP_paper/pipeline/bench-sv-calling-survivor.nf",
+      "uncompressed_size": 8050
+    },
+    {
+      "compressed_size": 1318,
+      "compression_method": 8,
+      "crc32": "f5cba633",
+      "header_offset": 211957,
+      "name": "SVUPP_paper/pipeline/downsample-and-reads-phasing.nf",
+      "uncompressed_size": 4061
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 213405,
+      "name": "SVUPP_paper/sumstats/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 842,
+      "compression_method": 8,
+      "crc32": "da907991",
+      "header_offset": 213488,
+      "name": "SVUPP_paper/sumstats/cost.csv",
+      "uncompressed_size": 2603
+    },
+    {
+      "compressed_size": 3859,
+      "compression_method": 8,
+      "crc32": "543b8b21",
+      "header_offset": 214437,
+      "name": "SVUPP_paper/sumstats/quilt2.cost.csv",
+      "uncompressed_size": 8658
+    },
+    {
+      "compressed_size": 4762,
+      "compression_method": 8,
+      "crc32": "454a1e6f",
+      "header_offset": 218410,
+      "name": "SVUPP_paper/sumstats/cost.pdf",
+      "uncompressed_size": 5345
+    },
+    {
+      "compressed_size": 62909,
+      "compression_method": 8,
+      "crc32": "6226d7b6",
+      "header_offset": 223279,
+      "name": "SVUPP_paper/sumstats/cost.png",
+      "uncompressed_size": 75553
+    },
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 286295,
+      "name": "SVUPP_paper/reproduceplot/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 1030,
+      "compression_method": 8,
+      "crc32": "baeee422",
+      "header_offset": 286383,
+      "name": "SVUPP_paper/reproduceplot/cost.R",
+      "uncompressed_size": 2593
+    },
+    {
+      "compressed_size": 8842236,
+      "compression_method": 8,
+      "crc32": "bd6684a1",
+      "header_offset": 287523,
+      "name": "SVUPP_paper/reproduceplot/platinum.withdist1000.vcf.gz",
+      "uncompressed_size": 9222119
+    },
+    {
+      "compressed_size": 9778676,
+      "compression_method": 8,
+      "crc32": "fcbfb3aa",
+      "header_offset": 9129891,
+      "name": "SVUPP_paper/reproduceplot/sniffles2.vcf.gz",
+      "uncompressed_size": 10085979
+    },
+    {
+      "compressed_size": 10609444,
+      "compression_method": 8,
+      "crc32": "4af699fc",
+      "header_offset": 18908687,
+      "name": "SVUPP_paper/reproduceplot/kanpig.vcf.gz",
+      "uncompressed_size": 10950303
+    },
+    {
+      "compressed_size": 8951560,
+      "compression_method": 8,
+      "crc32": "ee347e2c",
+      "header_offset": 29518248,
+      "name": "SVUPP_paper/reproduceplot/svupp.vcf.gz",
+      "uncompressed_size": 9250146
+    },
+    {
+      "compressed_size": 1793,
+      "compression_method": 8,
+      "crc32": "ae28ca3d",
+      "header_offset": 38469924,
+      "name": "SVUPP_paper/reproduceplot/discordance_per_GQ_noneighbors.R",
+      "uncompressed_size": 5329
+    },
+    {
+      "compressed_size": 8966532,
+      "compression_method": 8,
+      "crc32": "09f8e22d",
+      "header_offset": 38471853,
+      "name": "SVUPP_paper/reproduceplot/cuteSV2.vcf.gz",
+      "uncompressed_size": 9246737
+    },
+    {
+      "compressed_size": 1798,
+      "compression_method": 8,
+      "crc32": "ca5476fb",
+      "header_offset": 47438503,
+      "name": "SVUPP_paper/reproduceplot/discordance_per_GQ_withneighbors.R",
+      "uncompressed_size": 5346
+    }
+  ],
+  "official_md5": "5469337ca9249691b2b376ceb9b67e1d",
+  "purpose": "Source inventory and header semantics only",
+  "schema_version": 1,
+  "sha256": "b15665743d28151bf2e9f656ae32dc8de9a3d6a5582c8033dbf251fec71daa2c",
+  "source_archive_name": "svupp-17569072-paper.zip",
+  "source_manifest_bytes": 47443427,
+  "source_url": "https://zenodo.org/records/17569072/files/SVUPP_paper.zip",
+  "source_url_query_redacted": true,
+  "truth_or_performance_outputs_scored": false,
+  "vcf_headers": [],
+  "whole_archive_md5_verification": "VERIFIED",
+  "whole_archive_payload_downloaded": true
+}

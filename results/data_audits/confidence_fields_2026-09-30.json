@@ -1,0 +1,3759 @@
+{
+  "header_count": 19,
+  "input_count": 2,
+  "inputs": [
+    {
+      "header_count": 14,
+      "headers": [
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "78651e1c49f7e7f22044cb4a7e5a2c47df7575018bf142415c52fb80903f218f",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 3366,
+              "with_m5": 0,
+              "without_m5": 3366
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": []
+            },
+            "references": [
+              "hg38"
+            ],
+            "sample_ids": [
+              "NA12878"
+            ],
+            "source_header_sha256": "7c659f5953ed4d3b5b27d9b65f299282b28f7c36c532e6da0917826345f08d5b",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "CNVnator"
+            ]
+          },
+          "header_bytes": 169523,
+          "header_line_count": 3393,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-cnvpytor-NA12878.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "78651e1c49f7e7f22044cb4a7e5a2c47df7575018bf142415c52fb80903f218f",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 3366,
+              "with_m5": 0,
+              "without_m5": 3366
+            },
+            "formats": {
+              "GL": [
+                {
+                  "Description": "Log10-scaled genotype likelihoods for RR,RA,AA genotypes",
+                  "Number": "G",
+                  "Type": "Float",
+                  "attributes": {
+                    "Description": "Log10-scaled genotype likelihoods for RR,RA,AA genotypes",
+                    "ID": "GL",
+                    "Number": "G",
+                    "Type": "Float"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GL,Number=G,Type=Float,Description=\"Log10-scaled genotype likelihoods for RR,RA,AA genotypes\">"
+                }
+              ],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "Genotype Quality",
+                  "Number": "1",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Genotype Quality",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=Integer,Description=\"Genotype Quality\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": []
+            },
+            "references": [
+              "hg38.fa"
+            ],
+            "sample_ids": [
+              "2188"
+            ],
+            "source_header_sha256": "99e01a2fbfa51b2ceb7ba4497dd5a15575bdb854765f6ae06ddc63d8a6f1a181",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": []
+          },
+          "header_bytes": 171118,
+          "header_line_count": 3409,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-delly-NA12878.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "78651e1c49f7e7f22044cb4a7e5a2c47df7575018bf142415c52fb80903f218f",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 3366,
+              "with_m5": 0,
+              "without_m5": 3366
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "Genotype Quality",
+                  "Number": "1",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Genotype Quality",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=Integer,Description=\"Genotype Quality\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": [
+                {
+                  "Description": "Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification",
+                  "Number": "G",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification",
+                    "ID": "PL",
+                    "Number": "G",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=PL,Number=G,Type=Integer,Description=\"Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification\">"
+                }
+              ]
+            },
+            "references": [
+              "10"
+            ],
+            "sample_ids": [
+              "2188.v4.2.4.grc38"
+            ],
+            "source_header_sha256": "c8218f1bccc27c1b9039f2671e3a2c642e1d875ac42ebe9ce2ac5f26cd5a79a7",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "DRAGEN_SV"
+            ]
+          },
+          "header_bytes": 175549,
+          "header_line_count": 3439,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-dragen-NA12878.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "78651e1c49f7e7f22044cb4a7e5a2c47df7575018bf142415c52fb80903f218f",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 3366,
+              "with_m5": 0,
+              "without_m5": 3366
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "Genotype quality phred scaled",
+                  "Number": "1",
+                  "Type": "Float",
+                  "attributes": {
+                    "Description": "Genotype quality phred scaled",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "Float"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=Float,Description=\"Genotype quality phred scaled\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": []
+            },
+            "references": [],
+            "sample_ids": [
+              "2188"
+            ],
+            "source_header_sha256": "ddcde48466191e934ce3e8c606d7197f5d04b1b6576e04c5bbc80d5608537656",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "DYSGU"
+            ]
+          },
+          "header_bytes": 175913,
+          "header_line_count": 3457,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-dysgu-NA12878.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "78651e1c49f7e7f22044cb4a7e5a2c47df7575018bf142415c52fb80903f218f",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 3366,
+              "with_m5": 0,
+              "without_m5": 3366
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": []
+            },
+            "references": [],
+            "sample_ids": [
+              "2188"
+            ],
+            "source_header_sha256": "716c99c4722d05c847886c9c910d998157d1c3f6372601347acc24030210502c",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": []
+          },
+          "header_bytes": 181698,
+          "header_line_count": 3483,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-gridss-NA12878.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "78651e1c49f7e7f22044cb4a7e5a2c47df7575018bf142415c52fb80903f218f",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 3366,
+              "with_m5": 0,
+              "without_m5": 3366
+            },
+            "formats": {
+              "GL": [
+                {
+                  "Description": "Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy",
+                  "Number": "G",
+                  "Type": "Float",
+                  "attributes": {
+                    "Description": "Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy",
+                    "ID": "GL",
+                    "Number": "G",
+                    "Type": "Float"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GL,Number=G,Type=Float,Description=\"Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy\">"
+                }
+              ],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "Genotype quality",
+                  "Number": "1",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Genotype quality",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=Integer,Description=\"Genotype quality\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": [
+                {
+                  "Description": "Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification",
+                  "Number": "G",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification",
+                    "ID": "PL",
+                    "Number": "G",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=PL,Number=G,Type=Integer,Description=\"Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification\">"
+                }
+              ]
+            },
+            "references": [
+              ""
+            ],
+            "sample_ids": [
+              "2188"
+            ],
+            "source_header_sha256": "b1e1c77cc9555966c6f01cebf2f8caa8ef71af0fe74910ecf5f87b99e6c1e3d8",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "LUMPY"
+            ]
+          },
+          "header_bytes": 173167,
+          "header_line_count": 3420,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-lumpy-NA12878.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "78651e1c49f7e7f22044cb4a7e5a2c47df7575018bf142415c52fb80903f218f",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 3366,
+              "with_m5": 0,
+              "without_m5": 3366
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "Genotype Quality",
+                  "Number": "1",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Genotype Quality",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=Integer,Description=\"Genotype Quality\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": [
+                {
+                  "Description": "Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification",
+                  "Number": "G",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification",
+                    "ID": "PL",
+                    "Number": "G",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=PL,Number=G,Type=Integer,Description=\"Normalized, Phred-scaled likelihoods for genotypes as defined in the VCF specification\">"
+                }
+              ]
+            },
+            "references": [
+              "hg38.fa"
+            ],
+            "sample_ids": [
+              "2188"
+            ],
+            "source_header_sha256": "ec2b50fdb9c87d4e52aeaa7b143e6edbdaa34527f1a7753575bd0419cc5ff367",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "GenerateSVCandidates 1.6.0"
+            ]
+          },
+          "header_bytes": 171547,
+          "header_line_count": 3407,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-manta-NA12878.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "78651e1c49f7e7f22044cb4a7e5a2c47df7575018bf142415c52fb80903f218f",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 3366,
+              "with_m5": 0,
+              "without_m5": 3366
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "Conditional genotype quality (phred-scaled)",
+                  "Number": "1",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Conditional genotype quality (phred-scaled)",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=Integer,Description=\"Conditional genotype quality (phred-scaled)\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": []
+            },
+            "references": [
+              "hg38"
+            ],
+            "sample_ids": [
+              "2188"
+            ],
+            "source_header_sha256": "8c69680e877e38ec39cdd07c9109e6277c05a91c90fc437c5fa6a356c4a6a2be",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": []
+          },
+          "header_bytes": 174321,
+          "header_line_count": 3396,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-octopus-NA12878.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "395a46f8baf7907186b70d0b462b1e53241c34c30efbd09b336c6b08d92daee9",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 3366,
+              "with_m5": 0,
+              "without_m5": 3366
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "Genotype quality. Difference of the best and second-best PL",
+                  "Number": "1",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Genotype quality. Difference of the best and second-best PL",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=Integer,Description=\"Genotype quality. Difference of the best and second-best PL\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": [
+                {
+                  "Description": "Phred-scaled genotype likelihoods rounded to the closest integer",
+                  "Number": "G",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Phred-scaled genotype likelihoods rounded to the closest integer",
+                    "ID": "PL",
+                    "Number": "G",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=PL,Number=G,Type=Integer,Description=\"Phred-scaled genotype likelihoods rounded to the closest integer\">"
+                }
+              ]
+            },
+            "references": [],
+            "sample_ids": [
+              "NA12878"
+            ],
+            "source_header_sha256": "07dd271180637ca4daf224717af9194a975adc43dc9c4a7dd1aa819486132b77",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "PopDel-V1.5.0"
+            ]
+          },
+          "header_bytes": 169790,
+          "header_line_count": 3391,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-popdel-NA12878.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "78651e1c49f7e7f22044cb4a7e5a2c47df7575018bf142415c52fb80903f218f",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 3366,
+              "with_m5": 0,
+              "without_m5": 3366
+            },
+            "formats": {
+              "GL": [
+                {
+                  "Description": "Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy",
+                  "Number": "G",
+                  "Type": "Float",
+                  "attributes": {
+                    "Description": "Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy",
+                    "ID": "GL",
+                    "Number": "G",
+                    "Type": "Float"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GL,Number=G,Type=Float,Description=\"Genotype Likelihood, log10-scaled likelihoods of the data given the called genotype for each possible genotype generated from the reference and alternate alleles given the sample ploidy\">"
+                }
+              ],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "Genotype quality",
+                  "Number": "1",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Genotype quality",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=Integer,Description=\"Genotype quality\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": []
+            },
+            "references": [
+              "hg38.fa"
+            ],
+            "sample_ids": [
+              "2188"
+            ],
+            "source_header_sha256": "993b8ef6b8dd902b2eaf03b94d84c194e1141566b361928dfb20ff4d39c865a1",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "LUMPY"
+            ]
+          },
+          "header_bytes": 172768,
+          "header_line_count": 3422,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-smoove-NA12878.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "a8bd088cfeb6a3c7d5cfb32bada084dc54577e443ad13dddb66b4e30031a76c0",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 3366,
+              "with_m5": 0,
+              "without_m5": 3366
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "Genotype quality (currently not supported. Always 0)",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype quality (currently not supported. Always 0)",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=String,Description=\"Genotype quality (currently not supported. Always 0)\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Most likely genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Most likely genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Most likely genotype\">"
+                }
+              ],
+              "PL": [
+                {
+                  "Description": "Normalized likelihood of the current genotype",
+                  "Number": ".",
+                  "Type": "Float",
+                  "attributes": {
+                    "Description": "Normalized likelihood of the current genotype",
+                    "ID": "PL",
+                    "Number": ".",
+                    "Type": "Float"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=PL,Number=.,Type=Float,Description=\"Normalized likelihood of the current genotype\">"
+                }
+              ]
+            },
+            "references": [
+              "hg38.fa"
+            ],
+            "sample_ids": [
+              "NA12878.bam"
+            ],
+            "source_header_sha256": "acbec35ce23ad666053a64e6fd33da0b6ee2cf16e49a77735a68f80efe1db4aa",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "svaba(v1.2.0) run -t NA12878.bam -p 40 --germline -a NA12878 -G hg38.fa "
+            ]
+          },
+          "header_bytes": 175061,
+          "header_line_count": 3440,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-svaba-NA12878.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "78651e1c49f7e7f22044cb4a7e5a2c47df7575018bf142415c52fb80903f218f",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 3366,
+              "with_m5": 0,
+              "without_m5": 3366
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": []
+            },
+            "references": [
+              "GRCh38.sonic"
+            ],
+            "sample_ids": [
+              "2188"
+            ],
+            "source_header_sha256": "5588d23125b6214ba069dd29d2b9f1b4cfe0aaf82e9cc2c09cca2efa6dc3d704",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": []
+          },
+          "header_bytes": 170051,
+          "header_line_count": 3401,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-tardis-NA12878.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "78651e1c49f7e7f22044cb4a7e5a2c47df7575018bf142415c52fb80903f218f",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 3366,
+              "with_m5": 0,
+              "without_m5": 3366
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": []
+            },
+            "references": [],
+            "sample_ids": [
+              "2188"
+            ],
+            "source_header_sha256": "4a0680ec6bcd8397e0c66af7e818f625e02b0e2ee2a82a86a15241f1380a3d5f",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "TIDDIT-3.6.1"
+            ]
+          },
+          "header_bytes": 170800,
+          "header_line_count": 3405,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-tiddit-NA12878.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [],
+              "contig_count": 0,
+              "with_m5": 0,
+              "without_m5": 0
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": []
+            },
+            "references": [
+              "hg38.fa"
+            ],
+            "sample_ids": [
+              "2188"
+            ],
+            "source_header_sha256": "a2998800c54d7def40ec39b2992bf13052ee654a3fa2b06efd9b33a69675ca60",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "WHAM-GRAPHENING:v1.7.0-311-g4e8c"
+            ]
+          },
+          "header_bytes": 2057,
+          "header_line_count": 26,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "linear-wham-NA12878.vcf.gz"
+        }
+      ],
+      "input_artifact": "results/data_audits/guo_2026_linear_na12878/2026-09-30/archive_header_audit.json"
+    },
+    {
+      "header_count": 5,
+      "headers": [
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "7ca04cc0710316a0dbd028084c59db99e88a0ce4d2aa89ae8cfdecac55a4072e",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 195,
+              "with_m5": 0,
+              "without_m5": 195
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "Genotype Quality",
+                  "Number": "1",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Genotype Quality",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=Integer,Description=\"Genotype Quality\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": [
+                {
+                  "Description": "Phred-scaled genotype likelihoods rounded to the closest integer",
+                  "Number": "G",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Phred-scaled genotype likelihoods rounded to the closest integer",
+                    "ID": "PL",
+                    "Number": "G",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=PL,Number=G,Type=Integer,Description=\"Phred-scaled genotype likelihoods rounded to the closest integer\">"
+                }
+              ]
+            },
+            "references": [
+              "file:///pbi/collections/appslabht/reference/human_GRCh38_no_alt_analysis_set.fasta"
+            ],
+            "sample_ids": [
+              "NA12879",
+              "NA12881",
+              "NA12882",
+              "NA12885",
+              "NA12886",
+              "NA12877",
+              "NA12878"
+            ],
+            "source_header_sha256": "f247ebeab103fb79b104bf639666dad77fe48970648a455d753745a1c7a75fcc",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "\"sawfish v0.12.0\""
+            ]
+          },
+          "header_bytes": 15174,
+          "header_line_count": 259,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "SVUPP_paper/reproduceplot/platinum.withdist1000.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "7ca04cc0710316a0dbd028084c59db99e88a0ce4d2aa89ae8cfdecac55a4072e",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 195,
+              "with_m5": 0,
+              "without_m5": 195
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "Genotype Quality",
+                  "Number": "1",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Genotype Quality",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=Integer,Description=\"Genotype Quality\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": [
+                {
+                  "Description": "Phred-scaled genotype likelihoods rounded to the closest integer",
+                  "Number": "G",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Phred-scaled genotype likelihoods rounded to the closest integer",
+                    "ID": "PL",
+                    "Number": "G",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=PL,Number=G,Type=Integer,Description=\"Phred-scaled genotype likelihoods rounded to the closest integer\">"
+                }
+              ]
+            },
+            "references": [
+              "file:///pbi/collections/appslabht/reference/human_GRCh38_no_alt_analysis_set.fasta"
+            ],
+            "sample_ids": [
+              "NA12882",
+              "NA12886",
+              "NA12881",
+              "NA12878",
+              "NA12879",
+              "NA12877",
+              "NA12885"
+            ],
+            "source_header_sha256": "98d6f6d1bde4275b4b1e4f6afcae1ca4421146a93667b804adb0ecaf27db98dc",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "\"sawfish v0.12.0\""
+            ]
+          },
+          "header_bytes": 15474,
+          "header_line_count": 262,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "SVUPP_paper/reproduceplot/sniffles2.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "7ca04cc0710316a0dbd028084c59db99e88a0ce4d2aa89ae8cfdecac55a4072e",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 195,
+              "with_m5": 0,
+              "without_m5": 195
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "Phred quality of genotype",
+                  "Number": "1",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "Phred quality of genotype",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=Integer,Description=\"Phred quality of genotype\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Kanpig genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Kanpig genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Kanpig genotype\">"
+                }
+              ],
+              "PL": []
+            },
+            "references": [
+              "file:///pbi/collections/appslabht/reference/human_GRCh38_no_alt_analysis_set.fasta"
+            ],
+            "sample_ids": [
+              "NA12878",
+              "NA12886",
+              "NA12877",
+              "NA12882",
+              "NA12885",
+              "NA12879",
+              "NA12881"
+            ],
+            "source_header_sha256": "a194b1d41a72f3e399e3f2cfe76617be55835fbdfb8cd40b4ea6c70634e1bb96",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "\"sawfish v0.12.0\""
+            ]
+          },
+          "header_bytes": 14974,
+          "header_line_count": 259,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "SVUPP_paper/reproduceplot/kanpig.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "5e3ba12f0b2dc39a6e6f997a749a7889dcecfbac48cd29b5aa2ad230a23e2003",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 194,
+              "with_m5": 0,
+              "without_m5": 194
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "# Genotype quality",
+                  "Number": "1",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "# Genotype quality",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=Integer,Description=\"# Genotype quality\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": [
+                {
+                  "Description": "# Phred-scaled genotype likelihoods rounded to the closest integer",
+                  "Number": "G",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "# Phred-scaled genotype likelihoods rounded to the closest integer",
+                    "ID": "PL",
+                    "Number": "G",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=PL,Number=G,Type=Integer,Description=\"# Phred-scaled genotype likelihoods rounded to the closest integer\">"
+                }
+              ]
+            },
+            "references": [],
+            "sample_ids": [
+              "NA12886",
+              "NA12877",
+              "NA12878",
+              "NA12882",
+              "NA12885",
+              "NA12881",
+              "NA12879"
+            ],
+            "source_header_sha256": "86e50fbcb1ac7391ac284b52dc34dff36a1fc6fdcc19283063b3bc1b6be34084",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "cuteSV-3.0.1"
+            ]
+          },
+          "header_bytes": 11319,
+          "header_line_count": 225,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "SVUPP_paper/reproduceplot/svupp.vcf.gz"
+        },
+        {
+          "body_records_parsed": 0,
+          "header": {
+            "contig_lines_sha256": "5e3ba12f0b2dc39a6e6f997a749a7889dcecfbac48cd29b5aa2ad230a23e2003",
+            "contig_lines_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "contig_m5_availability": {
+              "canonical_subset": [
+                {
+                  "id": "chr1",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr10",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr11",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr12",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr13",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr14",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr15",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr16",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr17",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr18",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr19",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr2",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr20",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr21",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr22",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr3",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr4",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr5",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr6",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr7",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr8",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chr9",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrM",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrX",
+                  "m5": null,
+                  "m5_available": false
+                },
+                {
+                  "id": "chrY",
+                  "m5": null,
+                  "m5_available": false
+                }
+              ],
+              "contig_count": 194,
+              "with_m5": 0,
+              "without_m5": 194
+            },
+            "formats": {
+              "GL": [],
+              "GP": [],
+              "GQ": [
+                {
+                  "Description": "# Genotype quality",
+                  "Number": "1",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "# Genotype quality",
+                    "ID": "GQ",
+                    "Number": "1",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GQ,Number=1,Type=Integer,Description=\"# Genotype quality\">"
+                }
+              ],
+              "GT": [
+                {
+                  "Description": "Genotype",
+                  "Number": "1",
+                  "Type": "String",
+                  "attributes": {
+                    "Description": "Genotype",
+                    "ID": "GT",
+                    "Number": "1",
+                    "Type": "String"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=GT,Number=1,Type=String,Description=\"Genotype\">"
+                }
+              ],
+              "PL": [
+                {
+                  "Description": "# Phred-scaled genotype likelihoods rounded to the closest integer",
+                  "Number": "G",
+                  "Type": "Integer",
+                  "attributes": {
+                    "Description": "# Phred-scaled genotype likelihoods rounded to the closest integer",
+                    "ID": "PL",
+                    "Number": "G",
+                    "Type": "Integer"
+                  },
+                  "raw_header_line": "##FORMAT=<ID=PL,Number=G,Type=Integer,Description=\"# Phred-scaled genotype likelihoods rounded to the closest integer\">"
+                }
+              ]
+            },
+            "references": [],
+            "sample_ids": [
+              "NA12881",
+              "NA12877",
+              "NA12882",
+              "NA12879",
+              "NA12885",
+              "NA12878",
+              "NA12886"
+            ],
+            "source_header_sha256": "e46d4f8e9edc1d083e3e1ed6efed2536e9b9b48cfe226ffbdd532f30838dc6cd",
+            "source_header_sha256_scope": "UTF-8 header lines through #CHROM; LF added to in-memory lines lacking a line ending",
+            "sources": [
+              "cuteSV-2.1.1"
+            ]
+          },
+          "header_bytes": 11288,
+          "header_line_count": 225,
+          "interpretation_limits": [
+            "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+            "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+            "GP sum/nonnegative checks describe numeric shape only.",
+            "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+            "PL and GL are likelihood encodings, not posterior probabilities.",
+            "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+            "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+            "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+            "Missing GT is explicit; no genotype such as 0/0 is inferred."
+          ],
+          "member": "SVUPP_paper/reproduceplot/cuteSV2.vcf.gz"
+        }
+      ],
+      "input_artifact": "results/data_audits/svupp_2025/2026-09-30/assessment_header_audit.json"
+    }
+  ],
+  "interpretation_limits": [
+    "QUAL is fixed-column site quality, distinct from sample FORMAT/GQ.",
+    "Field names and header declarations do not validate population probabilities or sample-level calibration.",
+    "GP sum/nonnegative checks describe numeric shape only.",
+    "Number=G cardinality uses ALT count and parseable GT ploidy; unknown ploidy is not inferred.",
+    "PL and GL are likelihood encodings, not posterior probabilities.",
+    "No posterior is calculated; multiallelic ALT and non-diploid GT are out of scope.",
+    "invalidGT counts allele indexes above the ALT count; this is a structural check, not a truth comparison.",
+    "missingrecord counts a row without that sample column; it does not mean an absent catalog site.",
+    "Missing GT is explicit; no genotype such as 0/0 is inferred."
+  ],
+  "limits": {
+    "max_header_bytes": 1048576,
+    "max_header_json_bytes": 16777216,
+    "max_header_objects": 1000
+  },
+  "mode": "header_only",
+  "purpose": "In-memory VCF header semantics audit; no records scored or read",
+  "report_checksum": {
+    "algorithm": "sha256",
+    "scope": "canonical report object before adding report_checksum",
+    "value": "cf0113cea1d932f9872f9fcf219984b66b4c9aea54e60580e46f8d4611af7bab"
+  }
+}

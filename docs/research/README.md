@@ -19,6 +19,8 @@ results.
 | [`2026-09-27-direction-triage.md`](2026-09-27-direction-triage.md) | Conditional high-impact decision on the next no-training falsifier | Candidate-union recall favored, but only after compatible inputs and independent protocol review |
 | [`2026-09-28-parliament2-header-gate.md`](2026-09-28-parliament2-header-gate.md) | Pinned nine-file VCF header and independent protocol gate | Exact reference/candidate-stage provenance absent; no controlled ceiling experiment frozen |
 | [`2026-09-28-zenodo-sv-package-gate.md`](2026-09-28-zenodo-sv-package-gate.md) | First-party 2026 SV data package/prefix audit | No per-caller member manifest or proven raw MetaSV component candidates; 4-MiB prefix only |
+| [`2026-09-30-fresh-assessment.md`](2026-09-30-fresh-assessment.md) | Renewed direction comparison, modern prior-art challenge, synthetic ensemble contracts, and verified one-archive header audit | Genotype-confidence availability prioritized; no method or biological improvement selected |
+| [`2026-09-30-independent-direction-review.md`](2026-09-30-independent-direction-review.md) | Independent high-impact direction decision and rigor review | Conditional known-catalog estimand accepted; protocol, donor/prediction and novelty gates remain |
 | [`2026-09-23-data-decision.md`](2026-09-23-data-decision.md) | Verified holdings, current GIAB benchmark, and staged new-data plan | 63 public CRAM index matches; callable-region gate pending |
 | [`2026-09-23-hgsvc3-genotype-audit.md`](2026-09-23-hgsvc3-genotype-audit.md) | Reproducible per-donor deletion genotype inventory | 64,428 DEL loci ≥50 bp; no confident-negative inference |
 | [`2026-09-23-hgsvc3-callability-audit.md`](2026-09-23-hgsvc3-callability-audit.md) | Primary-source search for donor-wide callable regions and negative-label gate | No mask in inspected v1.0 inventories; two working TARs assessed separately |
@@ -58,7 +60,18 @@ the ChatGPT Firecrawl paper-index plugin located article metadata, Scite
 returned targeted full-text/citation context, and Exa surfaced a newer
 candidate dataset lead. A Firecrawl page scrape could not pass a PMC cookie
 policy, so the first-party Europe PMC full-text XML supplied the methods;
-Zenodo's API and bounded HTTP ranges supplied package evidence. These are
-distinct roles: search snippets, citation classifications, plugin toggle
-states, and VCF filenames alone do not establish run provenance or biological
-validity. Firecrawl here is a connected plugin, not an assumed CLI.
+Zenodo's API and bounded HTTP ranges supplied package evidence. The connected
+Life Sciences Literature PMC skill separately resolved versioned open-access
+XML/text URLs for the same article; its PubMed query had no hit for the newer
+Guo DOI at this check, which is not evidence against that paper's existence.
+These have distinct roles: search snippets, citation classifications, plugin
+toggle states, and VCF filenames alone do not establish run provenance or
+biological validity. Firecrawl here is a connected plugin, not an assumed CLI.
+The renewed goal explicitly names Exa, Firecrawl, Parallel Search, TinyFish,
+Scite, Hugging Face, Context7, GitHub and Life Sciences Literature. Select them
+by evidence need, not a usage quota; record failures and the alternative that
+supplied evidence. Life Sciences Literature resolved SVUPP's current PMC
+full-text source after other routes failed. The PMC citation corrected an
+erroneous compact-index date. Scite's monthly limit prevented further calls
+on September 30 UTC. Unnecessary app/CLI installations are not a substitute
+for using the connected tools.

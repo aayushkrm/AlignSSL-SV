@@ -28,6 +28,32 @@ the objective.
 
 ## Current implementation and review state
 
+- The September 30 UTC / October 1 local
+  [fresh reassessment](2026-09-30-fresh-assessment.md) supersedes the earlier
+  candidate-recall priority, without deleting its evidence. Independent
+  repository/history audit and current primary literature do not justify
+  resuming SSL or a generic uncertainty/matcher thesis. SVUPP already tests
+  quality-ranked genotyping across depths/platforms. The
+  [independent high-impact decision/review](2026-09-30-independent-direction-review.md)
+  selects **availability checking for conditional known-catalog genotype
+  confidence transfer**, not a method, novelty claim or training campaign.
+- A single Guo development callset ZIP (434,544,359 bytes) and two SVUPP source/
+  assessment ZIPs (118,468 and 47,443,427 bytes) were stored outside Git and
+  matched their published MD5s; all passed ZIP integrity tests. The Guo archive
+  has 103 members and 14 audited pre-final caller headers. The newer SVUPP
+  assessment archive has 26 members and five audited headers, including four
+  genotyper outputs on one seven-person pedigree. No GT records, performance
+  tables or plots were scored. Source scripts were read, never executed.
+  Sample orders differ across SVUPP VCFs; exact sample/allele joins and GT/GQ/PL
+  field lineage remain required. Missing records/GTs are not `0/0`.
+- Strict Range checks failed closed on omitted HTTP validators; complete
+  published-MD5 verification supplied the alternative. Life Sciences Literature
+  supplied SVUPP's current PMC full text, while Scite had reached its monthly
+  limit. Requested internal-worker roles follow Sol6.1/high, Luna/max and
+  Sol6.1/max decisions; actual execution metadata remains unattested. An
+  existing automation view rendered a card but returned no machine-readable
+  configuration; no scheduler rewrite or duplicate was created.
+
 - The depth diagnostic and independent audit have been persisted in this
   directory. The audit found a coarse-bin representation defect, biologically
   questionable coverage-view semantics, and direct calibration leakage.
@@ -69,7 +95,7 @@ the objective.
 
 ## Cluster recovery state
 
-- Read-only `squeue -u igorno` on 2026-09-28 showed no queued or running jobs.
+- Read-only `squeue -u igorno` on 2026-09-30 showed no queued or running jobs.
   `ws_list` confirmed the restart scratch directory expires 2026-10-22
   23:02:50 cluster-local time, with one extension available. No cluster job or
   bulk transfer was launched for the Parliament2 header gate.
@@ -166,9 +192,12 @@ the objective.
 ## Verification checkpoint
 
 - Baseline before edits: 289 passed, 29 skipped.
-- Current suite from the repository root: 372 passed, 29 skipped in 164.25s
+- Current suite from the repository root: 418 passed, 29 skipped in 127.83s
   using `../.venv/bin/python -m pytest -q`.
 - `analysis/check_manuscript.py`: passed.
+- The September 30 UTC availability checkpoint's archive/header and synthetic
+  probe checksum sidecars pass. `confidence_fields_2026-09-30.json` combines
+  19 source-header semantics audits with zero biological records parsed.
 - Released checkpoint archive: 52,913,192 bytes; SHA-256 matches the release
   manifest.
 - Real-read depth oracle: job `1597949` checked 63 HG002 windows at bin sizes
@@ -182,21 +211,23 @@ the objective.
 
 ## Immediate next gates
 
-1. The small published HG002 Parliament2 VCFs have passed a byte/header audit
-   but lack exact reference and candidate-stage provenance. Search for a
-   compatible contemporary same-reads/same-reference candidate panel or
-   construct one under a bounded protocol. If one exists, freeze the
-   candidate-union recall falsifier and obtain independent Sol/high protocol
-   review before compute. If not, record the input-feasibility failure rather
-   than treating historical final calls as an internal candidate ceiling.
-2. Finish the donor-callability and read-alignment bridge before using
-   HGSVC3/IGSR for candidate labels. The reference-ambiguity and two-TAR
-   inventories are complete but neither supplies a confident-negative mask.
-3. Diagnose the two signal-53 terminations before any revised Manta
-   fixture. Do not relaunch the same job unchanged or assume the eventual
-   research question is SSL candidate filtering.
-4. Once a direction is chosen, freeze its baselines, split/test protection,
-   label and compute budgets, metrics, uncertainty, and reproducible artifacts
-   before confirmatory experiments.
+1. Stop genomic acquisition expansion after the bounded, completed availability
+   checkpoint. Verify the SVUPP field-lineage/catalog/run bridge before any
+   scoring. Available predictions cover a pedigree, not unrelated-donor
+   transfer; SVLearn training/validation examples are not independent
+   out-of-training confidence evidence. Preserve those feasibility limits.
+2. Only if task-aligned trusted GTs, interpretable confidence and unrelated
+   development predictions exist, freeze a no-fit donor-transfer falsifier.
+   Obtain an independent Sol6.1/high protocol review for eligibility, no-calls,
+   sample/allele joins, confidence meaning, label budgets, uncertainty and an
+   untouched unrelated confirmation set. No large model training is selected.
+3. If inputs or a distinct residual mechanism fail, reconsider the research bet
+   instead of expanding downloads or reviving SSL. Nested-repeat discovery is
+   conditional on orthogonal missing-allele evidence beyond representation and
+   current repeat/local-assembly baselines, not approved by this checkpoint.
+4. Prior candidate-stage/callability gates remain required **if** that option is
+   chosen later. Manta's unresolved signal-53 failures must be diagnosed before
+   a scientifically justified rerun; do not submit a third identical fixture.
+   Old test sets and related-family splits remain development evidence.
 
 Scientific improvement and publication readiness remain unproven.

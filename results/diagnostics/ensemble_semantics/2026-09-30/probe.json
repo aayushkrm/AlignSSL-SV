@@ -1,0 +1,75 @@
+{
+  "probes": {
+    "asymmetric_consensus_support": {
+      "consistent_support_precision": 1.0,
+      "fp_at_any_support": 1,
+      "fp_at_required_support": 0,
+      "retrospective_precision": 0.5,
+      "tp_at_required_support": 1
+    },
+    "limits": [
+      "No real VCF records, truth labels, or published CSV metrics were scored.",
+      "Retrospective oracle summaries can be legitimate when labeled as such.",
+      "No inference about biological effect size, caller ranking, or novelty.",
+      "No allegation that this source script produced every published result.",
+      "Position/key changes require allele-aware assessment on real data."
+    ],
+    "position_only_fp_chain": {
+      "allele_equivalence_tested": false,
+      "input_key_count": 3,
+      "input_types": [
+        "DEL",
+        "INS",
+        "DUP"
+      ],
+      "max_start_span": 90,
+      "representative_count": 1,
+      "single_linkage_window": 50
+    },
+    "scope": "synthetic operational counterexamples, not biological performance",
+    "symbolic_key_collision": {
+      "end_values": [
+        200,
+        1000
+      ],
+      "four_field_key_count": 1,
+      "full_record_count": 2
+    },
+    "truth_conditioned_output": {
+      "all_fp_output": [
+        [
+          "chr1",
+          100,
+          "N",
+          "<DEL>"
+        ]
+      ],
+      "fixed_prediction_count": 2,
+      "one_tp_output": [
+        [
+          "chr1",
+          101,
+          "N",
+          "<DEL>"
+        ],
+        [
+          "chr1",
+          120,
+          "N",
+          "<DEL>"
+        ]
+      ],
+      "output_changes_with_truth_partition": true
+    }
+  },
+  "schema_version": 1,
+  "source": {
+    "bytes": 12909,
+    "commit": "64b8aafc1b83a93c6718b577d8408c9b691dd60d",
+    "downloaded_code_executed": false,
+    "git_blob": "427f8db84aa1d110a2797ad975de131337fbbe7f",
+    "path": "workflow/scripts/exhaustive-search-ensemble.py",
+    "sha256": "24756065868eee1cfc2fff58cd9c8b53f731387474062b3abf7c57723373344d",
+    "url": "https://raw.githubusercontent.com/yuliu-guo/SV-Benchmarking-Germline/64b8aafc1b83a93c6718b577d8408c9b691dd60d/workflow/scripts/exhaustive-search-ensemble.py"
+  }
+}

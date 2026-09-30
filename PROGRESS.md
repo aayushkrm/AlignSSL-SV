@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-09-28**. The research-restart section immediately below
+_Last updated: **2026-10-01** (local; source audits dated September 30 UTC). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -166,8 +166,63 @@ This restart deliberately preserves failed and null results. The aim is a
 reproducible improvement, but an infrastructure repair or a preprocessing
 change by itself is not evidence that SSL works.
 
-Verification at this checkpoint: 372 tests passed and 29 skipped; the
-manuscript/result consistency checker passed.
+### September 30 UTC / October 1 local — fresh reassessment checkpoint
+
+- Re-read the renewed goal; DeepSV is historical prior work only. An independent
+  repository/history/results audit confirmed the repaired negative SSL evidence
+  and did not justify resuming training. Prior candidate-recall plans are
+  hypotheses, not obligations to preserve that direction.
+- Compared five competing directions against modern primary literature.
+  Full-text SVUPP already covers GQ-ranked error, equal-call-count comparisons
+  across platforms/depths and neighboring-SV difficulty. Generic confidence,
+  abstention, matcher or ensemble comparisons are not sufficient novelty.
+  See the [fresh assessment](docs/research/2026-09-30-fresh-assessment.md).
+- Implemented and ran four synthetic contract probes for a pinned exhaustive
+  ensemble script: END-key collision, position-only single-linkage, truth-
+  conditioned output and asymmetric vote support. Source Git blob/SHA-256
+  verified; downloaded code never executed. These are operational
+  counterexamples, not biological effect sizes or an allegation about all
+  article methods. The iterative method does emit merged VCFs.
+- Strict remote ZIP range inventories failed closed on omitted validators.
+  The alternative retrieved **one** 434,544,359-byte development callset ZIP,
+  matched published MD5, and passed ZIP integrity checks. Its **103-member**
+  inventory includes 14 pre-final caller VCFs; bounded header-only inspection
+  found incompatible confidence declarations and sample aliases. No truth
+  labels or performance tables were scored. Archives remain outside Git.
+  Manta's exported diploid calls still do not establish internal candidates.
+- Independently verified the Guo panel is one pedigree. The SVUPP pipeline
+  archive was also checksum/integrity verified. A bounded follow-up of the
+  newer 47.4-MB paper archive passed checksums/integrity and found **26 members
+  and five VCF headers**, including four genotyper outputs on the same seven
+  pedigree members. Sample column orders differ: join by ID, not position.
+  Source workflow reading supports forced-catalog genotyping, not actual-run
+  or field-lineage validation. SVLearn
+  offers processed features/hard-call infrastructure, but unrelated held-out
+  confidence predictions and trusted genotype eligibility remain unverified.
+- [Independent Sol/max-requested direction decision and Sol/high-requested
+  rigor review](docs/research/2026-09-30-independent-direction-review.md)
+  prioritize conditional known-catalog genotype-confidence **availability**.
+  No method or expensive campaign is selected. Missing GTs remain no-calls,
+  never inferred `0/0`; catalog coverage is not discovery recall. Before any
+  scoring, freeze eligibility, confidence semantics, missing-call accounting,
+  allele equivalence, family/platform splits and an untouched unrelated test.
+- Requested model roles follow the updated goal; actual execution configuration
+  is not independently attested by the exposed metadata. Internal agents were
+  used, not new user-owned chats. Plugin selection follows evidence needs;
+  Life Sciences Literature supplied a working full-text alternative. Scite's
+  limit and publisher/HTTP failures are retained without treating them as null
+  scientific findings.
+- Read-only cluster inspection showed no account jobs. Scratch expires
+  **2026-10-22 23:02:50 cluster-local**, one extension available. No GPU run,
+  job cancellation or additional genomic cohort acquisition was performed.
+
+Final integration verification: **418 passed, 29 skipped** in 127.83 s.
+The manuscript/result consistency checker and `git diff --check` passed;
+all saved archive-audit and synthetic-probe SHA-256 sidecars verified. The
+combined confidence-declaration report covers **19 headers and zero records**.
+This is input/operational verification, not genotype accuracy or a scientific
+gain. Relevant raw genomic archives remain outside Git; only source inventories,
+headers, field-semantics reports, tests and notes are tracked.
 
 ---
 
