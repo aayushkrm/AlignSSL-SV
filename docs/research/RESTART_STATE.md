@@ -39,6 +39,12 @@ the objective.
   The two load-bearing files match tag 2.0.4, named by the current wrapper;
   historical run/container identity is still unverified. Full suite: 432 passed,
   29 skipped; latest 14-test diagnostic and 30-test related target pass.
+  Source checkpoint `8fe78755ea3b6bb8d4dbc911daff9090864c9b84` is pushed and
+  [PR #2](https://github.com/aayushkrm/AlignSSL-SV/pull/2) is open, with one
+  approval required. Continue from `research/genotype-confidence-contracts-20261001`;
+  do not revert to main and silently lose the unmerged diagnostic. Fresh
+  `squeue` was empty; restart scratch expires October 22 at 23:02:50
+  cluster-local, one extension available.
   No production caller patch, genotype scoring, new cohort or
   training campaign is selected. Work proceeds on a research branch/PR after
   GitHub reported a PR-only rule bypass on the previous main push.

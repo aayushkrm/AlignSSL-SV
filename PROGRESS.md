@@ -33,6 +33,12 @@ biological impact. Independent review accepted conditional source-formula
 reachability and caught the current wrapper's 2.0.4 container version. The two
 load-bearing QUILT source files are byte/blob-identical at tags 2.0.3 and 2.0.4;
 container/run identity and real endpoint frequency are still unverified.
+Published as [PR #2](https://github.com/aayushkrm/AlignSSL-SV/pull/2), source
+checkpoint `8fe78755ea3b6bb8d4dbc911daff9090864c9b84`. The branch push and
+remote SHA match were verified; the PR is open and requires one approving
+review. No main-protection bypass or merge was attempted. A fresh cluster
+queue check found no jobs for this account; restart scratch expires October 22
+at 23:02:50 cluster-local, with one extension available.
 
 The prior negative result remains the authoritative published-project outcome;
 no new performance gain is claimed. The 2026-09-23 objective revision opens a
