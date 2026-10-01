@@ -28,6 +28,20 @@ the objective.
 
 ## Current implementation and review state
 
+- October 1: the [confidence-contract follow-up](2026-10-01-confidence-contracts.md)
+  replaces assumptions about pooled GQ/PL with caller-specific source evidence.
+  A pinned SVUPP fork accepts exact zero phase probabilities but treats them
+  as missing; a synthetic label swap changes GT/GQ. Fourteen tests and hashed
+  source/report identities reproduce this input-contract counterexample,
+  not biological performance. Real endpoint frequency and execution revision
+  remain open. QUILT2 2.0.3 source-formula arithmetic admits an exact endpoint
+  without underflow; independent review accepted this conditional construction.
+  The two load-bearing files match tag 2.0.4, named by the current wrapper;
+  historical run/container identity is still unverified. Full suite: 432 passed,
+  29 skipped; latest 14-test diagnostic and 30-test related target pass.
+  No production caller patch, genotype scoring, new cohort or
+  training campaign is selected. Work proceeds on a research branch/PR after
+  GitHub reported a PR-only rule bypass on the previous main push.
 - The September 30 UTC / October 1 local
   [fresh reassessment](2026-09-30-fresh-assessment.md) supersedes the earlier
   candidate-recall priority, without deleting its evidence. Independent
