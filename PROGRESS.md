@@ -11,6 +11,20 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 4 updated-goal follow-up: the full objective was re-read and sent to
+the active internal subagents. The [new prior-art challenge](docs/research/2026-10-04-updated-goal-and-prior-art.md)
+checks COSIGT, SVPG and minisv against competing research questions. Native
+confidence filtering, graph augmentation and personal-normal assembly filtering
+are already close prior art; none is a new contribution by itself. Independent
+review recommends stopping open-panel confidence as the active publication
+lead under the present budget; the main agent accepts that limited stop while
+the wider goal continues. The source-feasibility check also defers Locityper
+PAFs as structural truth. The high-impact next-direction decision is pending;
+no new experiment is approved. No new outcome scoring,
+training or large data transfer has begun. A fresh cluster queue is empty;
+scratch still expires October 22, with one extension available. The goal
+remains active; no publication-worthy result is claimed.
+
 October 4 follow-up: the [Locityper schema gate](docs/research/2026-10-04-locityper-schema-gate.md)
 verified the small archive and two joint native-control headers. An initial
 format failure was resolved through the publisher's pinned source and a

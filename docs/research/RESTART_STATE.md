@@ -28,6 +28,20 @@ the objective.
 
 ## Current implementation and review state
 
+- October 4 updated-goal follow-up: the full current objective was read and
+  relayed to the active internal workers. The [close-prior-art challenge](2026-10-04-updated-goal-and-prior-art.md)
+  checks published COSIGT, SVPG and minisv methods; generic missing-panel
+  confidence filtering, graph augmentation and personal-normal assembly
+  filtering are not sufficient novelty. Anscombe's independent review recommends
+  stopping open-panel confidence as the active publication lead under this
+  budget; main accepts the limited stop while the wider goal continues.
+  Helmholtz completed the source-only structural-label check and was closed:
+  full-span PAFs with MAPQ 255 do not provide confidence-qualified SV truth.
+  Aristotle's high-impact next-direction decision remains pending. Integrate it
+  rather than repeat its task or presume approval. No outcome scoring,
+  new method, large acquisition or
+  campaign is selected. Fresh cluster queue is empty; workspace expiry is
+  October 22 at 23:02:50 cluster-local, one extension available.
 - October 4: [Locityper schema gate](2026-10-04-locityper-schema-gate.md)
   completed on the existing research branch. The verified 14.7-MB archive has
   19 members. Two full-panel/LOO Illumina headers declare all five native
@@ -265,23 +279,28 @@ the objective.
 
 ## Immediate next gates
 
-1. Stop genomic acquisition expansion after the bounded, completed availability
-   checkpoint. Verify the SVUPP field-lineage/catalog/run bridge before any
-   scoring. Available predictions cover a pedigree, not unrelated-donor
-   transfer; SVLearn training/validation examples are not independent
-   out-of-training confidence evidence. Preserve those feasibility limits.
-2. Only if task-aligned trusted GTs, interpretable confidence and unrelated
-   development predictions exist, freeze a no-fit donor-transfer falsifier.
-   Obtain an independent Sol6.1/high protocol review for eligibility, no-calls,
-   sample/allele joins, confidence meaning, label budgets, uncertainty and an
-   untouched unrelated confirmation set. No large model training is selected.
-3. If inputs or a distinct residual mechanism fail, reconsider the research bet
-   instead of expanding downloads or reviving SSL. Nested-repeat discovery is
-   conditional on orthogonal missing-allele evidence beyond representation and
-   current repeat/local-assembly baselines, not approved by this checkpoint.
-4. Prior candidate-stage/callability gates remain required **if** that option is
-   chosen later. Manta's unresolved signal-53 failures must be diagnosed before
-   a scientifically justified rerun; do not submit a third identical fixture.
-   Old test sets and related-family splits remain development evidence.
+1. Read the current objective and integrate Aristotle's pending direction
+   recommendation with the October 4 independent review. Open-panel confidence
+   is no longer the active publication lead under this budget. Do not restart
+   the completed literature or Locityper source-feasibility workers, build a
+   detector from the QV archive, or acquire its larger database to preserve the
+   old direction. This is a limited research stop, not a pause of the goal.
+2. Compare a bounded event-level diagnostic, modern call-set recovery and other
+   distinct mechanisms against the closer COSIGT, SVPG and minisv prior art.
+   Select a real scientific falsifier only with concrete input provenance,
+   independent structural truth and all native controls. Write the eligibility,
+   effect/precision threshold, unknown/no-call handling, equivalence rules,
+   label and total compute budgets before scoring. Obtain a separate
+   Sol6.1/high protocol review. No large training is selected.
+3. If the inputs or distinct contribution fail, reject the direction and move
+   to a stronger question; do not substitute another generic header audit for
+   scientific progress. Keep unrelated-donor/locus-family confirmation untouched.
+   Pedigree predictions and SVLearn training rows remain development evidence,
+   not independent confidence-transfer tests.
+4. Prior candidate-stage/callability gates apply **if** candidate recovery is
+   selected. Final released calls cannot identify an internal candidate ceiling.
+   Diagnose Manta's unresolved signal-53 failures before any justified rerun;
+   do not submit a third identical fixture. Scratch expires October 22; preserve
+   useful outputs before any expiry or project-only job cancellation.
 
 Scientific improvement and publication readiness remain unproven.
