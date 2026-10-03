@@ -19,9 +19,19 @@ are already close prior art; none is a new contribution by itself. Independent
 review recommends stopping open-panel confidence as the active publication
 lead under the present budget; the main agent accepts that limited stop while
 the wider goal continues. The source-feasibility check also defers Locityper
-PAFs as structural truth. The high-impact next-direction decision is pending;
-no new experiment is approved. No new outcome scoring,
-training or large data transfer has begun. A fresh cluster queue is empty;
+PAFs as structural truth. The high-impact decision selected a
+[modern caller-output completeness falsifier](docs/research/2026-10-04-modern-callset-falsifier.md).
+After a strict partial-read failure, independent review approved one whole
+SVPG call-set archive transfer. Its 2,879,666,672 bytes match the publisher MD5;
+203 entries and six frozen full-HiFi caller headers are inventoried outside
+raw-data Git storage. All six declare the same 86 contigs, but exact input,
+reference-base and graph/run identity remain unresolved. The reviewer accepts
+a narrower released-callset development estimand, not a controlled same-input
+ceiling or independent replication. The exact outcome protocol remains pending;
+no biological rows, genotype/truth comparisons or training have been scored.
+A supporting synthetic script-contract probe passes 15 tests; the full suite
+passes 483 with 29 skipped. This is software/source evidence, not biological gain.
+A fresh cluster queue is empty;
 scratch still expires October 22, with one extension available. The goal
 remains active; no publication-worthy result is claimed.
 

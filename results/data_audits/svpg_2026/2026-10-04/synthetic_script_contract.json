@@ -1,0 +1,89 @@
+{
+  "genotype_mismatch_counterexample": {
+    "call_a_genotype_class": "het",
+    "call_b_genotype_class": "hom",
+    "candidate_genotype_classes": [
+      "hom"
+    ],
+    "candidate_records": 1,
+    "event_inconsistency": 0,
+    "event_matches": 1,
+    "genotypes_agree": false
+  },
+  "interpretation": "Matching event geometry marks the candidate call as matched even when the two genotype classes differ; the reported event-inconsistency count therefore does not measure genotype disagreement.",
+  "negative_controls": {
+    "chromosome_mismatch": {
+      "candidate_genotype_classes": [
+        "hom"
+      ],
+      "candidate_records": 1,
+      "event_inconsistency": 1,
+      "event_matches": 0
+    },
+    "genuine_no_overlap": {
+      "candidate_genotype_classes": [
+        "hom"
+      ],
+      "candidate_records": 1,
+      "event_inconsistency": 1,
+      "event_matches": 0
+    },
+    "length_ratio_below_bias": {
+      "candidate_genotype_classes": [
+        "hom"
+      ],
+      "candidate_records": 1,
+      "event_inconsistency": 1,
+      "event_matches": 0
+    },
+    "type_mismatch": {
+      "candidate_genotype_classes": [
+        "hom"
+      ],
+      "candidate_records": 1,
+      "event_inconsistency": 1,
+      "event_matches": 0
+    }
+  },
+  "phased_call": {
+    "candidate_genotype_classes": [],
+    "candidate_records": 0,
+    "event_inconsistency": 0,
+    "event_matches": 0,
+    "genotype": "0|1",
+    "genotype_class": "unknown",
+    "retained": false
+  },
+  "pinned_source": {
+    "archive": {
+      "bytes": 18200,
+      "md5": "57dce6316194c5147628b9cb933367fb",
+      "sha256": "cc7f077cee6a1e0c503aa21d04e935feae44f79ee32857343017bdb16215091e"
+    },
+    "archive_path": "/Users/akm/aayushkrm-AlignSSL/data/source_archives/svpg-18456502-scripts.zip",
+    "ast_contracts": {
+      "eva_record_checks_chromosome_and_event_geometry": true,
+      "eva_record_does_not_compare_pairwise_genotypes": true,
+      "eva_record_filters_candidate_by_requested_class": true,
+      "load_callset_drops_unknown_genotype_class": true,
+      "main_ctrl_reports_directional_candidate_callset_event_matches": true,
+      "phase_GT_accepts_unphased_heterozygous_and_homozygous_forms": true,
+      "phase_GT_does_not_recognize_phased_0_pipe_1": true
+    },
+    "members": {
+      "scripts/eval_inconsistency.py": {
+        "bytes": 6919,
+        "sha256": "8415334589ca48be6652dd583c7aab5ba7dd99590a9f5ccc1de7b3979f8656b0"
+      },
+      "scripts/merge_specfic.vcf.py": {
+        "bytes": 3597,
+        "sha256": "b198ad182d7eb5e8d08ea39b551916d5c6f960e3807aeded2d104f477e67d6f9"
+      }
+    },
+    "source_compiled_or_executed": false,
+    "source_parsed_as_data_only": true
+  },
+  "schema_version": 1,
+  "scope": "Synthetic source-semantics reproduction only. This does not execute the released code, use published records, or estimate biological frequency.",
+  "source_execution": false
+}

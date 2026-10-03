@@ -63,8 +63,13 @@ The [minisv article](https://pmc.ncbi.nlm.nih.gov/articles/PMC13621377/)
 explicitly discusses true somatic SVs lost by population-pangenome filtering
 and mosaic alleles incorporated into a self-assembly. It proposes
 haplotype-aware retention. Rediscovering either limitation is not enough.
-The earlier September 4 online-date lead was not independently confirmed in
-this check; retain the verified PMC citation date rather than pool versions.
+PubMed reports a September 1 issue date while the PMC cloud citation reports
+September 29, under the same DOI. The publisher-deposited
+[Crossref record](https://api.crossref.org/works/10.1158/2767-9764.CRC-25-0769)
+separates September 1 print publication, September 29 online publication and
+September 4 DOI-record creation. The earlier September 4 online-date lead
+confused creation with publication. Preserve the source-specific dates; do not
+count them as separate papers.
 
 ## Competing directions, not a selected thesis
 
@@ -76,8 +81,11 @@ this check; retain the verified PMC citation date rather than pool versions.
 | Paired-normal graph/somatic inference | Independent tumor-normal truth, local normal callability and comparison with current native/personal-assembly methods | Both SVPG and minisv already expose relevant limitations; no distinct residual mechanism established |
 
 The main agent sent the updated objective to the active workers. Aristotle
-(`01a102f6-dca0-7a81-9638-19825a8e31e2`, Sol6.1/max requested) is making the
-bounded high-impact direction recommendation. Helmholtz
+(`01a102f6-dca0-7a81-9638-19825a8e31e2`, Sol6.1/max requested) completed the
+bounded high-impact direction recommendation and was closed. It selected a
+[modern same-input call-set completeness falsifier](2026-10-04-modern-callset-falsifier.md),
+conditional on compatible inputs and a separately frozen outcome protocol.
+Helmholtz
 (`01a102f6-dd04-7c90-b4c9-4763707d83a4`, Luna/max requested) completed the
 source-only Locityper alignment-to-structural-label feasibility check without
 acquisition or outcome scoring, then was closed. Anscombe
@@ -108,7 +116,12 @@ Main checked the pinned
 [PAF writer](https://github.com/tprodanov/locityper/blob/146cfd42e9179bafd63d1f41db7fc449940989de/src/command/align.rs):
 it writes full-span, `+`-strand records and MAPQ 255, including zero-alignment
 records for skipped pairs. Those fields do not supply mapping confidence.
-The writer also records requested alignment parameters in a leading comment;
+The pinned
+[gap-alignment routine](https://github.com/tprodanov/locityper/blob/146cfd42e9179bafd63d1f41db7fc449940989de/src/seq/dist.rs)
+uses `align_simple` when both unanchored spans are nonzero and either exceeds
+`max_gap`; approximate spans are not tagged separately in the PAF writer.
+Frequency in the archived alignments is unmeasured. The writer also records
+requested alignment parameters in a leading comment;
 the archived parameter values have not been inspected. The worker's proposed
 simple-indel screen requires sequence-checked CIGARs, unambiguous flanks,
 duplicate-sequence donor membership and complete callable comparisons. Missing

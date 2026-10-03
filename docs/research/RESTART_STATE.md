@@ -37,10 +37,20 @@ the objective.
   budget; main accepts the limited stop while the wider goal continues.
   Helmholtz completed the source-only structural-label check and was closed:
   full-span PAFs with MAPQ 255 do not provide confidence-qualified SV truth.
-  Aristotle's high-impact next-direction decision remains pending. Integrate it
-  rather than repeat its task or presume approval. No outcome scoring,
-  new method, large acquisition or
-  campaign is selected. Fresh cluster queue is empty; workspace expiry is
+  Aristotle completed the high-impact recommendation and was closed. It selects
+  a [modern caller-output completeness falsifier](2026-10-04-modern-callset-falsifier.md),
+  conditional on usable inputs and a frozen reviewed protocol. Strict HTTP
+  partial reads failed closed; independent review approved one complete SVPG
+  archive transfer. Whole size/MD5/SHA-256 passed for 2,879,666,672 bytes, with
+  203 entries and six frozen full-HiFi headers. Shared contig declarations do
+  not prove exact raw/reference or graph identity. Anscombe accepts the weaker
+  released-callset development estimand, not a controlled same-input ceiling.
+  Full outcome protocol remains pending; no biological rows or outcomes have
+  been parsed. Supporting synthetic source-contract tests pass 15; full suite
+  passes 483 with 29 skipped. NIST v5.0q also derives from Q100 assembly V1.1:
+  benchmark-generation revision must be distinguished from assembly version.
+  Existing cluster Truvari is 5.4.0, not the paper's 5.3; no scoring has run.
+  No new method or campaign is selected. Fresh cluster queue is empty; expiry is
   October 22 at 23:02:50 cluster-local, one extension available.
 - October 4: [Locityper schema gate](2026-10-04-locityper-schema-gate.md)
   completed on the existing research branch. The verified 14.7-MB archive has
