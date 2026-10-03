@@ -23,6 +23,8 @@ broader research triage continues. The bounded stage consumed at most 67.7 MB
 of decompressed output, 1.87 CPU seconds and about 17 MB peak RSS. The 36
 reader tests pass; the final full suite passed 468 tests with 29 skipped.
 This is availability evidence, not a biological gain.
+Source checkpoint `4cd90b9` is pushed to the existing
+[PR #2](https://github.com/aayushkrm/AlignSSL-SV/pull/2); review remains required.
 
 October 1 updated-goal follow-up: the [open-panel preflight](docs/research/2026-10-01-open-panel-preflight.md)
 compares candidate recall, phase-aware genotyping and structural panel

@@ -45,6 +45,12 @@ the objective.
   expiry remains October 22, one extension available. Peak RSS was measured,
   not hard-capped: macOS rejected `RLIMIT_AS` before startup. The successful
   scans stayed below 18 MB RSS and the stated byte/CPU budgets.
+  Source checkpoint `4cd90b9e36a7ee74b7e010513ea191bc0204baec` was pushed;
+  the remote branch SHA matches. PR #2 remains open and requires review; no
+  main merge or protection bypass was attempted. A separate internal
+  Luna/max-requested literature sidecar is checking the closest recent
+  open-panel/adaptive-candidate work. Do not treat that pending search as a
+  selected method or a validated novelty claim.
 - October 1 updated-goal follow-up: [open-panel preflight](2026-10-01-open-panel-preflight.md)
   records the competing directions and separately requested Sol6.1/max
   decision / Sol6.1/high reviewer. Only one 14,709,179-byte Locityper benchmark
