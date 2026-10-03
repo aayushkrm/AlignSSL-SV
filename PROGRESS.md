@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-10-01** (local; source audits dated September 30 UTC). The research-restart section immediately below
+_Last updated: **2026-10-04** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,30 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+October 4 follow-up: the [Locityper schema gate](docs/research/2026-10-04-locityper-schema-gate.md)
+verified the small archive and two joint native-control headers. An initial
+format failure was resolved through the publisher's pinned source and a
+separately reviewed, single-comment amendment. No outcome rows were parsed.
+All five required native channels are declared together, but the available
+sequence-distance summaries do not establish confidence-qualified structural
+panel-absence labels. This archive alone is not ready for the proposed SV
+experiment. No detector, outcome test or larger acquisition is approved;
+broader research triage continues. The bounded stage consumed at most 67.7 MB
+of decompressed output, 1.87 CPU seconds and about 17 MB peak RSS. The 36
+reader tests pass; the final full suite passed 468 tests with 29 skipped.
+This is availability evidence, not a biological gain.
+
+October 1 updated-goal follow-up: the [open-panel preflight](docs/research/2026-10-01-open-panel-preflight.md)
+compares candidate recall, phase-aware genotyping and structural panel
+inadequacy without committing to an architecture. The decision agent and
+independent reviewer approved only one 14.7-MB Locityper benchmark archive's
+inventory/schema stage. Native quality, unexplained reads, weighted distance
+and warnings are required controls, not a GQ-only strawman. The released
+benchmarks declare v0.17.3, distinct from the paper's v0.18.0. The phase-endpoint
+finding remains software evidence, not the biological research lead. No
+outcome scoring, training campaign or larger acquisition is approved by this
+stage; no publication-worthy result is claimed.
 
 October 1 follow-up: [confidence contracts](docs/research/2026-10-01-confidence-contracts.md)
 now distinguish Sniffles/kanpig likelihood-gap GQ from the pinned SVUPP fork's

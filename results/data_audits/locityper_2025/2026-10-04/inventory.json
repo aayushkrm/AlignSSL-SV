@@ -1,0 +1,151 @@
+{
+  "acquisition_identity": {
+    "actual_md5": "10e629a4793e3ef6fe7bb6796417a77b",
+    "actual_size_bytes": 14709179,
+    "expected_md5": "10e629a4793e3ef6fe7bb6796417a77b",
+    "expected_size_bytes": 14709179,
+    "sha256": "fd0e8ab023d8173c1cacf7627f07f7cacc62bcea5a2ab5f171d096bcc090312f",
+    "source_archive_name": "locityper-15879519-benchmarking.tar.gz"
+  },
+  "acquisition_identity_status": "VERIFIED",
+  "actual_md5": "10e629a4793e3ef6fe7bb6796417a77b",
+  "actual_size_bytes": 14709179,
+  "aggregate_decompressed_bytes": 14837760,
+  "archive_code_executed": false,
+  "archive_format": "tar.gz",
+  "column_signature": null,
+  "decompression_counts": {
+    "aggregate_output_bytes": 14837760,
+    "nested_csv_gzip_output_bytes": 0,
+    "outer_tar_stream_bytes": 14837760
+  },
+  "expected_md5": "10e629a4793e3ef6fe7bb6796417a77b",
+  "expected_size_bytes": 14709179,
+  "inspected_nested_gzip_integrity": "NOT_INSPECTED",
+  "inspected_records": 0,
+  "limits": {
+    "aggregate_decompressed_bytes": 262144000,
+    "archive_bytes": 1073741824,
+    "data_rows_parsed": 0,
+    "declared_member_data_bytes": 262144000,
+    "individual_member_bytes": 134217728,
+    "member_count": 1000,
+    "retained_csv_header_metadata_bytes": 65536,
+    "selected_csv_header_line_bytes": 65536,
+    "selected_csv_headers": 0
+  },
+  "member_count": 19,
+  "member_files_written_to_disk": false,
+  "members": [
+    {
+      "name": "locityper-benchmarking",
+      "size": 0,
+      "type": "directory"
+    },
+    {
+      "name": "locityper-benchmarking/trio_conc.csv.gz",
+      "size": 5584243,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/varcall-v0.15.1.csv.gz",
+      "size": 2814527,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/HLA",
+      "size": 0,
+      "type": "directory"
+    },
+    {
+      "name": "locityper-benchmarking/HLA/locityper_full.csv.gz",
+      "size": 34810,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/HLA/immuannot.csv.gz",
+      "size": 28330,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/HLA/t1k.csv.gz",
+      "size": 87040,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/HLA/locityper_loo_weighted.csv.gz",
+      "size": 36543,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/HLA/locityper_loo.csv.gz",
+      "size": 36330,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/QV",
+      "size": 0,
+      "type": "directory"
+    },
+    {
+      "name": "locityper-benchmarking/QV/full_illumina.csv.gz",
+      "size": 552975,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/QV/loo_illumina.csv.gz",
+      "size": 1310480,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/QV/full_sim.csv.gz",
+      "size": 470750,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/QV/loo_sim.csv.gz",
+      "size": 1400183,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/QV/full_hifi.csv.gz",
+      "size": 216911,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/QV/full_ont.csv.gz",
+      "size": 275472,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/QV/loo_ont.csv.gz",
+      "size": 610774,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/QV/loo_hifi.csv.gz",
+      "size": 584007,
+      "type": "file"
+    },
+    {
+      "name": "locityper-benchmarking/QV/nygc.csv.gz",
+      "size": 774686,
+      "type": "file"
+    }
+  ],
+  "outer_gzip_integrity": "VERIFIED",
+  "purpose": "Checksum-verified TAR inventory and optional CSV header only",
+  "scan_stage": "INVENTORY",
+  "schema_version": 1,
+  "selected_table_member": null,
+  "sha256": "fd0e8ab023d8173c1cacf7627f07f7cacc62bcea5a2ab5f171d096bcc090312f",
+  "source_archive_name": "locityper-15879519-benchmarking.tar.gz",
+  "source_url": "https://zenodo.org/api/records/15879519/files/locityper-benchmarking.tar.gz/content",
+  "source_url_redacted": false,
+  "table_data_rows_parsed": 0,
+  "table_header": null,
+  "tar_integrity_status": "VERIFIED",
+  "truth_or_performance_outputs_scored": false,
+  "whole_archive_md5_verification": "VERIFIED",
+  "whole_archive_sha256_computed": true
+}

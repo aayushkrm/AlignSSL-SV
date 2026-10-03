@@ -28,6 +28,34 @@ the objective.
 
 ## Current implementation and review state
 
+- October 4: [Locityper schema gate](2026-10-04-locityper-schema-gate.md)
+  completed on the existing research branch. The verified 14.7-MB archive has
+  19 members. Two full-panel/LOO Illumina headers declare all five native
+  channels together. The publisher source explained the initial header-reader
+  failure; an append-only, independently reviewed amendment allowed exactly
+  one command comment, with no content retained. All 36 safety tests pass;
+  the final full suite passed 468 tests with 29 skipped.
+  Raw metadata, hashes, protocols and an execution ledger are under
+  `results/data_audits/locityper_2025/2026-10-04/`. No outcome rows were parsed
+  or scored. Sequence-distance summaries do not establish structural
+  panel-absence labels, populated/unique joins or independent family holdouts.
+  Stop outcome progression on this archive alone; no larger acquisition,
+  detector or campaign is selected. Continue broader opportunity triage rather
+  than lowering the truth standard. Fresh cluster queue is empty; scratch
+  expiry remains October 22, one extension available. Peak RSS was measured,
+  not hard-capped: macOS rejected `RLIMIT_AS` before startup. The successful
+  scans stayed below 18 MB RSS and the stated byte/CPU budgets.
+- October 1 updated-goal follow-up: [open-panel preflight](2026-10-01-open-panel-preflight.md)
+  records the competing directions and separately requested Sol6.1/max
+  decision / Sol6.1/high reviewer. Only one 14,709,179-byte Locityper benchmark
+  TAR was approved for bounded inventory/schema inspection. It is outside Git
+  and matches the published size/MD5. Native multi-channel controls and
+  independent structural panel-absence labels are mandatory before any new
+  outcome protocol. Source v0.17.3 is pinned separately from the paper's
+  v0.18.0. No new detector or biological scoring is selected. The synthetic
+  phase-endpoint bug is not the current biological lead. Use connected tools
+  by task and alternatives when one fails, including Life Sciences Literature;
+  Firecrawl is a plugin, not an assumed CLI.
 - October 1: the [confidence-contract follow-up](2026-10-01-confidence-contracts.md)
   replaces assumptions about pooled GQ/PL with caller-specific source evidence.
   A pinned SVUPP fork accepts exact zero phase probabilities but treats them

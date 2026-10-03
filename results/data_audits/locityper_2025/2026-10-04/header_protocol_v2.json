@@ -1,0 +1,40 @@
+{
+  "purpose": "Source-verified single-command-comment amendment; not an outcome-analysis protocol",
+  "amends": "header_protocol.json",
+  "frozen_before_retry": true,
+  "archive_sha256": "fd0e8ab023d8173c1cacf7627f07f7cacc62bcea5a2ab5f171d096bcc090312f",
+  "member_allowlist": [
+    "locityper-benchmarking/QV/full_illumina.csv.gz",
+    "locityper-benchmarking/QV/loo_illumina.csv.gz"
+  ],
+  "required_columns": ["sample", "locus", "query_type"],
+  "allowed_columns": [
+    "sample", "locus", "genotype", "quality", "total_reads", "unexpl_reads",
+    "weight_dist", "warnings", "query_type", "edit", "size", "div", "qv",
+    "avail_edit", "avail_size", "avail_div", "avail_qv"
+  ],
+  "allow_leading_command_comment": true,
+  "maximum_leading_comments": 1,
+  "comment_prefix_hex": "2320",
+  "comment_content_retained_or_printed": false,
+  "metadata_plus_header_byte_limit": 65536,
+  "format_source": {
+    "repository": "tprodanov/locityper",
+    "commit": "146cfd42e9179bafd63d1f41db7fc449940989de",
+    "path": "extra/eval_accuracy.py",
+    "blob": "13db51350b74db2826073af6cb79daf8cd7b71e0",
+    "source_code_executed": false,
+    "scope": "Documented source format, not proof of historical archive producer execution"
+  },
+  "inventory_decompressed_bytes": 14837760,
+  "failed_first_header_attempt_charge_upper_bound_bytes": 14903297,
+  "failed_attempt_charge_basis": "Entire verified outer TAR size plus 65537-byte nested first-line bound; delimiter failure occurs before nested drain",
+  "cumulative_decompression_budget_bytes": 262144000,
+  "remaining_before_retries_bytes": 232402943,
+  "retained_headers_budget_bytes": 65536,
+  "cpu_limit_seconds_per_run": 120,
+  "memory_budget_bytes": 4294967296,
+  "memory_enforcement": "Measured RSS and bounded stream allocations; RLIMIT_AS unsupported on this macOS host",
+  "rows_parsed_or_scored": 0,
+  "next_stage_automatic_approval": false
+}
