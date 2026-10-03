@@ -28,6 +28,84 @@ the objective.
 
 ## Current implementation and review state
 
+- October 4 updated-goal follow-up: the full current objective was read and
+  relayed to the active internal workers. The [close-prior-art challenge](2026-10-04-updated-goal-and-prior-art.md)
+  checks published COSIGT, SVPG and minisv methods; generic missing-panel
+  confidence filtering, graph augmentation and personal-normal assembly
+  filtering are not sufficient novelty. Anscombe's independent review recommends
+  stopping open-panel confidence as the active publication lead under this
+  budget; main accepts the limited stop while the wider goal continues.
+  Helmholtz completed the source-only structural-label check and was closed:
+  full-span PAFs with MAPQ 255 do not provide confidence-qualified SV truth.
+  Aristotle completed the high-impact recommendation and was closed. It selects
+  a [modern caller-output completeness falsifier](2026-10-04-modern-callset-falsifier.md),
+  conditional on usable inputs and a frozen reviewed protocol. Strict HTTP
+  partial reads failed closed; independent review approved one complete SVPG
+  archive transfer. Whole size/MD5/SHA-256 passed for 2,879,666,672 bytes, with
+  203 entries and six frozen full-HiFi headers. Shared contig declarations do
+  not prove exact raw/reference or graph identity. Anscombe accepts the weaker
+  released-callset development estimand, not a controlled same-input ceiling.
+  Full outcome protocol remains pending; no biological rows or outcomes have
+  been parsed. Supporting synthetic source-contract tests pass 15; full suite
+  passes 483 with 29 skipped. NIST v5.0q also derives from Q100 assembly V1.1:
+  benchmark-generation revision must be distinguished from assembly version.
+  Existing cluster Truvari is 5.4.0, not the paper's 5.3; no scoring has run.
+  No new method or campaign is selected. Fresh cluster queue is empty; expiry is
+  October 22 at 23:02:50 cluster-local, one extension available.
+- October 4: [Locityper schema gate](2026-10-04-locityper-schema-gate.md)
+  completed on the existing research branch. The verified 14.7-MB archive has
+  19 members. Two full-panel/LOO Illumina headers declare all five native
+  channels together. The publisher source explained the initial header-reader
+  failure; an append-only, independently reviewed amendment allowed exactly
+  one command comment, with no content retained. All 36 safety tests pass;
+  the final full suite passed 468 tests with 29 skipped.
+  Raw metadata, hashes, protocols and an execution ledger are under
+  `results/data_audits/locityper_2025/2026-10-04/`. No outcome rows were parsed
+  or scored. Sequence-distance summaries do not establish structural
+  panel-absence labels, populated/unique joins or independent family holdouts.
+  Stop outcome progression on this archive alone; no larger acquisition,
+  detector or campaign is selected. Continue broader opportunity triage rather
+  than lowering the truth standard. Fresh cluster queue is empty; scratch
+  expiry remains October 22, one extension available. Peak RSS was measured,
+  not hard-capped: macOS rejected `RLIMIT_AS` before startup. The successful
+  scans stayed below 18 MB RSS and the stated byte/CPU budgets.
+  Source checkpoint `4cd90b9e36a7ee74b7e010513ea191bc0204baec` was pushed;
+  the remote branch SHA matches. PR #2 remains open and requires review; no
+  main merge or protection bypass was attempted. A separate internal
+  Luna/max-requested literature sidecar is checking the closest recent
+  open-panel/adaptive-candidate work. Do not treat that pending search as a
+  selected method or a validated novelty claim.
+- October 1 updated-goal follow-up: [open-panel preflight](2026-10-01-open-panel-preflight.md)
+  records the competing directions and separately requested Sol6.1/max
+  decision / Sol6.1/high reviewer. Only one 14,709,179-byte Locityper benchmark
+  TAR was approved for bounded inventory/schema inspection. It is outside Git
+  and matches the published size/MD5. Native multi-channel controls and
+  independent structural panel-absence labels are mandatory before any new
+  outcome protocol. Source v0.17.3 is pinned separately from the paper's
+  v0.18.0. No new detector or biological scoring is selected. The synthetic
+  phase-endpoint bug is not the current biological lead. Use connected tools
+  by task and alternatives when one fails, including Life Sciences Literature;
+  Firecrawl is a plugin, not an assumed CLI.
+- October 1: the [confidence-contract follow-up](2026-10-01-confidence-contracts.md)
+  replaces assumptions about pooled GQ/PL with caller-specific source evidence.
+  A pinned SVUPP fork accepts exact zero phase probabilities but treats them
+  as missing; a synthetic label swap changes GT/GQ. Fourteen tests and hashed
+  source/report identities reproduce this input-contract counterexample,
+  not biological performance. Real endpoint frequency and execution revision
+  remain open. QUILT2 2.0.3 source-formula arithmetic admits an exact endpoint
+  without underflow; independent review accepted this conditional construction.
+  The two load-bearing files match tag 2.0.4, named by the current wrapper;
+  historical run/container identity is still unverified. Full suite: 432 passed,
+  29 skipped; latest 14-test diagnostic and 30-test related target pass.
+  Source checkpoint `8fe78755ea3b6bb8d4dbc911daff9090864c9b84` is pushed and
+  [PR #2](https://github.com/aayushkrm/AlignSSL-SV/pull/2) is open, with one
+  approval required. Continue from `research/genotype-confidence-contracts-20261001`;
+  do not revert to main and silently lose the unmerged diagnostic. Fresh
+  `squeue` was empty; restart scratch expires October 22 at 23:02:50
+  cluster-local, one extension available.
+  No production caller patch, genotype scoring, new cohort or
+  training campaign is selected. Work proceeds on a research branch/PR after
+  GitHub reported a PR-only rule bypass on the previous main push.
 - The September 30 UTC / October 1 local
   [fresh reassessment](2026-09-30-fresh-assessment.md) supersedes the earlier
   candidate-recall priority, without deleting its evidence. Independent
@@ -211,23 +289,28 @@ the objective.
 
 ## Immediate next gates
 
-1. Stop genomic acquisition expansion after the bounded, completed availability
-   checkpoint. Verify the SVUPP field-lineage/catalog/run bridge before any
-   scoring. Available predictions cover a pedigree, not unrelated-donor
-   transfer; SVLearn training/validation examples are not independent
-   out-of-training confidence evidence. Preserve those feasibility limits.
-2. Only if task-aligned trusted GTs, interpretable confidence and unrelated
-   development predictions exist, freeze a no-fit donor-transfer falsifier.
-   Obtain an independent Sol6.1/high protocol review for eligibility, no-calls,
-   sample/allele joins, confidence meaning, label budgets, uncertainty and an
-   untouched unrelated confirmation set. No large model training is selected.
-3. If inputs or a distinct residual mechanism fail, reconsider the research bet
-   instead of expanding downloads or reviving SSL. Nested-repeat discovery is
-   conditional on orthogonal missing-allele evidence beyond representation and
-   current repeat/local-assembly baselines, not approved by this checkpoint.
-4. Prior candidate-stage/callability gates remain required **if** that option is
-   chosen later. Manta's unresolved signal-53 failures must be diagnosed before
-   a scientifically justified rerun; do not submit a third identical fixture.
-   Old test sets and related-family splits remain development evidence.
+1. Read the current objective and integrate Aristotle's pending direction
+   recommendation with the October 4 independent review. Open-panel confidence
+   is no longer the active publication lead under this budget. Do not restart
+   the completed literature or Locityper source-feasibility workers, build a
+   detector from the QV archive, or acquire its larger database to preserve the
+   old direction. This is a limited research stop, not a pause of the goal.
+2. Compare a bounded event-level diagnostic, modern call-set recovery and other
+   distinct mechanisms against the closer COSIGT, SVPG and minisv prior art.
+   Select a real scientific falsifier only with concrete input provenance,
+   independent structural truth and all native controls. Write the eligibility,
+   effect/precision threshold, unknown/no-call handling, equivalence rules,
+   label and total compute budgets before scoring. Obtain a separate
+   Sol6.1/high protocol review. No large training is selected.
+3. If the inputs or distinct contribution fail, reject the direction and move
+   to a stronger question; do not substitute another generic header audit for
+   scientific progress. Keep unrelated-donor/locus-family confirmation untouched.
+   Pedigree predictions and SVLearn training rows remain development evidence,
+   not independent confidence-transfer tests.
+4. Prior candidate-stage/callability gates apply **if** candidate recovery is
+   selected. Final released calls cannot identify an internal candidate ceiling.
+   Diagnose Manta's unresolved signal-53 failures before any justified rerun;
+   do not submit a third identical fixture. Scratch expires October 22; preserve
+   useful outputs before any expiry or project-only job cancellation.
 
 Scientific improvement and publication readiness remain unproven.

@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-10-01** (local; source audits dated September 30 UTC). The research-restart section immediately below
+_Last updated: **2026-10-04** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,85 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+October 4 updated-goal follow-up: the full objective was re-read and sent to
+the active internal subagents. The [new prior-art challenge](docs/research/2026-10-04-updated-goal-and-prior-art.md)
+checks COSIGT, SVPG and minisv against competing research questions. Native
+confidence filtering, graph augmentation and personal-normal assembly filtering
+are already close prior art; none is a new contribution by itself. Independent
+review recommends stopping open-panel confidence as the active publication
+lead under the present budget; the main agent accepts that limited stop while
+the wider goal continues. The source-feasibility check also defers Locityper
+PAFs as structural truth. The high-impact decision selected a
+[modern caller-output completeness falsifier](docs/research/2026-10-04-modern-callset-falsifier.md).
+After a strict partial-read failure, independent review approved one whole
+SVPG call-set archive transfer. Its 2,879,666,672 bytes match the publisher MD5;
+203 entries and six frozen full-HiFi caller headers are inventoried outside
+raw-data Git storage. All six declare the same 86 contigs, but exact input,
+reference-base and graph/run identity remain unresolved. The reviewer accepts
+a narrower released-callset development estimand, not a controlled same-input
+ceiling or independent replication. The exact outcome protocol remains pending;
+no biological rows, genotype/truth comparisons or training have been scored.
+A supporting synthetic script-contract probe passes 15 tests; the full suite
+passes 483 with 29 skipped. This is software/source evidence, not biological gain.
+A fresh cluster queue is empty;
+scratch still expires October 22, with one extension available. The goal
+remains active; no publication-worthy result is claimed.
+
+October 4 follow-up: the [Locityper schema gate](docs/research/2026-10-04-locityper-schema-gate.md)
+verified the small archive and two joint native-control headers. An initial
+format failure was resolved through the publisher's pinned source and a
+separately reviewed, single-comment amendment. No outcome rows were parsed.
+All five required native channels are declared together, but the available
+sequence-distance summaries do not establish confidence-qualified structural
+panel-absence labels. This archive alone is not ready for the proposed SV
+experiment. No detector, outcome test or larger acquisition is approved;
+broader research triage continues. The bounded stage consumed at most 67.7 MB
+of decompressed output, 1.87 CPU seconds and about 17 MB peak RSS. The 36
+reader tests pass; the final full suite passed 468 tests with 29 skipped.
+This is availability evidence, not a biological gain.
+Source checkpoint `4cd90b9` is pushed to the existing
+[PR #2](https://github.com/aayushkrm/AlignSSL-SV/pull/2); review remains required.
+
+October 1 updated-goal follow-up: the [open-panel preflight](docs/research/2026-10-01-open-panel-preflight.md)
+compares candidate recall, phase-aware genotyping and structural panel
+inadequacy without committing to an architecture. The decision agent and
+independent reviewer approved only one 14.7-MB Locityper benchmark archive's
+inventory/schema stage. Native quality, unexplained reads, weighted distance
+and warnings are required controls, not a GQ-only strawman. The released
+benchmarks declare v0.17.3, distinct from the paper's v0.18.0. The phase-endpoint
+finding remains software evidence, not the biological research lead. No
+outcome scoring, training campaign or larger acquisition is approved by this
+stage; no publication-worthy result is claimed.
+
+October 1 follow-up: [confidence contracts](docs/research/2026-10-01-confidence-contracts.md)
+now distinguish Sniffles/kanpig likelihood-gap GQ from the pinned SVUPP fork's
+posterior-derived GQ; inherited PL headers are not populated-field evidence.
+A bounded synthetic endpoint fixture exposes a haplotype-label symmetry
+violation when zero phase probability is treated as missing (GT `0/1` to `0/0`,
+GQ 14 to 3 after label swap). Fourteen targeted tests pass; source Git blobs and raw
+synthetic output are pinned. This is not biological accuracy, a deployed repair
+or a publication-worthy result. Actual endpoint occurrence and assessment
+execution revision need checking before a separately reviewed biological test.
+No new genomic data or GPU campaign was started. New changes use a branch/PR
+instead of bypassing the repository's required-review rule.
+Independent Sol6.1/high-requested review accepted the synthetic scope and its
+normalization, not a biological claim; two requested test improvements were
+implemented. Full suite after the producer bridge's additional test: 432
+passed, 29 skipped; manuscript consistency and report checksum checks passed.
+The pinned QUILT2 2.0.3 output route omits likelihood-ratio capping; a constructed
+six-SNP BQ30 emission calculation rounds phase confidence to one without
+underflow. That strengthens endpoint reachability, not real frequency or
+biological impact. Independent review accepted conditional source-formula
+reachability and caught the current wrapper's 2.0.4 container version. The two
+load-bearing QUILT source files are byte/blob-identical at tags 2.0.3 and 2.0.4;
+container/run identity and real endpoint frequency are still unverified.
+Published as [PR #2](https://github.com/aayushkrm/AlignSSL-SV/pull/2), source
+checkpoint `8fe78755ea3b6bb8d4dbc911daff9090864c9b84`. The branch push and
+remote SHA match were verified; the PR is open and requires one approving
+review. No main-protection bypass or merge was attempted. A fresh cluster
+queue check found no jobs for this account; restart scratch expires October 22
+at 23:02:50 cluster-local, with one extension available.
 
 The prior negative result remains the authoritative published-project outcome;
 no new performance gain is claimed. The 2026-09-23 objective revision opens a

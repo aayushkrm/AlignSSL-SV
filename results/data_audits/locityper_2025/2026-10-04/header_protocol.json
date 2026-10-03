@@ -1,0 +1,26 @@
+{
+  "purpose": "Frozen inventory-first CSV-header allowlist; not an outcome-analysis protocol",
+  "frozen_before_header_inspection": true,
+  "inventory_report": "inventory.json",
+  "archive_sha256": "fd0e8ab023d8173c1cacf7627f07f7cacc62bcea5a2ab5f171d096bcc090312f",
+  "declared_benchmark_version": "0.17.3",
+  "member_allowlist": [
+    "locityper-benchmarking/QV/full_illumina.csv.gz",
+    "locityper-benchmarking/QV/loo_illumina.csv.gz"
+  ],
+  "required_columns": ["sample", "locus", "query_type"],
+  "allowed_columns": [
+    "sample", "locus", "genotype", "quality", "total_reads", "unexpl_reads",
+    "weight_dist", "warnings", "query_type", "edit", "size", "div", "qv",
+    "avail_edit", "avail_size", "avail_div", "avail_qv"
+  ],
+  "vocabulary_source": "Publisher README on Zenodo record 15879519; documented avail_* family instantiated with documented edit/size/div/qv suffixes",
+  "schema_failure_policy": "Fail without retaining or reporting unrecognized content; no outcome access or acquisition escalation",
+  "retained_headers_budget_bytes": 65536,
+  "cumulative_decompression_budget_bytes": 262144000,
+  "cpu_limit_seconds_per_run": 120,
+  "memory_budget_bytes": 4294967296,
+  "memory_enforcement": "RLIMIT_AS rejected on this macOS host; stream allocations bounded and peak RSS measured externally, not a hard address-space limit",
+  "rows_parsed_or_scored": 0,
+  "next_stage_automatic_approval": false
+}

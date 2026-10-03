@@ -1,0 +1,67 @@
+{
+  "purpose": "Transcribed execution and conservative stage-budget ledger; not biological results",
+  "execution_date_local": "2026-10-04",
+  "execution_date_utc": "2026-10-03",
+  "original_protocol": "header_protocol.json",
+  "source_verified_amendment": "header_protocol_v2.json",
+  "archive_sha256": "fd0e8ab023d8173c1cacf7627f07f7cacc62bcea5a2ab5f171d096bcc090312f",
+  "runs": [
+    {
+      "stage": "inventory",
+      "report": "inventory.json",
+      "decompressed_bytes": 14837760,
+      "cpu_seconds": 0.22,
+      "wall_seconds": 0.24,
+      "peak_rss_bytes": 16887808,
+      "status": "OUTER_TAR_GZIP_VERIFIED_NESTED_NOT_INSPECTED"
+    },
+    {
+      "stage": "first_full_header_attempt",
+      "status": "FAILED_CLOSED_BEFORE_HEADER_REPORT_AND_NESTED_DRAIN",
+      "safe_error": "CSV header line is malformed or has no detectable delimiter",
+      "decompressed_bytes_upper_bound_charge": 14903297,
+      "charge_basis": "Entire verified outer TAR stream plus 65537-byte nested first-line bound",
+      "cpu_seconds": 0.46,
+      "wall_seconds": 0.53,
+      "peak_rss_bytes": 17010688
+    },
+    {
+      "stage": "source_verified_full_header_retry",
+      "report": "full_illumina_header_v2.json",
+      "decompressed_bytes": 18209039,
+      "cpu_seconds": 0.57,
+      "wall_seconds": 0.65,
+      "peak_rss_bytes": 17223680,
+      "status": "RECOGNIZED_SCHEMA_AND_SELECTED_STREAM_INTEGRITY_VERIFIED"
+    },
+    {
+      "stage": "source_verified_loo_header_retry",
+      "report": "loo_illumina_header_v2.json",
+      "decompressed_bytes": 19759106,
+      "cpu_seconds": 0.62,
+      "wall_seconds": 0.74,
+      "peak_rss_bytes": 17223680,
+      "status": "RECOGNIZED_SCHEMA_AND_SELECTED_STREAM_INTEGRITY_VERIFIED"
+    }
+  ],
+  "conservative_cumulative_decompression_charge_bytes": 67709202,
+  "cumulative_decompression_budget_bytes": 262144000,
+  "remaining_decompression_budget_bytes": 194434798,
+  "cumulative_retained_header_metadata_bytes": 375,
+  "retained_header_budget_bytes": 65536,
+  "total_scanner_cpu_seconds": 1.87,
+  "stage_cpu_budget_seconds": 3600,
+  "cpu_limit_seconds_per_scan": 120,
+  "maximum_measured_peak_rss_bytes": 17223680,
+  "memory_budget_bytes": 4294967296,
+  "hard_address_space_limit_enforced": false,
+  "resource_limit_setup_failure": "macOS RLIMIT_AS rejected the proposed limit before scanner startup; RLIMIT_CPU succeeded. Small bounded scans subsequently used measured RSS.",
+  "table_headers_recognized": 2,
+  "joint_native_channel_declarations_present": ["quality", "unexpl_reads", "weight_dist", "warnings", "total_reads"],
+  "outcome_rows_parsed_or_scored": 0,
+  "comment_content_retained_or_printed": false,
+  "population_or_join_validity_verified": false,
+  "structural_panel_absence_truth_verified": false,
+  "biological_experiment_approved": false,
+  "cluster_jobs_launched_or_cancelled": 0
+}
