@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "reserved_before_source_body_reads",
+  "max_global_decoded_traffic_bytes": 6442450944,
+  "max_source_decoded_traffic_bytes": 2147483648,
+  "conservative_prior_header_charge_bytes": 6291456,
+  "prior_header_bytes_returned": 33048,
+  "full_selected_stage_reservation_bytes": 1037019267,
+  "reserved_total_including_prior_bytes": 1043310723,
+  "actual_stage_bytes_decoded": null,
+  "truth_or_matching_stage_reserved": false,
+  "failure_policy": "Charge at least the full selected reservation on failure; retain partial files and logs; no automatic retry.",
+  "compressed_archive_hash_reads": "Logged separately, not decompressed traffic."
+}

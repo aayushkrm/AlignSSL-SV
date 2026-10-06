@@ -1,0 +1,24 @@
+{
+  "charged_prior_source_decoded_bytes": 6291456,
+  "completed_callers": {},
+  "conservative_staging_traffic_charge_bytes": 1037019267,
+  "controller_traffic_account": "results/data_audits/svpg_2026/2026-10-07/traffic_reservation.json",
+  "exception_message": "Unsorted VCF contig order",
+  "exception_type": "ValueError",
+  "failed_caller": "cutesv",
+  "global_traffic_limit_enforced": false,
+  "max_line_bytes": 33554432,
+  "members": [
+    "SV_callsets/HG002_benchmark/cutesv/hifi.vcf",
+    "SV_callsets/HG002_benchmark/debreak/hifi.vcf",
+    "SV_callsets/HG002_benchmark/sawfish/hifi.vcf",
+    "SV_callsets/HG002_benchmark/sniffles/hifi.vcf",
+    "SV_callsets/HG002_benchmark/svim/hifi.vcf",
+    "SV_callsets/HG002_benchmark/svpg/hifi.vcf"
+  ],
+  "protocol_sha256": "d44bdeea2142bb6dae2e61f7bc6b29947beb9627199bdd28e0b1d5a70e83c4ae",
+  "source_decoded_budget_used_including_prior": 15885000,
+  "source_decoded_cap": 2147483648,
+  "staging_decoded_bytes_read": 9593544,
+  "status": "incomplete"
+}

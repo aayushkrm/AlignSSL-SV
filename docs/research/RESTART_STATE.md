@@ -28,6 +28,19 @@ the objective.
 
 ## Current implementation and review state
 
+- October 7: main read the current full goal again. The
+  [independent staging review](2026-10-07-stage-review.md) records two
+  separately reviewed source-only attempts. Stage-01 failed on header contig
+  ordering; stage-02 preserved source order, completed cuteSV with CRC checked,
+  then failed on a DeBreak line above 32 MiB. All six callers remain required;
+  incomplete source staging is not a biological result. Keep original
+  protocols, full conservative reservations, partials and logs. No automatic
+  third pass is approved. Truth units and bootstrap helpers were implemented
+  and tested only on synthetic examples; no truth, screening, matching or
+  refinement execution is approved. Exact input/run identity remains
+  unresolved, so the weaker released-callset development estimand governs.
+  Preserve the 2,080,329,990-byte source charge and obtain a concrete bounded
+  alternative before another source pass. No expensive campaign is selected.
 - October 4 updated-goal follow-up: the full current objective was read and
   relayed to the active internal workers. The [close-prior-art challenge](2026-10-04-updated-goal-and-prior-art.md)
   checks published COSIGT, SVPG and minisv methods; generic missing-panel
@@ -289,13 +302,18 @@ the objective.
 
 ## Immediate next gates
 
-1. Read the current objective and integrate Aristotle's pending direction
+1. Read the current objective and retain Aristotle's completed direction
    recommendation with the October 4 independent review. Open-panel confidence
    is no longer the active publication lead under this budget. Do not restart
    the completed literature or Locityper source-feasibility workers, build a
    detector from the QV archive, or acquire its larger database to preserve the
    old direction. This is a limited research stop, not a pause of the goal.
-2. Compare a bounded event-level diagnostic, modern call-set recovery and other
+2. Resolve the released-callset staging failure without dropping DeBreak or
+   altering source alleles/GT. Preserve both failed attempts; review a bounded
+   alternative and traffic amendment before a further source pass. Then freeze
+   exact sample-column mappings, deterministic sort/multiallelic handling,
+   installed code hashes and executable traffic accounting before scoring.
+   Compare a bounded event-level diagnostic, modern call-set recovery and other
    distinct mechanisms against the closer COSIGT, SVPG and minisv prior art.
    Select a real scientific falsifier only with concrete input provenance,
    independent structural truth and all native controls. Write the eligibility,

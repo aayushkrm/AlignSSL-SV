@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-10-04** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
+_Last updated: **2026-10-07** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,26 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+October 7 updated-goal follow-up: main read the full current goal again.
+The [independent stage review](docs/research/2026-10-07-stage-review.md) records
+two bounded engineering failures and separate approvals; neither is a
+biological null or a publication result. Stage-01 stopped on VCF/header contig
+ordering. Stage-02 retained original order and completed cuteSV (51,561 source
+records, member CRC checked), then stopped on a DeBreak line above 32 MiB.
+No caller was dropped to obtain a union result. Partial files/logs remain
+outside Git; immutable protocols, reservations and small reports are in
+`results/data_audits/svpg_2026/2026-10-07/`. The two passes retain a conservative
+2,080,329,990-byte source charge. Stage-02 used 14.58 combined CPU seconds and
+about 90.5 MB child peak RSS; no resource guard tripped. There is no automatic
+third pass. Truth parsing, scientific screening and refinement remain closed
+pending a bounded alternative and exact input/control safeguards. Pure helper
+code for identities, territories and fixed bootstrap rules is synthetic-only.
+DeepSV remains excluded as a foundation; SSL is not required. No training,
+scientific gain or selected publication contribution is claimed.
+Integrated validation: 545 tests passed, 29 skipped; manuscript consistency
+and whitespace checks passed. The reviewer recommends (but has not approved
+execution of) a streamed RNAMES-removal repair for the remaining five files.
 
 October 4 updated-goal follow-up: the full objective was re-read and sent to
 the active internal subagents. The [new prior-art challenge](docs/research/2026-10-04-updated-goal-and-prior-art.md)
