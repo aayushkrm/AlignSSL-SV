@@ -11,6 +11,26 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 7 updated-goal checkpoint: main read the full revised objective and
+relayed it to the independent reviewer. The [truth header gate](docs/research/2026-10-07-truth-header-gate.md)
+passed under its separate approval: exact HG002 sample, 24 declared contigs,
+GT/AD and non-PASS truth FILTER declarations. No truth body row was parsed.
+Keep the full one-MiB reservation: aggregate charge is **5,220,887,319 bytes**.
+The [pinned cluster synthetic controls](docs/research/2026-10-07-updated-goal-and-synthetic-controls.md)
+passed: parent/ALT identities, dot-mode GT, boundary-record preservation and
+the identical truth-ID multiset across both arms. The initial version-call
+failure is preserved. Legal truth sentinel classification is tested but has
+not run on real truth. Focused validation: **76 passed, 1 skipped**; the skip
+is the local pinned-stack integration test, which passed separately on the
+cluster. Full local suite: **657 passed, 30 skipped**; manuscript consistency
+passed. Real eligibility/reference checks, caller preparation and scoring
+remain unrun and unapproved. Next: independently reviewed finite preparation
+and the fixed cheap diagnostic. Reviewer accepts the synthetic checkpoint
+but requires duplicate truth multiplicity, a nonempty FN control, full-row
+preservation, identity-safe reader pairing and metadata consistency controls
+before scoring. No biological gain, new method or publication
+contribution is claimed. DeepSV remains excluded; SSL is not required.
+
 October 7 latest verified checkpoint: the [distinct standard-tool route](docs/research/2026-10-07-standard-transport-decision.md)
 completed its one independently reviewed attempt. All six frozen caller files
 are available and hash-verified. The standard parser preserved records and
@@ -32,8 +52,9 @@ accepts source availability and identifies the exact next controls: legal
 truth boundary records must be counted ineligible, native filters must not
 change the truth denominator, caller parent/ALT identities must survive
 standard preparation, and the scientific environment/budget must be frozen.
-A capped truth-header inspection is the next proposed scope, not yet approved
-for execution. No matching/scoring has run or is approved by this review.
+A capped truth-header inspection was the next proposed scope at that review;
+the separate approval and completed result are linked above. No
+matching/scoring has run or is approved by that preparation review.
 
 October 7 latest checkpoint: the [bounded streaming follow-up](docs/research/2026-10-07-streamed-callset-stage.md)
 preserves stage-03 and final stage-04 failures. Stage-04 completed DeBreak,

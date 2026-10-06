@@ -1,0 +1,21 @@
+{
+  "purpose": "current_Q100_truth_header_only_v1",
+  "header_only_approved": true,
+  "independent_review": "Dirac exact code/protocol/reservation approval required before execution; no body parsing, BEDs, denominator or scoring",
+  "truth_path": "/scratch/igorno-alignssl_restart_20260922/giab-hg002-v5-grch37/HG002_GRCh37_v5.0q_stvar.vcf.gz",
+  "truth_compressed_bytes": 42978214,
+  "truth_sha256": "edb582ceec508f6d745acd0a8c522ee4f235ff5bf4754ba6bdc4c3abee122b5c",
+  "decoded_reservation_bytes": 1048576,
+  "charged_prior_global_bytes": 5219838743,
+  "global_limit_bytes": 12884901888,
+  "max_compressed_prefix_bytes": 65536,
+  "max_cpu_seconds": 30,
+  "max_address_space_bytes": 268435456,
+  "max_wall_seconds": 60,
+  "decode_rule": "Standard zlib gzip prefix once with max_length=1MiB, interpretation only header through #CHROM; all decoded prefix including unseen body read-ahead charged. No continuation/retry if header absent.",
+  "output_rule": "Fresh metadata report outside Git; preserve reservation on failure",
+  "no_bed_read": true,
+  "no_body_record_parsing": true,
+  "no_scoring": true,
+  "no_automatic_retry": true
+}

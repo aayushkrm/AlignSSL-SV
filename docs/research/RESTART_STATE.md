@@ -28,6 +28,19 @@ the objective.
 
 ## Current implementation and review state
 
+- October 7 updated-goal checkpoint: main read the revised objective in full
+  and relayed it to the independent reviewer. The separately approved
+  [truth header gate](2026-10-07-truth-header-gate.md) passed: sample HG002 and
+  compatible declared autosomes; no body record parsed. Aggregate retained
+  charge is 5,220,887,319 bytes. The [pinned synthetic cluster controls](2026-10-07-updated-goal-and-synthetic-controls.md)
+  passed identity, dot-mode GT, boundary preservation and shared-denominator
+  checks. Initial software failure remains preserved. Truth sentinel handling
+  is synthetic-tested, not run on real data. Focused 76 passed, one local
+  pinned-stack skip; the cluster integration passed separately. Full local
+  suite: 657 passed, 30 skipped; manuscript consistency passed. Freeze finite
+  truth/reference/caller preparation and all-read reservations for independent
+  review next. No real truth preparation, BED denominator, scoring or campaign
+  is approved by this checkpoint. Scientific goal remains unachieved.
 - October 7 current: the [distinct standard-tool attempt](2026-10-07-standard-transport-decision.md)
   succeeded. All six preselected callsets are complete and SHA-verified; new
   SVIM/SVPG raw member CRCs passed. Standard local pysam 0.24.1/samtools 1.24
@@ -42,8 +55,8 @@ the objective.
   day; no truth/sort/scoring/refinement/training has run. No publication
   contribution is established.
 - The [independent preparation review](2026-10-07-preparation-review.md) is
-  complete. Next proposed gate is capped truth-header inspection with exact
-  code/protocol/reservation review. Then fix boundary classification, caller
+  complete. Its proposed capped truth-header gate subsequently passed under
+  separate exact code/protocol/reservation review, as linked above. Then fix boundary classification, caller
   identity/standard preparation, caller-only native filters with identical
   truth IDs, exact cluster environment and all-read reservations. Matching,
   POA/refinement and training remain closed. No user action is required here;

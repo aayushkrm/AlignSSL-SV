@@ -13,7 +13,11 @@ Protocol JSON fields required by :func:`prepare_released_truth`:
 ``max_truth_compressed_bytes``, ``max_line_bytes``,
 ``charged_prior_global_decoded_bytes``,
 ``truth_preparation_reservation_bytes``, ``max_bed_bytes``,
-``max_bed_rows``, and ``max_mapping_bytes``.
+``max_bed_rows``, ``max_mapping_bytes``, and
+``unknown_contig_length_policy``. The latter must be
+``do_not_infer_n_plus_one_without_unique_declared_length``. A POS=N+1
+telomeric sentinel is recognized only when one unambiguous positive length is
+declared for that contig; no length is inferred from BED intervals.
 
 The reservation must cover the truth decoded-byte cap, one byte used to detect
 budget overflow, and each BED byte cap plus its one-byte overflow probe. It
@@ -38,6 +42,7 @@ if __package__:
         TerritoryIndex,
         classify_truth_record,
         is_autosome,
+        truth_identity,
         territory_sets,
     )
 else:  # Support `python analysis/prepare_released_truth.py ...` from the repo.
@@ -46,6 +51,7 @@ else:  # Support `python analysis/prepare_released_truth.py ...` from the repo.
         TerritoryIndex,
         classify_truth_record,
         is_autosome,
+        truth_identity,
         territory_sets,
     )
 
@@ -60,9 +66,13 @@ MAX_MAPPING_BYTES = 64 * MIB
 MAX_PROTOCOL_BYTES = 1 * MIB
 MAX_INVENTORY_BYTES = 4 * MIB
 MAX_GLOBAL_DECODED_BYTES = 6 * GIB
+UNKNOWN_CONTIG_LENGTH_POLICY = (
+    "do_not_infer_n_plus_one_without_unique_declared_length"
+)
 _SHA256_RE = re.compile(r"[0-9a-fA-F]{64}\Z")
 _FILEFORMAT_RE = re.compile(r"##fileformat=VCFv4\.[0-9]+\Z")
 _META_HEADER_RE = re.compile(r"##[A-Za-z][A-Za-z0-9_.-]*=.+\Z")
+_CONTIG_META_RE = re.compile(r"##contig=<(.+)>\Z")
 _FORMAT_KEY_RE = re.compile(r"[A-Za-z][A-Za-z0-9_.]*\Z")
 _GT_RE = re.compile(r"(?:\.|[0-9]+)(?:[/|](?:\.|[0-9]+))*\Z")
 
@@ -124,6 +134,12 @@ def _validate_protocol(protocol: dict[str, object]) -> dict[str, object]:
     if (not isinstance(sample, str) or not sample or len(sample) > 255
             or any(ch.isspace() or ord(ch) < 32 for ch in sample)):
         raise ValueError("expected_truth_sample_label must be one exact, nonempty sample label")
+    contig_length_policy = protocol.get("unknown_contig_length_policy")
+    if contig_length_policy != UNKNOWN_CONTIG_LENGTH_POLICY:
+        raise ValueError(
+            "unknown_contig_length_policy must be exactly "
+            f"{UNKNOWN_CONTIG_LENGTH_POLICY!r}"
+        )
 
     max_truth = _bounded_int(
         protocol, "max_truth_decoded_bytes", minimum=1,
@@ -168,6 +184,7 @@ def _validate_protocol(protocol: dict[str, object]) -> dict[str, object]:
         **pins,
         "approval_ref": approval_ref,
         "sample_label": sample,
+        "unknown_contig_length_policy": contig_length_policy,
         "max_truth_decoded_bytes": max_truth,
         "max_truth_compressed_bytes": max_compressed,
         "max_line_bytes": max_line,
@@ -308,6 +325,61 @@ def _validate_header_line(content: bytes, *, expected_sample: str) -> bool:
     return True
 
 
+def _contig_length_declaration(content: bytes) -> tuple[str, int | None] | None:
+    """Read only a unique ID and positive length from one ##contig line."""
+    text = content.decode("utf-8", errors="strict")
+    match = _CONTIG_META_RE.fullmatch(text)
+    if match is None:
+        return None
+
+    attributes: list[str] = []
+    current: list[str] = []
+    in_quotes = False
+    escaped = False
+    for char in match.group(1):
+        if escaped:
+            current.append(char)
+            escaped = False
+        elif char == "\\" and in_quotes:
+            current.append(char)
+            escaped = True
+        elif char == '"':
+            current.append(char)
+            in_quotes = not in_quotes
+        elif char == "," and not in_quotes:
+            attributes.append("".join(current))
+            current = []
+        else:
+            current.append(char)
+    if in_quotes or escaped:
+        return None
+    attributes.append("".join(current))
+
+    parsed: list[tuple[str, str]] = []
+    for attribute in attributes:
+        key, separator, value = attribute.partition("=")
+        if not separator or not key or not value:
+            return None
+        parsed.append((key, value))
+    ids = [value for key, value in parsed if key == "ID"]
+    if len(ids) != 1:
+        return None
+    contig = ids[0]
+    if contig.startswith('"') and contig.endswith('"'):
+        contig = contig[1:-1]
+    if not contig:
+        return None
+
+    lengths = [value for key, value in parsed if key == "length"]
+    if (len(lengths) != 1 or not lengths[0].isascii()
+            or not lengths[0].isdigit() or len(lengths[0]) > 19):
+        return contig, None
+    length = int(lengths[0])
+    if not 1 <= length <= 9_223_372_036_854_775_807:
+        return contig, None
+    return contig, length
+
+
 def _parse_body_line(
     content: bytes, *, expected_columns: int = 10,
 ) -> tuple[str, int, str, str, str, str | None, bool, bool]:
@@ -323,7 +395,7 @@ def _parse_body_line(
     if not pos_text.isascii() or not pos_text.isdigit() or len(pos_text) > 19:
         raise ValueError("malformed VCF POS value")
     pos = int(pos_text)
-    if pos < 1 or pos > 9_223_372_036_854_775_807:
+    if pos < 0 or pos > 9_223_372_036_854_775_807:
         raise ValueError("malformed VCF POS value")
 
     if fmt == ".":
@@ -458,7 +530,10 @@ def prepare_released_truth(
         "gt_absent_records": 0,
         "gt_duplicate_records": 0,
         "exclusion_counts": {},
-        "boundary_counts": {"boundary_or_mixed_territory": 0},
+        "boundary_counts": {
+            "boundary_or_mixed_territory": 0,
+            "ineligible_boundary": 0,
+        },
         "eligible_counts": {"current_minus_tier1": 0, "intersection": 0},
         "mapping_bytes": 0,
     }
@@ -506,8 +581,12 @@ def prepare_released_truth(
         header_seen = False
         fileformat_seen = False
         header_line_number = 0
+        declared_contig_lengths: dict[str, int | None] = {}
         exclusion_counts: dict[str, int] = {}
-        boundary_counts = {"boundary_or_mixed_territory": 0}
+        boundary_counts = {
+            "boundary_or_mixed_territory": 0,
+            "ineligible_boundary": 0,
+        }
         eligible_counts = {"current_minus_tier1": 0, "intersection": 0}
         vcf_digest, map_digest = hashlib.sha256(), hashlib.sha256()
         mapping_bytes = 0
@@ -552,6 +631,14 @@ def prepare_released_truth(
                         text = content.decode("utf-8", errors="strict")
                         if not _META_HEADER_RE.fullmatch(text):
                             raise ValueError("malformed VCF header or missing #CHROM line")
+                        if content.startswith(b"##contig=<"):
+                            declaration = _contig_length_declaration(content)
+                            if declaration is not None:
+                                contig_name, contig_length = declaration
+                                if contig_name in declared_contig_lengths:
+                                    declared_contig_lengths[contig_name] = None
+                                else:
+                                    declared_contig_lengths[contig_name] = contig_length
                     _write_all(vcf_out, vcf_digest, raw)
                     continue
 
@@ -567,13 +654,29 @@ def prepare_released_truth(
                 if gt_absent:
                     counters["gt_absent_records"] += 1
 
-                classification = classify_truth_record(
-                    source_hash, ordinal, chrom, pos, ref, alt, gt,
-                )
-                identity = classification.identity
+                classification = None
                 territory: str | None = None
-                reason = classification.exclusion_reason
-                if reason is None:
+                reason: str | None = None
+                declared_length = declared_contig_lengths.get(chrom)
+                telomeric_sentinel = pos == 0 or (
+                    declared_length is not None and pos == declared_length + 1
+                )
+                if telomeric_sentinel:
+                    identity = truth_identity(source_hash, ordinal)
+                    territory = "ineligible_boundary"
+                    boundary_counts[territory] += 1
+                else:
+                    classification = classify_truth_record(
+                        source_hash, ordinal, chrom, pos, ref, alt, gt,
+                    )
+                    identity = classification.identity
+                    reason = classification.exclusion_reason
+                    if reason is not None:
+                        exclusion_counts[reason] = exclusion_counts.get(reason, 0) + 1
+
+                if not telomeric_sentinel and reason is None:
+                    if classification is None:
+                        raise AssertionError("missing truth classification")
                     unit = classification.unit
                     if unit is None:
                         raise AssertionError("classifier returned neither a unit nor an exclusion")
@@ -605,8 +708,6 @@ def prepare_released_truth(
                     else:
                         territory = "boundary_or_mixed_territory"
                         boundary_counts[territory] += 1
-                else:
-                    exclusion_counts[reason] = exclusion_counts.get(reason, 0) + 1
 
                 counters["exclusion_counts"] = dict(exclusion_counts)
                 counters["boundary_counts"] = dict(boundary_counts)
@@ -661,6 +762,7 @@ def prepare_released_truth(
             "tier1_bed_counts": tier1_bed_counts,
             "expected_truth_sample_label": expected_sample,
             "sample_label_validation": "exact_protocol_string_match_only",
+            "unknown_contig_length_policy": config["unknown_contig_length_policy"],
             "contig_dictionary_validation": "not_performed_separate_reference_gate_required",
             "truth_decoded_bytes": decoded,
             "bed_decoded_bytes": int(counters["bed_decoded_bytes"]),

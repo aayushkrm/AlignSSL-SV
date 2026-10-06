@@ -75,6 +75,9 @@ def make_case(
         "current_bed_sha256": hashlib.sha256(current_bed).hexdigest(),
         "tier1_bed_sha256": hashlib.sha256(tier1_bed).hexdigest(),
         "expected_truth_sample_label": SAMPLE,
+        "unknown_contig_length_policy": (
+            "do_not_infer_n_plus_one_without_unique_declared_length"
+        ),
         "max_truth_decoded_bytes": max_truth,
         "max_truth_compressed_bytes": 1_000_000,
         "max_line_bytes": 4_096,
@@ -165,7 +168,10 @@ def test_success_preserves_source_rows_and_maps_every_ordinal_without_alleles(tm
     assert inventory["body_records"] == 7
     assert inventory["truth_decoded_bytes"] == len(raw_vcf)
     assert inventory["eligible_counts"] == {"current_minus_tier1": 1, "intersection": 1}
-    assert inventory["boundary_counts"] == {"boundary_or_mixed_territory": 1}
+    assert inventory["boundary_counts"] == {
+        "boundary_or_mixed_territory": 1,
+        "ineligible_boundary": 0,
+    }
     assert inventory["exclusion_counts"] == {
         "out_of_scope_chromosome": 1,
         "multiallelic": 1,
@@ -176,6 +182,9 @@ def test_success_preserves_source_rows_and_maps_every_ordinal_without_alleles(tm
     assert inventory["sample_label_validation"] == "exact_protocol_string_match_only"
     assert inventory["contig_dictionary_validation"] == (
         "not_performed_separate_reference_gate_required"
+    )
+    assert inventory["unknown_contig_length_policy"] == (
+        "do_not_infer_n_plus_one_without_unique_declared_length"
     )
     assert inventory["current_bed_counts"] == {
         "rows": 2, "autosomal_rows": 1, "non_autosomal_rows": 1,
@@ -197,6 +206,103 @@ def test_concatenated_gzip_members_are_read_as_one_original_stream(tmp_path):
     assert inventory["truth_decoded_bytes"] == len(raw_vcf)
     rows = (case["outdir"] / "eligible_truth.vcf").read_bytes().splitlines()[3:]
     assert [row.split(b"\t")[1] for row in rows] == [b"2501", b"7501"]
+
+
+def test_telomeric_pos_zero_and_declared_length_plus_one_are_boundary_rows(tmp_path):
+    header = HEADER.replace(
+        b"##source=synthetic-fixture\n",
+        b"##contig=<ID=chr1,length=10000>\n##source=synthetic-fixture\n",
+    )
+    rows = [
+        record(pos=0, original_id="left-telomere"),
+        record(pos=10001, original_id="right-telomere"),
+        record(pos=2501, original_id="interior"),
+    ]
+    case = make_case(tmp_path, header + b"".join(rows))
+
+    inventory = prepare(case)
+
+    mapping_path = case["outdir"] / "truth_record_map.jsonl"
+    mapping = [json.loads(line) for line in mapping_path.read_text().splitlines()]
+    source_sha = hashlib.sha256(case["compressed"]).hexdigest()
+    assert [entry["ordinal"] for entry in mapping] == [1, 2, 3]
+    assert [entry["identity"] for entry in mapping] == [
+        truth_identity(source_sha, ordinal) for ordinal in (1, 2, 3)
+    ]
+    assert [entry["original_id"] for entry in mapping] == [
+        "left-telomere", "right-telomere", "interior",
+    ]
+    assert [entry["territory"] for entry in mapping] == [
+        "ineligible_boundary", "ineligible_boundary", "current_minus_tier1",
+    ]
+    assert all("exclusion_reason" not in entry for entry in mapping[:2])
+    assert inventory["body_records"] == 3
+    assert inventory["boundary_counts"] == {
+        "boundary_or_mixed_territory": 0,
+        "ineligible_boundary": 2,
+    }
+    assert inventory["exclusion_counts"] == {}
+    assert inventory["truth_decoded_bytes"] == len(header + b"".join(rows))
+    assert case["truth_path"].read_bytes() == case["compressed"]
+    expected_vcf = header + replace_id(rows[2], truth_identity(source_sha, 3))
+    assert (case["outdir"] / "eligible_truth.vcf").read_bytes() == expected_vcf
+
+
+@pytest.mark.parametrize(
+    "contig_lines",
+    [
+        b"",
+        b"##contig=<ID=chr1,length=10000>\n"
+        b"##contig=<ID=chr1,length=10000>\n",
+    ],
+    ids=["missing-length", "duplicate-length"],
+)
+def test_n_plus_one_requires_unique_declared_contig_length(tmp_path, contig_lines):
+    header = HEADER.replace(
+        b"##source=synthetic-fixture\n",
+        contig_lines + b"##source=synthetic-fixture\n",
+    )
+    rows = [
+        record(pos=0, original_id="left-telomere"),
+        record(pos=10001, original_id="unknown-length"),
+    ]
+    case = make_case(tmp_path, header + b"".join(rows))
+
+    inventory = prepare(case)
+
+    mapping = [
+        json.loads(line)
+        for line in (case["outdir"] / "truth_record_map.jsonl")
+        .read_text(encoding="utf-8").splitlines()
+    ]
+    assert [entry["territory"] for entry in mapping] == [
+        "ineligible_boundary", "boundary_or_mixed_territory",
+    ]
+    assert all("exclusion_reason" not in entry for entry in mapping)
+    assert inventory["boundary_counts"] == {
+        "boundary_or_mixed_territory": 1,
+        "ineligible_boundary": 1,
+    }
+    assert inventory["unknown_contig_length_policy"] == (
+        "do_not_infer_n_plus_one_without_unique_declared_length"
+    )
+
+
+def test_unknown_contig_length_policy_must_be_pinned_explicitly(tmp_path):
+    case = make_case(tmp_path)
+    case["protocol"].pop("unknown_contig_length_policy")
+    case["protocol_path"].write_text(
+        json.dumps(case["protocol"], sort_keys=True), encoding="utf-8",
+    )
+    case["protocol_sha256"] = hashlib.sha256(
+        case["protocol_path"].read_bytes()
+    ).hexdigest()
+    case["truth_path"].unlink()
+
+    with pytest.raises(ValueError, match="unknown_contig_length_policy"):
+        prepare(case)
+
+    assert not case["outdir"].exists()
 
 
 def test_approval_gate_precedes_source_open_and_output_creation(tmp_path):
@@ -422,7 +528,8 @@ def test_sample_header_must_match_protocol_and_have_one_sample(tmp_path, bad_hea
 @pytest.mark.parametrize(
     ("bad_row", "message"),
     [
-        (b"chr1\t0\tid\tA\tAC\t.\tPASS\t.\tGT\t0/1\n", "POS"),
+        (b"chr1\t-1\tid\tA\tAC\t.\tPASS\t.\tGT\t0/1\n", "POS"),
+        (b"chr1\ttext\tid\tA\tAC\t.\tPASS\t.\tGT\t0/1\n", "POS"),
         (b"\t10\tid\tA\tAC\t.\tPASS\t.\tGT\t0/1\n", "CHROM"),
         (b"chr1\t10\tid\tA\tAC\t.\tPASS\t.\tGT:DP\t0/1:10:extra\n", "extra or empty values"),
         (b"chr1\t10\tid\tA\tAC\t.\tPASS\t.\tDP:GT\t10:0/1\n", "GT must be the first"),
