@@ -11,6 +11,23 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 7 latest checkpoint: the [bounded streaming follow-up](docs/research/2026-10-07-streamed-callset-stage.md)
+preserves stage-03 and final stage-04 failures. Stage-04 completed DeBreak,
+Sawfish and Sniffles, and verified the earlier cuteSV file. It then stopped
+on SVIM's position check; SVPG was not opened. The rejected value is unknown.
+VCF permits telomeric positions that our validator rejects, so this failure
+does not establish malformed published data. The custom-stager route is now
+closed: no fifth attempt, cap increase, parser redesign or five-caller union.
+Keep all partials, logs and conservative charges: 4,094,310,110 source bytes
+and 4,153,131,060 aggregate bytes. Stage-04 used 78.56 CPU seconds and
+385,282,048-byte peak RSS; no guard tripped. A distinct standard transport/
+HTSlib alternative is under separate decision and review, not approved here.
+No truth preparation, sorting, normalization, scoring or refinement has run.
+The [source/control audit](docs/research/2026-10-07-released-screen-controls.md)
+and truth driver are synthetic/software evidence, not biological improvement.
+Full validation: **617 passed, 29 skipped**; manuscript consistency passed.
+The wider publication goal remains active and unachieved.
+
 October 7 updated-goal follow-up: main read the full current goal again.
 The [independent stage review](docs/research/2026-10-07-stage-review.md) records
 two bounded engineering failures and separate approvals; neither is a

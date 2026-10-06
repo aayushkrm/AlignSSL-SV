@@ -1,0 +1,70 @@
+{
+  "charged_prior_source_decoded_bytes": 2080329990,
+  "completed_callers": {
+    "cutesv": {
+      "by_alt_representation": {
+        "breakend": 2254,
+        "sequence": 48286,
+        "symbolic": 1021
+      },
+      "by_filter": {
+        "PASS": 40934,
+        "q5": 10627
+      },
+      "by_gt": {
+        "./.": 19,
+        "0/0": 10315,
+        "0/1": 25677,
+        "1/1": 15550
+      },
+      "by_type": {
+        "BND": 2254,
+        "DEL": 21193,
+        "DUP": 753,
+        "INS": 27093,
+        "INV": 268
+      },
+      "contig_order_violations": 23,
+      "crc32": "aa90b5d1",
+      "decoded_bytes": 30029207,
+      "gt_absent": 0,
+      "gt_missing": 19,
+      "gt_phased": 0,
+      "gt_reference": 10315,
+      "header_sha256": "b314d3de38d22aabde93980d68d3b8cfffe17bc1bca4de8002334921d26656a6",
+      "input_order_policy": "preserve_and_report",
+      "member": "SV_callsets/HG002_benchmark/cutesv/hifi.vcf",
+      "omitted_RNAMES": 51561,
+      "position_order_violations": 0,
+      "records": 51561,
+      "requires_sorting": true,
+      "reuse_verification_bytes": 29410475,
+      "reused_completed_derivative": true,
+      "selected_member_crc_verified": true,
+      "source_sha256": "a96fd63588c1457a1762d01219bb1220ffb782f31ff36e0072f05d1e13902b43",
+      "staged_path": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-stage-02/cutesv.vcf",
+      "staged_sha256": "9603595adebb54e656513c3ffba416e0d2173763030abef20f804e1c877209c1"
+    }
+  },
+  "conservative_staging_traffic_charge_bytes": 1006990060,
+  "controller_traffic_account": "results/data_audits/svpg_2026/2026-10-07/traffic_reservation_03.json",
+  "exception_message": "Retained VCF line exceeds approved 33554432-byte bound",
+  "exception_type": "ValueError",
+  "failed_caller": "debreak",
+  "global_traffic_limit_enforced": true,
+  "max_line_bytes": 33554432,
+  "members": [
+    "SV_callsets/HG002_benchmark/cutesv/hifi.vcf",
+    "SV_callsets/HG002_benchmark/debreak/hifi.vcf",
+    "SV_callsets/HG002_benchmark/sawfish/hifi.vcf",
+    "SV_callsets/HG002_benchmark/sniffles/hifi.vcf",
+    "SV_callsets/HG002_benchmark/svim/hifi.vcf",
+    "SV_callsets/HG002_benchmark/svpg/hifi.vcf"
+  ],
+  "protocol_sha256": "049e2e2b8281b20362bca0696a39cbea68e1070f0479ba56d2bbe5207ac0a1f5",
+  "reuse_verification_reservation_bytes": 29410475,
+  "source_decoded_budget_used_including_prior": 2114474767,
+  "source_decoded_cap": 3221225472,
+  "staging_decoded_bytes_read": 34144777,
+  "status": "incomplete"
+}

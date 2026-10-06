@@ -28,6 +28,20 @@ the objective.
 
 ## Current implementation and review state
 
+- October 7 latest: [stage-03 and final stage-04](2026-10-07-streamed-callset-stage.md)
+  failed. Four complete caller files are preserved: cuteSV, DeBreak, Sawfish,
+  Sniffles. SVIM failed a position check; the actual value is unknown. SVPG
+  was unopened. The custom-stager route is closed; no fifth attempt, cap
+  raise, parser redesign or reduced union. Official VCF permits telomeric
+  sentinels rejected by our validator; do not label the released file invalid.
+  Keep full conservative charges of 4,094,310,110 source bytes and
+  4,153,131,060 aggregate bytes, and all logs/partials outside Git.
+  A separate byte-preserving two-member/HTSlib alternative awaits a direction
+  decision and independent review. No truth preparation, sort, normalization,
+  screen or refinement has run or is approved by that proposal. The truth
+  preparation driver and [control audit](2026-10-07-released-screen-controls.md)
+  are synthetic/software work only. Full validation: 617 passed, 29 skipped;
+  manuscript consistency passed. No publication contribution is established.
 - October 7: main read the current full goal again. The
   [independent staging review](2026-10-07-stage-review.md) records two
   separately reviewed source-only attempts. Stage-01 failed on header contig
