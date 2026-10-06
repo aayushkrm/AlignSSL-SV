@@ -5,6 +5,13 @@ import pytest
 from scripts import probe_released_screen_controls as probe
 
 
+def test_paired_readers_reject_length_or_full_row_mismatch():
+    assert list(probe._paired_records(["rowA"], ["rowA"])) == [("rowA", "rowA")]
+    for raw, native in ((["rowA"], []), ([], ["rowA"]), (["idGT01"], ["idGT11"])):
+        with pytest.raises(RuntimeError, match="reader"):
+            list(probe._paired_records(raw, native))
+
+
 def test_fixed_controls_and_header():
     args = probe._args("truvari", "truth", "calls", "out", "ref")
     fixed = (("-s", "50"), ("-S", "30"), ("--sizemax", "-1"), ("-r", "1000"),
@@ -37,3 +44,8 @@ def test_pinned_synthetic_end_to_end_probe():
     assert result["bench"]["truth_denominator_unchanged"] is True
     assert result["bench"]["as_released"]["truth_ids_sha256"] == result["bench"]["native_filtered"]["truth_ids_sha256"]
     assert result["bench"]["lenient_one_to_many"] is True
+    assert result["bench"]["duplicate_truth_multiplicity_preserved"] is True
+    assert result["bench"]["nonempty_fn_identity_preserved"] is True
+    assert counts["truth_records"] == 4 and counts["duplicate_truth_event_rows"] == 2
+    assert result["full_row_sort_and_native_preservation"] is True
+    assert result["identity_safe_reader_pairing"] is True

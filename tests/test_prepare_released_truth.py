@@ -10,6 +10,7 @@ import pytest
 
 from analysis.prepare_released_truth import (
     GIB,
+    GZIP_READ_AHEAD_RESERVATION_BYTES,
     MAX_BED_BYTES,
     MAX_LINE_BYTES,
     MAX_TRUTH_DECODED_BYTES,
@@ -24,6 +25,7 @@ from analysis.released_truth_units import truth_identity
 SAMPLE = "SYNTHETIC_SAMPLE"
 HEADER = (
     b"##fileformat=VCFv4.2\n"
+    b"##contig=<ID=chr1,length=10000>\n"
     b"##source=synthetic-fixture\n"
     b"#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\t"
     + SAMPLE.encode("ascii") + b"\n"
@@ -82,7 +84,8 @@ def make_case(
         "max_truth_compressed_bytes": 1_000_000,
         "max_line_bytes": 4_096,
         "charged_prior_global_decoded_bytes": 0,
-        "truth_preparation_reservation_bytes": max_truth + 1 + 2 * (max_bed + 1),
+        "truth_preparation_reservation_bytes": (max_truth + 1 + GZIP_READ_AHEAD_RESERVATION_BYTES
+                                                + 2 * (max_bed + 1)),
         "max_bed_bytes": max_bed,
         "max_bed_rows": 1_000,
         "max_mapping_bytes": 1_000_000,
@@ -181,7 +184,7 @@ def test_success_preserves_source_rows_and_maps_every_ordinal_without_alleles(tm
     assert inventory["gt_duplicate_records"] == 0
     assert inventory["sample_label_validation"] == "exact_protocol_string_match_only"
     assert inventory["contig_dictionary_validation"] == (
-        "not_performed_separate_reference_gate_required"
+        "bed_autosomes_validated_against_truth_header_reference_gate_still_required"
     )
     assert inventory["unknown_contig_length_policy"] == (
         "do_not_infer_n_plus_one_without_unique_declared_length"
@@ -204,15 +207,13 @@ def test_concatenated_gzip_members_are_read_as_one_original_stream(tmp_path):
     inventory = prepare(case)
 
     assert inventory["truth_decoded_bytes"] == len(raw_vcf)
-    rows = (case["outdir"] / "eligible_truth.vcf").read_bytes().splitlines()[3:]
+    rows = [row for row in (case["outdir"] / "eligible_truth.vcf").read_bytes().splitlines()
+            if not row.startswith(b"#")]
     assert [row.split(b"\t")[1] for row in rows] == [b"2501", b"7501"]
 
 
 def test_telomeric_pos_zero_and_declared_length_plus_one_are_boundary_rows(tmp_path):
-    header = HEADER.replace(
-        b"##source=synthetic-fixture\n",
-        b"##contig=<ID=chr1,length=10000>\n##source=synthetic-fixture\n",
-    )
+    header = HEADER
     rows = [
         record(pos=0, original_id="left-telomere"),
         record(pos=10001, original_id="right-telomere"),
@@ -258,7 +259,7 @@ def test_telomeric_pos_zero_and_declared_length_plus_one_are_boundary_rows(tmp_p
     ids=["missing-length", "duplicate-length"],
 )
 def test_n_plus_one_requires_unique_declared_contig_length(tmp_path, contig_lines):
-    header = HEADER.replace(
+    header = HEADER.replace(b"##contig=<ID=chr1,length=10000>\n", b"").replace(
         b"##source=synthetic-fixture\n",
         contig_lines + b"##source=synthetic-fixture\n",
     )
@@ -266,7 +267,8 @@ def test_n_plus_one_requires_unique_declared_contig_length(tmp_path, contig_line
         record(pos=0, original_id="left-telomere"),
         record(pos=10001, original_id="unknown-length"),
     ]
-    case = make_case(tmp_path, header + b"".join(rows))
+    case = make_case(tmp_path, header + b"".join(rows),
+                     current_bed=b"chrX\t0\t10000\n", tier1_bed=b"chrX\t0\t10000\n")
 
     inventory = prepare(case)
 
@@ -303,6 +305,21 @@ def test_unknown_contig_length_policy_must_be_pinned_explicitly(tmp_path):
         prepare(case)
 
     assert not case["outdir"].exists()
+
+
+@pytest.mark.parametrize("which", ["current", "tier1"])
+@pytest.mark.parametrize("bad_bed, message", [
+    (b"1\t0\t9000\n", "exact unique"),
+    (b"chr1\t0\t10001\n", "exceeds"),
+])
+def test_bed_namespace_or_bounds_fail_before_first_body_row(tmp_path, which, bad_bed, message):
+    kw = {"current_bed" if which == "current" else "tier1_bed": bad_bed}
+    case = make_case(tmp_path, HEADER + record(), **kw)
+    with pytest.raises(TruthPreparationError, match=message):
+        prepare(case)
+    report = json.loads((case["outdir"] / "truth_preparation_failure.json").read_text())
+    assert report["body_records_seen"] == 0
+    assert report["record_map_bytes_written"] == 0
 
 
 def test_approval_gate_precedes_source_open_and_output_creation(tmp_path):
@@ -375,7 +392,8 @@ def test_reservation_includes_one_overflow_probe_for_each_bed(tmp_path):
     case = make_case(
         tmp_path,
         protocol_updates={
-            "truth_preparation_reservation_bytes": max_truth + 1 + 2 * max_bed,
+            "truth_preparation_reservation_bytes": (max_truth + 1 + GZIP_READ_AHEAD_RESERVATION_BYTES
+                                                    + 2 * max_bed),
         },
     )
 
@@ -479,7 +497,8 @@ def test_truth_decoded_budget_counts_header_and_stops_at_one_overflow_byte(tmp_p
         protocol_updates={
             "max_truth_decoded_bytes": cap,
             "max_line_bytes": 128,
-            "truth_preparation_reservation_bytes": cap + 1 + 2 * (4_096 + 1),
+            "truth_preparation_reservation_bytes": (cap + 1 + GZIP_READ_AHEAD_RESERVATION_BYTES
+                                                    + 2 * (4_096 + 1)),
         },
     )
 
@@ -489,7 +508,31 @@ def test_truth_decoded_budget_counts_header_and_stops_at_one_overflow_byte(tmp_p
     report = json.loads(caught.value.report_path.read_text(encoding="utf-8"))
     assert report["truth_decoded_bytes_delivered"] == cap + 1
     assert report["body_records_seen"] == 1
-    assert report["truth_preparation_reservation_bytes"] == cap + 1 + 2 * (4_096 + 1)
+    assert report["truth_preparation_reservation_bytes"] == (
+        cap + 1 + GZIP_READ_AHEAD_RESERVATION_BYTES + 2 * (4_096 + 1))
+
+
+def test_actual_gzip_read_ahead_is_covered_on_early_failure(tmp_path, monkeypatch):
+    decoded = []
+    add_data = gzip._GzipReader._add_read_data
+
+    def observed(reader, data):
+        decoded.append(len(data))
+        return add_data(reader, data)
+
+    monkeypatch.setattr(gzip._GzipReader, "_add_read_data", observed)
+    cap = len(HEADER) + 64
+    case = make_case(tmp_path, HEADER + record(alt="A" + "C" * 20000), protocol_updates={
+        "max_truth_decoded_bytes": cap, "max_line_bytes": cap,
+        "truth_preparation_reservation_bytes": (
+            cap + 1 + GZIP_READ_AHEAD_RESERVATION_BYTES + 2 * (4096 + 1)),
+    })
+    with pytest.raises(TruthPreparationError, match="decoded-byte"):
+        prepare(case)
+    report = json.loads((case["outdir"] / "truth_preparation_failure.json").read_text())
+    assert sum(decoded) > report["truth_decoded_bytes_delivered"] == cap + 1
+    assert sum(decoded) <= cap + 1 + GZIP_READ_AHEAD_RESERVATION_BYTES
+    assert report["gzip_read_ahead_reservation_bytes"] == GZIP_READ_AHEAD_RESERVATION_BYTES
 
 
 def test_header_after_data_is_fatal_and_keeps_prior_eligible_rows(tmp_path):
@@ -613,12 +656,10 @@ def test_autosome_contig_labels_are_not_renamed_or_aliased(tmp_path):
     tier1 = b"1\t5000\t10000\n"
     case = make_case(tmp_path, raw_vcf, current_bed=current, tier1_bed=tier1)
 
-    inventory = prepare(case)
-
-    assert inventory["eligible_counts"] == {"current_minus_tier1": 0, "intersection": 0}
-    assert inventory["boundary_counts"]["boundary_or_mixed_territory"] == 1
-    mapping = json.loads((case["outdir"] / "truth_record_map.jsonl").read_text())
-    assert mapping["territory"] == "boundary_or_mixed_territory"
+    with pytest.raises(TruthPreparationError, match="exact unique"):
+        prepare(case)
+    report = json.loads((case["outdir"] / "truth_preparation_failure.json").read_text())
+    assert report["body_records_seen"] == 0
 
 
 def test_outdir_inside_git_is_rejected_without_creation(tmp_path):

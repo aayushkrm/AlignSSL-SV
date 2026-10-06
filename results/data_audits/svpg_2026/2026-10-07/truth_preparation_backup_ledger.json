@@ -1,0 +1,22 @@
+{
+  "purpose": "off_scratch_preservation_of_closed_truth_preparation_failure",
+  "source_directory": "/scratch/igorno-alignssl_restart_20260922/svpg_truth_prepare_20261007_01",
+  "destination_directory": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-truth-preparation-01",
+  "method": "scp_-p_authenticated_transfer_no_genomic_parsing",
+  "source_attempt_status": "terminal_exit_2",
+  "files": {
+    "eligible_truth.vcf.partial": 605506,
+    "truth_record_map.jsonl.partial": 67108700,
+    "truth_preparation_failure.json": 1181,
+    "command_run.log": 1772
+  },
+  "copied_payload_bytes": 67717159,
+  "prior_global_charge_bytes": 6303083290,
+  "conservative_raw_byte_copy_reservation_bytes": 134217728,
+  "new_conservative_global_charge_bytes": 6437301018,
+  "copy_exit_code": 0,
+  "size_checks_passed": true,
+  "large_file_sha256_verification_performed": false,
+  "partial_files_are_not_scoring_inputs": true,
+  "no_refund": true
+}

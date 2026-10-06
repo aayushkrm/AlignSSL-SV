@@ -11,6 +11,28 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 7 current: the [finite preparation/control review](docs/research/2026-10-07-finite-preparation-and-control-review.md)
+closed the synthetic duplicate-truth, nonempty-FN, full-row and reader-pairing
+gaps on the pinned cluster. A reference control disproved `norm -N -c e -f`
+as a REF validator. The verified alternative without `-N` rejects mismatches,
+but its transformed output must be discarded; original truth remains the
+scoring representation. Contradictory truth INFO/native size/type are rejected
+by synthetic controls. Both BEDs now require exact truth-header names/bounds
+before body classification; gzip read-ahead is separately reserved.
+Dirac approved one exact-pinned truth-eligibility preparation pass. It **failed**
+at the 64-MiB complete-record-map limit after 376,029 source rows. CPU 11.67s,
+wall 11.86s, RSS 44,625,920 bytes. Preserve all partials/logs and the full
+**6,303,083,290-byte cumulative charge**. There is no completed eligibility
+denominator, caller score or biological null. The v2 attempt is closed; no
+automatic retry or cap raise. A separate high-impact decision recommends one
+explicit metadata-only exception (1-GiB map, eight-GiB stage ceiling), but it
+still requires independent stop-policy and exact-pin approval. No new pass is
+approved or run. Failed artifacts were copied off scratch outside Git; their
+128-MiB archival reservation gives current charge **6,437,301,018 bytes**.
+The wider publication goal remains active and unachieved. No new method,
+training campaign or publication claim is selected. Final software validation:
+**666 passed, 31 skipped**, manuscript consistency and whitespace checks pass.
+
 October 7 updated-goal checkpoint: main read the full revised objective and
 relayed it to the independent reviewer. The [truth header gate](docs/research/2026-10-07-truth-header-gate.md)
 passed under its separate approval: exact HG002 sample, 24 declared contigs,

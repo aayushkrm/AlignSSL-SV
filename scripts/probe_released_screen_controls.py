@@ -2,6 +2,7 @@
 """Synthetic-only controls for the pinned released-screen stack."""
 import hashlib
 import importlib.metadata
+from itertools import zip_longest
 import json
 import pathlib
 import shutil
@@ -75,7 +76,10 @@ def _fixture(root, pysam, bcftools):
     truth = root / "truth.vcf"
     truth.write_text(HEADER + "".join(
         f"chrSynthetic\t{p}\t{i}\t{'A' * 61}\tA\t.\t{f}\tHISTID=sharedHistorical;SVLEN=-60;SVTYPE=DEL\tGT:AD\t0/1:{ad}\n"
-        for p, i, f, ad in ((100, "truth_001", "PASS", "5,7"), (150, "truth_002", "HET1", "4,6"))),
+        for p, i, f, ad in ((100, "truth_001", "PASS", "5,7"),
+                            (100, "truth_duplicate", "PASS", "5,7"),
+                            (150, "truth_002", "HET1", "4,6"),
+                            (17000, "truth_uncovered", "PASS", "5,7"))),
         encoding="ascii")
     source = root / "caller-source.vcf"
     cases = ((1, 120, "PASS", "1/2"), (2, 5000, "LowQual", "0/0"),
@@ -105,6 +109,8 @@ def _fixture(root, pysam, bcftools):
           "norm identity or dot-mode GT control failed")
     sorted_vcf = root / "caller-sorted.vcf"
     bcftools.sort("-Ov", "-o", str(sorted_vcf), str(derived), catch_stdout=False)
+    _need(sorted(_rows(sorted_vcf)) == sorted(_rows(derived)),
+          "sort did not preserve the complete row multiset")
     coords, ids, records = [], [], {}
     with pysam.VariantFile(str(sorted_vcf)) as vcf:
         ranks = {name: i for i, name in enumerate(vcf.header.contigs)}
@@ -119,24 +125,36 @@ def _fixture(root, pysam, bcftools):
     return ref, _index(truth, pysam), source, _index(sorted_vcf, pysam), identities
 
 
+def _paired_records(raw, native):
+    sentinel = object()
+    for rec, trv in zip_longest(raw, native, fillvalue=sentinel):
+        _need(rec is not sentinel and trv is not sentinel, "reader lengths differ")
+        _need(str(rec) == str(trv), "paired reader rows differ")
+        yield rec, trv
+
+
 def _native_view(source, destination, pysam, truvari):
     counts = dict(records=0, kept=0, filtered=0, not_present=0, both=0, dot_kept=0)
     kept = set()
+    expected_rows = []
     with pysam.VariantFile(str(source)) as raw, truvari.VariantFile(str(source)) as native, \
             pysam.VariantFile(str(destination), "w", header=raw.header) as out:
-        for rec, trv in zip(raw, native):
+        for rec, trv in _paired_records(raw, native):
             counts["records"] += 1
             filt, present = trv.is_filtered(), trv.is_present(0, allow_missing=True)
             counts["filtered"] += int(filt); counts["not_present"] += int(not present)
             counts["both"] += int(filt and not present)
             if not filt and present:
                 out.write(rec)
+                expected_rows.append(str(rec).rstrip("\n"))
                 counts["kept"] += 1
                 counts["dot_kept"] += int(not rec.filter.keys())
                 kept.add((int(rec.info["CTRL_SRCORD"]), _altidx(rec)))
     wanted = {(1, 1), (1, 2), (3, 1)}
     _need(counts == dict(records=6, kept=3, filtered=2, not_present=3, both=2, dot_kept=1)
           and kept == wanted, "Truvari native caller-filter control failed")
+    _need(_rows(destination) == expected_rows,
+          "native filtering changed retained complete rows")
     return counts
 
 
@@ -185,11 +203,15 @@ def _bench(root, exe, base, comp, ref, nbase, ncomp, pysam):
         subprocess.run(_args(exe, base, comp, out, ref), check=True,
                        stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
         summary = json.loads((out / "summary.json").read_text())
-        base_ids = [rec.id for name in ("tp-base.vcf.gz", "fn.vcf.gz")
-                    for rec in pysam.VariantFile(str(out / name))]
+        parts = {}
+        for name in ("tp-base.vcf.gz", "fn.vcf.gz"):
+            with pysam.VariantFile(str(out / name)) as variants:
+                parts[name] = [rec.id for rec in variants]
+        base_ids = parts["tp-base.vcf.gz"] + parts["fn.vcf.gz"]
     stats = dict(base_count=int(summary["base cnt"]), caller_count=int(summary["comp cnt"]),
                  tp_base=int(summary["TP-base"]), tp_caller=int(summary["TP-comp"]),
-                 fn=int(summary["FN"]), truth_ids_sha256=hashlib.sha256(
+                 fn=int(summary["FN"]), fn_truth_ids=sorted(parts["fn.vcf.gz"]),
+                 truth_ids_sha256=hashlib.sha256(
                      json.dumps(sorted(base_ids)).encode()).hexdigest())
     _need(stats["base_count"] == nbase and stats["tp_base"] + stats["fn"] == nbase
           and len(base_ids) == nbase and None not in base_ids,
@@ -223,25 +245,32 @@ def run_probe():
             truth_rows = list(vcf)
             ids = [r.id for r in truth_rows]; hist = [r.info["HISTID"] for r in truth_rows]
             nonpass = sum(list(r.filter.keys()) != ["PASS"] for r in truth_rows)
-        _need(len(set(ids)) == 2 and hist == ["sharedHistorical"] * 2 and nonpass == 1,
+        _need(len(set(ids)) == 4 and hist == ["sharedHistorical"] * 4 and nonpass == 1,
               "synthetic truth ID/FILTER control failed")
+        duplicate_rows = [str(r).split("\t") for r in truth_rows[:2]]
+        _need(duplicate_rows[0][:2] + duplicate_rows[0][3:] ==
+              duplicate_rows[1][:2] + duplicate_rows[1][3:],
+              "duplicate truth-event fixture differs beyond identity")
         with truvari.VariantFile(str(truth)) as vcf:
             sizes, types = zip(*((r.var_size(), r.var_type()) for r in vcf))
-        _need(sizes == (60, 60) and types == (truvari.SV.DEL,) * 2,
+        _need(sizes == (60,) * 4 and types == (truvari.SV.DEL,) * 4,
               "truth SVLEN/SVTYPE disagree with native Truvari size/type")
-        a, b = (_bench(root, exe, truth, caller, ref, 2, 6, pysam),
-                _bench(root, exe, truth, native, ref, 2, 3, pysam))
+        a, b = (_bench(root, exe, truth, caller, ref, 4, 6, pysam),
+                _bench(root, exe, truth, native, ref, 4, 3, pysam))
         input_hash = hashlib.sha256(json.dumps(sorted(ids)).encode()).hexdigest()
         _need(a["truth_ids_sha256"] == b["truth_ids_sha256"] == input_hash,
               "truth ID multiset differs between arms")
-        _need((a["tp_base"], a["tp_caller"], a["fn"]) == (2, 1, 0),
+        _need((a["tp_base"], a["tp_caller"], a["fn"]) == (3, 1, 1)
+              and (b["tp_base"], b["tp_caller"], b["fn"]) == (3, 1, 1)
+              and a["fn_truth_ids"] == b["fn_truth_ids"] == ["truth_uncovered"],
               "fixed lenient pick=multi control failed")
         return {
             "status": "pass" if pos0["status"] == nplus1["status"] == "pass" else "pass_with_limitations",
             "versions": versions,
             "coordinate_controls": {"pos0_and_nplus1": pos0, "nplus1_only": nplus1,
                                      "truth_scored": False, "scope": "synthetic_caller_preservation_only"},
-            "fixture_counts": {"truth_records": 2, "truth_nonpass": nonpass, "caller_source_records": 3,
+            "fixture_counts": {"truth_records": 4, "truth_nonpass": nonpass, "duplicate_truth_event_rows": 2,
+                "caller_source_records": 3,
                 "decomposed_children": 6, "native_filtered_children": native_counts["kept"],
                 "native_rejected_filter": native_counts["filtered"], "native_rejected_presence": native_counts["not_present"],
                 "native_rejected_both": native_counts["both"], "native_kept_dot_filter": native_counts["dot_kept"],
@@ -251,8 +280,12 @@ def run_probe():
                 "truth_vcf": _sha(truth), "caller_source_vcf": _sha(source), "caller_sorted_vcf": _sha(caller),
                 "reference": _sha(ref)},
             "bench": {"as_released": a, "native_filtered": b,
-                "truth_denominator_unchanged": a["base_count"] == b["base_count"] == 2,
-                "lenient_one_to_many": a["tp_base"] == 2 and a["tp_caller"] == 1}}
+                "truth_denominator_unchanged": a["base_count"] == b["base_count"] == 4,
+                "duplicate_truth_multiplicity_preserved": a["tp_base"] == b["tp_base"] == 3,
+                "nonempty_fn_identity_preserved": a["fn_truth_ids"] == b["fn_truth_ids"] == ["truth_uncovered"],
+                "lenient_one_to_many": a["tp_base"] == 3 and a["tp_caller"] == 1},
+            "full_row_sort_and_native_preservation": True,
+            "identity_safe_reader_pairing": True}
 
 
 def main():

@@ -1,0 +1,33 @@
+{
+  "truth_preparation_approved": true,
+  "independent_approval_ref": "Dirac: exact-pin truth-preparation-20261007-01 approval recorded separately before execution",
+  "truth_sha256": "edb582ceec508f6d745acd0a8c522ee4f235ff5bf4754ba6bdc4c3abee122b5c",
+  "current_bed_sha256": "fbdec183e5b0ba83efdb5880ae038db98cd12cd9715e28debb9ed96541c10f40",
+  "tier1_bed_sha256": "a9bf43a242e74d403cf78f158dbf5b657b5aa5b4961fbba7218bbfe54072d82c",
+  "expected_truth_sample_label": "HG002",
+  "unknown_contig_length_policy": "do_not_infer_n_plus_one_without_unique_declared_length",
+  "max_truth_decoded_bytes": 1073741824,
+  "max_truth_compressed_bytes": 42978214,
+  "max_line_bytes": 33554432,
+  "charged_prior_global_decoded_bytes": 5220887319,
+  "truth_preparation_reservation_bytes": 1082195971,
+  "max_bed_bytes": 4194304,
+  "max_bed_rows": 1000000,
+  "max_mapping_bytes": 67108864,
+  "purpose": "eligibility_preparation_only_not_reference_validation_or_scoring",
+  "truth_path": "/scratch/igorno-alignssl_restart_20260922/giab-hg002-v5-grch37/HG002_GRCh37_v5.0q_stvar.vcf.gz",
+  "current_bed_path": "/scratch/igorno-alignssl_restart_20260922/giab-hg002-v5-grch37/HG002_GRCh37_v5.0q_stvar.benchmark.bed",
+  "tier1_bed_path": "/scratch/igorno-alignssl_restart_20260922/recovery-pilot-v1/HG002_SVs_Tier1_v0.6.bed",
+  "output_directory": "/scratch/igorno-alignssl_restart_20260922/svpg_truth_prepare_20261007_01/prepared",
+  "resource_limits": {
+    "cpu_seconds": 600,
+    "wall_seconds": 600,
+    "address_space_bytes": 4294967296
+  },
+  "source_script_sha256": "6c40f3f1c80b3fa51aa070884c015bf9b7c628963df4873d92290cc33293e669",
+  "truth_units_script_sha256": "4c1cf4fc3d98f4cc3e0f136c15d27095730aa1725b951ea607b4684f4ed93e93",
+  "python_version": "3.10.20",
+  "gzip_read_ahead_reservation_bytes": 65536,
+  "global_limit_bytes": 6442450944,
+  "no_automatic_retry": true
+}

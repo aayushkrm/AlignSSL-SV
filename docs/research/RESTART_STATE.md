@@ -28,6 +28,21 @@ the objective.
 
 ## Current implementation and review state
 
+- October 7 current: [expanded controls and finite preparation](2026-10-07-finite-preparation-and-control-review.md)
+  passed the pinned synthetic multiplicity/FN/full-row/reader-pairing tests.
+  Actual reference controls reject the unsafe `norm -N -c e -f` recipe; the
+  verified alternative's normalization output must be discarded. INFO/native
+  contradictions are controlled. Both BEDs now require exact truth-header
+  names/lengths/bounds before body classification; read-ahead is reserved.
+  One separately approved truth-preparation pass failed at its 64-MiB full
+  record-map limit after 376,029 source rows. No complete denominator or score.
+  Preserve partials/logs and full 6,303,083,290-byte charge. Attempt v2 closed;
+  no automatic retry/cap raise. High-impact recommendation allows only one
+  proposed metadata-storage exception, subject to explicit independent review
+  and fresh pins; no new pass approved or run. The closed artifacts are copied
+  off scratch outside Git, with a separate 128-MiB archival reservation giving
+  current charge 6,437,301,018 bytes. Full software suite 666 passed,
+  31 skipped; manuscript consistency passes. Goal active and unachieved.
 - October 7 updated-goal checkpoint: main read the revised objective in full
   and relayed it to the independent reviewer. The separately approved
   [truth header gate](2026-10-07-truth-header-gate.md) passed: sample HG002 and

@@ -19,8 +19,9 @@ Protocol JSON fields required by :func:`prepare_released_truth`:
 telomeric sentinel is recognized only when one unambiguous positive length is
 declared for that contig; no length is inferred from BED intervals.
 
-The reservation must cover the truth decoded-byte cap, one byte used to detect
-budget overflow, and each BED byte cap plus its one-byte overflow probe. It
+The reservation must cover the truth delivered-byte cap, one byte used to detect
+budget overflow, a fixed 64-KiB standard-gzip read-ahead allowance, and each
+BED byte cap plus its one-byte overflow probe. It
 must also fit under the six-GiB global ceiling after the prior global charge.
 """
 
@@ -29,6 +30,7 @@ from __future__ import annotations
 import argparse
 import gzip
 import hashlib
+import io
 import json
 import os
 from pathlib import Path
@@ -66,6 +68,7 @@ MAX_MAPPING_BYTES = 64 * MIB
 MAX_PROTOCOL_BYTES = 1 * MIB
 MAX_INVENTORY_BYTES = 4 * MIB
 MAX_GLOBAL_DECODED_BYTES = 6 * GIB
+GZIP_READ_AHEAD_RESERVATION_BYTES = 64 * 1024
 UNKNOWN_CONTIG_LENGTH_POLICY = (
     "do_not_infer_n_plus_one_without_unique_declared_length"
 )
@@ -171,11 +174,14 @@ def _validate_protocol(protocol: dict[str, object]) -> dict[str, object]:
         protocol, "truth_preparation_reservation_bytes", minimum=1,
         maximum=MAX_GLOBAL_DECODED_BYTES,
     )
-    required_reservation = max_truth + 1 + 2 * (max_bed_bytes + 1)
+    if io.DEFAULT_BUFFER_SIZE > GZIP_READ_AHEAD_RESERVATION_BYTES:
+        raise ValueError("standard gzip buffer exceeds its read-ahead reservation")
+    required_reservation = (max_truth + 1 + GZIP_READ_AHEAD_RESERVATION_BYTES
+                            + 2 * (max_bed_bytes + 1))
     if reservation < required_reservation:
         raise ValueError(
             "truth_preparation_reservation_bytes must cover the truth cap, "
-            "overflow byte, and both BED caps plus overflow probes"
+            "overflow byte, gzip read-ahead, and both BED caps plus overflow probes"
         )
     if prior + reservation > MAX_GLOBAL_DECODED_BYTES:
         raise ValueError("prior global charge plus reservation exceeds 6 GiB")
@@ -306,6 +312,15 @@ def _line_content(raw: bytes, *, label: str) -> bytes:
         raise ValueError(f"{label}: embedded line-ending byte")
     content.decode("utf-8", errors="strict")
     return content
+
+
+def _validate_bed_dictionary(intervals, lengths, label):
+    for chrom, start, end in intervals:
+        length = lengths.get(chrom)
+        if length is None:
+            raise ValueError(f"{label}: BED contig {chrom} lacks an exact unique positive truth-header length")
+        if not 0 <= start < end <= length:
+            raise ValueError(f"{label}: BED interval exceeds its declared truth contig length")
 
 
 def _validate_header_line(content: bytes, *, expected_sample: str) -> bool:
@@ -469,6 +484,7 @@ def _write_failure_report(
         "truth_sha256": config["truth_sha256"],
         "charged_prior_global_decoded_bytes": config["prior_global_decoded_bytes"],
         "truth_preparation_reservation_bytes": config["reservation_bytes"],
+        "gzip_read_ahead_reservation_bytes": GZIP_READ_AHEAD_RESERVATION_BYTES,
         "global_charge_plus_reservation_bytes": (
             config["prior_global_decoded_bytes"] + config["reservation_bytes"]
         ),
@@ -627,6 +643,8 @@ def prepare_released_truth(
                         header_seen = _validate_header_line(
                             content, expected_sample=expected_sample,
                         )
+                        _validate_bed_dictionary(current_intervals, declared_contig_lengths, "current")
+                        _validate_bed_dictionary(tier1_intervals, declared_contig_lengths, "tier1")
                     else:
                         text = content.decode("utf-8", errors="strict")
                         if not _META_HEADER_RE.fullmatch(text):
@@ -763,8 +781,10 @@ def prepare_released_truth(
             "expected_truth_sample_label": expected_sample,
             "sample_label_validation": "exact_protocol_string_match_only",
             "unknown_contig_length_policy": config["unknown_contig_length_policy"],
-            "contig_dictionary_validation": "not_performed_separate_reference_gate_required",
+            "contig_dictionary_validation": "bed_autosomes_validated_against_truth_header_reference_gate_still_required",
             "truth_decoded_bytes": decoded,
+            "truth_decoded_byte_measurement": "delivered_bytes_equal_total_at_successful_gzip_eof",
+            "gzip_read_ahead_reservation_bytes": GZIP_READ_AHEAD_RESERVATION_BYTES,
             "bed_decoded_bytes": int(counters["bed_decoded_bytes"]),
             "decoded_input_traffic_bytes": actual_decoded_traffic,
             "charged_prior_global_decoded_bytes": config["prior_global_decoded_bytes"],
