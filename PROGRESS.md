@@ -27,6 +27,14 @@ day, after independent execution review. Truth/sort/scoring/refinement have
 not run; no publication-worthy finding is claimed. The custom stager stays
 closed. The wider goal remains active.
 
+The [independent preparation review](docs/research/2026-10-07-preparation-review.md)
+accepts source availability and identifies the exact next controls: legal
+truth boundary records must be counted ineligible, native filters must not
+change the truth denominator, caller parent/ALT identities must survive
+standard preparation, and the scientific environment/budget must be frozen.
+A capped truth-header inspection is the next proposed scope, not yet approved
+for execution. No matching/scoring has run or is approved by this review.
+
 October 7 latest checkpoint: the [bounded streaming follow-up](docs/research/2026-10-07-streamed-callset-stage.md)
 preserves stage-03 and final stage-04 failures. Stage-04 completed DeBreak,
 Sawfish and Sniffles, and verified the earlier cuteSV file. It then stopped

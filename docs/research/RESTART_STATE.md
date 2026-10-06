@@ -41,6 +41,13 @@ the objective.
   known preparation controls and reviewed fixed diagnostic by next working
   day; no truth/sort/scoring/refinement/training has run. No publication
   contribution is established.
+- The [independent preparation review](2026-10-07-preparation-review.md) is
+  complete. Next proposed gate is capped truth-header inspection with exact
+  code/protocol/reservation review. Then fix boundary classification, caller
+  identity/standard preparation, caller-only native filters with identical
+  truth IDs, exact cluster environment and all-read reservations. Matching,
+  POA/refinement and training remain closed. No user action is required here;
+  this is active implementation/review work, not a scientific impasse.
 - October 7 latest: [stage-03 and final stage-04](2026-10-07-streamed-callset-stage.md)
   failed. Four complete caller files are preserved: cuteSV, DeBreak, Sawfish,
   Sniffles. SVIM failed a position check; the actual value is unknown. SVPG

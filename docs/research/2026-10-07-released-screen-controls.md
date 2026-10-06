@@ -4,6 +4,14 @@ Status: control note for the draft screen in
 [`2026-10-04-released-callset-outcome-protocol.md`](2026-10-04-released-callset-outcome-protocol.md).
 No screening result is approved by this note.
 
+October 7 later update: the separate [standard-tool attempt](2026-10-07-standard-transport-decision.md)
+completed all six source files without repairs/filtering. The stage-04 state
+below is historical, not the latest availability state. Its stop and partials
+remain preserved. The [independent preparation review](2026-10-07-preparation-review.md)
+requires a shared truth-ID denominator and caller-only native filters before
+any scientific comparison. This sidecar's earlier global flag examples are
+behavior probes, not approval to filter the truth population.
+
 ## Current preparation state
 
 | Gate | State | Meaning |
