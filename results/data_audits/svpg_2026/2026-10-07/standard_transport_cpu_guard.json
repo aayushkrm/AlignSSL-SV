@@ -1,0 +1,9 @@
+{
+  "budget_pass": true,
+  "child_hard_cpu_limit_seconds": 550,
+  "combined_cpu_ceiling_seconds": 600,
+  "enforcement": "runtime sampled child plus launcher and reaped helper CPU; final combined check",
+  "latest_sampled_combined_cpu_seconds": 28.803943,
+  "measured_combined_cpu_seconds": 29.154969,
+  "sampled_combined_cpu_stop_seconds": 580
+}

@@ -28,6 +28,19 @@ the objective.
 
 ## Current implementation and review state
 
+- October 7 current: the [distinct standard-tool attempt](2026-10-07-standard-transport-decision.md)
+  succeeded. All six preselected callsets are complete and SHA-verified; new
+  SVIM/SVPG raw member CRCs passed. Standard local pysam 0.24.1/samtools 1.24
+  parsing preserved boundary positions and source counts without repair or
+  filtering. SVIM contains 41 POS=0 rows, but the exact prior rejected value
+  remains unrecorded. No compatibility claim is extended to the cluster's
+  older library. Keep all failed-stage logs/partials and full source
+  4,124,617,258-byte / aggregate 5,219,838,743-byte charges. CPU 29.15 seconds,
+  wall 26.18 seconds, child RSS 197,115,904 bytes; no guard tripped.
+  Full 642 passed, 29 skipped. Custom staging remains closed. Proceed to
+  known preparation controls and reviewed fixed diagnostic by next working
+  day; no truth/sort/scoring/refinement/training has run. No publication
+  contribution is established.
 - October 7 latest: [stage-03 and final stage-04](2026-10-07-streamed-callset-stage.md)
   failed. Four complete caller files are preserved: cuteSV, DeBreak, Sawfish,
   Sniffles. SVIM failed a position check; the actual value is unknown. SVPG

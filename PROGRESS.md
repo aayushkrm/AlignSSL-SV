@@ -11,6 +11,22 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 7 latest verified checkpoint: the [distinct standard-tool route](docs/research/2026-10-07-standard-transport-decision.md)
+completed its one independently reviewed attempt. All six frozen caller files
+are available and hash-verified. The standard parser preserved records and
+boundary positions; SVIM has 41 POS=0 records. The exact earlier rejected
+position remains unknown. No coordinate, GT, header or record repair/filter
+was made. This is local pysam 0.24.1 / bundled samtools 1.24 compatibility,
+not a guarantee for the older cluster environment or a biological result.
+The attempt used 29.15 combined CPU seconds, 26.18 wall seconds and
+197,115,904-byte child peak RSS; no guard tripped. Keep full charges of
+4,124,617,258 source bytes and 5,219,838,743 aggregate bytes. All previous
+failures/partials stay preserved. Full suite: **642 passed, 29 skipped**.
+Next: known preparation controls and the fixed diagnostic by the next working
+day, after independent execution review. Truth/sort/scoring/refinement have
+not run; no publication-worthy finding is claimed. The custom stager stays
+closed. The wider goal remains active.
+
 October 7 latest checkpoint: the [bounded streaming follow-up](docs/research/2026-10-07-streamed-callset-stage.md)
 preserves stage-03 and final stage-04 failures. Stage-04 completed DeBreak,
 Sawfish and Sniffles, and verified the earlier cuteSV file. It then stopped
