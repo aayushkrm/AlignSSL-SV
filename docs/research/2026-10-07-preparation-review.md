@@ -1,5 +1,10 @@
 # Independent review: first diagnostic preparation
 
+**Historical review, superseded by the October 7 stop decision.** Later truth
+preparation completed, but the real metadata gate failed; no validated
+denominator or screen followed. The next-step list below is not a current
+launch plan. See [validation and stop review](2026-10-07-validation-gates.md).
+
 Date: October 7, 2026. Reviewer: Dirac, Sol6.1/high requested; actual runtime
 configuration not independently attested. Read-only review, no new source
 body, truth/BED read or cluster job. Main accepts the findings below.

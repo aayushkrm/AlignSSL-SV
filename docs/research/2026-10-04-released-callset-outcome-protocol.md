@@ -1,5 +1,11 @@
 # Released HG002 call sets: development screen, protocol v1 draft
 
+**Closed October 7, 2026:** the independently approved real metadata gate
+failed its signed-SVLEN contract. Main and the reviewer stopped this dataset
+route. The text below is historical; no scoring or denominator validation
+completed. No repair, drop, REF/caller pass or rerun is authorized. See the
+[failure evidence and stop review](2026-10-07-validation-gates.md).
+
 Status: **DRAFT, not scoring approval**. Freeze and obtain independent review
 before biological records are parsed. No training or new caller is proposed.
 

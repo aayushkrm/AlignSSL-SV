@@ -1,5 +1,11 @@
 # Finite preparation, control findings and execution decision
 
+**Later status:** full truth preparation completed, but the separately
+approved real metadata gate failed on October 7. The fixed screen is now
+closed; prepared records are not a validated denominator. Preserve all
+historical controls, failed attempts and charges below. Current evidence:
+[validation and stop review](2026-10-07-validation-gates.md).
+
 Date: October 7, 2026. Goal active, publication contribution not established.
 The preceding goal turn made verified progress: checkpoint `5e17ff2` was
 pushed with the approved truth-header result and pinned synthetic evidence.

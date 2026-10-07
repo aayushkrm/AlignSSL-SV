@@ -1,5 +1,12 @@
 # Modern same-input call-set completeness: bounded development falsifier
 
+**Historical proposal, closed October 7:** exact same-input provenance was
+never established; only a weaker released-callset estimand was retained.
+The real metadata gate subsequently failed and the fixed screen is stopped.
+No caller coverage or biological null was measured. The original evidence and
+conditional plans below remain historical. See the
+[authoritative stop review](2026-10-07-validation-gates.md).
+
 Date: October 4, 2026 local / October 3 UTC. Status: high-impact direction
 decision; outcome protocol not frozen, no biological scoring approved.
 

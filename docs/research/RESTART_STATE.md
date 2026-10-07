@@ -48,7 +48,11 @@ the objective.
   focused 70 passed, four skipped; manuscript consistency passed. The new
   [mosaic-specific identifiability question](2026-10-07-mosaic-identifiability-triage.md)
   is a prior-art/label-feasibility candidate, not a selected method.
-- October 7 current: the final separately approved preparation exception
+  [Competing-opportunity handoff](2026-10-07-competing-opportunities.md) complete;
+  main checked primary excerpts, documented correction/early-version limits
+  and no inference of absent methods from truncated text. Sol6.1/max-requested
+  finite next-direction decision pending; no new acquisition or campaign.
+- October 7 historical preparation checkpoint (superseded above): the final separately approved preparation exception
   completed with whole gzip EOF/CRC and source hash/snapshot verification.
   All 5,497,286 source rows reconcile with map entries and classifications.
   Provisionally eligible: 1,430 current-minus-Tier1 plus 10,060 intersection
@@ -92,7 +96,7 @@ the objective.
   truth/reference/caller preparation and all-read reservations for independent
   review next. No real truth preparation, BED denominator, scoring or campaign
   is approved by this checkpoint. Scientific goal remains unachieved.
-- October 7 current: the [distinct standard-tool attempt](2026-10-07-standard-transport-decision.md)
+- October 7 historical transport checkpoint (superseded above): the [distinct standard-tool attempt](2026-10-07-standard-transport-decision.md)
   succeeded. All six preselected callsets are complete and SHA-verified; new
   SVIM/SVPG raw member CRCs passed. Standard local pysam 0.24.1/samtools 1.24
   parsing preserved boundary positions and source counts without repair or
@@ -112,7 +116,7 @@ the objective.
   truth IDs, exact cluster environment and all-read reservations. Matching,
   POA/refinement and training remain closed. No user action is required here;
   this is active implementation/review work, not a scientific impasse.
-- October 7 latest: [stage-03 and final stage-04](2026-10-07-streamed-callset-stage.md)
+- October 7 historical streaming checkpoint (superseded above): [stage-03 and final stage-04](2026-10-07-streamed-callset-stage.md)
   failed. Four complete caller files are preserved: cuteSV, DeBreak, Sawfish,
   Sniffles. SVIM failed a position check; the actual value is unknown. SVPG
   was unopened. The custom-stager route is closed; no fifth attempt, cap

@@ -6,11 +6,14 @@ complete eligibility preparation, backup, preparation-only review and push.
 Main reread the full goal and clean worktree before this continuation.
 DeepSV remains excluded; no learned method or training campaign is selected.
 
-## Finite scientific decision
+## Historical finite decision — superseded by STOP
 
-The completed Sol6.1/max-requested direction review retains ONE fixed screen
+The completed Sol6.1/max-requested direction review retained ONE fixed screen
 by October 8 as a final rejection test, not as a publication direction.
-Main accepts it; the broader publication goal stays active. Zero as-released
+Main accepted it conditionally. The later real metadata failure **closes that
+screen**; the stop review below is authoritative. The broader publication
+goal stays active. The following were historical contingency rules, not a
+current launch plan. Zero as-released
 union residuals stop recovery investment. Nonzero residuals supply only a
 hypothesis list, not validated misses, biological gain or novelty. Known
 representation, filtering and benchmark effects cannot establish a distinct
@@ -42,6 +45,9 @@ The exact real-data reservation was subsequently approved and charged in full;
 its failed execution is recorded below. No refund is made.
 
 ## REF utility: one complete sequential reference pass
+
+Historical unapproved proposal only. After the metadata failure, no real REF
+driver, scan or new I/O work will follow for this closed dataset route.
 
 `analysis/check_released_truth_reference.py` reads standard gzip/BGZF FASTA
 to EOF and checks every original anchored REF against the pinned reference.
@@ -178,6 +184,10 @@ The full retained charge is **8,588,703,005 bytes**. The zero-byte stdout and
 1,581-byte raw log remain untouched on scratch. The exact raw log and controller
 summary are preserved in `results/data_audits/svpg_2026/2026-10-07/` as
 `truth_metadata_command_run_v1.log` and `truth_metadata_failed_v1.json`.
+Retrieval of the 1,581-byte log and its small size/hash metadata uses the
+existing ≤one-MiB small-metadata component of the approved 65-MiB reservation
+(four ≤16-MiB truth/parser passes plus one MiB). No additional genomic-source
+read, new reservation, refund or measured opaque C-traffic claim is made.
 No repair, record drop, automatic retry, REF check, caller preparation, sorting,
 matching or scoring follows this failure. There is **no validated denominator**.
 It is not a caller coverage result, biological null or proof of source corruption.
@@ -205,6 +215,13 @@ The wider publication objective remains active. The next step is a fresh
 comparison of testable research questions and label feasibility, not more
 pipeline work to rescue this screen. DeepSV remains excluded as a foundation;
 SSL, the current task, dataset and architecture remain optional.
+
+The final evidence-only reviewer rechecked exit/resources/accounting and
+claim boundaries. The raw log was explicitly force-added because `*.log`
+is ignored; it is tracked at checkpoint `e81765ea2ec8828209ea9fabe10b58fef03c1716`,
+whose pushed remote hash matched. The reviewer’s pre-staging untracked-log
+finding is resolved, not dismissed. Its request to mark the opening decision
+and older “current” captions historical is addressed here and in the trackers.
 
 Post-run `squeue -u igorno` is empty. Scratch expires October 22 at 23:02:50
 (cluster-local), with 15 days/10 hours remaining and one extension available.

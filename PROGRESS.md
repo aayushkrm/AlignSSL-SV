@@ -32,10 +32,15 @@ selected. Cluster jobs are empty; scratch expires October 22 at 23:02:50
 competing-direction literature comparison is underway; the
 [rare-allele identifiability triage](docs/research/2026-10-07-mosaic-identifiability-triage.md)
 rejects a generic low-VAF coverage study and has no accepted novelty claim.
+The Luna/max-requested [competing-opportunity comparison](docs/research/2026-10-07-competing-opportunities.md)
+is complete: copy-state identifiability faces direct ctyper overlap, and useful
+selective-risk guarantees face nonrandom missing-truth limits. Main checked
+the primary excerpts and recorded their limitations. Sol6.1/max-requested
+selection of one finite next falsifier is pending; no acquisition is approved.
 The broader publication goal remains active and unachieved; DeepSV is excluded,
 and SSL or the old dataset need not be retained.
 
-October 7 current checkpoint: the final, independently approved truth-preparation
+October 7 historical preparation checkpoint (superseded above): the final, independently approved truth-preparation
 exception **completed** and passed the preparation-only result review. The full
 scan reconciles **5,497,286 source rows/map entries** with whole gzip EOF/CRC and
 source hash/snapshot verification. There are **11,490 provisionally eligible
@@ -102,7 +107,7 @@ preservation, identity-safe reader pairing and metadata consistency controls
 before scoring. No biological gain, new method or publication
 contribution is claimed. DeepSV remains excluded; SSL is not required.
 
-October 7 latest verified checkpoint: the [distinct standard-tool route](docs/research/2026-10-07-standard-transport-decision.md)
+October 7 historical transport checkpoint (superseded above): the [distinct standard-tool route](docs/research/2026-10-07-standard-transport-decision.md)
 completed its one independently reviewed attempt. All six frozen caller files
 are available and hash-verified. The standard parser preserved records and
 boundary positions; SVIM has 41 POS=0 records. The exact earlier rejected
@@ -127,7 +132,7 @@ A capped truth-header inspection was the next proposed scope at that review;
 the separate approval and completed result are linked above. No
 matching/scoring has run or is approved by that preparation review.
 
-October 7 latest checkpoint: the [bounded streaming follow-up](docs/research/2026-10-07-streamed-callset-stage.md)
+October 7 historical streaming checkpoint (superseded above): the [bounded streaming follow-up](docs/research/2026-10-07-streamed-callset-stage.md)
 preserves stage-03 and final stage-04 failures. Stage-04 completed DeBreak,
 Sawfish and Sniffles, and verified the earlier cuteSV file. It then stopped
 on SVIM's position check; SVPG was not opened. The rejected value is unknown.
