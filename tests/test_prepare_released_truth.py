@@ -365,7 +365,7 @@ def test_protocol_hash_is_checked_before_creating_output_or_reading_inputs(tmp_p
         ({"max_truth_decoded_bytes": MAX_TRUTH_DECODED_BYTES + 1}, "max_truth_decoded_bytes"),
         ({"max_line_bytes": MAX_LINE_BYTES + 1}, "max_line_bytes"),
         ({"max_bed_bytes": MAX_BED_BYTES + 1}, "max_bed_bytes"),
-        ({"charged_prior_global_decoded_bytes": 6 * GIB}, "prior global charge"),
+        ({"charged_prior_global_decoded_bytes": 8 * GIB}, "prior global charge"),
     ],
 )
 def test_protocol_resource_bounds_are_typed_and_fail_closed(tmp_path, updates, message):
@@ -384,6 +384,16 @@ def test_reservation_must_cover_caps_and_fit_global_budget(tmp_path):
         prepare(case)
 
     assert not case["outdir"].exists()
+
+
+def test_eligible_vcf_output_cap_fails_without_dropping_rows(tmp_path, monkeypatch):
+    monkeypatch.setattr(preparer_module, "MAX_ELIGIBLE_VCF_BYTES", len(HEADER) + 1)
+    case = make_case(tmp_path, HEADER + record())
+    with pytest.raises(TruthPreparationError, match="eligible truth VCF"):
+        prepare(case)
+    assert (case["outdir"] / "eligible_truth.vcf.partial").stat().st_size == len(HEADER)
+    assert not (case["outdir"] / "eligible_truth.vcf").exists()
+    assert (case["outdir"] / "truth_preparation_failure.json").exists()
 
 
 def test_reservation_includes_one_overflow_probe_for_each_bed(tmp_path):

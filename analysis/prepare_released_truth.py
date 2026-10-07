@@ -22,7 +22,7 @@ declared for that contig; no length is inferred from BED intervals.
 The reservation must cover the truth delivered-byte cap, one byte used to detect
 budget overflow, a fixed 64-KiB standard-gzip read-ahead allowance, and each
 BED byte cap plus its one-byte overflow probe. It
-must also fit under the six-GiB global ceiling after the prior global charge.
+must also fit under the eight-GiB stage ceiling after the prior global charge.
 """
 
 from __future__ import annotations
@@ -64,10 +64,11 @@ MAX_TRUTH_COMPRESSED_BYTES = 2 * GIB
 MAX_LINE_BYTES = 32 * MIB
 MAX_BED_BYTES = 4 * MIB
 MAX_BED_ROWS = 1_000_000
-MAX_MAPPING_BYTES = 64 * MIB
+MAX_MAPPING_BYTES = GIB
+MAX_ELIGIBLE_VCF_BYTES = GIB
 MAX_PROTOCOL_BYTES = 1 * MIB
 MAX_INVENTORY_BYTES = 4 * MIB
-MAX_GLOBAL_DECODED_BYTES = 6 * GIB
+MAX_GLOBAL_DECODED_BYTES = 8 * GIB
 GZIP_READ_AHEAD_RESERVATION_BYTES = 64 * 1024
 UNKNOWN_CONTIG_LENGTH_POLICY = (
     "do_not_infer_n_plus_one_without_unique_declared_length"
@@ -184,7 +185,7 @@ def _validate_protocol(protocol: dict[str, object]) -> dict[str, object]:
             "overflow byte, gzip read-ahead, and both BED caps plus overflow probes"
         )
     if prior + reservation > MAX_GLOBAL_DECODED_BYTES:
-        raise ValueError("prior global charge plus reservation exceeds 6 GiB")
+        raise ValueError("prior global charge plus reservation exceeds 8 GiB")
 
     return {
         **pins,
@@ -452,6 +453,8 @@ def _json_line(value: dict[str, object]) -> bytes:
 
 
 def _write_all(target: BinaryIO, digest: Any, content: bytes) -> None:
+    if target.tell() + len(content) > MAX_ELIGIBLE_VCF_BYTES:
+        raise ValueError("eligible truth VCF exceeds its 1-GiB output limit")
     target.write(content)
     digest.update(content)
 
@@ -760,6 +763,8 @@ def prepare_released_truth(
 
         if not header_seen or not fileformat_seen:
             raise ValueError("VCF lacks one valid #CHROM header")
+        if sum(eligible_counts.values()) + sum(boundary_counts.values()) + sum(exclusion_counts.values()) != ordinal:
+            raise AssertionError("truth classification totals do not reconcile with all original ordinals")
 
         actual_decoded_traffic = decoded + int(counters["bed_decoded_bytes"])
         if actual_decoded_traffic > config["reservation_bytes"]:
@@ -799,8 +804,13 @@ def prepare_released_truth(
                 "max_bed_bytes": config["max_bed_bytes"],
                 "max_bed_rows": config["max_bed_rows"],
                 "max_mapping_bytes": max_map,
+                "max_eligible_vcf_bytes": MAX_ELIGIBLE_VCF_BYTES,
             },
             "body_records": ordinal,
+            "truth_record_map_entries": ordinal,
+            "classification_totals_reconciled": True,
+            "truth_whole_gzip_eof_crc_verified": True,
+            "eligible_truth_vcf_bytes": vcf_partial.stat().st_size,
             "gt_absent_records": counters["gt_absent_records"],
             "gt_duplicate_records": counters["gt_duplicate_records"],
             "eligible_counts": eligible_counts,

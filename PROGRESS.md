@@ -11,7 +11,32 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
-October 7 current: the [finite preparation/control review](docs/research/2026-10-07-finite-preparation-and-control-review.md)
+October 7 current checkpoint: the final, independently approved truth-preparation
+exception **completed** and passed the preparation-only result review. The full
+scan reconciles **5,497,286 source rows/map entries** with whole gzip EOF/CRC and
+source hash/snapshot verification. There are **11,490 provisionally eligible
+records**: 1,430 current-minus-Tier1 and 10,060 intersection. REF/native metadata
+validation is still required before this is a validated scoring denominator.
+No caller coverage, biological gain or publication finding has been measured.
+CPU 168.21s, wall 169.61s, peak RSS 45,101,056 bytes. Complete VCF/map and logs
+were copied off scratch outside Git; originals and failed v2 partials remain.
+Full retained charge including the separate raw-copy reservation is
+**8,519,496,989 bytes**. No independent large-output rehash is claimed.
+See the [complete inventory and review](docs/research/2026-10-07-finite-preparation-and-control-review.md).
+Local suite: **667 passed, 31 skipped**; manuscript consistency passed.
+The [fresh novelty recheck](docs/research/2026-10-07-novelty-recheck.md) identifies
+direct prior work against generic benchmark-stability, local-equivalence,
+ensemble-ranking and pre-phased genotype proposals. No new method is selected.
+The Luna/max caller-preparation worker hit a usage limit and saved no files;
+it was closed. The Sol6.1/high reviewer completed successfully. A separate
+Sol6.1/max decision review is pending on the remaining fixed diagnostic's value.
+No real REF/caller processing/sorting/scoring/refinement or training is approved.
+The publication goal remains active and unachieved; DeepSV is excluded and SSL
+is not a requirement. Next: resolve that finite decision, then only essential
+reviewed validation and the fixed development diagnostic by October 8, or stop
+this dataset route. Do not replace this deadline with more wrapper engineering.
+
+October 7 earlier checkpoint (closed v2 attempt): the [finite preparation/control review](docs/research/2026-10-07-finite-preparation-and-control-review.md)
 closed the synthetic duplicate-truth, nonempty-FN, full-row and reader-pairing
 gaps on the pinned cluster. A reference control disproved `norm -N -c e -f`
 as a REF validator. The verified alternative without `-N` rejects mismatches,

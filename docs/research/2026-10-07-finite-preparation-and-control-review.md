@@ -182,6 +182,113 @@ rehashes or rereads need their own reservation. The small ledger is committed.
 
 ## High-impact finite direction decision
 
+### Final storage exception: exact-pin approval and preflight
+
+On the next continuation, Dirac (GPT-6.1 Sol/high requested) approved ONE
+fresh full eligibility-preparation pass. This is another real truth-body
+pass, not merely a metadata read. Its only changed limits are the one-GiB
+plain map, one-GiB eligible VCF and eight-GiB stage ceiling. Scientific
+inputs, units, exclusions, territories and metrics remain fixed.
+
+| Artifact | Approved SHA-256 |
+|---|---|
+| Preparer | `e047ec4d644da3b48f0dc80aa21f13c59452a2f79b5f82f8027c67b2dc0c8632` |
+| Truth-unit helper | `4c1cf4fc3d98f4cc3e0f136c15d27095730aa1725b951ea607b4684f4ed93e93` |
+| Protocol v3 | `4c80c9a589cbea1807fdd885b88eb735738bf8b8414c5e21ea6e47845ea9d5f9` |
+| Exception reservation | `57ecc622e621c3e81f921e4bf846949db79eeaf76bb39388602f5970c9932d77` |
+
+Remote code/helper/protocol hashes match. The fresh `_02/prepared` directory
+does not exist. Immediately before launch, shared-filesystem available space
+was 53,181,628,809,216 bytes, above the required 12 GiB. This does not prove
+account quota. CPU/wall limits remain 600 seconds, with five-second kill
+grace; Linux address space remains four GiB. Full cumulative charge is
+**7,519,496,989 bytes**, retained on success or failure. The v2 failure stays
+closed. Any further failure ends this dataset route: no retry, fallback,
+cap increase or deadline extension. Approval excludes REF validation,
+caller processing, sorting, matching, scoring, refinement and the wider
+campaign. A completed preparation is not a publication finding.
+
+Poincare's caller-preparation task stopped at the account usage limit. No
+worker-owned code or tests were present in the worktree at reinspection.
+The errored worker was closed; no replacement was dispatched to evade the
+limit. Main can continue safe, in-scope work already independently approved.
+
+### Actual final preparation outcome: complete, not a scientific score
+
+The approved `_02` command exited zero. It consumed 167.84 user plus 0.37
+system CPU seconds (168.21 total), 169.61 wall seconds, and 45,101,056-byte
+peak RSS. The complete raw inventory is committed as
+`results/data_audits/svpg_2026/2026-10-07/truth_preparation_inventory_v3.json`
+(2,784 bytes, SHA-256
+`f4ec03f52e7b5a1e7a35459e875ad3d277d49990ad06ab2e62315a085511f808`).
+It records successful whole gzip EOF/CRC and source snapshot/hash verification.
+All category counts reconcile to 5,497,286 original rows and map entries.
+Actual decoded truth plus both BEDs is 300,157,874 bytes; the full reserved
+7,519,496,989-byte cumulative charge remains without refund.
+
+| Complete preparation classification | Records |
+|---|---:|
+| Eligible, current-minus-Tier1 | 1,430 |
+| Eligible, current/Tier1 intersection | 10,060 |
+| Boundary or mixed territory | 18,377 |
+| Ineligible telomeric boundary | 0 |
+| Ambiguous base | 25,903 |
+| Below minimum length | 992,972 |
+| Complex replacement | 3,839,311 |
+| Missing or partial GT | 347,264 |
+| Out-of-scope chromosome | 195,172 |
+| Symbolic or star | 66,797 |
+| **Total original rows** | **5,497,286** |
+
+The eligible VCF is 11,853,747 bytes, stream-written SHA-256
+`c908217f7ec8eba1efe93f51605675a8a8b9676d9c9ca443d1348ad0a00f68d2`.
+The full map is 985,747,356 bytes, stream-written SHA-256
+`20301f1c08560c2e767f9f0f4dce991fb3293f00935fa92668c6524505cdb955`.
+Both are below one GiB and remain outside Git. These reported hashes were
+computed during writing; no independent large-output rehash is claimed.
+The source compressed hash was checked before and after the full input scan.
+
+Dirac's independent result review passes **eligibility preparation only**.
+The reviewer inspected the inventory, not the large VCF/map or runtime log.
+REF and native INFO/type/size validation remain required before these counts
+can be treated as a validated scoring denominator. No caller coverage,
+accuracy, biological improvement, test-set confirmation or publication finding
+has been measured. No real REF/caller/sorting/scoring/refinement is approved.
+The last storage exception is used and closed; no additional cap change or
+fallback is available for this dataset route.
+
+Local validation for the final code: **667 passed, 31 skipped**, 128.04
+seconds. Focused truth/header/unit checks: 81 passed in 0.73 seconds.
+Manuscript consistency passed. Requested reviewer configuration was explicitly
+Sol6.1/high; backend model execution is not independently attested.
+
+To preserve the complete outputs off scratch, a separate raw-copy reservation
+of 1,000,000,000 bytes was recorded before starting `scp -p` into the fresh
+local `data/derived/svpg_2026/2026-10-07-truth-preparation-02/` directory.
+This covers the VCF, map, inventory and run log only, not genomic parsing or
+large-file rehashing. Local available space was 12,360,974,336 bytes, sufficient
+for the reservation plus ten-GiB headroom; this is not quota proof. The full
+charge becomes **8,519,496,989 bytes**, retained regardless of copy outcome.
+Transfer completion and size checks must be recorded separately. Original
+remote outputs and both failed v2 partials remain untouched.
+
+The authenticated copy subsequently completed with exit zero. Local sizes
+match the recorded remote VCF/map/inventory sizes; the log is 1,524 bytes.
+Total payload is **997,605,411 bytes**, inside the raw-copy reservation. The
+small copied inventory compares byte-for-byte with the committed inventory.
+No VCF/map rehash was performed, so transfer success plus matching sizes is
+not claimed as independent genomic byte verification. Local available space
+after copying is 11,334,406,144 bytes, above ten-GiB headroom. Nothing was
+deleted to make space. The retained charge remains 8,519,496,989 bytes.
+The exception reservation's original pending-status field is frozen history;
+the exact-pin approval and actual outcome above supersede that operational
+status without rewriting its approved bytes.
+
+Fresh post-run `squeue -u igorno` is empty. `ws_list` reports 15 days 11 hours
+remaining, expiry October 22 at 23:02:50 cluster-local, one extension. No
+project job was cancelled, and no unrelated jobs or private-key contents were
+touched. All local/remote final code/protocol pins still match the approval.
+
 Dalton (Sol6.1/max requested) recommends one final fixed development screen
 by **October 8**, after essential controls and independent execution review.
 Main accepts that conditional recommendation. The source gate is complete;

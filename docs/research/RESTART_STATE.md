@@ -28,7 +28,23 @@ the objective.
 
 ## Current implementation and review state
 
-- October 7 current: [expanded controls and finite preparation](2026-10-07-finite-preparation-and-control-review.md)
+- October 7 current: the final separately approved preparation exception
+  completed with whole gzip EOF/CRC and source hash/snapshot verification.
+  All 5,497,286 source rows reconcile with map entries and classifications.
+  Provisionally eligible: 1,430 current-minus-Tier1 plus 10,060 intersection
+  records. This is not yet a validated scoring denominator; REF/native metadata
+  validation is required. Sol6.1/high review accepts preparation only.
+  CPU 168.21s, wall 169.61s, peak RSS 45,101,056 bytes. Complete outputs/logs
+  copied off scratch outside Git, originals and failed v2 partials preserved;
+  no independent large-output rehash claimed. Full charge with raw-copy
+  reservation: 8,519,496,989 bytes. Suite 667 passed, 31 skipped; manuscript
+  consistency passed. [Full review and inventory](2026-10-07-finite-preparation-and-control-review.md).
+  [Fresh primary-source novelty check](2026-10-07-novelty-recheck.md) challenges
+  generic stability/equivalence/ensemble/phasing proposals. No new method,
+  caller score or publication finding. Luna/max worker stopped at usage limit,
+  no saved caller-preparation code. Sol6.1/max finite direction review pending.
+  No real REF/caller/sorting/scoring/refinement or training approval.
+- October 7 earlier checkpoint (closed v2 attempt): [expanded controls and finite preparation](2026-10-07-finite-preparation-and-control-review.md)
   passed the pinned synthetic multiplicity/FN/full-row/reader-pairing tests.
   Actual reference controls reject the unsafe `norm -N -c e -f` recipe; the
   verified alternative's normalization output must be discarded. INFO/native
@@ -370,18 +386,19 @@ the objective.
    the completed literature or Locityper source-feasibility workers, build a
    detector from the QV archive, or acquire its larger database to preserve the
    old direction. This is a limited research stop, not a pause of the goal.
-2. Resolve the released-callset staging failure without dropping DeBreak or
-   altering source alleles/GT. Preserve both failed attempts; review a bounded
-   alternative and traffic amendment before a further source pass. Then freeze
-   exact sample-column mappings, deterministic sort/multiallelic handling,
-   installed code hashes and executable traffic accounting before scoring.
-   Compare a bounded event-level diagnostic, modern call-set recovery and other
-   distinct mechanisms against the closer COSIGT, SVPG and minisv prior art.
-   Select a real scientific falsifier only with concrete input provenance,
-   independent structural truth and all native controls. Write the eligibility,
-   effect/precision threshold, unknown/no-call handling, equivalence rules,
-   label and total compute budgets before scoring. Obtain a separate
-   Sol6.1/high protocol review. No large training is selected.
+2. Source staging is complete for all six callers; the custom stager stays
+   closed. Full eligibility preparation is complete and independently reviewed,
+   but not REF/native validated. Resolve the high-impact value review after the
+   fresh prior-art challenge. If retained, close essential reference/metadata
+   and standard caller-preparation gates, including full-row/identity checks,
+   fixed sample-column mappings and finite all-read reservations. Obtain exact
+   Sol6.1/high execution review before any real REF/caller/sort/score command.
+   Finish the fixed weaker development screen by October 8 or stop this dataset
+   route; no open-ended parser/I/O supervisor, further cap change, reduced
+   caller panel or deadline extension. Keep the two arms' truth IDs identical.
+   Any later recovery claim needs original full variant context, honest
+   unresolved labels, a distinct mechanism and unrelated-donor confirmation.
+   No large training or publication method is selected.
 3. If the inputs or distinct contribution fail, reject the direction and move
    to a stronger question; do not substitute another generic header audit for
    scientific progress. Keep unrelated-donor/locus-family confirmation untouched.

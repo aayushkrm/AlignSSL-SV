@@ -1,0 +1,19 @@
+{
+  "purpose": "one_final_explicit_truth_preparation_storage_exception",
+  "prior_global_charge_bytes": 6437301018,
+  "reservation_bytes": 1082195971,
+  "full_conservative_charge_bytes": 7519496989,
+  "stage_limit_bytes": 8589934592,
+  "truth_delivered_cap_bytes": 1073741824,
+  "truth_overflow_probe_bytes": 1,
+  "gzip_read_ahead_allowance_bytes": 65536,
+  "bed_caps_and_overflow_probes_bytes": 8388610,
+  "map_storage_cap_bytes": 1073741824,
+  "eligible_vcf_storage_cap_bytes": 1073741824,
+  "total_vcf_and_map_storage_cap_bytes": 2147483648,
+  "free_headroom_bytes": 10737418240,
+  "no_refund": true,
+  "no_partial_prefix_continuation": true,
+  "any_further_failure_ends_dataset_route": true,
+  "status": "pending_independent_exact_pin_execution_approval"
+}
