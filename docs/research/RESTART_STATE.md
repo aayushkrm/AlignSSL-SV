@@ -28,6 +28,26 @@ the objective.
 
 ## Current implementation and review state
 
+- October 7 newest: the exact-approved real metadata gate **failed** on signed
+  SVLEN versus canonical allele length. Exit 2; CPU 0.66s, wall 1.27s, RSS
+  99,201,024 bytes. No success inventory or failing identity/count was emitted;
+  final source rehash was not reached. No validated denominator, caller outcome
+  or biological null. The Sol6.1/high reviewer confirms closure of the fixed
+  released-callset screen under its further-failure stop rule; main accepts.
+  No REF/caller/sort/score/repair/drop/rerun follows. Full retained charge:
+  8,588,703,005 bytes. Raw failure and exact pins are in the
+  [validation/stop review](2026-10-07-validation-gates.md). Pinned synthetic
+  controls pass 38 after a preserved Python memfd-binding failure; failed
+  sources/small reports are backed up outside Git. Luna/max caller code is
+  synthetic only, not authorized for real data. No cluster jobs at postcheck;
+  scratch expires October 22 23:02:50 cluster-local. Optional record-level
+  closeout diagnosis is unnecessary for STOP, unapproved and uncharged.
+  Broader goal active: compare new questions and credible independent labels,
+  not more wrappers to rescue the stopped screen. DeepSV excluded; no selected
+  learned method or expensive campaign. Full suite 737 passed, 35 skipped;
+  focused 70 passed, four skipped; manuscript consistency passed. The new
+  [mosaic-specific identifiability question](2026-10-07-mosaic-identifiability-triage.md)
+  is a prior-art/label-feasibility candidate, not a selected method.
 - October 7 current: the final separately approved preparation exception
   completed with whole gzip EOF/CRC and source hash/snapshot verification.
   All 5,497,286 source rows reconcile with map entries and classifications.

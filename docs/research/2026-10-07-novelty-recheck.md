@@ -82,3 +82,30 @@ identifier mappings.
 Next high-impact review: challenge whether the remaining fixed diagnostic is
 still worth its bounded cost. No new method or expensive campaign is selected
 by this source triage.
+
+## Completed high-impact decision
+
+Dalton (GPT-6.1 Sol/max requested) retains ONE fixed screen by October 8
+as a final rejection test, not a publication direction. Main accepts this
+conditional decision. The PLOS paper challenges generic stability claims but
+does not directly answer the frozen six released HiFi callsets' union question.
+No representation-harmonization novelty is inferred from vcfdist/ASVBM.
+
+Keep the 64-GiB aggregate ceiling, full 8,519,496,989-byte latest charge,
+two aggregate CPU-hours, existing wall/RAM limits and unchanged deadline.
+Submit exact REF/caller preparation and twelve comparisons to the existing
+independent reviewer before real execution. No further amendment or I/O-wrapper
+phase is authorized. If controls or honest bounded accounting cannot close,
+stop this dataset route. Zero as-released union residuals reject the recovery
+lead. Nonzero residuals yield only a hypothesis list: known representation,
+filtering and benchmark effects are not a new mechanism. Further investment
+needs a consequential distinct mechanism and separate review. Lead rejection
+does not end the broader publication goal.
+
+The decision agent completed and was closed. Requested configuration was
+retained from its prior explicit Sol6.1/max dispatch, not independently attested
+backend execution. Its account check permitted ordinary use; it did not prove
+Luna-specific availability. No reset credit was used. On a later fresh ordinary
+usage check, main resumed the SAME Luna/max caller worker once, with identical
+write scope/model and explicit stop on any repeated quota error. This is not
+permission to replace the requested worker model to bypass a limit.

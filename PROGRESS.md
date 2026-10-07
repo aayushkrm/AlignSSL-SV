@@ -11,6 +11,30 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 7 newest checkpoint: the independently approved **real metadata gate
+failed**, and the reviewer confirms closure of the fixed released-callset
+screen. Main accepts STOP: no REF scan, real caller preparation, repair,
+selective drop, rerun or scoring. The error is `SVLEN contradicts canonical
+signed allele length`; the failing identity/count were not logged. This is a
+contract failure, not proof of corrupt truth or a biological null. The prepared
+11,490 records remain provisional, with **no validated scoring denominator**.
+Raw failure log and controller summary are retained in Git; original sources,
+outputs and failed stages remain untouched. Full charge: **8,588,703,005 bytes**,
+without refund. CPU 0.66s, wall 1.27s, peak RSS 99,201,024 bytes.
+See [validation gates and stop review](docs/research/2026-10-07-validation-gates.md).
+Pinned synthetic controls passed 38 tests after a preserved memfd-binding
+failure. Small failed-source/report backups are complete outside Git.
+The resumed Luna/max caller worker completed synthetic code; real processing
+is unapproved and now stopped for this route. No training or new method was
+selected. Cluster jobs are empty; scratch expires October 22 at 23:02:50
+(cluster-local). Full local suite: **737 passed, 35 skipped**; focused validation
+**70 passed, four skipped**; manuscript consistency passed. A fresh
+competing-direction literature comparison is underway; the
+[rare-allele identifiability triage](docs/research/2026-10-07-mosaic-identifiability-triage.md)
+rejects a generic low-VAF coverage study and has no accepted novelty claim.
+The broader publication goal remains active and unachieved; DeepSV is excluded,
+and SSL or the old dataset need not be retained.
+
 October 7 current checkpoint: the final, independently approved truth-preparation
 exception **completed** and passed the preparation-only result review. The full
 scan reconciles **5,497,286 source rows/map entries** with whole gzip EOF/CRC and
