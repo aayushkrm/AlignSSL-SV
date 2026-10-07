@@ -12,6 +12,14 @@ actual smoke failure remains unresolved; no post-correction full rerun or
 all-green claim. User's cluster preference remains for large compute/data.
 [Recovery record](../../results/software_checks/2026-10-07/storage_recovery.json).
 
+Subsequent user storage update verified 16,152,895,488 free bytes (**15.04 GiB**).
+The unchanged 10,770,972,672-byte guard remains satisfied. After this new
+read-only measurement, the same two targeted checks passed again in 1.13s;
+this is not a full-suite rerun. The earlier recovery record and failure
+artifacts are unchanged. Large data and compute remain on the cluster, per
+the user's preference. No files were deleted by the agent.
+[Subsequent measurement and check summary](../../results/software_checks/2026-10-07/storage_followup.json).
+
 ## Full suite is not green
 
 Initial full run: **739 passed, two failed, 35 skipped, 397.03 seconds**.

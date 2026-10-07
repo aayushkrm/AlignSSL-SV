@@ -11,6 +11,30 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 7 subsequent storage/source checkpoint: user confirmed more free space;
+new measurement **15.04 GiB**, unchanged guard satisfied. The same two targeted
+headroom checks pass again, **2 passed in 1.13s**. Earlier failures and recovery
+records remain; no full-suite rerun or resolution of the legacy smoke failure.
+Cluster remains preferred for larger data/compute.
+[Follow-up record](results/software_checks/2026-10-07/storage_followup.json).
+The [new inversion-recurrence screen](docs/research/2026-10-07-inversion-recurrence-territory.md)
+finds affirmative current native-code overlap: cross-orientation flux controls
+and classifier training already exist. No native performance rerun or new lead.
+The [centromeric worker screen](docs/research/2026-10-07-centromeric-territory.md)
+does not establish a distinct mapping failure; its possible functional question
+lacks ready unconfounded independent outcomes. The
+[ecDNA screen](docs/research/2026-10-07-ecdna-territory.md),
+[independent review](docs/research/2026-10-07-territory-independent-review.md)
+and [max-effort-requested decision](docs/research/2026-10-07-inversion-centromere-decision.md)
+are complete. The reported similar-copy S3 merge can motivate an original-input
+native-method falsifier, not a novel claim. Main's complete pinned three-file
+CycleExtractor tree/README/example-graph check does not identify S3 generating
+cycles/input provenance; gate UNRESOLVED, no GBM39 substitution or invented graph.
+No comparator execution, new acquisition or campaign approved. Current source
+and original-input limits remain explicit; no publication lead selected.
+Seventeen existing headline/field consistency tests pass separately (4.30s),
+not a full-suite rerun or scientific gain. Broad goal remains active.
+
 October 7 newest source/decision checkpoint: the [three-territory audit](docs/research/2026-10-07-fresh-territories-and-acquisition.md)
 and [high-impact decision](docs/research/2026-10-07-next-direction-decision.md)
 reject generic inserted-sequence, junction-mechanism and molecule-acquisition

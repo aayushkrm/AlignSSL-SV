@@ -28,6 +28,24 @@ the objective.
 
 ## Current implementation and review state
 
+- October 7 subsequent storage/source checkpoint: verified 15.04 GiB free;
+  unchanged guard met, same two targeted checks pass again (1.13s).
+  [Separate follow-up record](../../results/software_checks/2026-10-07/storage_followup.json),
+  original failures/recovery unchanged. Legacy smoke still fails; no full-suite rerun.
+  Cluster still preferred for larger work. Current pinned inversion code already
+  implements cross-orientation flux controls and classifier training; broad
+  [inversion-recurrence proposal](2026-10-07-inversion-recurrence-territory.md)
+  is not selected. [Centromeric screen](2026-10-07-centromeric-territory.md)
+  finds no distinct mapping failure or ready independent functional outcomes.
+  [ecDNA screen](2026-10-07-ecdna-territory.md),
+  [independent review](2026-10-07-territory-independent-review.md) and
+  [max-effort-requested decision](2026-10-07-inversion-centromere-decision.md)
+  complete. Original synthetic S3 comparator falsifier requires exact generating
+  cycles/input/observed-subwalk provenance. Complete pinned three-file native
+  tree/README/GBM39 graph does not identify S3 inputs; gate UNRESOLVED, no
+  substitute case, graph invention, execution or campaign. No lead selected.
+  Seventeen headline/field consistency tests pass separately in 4.30s;
+  not a full-suite rerun. Publication goal active, unachieved.
 - October 7 newest source/decision checkpoint: [three-territory audit](2026-10-07-fresh-territories-and-acquisition.md)
   and [max-effort-requested decision](2026-10-07-next-direction-decision.md)
   reject these current annotation/junction/acquisition leads. No method selected.
