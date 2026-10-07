@@ -28,6 +28,35 @@ the objective.
 
 ## Current implementation and review state
 
+- October 7 newest source/decision checkpoint: [three-territory audit](2026-10-07-fresh-territories-and-acquisition.md)
+  and [max-effort-requested decision](2026-10-07-next-direction-decision.md)
+  reject these current annotation/junction/acquisition leads. No method selected.
+  Actual pinned BOSS estimator control verifies hidden rejected-length influence
+  on strategy inputs, not acceptance/masks/time/SV performance. Guard is not
+  an estimator fix. [Independent-review/control ledger](2026-10-07-acquisition-direction-review.md).
+  The [named-C consequence gate](2026-10-07-region-c-consequence-gate.md) stops
+  at source identity: no three C structures established; earlier >400-kb/C
+  assignment is qualified. No substituted case, inferred pathogenic topology
+  or biological null. Reviewer/decision follow-ups complete. Three Luna/max
+  workers failed at quota; main completed checks. No genomic download,
+  controller, replay or campaign. Public document/source-component checks
+  only. Four new offline tests pass; final validation recorded in PROGRESS.
+  Latest cluster: no account jobs; scratch October 22 23:02:50 cluster-local.
+  Historical charge unchanged; goal active/unachieved. Next seek a genuinely
+  distinct scientific contrast, not wrappers to rescue stopped leads.
+  Latest storage follow-up: user cleaned local space; ~14.2 GiB verified free.
+  Both headroom checks now pass separately, guard unchanged. Cluster still
+  preferred for large work; queue empty, shared `df` not a user quota/reservation.
+  Legacy smoke remains failed. [Recovery record](../../results/software_checks/2026-10-07/storage_recovery.json).
+  [Earlier software caveat](2026-10-07-software-validation-and-headroom.md): full suite
+  739 passed/two failed/35 skipped; both failures are intact local headroom
+  guard stops at ~1.85 GiB free. No historical data deleted or guard lowered.
+  Large local staging paused; user chose cluster compute/larger files for now,
+  with storage checks before transfer or launch. Legacy Boolean
+  smoke wrapper corrected, four convention regressions; focused 25 pass.
+  Corrected actual smoke separately fails, accuracy 0.667 versus unchanged
+  0.7 requirement; raw stdout retained, no retuning or inferred full-run count.
+  No all-green suite claim; manuscript/whitespace checks pass.
 - October 7 newest direction checkpoint: main reread the updated objective;
   Sol6.1/max-requested decision rejects A as currently framed and leaves B
   unselected without representative independent labels. Its one approved

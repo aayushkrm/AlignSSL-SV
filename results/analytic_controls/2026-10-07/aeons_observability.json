@@ -1,0 +1,27 @@
+{
+  "scope": "native_length_estimator_only_synthetic_observability_control",
+  "observable_lengths_in_both_cases": {"kept": 4000, "rejected": 400},
+  "hidden_full_lengths": [{"kept": 4000, "rejected": 10000}, {"kept": 4000, "rejected": 40000}],
+  "native_all_sampled_length_states": [
+    {"mean_length": 7000.0, "approx_ccl": [4000, 4000, 4000, 4000, 4000, 10000, 10000, 10000, 10000, 10000]},
+    {"mean_length": 22000.0, "approx_ccl": [4000, 4000, 4000, 4000, 4000, 40000, 40000, 40000, 40000, 40000]}
+  ],
+  "observed_only_guard_states": [
+    {"mean_length": 4000.0, "approx_ccl": [4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000]},
+    {"mean_length": 4000.0, "approx_ccl": [4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000, 4000]}
+  ],
+  "hidden_rejected_length_changes_native_strategy_inputs": true,
+  "observed_only_guard_invariant": true,
+  "guard_is_not_selection_bias_correction": true,
+  "full_simulator_or_live_instrument_executed": false,
+  "strategy_mask_or_SV_performance_effect_measured": false,
+  "genomic_input_read": false,
+  "source": {
+    "url": "https://raw.githubusercontent.com/goldman-gp-ebi/BOSS-RUNS/a5b6af8520669dd3d182bbf95021a7242a2ede4e/boss/readlengthdist.py",
+    "commit": "a5b6af8520669dd3d182bbf95021a7242a2ede4e",
+    "git_blob": "46d29031a0d9c31518c004a15a79f190eb94943a",
+    "bytes": 3898,
+    "sha256": "f985f7f4a29cabf26b37802bf538ea65e88f21ac4a3da760e8f16e01744939c3"
+  },
+  "numpy_version": "1.26.4"
+}

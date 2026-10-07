@@ -11,6 +11,49 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 7 newest source/decision checkpoint: the [three-territory audit](docs/research/2026-10-07-fresh-territories-and-acquisition.md)
+and [high-impact decision](docs/research/2026-10-07-next-direction-decision.md)
+reject generic inserted-sequence, junction-mechanism and molecule-acquisition
+leads under current evidence. Native prior work already covers much of the
+proposed work. No publication lead selected. A reviewed native-component
+control verifies hidden rejected lengths change BOSS estimator/strategy inputs
+at identical observed evidence, not masks, decisions, time or SV performance.
+The guard is not an estimator fix or biological contribution.
+[Exact control and independent scrutiny](docs/research/2026-10-07-acquisition-direction-review.md).
+The fixed paper-only region-C consequence check then **stopped at case identity**:
+clinical prose, supplement and cited original do not establish three C
+structures. This qualifies earlier unresolved-C/>400-kb language; no fabricated
+contrast, phenotype-selected topology, replacement case or biological null.
+[Completed case check](docs/research/2026-10-07-region-c-consequence-gate.md).
+No genomic transfer, controller or expensive campaign. Three Luna/max workers
+failed at usage limit before results; main completed bounded checks directly.
+Sol6.1/high reviewer and Sol6.1/max decision follow-ups are complete. Four new
+offline control tests pass; final checkpoint validation is recorded below.
+Latest cluster check: no account jobs; scratch October 22 23:02:50 cluster-local.
+Previous stops/full charge remain. Next establish a distinct scientific
+contrast; the broad publication goal remains active and unachieved.
+
+Current storage follow-up: user cleaned space; verified **~14.2 GiB free**.
+The two disk-guard checks now pass separately (1.16s), guard unchanged.
+Their failures below are preserved. Corrected legacy smoke failure remains;
+no full-suite green claim. User still prefers cluster compute/larger files.
+Cluster account queue empty; shared free space is not a user quota/reservation,
+scratch expiry unchanged. [Recovery evidence](results/software_checks/2026-10-07/storage_recovery.json).
+
+Earlier software caveat in this checkpoint: full run **739 passed, two failed, 35 skipped**;
+both older job-supervision checks fail the intact 10-GiB headroom guard.
+Local free space is about 1.85 GiB. No historical data deleted or guard lowered;
+large local transfers paused. User chose **continue on the cluster for now**;
+compute/larger files go there after storage checks, small local tracking and
+paper work remain possible. The legacy Boolean smoke gate was inverted and corrected
+without changing its model/thresholds/seeds. Four convention regressions added;
+focused validation **25 passed**, manuscript consistency and whitespace pass.
+The separately run corrected legacy smoke check **fails** (278.08s): returned
+False, synthetic accuracy 0.667 below unchanged 0.7 criterion. Failure/stdout
+retained; no retuning or threshold change. No post-correction full rerun or
+invented aggregate count. No all-green suite or scientific improvement claim.
+[Failure evidence and gate correction](docs/research/2026-10-07-software-validation-and-headroom.md).
+
 October 7 newest direction checkpoint: main reread the full updated objective.
 The Sol6.1/max-requested decision rejects the current copy-state proposal,
 does not select the broad missing-label risk proposal, and allowed one

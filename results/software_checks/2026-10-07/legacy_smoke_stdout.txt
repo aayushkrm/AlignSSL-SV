@@ -1,0 +1,7 @@
+[fixture] ref+BAM built, 3 deletions: [(8000, 8300), (12000, 12800), (18000, 20000)]
+[SSL] pretrain loss 23.369 -> 21.491 (dropped YES)
+[FT] final train loss 0.406
+[EVAL] test acc=0.667 | T=0.612 | ECE 0.435->0.400 | conformal cov=0.333 (target 0.8)
+[UNC] mean epistemic=-0.0000 aleatoric=0.6638
+
+SMOKE TEST: CHECK
