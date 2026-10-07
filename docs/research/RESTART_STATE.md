@@ -28,7 +28,24 @@ the objective.
 
 ## Current implementation and review state
 
-- October 7 newest: the exact-approved real metadata gate **failed** on signed
+- October 7 newest direction checkpoint: main reread the updated objective;
+  Sol6.1/max-requested decision rejects A as currently framed and leaves B
+  unselected without representative independent labels. Its one approved
+  analytical C kill test is complete. Independent two-base laws are already
+  distinguishable by ordinary likelihood; a permitted correlated A-only
+  artifact channel exactly equals the mixture law. The independent
+  [Sol6.1/high-requested review](2026-10-07-error-twin-independent-review.md)
+  accepts stopping C after clarifying independent reads and within-read base
+  dependence; main accepts STOP. Not a biological
+  finding, measured artifact model or universal sequencing impossibility.
+  [Exact output and reproduction](2026-10-07-error-twin-decision.md).
+  [Full filtering main-methods audit](2026-10-07-filtering-prior-art-methods.md)
+  complete; supplements/code unread and no novel gap established. No new
+  genomic I/O, acquisition, cluster jobs or campaign. Publication goal remains
+  active: compare genuinely distinct questions, not a stopped-lead rescue.
+  Exact-output recalculation, 11 documentation tests, manuscript consistency
+  and whitespace checks pass. Full 737/35 suite is earlier, not rerun here.
+- October 7 most recent real-data checkpoint: the exact-approved real metadata gate **failed** on signed
   SVLEN versus canonical allele length. Exit 2; CPU 0.66s, wall 1.27s, RSS
   99,201,024 bytes. No success inventory or failing identity/count was emitted;
   final source rehash was not reached. No validated denominator, caller outcome
@@ -51,7 +68,7 @@ the objective.
   [Competing-opportunity handoff](2026-10-07-competing-opportunities.md) complete;
   main checked primary excerpts, documented correction/early-version limits
   and no inference of absent methods from truncated text. Sol6.1/max-requested
-  finite next-direction decision pending; no new acquisition or campaign.
+  decision and analytical outcome recorded above; no new acquisition or campaign.
 - October 7 historical preparation checkpoint (superseded above): the final separately approved preparation exception
   completed with whole gzip EOF/CRC and source hash/snapshot verification.
   All 5,497,286 source rows reconcile with map entries and classifications.

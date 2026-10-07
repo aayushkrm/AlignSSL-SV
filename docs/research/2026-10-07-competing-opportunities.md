@@ -26,24 +26,57 @@ Relative triage only: **A is currently easiest to disconfirm** because of ctyper
 Main read this full handoff and fetched the four linked primary pages to
 check the load-bearing claims. The ctyper report supports the allele-specific
 copy-number method, its reported gene-set accuracy and k-mer representation.
-Its parent page states an Author Correction on February 16, 2026; the correction
-itself was not read here. Reported performance is not independent replication.
+Its parent page states an Author Correction on February 16, 2026. Main later
+read it: the CMR-gene count changes from 212 to 273, and a Figure 5f label
+changes from SMN-converted to SMN2. No method or accuracy revision is announced
+in that correction. Reported performance is not independent replication.
+[Primary correction](https://www.nature.com/articles/s41588-026-02518-w).
 The tandem-repeat paper's publisher marks it an early, unedited version with
 possible errors. Its concordance-versus-expansion-sensitivity finding supports
 the limited proxy-metric caution, not a general error bound for CNVs.
 
-The fetched ContextSV and Dual-SVF PMC excerpts contain abstracts/reference
+The initial fetched ContextSV and Dual-SVF PMC excerpts contain abstracts/reference
 lists, not a complete methods audit. They support the stated integrated
 evidence/confidence and multimodal-filtering claims. **No claim that these
 papers lack selective-risk guarantees is established by an excerpt.** Full
 methods/code comparison remains required; absence of a search hit is not
-novelty evidence. Main's fetch added no new primary source beyond the four
+novelty evidence. Main's initial fetch added no new primary source beyond the four
 already identified, and did not download genomic inputs.
 
-The Sol6.1/max-requested decision agent is comparing A/B/C before selection
-of a finite next falsifier. No new method, data acquisition, risk guarantee or
-experiment campaign is accepted by the relative ranking above. The independent
-Sol6.1/high reviewer remains available for concrete protocol/result scrutiny.
+The subsequent Sol6.1/max-requested decision rejects A as currently framed,
+does not select B without representative independent labels, and allows C
+ONE analytical error-twin kill test. Main accepts that finite decision and
+ran the test without genomic I/O. No method, data acquisition, risk guarantee
+or campaign is accepted by the relative ranking above. See the
+[decision and analytical outcome](2026-10-07-error-twin-decision.md).
+The independent Sol6.1/high reviewer scrutinizes the analytical result before
+any continuation claim. The relative ranking above is historical triage.
+
+### Current-version checks
+
+Main's subsequent Life Sciences Literature PMC skill lookups resolved current
+Cloud metadata: ContextSV PMC13554283.1, DOI 10.1093/nargab/lqag108, citation
+September 9, 2026; Dual-SVF PMC13502093.1, DOI 10.1093/bib/bbag448, citation
+August 24, 2026. Both queried versions report open access, CC BY and false
+retraction flags. These are checked metadata, not efficacy or an independent
+all-source retraction search. Exa's June 27/July 1 dates are not accepted
+publication dates. The corrected citations remain in the same search window.
+
+Checked sources:
+[ContextSV metadata](https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC13554283.1.json),
+[Dual-SVF metadata](https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC13502093.1.json).
+The skill returned versioned HTTPS XML/text URLs. Main resumed the SAME Luna/max
+worker for a bounded full-main-XML methods audit (≤one MiB per paper, MD5
+verification before parsing; no raw saved). Its only write scope is
+`2026-10-07-filtering-prior-art-methods.md`. This cannot select a direction or
+approve genomic experiments. No abstract-only absence claim is upgraded.
+The worker completed the [full main-article audit](2026-10-07-filtering-prior-art-methods.md)
+and main read its entire handoff. All responses passed the byte cap and MD5
+check before parsing. Main-article methods establish empirical scoring and
+filtering, not a validated accepted-call risk bound under incomplete truth or
+transfer. Supplement contents, image pixels and code remain unread. This is
+a stronger bounded methods finding, not proof that the field lacks a method,
+independent replication or a reason to select B despite missing labels.
 
 ## Search and source audit
 

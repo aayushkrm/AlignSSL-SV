@@ -1,0 +1,41 @@
+{
+  "scope": "exact_binary_error_twin_toy_no_genomic_IO_or_biological_claim",
+  "fraction_B": {"fraction": "1/100", "decimal": 0.01},
+  "independent_mixed_error_probability": {"fraction": "1/100", "decimal": 0.01},
+  "one_base_A_only_error": {"fraction": "99/5000", "decimal": 0.0198},
+  "one_base_mixture_B_base_probability": {"fraction": "99/5000", "decimal": 0.0198},
+  "one_base_observation_laws_equal": true,
+  "two_base_states_order": ["AA", "AB", "BA", "BB"],
+  "two_base_A_only_independent": [
+    {"fraction": "24019801/25000000", "decimal": 0.96079204},
+    {"fraction": "485199/25000000", "decimal": 0.01940796},
+    {"fraction": "485199/25000000", "decimal": 0.01940796},
+    {"fraction": "9801/25000000", "decimal": 0.00039204}
+  ],
+  "two_base_mixture_independent": [
+    {"fraction": "9703/10000", "decimal": 0.9703},
+    {"fraction": "99/10000", "decimal": 0.0099},
+    {"fraction": "99/10000", "decimal": 0.0099},
+    {"fraction": "99/10000", "decimal": 0.0099}
+  ],
+  "two_base_A_only_correlated": [
+    {"fraction": "9703/10000", "decimal": 0.9703},
+    {"fraction": "99/10000", "decimal": 0.0099},
+    {"fraction": "99/10000", "decimal": 0.0099},
+    {"fraction": "99/10000", "decimal": 0.0099}
+  ],
+  "two_base_correlated_observation_laws_equal": true,
+  "independent_model_KL_mixture_vs_A_nats_per_read": 0.028192878792330765,
+  "illustrative_fixed_N_BB_count_test": {
+    "N": 1000,
+    "threshold_BB_count_at_least": 4,
+    "A_only_independent_probability": 0.0007173296484863645,
+    "B_mixture_independent_probability": 0.9891559216367428,
+    "A_only_correlated_probability": 0.9891559216367428,
+    "empirical_or_tuned_threshold": false
+  },
+  "error_constraint_independently_measured": false,
+  "realistic_sequencing_errors_claimed": false,
+  "ordinary_likelihood_separates_independent_model": true,
+  "novel_method_or_publication_finding": false
+}

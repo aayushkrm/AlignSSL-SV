@@ -11,7 +11,29 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
-October 7 newest checkpoint: the independently approved **real metadata gate
+October 7 newest direction checkpoint: main reread the full updated objective.
+The Sol6.1/max-requested decision rejects the current copy-state proposal,
+does not select the broad missing-label risk proposal, and allowed one
+analytical rare-allele kill test. That test is complete: ordinary likelihood
+distinguishes the independent two-base toy; an allowed correlated A-only
+error channel exactly mimics the mixture. No independently measured artifact
+constraint or distinct method is supplied. The Sol6.1/high-requested
+[independent review](docs/research/2026-10-07-error-twin-independent-review.md)
+accepts stopping this method lead after explicitly assuming independent reads
+with within-read base correlation. Main accepts STOP. This is not a
+biological result or universal impossibility claim. Exact outputs and a
+reproduction recipe are in the [analytical decision](docs/research/2026-10-07-error-twin-decision.md).
+The [full main-article filtering audit](docs/research/2026-10-07-filtering-prior-art-methods.md)
+is complete; supplements/code are unread and the absence of a risk guarantee
+in these main articles does not prove novelty. No new genomic reads, cluster
+jobs, acquisition, training or expensive campaign in this checkpoint. The
+broader goal remains active and unachieved: next compare genuinely distinct
+questions, not wrappers or availability searches to rescue stopped leads.
+Saved-output recalculation, 11 documentation-scope tests, manuscript consistency
+and whitespace checks pass. Scientific code is unchanged; the earlier full
+suite of 737 passed, 35 skipped was not rerun at this checkpoint.
+
+October 7 most recent real-data checkpoint: the independently approved **real metadata gate
 failed**, and the reviewer confirms closure of the fixed released-callset
 screen. Main accepts STOP: no REF scan, real caller preparation, repair,
 selective drop, rerun or scoring. The error is `SVLEN contradicts canonical
@@ -29,14 +51,14 @@ is unapproved and now stopped for this route. No training or new method was
 selected. Cluster jobs are empty; scratch expires October 22 at 23:02:50
 (cluster-local). Full local suite: **737 passed, 35 skipped**; focused validation
 **70 passed, four skipped**; manuscript consistency passed. A fresh
-competing-direction literature comparison is underway; the
+competing-direction literature comparison subsequently completed; the
 [rare-allele identifiability triage](docs/research/2026-10-07-mosaic-identifiability-triage.md)
 rejects a generic low-VAF coverage study and has no accepted novelty claim.
 The Luna/max-requested [competing-opportunity comparison](docs/research/2026-10-07-competing-opportunities.md)
 is complete: copy-state identifiability faces direct ctyper overlap, and useful
 selective-risk guarantees face nonrandom missing-truth limits. Main checked
 the primary excerpts and recorded their limitations. Sol6.1/max-requested
-selection of one finite next falsifier is pending; no acquisition is approved.
+decision and analytical outcome are now recorded above; no acquisition is approved.
 The broader publication goal remains active and unachieved; DeepSV is excluded,
 and SSL or the old dataset need not be retained.
 
