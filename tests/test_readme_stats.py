@@ -1,15 +1,8 @@
-"""Reconciles the statistics quoted in README.md against results/.
+"""Reconciles historical statistics in docs/archive/README-legacy-ssl.md against results/.
 
-analysis/check_manuscript.py does this for docs/AlignSSL_SV_manuscript.md, but
-nothing did it for the README -- which is what a visitor to the repository
-actually reads first. The README carried the cross-ancestry withdrawal citing
-only the PRE-correction run's Holm p, months after the corrected 36-cell re-run
-had landed as manuscript Table 8; it was not wrong, but it was the weaker of the
-two available justifications and it named neither the re-run nor the file
-holding it.
-
-These gates hold the README's quoted numbers to the CSVs, so a re-run that
-changes them cannot leave the front page behind.
+The repository-root README is now a current research landing page. This test
+covers only the former SSL study's archived statistics. It does not define or
+imply current research status.
 """
 
 from __future__ import annotations
@@ -24,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "analysis"))
 from pfmt import p_fmt  # noqa: E402
 
-README = (ROOT / "README.md").read_text()
+LEGACY_README = (ROOT / "docs" / "archive" / "README-legacy-ssl.md").read_text()
 RESULTS = ROOT / "results"
 
 
@@ -34,8 +27,8 @@ def _rows(name: str) -> list[dict]:
 
 def test_readme_cites_the_corrected_xpop_rerun_not_only_the_original():
     for token in ("table26_xpop_lowlabel.csv", "stats_xpop_lowlabel.csv"):
-        assert token in README, (
-            f"README must name {token}: the corrected cross-ancestry re-run is "
+        assert token in LEGACY_README, (
+            f"archived README must name {token}: the corrected cross-ancestry re-run is "
             "the stronger justification for the withdrawal and supersedes the "
             "pre-correction Holm p as the primary citation"
         )
@@ -48,34 +41,34 @@ def test_readme_xpop_extreme_cell_matches_the_stats_csv():
     # ever falls below 5e-05 a bare f"{p:.4f}" would demand the README
     # print "0.0000", which is not a value a p-value can take.
     want_raw = p_fmt(float(best["p_raw"]), 4)
-    assert want_raw in README, (
-        f"README must quote the most extreme raw p = {want_raw}"
+    assert want_raw in LEGACY_README, (
+        f"archived README must quote the most extreme raw p = {want_raw}"
     )
     want_holm = p_fmt(float(best["p_holm"]))
-    assert want_holm in README, (
-        f"README must quote its Holm p = {want_holm}"
+    assert want_holm in LEGACY_README, (
+        f"archived README must quote its Holm p = {want_holm}"
     )
     assert best["survives_holm_0.05"] == "False", (
-        "a cell now survives Holm; the README's null claim must be revisited"
+        "a cell now survives Holm; the archived README's null claim must be revisited"
     )
     assert best["leader"] == "scratch", (
         "the most extreme cell no longer favours the from-scratch arm; "
-        "the README says it does"
+        "the archived README says it does"
     )
 
 
 def test_readme_states_the_family_size_of_the_rerun():
     """Bare substring membership is not enough here.
 
-    An earlier version asserted `str(len(rows)) in README` and passed while the
-    README said "18 cells", because "36" also occurs inside 0.364, 0.836 and
+    An earlier version asserted `str(len(rows)) in LEGACY_README` and passed while the
+    archived page said "18 cells", because "36" also occurs inside 0.364, 0.836 and
     836. The count must be matched as a counted quantity, not as digits
     appearing anywhere in the document.
     """
     rows = _rows("stats_xpop_lowlabel.csv")
     n = len(rows)
-    assert re.search(rf"\b{n}\s+cells\b", README), (
-        f"README must state the family size as '{n} cells'"
+    assert re.search(rf"\b{n}\s+cells\b", LEGACY_README), (
+        f"archived README must state the family size as '{n} cells'"
     )
 
 
@@ -98,14 +91,14 @@ def test_readme_shortcut_attenuation_matches_the_two_benchmarks():
     """
     uniform = _oriented_ratio_auc("table6_single_feature_auc.csv")
     filtered = _oriented_ratio_auc("table9_hardneg_single_feature_auc.csv")
-    # The README states this attenuation TWICE (Section "The repaired
+    # The archived README states this attenuation TWICE (Section "The repaired
     # benchmark" and the summary that follows), so asserting that one correct
     # pair exists passes while the other is wrong -- two earlier versions of
     # this gate did exactly that, one on bare membership and one on adjacency.
     # Check every "from X to Y" attenuation statement in the file.
     pairs = re.findall(
         r"from (?:ROC-AUC )?\*{0,2}(0\.\d+)\*{0,2} to \*{0,2}(0\.\d+)\*{0,2}",
-        README,
+        LEGACY_README,
     )
     assert len(pairs) >= 2, (
         f"expected the attenuation stated at least twice, found {pairs}"
@@ -116,5 +109,5 @@ def test_readme_shortcut_attenuation_matches_the_two_benchmarks():
     )
     assert filtered < uniform, "attenuation direction reversed"
     assert filtered > 0.5, (
-        "the shortcut is now at chance; the README says attenuated-not-eliminated"
+        "the shortcut is now at chance; the archived README says attenuated-not-eliminated"
     )
