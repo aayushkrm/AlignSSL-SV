@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-10-07** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
+_Last updated: **2026-10-08** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,44 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+October 8 completed source/formal checkpoint: the
+[centromere outcome crosswalk](docs/research/2026-10-07-centromere-outcome-crosswalk.md)
+stops that paper as the activity-to-segregation anchor. Both balanced lines
+have the same reported activity; no paired later derivative-fate outcome is
+established. GM03417 is mosaic. Missing outcomes remain UNRESOLVED, not null.
+The [pinned CE source audit](docs/research/2026-10-07-cycleextractor-evidence-code-audit.md)
+separates MILP incidence from traversal evidence; token loss alone is not a
+measured recovery error. Native solver/code execution remains unrun. The
+[v2 paper/branch/history follow-up](docs/research/2026-10-07-native-example-followup.md)
+does not recover original v1 S3/v2 S4 inputs. Close that attempted reproduction;
+no GBM39 substitution, invented graph or continuing availability wrappers.
+
+The prior Sol/max decision saved an interrupted draft before quota failure;
+the prior reviewer supplied no completed checkpoint review. After the reset,
+authoritative usage allowed work and both old handles were unavailable. One
+fresh Sol6.1/max decision and one Sol6.1/high reviewer completed, with requested
+configuration recorded, not backend attestation. The
+[completed formal decision](docs/research/2026-10-08-functional-formal-decision.md),
+[independent review](docs/research/2026-10-08-functional-formal-review.md), and
+[main hand calculation](docs/research/2026-10-08-functional-ecdna-analytical-control.md)
+agree: **STOP the current ecDNA method framing**. The unrestricted flow model
+has sharp finite endpoint witnesses via standard circulation/cycle operations.
+The toy permits [0,1]; exact size four still permits [0,1]. Arbitrary caps or
+ordinary LP do not supply novelty. These are analytical controls, not native
+reproduction, confidence intervals or biological findings. Main accepts STOP.
+No new method or expensive campaign is selected; publication goal unachieved.
+
+Local disk now reports about 15 GiB free; unchanged safety guard remains.
+Large data/compute stay on the cluster. Read-only cluster check October 8
+12:28:52 +07: account queue empty; scratch expires October 22 23:02:50,
+14 days 10 hours then remaining, one extension. Shared 49 TiB free is not a
+user quota. No jobs launched/cancelled, solver installed or raw data acquired.
+Seventeen headline/field checks pass separately (5.20s); no full-suite rerun
+or resolution of the preserved legacy smoke failure. Three distinct Luna/max
+research sidecars are now comparing family SVs, repeat native controls and
+mitochondrial deletions; main audits repeat outcome/measurement semantics.
+They are not experiment launches or selected publication leads.
 
 October 7 subsequent storage/source checkpoint: user confirmed more free space;
 new measurement **15.04 GiB**, unchanged guard satisfied. The same two targeted

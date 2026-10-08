@@ -28,6 +28,28 @@ the objective.
 
 ## Current implementation and review state
 
+- October 8 completed source/formal checkpoint: [centromere crosswalk](2026-10-07-centromere-outcome-crosswalk.md)
+  meets the narrow paper-anchor STOP, not a biological null. [Pinned CE source audit](2026-10-07-cycleextractor-evidence-code-audit.md)
+  finds distinct retained evidence at MILP/traversal stages, not a measured
+  error. [Paper/branch/history follow-up](2026-10-07-native-example-followup.md)
+  closes the original S3/v2 S4 reproduction attempt at unresolved provenance.
+  No substitute or invented inputs, native execution or more availability wrappers.
+  Prior decision draft was saved before quota error; prior reviewer had no
+  completed response. After observed reset/allowed usage and missing old
+  handles, fresh Sol6.1/max decision and Sol6.1/high review completed once.
+  Requested configuration is not backend attestation. Main accepts their
+  [formal STOP](2026-10-08-functional-formal-decision.md) and
+  [independent review](2026-10-08-functional-formal-review.md).
+  [Exact hand controls](2026-10-08-functional-ecdna-analytical-control.md)
+  establish standard unrestricted endpoints, not a novel constrained method
+  or empirical benefit. No new method/campaign selected; goal unachieved.
+  Local disk about 15 GiB free, guard unchanged; large work stays cluster.
+  Cluster Oct 8 12:28:52 +07: no account jobs, expiry Oct 22 23:02:50,
+  one extension. Shared free space is not a quota. No jobs/raw acquisition.
+  Seventeen headline/field checks pass separately (5.20s), not full-suite green.
+  Three Luna/max sidecars now compare family SVs, repeat native controls and
+  mitochondrial deletions; main handles repeat outcome/measurement evidence.
+  No experiment is approved by that comparison.
 - October 7 subsequent storage/source checkpoint: verified 15.04 GiB free;
   unchanged guard met, same two targeted checks pass again (1.13s).
   [Separate follow-up record](../../results/software_checks/2026-10-07/storage_followup.json),
