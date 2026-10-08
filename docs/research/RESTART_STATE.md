@@ -28,6 +28,28 @@ the objective.
 
 ## Current implementation and review state
 
+- October 8 [throughput decision](2026-10-08-empirical-throughput-decision.md)
+  is complete: one A development kill-test path, immediate native check, then
+  reviewed REF/ALL-SIX scope, no publication lead. New experiment ID and fixed
+  process/slot limits replace operator windows prospectively; expired attempts
+  stay unexecuted. [Durable bundle](2026-10-08-native-throughput-execution.md)
+  has exact approval and completed once: 20 controls passed, all 11,490
+  unchanged rows native-compatible; source/order pins stable, no repair/drop.
+  [Actual result](2026-10-08-native-throughput-result.md): outer tree 4.07 CPU/
+  5.95 wall, named CPU now 426.622707, inner timings not charged twice.
+  All 11 small outputs (6,988 bytes) archived and hash-verified; independent
+  result review accepts technical completion only. Both slots consumed,
+  no replay. No REF/caller/scoring/biological gain. Separate REF worker reports
+  52 synthetic passes, zero skips; main/independent code review next, proposed
+  7-GiB reservation unbooked and real REF scan not approved.
+  Main focused integration check: 118 passed/13 skipped in 4.34s;
+  manuscript reconciliation passes, not a full-suite rerun or real REF test.
+  Native-control code-pin
+  reads exceed old 1-MiB metadata proposal; explicit 2-MiB amendment gives
+  66 MiB retained / 8,692,512,029 bytes, unchanged scientific envelopes. No
+  duplicate expired charge or refund. Post-constant software 101 passed/
+  13 skipped (0.87s), shell syntax pass; not native/data validation.
+
 - October 8 later native-contract preparation: main implemented a separate
   sign-tolerant native check without altering historical source/helpers or
   fields. [Uniform protocol](2026-10-08-native-contract-protocol.md) and

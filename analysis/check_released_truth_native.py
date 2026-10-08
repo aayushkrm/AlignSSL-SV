@@ -21,7 +21,9 @@ except ImportError:
 
 require = bounded.require
 PURPOSE = "absolute_metadata_native_consistency_not_REF_or_scoring"
-RESERVATION = 65 * 1024**2
+# 64 MiB frozen scientific-source/parser envelopes + 2 MiB named metadata.
+# Focused synthetic endpoint pin reads alone exceed the old proposed 1 MiB.
+RESERVATION = 66 * 1024**2
 MAX_REPORT = 64 * 1024
 VERSIONS = dict(python="3.10.20", pysam="0.24.0", truvari="5.4.0",
                 bcftools="1.23.1", htslib="1.23.1")

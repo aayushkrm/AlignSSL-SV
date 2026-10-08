@@ -11,6 +11,35 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 8 next empirical decision is complete: the existing Sol6.1/max role
+[selects A as one development kill-test path](docs/research/2026-10-08-empirical-throughput-decision.md),
+not a publication lead. Next observation: unchanged prepared-file native
+consistency; then reviewed REF/ALL-SIX scope. Retire operator appointment
+windows prospectively in favor of one immutable experiment ID, fixed payload
+slots and process limits. Expired attempts stay UNEXECUTED. The
+[new durable bundle](docs/research/2026-10-08-native-throughput-execution.md)
+has exact independent approval and completed once: **20 controls passed,
+11,490 unchanged rows native-compatible**, same source/order pins, no repair
+or drop. [Actual result](docs/research/2026-10-08-native-throughput-result.md).
+Outer tree **4.07 CPU seconds / 5.95s wall**; named CPU now 426.622707,
+not double-counting inner timings. All 11 small outputs (6,988 bytes) are
+archived and hash-verified; the maintained independent reviewer accepts
+technical completion only. Both native slots are consumed, with no replay.
+No REF/caller/scoring, biological gain or publication claim. Concrete native-control
+pin reads already exceed the old 1-MiB metadata proposal; approved 2 MiB gives
+**66 MiB total / 8,692,512,029 bytes retained**, same scientific source/parser
+caps and aggregate ceilings. No imaginary expired 65-MiB charge or refund.
+Latest local post-constant check 101 passed/13 skipped in 0.87s; shell syntax
+passes. These remain software-only, not native endpoints or publication gain.
+The separate REF gate worker reports 52 synthetic tests passed, zero skips;
+main and independent code review are next. Its proposed 7-GiB reservation is
+unbooked and no real REF scan is approved. Local disk remains about 15 GiB
+free; the safety guard is unchanged and large work stays on the cluster.
+Main integration check: 118 passed, 13 skipped in 4.34s across the progress
+gate and focused metadata/native/reference suites, including the new REF
+tests. Manuscript reconciliation passes separately. Synthetic/local skips
+do not validate real REF input, and this is not a full-suite green claim.
+
 October 8 later software checkpoint: main implemented a separate uniform
 absolute-SVLEN/native consistency gate, preserving the old signed checker,
 census and every raw field. The maintained reviewer accepts the rule in

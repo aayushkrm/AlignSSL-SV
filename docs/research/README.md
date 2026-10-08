@@ -9,6 +9,10 @@ results.
 | Document | Role | Current status |
 |---|---|---|
 | [`RESTART_STATE.md`](RESTART_STATE.md) | Operational state, cluster recovery, and next gates | Living checkpoint |
+| [`2026-10-08-empirical-throughput-decision.md`](2026-10-08-empirical-throughput-decision.md) | Completed Sol6.1/max-requested A/B decision and interruption-safe finite policy | A development kill test selected, weak novelty explicit; no publication lead or unreviewed launch |
+| [`2026-10-08-native-throughput-execution.md`](2026-10-08-native-throughput-execution.md) | New immutable native experiment bundle and concrete metadata-accounting correction | Approved replacement completed once; 66 MiB retained, scientific envelopes unchanged |
+| [`2026-10-08-native-throughput-result.md`](2026-10-08-native-throughput-result.md) | Complete native metadata result and archived raw evidence | All 11,490 unchanged rows compatible; engineering result only, REF/denominator unresolved |
+| [`2026-10-08-native-throughput-review.md`](2026-10-08-native-throughput-review.md) | Independent exact bundle and raw-result review | Initial supervision HOLD corrected; replacement approved and technical completion accepted, no next-stage approval |
 | [`2026-10-08-native-contract-protocol.md`](2026-10-08-native-contract-protocol.md) | Uniform absolute-SVLEN/native rule and interrupted implementation record | Code/tests saved; fixed window expired UNEXECUTED; no native pass or new charge |
 | [`2026-10-08-native-contract-review.md`](2026-10-08-native-contract-review.md) | Maintained independent rule, operational amendment and code scrutiny | Literal/parser gap found and fixed; independent static correction review accepted; native run remains UNEXECUTED |
 | [`2026-10-08-strategy-reset-decision.md`](2026-10-08-strategy-reset-decision.md) | Sol6.1/max-requested distinction between engineering stops and scientific falsification | One bounded metadata census selected; old screen closed; no publication lead |
