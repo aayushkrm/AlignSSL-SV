@@ -11,6 +11,8 @@ Named file-size passes are reservations, not physical I/O measurements.
 Linux/Slurm CPU/RAM/wall limits and hard disk quotas remain external. Standard
 tool output caps are checked at phase boundaries; spill peak is not measured.
 No source/header repair, REF normalization, truth, BED, FASTA, or scoring.
+Optional omit_info_rnames (strict boolean, default false) removes only the
+INFO/RNAMES values from working copies, not its header declaration or source.
 """
 from __future__ import annotations
 import hashlib
@@ -42,8 +44,11 @@ class CallerPreparationError(ValueError):
         super().__init__(message)
         self.report_path = report_path
 
+class CallerPreparationGuardError(ValueError):
+    """Internal bounded guard message; external ValueErrors may contain rows."""
+
 def _need(ok, message):
-    if not ok: raise ValueError(message)
+    if not ok: raise CallerPreparationGuardError(message)
 
 def _integer(value, minimum=1, maximum=64 * GIB):
     _need(type(value) is int and minimum <= value <= maximum, "invalid bounded integer")
@@ -60,6 +65,7 @@ def _protocol(path, expected):
     ref = p.get("independent_approval_ref")
     _need(isinstance(ref, str) and 0 < len(ref.strip()) <= 512, "independent approval reference required")
     _need(p.get("runtime") == RUNTIME and p.get("caller") in CALLERS, "runtime metadata or caller differs")
+    _need(type(p.get("omit_info_rnames", False)) is bool, "omit_info_rnames must be a boolean")
     _need(isinstance(p.get("source_sha256"), str) and re.fullmatch(r"[0-9a-f]{64}", p["source_sha256"]), "source SHA-256 required")
     for key in ("source_basename", "expected_sample_label"):
         _need(isinstance(p.get(key), str) and 0 < len(p[key]) <= 255
@@ -178,12 +184,13 @@ def _projected(value, number, index, ploidy=2):
         return tuple(_items(value)[i] for i in offsets)
     return _items(value)
 
-def _semantic_child(rec, index=None):
+def _semantic_child(rec, index=None, omitted_info=()):
     """Expectation only; END tokens use parser serialization, not raw source text."""
     sample, info, values = rec.samples[0], {}, {}
     explicit_end = [t for t in _row(rec).split("\t", 8)[7].split(";") if t.partition("=")[0] == "END"]
     _need(len(explicit_end) <= 1 and all(re.fullmatch(r"END=(?:[+-]?[0-9]+|\.)", t) for t in explicit_end), "duplicate or malformed serialized INFO/END")
     for key in rec.info:
+        if key in omitted_info: continue
         info[key] = _items(rec.info[key]) if index is None else _projected(rec.info[key], rec.header.info[key].number, index, len(sample.get("GT", ())))
     for key in sample:
         value = sample[key]
@@ -197,6 +204,8 @@ def _semantic_child(rec, index=None):
 
 def _annotate(source, dest, p, pysam, counts):
     expected, projected = _Fingerprint(), _Fingerprint()
+    omitted_info = ("RNAMES",) if p.get("omit_info_rnames", False) else ()
+    counts["info_rnames_rows_removed"] = 0
     with pysam.VariantFile(str(source)) as reader:
         _need(list(reader.header.samples) == [p["expected_sample_label"]], "source sample label/count differs")
         header = reader.header.copy()
@@ -224,7 +233,14 @@ def _annotate(source, dest, p, pysam, counts):
                 _need(length is None or length > 0 and rec.pos <= length + 1, "POS exceeds declared contig length plus one")
                 counts["pos_length_plus_one"] += length is not None and rec.pos == length + 1
                 for index in range(1, len(rec.alts) + 1):
-                    expected.add(child_identity(p["source_sha256"], ordinal, index)); projected.add(_semantic_child(rec, index))
+                    expected.add(child_identity(p["source_sha256"], ordinal, index))
+                    # Freeze every other field BEFORE the optional deletion.
+                    # Downstream checks have no exclusion: any restored RNAMES
+                    # or changed scientific field makes the projection differ.
+                    projected.add(_semantic_child(rec, index, omitted_info))
+                if omitted_info and "RNAMES" in rec.info:
+                    del rec.info["RNAMES"]
+                    counts["info_rnames_rows_removed"] += 1
                 counts["source_alt_identity_fingerprint"] = expected.result()
                 out.write(rec)
     _need(counts["source_records"] == p["expected_source_records"], "source record census differs")
@@ -280,6 +296,7 @@ def prepare_released_caller(source_path, outdir, protocol_path, protocol_sha256)
                   prior_global_charge_bytes=p["charged_prior_global_bytes"],
                   named_maximum_pass_reservations={"source": 3 * (p["max_source_bytes"] + 1), **{k: p["output_caps"][k] * n for k, n in PASSES.items()}},
                   opaque_io_reservation_bytes=p["opaque_io_reservation_bytes"],
+                  info_rnames_policy="omit_values_only" if p.get("omit_info_rnames", False) else "preserve",
                   norm_end_validation="Explicit INFO/END presence/value checked from standard-parser serialization independently of stop; raw lexical normalization by the parser is not checked.",
                   accounting_limitation="Named file-size passes are reservations; HTSlib read-ahead, BGZF decoded traffic, sort spill/peak and OS caching are not measured. Hard resource/disk enforcement is external.")
     phase = "preflight"
@@ -344,9 +361,39 @@ def prepare_released_caller(source_path, outdir, protocol_path, protocol_sha256)
             if x.is_file():
                 if len(partials) == 512: break
                 partials.append({"path": str(x.relative_to(output)), "bytes": x.stat().st_size, "sha256": None, "hash_status": "not_reread_after_failure"})
-        report.update(status="incomplete", failed_phase=phase, failure_type=type(exc).__name__, failure=str(exc)[:1000],
+        # External parser/tool errors can embed a complete variant or read names.
+        # Keep their category here; raw diagnostics stay in cluster stderr.
+        failure = str(exc)[:1000] if type(exc) is CallerPreparationGuardError else "External parser/tool error; inspect retained cluster diagnostics before archival."
+        report.update(status="incomplete", failed_phase=phase, failure_type=type(exc).__name__, failure=failure,
                       partial_files_preserved=partials, partial_inventory_may_be_truncated=len(partials) == 512)
         report_file = output / "caller_preparation_failure.json"
         _save_report(report_file, report)
         raise CallerPreparationError(str(exc), report_file) from exc
     return report
+
+
+def main():
+    """Small CLI for the fixed, externally limited one-source invocation."""
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source-path", required=True)
+    parser.add_argument("--outdir", required=True)
+    parser.add_argument("--protocol-path", required=True)
+    parser.add_argument("--protocol-sha256", required=True)
+    args = parser.parse_args()
+    try:
+        report = prepare_released_caller(args.source_path, args.outdir,
+                                         args.protocol_path, args.protocol_sha256)
+    except (ValueError, OSError) as exc:
+        # No source row or parser error context in the launcher output.
+        print(json.dumps({"status": "incomplete", "error_type": type(exc).__name__,
+                          "report_path": str(getattr(exc, "report_path", ""))}))
+        return 2
+    print(json.dumps({"status": report["status"], "caller": report["caller"],
+                      "source_records": report["counts"]["source_records"],
+                      "children": report["counts"]["children"]}))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

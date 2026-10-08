@@ -1,0 +1,39 @@
+{
+  "caller_preparation_approved": true,
+  "independent_approval_ref": "docs/research/2026-10-08-caller-preparation-review.md; valid only after exact bundle acceptance",
+  "purpose": "released_caller_preparation_v1",
+  "caller": "sawfish",
+  "source_basename": "sawfish.vcf",
+  "source_sha256": "fd35b27c44e2506491ce0d5706908349ef534a6fe43e87a48ae4efa201e00f9c",
+  "source_bytes": 25716015,
+  "expected_sample_label": "HG002",
+  "expected_source_records": 43944,
+  "max_source_bytes": 25716015,
+  "max_line_bytes": 25716015,
+  "max_children": 1000000,
+  "output_caps": {
+    "annotated": 134217728,
+    "split": 134217728,
+    "derived": 134217728,
+    "sorted": 134217728,
+    "released": 67108864,
+    "released_index": 4194304,
+    "native": 134217728,
+    "native_bgzf": 67108864,
+    "native_index": 4194304,
+    "sort_temp": 134217728
+  },
+  "storage_cap_bytes": 948961280,
+  "input_read_cap_bytes": 3323539344,
+  "opaque_io_reservation_bytes": 268435456,
+  "charged_prior_global_bytes": 26701116016,
+  "preparation_reservation_bytes": 3323539344,
+  "runtime": {
+    "truvari": "5.4.0",
+    "pysam": "0.24.0",
+    "bcftools": "1.23.1",
+    "htslib": "1.23.1",
+    "python": "3.10.20"
+  },
+  "omit_info_rnames": true
+}

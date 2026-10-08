@@ -28,6 +28,20 @@ the objective.
 
 ## Current implementation and review state
 
+- October 8 caller preparation: [fixed all-six guards/account](2026-10-08-caller-preparation-limits.md)
+  and exact candidate manifest are ready, no booking/staging/execution yet.
+  Strict opt-in INFO/RNAMES value removal keeps source bytes and other fields;
+  internal guard errors are distinguished from external diagnostics for safe
+  report archival. Corrected local tests46pass2skip0.66s; pinned cluster must
+  pass48 with0skip. [Independent review](2026-10-08-caller-preparation-review.md)
+  accepted the original code pin only; corrected exact launch review pending.
+  Proposed reservation23,691,058,798 bytes plus retained16,208,704,797 gives
+  39,899,763,595, leaving unbooked24GiB screen margin under64GiB. Caps are
+  guards, not known output sizes or measured physical traffic. No source
+  omission, caller subset, scoring or publication lead. Local15GiB free;
+  source sizes agree by stat only. Cluster19:25:26+07 empty queue; new root
+  absent; shared free space not a quota; scratch expiresOct22 23:02:50+07.
+
 - October 8 [throughput decision](2026-10-08-empirical-throughput-decision.md)
   is complete: one A development kill-test path, immediate native check, then
   reviewed REF/ALL-SIX scope, no publication lead. New experiment ID and fixed

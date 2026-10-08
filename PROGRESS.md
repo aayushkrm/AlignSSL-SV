@@ -11,6 +11,22 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 8 caller preparation: the new strict boolean opt-in removes only
+INFO/RNAMES values from working copies, preserving sources and all other
+fields/rows. Main and the independent reviewer checked the original change;
+main then separated internal guard errors from external parser errors so
+saved reports cannot echo external read-name/variant context. Luna/max added
+explicit-false, restored-RNAMES and external-error controls. Corrected local
+caller suites: **46 passed, 2 skipped in 0.66s**; the exact cluster controls
+must pass all 48 with no skips. [Finite all-six guards and account](docs/research/2026-10-08-caller-preparation-limits.md)
+and a pinned candidate bundle are ready for [exact independent review](docs/research/2026-10-08-caller-preparation-review.md).
+No caller source transfer, reservation, preparation, score or biological result
+has occurred. Prospective retained total39,899,763,595 bytes would leave an
+unbooked24-GiB screen margin under64GiB; this is not proof of physical I/O or
+screen execution approval. Original candidate superseded before execution;
+all historical failures/results remain. Free local disk verified about15GiB;
+large work remains cluster-based. Goal remains active and unachieved.
+
 October 8 next empirical decision is complete: the existing Sol6.1/max role
 [selects A as one development kill-test path](docs/research/2026-10-08-empirical-throughput-decision.md),
 not a publication lead. Next observation: unchanged prepared-file native
