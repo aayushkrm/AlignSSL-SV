@@ -45,7 +45,23 @@ def scalar(value):
     return value
 
 
-def canonical_metadata(record, native):
+def literal_unit(fields, ordinal):
+    """Derive the unchanged local unit from original columns, not parser text."""
+    require(len(fields) == 10 and re.fullmatch(r"[0-9]+", fields[1] or "") is not None,
+            "invalid literal record columns or position")
+    fmt = fields[8].split(":") if fields[8] != "." else []
+    values = fields[9].split(":") if fmt else []
+    require(fmt and len(fmt) == len(set(fmt)) and all(fmt) and len(values) <= len(fmt),
+            "invalid literal FORMAT or sample")
+    gt_index = fmt.index("GT") if "GT" in fmt else None
+    gt = values[gt_index] if gt_index is not None and gt_index < len(values) else None
+    unit = classify_truth_record("0" * 64, ordinal, fields[0], int(fields[1]),
+                                 fields[3], fields[4], gt).unit
+    require(unit is not None, "literal record violates frozen eligibility")
+    return unit, tuple(fmt)
+
+
+def canonical_metadata(record, native, *, original_unit=None, original_format=None):
     """Keep raw fields; return kind and sign flag, or reject the entire gate."""
     require(len(record.alts or ()) == 1, "eligible truth is not biallelic")
     sample = record.samples[0]
@@ -56,6 +72,12 @@ def canonical_metadata(record, native):
     unit = classify_truth_record("0" * 64, 1, record.contig, record.pos,
                                  record.ref, record.alts[0], genotype).unit
     require(unit is not None, "prepared record violates frozen eligibility")
+    if original_unit is not None:
+        fields = ("chrom", "pos", "ref", "alt", "gt", "phased", "kind", "length")
+        require(all(getattr(unit, k) == getattr(original_unit, k) for k in fields),
+                "literal/native allele or genotype interpretation differs")
+        require(tuple(record.format.keys()) == original_format,
+                "literal/native FORMAT keys differ")
     require(scalar(record.info.get("SVTYPE")) == unit.kind,
             "SVTYPE contradicts canonical allele")
     size = scalar(record.info.get("SVLEN"))
@@ -162,7 +184,9 @@ def _check_native(truth_path, protocol_path, protocol_sha256, report_path, expec
                         value = int(value)
                     require(value == scalar(rec.info.get(tag)) == scalar(trv.info.get(tag)),
                             "literal/native INFO values differ")
-                kind, wrong_sign = canonical_metadata(rec, trv)
+                original_unit, original_format = literal_unit(fields, len(ids) + 1)
+                kind, wrong_sign = canonical_metadata(rec, trv, original_unit=original_unit,
+                                                      original_format=original_format)
                 ids.add(rec.id)
                 order.update((rec.id + "\n").encode("ascii"))
                 kinds[kind] += 1

@@ -37,7 +37,12 @@ the objective.
   Retained charge still 8,623,306,013 bytes; proposed 65 MiB unbooked. A missing
   old test handle supplies no completed count. Separate software-only run:
   **91 passed, 13 skipped in 0.69s**, not native or denominator validation.
-  Exact code review pending; main requested existing Sol6.1/max strategy role
+  Reviewer identified a literal/parser interpretation gap; main added direct
+  coordinate/allele/GT/phase/FORMAT comparisons and ten controls. Latest
+  separate software-only check **101 passed, 13 skipped in 1.39s**, no genomic
+  input. Independent correction review accepts the fix and verifies pins;
+  no new static defect found, tests not independently rerun. First test artifact stays intact.
+  Main requested existing Sol6.1/max strategy role
   for a concrete empirical observation and finite practical policy. Do not
   reset expired deadlines or treat this compatibility code as a contribution.
   Cluster 17:23:47 +07: no account jobs; named bioinfo sniffles/minimap2 paths

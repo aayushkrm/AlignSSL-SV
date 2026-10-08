@@ -10,7 +10,7 @@ results.
 |---|---|---|
 | [`RESTART_STATE.md`](RESTART_STATE.md) | Operational state, cluster recovery, and next gates | Living checkpoint |
 | [`2026-10-08-native-contract-protocol.md`](2026-10-08-native-contract-protocol.md) | Uniform absolute-SVLEN/native rule and interrupted implementation record | Code/tests saved; fixed window expired UNEXECUTED; no native pass or new charge |
-| [`2026-10-08-native-contract-review.md`](2026-10-08-native-contract-review.md) | Maintained independent rule, operational amendment and code scrutiny | Uniform rule accepted; expired window does not supply execution approval |
+| [`2026-10-08-native-contract-review.md`](2026-10-08-native-contract-review.md) | Maintained independent rule, operational amendment and code scrutiny | Literal/parser gap found and fixed; independent static correction review accepted; native run remains UNEXECUTED |
 | [`2026-10-08-strategy-reset-decision.md`](2026-10-08-strategy-reset-decision.md) | Sol6.1/max-requested distinction between engineering stops and scientific falsification | One bounded metadata census selected; old screen closed; no publication lead |
 | [`2026-10-08-metadata-contract-audit.md`](2026-10-08-metadata-contract-audit.md) | Static VCF/native contract audit and main's recorded-version qualification | 4.5 example not source compliance; actual source declares 4.2; later census explains sign-only incompatibility |
 | [`2026-10-08-empirical-payoff-audit.md`](2026-10-08-empirical-payoff-audit.md) | Closest prior art and conditional controlled native-discovery target | Generic benchmarking weak; one-donor released outputs not same-input causal evidence |

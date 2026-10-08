@@ -117,6 +117,36 @@ def test_whole_row_pairing(tmp_path):
         gate.canonical_metadata(rec, Native(other))
 
 
+@pytest.mark.parametrize("drift", ["position", "alleles", "genotype", "phase", "format"])
+def test_agreeing_parser_streams_cannot_hide_literal_field_drift(tmp_path, drift):
+    truth, rec = fixture(tmp_path)
+    fields = truth.read_text().splitlines()[-1].split("\t")
+    original, fmt = gate.literal_unit(fields, 1)
+    if drift == "position":
+        rec.pos = 101
+    elif drift == "alleles":
+        rec.ref, rec.alts = "C" * 61, ("C",)
+    elif drift == "genotype":
+        rec.samples[0]["GT"] = (1, 1)
+    elif drift == "phase":
+        rec.samples[0].phased = True
+    else:
+        rec.header.formats.add("DP", 1, "Integer", "synthetic depth")
+        rec.samples[0]["DP"] = 20
+    # Both mocked streams share exactly the same modified rendering. Their
+    # kind and size still agree; only the independent literal check rejects.
+    assert str(rec) == str(Native(rec))
+    with pytest.raises(ValueError, match="literal/native"):
+        gate.canonical_metadata(rec, Native(rec), original_unit=original, original_format=fmt)
+
+
+@pytest.mark.parametrize("gt", ["./1", "0/0", "1", "0/2", "."])
+def test_literal_gt_is_not_imputed(tmp_path, gt):
+    truth, _ = fixture(tmp_path, gt=gt)
+    with pytest.raises(ValueError, match="literal record"):
+        gate.literal_unit(truth.read_text().splitlines()[-1].split("\t"), 1)
+
+
 @pytest.mark.parametrize("change,message", [
     ({"native_gate_approved": False}, "flag"),
     ({"purpose": "scoring"}, "scope"),

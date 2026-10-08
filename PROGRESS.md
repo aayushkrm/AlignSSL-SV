@@ -23,8 +23,12 @@ The proposed 65-MiB addition is unbooked; full retained charge stays
 8,623,306,013 bytes. Do not revive that expired launch or infer a native pass.
 One old local test handle returned only partial output and was missing on
 resumption. Separate software verification completed **91 passed, 13 skipped
-in 0.69s**; the Linux/pinned native skips are not data validation. Code/test
-review is pending. Main requested the existing Sol6.1/max decision role to
+in 0.69s**; the Linux/pinned native skips are not data validation. Reviewer
+found a literal-to-parser field verification gap; main fixed it and added
+ten drift/no-imputation controls. Corrected software check: **101 passed,
+13 skipped in 1.39s**, no genomic input; focused correction review accepts
+the fix, independently verifies both pins, and finds no new static defect.
+Original test artifact/pins remain. Main requested the existing Sol6.1/max decision role to
 choose one useful empirical observation and a practical finite execution
 policy, rather than another operator-timer amendment. No publication lead
 or expensive campaign is selected. Cluster October 8 17:23:47 +07: no account

@@ -201,3 +201,28 @@ review before further input reads; no automatic screen restart is selected.
 Requested worker configuration: GPT-6 Luna/max. Maintained reviewer request:
 GPT-6.1 Sol/high. These are requests, not backend attestations. No expensive
 campaign or high-impact new scientific direction is selected by this note.
+
+## Subsequent software-only reviewer correction
+
+The concrete code review found that two agreeing parser streams did not
+directly verify the literal coordinate/allele/GT interpretation. That was
+a coverage gap, not an observed parser failure on scientific input.
+Main added a raw-column canonical unit and compared its chromosome, position,
+REF, ALT, GT, phase, kind, length and FORMAT keys with parsed interpretation.
+Both streams agreeing after the same hypothetical drift must still fail.
+Five drift controls and five no-GT-imputation controls were added. The latest
+separate local verification completed **101 passed, 13 skipped in 1.39s**.
+Keep the original 91-pass check and its pins as history, not overwritten.
+Corrected utility SHA256:
+`80a04a3fd3078ad896cf7ff22cfcebbbbf355262e82bb73bd2d710fad7c217a6`;
+corrected tests:
+`0d1faed1c397c2acbc3d172a3855b732e0dd7918abaf1b38724e5d720206354e`.
+Focused independent correction review accepts the fix; its independently
+calculated source/test hashes match and no new static defect was found.
+Tests were not independently rerun. This software fix does not revive the
+expired window, add a charge, or establish a native pass.
+
+Read-only software inventory separately confirmed the existing cluster
+Python/native version tuple above, and no `sniffles` module in that particular
+Truvari environment. No synthetic native endpoint or genomic input was run
+by this inventory; it is not an exhaustive cluster tool survey.
