@@ -11,6 +11,26 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 8 later software checkpoint: main implemented a separate uniform
+absolute-SVLEN/native consistency gate, preserving the old signed checker,
+census and every raw field. The maintained reviewer accepts the rule in
+principle, not exact execution. The interrupted effort allowance is
+unverified; its explicit 30-minute wall replacement expired before launch.
+[Protocol and full disposition](docs/research/2026-10-08-native-contract-protocol.md),
+[independent rule review](docs/research/2026-10-08-native-contract-review.md).
+**No staging, reservation, native cluster control or genomic scan occurred.**
+The proposed 65-MiB addition is unbooked; full retained charge stays
+8,623,306,013 bytes. Do not revive that expired launch or infer a native pass.
+One old local test handle returned only partial output and was missing on
+resumption. Separate software verification completed **91 passed, 13 skipped
+in 0.69s**; the Linux/pinned native skips are not data validation. Code/test
+review is pending. Main requested the existing Sol6.1/max decision role to
+choose one useful empirical observation and a practical finite execution
+policy, rather than another operator-timer amendment. No publication lead
+or expensive campaign is selected. Cluster October 8 17:23:47 +07: no account
+jobs; sampled bioinfo paths have samtools but not sniffles/minimap2. This is
+not a complete software inventory. Goal remains active and unachieved.
+
 October 8 actual diagnostic: the independently approved whole-file
 [metadata census completed](docs/research/2026-10-08-metadata-census-result.md).
 All **11,490** rows retain exact prepared IDs; type and absolute lengths

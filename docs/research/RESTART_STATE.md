@@ -28,6 +28,22 @@ the objective.
 
 ## Current implementation and review state
 
+- October 8 later native-contract preparation: main implemented a separate
+  sign-tolerant native check without altering historical source/helpers or
+  fields. [Uniform protocol](2026-10-08-native-contract-protocol.md) and
+  [independent rule review](2026-10-08-native-contract-review.md) are explicit:
+  original active-time balance unknown; reviewed replacement wall window
+  expired, **UNEXECUTED**. No staging/charge/native control/data scan occurred.
+  Retained charge still 8,623,306,013 bytes; proposed 65 MiB unbooked. A missing
+  old test handle supplies no completed count. Separate software-only run:
+  **91 passed, 13 skipped in 0.69s**, not native or denominator validation.
+  Exact code review pending; main requested existing Sol6.1/max strategy role
+  for a concrete empirical observation and finite practical policy. Do not
+  reset expired deadlines or treat this compatibility code as a contribution.
+  Cluster 17:23:47 +07: no account jobs; named bioinfo sniffles/minimap2 paths
+  absent, samtools present; not an exhaustive installed-tool inventory.
+  Goal remains active/unachieved; no campaign or publication lead selected.
+
 - October 8 [actual census](2026-10-08-metadata-census-result.md) completed
   once under independently approved v2 pins. All 11,490 literal rows have
   matching SVTYPE and absolute SVLEN; there are 4,530 global sign-only flags,
