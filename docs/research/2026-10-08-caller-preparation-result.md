@@ -67,7 +67,7 @@ check merely to let the pipeline pass.
 
 ## Small evidence archive
 
-Thirteen selected regular, nonsymlink files total **7,233 bytes**. Stat checks
+Thirteen selected regular, nonsymlink files total **7,133 bytes**. Stat checks
 preceded content reads, hashing and transfer. Each file fits its per-file cap;
 the total is below the 8-MiB collection cap. Main inspected complete nonempty
 contents: only pinned paths, checksums, counts, sanitized failure text,
@@ -81,7 +81,12 @@ the cluster hashes saved in `raw/remote.sha256`. Cluster `launched/state.txt`
 is archived as `raw/state.txt`; the failure report is archived at the raw
 folder root. The remaining basenames are unchanged. Main read the complete
 failure report and three timers locally after hash verification. Independent
-result scrutiny is pending, not inferred from the earlier launch approval.
+result scrutiny [accepts the guard stop and resource reconciliation](2026-10-08-caller-preparation-review.md),
+not preparation success or next-stage permission. The reviewer caught main's
+100-byte summation error: the initially reported 7,233 is corrected to 7,133.
+The separate checksum manifest is 1,103 bytes; combined local archive8,236.
+No raw file, checksum or full reservation changed. Independent scrutiny found
+no field deltas in the report, so the mismatch cause remains undiagnosed.
 
 The exact launch approval remains an engineering approval only. The broad
 research goal is active and unachieved; no publication lead is established.

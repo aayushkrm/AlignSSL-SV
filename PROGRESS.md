@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-10-08** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
+_Last updated: **2026-10-09** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,19 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+October9 current diagnostic candidate: a Luna/max-requested worker reproduces
+parsed Float drift across ordinary synthetic VCF write/read while standard
+row text is identical, on localpysam0.24.1. This does **not** identify the real
+failed-job cause. Main leaves the production guard unchanged and adds a
+[read-only complete field-localization candidate](docs/research/2026-10-09-projection-diagnosis-protocol.md)
+for original source/annotated/split only, no preparation/norm/scoring replay.
+New17 controls pass locally0skip0.13s; combined existing/new caller checks
+63pass2skip0.53s (old pinned-native skips). Exact independent review is
+pending;320MiB/240CPU prospective reservation **UNBOOKED**, no staging or
+source/partial body read for this candidate. Cluster00:09:26+07 empty account
+queue, current sizes/type match, new root absent, scratch expiresOct22.
+No scientific result, accepted method or publication lead.
 
 October 8 current caller-preparation outcome: the independently approved
 all-six bundle ran once as CPU-only job **1604204**. All **48 controls passed,
@@ -21,9 +34,11 @@ incomplete; no replay, selective continuation or scoring.**
 [Actual failure and disposition](docs/research/2026-10-08-caller-preparation-result.md).
 Full reservation booked before staging; cumulative **39,899,763,595 bytes**
 retained, no refund. Outer10.78 CPU/12.56 wall; namedCPU **543.442707**, not
-double-counting inner/Slurm timings. Thirteen small outputs7,233 bytes are
-archived with all13 local/remote hashes matching; independent result review
-pending. No post-failure source/partial body read.
+double-counting inner/Slurm timings. Thirteen small outputs**7,133 bytes** are
+archived with all13 local/remote hashes matching. Independent result review
+accepts the guard stop/account, correcting main's prior7,233-byte summation;
+the extra checksum manifest1103 gives total8236 locally, no reservation change.
+No post-failure source/partial body read or next-stage execution approval.
 The research hypothesis remains untested and no publication lead is established.
 The new README and unchanged historical result archive were published to
 default `main` at **3dc65bd**, and research branch at **582ad0e**. Four

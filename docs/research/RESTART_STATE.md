@@ -28,6 +28,18 @@ the objective.
 
 ## Current implementation and review state
 
+- October9: [local synthetic Float serialization witness](2026-10-08-projection-serialization-controls.md)
+  reproduces parsed-value drift despite identical standard row text, not the
+  real job's cause. Production code/guard unchanged. Main's
+  [read-only field diagnosis](2026-10-09-projection-diagnosis-protocol.md)
+  fixes source+annotated+split/all51,561 biallelic rows, original sourceSHA and
+  current partialsize/hash/snapshot checks; partial hashes cannot authenticate
+  launch-time bytes retrospectively.17new local controls0skip0.13s; combined
+  63pass2oldnative skips0.53s. Exact engineering review pending, full320MiB/
+  240CPU UNBOOKED/UNSTAGED/UNEXECUTED; no replay or guard weakening. Read-only
+  preflight00:09:26+07 shows empty accountqueue, three correct regular-file
+  sizes and fresh root absent; scratchOct22expiry/one extension unchanged.
+
 - October 8 current outcome: one exactly approved all-six preparation bundle
   ran as CPU-only Slurm1604204, **FAILED2:0**. All48 controls0skip passed;
   first cuteSV `norm` projected-field preservation check failed. Identity
@@ -38,7 +50,9 @@ the objective.
   **39,899,763,595**, no refund; namedCPU **543.442707**, outer10.78 counted
   once. No scoring, hypothesis test or publication claim. Small raw evidence
   archival is complete, all13 local/remote hashes match; independent
-  failure-result review is in progress.
+  failure-result review accepts guard stop/account, not success/next-stage
+  permission. Reviewer corrected main's100-byte sum error:7133 payload bytes,
+  checksummanifest1103, total8236; raw files and reservations unchanged.
   README+historical archive are live on main3dc65bd and research582ad0e;
   only4 documentation/check files promoted. Server accepted normal push with
   a PR-rule bypass notice; future main promotions must use a PR. Historical

@@ -71,10 +71,13 @@
   "full_byte_reservation_retained_after_failure": true,
   "scientific_hypothesis_status": "UNTESTED",
   "raw_selected_files": 13,
-  "raw_selected_total_bytes": 7233,
+  "raw_selected_total_bytes": 7133,
+  "raw_selected_total_bytes_initial_report_corrected": 7233,
+  "raw_checksum_manifest_bytes": 1103,
+  "raw_local_archive_including_checksum_bytes": 8236,
   "raw_transfer_and_hash_verification": "COMPLETE_ALL_13_LOCAL_REMOTE_SHA256_MATCH",
   "raw_transfer_session_id": 37394,
   "raw_transfer_exit_code": 0,
   "raw_hash_manifest": "raw/remote.sha256",
-  "independent_actual_result_review": "PENDING"
+  "independent_actual_result_review": "ACCEPT_GUARD_STOP_AND_RESOURCE_RECONCILIATION_WITH_100_BYTE_REPORT_CORRECTION_NO_NEXT_STAGE_APPROVAL"
 }
