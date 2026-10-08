@@ -28,6 +28,22 @@ the objective.
 
 ## Current implementation and review state
 
+- October 8 subsequent comparison: three Luna/max sidecars completed and were
+  closed. Main read their full notes: [family](2026-10-08-family-sv-territory.md),
+  [repeat native controls](2026-10-08-repeat-native-controls.md), and
+  [mitochondrial](2026-10-08-mitochondrial-sv-territory.md).
+  [Repeat biological/measurement sources](2026-10-08-repeat-outcome-source-audit.md)
+  and [main disposition](2026-10-08-three-direction-disposition.md) are complete.
+  Current framings rejected: no lead/campaign. Main closes mitochondrial
+  clone-ID-to-deletion-origin interpretation by an ancestral-event counterexample;
+  no MitoTracer availability follow-up. Family assay bound needs calibrated
+  sensitivity; joint-state repeat classification needs independent adjudication
+  beyond native controls. [Independent review](2026-10-08-new-territory-review.md)
+  addendum complete: narrow stops, calibrated bound and origin counterexamples
+  accepted; underlying sources not independently re-audited. No data/native tools/assays/jobs. Seventeen headline/field
+  checks pass again (4.91s); local documentation links resolve. Not full-suite
+  green or biological gain; manuscript/whitespace checks pass. Goal active/unachieved; next concrete falsifiable
+  consequential claim, not a generic added-predictor or inventory proposal.
 - October 8 completed source/formal checkpoint: [centromere crosswalk](2026-10-07-centromere-outcome-crosswalk.md)
   meets the narrow paper-anchor STOP, not a biological null. [Pinned CE source audit](2026-10-07-cycleextractor-evidence-code-audit.md)
   finds distinct retained evidence at MILP/traversal stages, not a measured

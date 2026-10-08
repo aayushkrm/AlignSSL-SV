@@ -11,6 +11,31 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 8 next comparison: three Luna/max workers completed disjoint
+[family](docs/research/2026-10-08-family-sv-territory.md),
+[repeat-native](docs/research/2026-10-08-repeat-native-controls.md) and
+[mitochondrial](docs/research/2026-10-08-mitochondrial-sv-territory.md) checks.
+Main separately read [repeat functional/outcome sources](docs/research/2026-10-08-repeat-outcome-source-audit.md)
+and completed the [three-direction disposition](docs/research/2026-10-08-three-direction-disposition.md).
+Reject the current framings; no publication lead, assay or campaign selected.
+Family phase is not mutation timing or gametic risk, and the proposed zero
+detection bound needs a calibrated sensitivity law. Native SCIA/MosaicTR and
+edited-clone interruption work already challenge generic repeat inference.
+Changing a same-assay classification is not independent biological benefit.
+For mitochondrial deletions, one ancestral event followed by different linked
+variants in descendant lineages defeats clone-ID-to-origin inference.
+No MitoTracer availability search is authorized to rescue that label mismatch.
+Unknown outcomes remain unknown; these are not biological nulls or field-wide
+impossibility claims. [Independent reviewer addendum](docs/research/2026-10-08-new-territory-review.md)
+is complete and accepts the narrow stops, calibrated law and counterexamples;
+source facts remain reported inspections, not independent native replication. No raw genomics,
+native reconstruction, assay, solver, training or job was run. Post-checkpoint
+headline/field checks pass again, **17 passed in 4.91s**; local documentation
+links resolve; manuscript consistency and whitespace checks pass. Earlier
+smoke failure and original results stay unchanged.
+Goal remains active/unachieved. Next require a concrete consequential residual
+claim and an observation that can actually falsify it, not more wrappers.
+
 October 8 completed source/formal checkpoint: the
 [centromere outcome crosswalk](docs/research/2026-10-07-centromere-outcome-crosswalk.md)
 stops that paper as the activity-to-segregation anchor. Both balanced lines
