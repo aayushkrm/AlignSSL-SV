@@ -31,14 +31,38 @@ pin reads already exceed the old 1-MiB metadata proposal; approved 2 MiB gives
 caps and aggregate ceilings. No imaginary expired 65-MiB charge or refund.
 Latest local post-constant check 101 passed/13 skipped in 0.87s; shell syntax
 passes. These remain software-only, not native endpoints or publication gain.
-The separate REF gate worker reports 52 synthetic tests passed, zero skips;
-main and independent code review are next. Its proposed 7-GiB reservation is
-unbooked and no real REF scan is approved. Local disk remains about 15 GiB
+The REF worker initially reports 52 combined new-gate/old-reference synthetic
+tests passed, zero skips. Independent code review accepts semantics but
+finds a cap-plus-one EOF probe and unpinned decoder. Main fixes the new
+driver only, pins cluster CPython/gzip, and integrates targeted controls.
+Latest worker 62 combined passes =41 new gate +21 old reference, zero skips.
+[Exact REF bundle](docs/research/2026-10-08-reference-throughput-execution.md)
+has independent exact code/bundle and CPU-only Slurm approval. The original
+unused direct manifest is preserved. Main booked the full 7 GiB before fresh
+small-bundle staging: retained total **16,208,704,797 bytes**, no refund.
+One submission and two payload slots only. All ten staged hashes match
+(118,021 bytes). One CPU-only job **1604025** completed exit 0:0 and durable
+state COMPLETE; both payload slots consumed. [Full result](docs/research/2026-10-08-reference-throughput-result.md):
+41 controls passed, zero skips; all **11,490 original anchored REF spans
+agree**, all 86 contigs/lengths and gzip EOF/CRC verified. All 13 small outputs
+(12,383 bytes) archived with matching hashes. Outer106.04 CPU/108.72 wall,
+named CPU now532.662707, inner/Slurm timings not charged again. Independent
+raw-result review accepts technical completion; no ALT/phase/callability/caller/scoring/denominator
+or publication claim. No source repair or genomic transfer.
+Local disk remains about 15 GiB
 free; the safety guard is unchanged and large work stays on the cluster.
 Main integration check: 118 passed, 13 skipped in 4.34s across the progress
 gate and focused metadata/native/reference suites, including the new REF
 tests. Manuscript reconciliation passes separately. Synthetic/local skips
 do not validate real REF input, and this is not a full-suite green claim.
+Post-fix integration: 128 passed/13 skipped in 4.80s; manuscript and shell
+syntax pass. These software checks do not resolve the historical smoke failure.
+The all-six preparation sidecar preserves every caller's recorded metadata
+and supplies draft-only JSONs with unresolved caps. Its arithmetic does not
+prove that smaller pre-outcome guard caps are impossible; guards can be chosen
+before outcomes, with whole-run failure rather than dropped records on breach.
+Next freeze the finite all-six preparation/screen account and required shared
+truth identities under separate review. No caller experiment is approved yet.
 
 October 8 later software checkpoint: main implemented a separate uniform
 absolute-SVLEN/native consistency gate, preserving the old signed checker,

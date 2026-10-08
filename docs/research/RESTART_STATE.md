@@ -40,10 +40,27 @@ the objective.
   All 11 small outputs (6,988 bytes) archived and hash-verified; independent
   result review accepts technical completion only. Both slots consumed,
   no replay. No REF/caller/scoring/biological gain. Separate REF worker reports
-  52 synthetic passes, zero skips; main/independent code review next, proposed
-  7-GiB reservation unbooked and real REF scan not approved.
+  initial 52 combined synthetic passes, zero skips; initial main/independent
+  code review and 7-GiB reservation were then pending, superseded below.
   Main focused integration check: 118 passed/13 skipped in 4.34s;
   manuscript reconciliation passes, not a full-suite rerun or real REF test.
+  REF code review accepts semantics; main fixes cap-plus-one posthash and
+  binds cluster decoder, preserving old helpers. New controls:41 +21 old
+  reference =62 combined worker passes, zero skips. Main corrected integration
+  128 passed/13 skipped in 4.80s, manuscript/shell syntax PASS. Exact one-slot
+  REF direct and focused one-CPU Slurm wrapper approved. Original unused direct
+  manifest preserved; full 7 GiB booked before fresh staging, retained
+  16,208,704,797 bytes. All ten staged hashes match (118,021 bytes). One job
+  1604025 completed exit0:0/state COMPLETE; both slots consumed, no replay.
+  All13 raw outputs12,383 bytes fit caps and are archived/hash-verified.
+  [REF result](2026-10-08-reference-throughput-result.md):41 controls0skip,
+  all11,490 originalREF PASS,86 allcontigs/EOFCRC, same source/order/native/
+  runtime pins. Outer106.04 CPU/108.72 wall, namedCPU532.662707. Independent
+  raw-result review accepts technical completion; denominator/ALT/phase/callability/caller/scoring
+  not validated, no publication result.
+  Luna/max worker completed all-six caller budget drafts from small metadata
+  only, without source reads/execution. All six retained, draft caps unresolved;
+  main must choose finite pre-outcome guards/account and review before launch.
   Native-control code-pin
   reads exceed old 1-MiB metadata proposal; explicit 2-MiB amendment gives
   66 MiB retained / 8,692,512,029 bytes, unchanged scientific envelopes. No
