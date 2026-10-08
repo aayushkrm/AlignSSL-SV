@@ -37,12 +37,16 @@ the objective.
   [Sawfish interfaces](2026-10-09-sawfish-trace-interface.md) and
   [fragmentation overlap](2026-10-09-native-fragmentation-prior-art.md).
   TRsv already demonstrates/merges same-read repeat fragments. Sawfish's
-  reporting and seed rules are distinct; no discover interval selector.
+  reporting and seed rules are distinct. The original no-interval-selector
+  claim is withdrawn: main's [source-path correction](2026-10-09-sawfish-seed-and-target-source.md)
+  finds a hidden shared target option, interval BAM scanning but whole-reference
+  loading, and different split-read behavior. Source function gives25bp
+  default CIGAR evidence size; other evidence/filters can still seed a locus.
   Main qualifies the purity intervention: sequence changes must be explicit.
   No test, installation, new data or budget increase selected. Independent
   follow-up review accepts these bounded corrections, not pipeline use.
-  Next concrete gate: inspect the actual native evidence/region-selection
-  predicate at the tagged source, then decide whether a finite intervention
+  The native evidence/region-selection source gate is now inspected with
+  explicit limits. Next decide whether a finite intervention
   has value beyond TRsv/Svirlpool/native assembly. Do not substitute a50bp
   fragment-count proxy, generic purity enrichment or a whole-BAM run. The
   inspected Sawfish commit is verified as the v2.2.1 tag target; binary and

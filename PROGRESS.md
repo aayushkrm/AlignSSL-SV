@@ -23,13 +23,21 @@ limited scientific STOP, not a biological null or budget impossibility.
 Two disjoint Luna/max-requested sidecars completed the
 [native trace interface](docs/research/2026-10-09-sawfish-trace-interface.md)
 and [closest mechanism/prior art](docs/research/2026-10-09-native-fragmentation-prior-art.md).
-TRsv already demonstrates and merges same-read repeat fragments. Sawfish
-has no discover interval selector and explicitly permits sub-reporting-size
-assembly triggers; sub50bp fragments alone cannot prove seed loss. Main read
+TRsv already demonstrates and merges same-read repeat fragments. The initial
+Sawfish no-interval-selector finding was wrong: it omitted shared arguments.
+Main followed the call graph and [corrected it](docs/research/2026-10-09-sawfish-seed-and-target-source.md):
+hidden global target regions bound BAM scanning, not whole-reference loading,
+and targeted split-read handling differs from default. The actual source
+function gives a25bp default CIGAR evidence threshold and merges consecutive
+indel operations. Sub50bp fragments alone cannot prove seed loss. Main read
 the primary TRsv passages and pinned CLI sections, correcting the proposed
 sequence-fixed purity contrast. No native experiment or publication lead is
 selected; real native controls and a distinct consequential contrast remain
 required. Independent follow-up accepts these corrections, not an experiment.
+The later source-path/25bp function-body correction is also independently
+reviewed as main-reported source inference, not binary attestation or a
+locus-wide seed cutoff. Earlier no-selector acceptance is explicitly
+superseded in the append-only review.
 The Sawfish v2.2.1 annotated tag resolves to the inspected source commit;
 binary/runtime compatibility remains untested. Main's7 focused README checks pass0skip0.04s; standalone manuscript
 reconciliation passes. These are documentation checks, not scientific results.

@@ -3,6 +3,13 @@
 Date: 2026-10-09  
 Source pin: [`PacificBiosciences/sawfish` `8fdf4cf1b16e366ae8291d4547a1da06affc5c4a`](https://github.com/PacificBiosciences/sawfish/tree/8fdf4cf1b16e366ae8291d4547a1da06affc5c4a).
 
+**Later main correction:** the original no-interval-selector finding below is
+withdrawn. It omitted shared CLI arguments. Hidden global `--target-region`
+exists and bounds BAM scanning, but still loads the reference and changes
+some split-read inclusion. See the
+[source-path correction](2026-10-09-sawfish-seed-and-target-source.md).
+The original limited audit is preserved; do not use its negative finding.
+
 ## Finding
 
 Sawfish has an interface for a small synthetic fixture. The source does not show a command that limits discovery to an interval in an existing whole-genome BAM. A one-contig FASTA and a mapped, indexed BAM for that contig could bound the input. This is interface-level feasibility only. Synthetic-input compatibility and runtime were not tested.
