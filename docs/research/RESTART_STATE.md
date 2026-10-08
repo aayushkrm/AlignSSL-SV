@@ -28,15 +28,35 @@ the objective.
 
 ## Current implementation and review state
 
-- October9: [local synthetic Float serialization witness](2026-10-08-projection-serialization-controls.md)
+- October9 actual [diagnosis result](2026-10-09-projection-diagnosis-result.md):
+  reviewed job1604205 COMPLETE0:0,18 controls0skip, all51,561 complete joins.
+  Onlyserialized_END differs48,286 source/annotated andsource/split rows;
+  annotated/split0, full current hashes match. Otherprojection fieldsincluding
+  stop agree; no token-delta/real detailed mechanism or launch-time partialhash.
+  Floattoy true butnot observedreal discrepancy. Raw13 payload5085 +checksum
+  1095 =6180 locally; independent reviewer verified allhashes, safe contents,
+  counts and accounting, accepting technical completion only.
+  Full320MiB bookedbeforestaging, retained40,235,307,915/no refund; outer13.28
+  CPU countedonce,named556.722707. No prep replay, scoring, biological claim
+  or publicationlead. Disjoint Luna/max [END toy](2026-10-09-end-serialization-controls.md)
+  passed locally; two redundant literal END tokens disappeared without stop
+  changes and a symbolic END corruption changed stop. Not a pinned-stack
+  reproduction or real-artifact cause; no new realdata read.
+
+- October9 earlier candidate: [local synthetic Float serialization witness](2026-10-08-projection-serialization-controls.md)
   reproduces parsed-value drift despite identical standard row text, not the
   real job's cause. Production code/guard unchanged. Main's
   [read-only field diagnosis](2026-10-09-projection-diagnosis-protocol.md)
   fixes source+annotated+split/all51,561 biallelic rows, original sourceSHA and
   current partialsize/hash/snapshot checks; partial hashes cannot authenticate
-  launch-time bytes retrospectively.17new local controls0skip0.13s; combined
-  63pass2oldnative skips0.53s. Exact engineering review pending, full320MiB/
-  240CPU UNBOOKED/UNSTAGED/UNEXECUTED; no replay or guard weakening. Read-only
+  launch-time bytes retrospectively. Initial17 local controls0skip0.13s;
+  combined63pass2oldnative skips0.53s. Independent HOLD found cardinality and
+  submission-command/claim gaps. Main corrected exact integerALT1/ordinal
+  joins, extra-cardinality control and claim-before-sbatch/partition recipe.
+  Corrected18 local controls0skip0.16s. At this historical candidate stage,
+  exact re-review was pending and full320MiB/240CPU was
+  UNBOOKED/UNSTAGED/UNEXECUTED. Superseded by the approved, consumed execution
+  above; no replay or guard weakening. Read-only
   preflight00:09:26+07 shows empty accountqueue, three correct regular-file
   sizes and fresh root absent; scratchOct22expiry/one extension unchanged.
 

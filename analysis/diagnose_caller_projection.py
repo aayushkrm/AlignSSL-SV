@@ -75,7 +75,11 @@ def compare_streams(source_path, annotated_path, split_path, pysam, expected_row
             prep._need(all(len(rec.alts or ()) == 1 for rec in (original, annotated_rec, split_rec)),
                        "diagnosis requires the complete biallelic population")
             for rec in (annotated_rec, split_rec):
-                prep._need(rec.info[prep.TAGS[0]] == rows and prep._one(rec.info[prep.TAGS[1]]) == 1,
+                alt_index = prep._items(rec.info[prep.TAGS[1]])
+                ordinal = rec.info[prep.TAGS[0]]
+                prep._need(type(ordinal) is int and ordinal == rows
+                           and len(alt_index) == 1 and type(alt_index[0]) is int
+                           and alt_index[0] == 1,
                            "ordered source/ALT correspondence differs")
             original.translate(annotated.header)
             original.info[prep.TAGS[0]] = rows

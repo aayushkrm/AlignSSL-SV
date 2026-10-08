@@ -26,7 +26,7 @@ set +e
 ) > controls.stdout.log 2> controls.stderr.log
 control_status=$?
 set -e
-if [[ "$control_status" != 0 ]] || ! grep -Eq '^17 passed in ' controls.stdout.log || \
+if [[ "$control_status" != 0 ]] || ! grep -Eq '^18 passed in ' controls.stdout.log || \
  grep -Eq 'skipped|deselected|failed|error' controls.stdout.log; then
  printf 'INCOMPLETE_CONTROL\n' >> launched/state.txt
  exit 2

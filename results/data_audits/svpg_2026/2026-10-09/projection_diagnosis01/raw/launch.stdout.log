@@ -1,0 +1,7 @@
+analysis/diagnose_caller_projection.py: OK
+analysis/prepare_released_callers.py: OK
+tests/test_diagnose_caller_projection.py: OK
+tests/test_caller_projection_serialization_diagnostic.py: OK
+run_outer.sh: OK
+run_diagnosis.sh: OK
+manifest.json: OK

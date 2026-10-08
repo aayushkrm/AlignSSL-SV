@@ -11,16 +11,47 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
-October9 current diagnostic candidate: a Luna/max-requested worker reproduces
+October9 actual diagnosis: exact reviewed CPU-only job**1604205** completed
+once0:0/15s;18 exact-stack controls0skip pass0.45s. All51,561 complete
+source/annotated/split rows joined. Only**serialized_END** differs in**48,286**
+source-to-annotated/source-to-split rows; annotated-to-split0 and current full
+file hashes match. Other frozen projection fields, includingstop, agree.
+This localizes a pre-norm discrepancy, not its detailed token/value cause;
+partial hashes were not recorded at the original failure. **Float drift is
+not supported as the observed real-input discrepancy**, despite the true
+synthetic witness. [Actual result and limits](docs/research/2026-10-09-projection-diagnosis-result.md).
+All13 payload files5085bytes are archived/hash-matched, checksum1095 gives
+6180 locally; independent raw-result review accepts technical completion and
+limited field localization, not a cause or next-stage execution. Full320MiB booked BEFORE
+staging; retained**40,235,307,915 bytes**, no refund. Outer13.28CPU/14.19wall,
+namedCPU**556.722707**, inner/Slurm not added again. Allslots consumed; old
+preparation remainsclosed, no replay/guardchange/scoring. The disjoint Luna/max
+[END sidecar](docs/research/2026-10-09-end-serialization-controls.md) passed
+locally: redundant END disappeared on two literal variants, preserving stop
+and other projected fields; a changed symbolic END changed stop. Local stack
+is not the pinned cluster stack; no real mechanism claim. No denominator,
+biological score or publication lead.
+Main's combined local diagnostic/Float/END/README check passed22 tests0skip
+in0.17s. An initial invocation used a nonexistent Float-test filename and
+collected no tests; the corrected invocation produced that result. This does
+not replace the18 pinned-stack launch controls or establish a full-suite pass.
+
+October9 earlier diagnostic candidate: a Luna/max-requested worker reproduces
 parsed Float drift across ordinary synthetic VCF write/read while standard
 row text is identical, on localpysam0.24.1. This does **not** identify the real
 failed-job cause. Main leaves the production guard unchanged and adds a
 [read-only complete field-localization candidate](docs/research/2026-10-09-projection-diagnosis-protocol.md)
 for original source/annotated/split only, no preparation/norm/scoring replay.
-New17 controls pass locally0skip0.13s; combined existing/new caller checks
-63pass2skip0.53s (old pinned-native skips). Exact independent review is
-pending;320MiB/240CPU prospective reservation **UNBOOKED**, no staging or
-source/partial body read for this candidate. Cluster00:09:26+07 empty account
+Initial17 controls passed locally0skip0.13s; combined existing/new caller
+checks63pass2skip0.53s (old pinned-native skips). Exact independent review
+held ALT-index cardinality and the missing literal submission claim/command.
+Main requires exactlyone integerALT1/ordered integerordinal, adds the extra
+cardinality rejection and freezes claim-before-sbatch with partitionamd_256M.
+Corrected18 local controls pass0skip0.16s. At this historical candidate stage,
+exact corrected review was pending and320MiB/240CPU was **UNBOOKED**, with no
+staging or source/partial body read. Subsequent approval and the one completed
+execution are recorded above; this is not a second available slot.
+Cluster00:09:26+07 empty account
 queue, current sizes/type match, new root absent, scratch expiresOct22.
 No scientific result, accepted method or publication lead.
 

@@ -57,7 +57,7 @@ def test_field_corruption_is_localized_not_accepted(tmp_path, old, new, category
     assert result["semantic_mismatch_rows"]["source_to_annotated"] == 0
 
 
-@pytest.mark.parametrize("edit", ["missing", "extra", "wrong_order", "wrong_alt", "multiallelic", "wrong_sample"])
+@pytest.mark.parametrize("edit", ["missing", "extra", "wrong_order", "wrong_alt", "extra_alt_index", "multiallelic", "wrong_sample"])
 def test_incomplete_or_unjoined_input_stops(tmp_path, edit):
     pysam, source, annotated, split = prepared(tmp_path)
     raw = split.read_text()
@@ -65,6 +65,7 @@ def test_incomplete_or_unjoined_input_stops(tmp_path, edit):
     elif edit == "extra": raw += raw.splitlines()[-1] + "\n"
     elif edit == "wrong_order": raw = raw.replace("CTRL_SRCORD=1", "CTRL_SRCORD=2")
     elif edit == "wrong_alt": raw = raw.replace("CTRL_ALTIDX=1", "CTRL_ALTIDX=2")
+    elif edit == "extra_alt_index": raw = raw.replace("CTRL_ALTIDX=1", "CTRL_ALTIDX=1,2")
     elif edit == "multiallelic": raw = raw.replace("\tA\tAA\t", "\tA\tAA,AAA\t")
     else: raw = raw.replace("\tNULL\n", "\tOTHER_SAMPLE\n")
     split.write_text(raw)

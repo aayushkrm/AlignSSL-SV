@@ -1,0 +1,52 @@
+{
+  "annotated_and_split_bytes_identical": true,
+  "cause_is_field_localization_not_biological_performance": true,
+  "changed_field_occurrences": {
+    "annotated_to_split": {},
+    "source_to_annotated": {
+      "serialized_END": 48286
+    },
+    "source_to_split": {
+      "serialized_END": 48286
+    }
+  },
+  "current_input_hashes_and_snapshots_stable": true,
+  "inputs": {
+    "annotated": {
+      "bytes": 31780495,
+      "sha256": "21b661d22bc9cab4c4a9f837d25ffc5f77f8a688434159aca930c185777412c2"
+    },
+    "source": {
+      "bytes": 29410475,
+      "sha256": "9603595adebb54e656513c3ffba416e0d2173763030abef20f804e1c877209c1"
+    },
+    "split": {
+      "bytes": 31780495,
+      "sha256": "21b661d22bc9cab4c4a9f837d25ffc5f77f8a688434159aca930c185777412c2"
+    }
+  },
+  "no_preparation_normalization_scoring_or_genomic_output": true,
+  "opaque_or_physical_IO_not_measured": true,
+  "partial_hashes_not_recorded_at_original_failure": true,
+  "records": 51561,
+  "reservation_bytes": 335544320,
+  "runtime": {
+    "bcftools": "1.23.1",
+    "htslib": "1.23.1",
+    "pysam": "0.24.0",
+    "python": "3.10.20",
+    "truvari": "5.4.0"
+  },
+  "semantic_mismatch_rows": {
+    "annotated_to_split": 0,
+    "source_to_annotated": 48286,
+    "source_to_split": 48286
+  },
+  "serialized_mismatch_rows": {
+    "annotated_to_split": 0,
+    "source_to_annotated": 48286,
+    "source_to_split": 48286
+  },
+  "source_pin_verified": true,
+  "status": "complete_read_only_diagnosis"
+}
