@@ -9,6 +9,12 @@ results.
 | Document | Role | Current status |
 |---|---|---|
 | [`RESTART_STATE.md`](RESTART_STATE.md) | Operational state, cluster recovery, and next gates | Living checkpoint |
+| [`2026-10-09-post-diagnosis-value-decision.md`](2026-10-09-post-diagnosis-value-decision.md) | Sol6.1/max-requested scientific investment decision | Main stops generic released-callset preparation; H_R untested, guards and charges retained; independent limited STOP accepted |
+| [`2026-10-09-post-diagnosis-value-review.md`](2026-10-09-post-diagnosis-value-review.md) | Maintained independent scientific-value challenge | Accepts investment STOP, not biological null, exhaustive absence or new campaign |
+| [`2026-10-09-native-control-source-check.md`](2026-10-09-native-control-source-check.md) | Current native-control source qualification | Svirlpool v3 also seeds annotated repeats; Sawfish intermediates documented, not a ready cluster pipeline |
+| [`2026-10-09-native-tool-metadata.md`](2026-10-09-native-tool-metadata.md) | Finite installation/readiness metadata | PATH/six conda bins checked; small author assets known, none downloaded; no native test selected |
+| [`2026-10-09-sawfish-trace-interface.md`](2026-10-09-sawfish-trace-interface.md) | Bounded pinned guide/CLI audit | Small fixture interface possible, untested; no discover interval selector or complete rejected-signal trace; seed/report thresholds distinct |
+| [`2026-10-09-native-fragmentation-prior-art.md`](2026-10-09-native-fragmentation-prior-art.md) | Bounded adversarial mechanism/control check | TRsv already documents/merges fragments; matched purity effect unverified; intervention and seed-cutoff inference need correction |
 | [`2026-10-08-projection-serialization-controls.md`](2026-10-08-projection-serialization-controls.md) | Local synthetic Float write/read witness and corruption controls | Identical serialized row text can mask parsed numeric drift; local stack only, real failure cause unproved |
 | [`2026-10-09-projection-diagnosis-protocol.md`](2026-10-09-projection-diagnosis-protocol.md) | Fixed read-only source/annotated/split field localization | Holds corrected, exact bundle approved/booked; job1604205 completed once, no prep replay/scoring |
 | [`2026-10-09-projection-diagnosis-review.md`](2026-10-09-projection-diagnosis-review.md) | Maintained independent field-diagnosis code/bundle/account review | Holds preserved/resolved; exact18-control diagnosis and bounded actual result accepted; no cause or next-stage approval |

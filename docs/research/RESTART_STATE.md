@@ -28,6 +28,31 @@ the objective.
 
 ## Current implementation and review state
 
+- October9 [high-impact investment decision](2026-10-09-post-diagnosis-value-decision.md):
+  main stops further generic released-callset preparation. It would not produce
+  the required native mechanism or publication result. H_R remains UNTESTED,
+  not rejected biologically. Keep guards, sources, partials and full charges.
+  [Independent value review](2026-10-09-post-diagnosis-value-review.md) accepts
+  the limited STOP. Two disjoint Luna/max source/prior-art sidecars completed:
+  [Sawfish interfaces](2026-10-09-sawfish-trace-interface.md) and
+  [fragmentation overlap](2026-10-09-native-fragmentation-prior-art.md).
+  TRsv already demonstrates/merges same-read repeat fragments. Sawfish's
+  reporting and seed rules are distinct; no discover interval selector.
+  Main qualifies the purity intervention: sequence changes must be explicit.
+  No test, installation, new data or budget increase selected. Independent
+  follow-up review accepts these bounded corrections, not pipeline use.
+  Next concrete gate: inspect the actual native evidence/region-selection
+  predicate at the tagged source, then decide whether a finite intervention
+  has value beyond TRsv/Svirlpool/native assembly. Do not substitute a50bp
+  fragment-count proxy, generic purity enrichment or a whole-BAM run. The
+  inspected Sawfish commit is verified as the v2.2.1 tag target; binary and
+  fixture behavior remain untested.
+  [Source correction](2026-10-09-native-control-source-check.md) records
+  Svirlpool v3 annotated-repeat seeding and Sawfish's documented intermediates.
+  [Metadata query](2026-10-09-native-tool-metadata.md) covers PATH and six conda
+  bin directories, not all cluster installations. Queue empty00:47+07;
+  author release assets known but not downloaded/executed.
+
 - October9 actual [diagnosis result](2026-10-09-projection-diagnosis-result.md):
   reviewed job1604205 COMPLETE0:0,18 controls0skip, all51,561 complete joins.
   Onlyserialized_END differs48,286 source/annotated andsource/split rows;

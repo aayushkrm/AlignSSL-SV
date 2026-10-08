@@ -11,6 +11,37 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 investment decision: main accepts the completed
+[Sol6.1/max-requested decision](docs/research/2026-10-09-post-diagnosis-value-decision.md)
+to **stop further preparation in the generic released-callset route**.
+Successful execution would still yield only a development falsifier or
+hypothesis list, not the required publication contribution. H_R remains
+UNTESTED; this is not a biological null. Guards, partials, source files and
+full charges stay intact. The maintained independent
+[reviewer](docs/research/2026-10-09-post-diagnosis-value-review.md) accepts this
+limited scientific STOP, not a biological null or budget impossibility.
+Two disjoint Luna/max-requested sidecars completed the
+[native trace interface](docs/research/2026-10-09-sawfish-trace-interface.md)
+and [closest mechanism/prior art](docs/research/2026-10-09-native-fragmentation-prior-art.md).
+TRsv already demonstrates and merges same-read repeat fragments. Sawfish
+has no discover interval selector and explicitly permits sub-reporting-size
+assembly triggers; sub50bp fragments alone cannot prove seed loss. Main read
+the primary TRsv passages and pinned CLI sections, correcting the proposed
+sequence-fixed purity contrast. No native experiment or publication lead is
+selected; real native controls and a distinct consequential contrast remain
+required. Independent follow-up accepts these corrections, not an experiment.
+The Sawfish v2.2.1 annotated tag resolves to the inspected source commit;
+binary/runtime compatibility remains untested. Main's7 focused README checks pass0skip0.04s; standalone manuscript
+reconciliation passes. These are documentation checks, not scientific results.
+[Source correction](docs/research/2026-10-09-native-control-source-check.md):
+Svirlpool v3 also seeds annotated tandem repeats; do not assume consensus
+callers require strong indel signals everywhere. Sawfish documents intermediate
+regions/candidates/contigs, but upstream interfaces are not verified cluster
+execution. [Metadata readiness](docs/research/2026-10-09-native-tool-metadata.md)
+finds no tested native executables in the six conda bin directories or PATH,
+not a system-wide absence. Small author release assets are documented, not
+downloaded. No new data, guard revision, all-six run or budget increase.
+
 October9 actual diagnosis: exact reviewed CPU-only job**1604205** completed
 once0:0/15s;18 exact-stack controls0skip pass0.45s. All51,561 complete
 source/annotated/split rows joined. Only**serialized_END** differs in**48,286**
