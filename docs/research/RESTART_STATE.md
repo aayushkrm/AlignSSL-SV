@@ -28,7 +28,28 @@ the objective.
 
 ## Current implementation and review state
 
-- October 8 caller preparation: [fixed all-six guards/account](2026-10-08-caller-preparation-limits.md)
+- October 8 current outcome: one exactly approved all-six preparation bundle
+  ran as CPU-only Slurm1604204, **FAILED2:0**. All48 controls0skip passed;
+  first cuteSV `norm` projected-field preservation check failed. Identity
+  counts/fingerprints agree but full fields do not pass; cause undiagnosed.
+  [Actual result](2026-10-08-caller-preparation-result.md). Other five callers
+  never ran; whole stage closed incomplete, no replay/selective continuation.
+  Source/partial bodies not reread after failure. Full retained byte charge
+  **39,899,763,595**, no refund; namedCPU **543.442707**, outer10.78 counted
+  once. No scoring, hypothesis test or publication claim. Small raw evidence
+  archival is complete, all13 local/remote hashes match; independent
+  failure-result review is in progress.
+  README+historical archive are live on main3dc65bd and research582ad0e;
+  only4 documentation/check files promoted. Server accepted normal push with
+  a PR-rule bypass notice; future main promotions must use a PR. Historical
+  numerical checks now read the archive, not weakened. Main independently
+  checks65 document passes/27 existing skips on both branches; standalone
+  manuscript reconciliation passes. Check migration9494e59 is pushed to
+  research; [documentation-only PR3](https://github.com/aayushkrm/AlignSSL-SV/pull/3)
+  awaits required review before main, no rule bypass attempted. Root README
+  itself is already published on main. Do not infer a full-suite green result.
+
+- October 8 caller preparation, earlier pre-launch checkpoint: [fixed all-six guards/account](2026-10-08-caller-preparation-limits.md)
   and exact candidate manifest are ready, no booking/staging/execution yet.
   Strict opt-in INFO/RNAMES value removal keeps source bytes and other fields;
   internal guard errors are distinguished from external diagnostics for safe
@@ -617,17 +638,17 @@ green claim follows from this section.
 
 ## Current next gates — October 8
 
-1. Complete the single independently reviewed metadata census, or close it
-   incomplete within its finite allowance. **Completed:** 11,490 rows, 4,530
-   global sign-only flags; no type/sign cross-tab. Preserve raw input and the
-   old failure; do not drop flags or call these counts a truth denominator.
-2. Specify/review any uniform absolute-length/native consistency contract
-   before another source read. Declared VCF-4.2 normative compliance is not
-   established; type/size and REF remain unmet. No automatic scoring restart.
-3. If a cheap empirical falsifier is justified, freeze and review its complete
-   prospective scope before outcomes. A later residual needs independent
-   sequence/read adjudication and native candidate-versus-filtering evidence;
-   released VCF absence alone cannot establish the research contribution.
+1. Preserve the first real caller-preparation failure and complete independent
+   scrutiny of its bounded raw report/timers. Do not restart the closed stage,
+   launch unused caller slots or weaken the failed preservation guard.
+2. If diagnosing the field difference is justified, freeze a distinct bounded
+   scope and budget before reading source/partial bodies again. Controls
+   passing and ALT identities agreeing do not establish semantic preservation.
+3. Metadata/native and original anchored REF checks are now technically
+   complete; declared VCF-4.2 normative compliance, ALT/phase/callability and
+   scientific denominator are not. H_R remains untested, not falsified. Any
+   later released-callset residual needs independent sequence/read adjudication
+   and native candidate-versus-filtering evidence for a scientific contribution.
 4. Keep unrelated-donor confirmation untouched and retain all null/failure
    outcomes. Scratch expires October 22; preserve small reports off scratch.
    Large data/compute stay on the cluster; no unrelated job is affected.

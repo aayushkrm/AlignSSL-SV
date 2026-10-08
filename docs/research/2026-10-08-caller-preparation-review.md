@@ -1,6 +1,6 @@
 # Caller preparation: independent RNAMES code review
 
-2026-10-08. ACCEPT the narrow RNAMES implementation at code-review level; HOLD the superseded exact execution candidate pending corrected final pins/controls and archival guards. No source transfer, booking, staging, submission or real preparation is approved.
+2026-10-08. Final disposition: ACCEPT ONLY the frozen engineering execution bundle identified in the final addendum below. Earlier code acceptance and execution HOLDs are preserved as history; the final addendum resolves them. No execution result is asserted.
 Requested maintained reviewer configuration: GPT-6.1 Sol/high; actual backend model/effort is not independently attested.
 Read FULL current caller utility, original tests, current worker RNAMES tests and historical October 4 outcome protocol. The full goal was read earlier. No original caller/truth/reference body, network, SSH, cluster, install or Git action occurred.
 
@@ -74,3 +74,22 @@ HOLD 1: await refreshed utility/test/protocol/checksum/script/manifest pins and 
 HOLD 2: final bundle must specify size-check-before-transfer/readback for FAILURE outputs as well as success. Current success guards are 256-KiB controls and 1.25-MiB caller report/log/time bundles; failure branches exit before those aggregate checks, and individual raw logs can reach the 128-MiB file limit, exceeding the 64-MiB metadata allowance. Bound outer/Slurm collection too; no full oversized/raw-sensitive log fetch is implied.
 These are narrow pin/control and archival conditions, not a new framework, campaign, strategy loop or request to expand input/resource scope. Frozen scientific caps/account/order remain technically acceptable; execution and all six source transfers remain NOT APPROVED until corrected exact readiness review.
 Only this review note changed during static candidate review. No source/FASTA/caller body, SSH/network/cluster read, new synthetic test, installation, booking, staging, submission or Git action occurred; earlier local test history stands. Requested Sol6.1/high remains unattested and old failures/charges are preserved.
+
+## Final frozen readiness: exact engineering execution ACCEPT
+
+Read the corrected production utility and RNAMES tests FULL, all six protocols, both scripts, checksum, manifest and updated collection limits. Independently verified all 11 checksum entries against actual local artifact bytes and manifest; all six protocol pins and original-test pin remain those recorded above. Final staged metadata/code total is 79,454 bytes, below 131,072.
+
+| Final artifact | Independently observed SHA256 |
+|---|---|
+| Manifest | `a2901c2a13a3358eb89c344652fb98179d3da739b879f237728e48cc23070094` |
+| Bundle checksum | `307c787c3246be98793df9dfa71672a81222857a8723f731ac9271489a19a3db` |
+| Production | `f975699c57ec61ac4ab9062ad417623218b867213dbde127937b7b183e1c95d3` |
+| RNAMES tests | `33c3722b54dd7d37ee78aaa9d1594b474e453cfd70a2a1ec5f24d7557c2abdcb` |
+| Inner script | `f614c40a29e5f306fd103b8935f03ec5a1a40e0c1e2d8c4e87e4d08109edcec5` |
+| Outer script | `8a16ae29a84f55054a10a87643ccff42d56201d3c6aafc9147cc2c1fcd4e0cca` |
+
+HOLD 1 resolved: static parameter-expanded cases are 36 original +12 new =48. New coverage includes explicit false, RNAMES reinsertion rejection and external RuntimeError AND built-in ValueError sanitization. Main reports 46 local passes/2 skips; no new suite was run by this reviewer. The two actual pinned-runtime integration cases must pass on cluster: the launcher requires exactly 48 passes with zero skips/deselections before any real caller. Other cases do not establish 48 independent native endpoints.
+HOLD 2 resolved: manifest collection guards apply to success, failure, abnormal exit and outer/Slurm artifacts BEFORE content reads/hashes/copies. Require regular nonlinks, JSON <=1 MiB, each stream/timer/Slurm log <=64 KiB, state <=4 KiB and selected aggregate <=8 MiB. Six content-sized passes reserve <=48 MiB plus <=16 MiB code/control work within 64 MiB. Oversized/unknown artifacts stay remote, unread/unhashed/unfetched/untruncated; record omission metadata. Raw diagnostics require full individual safe-content inspection under these caps before archival. This operational collection rule closes the failure-branch gap without claiming the success-only shell size check runs on failure.
+Reconciled six protocol/source bindings, sequential priors and integer byte arithmetic: book 23,691,058,798 bytes ONCE before fresh staging/source copy; retained total becomes 39,899,763,595, with no refund. Named CPU reserve 2,400 and prospective later-screen margin reconcile to 6,832.662707 <7,200; later screen remains UNBOOKED and UNAPPROVED. Exact-decimal reconciliation avoids binary-float equality artifacts; there is no ledger defect.
+ACCEPT one exact bundle ID `released-caller-preparation-20261008-throughput01`: its six manifest-named source copies to the fresh root, one exclusive CPU-only Slurm submission, one control slot, then at most six sequential caller slots in fixed order. First failure stops later callers; no replay, cap increase, source substitution or caller omission. Existing CPU/wall/process-group/address-space/per-file guards and disclosed phase-boundary/physical-I/O limits stand. Measure waited outer CPU once; unavailable accounting retains the reserve rather than inventing an exact measurement.
+This acceptance supersedes only the two historical readiness HOLDs. It is engineering execution permission, not denominator validation, phase validity, scoring, biological performance, publication or old-screen reopening. Main's fresh-root/empty-queue observation is reported, not independently checked here. No source-data read, SSH/network, cluster operation, test execution, installation, booking, staging, launch or Git action occurred in this final review. Only this note changed; requested Sol6.1/high is not backend-attested.

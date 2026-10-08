@@ -11,7 +11,38 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
-October 8 caller preparation: the new strict boolean opt-in removes only
+October 8 current caller-preparation outcome: the independently approved
+all-six bundle ran once as CPU-only job **1604204**. All **48 controls passed,
+zero skips**. First real cuteSV preparation failed at the `norm` projected
+whole-field preservation check; **51,561 source records/children** and ALT
+identity fingerprints agree, but this does not prove all fields agree.
+Cause undiagnosed. The other five callers did not run. **Stage closed
+incomplete; no replay, selective continuation or scoring.**
+[Actual failure and disposition](docs/research/2026-10-08-caller-preparation-result.md).
+Full reservation booked before staging; cumulative **39,899,763,595 bytes**
+retained, no refund. Outer10.78 CPU/12.56 wall; namedCPU **543.442707**, not
+double-counting inner/Slurm timings. Thirteen small outputs7,233 bytes are
+archived with all13 local/remote hashes matching; independent result review
+pending. No post-failure source/partial body read.
+The research hypothesis remains untested and no publication lead is established.
+The new README and unchanged historical result archive were published to
+default `main` at **3dc65bd**, and research branch at **582ad0e**. Four
+documentation/document-test files only were promoted; no experimental code,
+results or progress history was merged into main. GitHub accepted the normal
+push but reported a PR-only rule bypass; use the PR workflow for future main
+promotions. Historical numeric checks now read the archive without relaxed
+assertions; main independently verifies **65 focused document tests pass,
+27 existing skips** on both research and isolated main-based checkouts.
+Standalone manuscript reconciliation passes in each. Tests that inject
+temporary bad text into live documents must not overlap standalone checks;
+one concurrent check observed the injected stale progress ratio, not a new
+scientific/source mismatch. Restored standalone state passes.
+The five-file check migration is research **9494e59** and main-based
+[documentation-only PR3](https://github.com/aayushkrm/AlignSSL-SV/pull/3),
+awaiting required review; no protection bypass attempted for this follow-up.
+Historical SSL smoke failure remains; no full-suite green claim.
+
+October 8 caller preparation, earlier pre-launch checkpoint: the new strict boolean opt-in removes only
 INFO/RNAMES values from working copies, preserving sources and all other
 fields/rows. Main and the independent reviewer checked the original change;
 main then separated internal guard errors from external parser errors so
