@@ -11,6 +11,59 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 8 actual diagnostic: the independently approved whole-file
+[metadata census completed](docs/research/2026-10-08-metadata-census-result.md).
+All **11,490** rows retain exact prepared IDs; type and absolute lengths
+agree for every row. The only flags are **4,530 global sign-only mismatches**.
+Canonical counts are 6,960 INS / 4,530 DEL, but the report does not cross-tab
+type with sign; those marginal totals cannot prove all deletions are positive
+or all insertions agree. Independent review corrected main's initial stronger
+claim. The first observed contradiction is a DEL with SVLEN +75 versus -75.
+No missing/magnitude/cardinality
+or eligibility flags. Source acquisition/posthash/snapshots match the pin.
+This explains a contract incompatibility, not corrupted alleles, native
+validation, caller performance or a biological null. Declared VCF 4.2 does
+not make the reported positive deletion annotation formally compliant.
+Native/REF and denominator validation remain unmet; old screen stays closed.
+One run, exit zero: **1.02 CPU seconds, 1.16s wall**, peak RSS 56,696,832 bytes.
+Small raw outputs copied/hash-verified off scratch; input fields unchanged,
+no row dropped, repaired or scored. Full retained charge **8,623,306,013 bytes**,
+no refund. [Independent result review](docs/research/2026-10-08-metadata-diagnosis-review.md)
+accepts the technical result with that claim correction. Goal remains
+active/unachieved; publication significance is not
+established by this technical result. No new genomic data downloaded.
+
+October 8 empirical reset, prior to that execution: the [Sol6.1/max-requested decision](docs/research/2026-10-08-strategy-reset-decision.md)
+separates engineering failure from scientific rejection. Main accepts ONE
+[prospective metadata census](docs/research/2026-10-08-metadata-census-protocol.md),
+after [exact independent execution review](docs/research/2026-10-08-metadata-diagnosis-review.md).
+The old fixed screen stays closed; no REF/caller/scoring or campaign approval.
+The [contract audit](docs/research/2026-10-08-metadata-contract-audit.md)
+and [payoff audit](docs/research/2026-10-08-empirical-payoff-audit.md) are complete.
+Main found the already recorded source header: VCF 4.2, not assumed 4.5.
+The new stdlib-only diagnostic retains every provisional row and separates
+missing, sign and magnitude flags. Worker and main synthetic checks pass;
+combined initial **55 passed, 3 skipped in 0.65s**. Reviewer withheld v1 for
+an overflow-byte read; main corrected the bound and added two regressions.
+Corrected checks: **57 passed, 3 skipped in 0.45s**. V2 exact approval supplied
+the separately recorded permission for the execution above. Before execution
+the prepared VCF body was unread in this continuation. All 11,490 rows remain
+provisional, not a scoring denominator. The one 33-MiB reservation retains
+8,623,306,013 bytes; no historical refund.
+Run on the cluster's existing 11.9-MB prepared file under Linux CPU/AS limits;
+no genomic transfer or new package was needed. Independent approval was
+recorded before launch. Local disk about 15 GiB free, guard unchanged.
+No publication lead or empirical performance result is established. Conditional
+next target: controlled, recoverable native candidate-generation failure,
+not generic benchmarking or final-VCF absence alone.
+
+Final tracking checks: **18 passed in 4.14s** after isolating synthetic
+headline injections in temporary document copies; manuscript reconciliation
+passes separately. Historical CSVs/thresholds unchanged. This is not a
+full-suite rerun or resolution of the preserved legacy smoke failure.
+Post-run cluster October 8 13:31:10 +07: no account jobs; scratch expires
+October 22 23:02:50, 14 days 9 hours then remaining, one extension.
+
 October 8 next comparison: three Luna/max workers completed disjoint
 [family](docs/research/2026-10-08-family-sv-territory.md),
 [repeat-native](docs/research/2026-10-08-repeat-native-controls.md) and

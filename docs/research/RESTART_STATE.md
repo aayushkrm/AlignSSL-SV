@@ -28,6 +28,39 @@ the objective.
 
 ## Current implementation and review state
 
+- October 8 [actual census](2026-10-08-metadata-census-result.md) completed
+  once under independently approved v2 pins. All 11,490 literal rows have
+  matching SVTYPE and absolute SVLEN; there are 4,530 global sign-only flags,
+  not cross-tabulated by type. Counts are 6,960 INS / 4,530 DEL; no claim
+  that all DELs are positive or all INSs agree. The first DEL has SVLEN +75.
+  Independent review corrected main's initial joint-count overstatement.
+  No missing/cardinality/
+  magnitude/eligibility flags. Source hash and snapshots pass; no field
+  changed or row dropped. CPU 1.02s, wall 1.16s, RSS 56,696,832 bytes.
+  Small report/log copied off scratch with matching hashes. Full retained
+  charge 8,623,306,013 bytes, no refund. Native/REF and denominator validation
+  remain unmet. This explains strict-contract incompatibility, not a
+  biological null, compliant VCF-4.2 annotation or caller result.
+  [Result review](2026-10-08-metadata-diagnosis-review.md) accepts completion
+  with that claim correction; old screen
+  remains closed and publication goal active/unachieved. No new genomic data.
+
+- October 8 empirical reset: [high-impact decision](2026-10-08-strategy-reset-decision.md)
+  accepts one new [whole prepared-file census](2026-10-08-metadata-census-protocol.md)
+  after exact independent execution approval. Engineering/integrity failures
+  and scientific nulls are distinct; historical failures and charges remain.
+  Old caller screen stays closed. [Contract](2026-10-08-metadata-contract-audit.md)
+  and [payoff](2026-10-08-empirical-payoff-audit.md) audits complete; source's
+  recorded header is VCF 4.2. Initial 55 passed/3 skipped; reviewer withheld
+  v1 for an overflow-byte read. Corrected v2 has two growth regressions,
+  **57 passed, 3 skipped**, 0.45s; exact v2 reapproval then supplied before
+  execution above. No earlier prepared VCF body read; no denominator validation.
+  [Reviewer](2026-10-08-metadata-diagnosis-review.md) accepts purpose only;
+  exact v2 pins/cluster launch accepted separately. Existing 11.9-MB cluster input,
+  33-MiB reservation, unchanged 64-GiB/two-CPU-hour aggregate ceiling;
+  no REF/caller/matching/training approval. Conditional discovery-failure
+  target remains unselected as a publication lead. Goal active/unachieved.
+
 - October 8 subsequent comparison: three Luna/max sidecars completed and were
   closed. Main read their full notes: [family](2026-10-08-family-sv-territory.md),
   [repeat native controls](2026-10-08-repeat-native-controls.md), and
@@ -484,10 +517,14 @@ the objective.
   `2026-09-24-frozen-reference-replay.md`, and
   `2026-09-24-scientific-review-reference-ambiguity.md`.
 
-## Verification checkpoint
+## Historical verification checkpoint — September 30
+
+These figures are historical. The dated current implementation entries above
+and PROGRESS contain later failures and focused checks; no current full-suite
+green claim follows from this section.
 
 - Baseline before edits: 289 passed, 29 skipped.
-- Current suite from the repository root: 418 passed, 29 skipped in 127.83s
+- Suite at that checkpoint from the repository root: 418 passed, 29 skipped in 127.83s
   using `../.venv/bin/python -m pytest -q`.
 - `analysis/check_manuscript.py`: passed.
 - The September 30 UTC availability checkpoint's archive/header and synthetic
@@ -504,7 +541,28 @@ the objective.
   benchmarks. These related donors are no-go as independent v5.x SV truth for
   the proposed cheap recall pilot; see `2026-09-24-giab-multidonor-feasibility.md`.
 
-## Immediate next gates
+## Current next gates — October 8
+
+1. Complete the single independently reviewed metadata census, or close it
+   incomplete within its finite allowance. **Completed:** 11,490 rows, 4,530
+   global sign-only flags; no type/sign cross-tab. Preserve raw input and the
+   old failure; do not drop flags or call these counts a truth denominator.
+2. Specify/review any uniform absolute-length/native consistency contract
+   before another source read. Declared VCF-4.2 normative compliance is not
+   established; type/size and REF remain unmet. No automatic scoring restart.
+3. If a cheap empirical falsifier is justified, freeze and review its complete
+   prospective scope before outcomes. A later residual needs independent
+   sequence/read adjudication and native candidate-versus-filtering evidence;
+   released VCF absence alone cannot establish the research contribution.
+4. Keep unrelated-donor confirmation untouched and retain all null/failure
+   outcomes. Scratch expires October 22; preserve small reports off scratch.
+   Large data/compute stay on the cluster; no unrelated job is affected.
+
+## Historical next gates — October 4–7, superseded
+
+The plan below is retained as history, not an execution authorization. Its
+fixed screen closed at the October 7 metadata failure. The October 8 decision
+permits only the separately specified census; it does not revive these gates.
 
 1. Read the current objective and retain Aristotle's completed direction
    recommendation with the October 4 independent review. Open-panel confidence

@@ -1,0 +1,131 @@
+{
+  "counts": {
+    "all_rows_retained_in_census": true,
+    "canonical_kind_counts": {
+      "DEL": 4530,
+      "INS": 6960
+    },
+    "eligibility_reasons": {},
+    "eligible": 11490,
+    "ineligible": 0,
+    "overlapping_flags": {
+      "eligibility_issue": 0,
+      "svlen_absent": 0,
+      "svlen_dot": 0,
+      "svlen_duplicate_info": 0,
+      "svlen_magnitude_mismatch": 0,
+      "svlen_multivalue": 0,
+      "svlen_no_value": 0,
+      "svlen_noninteger": 0,
+      "svlen_sign_mismatch": 4530,
+      "svtype_absent": 0,
+      "svtype_disagreement": 0,
+      "svtype_dot": 0,
+      "svtype_duplicate_info": 0,
+      "svtype_multivalue": 0,
+      "svtype_no_value": 0,
+      "svtype_unrecognized": 0
+    },
+    "rows_with_any_contract_flag": 4530,
+    "rows_without_any_contract_flag": 6960,
+    "svlen_absent": 0,
+    "svlen_comparisons": {
+      "absolute_magnitude_agree": 11490,
+      "comparable": 11490,
+      "magnitude_mismatch": 0,
+      "sign_mismatch": 4530,
+      "sign_only_mismatch": 4530,
+      "signed_agree": 6960
+    },
+    "svlen_observed_states": {
+      "ABSENT": 0,
+      "DOT": 0,
+      "DUPLICATE": 0,
+      "INTEGER": 11490,
+      "MULTIVALUE": 0,
+      "NONINTEGER": 0,
+      "NO_VALUE": 0
+    },
+    "svlen_presence": 11490,
+    "svtype_absent": 0,
+    "svtype_observed_classes": {
+      "ABSENT": 0,
+      "DEL": 4530,
+      "DOT": 0,
+      "DUPLICATE": 0,
+      "INS": 6960,
+      "MULTIVALUE": 0,
+      "NO_VALUE": 0,
+      "OTHER": 0
+    },
+    "svtype_presence": 11490
+  },
+  "denominator_validation": "NOT_VALIDATED",
+  "eligible_truth_sha256": "c908217f7ec8eba1efe93f51605675a8a8b9676d9c9ca443d1348ad0a00f68d2",
+  "first_strict_guard_contradiction_not_replayed_old_guard": {
+    "alt_length": 1,
+    "canonical_kind": "DEL",
+    "canonical_length": 75,
+    "canonical_signed_delta": -75,
+    "coordinate": {
+      "contig": "1",
+      "position": 900011
+    },
+    "first_guard_contradiction": "SVLEN sign disagreement",
+    "id": "74c31c555a163fe0ee4134cc2fd8a9580f0b59be5285a0d016e7bca632a8723b",
+    "info_states": {
+      "SVLEN": {
+        "absolute_magnitude": 75,
+        "cardinality": "single",
+        "entry_count": 1,
+        "integer_value": 75,
+        "presence": "present",
+        "sign": "positive",
+        "state": "integer"
+      },
+      "SVTYPE": {
+        "cardinality": "single",
+        "entry_count": 1,
+        "presence": "present",
+        "state": "value",
+        "value_class": "DEL"
+      }
+    },
+    "raw_length_delta": -75,
+    "record_ordinal": 1,
+    "ref_length": 76
+  },
+  "headers": {
+    "fileformat_raw_line": "##fileformat=VCFv4.2",
+    "info_declarations": [
+      {
+        "id": "SVTYPE",
+        "number": "1",
+        "raw_line": "##INFO=<ID=SVTYPE,Number=1,Type=String,Description=\"SVTYPE\">",
+        "type": "String"
+      },
+      {
+        "id": "SVLEN",
+        "number": "1",
+        "raw_line": "##INFO=<ID=SVLEN,Number=1,Type=Integer,Description=\"SVLEN\">",
+        "type": "Integer"
+      }
+    ],
+    "normative_compliance_claim": false
+  },
+  "identity_order_sha256": "13db07d2c659f578144067d45eea85684816cce6482230e190a1b01b8d627e37",
+  "input_bytes": 11853747,
+  "native_validation": "UNASSESSED",
+  "protocol_sha256": "b1f619bccc1d6728048da6165a5c872d0f4d6e38c2b4b5fd43dd42134acdf0d4",
+  "purpose": "technical_metadata_census_not_REF_native_or_scoring",
+  "records": 11490,
+  "reference_validation": "UNASSESSED",
+  "sample": "HG002",
+  "scoring_performed": false,
+  "source_read_reservation_bytes": 34603008,
+  "source_script_sha256": "2fb977a24b4d027ee4508f2f45eb07d11866cc4dd8101ab340cf95983de1f523",
+  "source_snapshot_stable": true,
+  "status": "complete",
+  "truth_units_script_sha256": "4c1cf4fc3d98f4cc3e0f136c15d27095730aa1725b951ea607b4684f4ed93e93",
+  "unique_ids": 11490
+}
