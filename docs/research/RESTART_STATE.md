@@ -32,6 +32,32 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 9 [HG008 document feasibility](2026-10-09-hg008-material-feasibility.md)
+  CLOSED INCOMPLETE/TRUTH INCONCLUSIVE after21min02sec at14:50:53UTC;
+  19annotated confident CNV:TR rows, notverified fixed16four-callsetmisses.
+  Four normal-mosaicism issues overlap five candidate rows; supported32
+  negatives and complete native-context cost remain unestablished. V0.5
+  README explicitly reports v3.2 phasing fixes, not corruption. Public
+  documents2290819B preserved off Git/hash recorded; no M1booking, HTS
+  inputs, caller, score or jobs. Onepackage closure notallrepeat/dataabsence.
+  Independent closure scrutiny and bounded next-investment synthesis
+  requested; no cap enlargement, replay or automatic fallback permission.
+- October 9 completed [independent scientific review](2026-10-09-post-provenance-scientific-review.md):
+  main read all 103 lines; HOLD current M1 acquisition, no booking/caller/
+  campaign. One finite material question remains worthwhile only with exact
+  cases, supported negatives, fair complete native controls and feasible cost.
+  Review includes diploid DSA and dedicated repeat controls; regional crippling
+  cannot establish an advantage. No novel result or publication claim.
+- October 9 [primary/current TRGT check](2026-10-09-repeat-control-primary-check.md)
+  and completed [paired-repeat sidecar](2026-10-09-paired-repeat-native-check.md):
+  actual primary methods plus pinned 5.1.0 interface; old clustering is not
+  the current WGS default. TRGT-denovo v0.4.0 duo is documented, not a verified
+  tumor-normal/copy-state method. Main full sidecar read; Luna worker closed.
+- October 9 one document-only material/identity attempt starts14:29:51UTC,
+  with90active-minute stop; no HTS/genomic package acquisition or new booking.
+  Exact-v1 public table retrieval: Node429 then one same-source curl200,
+  962941B/SHAca100745…; read-only standard spreadsheet inspection pending.
+  Publication sources are development evidence, not project performance.
 - October 9 completed [scientific decision](2026-10-09-post-provenance-scientific-decision.md):
   main read the initial 327-line view then all 330 final lines (SHA2017d112…);
   the ceiling uses one complete zero-false-call policy, not an oracle union.

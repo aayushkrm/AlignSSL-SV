@@ -11,6 +11,49 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 9 [HG008 document feasibility](docs/research/2026-10-09-hg008-material-feasibility.md)
+closed INCOMPLETE / TRUTH INCONCLUSIVE at14:50:53UTC,21min02sec after start,
+before the90-active-minute limit. S9 provides19 annotated confident truncal
+CNV:TR INS/DEL rows; three earlier caller-supported records leave16 by
+subtraction, but this does not prove the exact four-callset miss mapping.
+Four normal-mosaicism curation issues overlap five candidate rows. No32
+supported stable-allele controls or complete native context/cost qualified.
+The V0.5 README explicitly describes v3.2 phasing fixes, not corrupt data.
+Four unchanged public source documents total2,290,819bytes and are preserved
+off Git with hashes. No HTS input, M1 booking, caller, score or cluster job.
+This closes one package, not all somatic-repeat research. Independent
+closure scrutiny and a bounded next-investment synthesis are requested;
+no automatic fallback, enlarged cap or campaign follows. Goal unmet.
+Documentation checks:15 passed, zero skips, in3.84 seconds; whitespace check
+passed. These checks do not measure biological performance.
+
+October 9 [independent scientific review](docs/research/2026-10-09-post-provenance-scientific-review.md)
+completed; main read all 103 lines. HOLD M1 acquisition as written. One
+finite material-feasibility question is worthwhile, but the exact 16 cases,
+32 supported controls, complete native context and 1 GiB/180 CPU account
+are unverified. No booking, caller run, training or campaign is accepted.
+The review requires current SV, diploid donor-specific and repeat controls,
+net event recovery, complete false-call accounting and honest truth bounds.
+
+Main's [repeat-control check](docs/research/2026-10-09-repeat-control-primary-check.md)
+uses Life Sciences Literature PMC metadata, selected primary TRGT methods,
+and three complete official documents at b21c6217… (README version5.1.0).
+Sequence and flanking-SNP controls are stronger than the prior abstract-only
+screen. Original clustering rules do not attest the current WGS default.
+A completed Luna/max-requested [paired-native check](docs/research/2026-10-09-paired-repeat-native-check.md)
+finds documented TRGT-denovo v0.4.0 duo mode, plausible but unverified for
+tumor copy state and cross-sample inherited-haplotype identity. Main read
+the full note; the worker is closed. Model requests are not attestations.
+
+One document-based identity/material-feasibility attempt began at
+14:29:51 UTC, with a 90-active-minute stop. This is not M1 input acquisition
+or a caller run. The exact-v1 supplement page links the published tables.
+The curation repository labels do not identify the fixed 16 misses.
+Node retrieval returned429;
+one bounded curl retrieval of the SAME publication file returned200,
+962,941 bytes, SHA256ca100745…; standard read-only table inspection is
+pending. No biological performance or complete package is claimed.
+
 October 9 [scientific investment decision](docs/research/2026-10-09-post-provenance-scientific-decision.md)
 is complete. Main read the initial 327-line view, then the full 330-line
 final note (SHA2562017d112…): the recovery ceiling requires one complete
