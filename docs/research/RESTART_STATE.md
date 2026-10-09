@@ -28,6 +28,21 @@ the objective.
 
 ## Current implementation and review state
 
+- October9 actual [replacement02 result](2026-10-09-native-invariance-result02.md):
+  FAILED1:0, canonicalcandidate/final0records → predefinedpositivecontrolstop.
+ 78clustercontrols0skip2.90s; toolauthenticated/native2stagescomplete. Others3
+  armsUNRUN, nofragmentation/biology/seedcauseclaim. Fullraw52payload66500
+  +checksum4864=71364 locally, allhashesmatch; actualreviewpending. Allcharges
+  retained40772178827bytes/561.292707namedCPU (outer2.50once). No native replay.
+  Freshprimaryliterature Luna/max and highimpactinvestment Sol6.1/max sidecars
+  comparestronger opportunities; no newcampaign, booking or selectedlead.
+
+- October9 replacement02: exact review conditionally accepted;256MiB booked
+  before root creation (03:25:56UTC), cumulative40,772,178,827 retained bytes.
+  At10:27:15+07 all13 remote pins/booked ledger/submission match; job1604209
+  submitted once, ackexit0, claim consumed. Code/review pushed0f304c7.
+  Await runtime and raw review; prior01 closed/no replay. No science result.
+
 - October9 prospective [physical-path replacement02](2026-10-09-native-invariance-replacement02.md):
   exact01 failure source/raw logs preserved in pushed ea7f2fb. Trusted-root
   resolution added, unchanged fixture guard and scientific protocol;78 local

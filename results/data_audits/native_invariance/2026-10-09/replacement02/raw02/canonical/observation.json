@@ -1,0 +1,131 @@
+{
+  "assembly_bed": {
+    "chrSynthetic_rows": 1,
+    "data_rows": 1,
+    "insertion_offset_covered": false,
+    "non_data_lines": 1,
+    "other_contig_rows": 0
+  },
+  "candidate": {
+    "exact_allele_records": 0,
+    "exact_single_record_presence": false,
+    "full_haplotype_absence_claim": false,
+    "invalid_ref_records": 0,
+    "multiallelic_unresolved_records": 0,
+    "negative_inference_unresolved_reasons": {},
+    "non_equivalent_literal_records": 0,
+    "non_equivalent_literal_records_in_A_repeat": 0,
+    "off_contig_records": 0,
+    "other_unresolved_records": 0,
+    "sample_columns": 0,
+    "single_record_output_state": "ABSENT_FROM_OUTPUT",
+    "single_record_representation_unit": "one literal REF-to-ALT record applied to the full reference",
+    "symbolic_records": 0,
+    "total_records": 0,
+    "unresolved_records": 0
+  },
+  "comparison": {
+    "equivalence": "exact_4060_base_haplotype_equality",
+    "left_shift_tolerance": "none; identical haplotypes compare equal",
+    "method": "apply_each_single_literal_REF_to_ALT_to_the_full_4000_base_reference"
+  },
+  "complete_parse": true,
+  "contig_bam": {
+    "alignment_counts_by_reference": {
+      "chrSynthetic": 1
+    },
+    "alignment_records": 1,
+    "evidence_scope": "counts_and_lengths_only_not_sequence_recovery",
+    "mapped_alignment_records": 1,
+    "query_length_counts_by_alignment": {
+      "3060": 1
+    },
+    "reference_count": 1,
+    "reference_lengths": [
+      {
+        "length": 4000,
+        "name": "chrSynthetic"
+      }
+    ],
+    "unique_contig_names": 1,
+    "unmapped_alignment_records": 0
+  },
+  "final": {
+    "exact_allele_records": 0,
+    "exact_pass_heterozygous_recovery_state": "ABSENT_FROM_OUTPUT",
+    "exact_single_record_presence": false,
+    "filter_counts": {},
+    "full_haplotype_absence_claim": false,
+    "heterozygous_gt_0_1_or_1_0_exact_records": 0,
+    "invalid_ref_records": 0,
+    "multiallelic_unresolved_records": 0,
+    "negative_inference_unresolved_reasons": {},
+    "non_equivalent_literal_records": 0,
+    "non_equivalent_literal_records_in_A_repeat": 0,
+    "off_contig_records": 0,
+    "other_unresolved_records": 0,
+    "pass_exact_allele_records": 0,
+    "pass_heterozygous_exact_allele_records": 0,
+    "phased_heterozygous_exact_records": 0,
+    "single_record_output_state": "ABSENT_FROM_OUTPUT",
+    "single_record_representation_unit": "one literal REF-to-ALT record applied to the full reference",
+    "symbolic_records": 0,
+    "total_records": 0,
+    "unphased_heterozygous_exact_records": 0,
+    "unresolved_records": 0
+  },
+  "input_integrity": {
+    "all_before_after_hashes_and_snapshots_match": true,
+    "files": {
+      "assembly_bed": {
+        "bytes": 111,
+        "sha256": "a2e2b47c52860a4826291015b216843b00e24982734c4059db098d032077dea5"
+      },
+      "candidate_vcf_bcf": {
+        "bytes": 1059,
+        "sha256": "21cb2935c40719d7bb824ab1b44a71e56870fd1536bf128299f6415a3e06ed81"
+      },
+      "contig_bam": {
+        "bytes": 793,
+        "sha256": "a94d64968b6e8062cc54cd2e1d99fcc721ff8a46405751330e3fe7483ec6ffa4"
+      },
+      "final_vcf_bcf": {
+        "bytes": 1162,
+        "sha256": "ffa28cfd3049163e323ebc04170d7b5f854fc663befcec0cc1fd58304046f04f"
+      },
+      "reference_fasta": {
+        "bytes": 4081,
+        "sha256": "f1cdb2ea81960791940692eac4f30bdb5ce0e16b5f40279e246a27e2a9f39260"
+      },
+      "truth_json": {
+        "bytes": 430,
+        "sha256": "b324b44bc84f26ab53f9aacac21d144c27245d7f13054bf24c69a8d45cf7dbeb"
+      }
+    },
+    "total_input_bytes": 7636
+  },
+  "limits": {
+    "caller_execution": false,
+    "causal_attribution": "not_assessed",
+    "read_trace": "not_collected",
+    "rejected_trace_completeness": "not_assessed",
+    "scoring": false
+  },
+  "reference": {
+    "contig": "chrSynthetic",
+    "length": 4000,
+    "sequence_sha256": "1e9e223b565b9f0847946d777a5c7fd4f2ba09f076174e4fab96f473156fe9ef",
+    "sequence_sha256_basis": "uppercase sequence ASCII bytes; FASTA header and wrapping excluded"
+  },
+  "sample": "SYNTH",
+  "schema_version": 1,
+  "status": "complete",
+  "synthetic_only": true,
+  "truth": {
+    "expected_alternate_length": 4060,
+    "inserted_length": 60,
+    "insertion_offset": 1500,
+    "validated_exact_scope": true,
+    "version": 1
+  }
+}

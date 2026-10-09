@@ -11,6 +11,28 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 actual replacement02: job1604209 FAILED1:0 at predefined canonical
+positive-control gate.78 cluster controls pass0skip2.90s, physical-path fix,
+authenticated Sawfish2.2.1 and both canonical native stages work. Complete
+candidate/final outputs have0records; no exactPASSheterozygous recovery.
+Remaining3arms never ran; no fragmented contrast, biologicalnull or causal
+stageclaim. [Actual result](docs/research/2026-10-09-native-invariance-result02.md).
+All52raw hashes match; payload66,500+checksum4,864=71,364 bytes, including
+allcanonicaloutputs and exactsmallfixture. Main archivedfixturesemantics,
+resolvedsettings and complete nativevariantparse pass; no callerreplay.
+Full256MiB retained:40,772,178,827 cumulativebytes; outer2.50CPUonce gives
+561.292707 namedCPU. Independent actualreview pending. A Luna/max-requested
+freshprimaryliterature comparison and Sol6.1/max-requested investmentdecision
+run in parallel; no replacement03, newbudget or paperlead selected.
+
+October9 native replacement02 submitted once as job1604209 after maintained
+independent exact conditional ACCEPT. Booked256MiB at03:25:56UTC before root;
+cumulative40,772,178,827 bytes retained. All13 staged pins, booked snapshot
+and literal claim/submission hashes match at10:27:15+07. Four transfers and
+submission returned0; new root real leaf on pinned physicalworkspace.
+Live journal records the consumed claim; exact code/review pushed0f304c7.
+Runtime and raw-result review pending; no allele or publication claim.
+
 October9 prospective physical-path replacement02: original attempt01 source
 and all raw logs are preserved in pushed commit ea7f2fb. Main adds an exact
 trusted physical-root gate; fixture guard and scientific protocol unchanged.

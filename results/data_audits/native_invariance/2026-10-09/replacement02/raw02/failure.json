@@ -1,0 +1,6 @@
+{
+  "error_type": "ValueError",
+  "publication_result": false,
+  "reason": "canonical exact PASS heterozygous control failed",
+  "status": "INCOMPLETE"
+}
