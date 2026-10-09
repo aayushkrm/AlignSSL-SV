@@ -32,6 +32,37 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 [exact02 candidate](2026-10-09-svupp-inventory-replacement02.md)
+  UNBOOKED: narrow directoryO_PATH and newID,33 controls frozen; intended
+  failing components verified. Main local53pass3Linuxskips0.87s includes
+  23unstaged ceiling controls, not actualLinux pass. Scripts/inline syntax
+  pass;8pins bundle9d62d97d, literal claim/submission frozen. Newest objective
+  and resource clarification govern; exact maintained review next. No book,
+  stage/download/job, no03 or publication lead.
+
+- October9 governing objective now attachment2fa04b13, SHA256
+  74ba6450712e7f0e763cd81de896d3a71ca73f9c4a10fec3f1ecab59b3f1b0b8,
+  main read FULL. Resource clause explicitly covers GPU/CPU/RAM/storage
+  efficiently, consistent with the user's useful-capacity clarification.
+  Same scientific goal/guards; newest scope forwarded to test worker and
+  maintained reviewer. Prior decision retains its actual read snapshot;
+  future exact02 review must read newest objective. No book/stage/job.
+
+- October9 completed [narrow02 investment decision](2026-10-09-svupp-permission-value-decision.md)
+  incorporates the resource reply. Main reads final full note, prepares Linux
+  directory-only O_PATH and fresh02 identity; leaf reads and ZIP guards unchanged.
+  Existing51 local focused tests pass, not actual Linux permission coverage.
+  A Luna/max sidecar owns focused permission/symlink controls. Fresh02 absent,
+  queue empty at13:33:35+07; expiryOct22. No book/stage/archive/job. Exact
+  complete candidate and maintained independent review still required; no03.
+
+- October9 user clarifies full resource use: “Use all useful resources
+  efficiently; scale parallel experiments fully.” Allocate for useful
+  workload parallelism, not idle whole nodes. Main forwards the answer to
+  the same decision and reviewer agents. Commit848c7ab is pushed. No new
+  job, allowance booking, staging or acquisition; closed01 is unchanged.
+  The separate02 proposal still needs a completed decision and exact review.
+
 - October9 NEW objective attachment nowgoverns:
  `/Users/akm/.codex/attachments/1c5d7b81-ec81-49c6-adca-1d4c77fecdd0/goal-objective.md`
   SHA256cdce4c9e320ce1550efeb230e4a4af90930f9eb953531d41459f34b428cb9b12.

@@ -11,6 +11,46 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 [separate02 exact candidate](docs/research/2026-10-09-svupp-inventory-replacement02.md)
+is frozen UNBOOKED: directory-only LinuxO_PATH and new02 identity;33 inventory
+controls include3permission and2selector cases. Symlink/permission exceptions
+prove intended components. Main catches and worker fixes the non-Linux
+selector's unintended realbeegfs traversal before launch. Main focused local
+run53passed3Linuxskips0.87s includes23unstaged ceiling cases; no actualLinux
+pass claimed. Wrappers/inlinePython syntax pass,8pins bundle9d62d97d; literal
+claim/submission pins it twice. Live unprivileged directory/leaf preflight and
+exact33zero-skips precede anydownload. Exact independent review pending;
+512MiB/180 remainsUNBOOKED, no freshroot/staging/archive/job or publication.
+
+October9 newest objective supersedes the previous attachment. Main reads FULL
+`/Users/akm/.codex/attachments/2fa04b13-b328-4023-872e-0c4cc9dbfaee/goal-objective.md`
+SHA25674ba6450712e7f0e763cd81de896d3a71ca73f9c4a10fec3f1ecab59b3f1b0b8.
+It explicitly names GPU, CPU, RAM and storage in the efficient resource
+clause. The user's preceding clarification—use all useful resources and
+scale parallel experiments fully—remains consistent. No idle GPU or whole
+node is needed for this serial inventory. Scientific aim and safeguards
+are unchanged. Main forwards newest objective to live test worker/reviewer;
+exact02 review must include it. No booking/staging/job or goal completion.
+
+October9 completed [Sol6.1/max decision](docs/research/2026-10-09-svupp-permission-value-decision.md)
+selects one prospective separate02, limited to Linux directory O_PATH and
+new identity/pins. Wider repair or another failure closes this candidate;
+no03 or archive substitution. Main reads the final decision in full and
+prepares the narrow diff and separate UNBOOKED wrappers. Existing51 focused
+local tests pass0skip1.24s, not Linux permission evidence. A Luna/max sidecar
+adds effective permission and intended symlink-branch controls. Cluster
+13:33:35+07: queue empty, fresh02 absent, beegfs711/base700, scratchOct22.
+No book/stage/download; exact bundle and independent review remain pending.
+
+October9 user resolves the cluster resource clause: “Use all useful resources
+efficiently; scale parallel experiments fully.” Do not reserve idle whole
+nodes for serial checks. Use workload-appropriate allocations and scale
+independent parallel experiments when justified. Main forwards this answer
+to the live decision agent and maintained reviewer. No new job, booking,
+staging or archive acquisition follows from this clarification alone.
+Objective-tracking commit848c7ab is pushed. Inventory01 remains closed;
+the proposed separate02 still requires a completed decision and exact review.
+
 October9 user updates full objective attachment (newSHA256
 cdce4c9e320ce1550efeb230e4a4af90930f9eb953531d41459f34b428cb9b12).
 Scientific significance, broad pivots, DeepSV exclusion, honest nulls,

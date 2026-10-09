@@ -1,3 +1,4 @@
+import errno
 import hashlib
 import json
 import os
@@ -200,14 +201,36 @@ def test_symlink_special_member_and_linked_source_are_rejected(tmp_path):
         call_inspect(hardlinked, tmp_path / "hardlinked.json")
 
 
-def test_symlink_parent_is_rejected(tmp_path):
+def test_symlink_parent_is_rejected(tmp_path, monkeypatch):
     real_dir = tmp_path / "real"
     real_dir.mkdir()
     source = make_archive(real_dir / "candidate.zip")
     linked_dir = tmp_path / "linked"
     linked_dir.symlink_to(real_dir, target_is_directory=True)
-    with pytest.raises(ValueError, match="parent.*symlink"):
+
+    original_open = inventory_module.os.open
+    failed_component_opens = []
+
+    def trace_open(path, *args, **kwargs):
+        try:
+            return original_open(path, *args, **kwargs)
+        except OSError as exc:
+            if path == linked_dir.name:
+                failed_component_opens.append((path, exc))
+            raise
+
+    monkeypatch.setattr(inventory_module.os, "open", trace_open)
+    with pytest.raises(ValueError, match="parent.*symlink") as raised:
         call_inspect(linked_dir / source.name, tmp_path / "inventory.json")
+
+    assert failed_component_opens
+    failed_component, open_error = failed_component_opens[-1]
+    assert failed_component == linked_dir.name
+    cause = raised.value.__cause__
+    assert isinstance(cause, OSError)
+    assert cause is open_error
+    assert cause.filename == linked_dir.name
+    assert cause.errno in (errno.ELOOP, errno.ENOTDIR)
 
 
 def test_member_count_and_filename_caps_are_enforced(tmp_path, monkeypatch):

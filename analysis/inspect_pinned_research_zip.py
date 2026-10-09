@@ -13,6 +13,7 @@ import os
 import re
 import stat
 import struct
+import sys
 from pathlib import Path
 
 
@@ -50,7 +51,13 @@ def _open_parent_without_symlinks(path: Path) -> int:
     if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
         raise OSError("safe directory opening is not supported on this platform")
 
-    flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+    if sys.platform.startswith("linux"):
+        if not hasattr(os, "O_PATH"):
+            raise OSError("safe Linux directory references are not supported")
+        access_flag = os.O_PATH
+    else:
+        access_flag = os.O_RDONLY
+    flags = access_flag | os.O_DIRECTORY | os.O_NOFOLLOW
     flags |= getattr(os, "O_CLOEXEC", 0)
     current_fd = os.open(path.anchor, flags)
     try:

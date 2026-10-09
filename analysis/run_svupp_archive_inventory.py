@@ -17,7 +17,7 @@ import urllib.request
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-EXPERIMENT = "svupp-inventory-20261009-01"
+EXPERIMENT = "svupp-inventory-20261009-02"
 ROOT = Path("/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922") / EXPERIMENT
 ASSET_URL = "https://zenodo.org/api/records/17569072/files/SVUPP_paper.zip/content"
 ASSET_BYTES = 47443427
