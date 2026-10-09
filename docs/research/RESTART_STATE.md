@@ -28,6 +28,26 @@ the objective.
 
 ## Current implementation and review state
 
+- October9 next diagnostic: [value decision](2026-10-09-native-invariance-value-decision.md)
+  selects one four-arm same-molecule CIGAR-invariance test, not a paper lead.
+  [Protocol](2026-10-09-native-invariance-protocol.md) is a candidate; no native
+  run or installation. [Independent review](2026-10-09-native-invariance-review.md)
+  accepts diagnostic value and reviews negative-evidence semantics; no
+  execution approval. Fixture source and15 local controls are
+  complete. Observer is implemented with BGZF, empty/missing-output and
+  joint-representation controls; main checks32 synthetic tests0skip, or35
+  including README landing checks. Independent completed-code follow-up
+  found a padded joint-edit uncertainty gap. Main conservatively fixes it
+  with4 regressions; latest39 tests including3 README checks pass0skip.
+  Independent reviewer hash-checks the exact correction and closes that
+  code/observation HOLD; launch/account review remains pending.
+  Compressed-byte hashes are not assumed
+  portable across stacks.
+  Freeze scientific reference/read content and record actual artifact hashes.
+  Proposed256MiB/600namedCPU remains UNBOOKED; exact launch/account review
+  remains required. Generic released-callset STOP and every historical charge
+  remain intact. No natural prevalence, unique stage cause or novelty claimed.
+
 - October9 [high-impact investment decision](2026-10-09-post-diagnosis-value-decision.md):
   main stops further generic released-callset preparation. It would not produce
   the required native mechanism or publication result. H_R remains UNTESTED,

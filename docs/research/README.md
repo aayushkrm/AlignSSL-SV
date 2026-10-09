@@ -8,6 +8,9 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-09-native-invariance-value-decision.md`](2026-10-09-native-invariance-value-decision.md) | Sol6.1/max-requested end-to-end diagnostic selection | One four-arm synthetic native test selected; not a paper lead, no execution or booking |
+| [`2026-10-09-native-invariance-protocol.md`](2026-10-09-native-invariance-protocol.md) | Fixed same-molecule CIGAR contrast and exact allele/GT/FILTER endpoints |39 local tests include3 README checks; code/observation review accepted, exact launch/account review pending |
+| [`2026-10-09-native-invariance-review.md`](2026-10-09-native-invariance-review.md) | Maintained independent diagnostic challenge | Scientific selection accepted; padded joint-edit gap corrected, exact hashes checked and narrow code HOLD closed; no execution approval |
 | [`RESTART_STATE.md`](RESTART_STATE.md) | Operational state, cluster recovery, and next gates | Living checkpoint |
 | [`2026-10-09-post-diagnosis-value-decision.md`](2026-10-09-post-diagnosis-value-decision.md) | Sol6.1/max-requested scientific investment decision | Main stops generic released-callset preparation; H_R untested, guards and charges retained; independent limited STOP accepted |
 | [`2026-10-09-post-diagnosis-value-review.md`](2026-10-09-post-diagnosis-value-review.md) | Maintained independent scientific-value challenge | Accepts investment STOP, not biological null, exhaustive absence or new campaign |

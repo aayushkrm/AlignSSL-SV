@@ -11,6 +11,46 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 native diagnostic preparation: the completed
+[Sol6.1/max-requested decision](docs/research/2026-10-09-native-invariance-value-decision.md)
+selects ONE same-molecule CIGAR-invariance test of complete native allele
+recovery. This is a software diagnostic, not a new method or publication lead.
+[Protocol](docs/research/2026-10-09-native-invariance-protocol.md) fixes canonical,
+fragmented, REF-only and existing-native-margin rescue arms. The independent
+[Sol6.1/high-requested reviewer](docs/research/2026-10-09-native-invariance-review.md)
+initially accepts its scientific value conditionally, holding result acceptance
+for observer scrutiny: joint edits, symbolic/multiallelic calls and missing
+outputs must not become false absence labels. Exact allele presence, explicit
+PASS and heterozygous GT are separate endpoints, with a joint recovery count.
+Fixture implementation is complete: main's15 local tests pass0skip0.40s on
+Python3.11.13/pysam0.24.1/HTSlib1.24. A cross-stack compressed-BAM hash assertion
+was replaced before native outcomes by a frozen reference-sequence hash,
+complete read/index semantics and same-stack deterministic manifests. One new
+endpoint-corruption test initially failed while making an unsorted mutant BAM;
+the test now mutates the first sorted record and reaches the intended guard.
+Observer implementation is now complete. Main corrected its rejection of
+BGZF final VCFs, added a native-format control, distinguished empty complete
+outputs from missing files, and corrected an input-mutation test that had
+rewritten unchanged bytes. It now reports query lengths, not just reference
+header lengths. Combined32 synthetic software controls pass0skip0.65s;
+with3 README landing checks,35 pass0skip0.57s. Standalone manuscript
+reconciliation passes. [Pinned local check record](results/software_checks/2026-10-09/native_invariance_local.json).
+Independent completed-code review found that padded compatible edits could
+escape the A-run boundary heuristic and yield a false resolved negative.
+Main removes that inference heuristic: any multiple nonmatching literal
+chrSynthetic records remain unresolved unless an exact positive is known.
+Four regressions cover candidate/final paths and positive precedence. Latest
+39 controls including3 README checks pass0skip0.69s. The independent reviewer
+hash-checks the exact correction and closes the code/observation HOLD.
+Exact launch/account review remains pending. No native execution approval
+or full-suite pass is claimed.
+The earlier agents saved no code after account-limit errors; fresh requested
+workers are used after current account access resumed. Actual backend model
+and effort remain unattested. At09:16:53+07 the cluster queue was empty;
+scratch expiry remainsOct22 and local free space about17.6GiB. No download,
+installation, native run, new data or reservation yet. Proposed256MiB/600CPU
+is UNBOOKED. Goal remains active and unachieved; the old screen remains STOP.
+
 October9 investment decision: main accepts the completed
 [Sol6.1/max-requested decision](docs/research/2026-10-09-post-diagnosis-value-decision.md)
 to **stop further preparation in the generic released-callset route**.
