@@ -32,6 +32,19 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 main books512MiB02 at06:46:50UTC before anyroot/stage; numeric
+  allowance unchanged afterexactreview andfresh13:46:49+07 root/claimabsence,
+  queueempty/access/physicalbase/Oct22expiry. Retainedtotal41,845,920,651;
+  measuredCPU563.932707 unchanged. Residual1GiB/240; finalledger/bundle/literal
+  pins next, no archive/job yet. Retainfullcharge on any failure.
+
+- October9 [independent exact02 review](2026-10-09-svupp-inventory-replacement02-review.md)
+  CONDITIONAL ACCEPT; main reads FULL, all8pins verified by reviewer. Only
+  status/timestamp booking and dependenthash repin permitted, freshpath/
+  claims/access/expiry/jobs checks then oneexactsubmission. ActualLinux
+  livepreflight+33zero-skips beforedownload; no decoding/scoring/03. Review
+  accepts design, not runtime or scientific readiness. UNBOOKED at this entry.
+
 - October9 [exact02 candidate](2026-10-09-svupp-inventory-replacement02.md)
   UNBOOKED: narrow directoryO_PATH and newID,33 controls frozen; intended
   failing components verified. Main local53pass3Linuxskips0.87s includes

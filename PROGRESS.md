@@ -11,6 +11,22 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 main books unchanged02subset512MiB at06:46:50UTC, after exact
+CONDITIONAL ACCEPT and13:46:49+07 live freshroot/claimsABSENT, queueempty,
+physicalbase/access checks andOct22expiry. New cumulative retained bytes
+41,845,920,651; prior measuredCPU563.932707 unchanged until actualtimer.
+Residual completecandidate1GiB/240allowance. Status/timestamp-only ledger
+repin, bundle andliteral finalpins next; no root/stage/archive/job yet.
+
+October9 independent [exact02 review](docs/research/2026-10-09-svupp-inventory-replacement02-review.md)
+completes CONDITIONAL ACCEPT. Main reads FULL; all8pins match, sourcechanges
+narrow, reviewer30localpasses3Linuxskips—not actualLinux validation. Conditions
+permit only bookingstatus/timestamp and dependenthash repin, freshphysical
+path/claims/liveaccess/expiry/jobs checks, then exactone submission. Live
+permission preflight and33zero-skips must precede acquisition. No content,
+scoring, campaign, automatic03 or scientific approval. StillUNBOOKED here;
+main begins permitted precreationcheck, not rootcreation/staging yet.
+
 October9 [separate02 exact candidate](docs/research/2026-10-09-svupp-inventory-replacement02.md)
 is frozen UNBOOKED: directory-only LinuxO_PATH and new02 identity;33 inventory
 controls include3permission and2selector cases. Symlink/permission exceptions

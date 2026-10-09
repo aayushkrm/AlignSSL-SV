@@ -147,3 +147,21 @@ executable authority. Exact review is pending, all numeric charges UNBOOKED.
 If review accepts status/timestamp-only booking, repin reservation, bundle
 and both literal occurrences before staging; reverify the final values.
 Any other code/test/wrapper/resource/command change needs exact review.
+
+## Reviewed booking, superseding unbooked snapshot
+
+Main reads FULL the completed [exact02 review](2026-10-09-svupp-inventory-replacement02-review.md):
+CONDITIONAL ACCEPT of this narrow metadata-only run and specified repin.
+Fresh metadata13:46:49+07 checks physical base/access, empty queue, root and
+claims absent, expiryOctober22. Main books512MiB at06:46:50UTC before any
+root/staging. Numeric allowance unchanged; full retained total41,845,920,651.
+Prior measuredCPU563.932707 stays unchanged until actual outer measurement.
+
+Only ledgerstatus/timestamp changed. Booked reservation SHA256
+`fbd954d250fe1299703846c99d8ab35a87547bfa752c2b14782dfbbaecc70651`;
+all seven other entry pins unchanged. Final eight-entry bundle SHA256
+`ca51080bd7044fdece3d296cb76dad513473fe8eb6f55b4bb725808d33eb44fe`.
+Both literal claim/submission occurrences use that final hash. Verify all
+final pins on cluster before exactly one submission. Livepreflight and33
+zero-skips precede download; actual readiness/outcomes remain unestablished.
+No content analysis, caller, scoring, campaign or03 is authorized.

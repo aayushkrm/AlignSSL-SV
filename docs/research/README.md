@@ -8,6 +8,7 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-09-svupp-inventory-replacement02-review.md`](2026-10-09-svupp-inventory-replacement02-review.md) | Maintained independent exact02 code/controls/account review |CONDITIONAL ACCEPT of status/timestamp-only booking repin and one metadata-only job; live gates/actual review required; no content or03 |
 | [`2026-10-09-svupp-inventory-replacement02.md`](2026-10-09-svupp-inventory-replacement02.md) | Separate narrow Linux directory-reference correction and exact metadata-only bundle |33 frozen controls, newest objective/useful-resource interpretation; UNBOOKED, exact independent review pending, no03 |
 | [`2026-10-09-svupp-permission-value-decision.md`](2026-10-09-svupp-permission-value-decision.md) | Completed Sol6.1/max investment decision after the setup failure | One separate narrow02 proposal selected; resource clause resolved, exact review still required; no03 or publication claim |
 | [`2026-10-09-svupp-inventory-result01.md`](2026-10-09-svupp-inventory-result01.md) | Actual first archive-inventory control failure and complete raw |CLOSED INCOMPLETE before acquisition,16failed12passed;77,857-byte raw all hashes verified; charges retained, no scientific null |
