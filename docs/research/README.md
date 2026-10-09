@@ -8,7 +8,8 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
-| [`2026-10-09-post-native-value-review.md`](2026-10-09-post-native-value-review.md) | Independent scientific-value challenge |Rejects genericGQcalibration contribution; one conditional development falsifier, input readinessHOLD; final decision not yet reviewed |
+| [`2026-10-09-post-native-value-decision.md`](2026-10-09-post-native-value-decision.md) | Completed Sol6.1/max-requested investment decision |One conditional confidence-value ceiling/strong-control falsifier; no method/paper selected; finite inventory first |
+| [`2026-10-09-post-native-value-review.md`](2026-10-09-post-native-value-review.md) | Independent scientific-value challenge |Final decision conditionally accepted; genericGQcoverage rejected; input readinessHOLD and exact launch unapproved |
 | [`2026-10-09-svupp-inventory-protocol.md`](2026-10-09-svupp-inventory-protocol.md) | Fixed candidate public-archive inventory, no outcomes |UNBOOKED/unexecuted; exact code/account/launch review pending; not campaign authorization |
 | [`2026-10-09-post-native-opportunities.md`](2026-10-09-post-native-opportunities.md) | Fresh Luna/max-requested primary-literature comparison |Three conditional questions and falsifiers; no campaign/novelty approval; read main prior-art qualification |
 | [`2026-10-09-post-native-source-check.md`](2026-10-09-post-native-source-check.md) | Main's actual primary-body and manifest verification |GQ-ranked coverage already SVUPP priorart; technical replicate not biological holdout; newer assessmentzip listed, contents unverified |

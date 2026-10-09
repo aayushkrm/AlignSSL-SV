@@ -11,6 +11,18 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 completed [investment decision](docs/research/2026-10-09-post-native-value-decision.md)
+and [independent follow-up](docs/research/2026-10-09-post-native-value-review.md)
+select ONE conditional development value test, not a paper or new model.
+Use fixed SVUPP/kanpig outputs under ONT ultra-long to HiFi transfer; compare
+the maximum separate caller selection ceiling with strong ordinary controls
+at1% label discordance and a10-point neighboring-SV coverage margin. No
+cross-caller genotype oracle. Missing inputs, insufficient room or uncertain
+truth close this candidate. Generic GQ coverage is already prior art.
+The inventory launcher and bounded tests are being finalized; allowance
+512MiB/180seconds is UNBOOKED, within—not added to—the whole2GiB/600 envelope.
+No archive acquired, decoded outcomes or caller execution. Goal unachieved.
+
 October9 independent [post-native scientific review](docs/research/2026-10-09-post-native-value-review.md)
 rejects genericGQcalibration/coverage as a selectedsignificantcontribution.
 One incremental-value developmentfalsifier is conditionallydefensible,

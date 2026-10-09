@@ -29,6 +29,8 @@ filename bytes; reject unsafe, duplicate, encrypted, multidisk, special/link,
 absolute or parent-traversal entries. Never extract or decompress member
 bodies. ZIP member CRC/payload integrity is **not** verified by listing.
 Do not describe a listed VCF/RData name as a usable score or truth vector.
+Full hash passes do read opaque stored ZIP bytes, including compressed member
+payloads. No member is decoded or interpreted; no scientific outcome is read.
 
 Require a stable regular single-link asset, unchanged full stored hash and
 metadata snapshots before/after inspection. Manifest is exclusive and at
@@ -60,7 +62,50 @@ claim before Slurm and one timed payload claim. Archive output/file caps,
 required synthetic control count and exact launcher are not yet frozen.
 This document is not a ready submission bundle or booking record.
 
+## Exact implementation candidate, October9
+
+The bounded parser and launcher now use exclusive claims and completion
+metadata. `inventory.json` alone is not success: `result.json` must attest
+COMPLETE_METADATA_INVENTORY after acquired/stored SHA256 agreement, both
+complete stored hash passes and all metadata guards. No completion marker is
+written on mismatch. Raw partial evidence remains evidence of an incomplete
+attempt. Source/member names are inventoried, not treated as usable data.
+
+The512MiB/180-second inventory allowance is a SUBSET of the max decision's
+2GiB/600-second complete candidate envelope. If booked, the residual maxima
+are1.5GiB and420 allowance seconds, not another2GiB/600 allocation. CPU is
+measured from the outer waited tree once; allowances are not measurements.
+
+Named byte-pass account: acquisition47,443,427; two stored hash passes
+94,886,854; synthetic control-tree writes/reads budgeted conservatively at
+six32MiB passes201,326,592; raw metadata at most2MiB through six hashing,
+transfer and verification passes12,582,912; staged code/logs/claims budgeted
+16MiB. Total ceiling within this named accounting is373,017,001, below
+536,870,912. Captured ZIP tail/central metadata are in memory from hash pass1.
+This is a conservative named account, not an opaque physical-I/O guarantee.
+
+Freeze scripts, all test counts, bundle pins and literal claim/submission
+before launch review. The booked reservation snapshot will be pinned before
+staging; source review can condition acceptance on changing only UNBOOKED to
+BOOKED plus a UTC booking timestamp, with unchanged numerical allowance.
+
 ## Decision boundary
+
+Exact candidate saved under `results/data_audits/svupp_inventory/2026-10-09/`:
+outer/payload scripts, UNBOOKED reservation,7-entry bundle and literal
+claim-before-sbatch command. Candidate bundle SHA256 is
+`ac67823d904191409375cd3980a71da998e997f366ab2586aca847bbae88d71c`.
+28 local controls pass, zero skips,0.81s; synthetic tree12,227 bytes after
+removing only cap/FIFO witnesses. Shell syntax passes. Main reviewed complete
+code and tests. These are compatibility tests, not scientific evidence.
+
+After independent exact review, booking adds only status/timestamp to the
+reservation. Rehash that entry, bundle and literal command before staging;
+the final pins and numeric charge must be checked again. Require actual
+cluster28-pass summary with zero skips before any acquisition. Python3.10.20,
+pytest8.4.2 are expected via the retained control dependency path; bare Python
+does not import pytest without that path, no package installation is implied.
+No fresh root, staging, book or archive download has occurred in this snapshot.
 
 No new paper direction is selected here. If the archive has no plausible
 score/truth resource, reject this acquisition path and stop. If members look

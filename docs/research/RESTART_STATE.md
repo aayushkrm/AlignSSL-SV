@@ -32,6 +32,15 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 completed [max investment decision](2026-10-09-post-native-value-decision.md)
+  and independent [scientific reconciliation](2026-10-09-post-native-value-review.md):
+  conditional selection of one oracle/strong-control confidence VALUE falsifier.
+  Fixed ONT ultra-long→HiFi, neighboring SVs,1% released-label discordance,
+ 10-point coverage margin; no new method/paper or biological accuracy claim.
+  One47.4MB archive inventory being finalized;512MiB/180seconds UNBOOKED as
+  subset of2GiB/600 envelope. Input readiness HOLD, exact launch unapproved;
+  no acquisition or decoded outcomes. Native attempts closed; charges intact.
+
 - October9 [independent scientific challenge](2026-10-09-post-native-value-review.md):
   genericGQcalibrationnotselectedcontribution. Oneconditionalincremental-value
   falsifier only; truth/score/readinessHOLD, no acquisitionorcampaignapproval.
