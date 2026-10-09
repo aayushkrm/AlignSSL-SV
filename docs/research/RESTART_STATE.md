@@ -32,6 +32,20 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 10: main read both completed [transcript](2026-10-09-structural-transcript-falsifier-scout.md)
+  and [family](2026-10-09-family-structural-falsifier-scout.md) scouts. Published
+  controlled fusion is not a new result; reported parental SVA is a specific
+  possible native-caller falsifier, not demonstrated failure. Main's
+  [original-row source check](2026-10-10-platinum-sva-source-check.md) confirms
+  the child event but not inserted sequence or coordinate conventions.
+  Unchanged249,138-byte workbook preserved off Git, SHA34279cdd…; no edits or
+  recalculation. [Runtime/access](2026-10-09-runtime-and-paired-access-check.md)
+  confirms working samtools1.9/Truvari5.4.0; four finite track manifests do not
+  declare RNA BAMs. Fresh00:05:56+07 queue empty, scratchOctober22expiry with
+  one extension. No genomic reads, jobs, installation or cancellation.
+  Scout workers closed; separate Sol6.1/max selection and Luna/max native
+  regional-input check pending. Reviewer maintained; no campaign selected,
+  empirical result or publication claim. Broader goal active/unmet.
 - October 9 main's [gene-conversion source screen](2026-10-09-gene-conversion-source-screen.md)
   checks selected journal/preprint methods with Exa, Life Sciences Literature
   and Firecrawl; Scite paid-access denial prompted an available alternative,

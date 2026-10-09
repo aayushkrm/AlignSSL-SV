@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-10-09** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
+_Last updated: **2026-10-10** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,31 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+October 10: both bounded empirical scouts completed; main read both full
+notes. The [transcript scout](docs/research/2026-10-09-structural-transcript-falsifier-scout.md)
+found a published controlled-access fusion case and four public paired
+reference lines, not a new validated consequence. The [family scout](docs/research/2026-10-09-family-structural-falsifier-scout.md)
+identified a specific reported NA12878 parental SVA mosaic. This is a
+candidate current-caller falsifier, not a demonstrated failure or novel result.
+Main's [original-row check](docs/research/2026-10-10-platinum-sva-source-check.md)
+confirms the 3,407-bp maternal child event; the table does not supply the
+inserted sequence or define coordinate conventions. A compatible parent call
+must not be labelled sequence-identical to the controlled child's allele.
+The unchanged publication workbook is 249,138 bytes, preserved off Git with
+SHA25634279cdd…; spreadsheet inspection made no edits or recalculation.
+
+The [runtime/access check](docs/research/2026-10-09-runtime-and-paired-access-check.md)
+finds working samtools1.9/Truvari5.4.0 and about65.4GiB local free space.
+Four public multi-ome track manifests expose bigWig/bigBed, not declared RNA
+alignments; this is not absence elsewhere. Fresh00:05:56+07 cluster check:
+own queue empty, scratch expiresOctober22, one extension available. No jobs,
+genomic reads, installation or cancellation. Completed scout workers closed;
+Sol6.1/max-requested selection and Luna/max-requested native crop/threshold
+checks remain active. Maintained independent reviewer available. No expensive
+campaign or major positive result has been accepted; goal remains unmet.
+Documentation checks: 15 passed, zero skips, in 3.94 seconds; whitespace
+check passed. These checks do not measure scientific performance.
 
 October 9 main's [gene-conversion source screen](docs/research/2026-10-09-gene-conversion-source-screen.md)
 finds substantial current native overlap, not a selected research gap.
