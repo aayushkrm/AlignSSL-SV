@@ -12,6 +12,13 @@ Completed engineering diagnostics (2026-10-08): 20 native controls passed; all
 11,490 unchanged rows are metadata-compatible. 41 REF controls passed; all
 11,490 anchored REF spans agree. Source and row-order pins remained stable.
 
+Latest input check (2026-10-09): 44 cluster controls passed. The bounded
+SVUPP provenance/header check and its complete raw evidence passed independent
+review. The archive route is closed: the required ONT-to-HiFi caller views
+were not sufficiently established. No genotype outcome was scored. This is
+an input-readiness stop, not a biological null result. Competing research
+directions are under review.
+
 These checks do not validate the truth denominator, ALT alleles, phase,
 callability, or scoring. Caller preparation follows a fixed reviewed process.
 Check the current progress record for its status. No novel method, publication
@@ -26,6 +33,8 @@ record. A passing engineering check is not a biological result.
 - Technical records: [native controls](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-08-native-throughput-result.md),
   [REF controls](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-08-reference-throughput-result.md), [metadata census](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-08-metadata-census-result.md), and
   [caller preparation review](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-08-caller-preparation-review.md).
+- Latest input decision: [provenance result](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-09-svupp-provenance-header-result01.md) and
+  [independent review](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-09-svupp-provenance-header-review.md).
 - [results/](results/) contains earlier SSL benchmarks and technical audit
   outputs. Use the research notes to interpret them.
 - [Archived README](docs/archive/README-legacy-ssl.md) preserves the former

@@ -22,6 +22,11 @@ def test_landing_page_states_scope_and_evidence_limits():
         "all 11,490 anchored REF spans agree",
         "truth denominator, ALT alleles, phase, callability, or scoring",
         "Caller preparation follows a fixed reviewed process",
+        "Latest input check (2026-10-09): 44 cluster controls passed.",
+        "The archive route is closed",
+        "the required ONT-to-HiFi caller views were not sufficiently established",
+        "No genotype outcome was scored.",
+        "an input-readiness stop, not a biological null result",
         "No novel method, publication lead, or performance claim is established.",
         "research/genotype-confidence-contracts-20261001",
         "default main may not contain those records",
@@ -39,6 +44,8 @@ def test_current_research_links_use_the_named_branch_without_fetching():
         "docs/research/2026-10-08-reference-throughput-result.md",
         "docs/research/2026-10-08-metadata-census-result.md",
         "docs/research/2026-10-08-caller-preparation-review.md",
+        "docs/research/2026-10-09-svupp-provenance-header-result01.md",
+        "docs/research/2026-10-09-svupp-provenance-header-review.md",
     )
     for path in paths:
         url = BRANCH_BASE + path
