@@ -1,0 +1,4 @@
+set -euo pipefail
+set -C
+printf 'svupp-inventory-20261009-02 ca51080bd7044fdece3d296cb76dad513473fe8eb6f55b4bb725808d33eb44fe\n' > /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-02/submission.claim
+sbatch --parsable --partition=amd_256M --ntasks=1 --cpus-per-task=1 --mem=2048M --time=00:03:00 --job-name=alignssl-svupp-inventory02 --output=/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-02/slurm.stdout.log --error=/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-02/slurm.stderr.log /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-02/run_outer.sh ca51080bd7044fdece3d296cb76dad513473fe8eb6f55b4bb725808d33eb44fe

@@ -85,3 +85,60 @@ This is source-preserving infrastructure compatibility plus metadata readiness, 
 No metadata pass starts decoding or the1%/10-point value calculation automatically. A separate complete content protocol within residual1GiB/240 must establish the fixed SVUPP/kanpig ONT ultra-long→HiFi inputs, common denominators, source-only controls and leakage-safe units. Any later method needs independent structural truth and reserved donor/locus validation. Large oracle room alone is not learnability, clinical benefit or novelty. Attempt02 failure closes the candidate without biological/data-absence inference or03. All historical native closures, H_R UNTESTED and generic released-callset STOP remain preserved.
 
 **Final exact disposition: CONDITIONAL ACCEPT of this separately pinned02 and its status/timestamp-only booking repin, solely for ONE metadata inventory under the above live gates. Scientific/content readiness remains HOLD; no campaign or positive claim follows.**
+
+## Actual02 — 2026-10-09: ACCEPT COMPLETE METADATA INVENTORY ONLY
+
+**ACCEPT the actual complete metadata inventory, bounded preservation and retained account. No concrete raw-integrity/runtime/account HOLD remains for that limited outcome. Scientific input readiness remains HOLD.** This section accepts an actual result, not another launch, decoding, header/content read, scoring or publication claim. Preserve the complete preceding exact-review snapshot and its UNBOOKED pins as history. Requested maintained Sol6.1/high remains backend-unattested.
+
+### Full read scope and actual pins
+
+Read FULL main's result02 note and all17 raw02 payload files plus checksum manifest. This includes the complete3,667-byte controls stdout,1,504-byte live preflight, full4,533-byte26-member inventory, acquisition/result, claims, frozen reservation/bundle/literal, both wrapper/Slurm stdout logs and full timer. The three stderr files are verified actual zero-byte files. Independently rehashed all17 payloads, checked the exact file whitelist/regular type/single-link counts and summed actual sizes. Used read-only local metadata parsing to compare booking changes, current source mappings and declared inventory totals. No new test, ZIP acquisition/hash pass, source/raw edit, cluster/network/private-key read, job, booking, caller, member decoding or Git action occurred. Only this owned review was appended.
+
+| Actual inspected snapshot | SHA256 |
+|---|---|
+| Main result02 note, independent-review-pending state | `46feb9ab51609ab95aa515804cfea23dc3b124e03e6576c3b5b426d4f3892cf2` |
+| Raw02 checksum manifest | `0e87da97352b986ffa1cb42187954b0952cd9ca3187366690aa63cc41f71fc7f` |
+| Actual BOOKED reservation | `fbd954d250fe1299703846c99d8ab35a87547bfa752c2b14782dfbbaecc70651` |
+| Actual eight-entry bundle | `ca51080bd7044fdece3d296cb76dad513473fe8eb6f55b4bb725808d33eb44fe` |
+| Actual literal submission | `da2a768e949efa1a5eb03dab8c97f3e17bdbc6a71af990d3f9f014d600aa4e56` |
+| Complete actual controls stdout | `2f46ab8d722ec69c242530a64e564e0423f16d774d3548f28884d43c4395251a` |
+| Live permission preflight | `cfac7c9b51f6d719ba9dbb993e90dd2ab6b05c124f42cd65e6b6e0d03ad8e6a7` |
+| Complete central inventory | `df0d36623ca9ca3c6af1cbfc8f97900a4e3882bc4fbde5de24a58da54c38b82b` |
+| Owned review before this append | `ab59bfe767621617c8a26c9fa4f29e132aacd401775e091b81f4ce0d523a7502` |
+
+Archived reservation, bundle and literal match the current attempt02 candidates byte-for-byte. Reconstructing the UNBOOKED status/null timestamp reproduces the accepted reservation hash `535863a1…`; reverting only that dependent bundle entry reproduces `9d62d97d…`; replacing both booked bundle-hash occurrences reproduces the accepted literal hash `5dd9dc9b…`. Thus booking changes only status and `booked_at_utc=2026-10-09T06:46:50Z` plus the permitted dependent hashes. All seven non-ledger pins remain accepted, and all eight actual current source mappings match. Submission/outer/payload claims identify the same02/bundle/physical-root workflow. Booking-before-root/staging chronology and the reported preserved source commit317b42d remain main-reported, not independent remote-clock/Git verification.
+
+### Actual runtime and acquisition evidence
+
+Slurm stdout verifies bundle hash and all eight entries before timing. Launch stdout records the required Python3.10.20/pytest8.4.2, a13,440-byte control tree and eight matching pins both after controls and after inspection. Full controls stdout lists every one of the frozen33 cases PASSED and ends `33 passed in 4.58s`; there are no skips. This includes all three Linux effective-permission controls and the strengthened exact symlink-component rejection. The earlier macOS skips were not silently accepted on cluster.
+
+Preflight records actual non-root euid1638200118/egid1638200010. `/beegfs` is0711 with effective read=false/search=true; every recorded ancestor has effective search=true. Owned base and02 leaf are0700/read=true/search=true. `LIVE_OPATH_DIRECTORY_REFERENCE_PASS` is written only after the pinned inline code's production traversal, directory fstat/root-identity and dir_fd regular-single-link metadata-leaf checks. Together with the successful actual controls, this establishes directory-reference compatibility for this run. It is not a complete ACL audit, permission to read arbitrary leaves or a hostile concurrent-writer guarantee. No production chmod/privilege workaround is indicated by the reviewed execution path.
+
+Acquisition metadata records the exact47,443,427 bytes, publisher MD5 `5469337ca9249691b2b376ceb9b67e1d` and fixed Zenodo17569072 asset URL. Acquisition, inventory and exclusive result all agree on SHA256 `b15665743d28151bf2e9f656ae32dc8de9a3d6a5582c8033dbf251fec71daa2c`. Successful completion through the pinned inspector/launcher means both complete opaque stored hash passes and stream/stored agreement passed. This reviewer reuses that actual digest evidence; the ZIP stays on cluster and was neither transferred nor rehashed here. The record is not an independent reviewer attestation of stored asset bytes outside those executed gates.
+
+The result is `COMPLETE_METADATA_INVENTORY`,26 members, outcomes not read, member bodies not decoded and campaign/publication approval false. Archived timer exit0 and the post-inspection source checks corroborate successful wrapper completion; no failure marker is present/reported. Main's13:50:02+07 Slurm1604213 COMPLETED0:0/37s, single acknowledgement and absent queue entry are reported scheduler facts. The raw logs contain no independent scheduler accounting row; no live query was made. GNU time independently supplies exit0 and37.79s wall duration.
+
+### Complete bounded raw and collection history
+
+Exact raw02 whitelist: acquisition, bundle, controls stdout/stderr, inventory, launch stdout/stderr, timer, outer/payload/submission claims, permission preflight, reservation, result, Slurm stdout/stderr and literal submission, plus `archive.sha256`. That is17 payloads and18 files total, every file regular and single-link, no links/special files/extra directories. Actual payload sum15,182 bytes plus1,430-byte manifest =16,612 bytes, below2MiB; every file is small and the complete logs are retained. All17 local SHA256 checks PASS. No ZIP, control tree or decoded scientific data is in the archive.
+
+Main reports source-whitelist/type/cap checks and one17-file SCP completing exit0. Its premature local check while that same SCP was live saw7 files and10 not yet arrived; the subsequent complete18-file tree and17 matching hashes supersede that partial collection view. This is collection timing, not a runtime failure, scientific replay or corrupt-input diagnosis. Source-hash/transfer chronology was not repeated remotely by this reviewer. No raw trimming or historical01 alteration is indicated; those earlier failures remain preserved.
+
+### Account and scientific limits
+
+| Accepted measurement/charge | Value |
+|---|---:|
+| Full02 retained charge | 536,870,912 bytes |
+| Cumulative retained bytes | 41,309,049,739 +536,870,912 =41,845,920,651 |
+| Outer user + system CPU, once | 1.18 +1.89 =3.07 seconds |
+| Cumulative measured named CPU | 563.932707 +3.07 =567.002707 seconds |
+| Outer wall / maximum RSS | 37.79 seconds /35,092KiB |
+| Residual original candidate allocation maxima | 1,073,741,824 bytes /240 allowance seconds |
+
+Retain the full fresh charge and all prior failure charges. Do not add pytest4.58s wall, GNU37.79s wall or main-reported Slurm3.134CPU as another charge. The180-second allowance is not measured consumption. Timer filesystem/socket counters do not certify complete physical/opaque I/O. The booked snapshot remains a BOOKED pre-run record; the result note supplies actual closure/account, not a silent rewrite of that snapshot. Residual1GiB/240 is no new envelope, refund or automatic content job.
+
+The complete listing contains26 central records, with declared compressed total47,437,553 and uncompressed total49,102,172 bytes; independent sums match. Five `.vcf.gz` names include platinum, SVUPP and kanpig alongside other callers. README/pipeline/cost forms, an ONT-ultra-long-named samplesheet and neighbor/non-neighbor GQ scripts are metadata observations only. ZIP-declared uncompressed `.vcf.gz` sizes describe nested compressed files, not fully decoded VCF bounds. Member CRC/local-header/body consistency and decompression integrity were not assessed by this inventory.
+
+Do not infer absent HiFi, truth or callability from those names. No member header or body was read. Exact caller version/score meaning, complete common allele/reference identity, truth labels/callability, sample/technology/depth, required native-support fields and independent final validation remain unresolved. Current kanpig fitting/calibration prior art and the fixed1%/10-point development ceiling/ordinary-control/leakage constraints remain unchanged. Infrastructure success is not a biological null, reliable genotype measurement, oracle gap, new method or publication progress claim.
+
+**ACCEPT COMPLETE METADATA INVENTORY ONLY; scientific readiness remains HOLD.** A future limited provenance/header protocol is separate, UNBOOKED and UNEXECUTED and gains no permission from this result. No decoding, outcome analysis, caller, model training, alternate asset,03 or campaign is approved. Preserve the exact02 successful metadata evidence,01 failed controls, native closures, full charges, H_R UNTESTED and stopped generic released-callset route.

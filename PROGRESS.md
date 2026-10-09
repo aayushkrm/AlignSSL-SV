@@ -11,6 +11,35 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 independent actual02 review ACCEPTS COMPLETE METADATA INVENTORY ONLY:
+all17rawhashes/exact18files/fullcontrol/preflight/timer/pins/account checked.
+Main readsFULLactualappend; readinessstillHOLD, no decoding/scoring/model/03.
+Main usesFirecrawl officialPythonZIP/gzip docs and exactCPython3.10.20CRC
+excerpt (notfullstdlibaudit) to prepare a separate limitedprovenance/header
+protocol. A Luna/max sidecar owns bounded8membertext/header reader+synthetic
+controls; no realmember reads/job/book allowed. Currentretained41845920651B,
+567.002707CPU unchanged. Raw02completeoriginalbytes will be tracked unchanged.
+
+October9 actualinventory02 COMPLETEMETADATA, Slurm1604213COMPLETED0:0/37s.
+LiveO_PATH/effectivepermissionpreflight and33controls0skip4.58s pass; tree
+13,440bytes. Pinned47,443,427-byte asset matchesMD5/stream+storedSHA
+b1566574;26centralmembers inventoried, bodiesundecoded/CRCnotverified.
+[Result02](docs/research/2026-10-09-svupp-inventory-result02.md). Complete18raw
+files16,612bytes, all17payloadhashespass aftersameSCPexit0; earlypartial
+collectioncheck is not runtime/integrity failure. Full512MiBcharge retained
+41,845,920,651; outer3.07CPUonce→567.002707. Independentactualreview next.
+VCF/textnames plausible, but no HiFi/truth/callability/GQ readiness established;
+separate limitedprovenance/headerprotocol required before anycontent/outcomes.
+No model/scoring/publicationresult;01 remainsclosed, no03 or archive replay.
+
+October9 separate metadata inventory02 submitted ONCE as Slurm1604213.
+Exactreview/bookedsource pushed317b42d; fresh physicalroot13:48:10+07 after
+06:46:50UTC book. ThreeSCP stages return0; all8source/ledger/bundle/literal
+pins verify13:48:52+07. Finalbundleca51080b/literalda2a768e, ackexit0 jobID.
+Submission slot consumed; actualruntime and rawreview pending, no replay.
+Livepreflight and33zero-skips required beforedownload. No scientificcontent,
+caller/model/scoring or publication result. Full512MiB02charge retained.
+
 October9 main books unchanged02subset512MiB at06:46:50UTC, after exact
 CONDITIONAL ACCEPT and13:46:49+07 live freshroot/claimsABSENT, queueempty,
 physicalbase/access checks andOct22expiry. New cumulative retained bytes

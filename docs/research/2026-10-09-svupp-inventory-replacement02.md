@@ -165,3 +165,13 @@ Both literal claim/submission occurrences use that final hash. Verify all
 final pins on cluster before exactly one submission. Livepreflight and33
 zero-skips precede download; actual readiness/outcomes remain unestablished.
 No content analysis, caller, scoring, campaign or03 is authorized.
+
+## Single submission, actual result pending
+
+Exactsource/book/review pushed317b42d. Fresh physicalroot13:48:10+07;
+three explicit transfers returned0; final8pins, bookedledger/bundle/literal
+verified13:48:52+07. Main invokes the exact literal once; SSHreturns0,
+Slurm acknowledges1604213. Submission claim consumed; do not replay it.
+[Receipt](../../results/data_audits/svupp_inventory/2026-10-09/attempt02/submission_receipt.md).
+Actual controls/acquisition/inventory and independentrawreview are pending.
+No scientific or content-readiness result is implied by submission.

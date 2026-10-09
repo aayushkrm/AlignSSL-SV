@@ -32,6 +32,26 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 independentactual02 ACCEPTCOMPLETE METADATAONLY; main FULLactual
+  appendread, all17hashes/exact18files/runtime/account checked. Scientific
+  readinessHOLD, no nextreadapproval. Separate8memberprovenance/header
+  preparation: mainprotocol/officialPythonAPIcheck, Luna/maxreader+tests;
+  UNBOOKED, no memberread/newjob. Currentaccountunchanged567.002707CPU /
+  41,845,920,651B; fullraw02preserved. No scientific/publication claim.
+- October9 [actual02 metadata complete](2026-10-09-svupp-inventory-result02.md),
+  job1604213COMPLETED0:0/37s; livepermissionpreflight+33zero-skips4.58s,
+  authenticated47.4MBarchive26members/no memberdecode. Complete18raw16,612B,
+  all17hashespass afterSCP0. EarlylocalpartialcheckduringliveSCP superseded.
+  Retained41,845,920,651; measuredouter3.07once→567.002707CPU. Actualreview
+  pending; plausibleVCFnames do not establish fixedtechnology/truth/control
+  inputs. Separatecompleteprovenance/headerprotocol next, no automaticoutcome
+  analysis/caller/model/03. Fullpublicationgoal unmet.
+- October9 submitted1604213 ONCE, exactmetadata02 source/book/review pushed
+  317b42d. Freshroot13:48:10+07 afterbook;3SCPstages0, all8pins+bookedbundle/
+  literal verify13:48:52+07. Ack0/jobID, submission consumed. Finalbundle
+  ca51080b/literalda2a768e. Actualruntime/rawreview pending, no decoding or
+  scientificclaim;33zero-skips/livepreflightbeforedownload, no replay/03.
+
 - October9 main books512MiB02 at06:46:50UTC before anyroot/stage; numeric
   allowance unchanged afterexactreview andfresh13:46:49+07 root/claimabsence,
   queueempty/access/physicalbase/Oct22expiry. Retainedtotal41,845,920,651;
