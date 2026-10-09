@@ -95,3 +95,80 @@ Any later value proposal must keep separate whole-caller fixed-output ceilings, 
 Publication significance, learnability, independent structural truth, independent final donors/loci and leakage-safe evaluation remain unestablished. Technical NA12878 cell-line separation is not an independent biological family. The archive is development evidence, never an untouched final validation set. Do not revive the stopped generic released-callset route by renaming it. Parallel somatic-mixture literature work is separate and changes no scientific selection, input or permission here. If provenance demonstrates incompatibility, close this archive path; uncertainty cannot be promoted to ready data or trigger source-shopping.
 
 Final disposition: CONDITIONAL ACCEPT for this exact separate provenance/header stage and its status/timestamp-only booking repin, under every live and actual-stack gate above. Scientific/content/value/campaign readiness remains HOLD. Historical failures, complete actual inventory02 and all retained charges remain preserved.
+
+## Actual provenance/header01 — 2026-10-09
+
+ACCEPT COMPLETE BOUNDED PROVENANCE/HEADERS, complete raw preservation and the retained account. No concrete runtime, pin, raw-integrity or account HOLD remains for that limited result. Separately, ACCEPT closing this finite archive route as INPUTS NOT SUFFICIENTLY ESTABLISHED for the fixed ONT ultra-long→HiFi value question. The first disposition is execution success; the second is an input-readiness stop, not a failed biological experiment. Neither approves GT reading, scoring, calibration, an oracle calculation, a model, another archive pass or a campaign. Requested maintained Sol6.1/high remains backend-unattested.
+
+### Full actual read scope and verified pins
+
+Read FULL main's9,121-byte result01 note and all18 raw payload files plus the checksum manifest. Read the entire70,797-byte JSON report: all report/member metadata, all five complete authored text strings and all three complete VCF header strings. Read the full6,613-byte controls stdout, full preflight, claims, wrappers, literal, ledger, pin-check logs, result and timer. The three stderr files are actual zero-byte files. No truncated excerpt supplied this actual disposition.
+
+Independently checked the exact19-file whitelist, regular type, single-link counts, actual sizes and all18 payload SHA256 values. Compared raw ledger/bundle/literal/wrappers byte-for-byte with current candidates; rehashed all eight current source mappings. Checked all retained text/header byte lengths and hashes, sample sets/order, header columns and declared autosomal contig lengths. These are local JSON/text checks, not reopened member streams or genotype analysis. No real ZIP/hash/member replay, test run, network, cluster, key, Git, booking or job occurred. Only this owned note was appended.
+
+| Actual inspected snapshot | SHA256 |
+|---|---|
+| Main result01 note, independent-review-pending snapshot | `0a0373be577494f09f3b29dbf334e6ab63e8157df759510f3feedb8ec738fe68` |
+| Raw checksum manifest | `87f3447d9b042903ac276a02a3ce7f91f4248e85b6a46ebda2652d8cdc2645ef` |
+| BOOKED reservation | `8d21a5d35ea749abcc8cdc6576e3d655afcb37c1e2a4f52f25be12fe4044ed0e` |
+| Actual eight-entry bundle | `2ec99e9c94907f1b3a084ecadd255d1adf7a1aaaade3ccfda5619588cf287bff` |
+| Actual literal submission | `e9b91e5c9d5d5877e5e12ef2f833d6b0c96baeab2e5cc18d5928a84e9fea03d6` |
+| Complete provenance/header report | `6eef2546944b3a0a9732120e817f66fb5c25c9c85649ce85659950707d33ffed` |
+| Complete actual controls stdout | `ad331a5ba9b8f1e3d4d64c6f6d47a0d1e8777bafda43654ba9611b5dacec77bb` |
+| Live permission preflight | `cbbe380aac6a7717b787957ffc70def3d915da02934584f608c709d0a341372a` |
+| GNU waited-tree timer | `aafa31784af1d78321d5c2ea107b34d2bf8a18d47eba838d1ec8e6eeea6453b7` |
+| Complete owned review before this append | `9355202519c6e9bd346069b016d79099e35d94d891fd647e3480bf491aa02126` |
+
+Changing only the archived ledger's BOOKED status and `booked_at_utc=2026-10-09T07:36:03Z` back to UNBOOKED/null reproduces the accepted `94c7fc0c…` reservation hash. Reverting that one dependent bundle entry reproduces `94310367…`; replacing both literal bundle-hash occurrences reproduces `a8a28da3…`. All seven non-ledger hashes remain the exact accepted pins. Thus the actual local snapshots contain only the permitted booking and dependent-hash changes, not a source/test/wrapper/scope repair. Preserve the full preceding review and its UNBOOKED hashes as history.
+
+### Actual execution and custody
+
+Slurm stdout confirms bundle hash and all eight entries before timing. Launch stdout records Python3.10.20/pytest8.4.2,408,157 control bytes/168 entries and eight successful checks both after controls and after the reader. Every one of the frozen44 cases is listed PASSED; the complete log ends `44 passed in 0.88s`, with no skips. This meets the actual-stack gate before selected-member access. The control tree is below8MiB/4096 entries.
+
+The exclusive preflight records non-root euid1638200118/egid1638200010 and `LIVE_PROVENANCE_ROOT_SOURCE_METADATA_PASS`, the exact physical root/source,47,443,427 bytes and source device/inode. Under the unchanged pinned wrapper, that status follows Linux/flag, O_PATH traversal/fstat identity, regular-single-link source and effective-access assertions. It reads no source body. The later successful reader supplies actual leaf opening and digest checks; the preflight alone does not. Reported login-node device50 versus batch-node47 is not a guard failure: snapshots are compared within one execution, not asserted equal across mounts on different nodes.
+
+Report and exclusive result agree on completion and source SHA `b15665743d28151bf2e9f656ae32dc8de9a3d6a5582c8033dbf251fec71daa2c`; MD5 and exact size also match. The report records two complete opaque source hashes and all eight selected outer ZIP members reaching CRC EOF. Selected compressed/outer-decoded sums independently match28,409,706/29,444,142 bytes. The unchanged reader and successful wrapper establish those executed gates; this reviewer has not independently reopened or rehashed the stored ZIP.
+
+All five preserved UTF8 strings round-trip to their reported member sizes/hashes. All three complete headers round-trip to their header hashes, end at `#CHROM` and contain no retained genotype row. Header lengths are15,174/14,974/11,319 bytes, below256KiB. All read-ahead, decoded-body, records-not-interpreted and nested-integrity-unassessed disclosures remain present. Actual returned decoded prefixes equal these header lengths; that does not prove the gzip implementation inflated no internal lookahead. Outer ZIP CRC success still does not certify full nested VCF CRC/body integrity.
+
+GNU time records exit0 and2.84s wall. Main reports Slurm1604214 COMPLETED0:0/3s, one acknowledgement0, empty queue at14:39:11+07, source/book/review push `a357714`, fresh root at14:37:42+07, three staging SCPs exit0 and pins/unused claims at14:38:22+07. Booking07:36:03Z precedes that reported root time. These remote chronology/scheduler facts are main-reported; the retained logs do not include an independent scheduler accounting row or reviewer remote-clock check. Nothing in the local evidence contradicts the one fresh-root/one-submission path. The reported reviewer-handle send/resume issue had no experiment side effects and is not a job retry.
+
+Exact raw whitelist: `archive.sha256`, `bundle.sha256`, `controls.stdout.log`, `controls.stderr.log`, `launch.stdout.log`, `launch.stderr.log`, `launch_tree.time.log`, `outer.claim.json`, `payload.claim.json`, `permission_preflight.json`, `provenance_headers.json`, `reservation.json`, `result.json`, `run_outer.sh`, `run_payload.sh`, `slurm.stdout.log`, `slurm.stderr.log`, `submission.claim`, `submission_command.txt`. It contains18 payloads/87,753 bytes plus1,516-byte checksum =89,269 bytes, below1MiB including checksum. All19 are regular and single-link, without extra entries or directories; all18 hashes PASS. Largest file is the70,797-byte complete report. No ZIP, compressed member, control tree or GT dataset was transferred in this raw archive.
+
+Main's first preservation whitelist omitted both already staged wrappers. Its exact-root assertion reportedly stopped before checksum creation or transfer. The final reconciled list includes both original wrappers, whose hashes match the accepted originals. This is a genuine collection-list error, now corrected by preserving more required evidence within unchanged caps. It is not a runtime failure, source repair, rerun, trimming, biological null or change to selected members. Main reports one subsequent19-file SCP completing exit0 before local checks; the complete local tree/hashes support completed collection, while remote stop/transfer chronology is not independently queried here.
+
+The accompanying result note attributes the unaltered authored strings to Li, Zilong, creator; Staeger, Frederik, contributor; SVUPP v0.0.2, Zenodo17569072/DOI10.5281/zenodo.17569072, with the reported CC BY4.0 license metadata. It separates those strings from this project's JSON/hash/scope additions and says archived commands were not executed. This meets the protocol's accompanying attribution requirement. The verified string round-trips support unaltered preservation; no new license/ownership audit or third-party/repository relicensing is claimed. Official metadata attribution remains the prior main-reported primary verification, not a new reviewer network reading.
+
+### Retained account
+
+| Accepted charge/measurement | Value |
+|---|---:|
+| Full fresh retained stage charge |268,435,456 bytes|
+| Cumulative retained bytes |41,845,920,651 +268,435,456 =42,114,356,107|
+| Actual outer user + system CPU, once |0.94 +0.61 =1.55 seconds|
+| Cumulative measured named CPU |567.002707 +1.55 =568.552707 seconds|
+| Wall / maximum RSS |2.84 seconds /48,184KiB|
+| Residual original candidate allocation maxima |805,306,368 bytes /180 allowance seconds|
+
+Do not refund the stage because inputs remain unready, or refund any earlier failed attempt. Do not add Slurm1.611CPU, pytest0.88s wall or outer2.84s wall again. The60-second allowance is not measured consumption. The BOOKED snapshot remains a pre-run ledger; actual closure/account belongs in the result history, not a rewritten snapshot. GNU filesystem counters do not certify complete physical/cache I/O. Residual allowance is neither automatic permission nor a new candidate envelope.
+
+### Separate scientific closure and remaining uncertainty
+
+ACCEPT main's narrow closure: the required fixed source/target query pair is not sufficiently established by this finite inspected archive route. The selected provenance supports ONT input paths, an ONT-UL/10X README example and one caller column per donor. The pipeline's `hifi=false` default and HiFi branch show available code paths, not an executed, separately identified archived HiFi query. A truth/catalogue derived partly from HiFi-related evidence cannot substitute for target caller GT/GQ views. The fixed1%/10-point source→target question cannot be evaluated merely by relabeling these available views. No favorable ONT-only endpoint or extra member/data hunt is approved.
+
+| Verified retained evidence | Permitted interpretation / unresolved gate |
+|---|---|
+| All three headers contain NA12877/78/79/81/82/85/86; their three orders differ. | Same seven named donors, requiring name-based joins, not column-position joins. The pedigree is not independent families or final-validation donors. Technology, depth and exact caller-output mapping remain incomplete. |
+| Autosomal contig lengths match; truth/kanpig reference paths and SVUPP command name GRCh38 no-alt resources. | Declared agreement, not reference digest, ALT/ID/row identity, dosage comparison or callable-label proof. |
+| README lists kanpig1.0.2; its header has kanpig GT/FT/SQ/GQ/PS/NE/DP/AD/KS definitions and inherited Sawfish lineage, without an explicit kanpig version/run command. | Intended dependency and declared fields are not actual executed-version or complete-row attestation. Inherited `source` is not evidence that kanpig failed to run. Current nativev2 fitting/calibration prior art remains. |
+| README lists the forkv0.0.2; SVUPP header says cuteSV-3.0.1 and contains the haplotype-probability command on a downsample BAM. | Fork/version relationship and exact score semantics remain unresolved. No contradiction, software bug, incorrect release or calibrated error probability is proved. |
+| Truth header declares Sawfish lineage, GQ/PASS filters, ItTreeMerge sawfish+sniffles_ont+pggb+pav and genotype-consensus tags. | Development labels have mixed construction/selection. Orthogonality, donor callability, input contribution and label dependence are unresolved, not proven unbiased truth or proven circularity. |
+| R texts join IDs/samples, split `NumNeighbors==0` versus its complement, rank GQ and drop NA discordance; pipeline names an external GIAB BED. | Useful declared analysis provenance only. No actual row join, neighbor count or mask was checked. Do not copy missing-outcome exclusion as the new common denominator, equate the variable name `diallelic` with verified allele cardinality, or assume this BED applies to every pedigree donor. |
+
+Headers declaring FORMAT/GT/GQ/support do not establish that every row has valid fields. Shared donor names and contig lengths do not establish reference/allele equivalence. No row, discordance, retained coverage, error-rate bound, uncertainty interval, fixed-output ceiling or method performance has been measured. GQ calibration remains known prior art; an old-output gap cannot establish novelty against present native controls. The seven pedigree donors and technical cell-line distinction cannot supply independent biological transfer.
+
+This closure is an investment/readiness stop under a finite input contract, not proof that the target technology is absent anywhere in the archive or elsewhere, or that the scientific hypothesis is false. Uninspected members and external resources remain uninspected; missing declared query views do not prove universal data absence. Do not reinterpret unspecified technology or inherit a truth label into an executed query. Remaining uncertainties are recorded, not requests for another repair/read loop. Close this route without source/header replay, additional members, substitute caller/platform, bundled-code execution, genotyping or endpoint change.
+
+The reported somatic-mixture sidecar has not verified a second physical mixture or usable scored query. Its25-result-card versus15-slot discovery deviation and four primary fetches remain reported limitations, not exhaustive literature/data absence or automatic pivot selection. That sidecar was not read or independently audited in this actual-result review. A new consequential scientific direction needs its own evidence and decision; unused resource allowance does not select it.
+
+Final actual disposition: ACCEPT complete bounded execution/raw/account; ACCEPT closing this archive route as INPUTS NOT SUFFICIENTLY ESTABLISHED for the fixed ONT ultra-long→HiFi question. Scientific value, methods, biological truth, campaign and publication readiness remain unestablished. Historical01/02 failures and accepted inventory02 remain preserved. No positive result, biological null, replay, next booking or automatic pivot is approved. The full governing publication objective remains unmet.

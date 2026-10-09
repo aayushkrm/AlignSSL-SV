@@ -11,6 +11,24 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 READMErefresh branch19dbed4 promoteddocumentationONLY todefaultmain
+60ff1dfb369d03ffebe3ffe2dccd5e645aebb702; remoteconfirmed, exact2changedfiles
+README.md + tests/test_readme_research_landing.py, main3pass0skip0.02s.
+Researchbranchdocs/PROGRESS tests11pass0skip3.78s; raw/sciencecode notpromoted.
+Appworktreecreation reportsnotGit (chatcontext); isolatedtemporaryGitcheckout
+used instead, thenremovedonlyaftercleanincludingignoredfiles/remoteproof.
+GitHub reports existingaccountPR-rulebypass; no protections/settingsmodified.
+Preserve this governancemessage; futuremain changes should usePRreviewflow.
+Reviewedarchiveclosure is not biologicalnull or publicationlead; fullgoalactive.
+
+October9 independentactual provenance ACCEPTCOMPLETEboundedexecution/raw/account
+and separately ACCEPTfinitearchivepathCLOSURE: fixedONT→HiFiviews notsufficiently
+established. MainFULL77-lineappendread; exact19files/all18hashes/bookrepins/
+44clusterpasses/fulltexts+headers/timer/account checked. NoGT/scoring/biologynull/
+globaldataabsence/replay/newcampaign. Fullgoalunmet; separate Sol6.1/MAX
+scientificinvestmentcomparison and Luna/MAXretainedinputmetadataaudit running.
+Documentationguard11pass0skip4.07s; fournewresearchindexlinks exist.
+
 October9 actualprovenance/header01 COMPLETERUNTIME, Slurm1604214COMPLETED0:0/
 3s; actual3.10.20pytest8.4.2/44zero-skips0.88s, tree408157B168entries, pins
 pass. Full8outerCRC/2sourcehash/fiveauthoredtexts/threeheaders preserved;

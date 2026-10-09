@@ -113,3 +113,22 @@ The full publication goal remains unmet. DeepSV is not a foundation and SSL
 has no preferred status. Preserve honest failures and this complete input
 evidence; select the next investment by consequential novelty and usable,
 independently evaluable data, not by a desire for a positive number.
+
+## Independent actual disposition
+
+Maintained Sol6.1/high-requested reviewer completes **ACCEPT COMPLETE BOUNDED
+PROVENANCE/HEADERS, RAW AND ACCOUNT** and separately **ACCEPT FINITE ARCHIVE
+ROUTE CLOSURE: INPUTS NOT SUFFICIENTLY ESTABLISHED**. Main reads the entire
+77-line actual append. All19files/18hashes/round-trip full text and header
+hashes/book-only repins/44actual passes/timer/account are independently
+verified locally. Scheduler/transfer/source-push chronology stays
+main-reported, not a reviewer remote check. Historical review prefix and raw
+bytes remain unchanged. Final reviewSHA256
+`da5fe15c09a2d1f9e5be9dc75747b764a47304f989b2cfba1b3b1b4a519491cc`.
+
+Close this finite route now. No genotype outcome read, value calculation,
+additional member, source/platform substitution or replay follows. Unknown
+callability, actual caller versions, complete target views and truth
+independence remain recorded uncertainties, not repair tasks. No biological
+null or exhaustive data absence is claimed. No new campaign or pivot is
+automatically approved. The full publication objective remains active/unmet.

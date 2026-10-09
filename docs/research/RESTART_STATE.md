@@ -32,6 +32,17 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 READMEdocumentation-only defaultmain60ff1df remoteconfirmed,
+  exactREADME+landingtest2files; isolatedmain3pass0skip0.02s/researchdocs11pass
+  0skip3.78s. No science/rawpromotion. Appworktreeerror resolvedbyisolatedGit
+  checkout, removedafterclean/remoteproof. GitHubreportsPR-rulebypass by
+  existingaccount; no settingschanged, retainrecord/usePRflowfutureupdates.
+- October9 independentactual provenance ACCEPTboundedexecution/raw/account;
+  separateACCEPTCLOSEDfinitearchivepath, fixedONT→HiFiinputsnotestablished.
+  MainFULL77-lineappend; exact19raw/all18hashes/fulltexts+headers/44cluster
+  passes/bookonlyrepins/timer/account checked. Nooutcome/biology-null/global
+  absence/replay/pivotapproval. Goalactiveunmet; Sol6.1MAXnextinvestment and
+  LunaMAXretainedinputmetadata sidecar running. Docs11pass0skip4.07s.
 - October9 actualprovenance1604214 runtimecomplete0:0/3s; actual44zero-skips
   0.88s/408157Btree/8outerCRC/2SHA/fivefulltexts/threefullheaders. SingleSCP0,
   exact19raw89269B/all18hashes; initialcollectionomittedwrappers assertion
