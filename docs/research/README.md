@@ -8,7 +8,8 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
-| [`2026-10-10-platinum-sva-source-check.md`](2026-10-10-platinum-sva-source-check.md) | Main's read-only original variant row and pinned public-material check | Exact reported child SVA confirmed; sequence/convention missing in inspected table, no current failure, genomic acquisition or caller run |
+| [`2026-10-10-sniffles-sva-native-input-check.md`](2026-10-10-sniffles-sva-native-input-check.md) | Completed Luna/max-requested pinned native-policy and regional-input check | Five source files; constant default support floor, intended germline/mosaic differences, no empirical result or novel failure |
+| [`2026-10-10-platinum-sva-source-check.md`](2026-10-10-platinum-sva-source-check.md) | Main's original variant row, pinned public-material and capped header check | Child SVA confirmed; 65,536-byte BAM prefix/text header verified, sequence/convention incomplete, no current failure, regional assay or caller run |
 | [`2026-10-09-family-structural-falsifier-scout.md`](2026-10-09-family-structural-falsifier-scout.md) | Completed Luna/max-requested specific family-mechanism scout | Reported parental SVA mosaic permits a candidate current native-mode comparison; no actual caller failure, empirical launch or novelty claim |
 | [`2026-10-09-structural-transcript-falsifier-scout.md`](2026-10-09-structural-transcript-falsifier-scout.md) | Completed Luna/max-requested consequence/material scout | Published controlled fusion case and public paired reference lines; no new supported one-locus consequence test in this pass |
 | [`2026-10-09-runtime-and-paired-access-check.md`](2026-10-09-runtime-and-paired-access-check.md) | Actual runtime, bounded retained assets and four public track-manifest checks | samtools/Truvari work; hub bw/bb fields are not RNA alignments, not global absence; no acquisition/jobs |

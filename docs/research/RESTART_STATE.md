@@ -32,6 +32,18 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 10 main's [source-check addendum](2026-10-10-platinum-sva-source-check.md)
+  records exactly65,536B of actual public BAM-prefix acquisition and its hash;
+  only text header parsed, no target alignment/outcome, BAI or regional set.
+  Read groups NA12878, chr3 dictionary and CHM13v2.0 program filename verified,
+  not full reference/coverage/allele identity. Full completed
+  [Sniffles source check](2026-10-10-sniffles-sva-native-input-check.md) read by
+  main: constant native support floor3, explicit low-VAF germline filter,
+  multiple mosaic-policy differences. Retain native defaults for a principal
+  comparison; designed behavior is not new scientific failure. Worker closed.
+  Fresh basePython3.12.1, bioinfoGraalPy3.10.8, TruvariPython3.10.20 metadata;
+  no current PATH Sniffles, install, caller or job. Max selection still pending;
+  maintained reviewer available. Goal active/unmet.
 - October 10: main read both completed [transcript](2026-10-09-structural-transcript-falsifier-scout.md)
   and [family](2026-10-09-family-structural-falsifier-scout.md) scouts. Published
   controlled fusion is not a new result; reported parental SVA is a specific

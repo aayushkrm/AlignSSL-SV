@@ -11,6 +11,28 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 10 source follow-up: main acquired one capped 65,536-byte public BAM
+prefix (HTTP206), then parsed only its text header. The prefix may contain
+bytes beyond the header; its acquisition is counted, not called zero data.
+All 13 read groups name NA12878; chr3 length and pbmm2's CHM13v2.0 reference
+filename agree with the intended source context. No alignment record was
+parsed and no target coverage, whole-file integrity or exact allele identity
+was established. See the [source-check addendum](docs/research/2026-10-10-platinum-sva-source-check.md).
+
+Main read the full completed [Sniffles native-input check](docs/research/2026-10-10-sniffles-sva-native-input-check.md)
+and its authorized fifth-file follow-up. Pinned v2.8.1 source supports regional
+indexed BAMs, uses a native constant three-read germline support floor and
+explicitly filters low-VAF calls in germline mode. Mosaic mode changes several
+native filters. This is documented intended behavior, not a new scientific
+failure. Any principal pair must retain the native policies; arbitrary shared
+merge overrides are not automatically a fair current-baseline result.
+The worker is closed after completion. Cluster interpreters: base CPython
+3.12.1, bioinfo GraalPy3.10.8, Truvari CPython3.10.20. Sniffles not found on
+current PATH; no install, BAI/regional reads, caller or cluster launch.
+The same Sol6.1/max-requested decision remains pending; no publication claim.
+Documentation checks after this follow-up: 15 passed, zero skips, in
+4.02 seconds; whitespace check passed. Not a biological performance check.
+
 October 10: both bounded empirical scouts completed; main read both full
 notes. The [transcript scout](docs/research/2026-10-09-structural-transcript-falsifier-scout.md)
 found a published controlled-access fusion case and four public paired

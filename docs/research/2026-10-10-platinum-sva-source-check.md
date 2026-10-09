@@ -1,8 +1,9 @@
 # Platinum pedigree SVA: original source check
 
 10 October 2026, local time. Main's read-only evidence check, in parallel with
-scientific selection and the current Sniffles input check. No caller or
-genomic-read acquisition has occurred in this check.
+scientific selection and the current Sniffles input check. The initial phase
+had no caller or genomic acquisition. The later addendum records one actual
+BAM-prefix acquisition for text-header inspection, not a regional assay.
 
 ## Original workbook
 
@@ -74,3 +75,33 @@ ordinary baseline through altered global-coverage or support thresholds.
 No acquisition or launch follows from the table check alone. One-case native
 success can reject a new-method rationale; one-case failure cannot establish
 prevalence, clinical risk or publication readiness. The full goal is unmet.
+
+## Actual capped header check, 00:12 local
+
+After the source-only checkpoint, main made one request for BAM bytes 0–65535.
+HTTP206 returned exactly 65,536 bytes of the 203,640,216,494-byte object,
+with the same multipart ETag observed by HEAD. The unchanged prefix SHA256 is
+`a6a24cbcd3fa664bfe552be5532eb4c81fbf661af771e7af036dae623bba0114`.
+Prefix and HTTP headers are preserved beside the workbook, outside Git.
+This is an actual public BAM-body prefix acquisition, not zero downloaded
+data. It can contain bytes after the header; no alignment record was parsed,
+scored or used to choose a result. Additional source-prefix charge: 65,536 B.
+No whole BAM, BAI, regional alignment set, caller or cluster job was acquired.
+
+The bounded Node helper decompressed only complete BGZF blocks needed for
+the BAM text header (4,640 compressed bytes, 49,275 text-header bytes). It
+found 113 text-header lines and 25 SQ records. Main read the compact field
+summary: coordinate-sorted; chr3 length 201,105,948; all 13 read groups have
+sample NA12878 and PACBIO platform, with SEQUELII and REVIO instruments.
+pbmm2 program records name `human_chm13v2.0_maskedY_rCRS.fasta` and
+version 1.10.0; whatshap 1.4 and samtools 1.14 merge provenance are recorded.
+The first display of selected raw header lines was clipped. A bounded field
+summary recovered the relevant metadata. The chr3 SQ record has no checksum
+field. The program filename is provenance for CHM13v2.0, not independent
+verification of every reference base or the paper's blood-source attribution.
+Whole-file integrity and regional index access remain untested.
+
+Main also read the complete `Calling de novo TRs` opening/method paragraphs
+in the primary body: parent NA12878 is reported at 109-fold HiFi depth, and
+G1 cell-line DNA is explicitly a potential artefact source. This is reported
+study depth, not measured locus coverage in the public BAM.
