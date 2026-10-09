@@ -32,6 +32,12 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 9 independent reviewer ACCEPTS the HG008 material-route closure;
+  main read all20 appended lines, prior103-line snapshot preserved. Counts
+  and four saved source hashes agree. No fixed16/valid32/context or empirical
+  null is claimed, and no acquisition/fallback is released. Initial notes
+  pushed9b6b428, remote confirmed. Same Sol6.1/max-requested decision agent
+  synthesizes the next investment; no duplicate or new experiment. Goal unmet.
 - October 9 [HG008 document feasibility](2026-10-09-hg008-material-feasibility.md)
   CLOSED INCOMPLETE/TRUTH INCONCLUSIVE after21min02sec at14:50:53UTC;
   19annotated confident CNV:TR rows, notverified fixed16four-callsetmisses.
