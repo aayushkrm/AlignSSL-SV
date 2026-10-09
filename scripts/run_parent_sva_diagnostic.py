@@ -3,6 +3,7 @@ import argparse
 from concurrent.futures import ThreadPoolExecutor
 import hashlib
 import json
+import os
 from pathlib import Path
 import resource
 import subprocess
@@ -60,6 +61,7 @@ def main():
     sniffles = Path(sys.executable).parent / "sniffles"
     start = time.time()
     manifest = {"started_unix": start, "state": "started", "commands": {},
+                "slurm_job_id": os.environ.get("SLURM_JOB_ID"),
                 "limits": {"genomic_http_body_bytes": 4 * 1024**3,
                            "cpu_seconds": 1800}, "source_code": {}}
     for p in (Path(__file__), root / "scripts/acquire_parent_sva_region.py",

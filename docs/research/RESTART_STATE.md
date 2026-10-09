@@ -32,6 +32,13 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 10 [execution record](2026-10-10-parent-sva-execution.md): worker
+  complete; 33 local tests plus six subtests and seven deployed acquisition
+  controls pass. Job1604234 failed before Python, signal53, no genomic result.
+  Same-node read-only1604235 preflight completed; alias failure is not proved.
+  Direct-srun replacement02 prepared with unchanged science and three useful
+  CPUs. HG002 DNA-input recipe sidecar active; no RNA or large launch.
+  Reviewer maintained; full research goal active and unmet.
 - October 10 completed [selection](2026-10-09-public-paired-falsifier-decision.md)
   and [independent review](2026-10-10-public-paired-falsifier-review.md) FULL
   read by main (161/81lines). Selected one parental regional native-policy

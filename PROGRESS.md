@@ -11,6 +11,17 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 10 [execution update](docs/research/2026-10-10-parent-sva-execution.md):
+acquisition implementation completed, corrected and checked (33 local tests
+plus six subtests; seven exact cluster acquisition controls). Job1604234
+failed before Python after one second, signal53; no regional data or caller
+result. Read-only same-node preflight1604235 completed. Both home aliases and
+Python work; the failed batch I/O cause is not proven. A direct-srun replacement
+uses the same frozen scientific settings and three useful CPUs; it is prepared,
+not yet submitted. No biological null or positive. A separate Luna/max-requested
+HG002 DNA-input recipe worker resolves exact staging inputs without RNA reads,
+large acquisition or launch. Maintained reviewer available; full goal unmet.
+
 October 10 main read the full161-line completed [selection](docs/research/2026-10-09-public-paired-falsifier-decision.md)
 and81-line [independent review](docs/research/2026-10-10-public-paired-falsifier-review.md).
 Select one parental SVA regional native-policy diagnostic, not a publication
