@@ -8,6 +8,9 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-10-parent-sva-diagnostic-protocol.md`](2026-10-10-parent-sva-diagnostic-protocol.md) | Prospective one-parent native comparison and independent CIGAR census | Frozen compatibility/acceptance distinctions; runtime and11newcontrols pass; bounded acquisition code pending, unlaunched |
+| [`2026-10-10-public-paired-falsifier-review.md`](2026-10-10-public-paired-falsifier-review.md) | Completed maintained independent scientific review | Conditional acceptance of cheap SVA diagnostic and HG002 scientific eligibility; executable P1/endpoint/RNA/null conditions, no600CPU-hour campaign or publication approval |
+| [`2026-10-09-public-paired-falsifier-decision.md`](2026-10-09-public-paired-falsifier-decision.md) | Completed Sol6.1/max-requested scientific selection | One parental native-policy diagnostic first; frozen HG002 DNA-first unknown-residual pilot eligible, not a selected method/paper or expensive launch |
 | [`2026-10-10-sniffles-sva-native-input-check.md`](2026-10-10-sniffles-sva-native-input-check.md) | Completed Luna/max-requested pinned native-policy and regional-input check | Five source files; constant default support floor, intended germline/mosaic differences, no empirical result or novel failure |
 | [`2026-10-10-platinum-sva-source-check.md`](2026-10-10-platinum-sva-source-check.md) | Main's original variant row, pinned public-material and capped header check | Child SVA confirmed; 65,536-byte BAM prefix/text header verified, sequence/convention incomplete, no current failure, regional assay or caller run |
 | [`2026-10-09-family-structural-falsifier-scout.md`](2026-10-09-family-structural-falsifier-scout.md) | Completed Luna/max-requested specific family-mechanism scout | Reported parental SVA mosaic permits a candidate current native-mode comparison; no actual caller failure, empirical launch or novelty claim |

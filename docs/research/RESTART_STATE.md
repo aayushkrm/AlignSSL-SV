@@ -32,6 +32,17 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 10 completed [selection](2026-10-09-public-paired-falsifier-decision.md)
+  and [independent review](2026-10-10-public-paired-falsifier-review.md) FULL
+  read by main (161/81lines). Selected one parental regional native-policy
+  diagnostic with [frozen protocol](2026-10-10-parent-sva-diagnostic-protocol.md);
+  PASS, GT and compatibility distinctions implemented. HG002 coding-path
+  pilot scientifically eligible, but P1/endpoint/RNA/account operational gates
+  unresolved; no600CPU-hour campaign release. Isolated actualCPython3.12.1
+  Sniffles2.8.1runtime qualified by CLI/imports/pipcheck. Main census/run harness
+  implemented,26tests0skip/3.94s, not genomic evidence. Bounded acquisition
+  worker active, noBAI/regionalreads/nativeoutcome/Slurmjob. Decision worker
+  closed; reviewer maintained. Full publication goal active/unmet.
 - October 10 main's [source-check addendum](2026-10-10-platinum-sva-source-check.md)
   records exactly65,536B of actual public BAM-prefix acquisition and its hash;
   only text header parsed, no target alignment/outcome, BAI or regional set.

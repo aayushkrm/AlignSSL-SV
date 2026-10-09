@@ -11,6 +11,26 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 10 main read the full161-line completed [selection](docs/research/2026-10-09-public-paired-falsifier-decision.md)
+and81-line [independent review](docs/research/2026-10-10-public-paired-falsifier-review.md).
+Select one parental SVA regional native-policy diagnostic, not a publication
+direction. Review conditions are implemented in the [prospective protocol](docs/research/2026-10-10-parent-sva-diagnostic-protocol.md):
+PASS/filter state, actual GT and sequence evidence are separate; intended
+mosaic visibility is not forced into a diploid-heterozygous representation.
+The public paired HG002 DNA-first unknown coding-path residual is scientifically
+eligible without pre-proved failure, but its operational predicate, endpoints,
+RNA adjudication and large prospective account are not qualified or released.
+No600CPU-hour campaign or major positive is accepted.
+
+An isolated cluster CPython3.12.1 runtime now actually runs Sniffles2.8.1;
+`pip check` and native-extension imports pass. Exact dependency freeze is in
+the protocol. Main implemented the frozen CIGAR census and native parallel
+run harness.26tests pass, zero skips, in3.94seconds (11newcensus/acceptance
+controls plus15docschecks); not a genomic result. Luna/max-requested bounded
+HTTP-body acquisition implementation is active. No BAI, regional read set,
+caller outcome or new Slurm job yet. Completed decision worker closed;
+maintained reviewer available. Goal active and unmet.
+
 October 10 source follow-up: main acquired one capped 65,536-byte public BAM
 prefix (HTTP206), then parsed only its text header. The prefix may contain
 bytes beyond the header; its acquisition is counted, not called zero data.
