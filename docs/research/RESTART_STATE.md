@@ -32,6 +32,11 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 retainedmetadata sidecar completed/mainFULLread:6stagedcallers
+  present, sharedtruth/samplecontract unestablished. Nineteenpath lstatonly,
+  notfullinventory; authorBAMlabelpathENOENT notlostasset/allHiFidataabsence.
+  Mainqualification forwardsMAXdecision; suggestedharmonizationpilot not
+  selected, no oldroute revival. Newdata canbejustified bydistinctreviewedgoal.
 - October9 READMEdocumentation-only defaultmain60ff1df remoteconfirmed,
   exactREADME+landingtest2files; isolatedmain3pass0skip0.02s/researchdocs11pass
   0skip3.78s. No science/rawpromotion. Appworktreeerror resolvedbyisolatedGit

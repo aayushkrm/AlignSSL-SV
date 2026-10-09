@@ -11,6 +11,14 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 Luna/MAXretained-input metadata sidecar completes; mainFULLread.
+One19explicitpath lstatquery confirms6stagedcallers, nosharedsample/truth/
+callabilitycontract established. Author-styleBAMlabelpathENOENT notlostretained
+BAM/allHiFiabsence; unlocatedcohortpaths/software notexhaustiveabsence. Main
+addsqualification and forwardscompletednote toMAXdecision; proposedgeneric
+representationpilot remainsunselected/overlapspriorart andSTOProute. Necessary
+newdata remain possibleonlyfor distinctjustifiedreviewedscience, no universalban.
+
 October9 READMErefresh branch19dbed4 promoteddocumentationONLY todefaultmain
 60ff1dfb369d03ffebe3ffe2dccd5e645aebb702; remoteconfirmed, exact2changedfiles
 README.md + tests/test_readme_research_landing.py, main3pass0skip0.02s.

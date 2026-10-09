@@ -8,6 +8,7 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-09-retained-input-actionability.md`](2026-10-09-retained-input-actionability.md) | Bounded retained-file/tool metadata sidecar |Six staged caller files present; shared truth/sample contract and current cohort paths unverified; author-style BAM label path absent is not a lost retained BAM or exhaustive data absence; suggested representation pilot unselected |
 | [`2026-10-09-svupp-provenance-header-result01.md`](2026-10-09-svupp-provenance-header-result01.md) | Actual bounded provenance/header check and complete raw |Independent ACCEPT bounded execution/raw/account;44 actual zero-skip controls;19 raw files89,269B/all18hashes; finite archive path CLOSED, fixed ONT→HiFi inputs not sufficiently established; no biological null |
 | [`2026-10-09-svupp-provenance-header-review.md`](2026-10-09-svupp-provenance-header-review.md) | Independent exact and actual code/control/account scrutiny |Historical conditional acceptance preserved; actual ACCEPT bounded execution/raw/account and separate finite input-readiness closure; no scoring/campaign/pivot approval |
 | [`2026-10-09-svupp-provenance-header-protocol.md`](2026-10-09-svupp-provenance-header-protocol.md) | Fixed eight-member text/header scope, caps and attribution |Frozen candidate then BOOKED256MiB/60; job1604214 complete; no genotype-row interpretation, endpoint substitution or replay |
