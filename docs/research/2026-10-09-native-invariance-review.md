@@ -237,3 +237,81 @@ Integration must use the observation state and uncertainty reasons. The `unresol
 Main reports39 tests passed,0 skipped in0.69s, including3 README tests. That is consistent with the previously reviewed15 fixture cases,17 observer cases, these4 regressions and3 reported README cases. This reviewer did not run tests or inspect the README tests. Acceptance here rests on the narrow source/regression review and matching file hashes, not an independent rerun or native-input compatibility claim.
 
 Only this owned note was appended. No implementation file, test, protocol or ledger was changed by the reviewer; no test execution, fixture generation, installation, native caller, network, SSH, genomic input or Git action occurred. Requested maintained Sol6.1/high remains backend-unattested. The observer code/observation HOLD is now CLOSED at the pinned source-review level. Separate resolved-settings integration, exact-stack verification, complete byte/CPU accounting, containment, commands and archive review remain required before a launch disposition.256MiB and600 named CPU seconds remain UNBOOKED; historical STOP, charges and guards remain unchanged.
+
+## Exact launch review: conditional ACCEPT of the pinned one-attempt bundle
+
+2026-10-09. **CONDITIONAL ACCEPT of this exact bounded launch, including its scientific stops, code, literal submission and complete named account.** No outstanding scientific/code HOLD was found in the final reviewed snapshot. Booking, fresh-root/live-state checks, remote hash verification and exact-stack/runtime gates remain conditions. This review does not perform or attest those steps. The candidate remains UNBOOKED, UNSTAGED and UNEXECUTED in the evidence read here.
+
+Read FULL the execution note, runner, settings validator, launcher/settings/integrity tests, both shell scripts, and then the final corrected runner, execution note, protocol, bundle manifest, literal submission file and reservation candidate. Existing fixture/observer source pins match their previously reviewed versions. All12 manifest entries were checked against their actual local source mappings, with12 OK results. No test or native command was executed; main's70 passed,0 skipped in0.79s is reported local evidence. The five selected suites contain15 fixture,21 observer,8 launcher,15 settings and11 integrity cases, totaling70. Requested maintained Sol6.1/high remains backend-unattested.
+
+| Final execution identity | Independently observed SHA256 |
+|---|---|
+| `bundle.sha256` | `5fb12fce0d6a5a43a170827af88405214af59c98f99718a14733dc1503c3cfad` |
+| Literal `submission_command.txt` | `cf3c89a8e773c74fce34d9d430fc6945092525d1a4d73aab0344ac487f1049f9` |
+| Candidate `reservation.json` | `fc776c7bc7001b762ba040f451d4da9a96c13c194433e0a29315c72666ca513f` |
+| Final execution note | `6d008e2bf8f1dcafd81bc9ade40e9a5e1aa722e1b3e3983137f9fa11954675d2` |
+| Final runner | `2a6ae0fc6c04075702c021bb7860fa89e7c88ae0676048bb124286bf18d97867` |
+| Settings validator | `2c32586e019ce3d5f1de36c10bffeb3a894f50ac18962c65019f8fc70899d556` |
+| Outer wrapper | `acdbc90680fd02e0712f4dc25f0144e71b0c9dd830cd5bae69dde095c597a9ff` |
+| Corrected payload wrapper | `928dca3f02c26d0b379f2533efafd840a40a89342558a686abfb3db1ef0cf1a5` |
+| Staged protocol source | `d4a0f851bd4536e5a3b6275dd8a11c2bc5832af9c26672b9b8fc8bfa58c6953e` |
+| Owned review before this append | `070dd599caf9f83fd90df9996b94296041cfc22e5fd2b211bd4f507a1db47787` |
+
+The manifest maps its nine `code/analysis` and `code/tests` entries to the corresponding repository `analysis` and `tests` files; its two shell entries map to the dated local launch directory; `protocol.md` maps to the current research protocol. The fixture and observer retain hashes `d26fbfc1199e06d6506f65369e14036bc3936d0ac94a6793a3914f5d2d6c9bd7` and `22b5294b3865c7bd22121d0b136dc227892212aad05f54bcb0caaabbdeb4d9a9`. The actual manifest, not an inferred list, controls remote verification. The separate submission and reservation hashes above bind the inspected operational/account candidates; they are not additional manifest entries.
+
+### Scientific gates and observed settings
+
+ACCEPT the common `--cov-regex '^chrSynthetic$'` correction before outcomes. Main reports a full pinned discover-CLI read showing flat snake_case serialization and a mandatory header regex match even with CNV disabled. This reviewer did not fetch that source. The same regex is used in all four discovery commands, so it changes input acceptance without changing the reference, molecules, allele truth or primary contrast. No outcome-driven tuning occurred in the evidence inspected here.
+
+The settings validator reads and posthashes a stable, bounded regular file; rejects links, duplicate JSON keys, nonstandard numbers and imprecise types; checks reporting minimum35, noise margin10/30, the common regex, CNV disabled, no fast mode, ordinary identity/MAPQ/QUAL and no target-cluster or external annotation setting; and checks exact canonicalized input paths and output directory. It returns all serialized fields. The runner compares every returned field across arms except BAM filename, output directory and the intended margin. ACCEPT that observed-settings contract; no default is substituted for actual saved settings. This is not proof that the binary will emit the expected schema: a mismatch stops the attempt.
+
+The controller uses `single_record_output_state`, not individually unresolved-record counts. UNRESOLVED in candidate or final output stops incomplete. Canonical requires at least one same-record exact+explicit-PASS+heterozygous recovery; failure stops all later arms. REF-only requires ABSENT_FROM_OUTPUT in both candidate and final, even if an exact false allele is filtered or reference-genotyped. Known exact positives remain visible with uncertainty about other records. No candidate/BED absence is assigned a unique causal stage.
+
+The full miniature reference and fixed arm order are preserved. Rescue reuses `fragmented.bam`; only its discovery noise margin differs. CNV is disabled in both stages, with one thread and no target/debug/fast mode. Every discover/joint-call command is claimed and logged before execution. Fixture validation follows each native stage, and final validation follows all arms. The observer reads frozen copies and posthashes its original inputs; settings have their own two-read check. Missing files, parser failures, changed bytes, threshold drift or invalid controls cannot become a biological negative. The new integrity tests exercise damaged BGZF/BAM, malformed VCF tails, strict truth types and missing/wrong GT. Local passing tests do not establish native recovery or exact-stack compatibility.
+
+### Claims, version correction and containment
+
+The final literal submission file fixes a concrete issue in the earlier execution-note shape. That shape used only `set -C`; failed exclusive claim creation could otherwise be followed by `sbatch`. The reviewed literal file starts with `set -euo pipefail` and `set -C`, writes the experiment ID and actual bundle hash to the exclusive submission claim, then issues exactly one `sbatch`. Claim-write failure now terminates that block. Unknown acknowledgement consumes the claim; inspect the same job/root rather than submit again. Use this pinned literal file, not the preserved placeholder example in the execution note.
+
+The outer wrapper verifies the supplied manifest hash and all manifest entries before creating its exclusive timed-payload claim. The payload verifies the bundle after controls and after the runner. The fixed native root and fresh fixture/arm directories, exclusive JSON claims and logs, and one submission/control slot support the no-replay rule. Any change to the accepted bundle needs a new hash and review of the material change before staging or launch; no failed-arm replay is permitted inside this attempt.
+
+The first wrapper copied local pytest9.1.1 into the cluster assertion. Main's09:52:20+07 metadata preflight reports Python3.10.20, pysam0.24.0, HTSlib1.23.1 and pytest8.4.2, with taskset and GNU time available. The corrected payload asserts exactly those versions and requires70 passing controls without skips before fixture creation or asset acquisition. Its original hash was `a7fa228a0e7fad2f0d3b543fdfa9ab65611f34b8e816e7a494fecbfdc3d81587`; the corrected hash is pinned above. This is a preserved setup-draft correction before staging/outcomes, not an executed caller failure or an environment upgrade. Exact-stack test success remains a runtime gate.
+
+The tool acquisition is restricted to the pinned author v2.2.1 asset, inside the timed payload after controls. The runner checks its exact3,616,061-byte length, streaming SHA256 and independently re-read stored SHA256 before extraction. Extraction permits at most64 safe regular/directory members and16MiB declared expansion, refuses absolute/traversal/link/special entries, and writes only the sole `sawfish` member exclusively. It records the extracted binary hash and requires measured version text `sawfish 2.2.1`. Source-tag correspondence alone is not binary attestation; these runtime gates supply the required observations or stop incomplete. This scoped isolated acquisition is part of the already authorized workflow, not a new sidebar or permission request.
+
+Taskset chooses one allowed CPU and binds the timed payload and inherited children. GNU time measures the waited tree once. Timeout480s with5s kill grace is the tree wall bound; subprocess native/version calls have120s timeouts. Inherited per-process CPU soft300/hard450 seconds and4GiB virtual address-space limits are additional limits, not independent tree-CPU totals. Slurm requests one task/CPU,4GiB and9 minutes on amd_256M. No GPU or unrelated job is involved. The600-second named allowance leaves room beyond the one-CPU timed tree for bounded setup/collection. Retain the outer timing even on failure and avoid adding inner or Slurm CPU again as a second charge for the same work.
+
+### Complete named account and output/archive limits
+
+ACCEPT the prospective allocation as a complete **named conservative allowance** for this one attempt, including failed paths. It is not a measured physical-I/O bound or a validated native memory/runtime forecast.
+
+| Component | MiB |
+|---|---:|
+| Pinned asset transfer, stored hash, extraction and verification | 64 |
+| Code staging, exact-stack controls and test artifacts | 32 |
+| Eight native-command opaque allowance | 96 |
+| Fixture/settings checks and explicit output writes, reads, parser copies and posthashes | 24 |
+| Raw archive source hash, transfer and destination hash | 24 |
+| Failure, metadata and timing margin | 16 |
+| Full retained charge on booking | 256 |
+
+The six components total268,435,456 bytes. Prior40,235,307,915 plus that charge is40,503,743,371, below68,719,476,736. Prior measured named CPU556.722707 plus the600-second allowance is1,156.722707, below7,200. Reservation status is explicitly UNBOOKED. Book the full byte charge before root creation/staging, retain it on every setup/control/native failure, and preserve every old charge. Do not transfer the old unbooked screen margin. Use actual measured CPU for the named timing account after completion; do not relabel the600-second allowance as observed consumption.
+
+The64KiB launch fixture cap bounds repeated fixture checks. Control artifacts have a32MiB tree postcheck, including the approximately24MiB oversized-input fixtures. Intentional test links are counted without following them only in that control-tree call; native trees reject links. Native commands inherit a1MiB per-file limit; each arm has a1MiB/64-file tree postcheck after discover, joint-call and observation. Successful command logs now have a64KiB postcheck. Four completed arms therefore bound their combined trees at4MiB; the named five explicit output passes use at most20MiB, leaving the declared4MiB fixture/settings/check margin in that component. The selected raw archive cap is8MiB; its source hash, transfer and destination hash fit the24MiB component.
+
+These tree/log checks are postchecks. They do not prevent temporary aggregate growth, and the successful-log check is not reached when a command itself fails. Keep that limit explicit: if a failed/incomplete root cannot be collected under the archive cap, preserve its raw evidence remotely, mark collection incomplete and stop rather than silently trim scientific outputs or enlarge the account. Do not present the8MiB archive cap as a guarantee that every possible failure fits it. Collection must check exact selected paths, regular-file types, size and aggregate cap before transfer, then require matching source/destination manifests. Assets, executable and control fixtures are excluded from scientific-result archival by the declared design, not based on allele outcomes.
+
+### Exact conditional disposition
+
+| Condition | Review disposition |
+|---|---|
+| Scientific control/stops and observer STATES | ACCEPT at the pinned code level |
+| Flat resolved settings and common chromosome regex | ACCEPT; validate actual output at runtime |
+|12 local bundle mappings and literal fail-closed submission | VERIFIED/ACCEPT |
+|256MiB/600 named CPU complete prospective account | ACCEPT as a named allowance; still UNBOOKED |
+| Fresh/live setup, booked ledger, staged remote pins | Must pass before the single submission; not observed by this reviewer |
+| Exact-stack70 controls, asset integrity/version, output caps and raw result review | Runtime/collection gates; not yet observed |
+
+CONDITIONAL ACCEPT permits the main's already authorized normal workflow to book, stage and submit this one exact diagnostic once the stated pre-submit gates pass. It grants no retry, threshold sweep, changed molecule set, new method, real-data campaign or major-result acceptance. No additional human permission is required by this review. Review the actual raw outcomes before any scientific conclusion, and preserve an incomplete attempt as incomplete.
+
+Only this owned review was appended. No ledger was booked, no root staged, no dependency or asset acquired, and no tests, native execution, network, SSH, genomic input or Git action occurred by this reviewer. The broader publication objective remains unmet; H_R remains UNTESTED and the generic released-callset STOP remains in force. Earlier review snapshots, charges and guards are preserved.

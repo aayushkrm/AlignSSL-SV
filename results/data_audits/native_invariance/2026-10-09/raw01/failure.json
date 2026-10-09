@@ -1,0 +1,6 @@
+{
+  "error_type": "ValueError",
+  "publication_result": false,
+  "reason": "output directory ancestors must not be links",
+  "status": "INCOMPLETE"
+}

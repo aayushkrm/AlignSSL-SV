@@ -28,6 +28,22 @@ the objective.
 
 ## Current implementation and review state
 
+- October9 actual native attempt01: job1604208 FAILED1:0;70 cluster controls
+  passed0skip2.58s, then the managed logical `/scratch` alias triggered the
+  fixture ancestor guard. No fixture/asset/native command or biological result.
+  [Failure record](2026-10-09-native-invariance-result01.md).
+  Attempt closed, no replay; full256MiB retained,40,503,743,371 cumulative
+  bytes; outer2.07CPU counted once,558.792707 cumulative namedCPU. Preserve
+  original code/raw evidence before a new exact physical-path replacement.
+
+- October9 [exact native launch candidate](2026-10-09-native-invariance-execution.md):
+  main runner/settings/integrity controls complete,70 local tests0skip;
+  syntax and12 bundle pins verified. Common chromosome regex added from the
+  pinned source input-validator before outcomes. Cluster metadata confirms
+  pytest8.4.2, not local9.1.1; no dependency change. Independent exact-launch
+  review pending,256MiB/600CPU UNBOOKED, root absent and no asset/native run.
+  This is still one synthetic diagnostic, not a paper campaign or new lead.
+
 - October9 next diagnostic: [value decision](2026-10-09-native-invariance-value-decision.md)
   selects one four-arm same-molecule CIGAR-invariance test, not a paper lead.
   [Protocol](2026-10-09-native-invariance-protocol.md) is a candidate; no native

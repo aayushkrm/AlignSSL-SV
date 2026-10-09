@@ -11,6 +11,34 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 actual native attempt01: independently reviewed launch ran once as
+job1604208, FAILED1:0. All70 cluster controls passed0skip2.58s. The fixture
+ancestor guard then rejected the managed `/scratch` alias. No fixture, asset
+or native caller command ran; this is a setup failure, not a biological null.
+[Failure record](docs/research/2026-10-09-native-invariance-result01.md).
+Full256MiB remains charged, cumulative40,503,743,371 bytes; outer2.07CPU
+counted once, cumulative558.792707. Attempt01 is closed with no replay.
+Preserve exact source and small raw evidence before a separately reviewed
+fresh physical-path replacement. Keep the fixture guard and scientific input.
+
+October9 exact native-launch candidate: main implements the finite four-arm
+runner, with two Luna/max-requested sidecars for resolved-settings validation
+and corrupt/truncated artifact controls. All70 local launch/fixture/observer/
+settings/integrity tests pass0skip0.79s; shell syntax and all12 bundle hashes
+verify. [Exact execution candidate](docs/research/2026-10-09-native-invariance-execution.md)
+and literal claim-before-sbatch command are ready for independent review.
+Pinned source validation requires a chromosome match even with CNV disabled;
+main adds common `--cov-regex '^chrSynthetic$'` before outcomes. No scientific
+input or between-arm contrast changes. Metadata09:52:20+07 confirms cluster
+Python3.10.20/pysam0.24.0/HTSlib1.23.1, but pytest8.4.2; the initial copy of
+local9.1.1 in the draft assertion was corrected before staging, no upgrade.
+One-CPU affinity, full-tree timing,480s timeout,4GiB address space and finite
+output/archival checks are explicit. Proposed256MiB/600CPU remains UNBOOKED;
+no stage root, asset acquisition, caller execution or scientific result yet.
+The maintained reviewer is checking this exact launch; the prior code HOLD
+closure is not a launch disposition. Named allowances are not measured
+physical/opaque I/O bounds. Goal remains active and publication unmet.
+
 October9 native diagnostic preparation: the completed
 [Sol6.1/max-requested decision](docs/research/2026-10-09-native-invariance-value-decision.md)
 selects ONE same-molecule CIGAR-invariance test of complete native allele
