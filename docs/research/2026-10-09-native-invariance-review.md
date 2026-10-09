@@ -420,3 +420,60 @@ The same64/32/96/24/24/16MiB components sum to256MiB, with separate asset, contr
 Main's10:20:56+07 empty queue, absent02 logical/physical roots, exact workspace resolution and Oct22 expiry are timestamped reported preflight facts, not reviewer live checks. Recheck the relevant state before staging/submission, verify the booked ledger and all staged13 pins remotely, then use this exact single-submission file. Exact-stack controls, authenticated asset/executable version, settings/input integrity, scientific stops and bounded raw collection remain runtime gates. No result is accepted before raw-result review.
 
 CONDITIONAL ACCEPT allows the main's already authorized workflow to book, stage and submit this fresh02 once those gates pass. It is limited to this filesystem correction and fixed diagnostic; no repeat of01, selective native replay, post-outcome tuning, new method, real-data campaign or publication claim follows. No additional user confirmation is required by this review. This reviewer took no launch/book/Git action and changed only the owned note. All earlier review snapshots, incomplete01 evidence, charges, guards and the released-callset STOP remain preserved.
+
+## Actual replacement02: ACCEPT CLOSED INCOMPLETE, canonical control failed
+
+2026-10-09. **ACCEPT the bounded result02 archive, the incomplete disposition and the retained account. The canonical positive-control stop was required and worked. The intended four-arm contrast remains untested.** This closes actual-result review for this attempt only. It supplies no scientific-direction approval, positive recovery claim, replacement permission or publication acceptance. Requested Sol6.1/high remains backend-unattested.
+
+Read FULL the result02 note and live journal, the frozen archived reservation, claims, command records, logs, controls, timer, observation, settings and native text metadata. Checked the complete52-file payload and checksum manifest. Inspected the full reference/truth/fixture manifest and parsed the complete archived BAM/BCF/VCF outputs read-only. No caller replay, test-suite run, cluster, network, installation, Git or new scientific experiment was performed. Only this maintained review was appended; all previous422 lines are preserved.
+
+### Archive and snapshot integrity
+
+| Independently inspected snapshot | SHA256 |
+|---|---|
+| Result02 note | `38497c1735912a11620016ecd321198ea6a4cc4ac9aa0c53a9748c26a05246b3` |
+| Raw02 checksum manifest | `b7423a6c80d8bee916697780583350f7bbc820012c475e19a8c4b9045cae7075` |
+| Frozen staged reservation | `71fe6ed53f6b9a0687b575687d637f10ece81c1d509d6a14cab8ac927e340772` |
+| Live post-run journal | `497c59eda46789f81a69e9ee74eeea5123ead7de755815389750e904e6cc2397` |
+| Owned review before this append | `a28e1bd9cf742167944e6130d06ce968f90c11d9232b1e3e22ea2b513c838263` |
+
+All52 local payload checksums PASS. Payload size is66,500 bytes; the checksum file is4,864 bytes; total71,364 bytes. The tree has exactly53 regular single-link files, with no symlinks or extra files. Each file is below1MiB and the total is below8MiB. Local read-only parsing left names, sizes and hashes unchanged. Native outputs, indexes, auxiliary depth files, debug metadata, exact tiny fixture and empty logs are preserved. Auxiliary binary files were hash/size checked, not interpreted as causal evidence. The downloaded asset, executable and unit-test tree are deliberately outside this archive.
+
+The archived13-entry bundle is the approved `9941bcff343013e9e231135d89498a8720e52c45bfc90a9642a9151a3185c460`. Submission, outer and payload claims identify02, the pinned bundle and the approved physical root; the payload also records the supplied logical root. Initial and post-control checks in the captured logs pass. Main's live journal reports all13 post-failure pins matching at10:28:48+07. That latter remote check was not repeated by this reviewer. The earlier exact source-mapping review remains intact.
+
+### Controls, inputs and observed settings
+
+Controls stdout records78 passed, zero skips, in2.90s. Startup records the required actual stack: Python3.10.20, pysam0.24.0, HTSlib1.23.1 and pytest8.4.2. Control-tree size25,916,330 bytes fits32MiB. Missing-index messages in sequential temporary parsing and the intentional corrupt-BAM control are not the native stop or evidence of damaged archived inputs.
+
+The logical-to-physical correction allowed fixture creation while retaining the factory link guard. Independent retrospective `validate_fixture()` on the archive passes manifest, reference sequence, complete record and index semantics for all three input BAMs. Canonical and fragmented inputs each contain40 mapped records; REF-only contains40 mapped records. The fixed reference sequence SHA, molecule equivalence, CIGAR contrast and other frozen fields remain unchanged. This check used the existing local Python3.11.13/pysam0.24.1/HTSlib1.24 stack, not the cluster stack and not a control-suite rerun. Compressed-file coincidence on this stack does not reinstate a cross-stack BAM-byte hash requirement.
+
+Independent read-only settings validation passes the archived flat settings, including exact physical paths, report minimum35, noise margin10, CNV disabled, no fast/debug target and common `^chrSynthetic$` coverage regex. Archived tool metadata and the successful version log record the frozen3,616,061-byte asset hash, executable hash and Sawfish2.2.1. The previously reviewed runner verifies these before native calls. As the asset/executable are excluded from raw02, this reviewer authenticates the archived records and gates, not independently rehashes an archived executable.
+
+### Actual endpoint and stop
+
+Both claimed canonical commands have successful native completion logs. Complete sequential parsing independently finds zero records in the candidate BCF and zero records in the final BGZF VCF. The candidate is sites-only; the final header contains `SYNTH`. Both index files are present. The observer completed, reported `ABSENT_FROM_OUTPUT` at both endpoints, zero unresolved records and zero same-record exact PASS/heterozygous records. This is resolved absence from these complete outputs under the fixed observer contract; it is not full-haplotype or biological absence.
+
+The traceback and failure JSON identify `canonical exact PASS heterozygous control failed` in the predefined outcome guard. They do not identify an output-parser or input-integrity failure. There are two native commands total: canonical discover and joint-call. Fragmented/default, REF-only and fragmented/margin30 have no native command claims or results and remain UNRUN. Created input BAMs for those arms are not executed controls. The observer's `caller_execution=false` refers to its own behavior; it does not negate the separately documented caller execution.
+
+Discovery metadata records20 breakpoint observations, one cluster and one single-region candidate before zero emitted candidate rows. The debug cluster BED records insertion size60 and evidence count20. These counters make a blanket “no seeding occurred” narrative especially unsupported. They are not an exhaustive stage trace or proof of correct haplotype assembly. Discovery contig BAM has one mapped alignment, query length3060; joint contig BAM has no records. Counts and lengths do not prove exact contig sequence recovery.
+
+The assembly BED's sole interval `[1499,1500)` excludes zero-based offset1500. In this repeat, a shifted equivalent position is possible. This interval alone does not diagnose seed loss or explain the failed endpoint. Source threshold arithmetic remains valid but no fragmentation effect or margin rescue was measured. “Native compatibility” is limited here to this binary accepting these canonical inputs and completing these two stages; an effective positive-control assay was not established.
+
+Job1604209, FAILED1:0 and scheduler elapsed8s are main-reported in the journal/result note. Archived GNU time independently reports exit1 and7.08 wall seconds. No live Slurm query was made; the archived logs are not a scheduler accounting row. The initial archival quoting failure and subsequent six exact-path transfers are reported collection history, not scientific replay. No caller outputs were selectively removed to meet caps.
+
+### Frozen ledger, live account and closure
+
+The archived staged reservation preserves its pre-runtime status and03:25:56 UTC booking, prior charge and prospective totals. The live journal retains that snapshot hash and adds submission, runtime failure, timing and collection history. Their different hashes are expected. The live `raw_result_independent_review=PENDING` field is its inspected state; this append records disposition without mutating the journal.
+
+| Accepted account item | Value |
+|---|---:|
+| Full new retained byte charge | 268,435,456 |
+| Prior retained bytes, including attempt01 | 40,503,743,371 |
+| Cumulative retained bytes | 40,772,178,827 |
+| Outer user + system CPU, charged once | 1.30 +1.20 =2.50 seconds |
+| Cumulative measured named CPU | 558.792707 +2.50 =561.292707 seconds |
+| Outer wall time / maximum RSS | 7.08 seconds /55,004KiB |
+
+Retain the full256MiB despite three unrun arms. Do not charge nested2.90s control wall time, native runtimes or Slurm CPU again. The600-second reservation is not measured consumption. These are named allowances and timed CPU, not complete physical/opaque I/O measurements. Earlier failure charges and records remain preserved.
+
+**Attempt02 is CLOSED INCOMPLETE with a failed canonical endpoint control, not a scientific null.** No concrete raw-integrity or account HOLD remains for that limited closure. Do not replay this root, run the remaining arms selectively, tune the fixed assay after outcome or claim fragmentation, prevalence, seed causation or novelty. A different assay or investment direction requires its separate evidence and decision gate. This review approves neither; H_R, publication readiness and the released-callset STOP are unchanged.

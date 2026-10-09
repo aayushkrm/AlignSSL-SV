@@ -32,7 +32,9 @@ the objective.
   FAILED1:0, canonicalcandidate/final0records → predefinedpositivecontrolstop.
  78clustercontrols0skip2.90s; toolauthenticated/native2stagescomplete. Others3
   armsUNRUN, nofragmentation/biology/seedcauseclaim. Fullraw52payload66500
-  +checksum4864=71364 locally, allhashesmatch; actualreviewpending. Allcharges
+  +checksum4864=71364 locally, allhashesmatch; independent actualreview ACCEPT
+  CLOSED INCOMPLETE, not a direction/replacement approval.85local focusedchecks
+  includingREADME0skip0.91s, notfullsuite; raw/result pushed183ac18. Allcharges
   retained40772178827bytes/561.292707namedCPU (outer2.50once). No native replay.
   Freshprimaryliterature Luna/max and highimpactinvestment Sol6.1/max sidecars
   comparestronger opportunities; no newcampaign, booking or selectedlead.

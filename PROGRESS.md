@@ -21,7 +21,10 @@ All52raw hashes match; payload66,500+checksum4,864=71,364 bytes, including
 allcanonicaloutputs and exactsmallfixture. Main archivedfixturesemantics,
 resolvedsettings and complete nativevariantparse pass; no callerreplay.
 Full256MiB retained:40,772,178,827 cumulativebytes; outer2.50CPUonce gives
-561.292707 namedCPU. Independent actualreview pending. A Luna/max-requested
+561.292707 namedCPU. Independent actualreview ACCEPTS CLOSED INCOMPLETE:
+all52hashes, archivedfixture/settings and completezero-recordoutputs checked;
+no causal or scientificdirectionapproval. Main's85focused controls plusREADME
+pass0skip0.91s, notfullsuite. Raw/result pushed183ac18. A Luna/max-requested
 freshprimaryliterature comparison and Sol6.1/max-requested investmentdecision
 run in parallel; no replacement03, newbudget or paperlead selected.
 

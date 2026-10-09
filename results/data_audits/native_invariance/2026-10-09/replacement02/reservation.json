@@ -102,5 +102,12 @@
   "raw_archive_transfer_sessions": [56685, 5970, 44689, 14969, 66251, 95829],
   "raw_archive_all_transfer_exit_codes": 0,
   "first_archive_shell_quoting_failed_before_execution": true,
-  "raw_result_independent_review": "PENDING"
+  "raw_result_independent_review": "ACCEPT_CLOSED_INCOMPLETE_NO_FRAGMENTATION_OR_BIOLOGICAL_CLAIM",
+  "raw_result_review_note": "docs/research/2026-10-09-native-invariance-review.md result02 actual raw review",
+  "latest_local_focused_controls_and_README": {
+    "passed": 85,
+    "skipped": 0,
+    "reported_seconds": 0.91,
+    "full_suite_claim": false
+  }
 }

@@ -49,6 +49,12 @@ uses complete sequential parsing, not regional fetch. This is not the stop.
 The observer's `limits.caller_execution=false` describes that observer's own
 scope; the separate command claims and native logs document actual execution.
 
+The independently reviewed native discovery statistics record 20 breakpoint
+observations, one cluster and one single-region candidate before emission of
+zero variant rows. The debug cluster BED records insertion size 60 and evidence
+count 20. Thus even a blanket "no seeding occurred" explanation is unsupported.
+These are native metadata counters, not an exhaustive causal trace.
+
 At 10:28:48+07 all 13 staged bundle entries still match. Main also rechecks the
 archived fixture semantics/manifest and resolved settings, and independently
 parses both complete native variant outputs locally. These are retrospective
@@ -83,6 +89,15 @@ TotalCPU again. The named allowance is not a complete measured physical/opaque
 I/O bound. Earlier charges, stops and failures remain intact.
 
 ## Next scientific gate
+
+The maintained Sol6.1/high-requested reviewer independently verifies all 52
+hashes, fixture semantics, settings, complete zero-record native outputs,
+stop and account. **ACCEPT CLOSED INCOMPLETE**, not a fragmentation result or
+permission for another native attempt. Backend configuration is not attested.
+Main's latest focused fixture/observer/launcher/settings/integrity/path plus
+README checks pass **85 tests, zero skips, 0.91s**. This is not a full-suite
+pass; historical SSL failures remain preserved. Research/raw records are
+pushed at `183ac18`; default `main` still contains documentation only.
 
 The failed positive control prevents the intended test. Do not complete the
 other arms selectively or tune this fixture to produce a favorable result.
