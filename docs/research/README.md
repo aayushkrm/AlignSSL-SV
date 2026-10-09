@@ -8,6 +8,8 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-09-after-m1-investment-review.md`](2026-10-09-after-m1-investment-review.md) | Completed maintained independent challenge of the investment stop | Main accepts with two limits: replication gate is not a cheap-falsifier prerequisite; new methods are not the only consequential contribution. No empirical launch qualified; full goal open |
+| [`2026-10-09-after-m1-investment-decision.md`](2026-10-09-after-m1-investment-decision.md) | Completed high-impact next-investment synthesis after terminal M1 closure | Same-agent recovery preserves interrupted body; STOP near-term repeat rescue, no supportable next experiment/acquisition on reviewed evidence; reviewer scope limits govern interpretation, full goal unmet |
 | [`2026-10-09-post-provenance-scientific-review.md`](2026-10-09-post-provenance-scientific-review.md) | Maintained independent scientific-investment challenge | Initial HOLD acquisition; appended ACCEPT finite HG008 package closure as incomplete/truth-inconclusive, not a biological null; no acquisition/fallback campaign |
 | [`2026-10-09-repeat-control-primary-check.md`](2026-10-09-repeat-control-primary-check.md) | Main's primary TRGT and pinned current-interface check | Sequence/flanking-SNP control is relevant; current 5.1.0 WGS default differs from old clustering description; no runtime or case applicability claim |
 | [`2026-10-09-paired-repeat-native-check.md`](2026-10-09-paired-repeat-native-check.md) | Bounded Luna/max-requested paired-native source check | TRGT-denovo v0.4.0 duo documented; plausible but unverified tumor-normal/haplotype/copy-state control, no genomic read or method run |

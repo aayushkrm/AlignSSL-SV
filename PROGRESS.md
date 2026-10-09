@@ -11,6 +11,37 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 9 after-M1 scientific synthesis is now actually completed after a
+terminal agent usage-limit error and same-agent/context recovery. Main read
+all104 original lines and the four-line recovery appendix. The original
+16281-byte body is unchanged (SHA2566ed874da…); final108-line note SHA256
+20db218c…. Requested Sol6.1/max remains a request, not backend attestation.
+The completed [decision](docs/research/2026-10-09-after-m1-investment-decision.md)
+stops near-term HG008 repeat-rescue investment: no distinct consequential
+residual, supported negatives or fair usable input contract is established.
+This is an investment stop, not biological falsification or global data
+absence. Main read the full completed [independent review](docs/research/2026-10-09-after-m1-investment-review.md)
+and accepts the stop with its two scope limits: two unrelated donors are a
+replication gate, not a prerequisite for every cheap falsifier; a strong
+scientific contribution need not be a new method. No empirical launch is
+qualified. The completed decision worker is closed; reviewer maintained.
+Documentation checks: 15 passed, zero skips, in 3.99 seconds. These checks
+do not measure biological performance.
+
+At16:18:52UTC account inspection reported ordinary usage allowed, five-hour
+usage1% and weekly32%; the earlier error is preserved, not reclassified as
+a completed handoff. OpenAI Docs helped check recovery options; no model
+substitution, purchase, reset-credit use or configuration change occurred.
+Fresh cluster check23:21:33+07: own queue empty, scratch expiresOctober22
+23:02:50+07, one extension available. No job launched/cancelled/extended.
+The broader publication objective remains active and unmet; the saved
+synthesis defines missing scientific evidence, not authority to reopen M1.
+Main has separately commissioned two bounded Luna/max-requested sidecars:
+structural-transcript consequences and whole-event family inheritance. They
+must find a specific test with actual public observations and strong ordinary
+controls, not rename a closed proposal. They authorize document research only,
+not input acquisition, a caller grid or a campaign.
+
 October 9 independent reviewer ACCEPTS the selected HG008 package's
 INCOMPLETE/TRUTH INCONCLUSIVE closure. Main read all20 appended review
 lines, preserving the prior103-line decision snapshot. Internal counts and

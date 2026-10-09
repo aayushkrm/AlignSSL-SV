@@ -32,6 +32,23 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 9 after-M1 [synthesis](2026-10-09-after-m1-investment-decision.md)
+  actually completed after terminal usage error and same-context recovery.
+  Main read104 original lines +4 appendix; original16281-byte body unchanged
+  SHA6ed874da…, final108-line SHA20db218c…. Near-term repeat-rescue investment
+  STOP, no biological null/global data absence/new acquisition or experiment.
+  Full completed [independent review](2026-10-09-after-m1-investment-review.md)
+  read and conditionally accepted by main: two donors are a replication gate,
+  not a universal cheap-falsifier prerequisite; consequential research need
+  not be a new method. No empirical launch qualified. Decision worker closed,
+  reviewer maintained. Documentation tests15pass/0skip/3.99s, not biology.
+  Account ordinaryAllowedtrue/primary1%/weekly32% at16:18:52UTC;
+  no model substitution, purchase/reset/settings change. Fresh23:21:33+07
+  own queue empty, scratchOct22expiry/oneextension, no job/extension action.
+  Broader publication goal active/unmet. Separate bounded Luna/max-requested
+  sidecars now examine structural-transcript consequences and whole-event
+  family inheritance; document research only, no acquisition/campaign or M1
+  reopening. A specific supported empirical contrast is required.
 - October 9 independent reviewer ACCEPTS the HG008 material-route closure;
   main read all20 appended lines, prior103-line snapshot preserved. Counts
   and four saved source hashes agree. No fixed16/valid32/context or empirical
