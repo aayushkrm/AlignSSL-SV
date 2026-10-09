@@ -28,6 +28,19 @@ the objective.
 
 ## Current implementation and review state
 
+This section is reverse chronological. Older pending/unbooked descriptions
+are preserved decision snapshots, not current launch permissions; later
+completed or closed entries supersede them.
+
+- October9 completed [fresh literature comparison](2026-10-09-post-native-opportunities.md):
+  Luna/max-requested worker compares germlineconfidence, complextruth and
+  somaticconfidence. No selected campaign or provennovelty. Main's
+  [primary verification](2026-10-09-post-native-source-check.md) reads FULL
+  SVUPPbody and finds matchedGQcoveragealreadypriorart. Calibration/transfer
+  remainsconditional; technicalNA12878 separation is not biologicalholdout.
+  Newer authorZenodo lists47,443,427-byte assessmentzip, contentsunverified;
+  no archivebody/newgenomicacquisition. Sol6.1/max decision still running.
+
 - October9 actual [replacement02 result](2026-10-09-native-invariance-result02.md):
   FAILED1:0, canonicalcandidate/final0records → predefinedpositivecontrolstop.
  78clustercontrols0skip2.90s; toolauthenticated/native2stagescomplete. Others3

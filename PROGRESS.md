@@ -11,6 +11,17 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 completed [post-native literature comparison](docs/research/2026-10-09-post-native-opportunities.md):
+Luna/max-requested worker compares three substantive directions, each conditional.
+Main's [primary check](docs/research/2026-10-09-post-native-source-check.md)
+reads complete SVUPPpaper via currentPMCdataset: matchedGQ/callcoverage is
+already priorart, not a newcontribution. Entrez/Exa date metadata conflict is
+recorded and primary2025 date retained. TechnicalNA12878 dataset separation
+is not an unrelatedfamily holdout. Author's newerZenodo lists47,443,427-byte
+assessmentzip; contents/scores/truthunverified, no body acquired. Main narrows
+the novelty inference and forwards evidence to the live Sol6.1/max decision.
+No new study, budget, archive acquisition or publicationlead selected.
+
 October9 actual replacement02: job1604209 FAILED1:0 at predefined canonical
 positive-control gate.78 cluster controls pass0skip2.90s, physical-path fix,
 authenticated Sawfish2.2.1 and both canonical native stages work. Complete

@@ -8,6 +8,8 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-09-post-native-opportunities.md`](2026-10-09-post-native-opportunities.md) | Fresh Luna/max-requested primary-literature comparison |Three conditional questions and falsifiers; no campaign/novelty approval; read main prior-art qualification |
+| [`2026-10-09-post-native-source-check.md`](2026-10-09-post-native-source-check.md) | Main's actual primary-body and manifest verification |GQ-ranked coverage already SVUPP priorart; technical replicate not biological holdout; newer assessmentzip listed, contents unverified |
 | [`2026-10-09-native-invariance-result02.md`](2026-10-09-native-invariance-result02.md) | Actual canonical positive-control stop and full small raw archive |Both canonical native stages run, candidate/final0records; others unrun;52 hashes match, independent ACCEPT CLOSED INCOMPLETE; no scientific claim |
 | [`2026-10-09-native-invariance-replacement02.md`](2026-10-09-native-invariance-replacement02.md) | Separate trusted-physical-path launch |78 local controls0skip,13 pins; unchanged science/fixture guard; exact review pending, UNBOOKED |
 | [`2026-10-09-native-invariance-result01.md`](2026-10-09-native-invariance-result01.md) | Actual first native setup failure |70 cluster controls pass; scratch alias guard stops before fixture/asset/caller; closed incomplete, full charge retained |
