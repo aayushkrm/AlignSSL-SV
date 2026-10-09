@@ -32,6 +32,15 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 inventory candidate pushed1bf148e;28 local controls0skip0.81s,
+  bounded synthetic tree12,227bytes, shell syntax pass. Exact reviewer
+ 01a11e73-c622-7e22-9ea6-cebd9d2b5023 is ERRORED with account usage-limit
+  response, not live or completed/accepted. No exact review file exists.
+  Resume that reviewer on capacity recovery; finish exact review before book,
+  then change only reservation status/timestamp and freeze refreshed pins.
+  Current512MiB/180seconds UNBOOKED; no stage, archive, job or decoded outcomes.
+  Main05:59:02UTC verifiesremote1bf148e. Goal remains active/unachieved.
+
 - October9 completed [max investment decision](2026-10-09-post-native-value-decision.md)
   and independent [scientific reconciliation](2026-10-09-post-native-value-review.md):
   conditional selection of one oracle/strong-control confidence VALUE falsifier.

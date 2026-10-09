@@ -11,6 +11,19 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 inventory candidate and completed scientific decision/reconciliation
+are pushed in1bf148e. Main verifies28 local inventory/launcher controls pass,
+zero skips,0.81s; synthetic tree12,227bytes and shell syntax pass. Actual
+cluster dependency path suppliesPython3.10.20/pytest8.4.2; queue empty and
+fresh root absent at the metadata check. No package installation needed.
+The maintained Sol6.1/high-requested exact-launch review returns ERRORED due
+to account usage limit; no review file or acceptance exists. At05:59:02UTC
+main verifies remote1bf148e and clean worktree. Launch remains HOLD,
+512MiB/180seconds UNBOOKED, no staging/acquisition/job or outcomes. Reuse
+reviewer01a11e73-c622-7e22-9ea6-cebd9d2b5023 when capacity returns; do not
+duplicate submissions or infer acceptance from the scientific review.
+The broader research goal is active and unachieved, not marked blocked.
+
 October9 completed [investment decision](docs/research/2026-10-09-post-native-value-decision.md)
 and [independent follow-up](docs/research/2026-10-09-post-native-value-review.md)
 select ONE conditional development value test, not a paper or new model.

@@ -1,6 +1,10 @@
 # Candidate one-off SVUPP archive inventory
 
 Status: **UNBOOKED, UNSTAGED, UNEXECUTED; exact review pending**.
+October9 exact review attempt returned ERRORED with account usage-limit
+response; no exact review file or launch acceptance exists. Candidate saved
+and pushed1bf148e;28 local controls pass, no real archive acquisition.
+Resume the maintained reviewer, not a new submission, when capacity returns.
 This is data-readiness work for a conditional research question, not a
 publication result or permission for generic GQ-ranked benchmarking.
 
