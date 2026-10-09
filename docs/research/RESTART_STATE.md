@@ -32,6 +32,13 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 [independent scientific challenge](2026-10-09-post-native-value-review.md):
+  genericGQcalibrationnotselectedcontribution. Oneconditionalincremental-value
+  falsifier only; truth/score/readinessHOLD, no acquisitionorcampaignapproval.
+  Main [finite archiveinventory candidate](2026-10-09-svupp-inventory-protocol.md)
+  is UNBOOKED/unexecuted; no memberbodyreads. Exactimplementation and live
+  Sol6.1/max scientificinvestmentdecision pending; closedattemptchargesintact.
+
 - October9 completed [fresh literature comparison](2026-10-09-post-native-opportunities.md):
   Luna/max-requested worker compares germlineconfidence, complextruth and
   somaticconfidence. No selected campaign or provennovelty. Main's

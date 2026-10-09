@@ -11,6 +11,15 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 independent [post-native scientific review](docs/research/2026-10-09-post-native-value-review.md)
+rejects genericGQcalibration/coverage as a selectedsignificantcontribution.
+One incremental-value developmentfalsifier is conditionallydefensible,
+but truth/score/callablemask/split/readiness gates remainHOLD; no acquisition
+or campaignapproved. Main drafts one fixed47.4MB archiveinventory candidate
+only, [protocol](docs/research/2026-10-09-svupp-inventory-protocol.md), UNBOOKED,
+unexecuted; no memberpayloads or outcomesread. Exactcode/bundle review and
+the live Sol6.1/max investmentdecision remainpending. No goalcompletionclaim.
+
 October9 completed [post-native literature comparison](docs/research/2026-10-09-post-native-opportunities.md):
 Luna/max-requested worker compares three substantive directions, each conditional.
 Main's [primary check](docs/research/2026-10-09-post-native-source-check.md)

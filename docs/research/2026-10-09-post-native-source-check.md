@@ -44,7 +44,8 @@ No archive or genomic body is acquired in this check. Do not download the
 
 ## Retrieval record and unresolved coverage
 
-Main issued one five-result Exa query and two two-page fetches. Requested
+Main issued one five-result Exa query, two two-page fetches and one Zenodo
+page fetch. Requested
 slots are not unique papers read. Exa search passages expose the material
 GQ/coverage prior art; default fetches end at 3,000 characters and must not be
 described as full article reads. Generic web opening hits a PMC browser check
