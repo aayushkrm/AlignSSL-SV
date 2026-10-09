@@ -94,6 +94,28 @@ INCONCLUSIVE about the published event. Preserve the paper's result.
 No outcome establishes prevalence, full-trio sensitivity, clinical risk,
 whole-genome equivalence or publication readiness.
 
+## Implementation qualification before acquisition
+
+The Luna/max-requested acquisition handoff was requested immediately after
+the task remained on the critical path; the same worker concluded without
+restart. Its six earlier tests passed, but its last CPU-metadata edit was
+unverified. Main read all548 original source lines and172 test lines, then
+fixed a concrete pre-acquisition HTS compatibility fault: initial GETs and
+open-ended logical range streams must work. They are not whole-file staging.
+Upstream BAM bodies still require206 and pinned identity; every response
+body read is globally capped and logged, including overfetch. Explicit bounded
+ranges remain limited to64MiB, and streaming chunks are65,536B.
+Main added a loopback-only, mocked-upstream initial-open/seek control. No
+external network or real genomic input was used in these tests. The helper
+is larger than the requested approximate250-line target; it is not represented
+as that smaller implementation. This correction changes transport, not the
+frozen census, native policies or scientific endpoints.
+
+The helper conservatively includes the already charged65,536B prefix within
+its4GiB body cap. Report new body bytes separately to avoid double-counting
+the historical prefix. Runtime package material remains a separate software
+acquisition; installation byte totals were not measured as genomic reads.
+
 The next unknown-residual question is the frozen HG002 DNA-first coding-path
 pilot. Its large cost requires independent scrutiny before any expensive
 campaign. The current diagnostic does not automatically release that budget.
