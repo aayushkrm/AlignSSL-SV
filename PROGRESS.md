@@ -11,6 +11,16 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 limitedprovenance/header candidate FROZEN UNBOOKED. Two Luna/max
+workers complete reader/controls and independent launcher controls. Initial
+19pass/3fail expose missingcompletionflags; main fixes flags withoutweakening
+tests. New real1MiBJSONcap witness; current local44pass0skip0.31s, tree407,568B/
+168entries/maxfile267,967B, shell/inline syntaxpass. Exact8pinbundle94310367,
+literal a8a28da3. [Protocol](docs/research/2026-10-09-svupp-provenance-header-protocol.md).
+Maintained independent exactreview next; no actualmember/header/outcome read,
+book/root/stage/job. Current41845920651B/567.002707CPU unchanged. Useruseful
+capacityreply governs: scale justifiedparallelwork, no idleGPU/nodes here.
+
 October9 independent actual02 review ACCEPTS COMPLETE METADATA INVENTORY ONLY:
 all17rawhashes/exact18files/fullcontrol/preflight/timer/pins/account checked.
 Main readsFULLactualappend; readinessstillHOLD, no decoding/scoring/model/03.

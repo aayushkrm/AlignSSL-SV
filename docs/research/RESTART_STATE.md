@@ -32,6 +32,12 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 boundedprovenance/header candidate frozen UNBOOKED; two Luna/max
+  workers complete. Main corrects3completionflags exposedby19pass/3fail,
+  keeps tests, addsreal1MiBJSONcap witness. Local44pass0skip0.31s; tree407,568B/
+  168entries/maxfile267,967B; shell/inline syntaxpass. Eightpins94310367,
+  literala8a28da3, exactmaintainedreviewnext. No realmember/header/outcome read,
+  book/root/stage/job; currentaccount41845920651B/567.002707CPU unchanged.
 - October9 independentactual02 ACCEPTCOMPLETE METADATAONLY; main FULLactual
   appendread, all17hashes/exact18files/runtime/account checked. Scientific
   readinessHOLD, no nextreadapproval. Separate8memberprovenance/header
