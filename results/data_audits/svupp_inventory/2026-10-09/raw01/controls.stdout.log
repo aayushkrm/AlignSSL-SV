@@ -1,0 +1,1382 @@
+FFF.FFFFFFFF.FFFF...F.......                                             [100%]
+=================================== FAILURES ===================================
+_______ test_valid_inventory_verifies_hashes_and_writes_bounded_manifest _______
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_valid_inventory_verifies_0/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_valid_inventory_verifies_0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb71e886f20>
+
+    def test_valid_inventory_verifies_hashes_and_writes_bounded_manifest(tmp_path, monkeypatch):
+        source = make_archive(
+            tmp_path / "candidate.zip",
+            (("data/readme.txt", b"member bytes remain unread"), ("docs/", b"")),
+        )
+        output = tmp_path / "inventory.json"
+        source_read_sizes = []
+        original_pread = inventory_module.os.pread
+    
+        def count_source_reads(fd, amount, offset):
+            source_read_sizes.append(amount)
+            return original_pread(fd, amount, offset)
+    
+        monkeypatch.setattr(inventory_module.os, "pread", count_source_reads)
+    
+>       report = call_inspect(source, output)
+
+tests/test_pinned_research_zip.py:48: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pinned_research_zip.py:24: in call_inspect
+    return inspect_zip(
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_valid_inventory_verifies_0/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+_____ test_expected_size_and_md5_are_required_before_inventory[True-False] _____
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_expected_size_and_md5_are0/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_expected_size_and_md5_are0')
+wrong_size = True, wrong_md5 = False
+
+    @pytest.mark.parametrize("wrong_size,wrong_md5", [(True, False), (False, True)])
+    def test_expected_size_and_md5_are_required_before_inventory(tmp_path, wrong_size, wrong_md5):
+        source = make_archive(tmp_path / "candidate.zip")
+        output = tmp_path / "inventory.json"
+        source_size = source.stat().st_size
+        expected_md5 = hashlib.md5(source.read_bytes()).hexdigest()
+        with pytest.raises(ValueError, match="size differs|MD5 differs"):
+>           inspect_zip(
+                source,
+                expected_bytes=source_size + int(wrong_size),
+                expected_md5=("0" * 32 if wrong_md5 else expected_md5),
+                output_manifest=output,
+            )
+
+tests/test_pinned_research_zip.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_expected_size_and_md5_are0/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_expected_size_and_md5_are0')
+wrong_size = True, wrong_md5 = False
+
+    @pytest.mark.parametrize("wrong_size,wrong_md5", [(True, False), (False, True)])
+    def test_expected_size_and_md5_are_required_before_inventory(tmp_path, wrong_size, wrong_md5):
+        source = make_archive(tmp_path / "candidate.zip")
+        output = tmp_path / "inventory.json"
+        source_size = source.stat().st_size
+        expected_md5 = hashlib.md5(source.read_bytes()).hexdigest()
+>       with pytest.raises(ValueError, match="size differs|MD5 differs"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'size differs|MD5 differs'
+E        Input: 'a path parent is missing, unsafe, or a symlink'
+
+tests/test_pinned_research_zip.py:95: AssertionError
+_____ test_expected_size_and_md5_are_required_before_inventory[False-True] _____
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_expected_size_and_md5_are1/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_expected_size_and_md5_are1')
+wrong_size = False, wrong_md5 = True
+
+    @pytest.mark.parametrize("wrong_size,wrong_md5", [(True, False), (False, True)])
+    def test_expected_size_and_md5_are_required_before_inventory(tmp_path, wrong_size, wrong_md5):
+        source = make_archive(tmp_path / "candidate.zip")
+        output = tmp_path / "inventory.json"
+        source_size = source.stat().st_size
+        expected_md5 = hashlib.md5(source.read_bytes()).hexdigest()
+        with pytest.raises(ValueError, match="size differs|MD5 differs"):
+>           inspect_zip(
+                source,
+                expected_bytes=source_size + int(wrong_size),
+                expected_md5=("0" * 32 if wrong_md5 else expected_md5),
+                output_manifest=output,
+            )
+
+tests/test_pinned_research_zip.py:96: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_expected_size_and_md5_are1/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_expected_size_and_md5_are1')
+wrong_size = False, wrong_md5 = True
+
+    @pytest.mark.parametrize("wrong_size,wrong_md5", [(True, False), (False, True)])
+    def test_expected_size_and_md5_are_required_before_inventory(tmp_path, wrong_size, wrong_md5):
+        source = make_archive(tmp_path / "candidate.zip")
+        output = tmp_path / "inventory.json"
+        source_size = source.stat().st_size
+        expected_md5 = hashlib.md5(source.read_bytes()).hexdigest()
+>       with pytest.raises(ValueError, match="size differs|MD5 differs"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'size differs|MD5 differs'
+E        Input: 'a path parent is missing, unsafe, or a symlink'
+
+tests/test_pinned_research_zip.py:95: AssertionError
+______ test_source_change_during_directory_inspection_leaves_no_manifest _______
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_source_change_during_dire0/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_source_change_during_dire0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb71dddd9f0>
+
+    def test_source_change_during_directory_inspection_leaves_no_manifest(tmp_path, monkeypatch):
+        source = make_archive(tmp_path / "candidate.zip")
+        output = tmp_path / "inventory.json"
+        original = inventory_module._inventory_directory
+    
+        def inspect_then_change(file_size, tail, tail_offset):
+            result = original(file_size, tail, tail_offset)
+            with source.open("r+b") as handle:
+                handle.seek(0)
+                handle.write(b"X")
+                handle.flush()
+                os.fsync(handle.fileno())
+            return result
+    
+        monkeypatch.setattr(inventory_module, "_inventory_directory", inspect_then_change)
+        with pytest.raises(ValueError, match="changed during inspection"):
+>           call_inspect(source, output)
+
+tests/test_pinned_research_zip.py:132: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pinned_research_zip.py:24: in call_inspect
+    return inspect_zip(
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_source_change_during_dire0/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_source_change_during_dire0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb71dddd9f0>
+
+    def test_source_change_during_directory_inspection_leaves_no_manifest(tmp_path, monkeypatch):
+        source = make_archive(tmp_path / "candidate.zip")
+        output = tmp_path / "inventory.json"
+        original = inventory_module._inventory_directory
+    
+        def inspect_then_change(file_size, tail, tail_offset):
+            result = original(file_size, tail, tail_offset)
+            with source.open("r+b") as handle:
+                handle.seek(0)
+                handle.write(b"X")
+                handle.flush()
+                os.fsync(handle.fileno())
+            return result
+    
+        monkeypatch.setattr(inventory_module, "_inventory_directory", inspect_then_change)
+>       with pytest.raises(ValueError, match="changed during inspection"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'changed during inspection'
+E        Input: 'a path parent is missing, unsafe, or a symlink'
+
+tests/test_pinned_research_zip.py:131: AssertionError
+_________________ test_existing_manifest_is_never_overwritten __________________
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_existing_manifest_is_neve0/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_existing_manifest_is_neve0')
+
+    def test_existing_manifest_is_never_overwritten(tmp_path):
+        source = make_archive(tmp_path / "candidate.zip")
+        output = tmp_path / "inventory.json"
+        output.write_bytes(b"existing")
+        with pytest.raises(FileExistsError):
+>           call_inspect(source, output)
+
+tests/test_pinned_research_zip.py:141: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pinned_research_zip.py:24: in call_inspect
+    return inspect_zip(
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_existing_manifest_is_neve0/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+___________ test_encrypted_or_masked_metadata_flags_are_rejected[1] ____________
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_encrypted_or_masked_metad0/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_encrypted_or_masked_metad0')
+flag = 1
+
+    @pytest.mark.parametrize("flag", [0x0001, 0x0040, 0x2000])
+    def test_encrypted_or_masked_metadata_flags_are_rejected(tmp_path, flag):
+        source = make_archive(tmp_path / "candidate.zip")
+        data = bytearray(source.read_bytes())
+        central = data.index(b"PK\x01\x02")
+        flags = struct.unpack_from("<H", data, central + 8)[0]
+        struct.pack_into("<H", data, central + 8, flags | flag)
+        source.write_bytes(data)
+        with pytest.raises(ValueError, match="encrypted"):
+>           call_inspect(source, tmp_path / "inventory.json")
+
+tests/test_pinned_research_zip.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pinned_research_zip.py:24: in call_inspect
+    return inspect_zip(
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_encrypted_or_masked_metad0/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_encrypted_or_masked_metad0')
+flag = 1
+
+    @pytest.mark.parametrize("flag", [0x0001, 0x0040, 0x2000])
+    def test_encrypted_or_masked_metadata_flags_are_rejected(tmp_path, flag):
+        source = make_archive(tmp_path / "candidate.zip")
+        data = bytearray(source.read_bytes())
+        central = data.index(b"PK\x01\x02")
+        flags = struct.unpack_from("<H", data, central + 8)[0]
+        struct.pack_into("<H", data, central + 8, flags | flag)
+        source.write_bytes(data)
+>       with pytest.raises(ValueError, match="encrypted"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'encrypted'
+E        Input: 'a path parent is missing, unsafe, or a symlink'
+
+tests/test_pinned_research_zip.py:153: AssertionError
+___________ test_encrypted_or_masked_metadata_flags_are_rejected[64] ___________
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_encrypted_or_masked_metad1/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_encrypted_or_masked_metad1')
+flag = 64
+
+    @pytest.mark.parametrize("flag", [0x0001, 0x0040, 0x2000])
+    def test_encrypted_or_masked_metadata_flags_are_rejected(tmp_path, flag):
+        source = make_archive(tmp_path / "candidate.zip")
+        data = bytearray(source.read_bytes())
+        central = data.index(b"PK\x01\x02")
+        flags = struct.unpack_from("<H", data, central + 8)[0]
+        struct.pack_into("<H", data, central + 8, flags | flag)
+        source.write_bytes(data)
+        with pytest.raises(ValueError, match="encrypted"):
+>           call_inspect(source, tmp_path / "inventory.json")
+
+tests/test_pinned_research_zip.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pinned_research_zip.py:24: in call_inspect
+    return inspect_zip(
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_encrypted_or_masked_metad1/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_encrypted_or_masked_metad1')
+flag = 64
+
+    @pytest.mark.parametrize("flag", [0x0001, 0x0040, 0x2000])
+    def test_encrypted_or_masked_metadata_flags_are_rejected(tmp_path, flag):
+        source = make_archive(tmp_path / "candidate.zip")
+        data = bytearray(source.read_bytes())
+        central = data.index(b"PK\x01\x02")
+        flags = struct.unpack_from("<H", data, central + 8)[0]
+        struct.pack_into("<H", data, central + 8, flags | flag)
+        source.write_bytes(data)
+>       with pytest.raises(ValueError, match="encrypted"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'encrypted'
+E        Input: 'a path parent is missing, unsafe, or a symlink'
+
+tests/test_pinned_research_zip.py:153: AssertionError
+__________ test_encrypted_or_masked_metadata_flags_are_rejected[8192] __________
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_encrypted_or_masked_metad2/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_encrypted_or_masked_metad2')
+flag = 8192
+
+    @pytest.mark.parametrize("flag", [0x0001, 0x0040, 0x2000])
+    def test_encrypted_or_masked_metadata_flags_are_rejected(tmp_path, flag):
+        source = make_archive(tmp_path / "candidate.zip")
+        data = bytearray(source.read_bytes())
+        central = data.index(b"PK\x01\x02")
+        flags = struct.unpack_from("<H", data, central + 8)[0]
+        struct.pack_into("<H", data, central + 8, flags | flag)
+        source.write_bytes(data)
+        with pytest.raises(ValueError, match="encrypted"):
+>           call_inspect(source, tmp_path / "inventory.json")
+
+tests/test_pinned_research_zip.py:154: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pinned_research_zip.py:24: in call_inspect
+    return inspect_zip(
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_encrypted_or_masked_metad2/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_encrypted_or_masked_metad2')
+flag = 8192
+
+    @pytest.mark.parametrize("flag", [0x0001, 0x0040, 0x2000])
+    def test_encrypted_or_masked_metadata_flags_are_rejected(tmp_path, flag):
+        source = make_archive(tmp_path / "candidate.zip")
+        data = bytearray(source.read_bytes())
+        central = data.index(b"PK\x01\x02")
+        flags = struct.unpack_from("<H", data, central + 8)[0]
+        struct.pack_into("<H", data, central + 8, flags | flag)
+        source.write_bytes(data)
+>       with pytest.raises(ValueError, match="encrypted"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'encrypted'
+E        Input: 'a path parent is missing, unsafe, or a symlink'
+
+tests/test_pinned_research_zip.py:153: AssertionError
+______________ test_unsupported_compression_metadata_is_rejected _______________
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_unsupported_compression_m0/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_unsupported_compression_m0')
+
+    def test_unsupported_compression_metadata_is_rejected(tmp_path):
+        source = make_archive(tmp_path / "candidate.zip")
+        data = bytearray(source.read_bytes())
+        central = data.index(b"PK\x01\x02")
+        struct.pack_into("<H", data, central + 10, 99)
+        source.write_bytes(data)
+        with pytest.raises(ValueError, match="unsupported compression"):
+>           call_inspect(source, tmp_path / "inventory.json")
+
+tests/test_pinned_research_zip.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pinned_research_zip.py:24: in call_inspect
+    return inspect_zip(
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_unsupported_compression_m0/candidate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_unsupported_compression_m0')
+
+    def test_unsupported_compression_metadata_is_rejected(tmp_path):
+        source = make_archive(tmp_path / "candidate.zip")
+        data = bytearray(source.read_bytes())
+        central = data.index(b"PK\x01\x02")
+        struct.pack_into("<H", data, central + 10, 99)
+        source.write_bytes(data)
+>       with pytest.raises(ValueError, match="unsupported compression"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'unsupported compression'
+E        Input: 'a path parent is missing, unsafe, or a symlink'
+
+tests/test_pinned_research_zip.py:163: AssertionError
+_______________ test_duplicate_and_traversal_names_are_rejected ________________
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_duplicate_and_traversal_n0/duplicate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_duplicate_and_traversal_n0')
+
+    def test_duplicate_and_traversal_names_are_rejected(tmp_path):
+        duplicate = tmp_path / "duplicate.zip"
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", UserWarning)
+            make_archive(duplicate, (("same.txt", b"a"), ("same.txt", b"b")))
+        with pytest.raises(ValueError, match="duplicate member names"):
+>           call_inspect(duplicate, tmp_path / "duplicate.json")
+
+tests/test_pinned_research_zip.py:173: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pinned_research_zip.py:24: in call_inspect
+    return inspect_zip(
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_duplicate_and_traversal_n0/duplicate.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_duplicate_and_traversal_n0')
+
+    def test_duplicate_and_traversal_names_are_rejected(tmp_path):
+        duplicate = tmp_path / "duplicate.zip"
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore", UserWarning)
+            make_archive(duplicate, (("same.txt", b"a"), ("same.txt", b"b")))
+>       with pytest.raises(ValueError, match="duplicate member names"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'duplicate member names'
+E        Input: 'a path parent is missing, unsafe, or a symlink'
+
+tests/test_pinned_research_zip.py:172: AssertionError
+__________ test_symlink_special_member_and_linked_source_are_rejected __________
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_symlink_special_member_an0/symlink-member.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_symlink_special_member_an0')
+
+    def test_symlink_special_member_and_linked_source_are_rejected(tmp_path):
+        source = tmp_path / "symlink-member.zip"
+        info = zipfile.ZipInfo("link")
+        info.create_system = 3
+        info.external_attr = (stat.S_IFLNK | 0o777) << 16
+        with zipfile.ZipFile(source, "w") as archive:
+            archive.writestr(info, "target")
+        with pytest.raises(ValueError, match="symlink or special"):
+>           call_inspect(source, tmp_path / "symlink-member.json")
+
+tests/test_pinned_research_zip.py:189: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pinned_research_zip.py:24: in call_inspect
+    return inspect_zip(
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_symlink_special_member_an0/symlink-member.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_symlink_special_member_an0')
+
+    def test_symlink_special_member_and_linked_source_are_rejected(tmp_path):
+        source = tmp_path / "symlink-member.zip"
+        info = zipfile.ZipInfo("link")
+        info.create_system = 3
+        info.external_attr = (stat.S_IFLNK | 0o777) << 16
+        with zipfile.ZipFile(source, "w") as archive:
+            archive.writestr(info, "target")
+>       with pytest.raises(ValueError, match="symlink or special"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'symlink or special'
+E        Input: 'a path parent is missing, unsafe, or a symlink'
+
+tests/test_pinned_research_zip.py:188: AssertionError
+_______________ test_member_count_and_filename_caps_are_enforced _______________
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_member_count_and_filename0/too-many.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_member_count_and_filename0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb71e8b47f0>
+
+    def test_member_count_and_filename_caps_are_enforced(tmp_path, monkeypatch):
+        source = tmp_path / "too-many.zip"
+        # A small synthetic end record proves the count limit is checked before
+        # the utility reads or allocates a member directory.
+        source.write_bytes(struct.pack("<4s4H2IH", b"PK\x05\x06", 0, 0, 4097, 4097, 0, 0, 0))
+        with pytest.raises(ValueError, match="member count"):
+>           call_inspect(source, tmp_path / "too-many.json")
+
+tests/test_pinned_research_zip.py:219: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pinned_research_zip.py:24: in call_inspect
+    return inspect_zip(
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_member_count_and_filename0/too-many.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_member_count_and_filename0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb71e8b47f0>
+
+    def test_member_count_and_filename_caps_are_enforced(tmp_path, monkeypatch):
+        source = tmp_path / "too-many.zip"
+        # A small synthetic end record proves the count limit is checked before
+        # the utility reads or allocates a member directory.
+        source.write_bytes(struct.pack("<4s4H2IH", b"PK\x05\x06", 0, 0, 4097, 4097, 0, 0, 0))
+>       with pytest.raises(ValueError, match="member count"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'member count'
+E        Input: 'a path parent is missing, unsafe, or a symlink'
+
+tests/test_pinned_research_zip.py:218: AssertionError
+_________________ test_central_directory_byte_cap_is_enforced __________________
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_central_directory_byte_ca0/directory-cap.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_central_directory_byte_ca0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb71e86cb80>
+
+    def test_central_directory_byte_cap_is_enforced(tmp_path, monkeypatch):
+        source = make_archive(tmp_path / "directory-cap.zip")
+        monkeypatch.setattr(inventory_module, "MAX_DIRECTORY_BYTES", 32)
+        with pytest.raises(ValueError, match="central-directory metadata"):
+>           call_inspect(source, tmp_path / "directory-cap.json")
+
+tests/test_pinned_research_zip.py:231: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pinned_research_zip.py:24: in call_inspect
+    return inspect_zip(
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_central_directory_byte_ca0/directory-cap.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_central_directory_byte_ca0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb71e86cb80>
+
+    def test_central_directory_byte_cap_is_enforced(tmp_path, monkeypatch):
+        source = make_archive(tmp_path / "directory-cap.zip")
+        monkeypatch.setattr(inventory_module, "MAX_DIRECTORY_BYTES", 32)
+>       with pytest.raises(ValueError, match="central-directory metadata"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'central-directory metadata'
+E        Input: 'a path parent is missing, unsafe, or a symlink'
+
+tests/test_pinned_research_zip.py:230: AssertionError
+__________ test_manifest_byte_cap_is_enforced_before_exclusive_create __________
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_manifest_byte_cap_is_enfo0/manifest-cap.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_manifest_byte_cap_is_enfo0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb71e65b5b0>
+
+    def test_manifest_byte_cap_is_enforced_before_exclusive_create(tmp_path, monkeypatch):
+        source = make_archive(tmp_path / "manifest-cap.zip")
+        output = tmp_path / "manifest-cap.json"
+        monkeypatch.setattr(inventory_module, "MAX_MANIFEST_BYTES", 16)
+        with pytest.raises(ValueError, match="manifest exceeds"):
+>           call_inspect(source, output)
+
+tests/test_pinned_research_zip.py:239: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_pinned_research_zip.py:24: in call_inspect
+    return inspect_zip(
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_manifest_byte_cap_is_enfo0/manifest-cap.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_manifest_byte_cap_is_enfo0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb71e65b5b0>
+
+    def test_manifest_byte_cap_is_enforced_before_exclusive_create(tmp_path, monkeypatch):
+        source = make_archive(tmp_path / "manifest-cap.zip")
+        output = tmp_path / "manifest-cap.json"
+        monkeypatch.setattr(inventory_module, "MAX_MANIFEST_BYTES", 16)
+>       with pytest.raises(ValueError, match="manifest exceeds"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'manifest exceeds'
+E        Input: 'a path parent is missing, unsafe, or a symlink'
+
+tests/test_pinned_research_zip.py:238: AssertionError
+_________ test_complete_run_writes_exclusive_metadata_inventory_marker _________
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_complete_run_writes_exclu0/experiment/SVUPP_paper.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_complete_run_writes_exclu0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb71de3cd90>
+
+    def test_complete_run_writes_exclusive_metadata_inventory_marker(tmp_path, monkeypatch):
+        data = _archive_bytes()
+        root, calls = _configure_run(monkeypatch, tmp_path, data)
+        original_pread = inspector.os.pread
+        source_reads = []
+    
+        def record_pread(fd, amount, offset):
+            block = original_pread(fd, amount, offset)
+            source_reads.append((offset, amount, block))
+            return block
+    
+        monkeypatch.setattr(inspector.os, "pread", record_pread)
+    
+>       launcher.run(root)
+
+tests/test_svupp_archive_launcher.py:83: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/run_svupp_archive_inventory.py:92: in run
+    report = inspect_zip(archive, expected_bytes=ASSET_BYTES, expected_md5=ASSET_MD5,
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_complete_run_writes_exclu0/experiment/SVUPP_paper.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+___________ test_stored_sha_mismatch_never_writes_completion_marker ____________
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_stored_sha_mismatch_never0/experiment/SVUPP_paper.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+>               next_fd = os.open(component, flags, dir_fd=current_fd)
+E               PermissionError: [Errno 13] Permission denied: 'beegfs'
+
+analysis/inspect_pinned_research_zip.py:58: PermissionError
+
+The above exception was the direct cause of the following exception:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_stored_sha_mismatch_never0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb71e8845e0>
+
+    def test_stored_sha_mismatch_never_writes_completion_marker(tmp_path, monkeypatch):
+        data = _archive_bytes()
+        root, _calls = _configure_run(monkeypatch, tmp_path, data)
+        original_inspect = inspector.inspect_zip
+    
+        def report_wrong_stored_sha(*args, **kwargs):
+            report = original_inspect(*args, **kwargs)
+            report["actual_asset_sha256"] = "0" * 64
+            return report
+    
+        monkeypatch.setattr(inspector, "inspect_zip", report_wrong_stored_sha)
+    
+        with pytest.raises(ValueError, match="stored archive differs"):
+>           launcher.run(root)
+
+tests/test_svupp_archive_launcher.py:164: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+analysis/run_svupp_archive_inventory.py:92: in run
+    report = inspect_zip(archive, expected_bytes=ASSET_BYTES, expected_md5=ASSET_MD5,
+tests/test_svupp_archive_launcher.py:157: in report_wrong_stored_sha
+    report = original_inspect(*args, **kwargs)
+analysis/inspect_pinned_research_zip.py:497: in inspect_zip
+    source_parent_fd = _open_parent_without_symlinks(source_path)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_stored_sha_mismatch_never0/experiment/SVUPP_paper.zip')
+
+    def _open_parent_without_symlinks(path: Path) -> int:
+        """Open only this path's parent components, with no symlink traversal."""
+        if not hasattr(os, "O_NOFOLLOW") or not hasattr(os, "O_DIRECTORY"):
+            raise OSError("safe directory opening is not supported on this platform")
+    
+        flags = os.O_RDONLY | os.O_DIRECTORY | os.O_NOFOLLOW
+        flags |= getattr(os, "O_CLOEXEC", 0)
+        current_fd = os.open(path.anchor, flags)
+        try:
+            for component in path.parent.parts[1:]:
+                next_fd = os.open(component, flags, dir_fd=current_fd)
+                os.close(current_fd)
+                current_fd = next_fd
+                if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                    raise ValueError("a path parent is not a directory")
+            if not stat.S_ISDIR(os.fstat(current_fd).st_mode):
+                raise ValueError("a path parent is not a directory")
+            return current_fd
+        except OSError as exc:
+            os.close(current_fd)
+>           raise ValueError("a path parent is missing, unsafe, or a symlink") from exc
+E           ValueError: a path parent is missing, unsafe, or a symlink
+
+analysis/inspect_pinned_research_zip.py:68: ValueError
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = PosixPath('/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-01/control_tmp/test_stored_sha_mismatch_never0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7fb71e8845e0>
+
+    def test_stored_sha_mismatch_never_writes_completion_marker(tmp_path, monkeypatch):
+        data = _archive_bytes()
+        root, _calls = _configure_run(monkeypatch, tmp_path, data)
+        original_inspect = inspector.inspect_zip
+    
+        def report_wrong_stored_sha(*args, **kwargs):
+            report = original_inspect(*args, **kwargs)
+            report["actual_asset_sha256"] = "0" * 64
+            return report
+    
+        monkeypatch.setattr(inspector, "inspect_zip", report_wrong_stored_sha)
+    
+>       with pytest.raises(ValueError, match="stored archive differs"):
+E       AssertionError: Regex pattern did not match.
+E        Regex: 'stored archive differs'
+E        Input: 'a path parent is missing, unsafe, or a symlink'
+
+tests/test_svupp_archive_launcher.py:163: AssertionError
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_pinned_research_zip.py::test_expected_input_size_cannot_exceed_candidate_cap
+PASSED tests/test_pinned_research_zip.py::test_symlink_parent_is_rejected
+PASSED tests/test_svupp_archive_launcher.py::test_invalid_acquisition_never_writes_completion_marker[truncated-False]
+PASSED tests/test_svupp_archive_launcher.py::test_invalid_acquisition_never_writes_completion_marker[oversized-False]
+PASSED tests/test_svupp_archive_launcher.py::test_invalid_acquisition_never_writes_completion_marker[complete-True]
+PASSED tests/test_svupp_archive_launcher.py::test_duplicate_payload_claim_prevents_network_replay
+PASSED tests/test_svupp_archive_launcher.py::test_untrusted_root_is_rejected_before_network[different]
+PASSED tests/test_svupp_archive_launcher.py::test_untrusted_root_is_rejected_before_network[symlink]
+PASSED tests/test_svupp_archive_launcher.py::test_control_tree_size_counts_hardlinks_and_does_not_follow_symlinks
+PASSED tests/test_svupp_archive_launcher.py::test_control_tree_size_enforces_byte_and_entry_caps
+PASSED tests/test_svupp_archive_launcher.py::test_control_tree_size_rejects_special_files
+PASSED tests/test_svupp_archive_launcher.py::test_new_metadata_never_overwrites_existing_file
+FAILED tests/test_pinned_research_zip.py::test_valid_inventory_verifies_hashes_and_writes_bounded_manifest
+FAILED tests/test_pinned_research_zip.py::test_expected_size_and_md5_are_required_before_inventory[True-False]
+FAILED tests/test_pinned_research_zip.py::test_expected_size_and_md5_are_required_before_inventory[False-True]
+FAILED tests/test_pinned_research_zip.py::test_source_change_during_directory_inspection_leaves_no_manifest
+FAILED tests/test_pinned_research_zip.py::test_existing_manifest_is_never_overwritten
+FAILED tests/test_pinned_research_zip.py::test_encrypted_or_masked_metadata_flags_are_rejected[1]
+FAILED tests/test_pinned_research_zip.py::test_encrypted_or_masked_metadata_flags_are_rejected[64]
+FAILED tests/test_pinned_research_zip.py::test_encrypted_or_masked_metadata_flags_are_rejected[8192]
+FAILED tests/test_pinned_research_zip.py::test_unsupported_compression_metadata_is_rejected
+FAILED tests/test_pinned_research_zip.py::test_duplicate_and_traversal_names_are_rejected
+FAILED tests/test_pinned_research_zip.py::test_symlink_special_member_and_linked_source_are_rejected
+FAILED tests/test_pinned_research_zip.py::test_member_count_and_filename_caps_are_enforced
+FAILED tests/test_pinned_research_zip.py::test_central_directory_byte_cap_is_enforced
+FAILED tests/test_pinned_research_zip.py::test_manifest_byte_cap_is_enforced_before_exclusive_create
+FAILED tests/test_svupp_archive_launcher.py::test_complete_run_writes_exclusive_metadata_inventory_marker
+FAILED tests/test_svupp_archive_launcher.py::test_stored_sha_mismatch_never_writes_completion_marker
+16 failed, 12 passed in 5.36s
