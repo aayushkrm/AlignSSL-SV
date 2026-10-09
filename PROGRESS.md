@@ -11,6 +11,17 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 independent actual inventoryreview ACCEPTS CLOSED INCOMPLETE:
+12hashes/full73105-byte control log/pins/claims/account checked; passing
+symlink control may be masked by ancestorpermissionfailure, no dataabsence
+orbiologynull. All13raw files nowtracked/pushedc3697b3,7ignoredlogs explicitly
+force-added unchanged aftermetadata46c7449. Mainstat13:20:03+07beegfs711,
+scratch755, ownedbase700 supportsread-versus-traverse incompatibility, not
+ACLfullaudit. [Luna diagnosis](docs/research/2026-10-09-svupp-ancestor-permission-diagnosis.md)
+proposesLinuxO_PATH onlyfordirectoryfd, preservingNOFOLLOW/identity/leafreads;
+no code/testchange ornewrun. Sol6.1/max investmentdecision stillrunning;
+no02 selected/booked/staged, current41309049739bytes/563.932707CPU intact.
+
 October9 actual inventory01 CLOSED INCOMPLETE: Slurm1604210FAILED1:0/7s;
 actualstack matches, but28controls16failed12passed0skip5.36s. Componentwise
 O_RDONLY directory opening fails atancestorbeegfs errno13. Shell stops before

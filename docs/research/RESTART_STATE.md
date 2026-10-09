@@ -32,6 +32,14 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 independent actual01review ACCEPTCLOSEDINCOMPLETE; all12rawhashes/
+  fullcontrolstdout/claims/pins/accountchecked.13rawtracked/pushedc3697b3;
+  no logrewrites. Mainstatbeegfs711supportsread/searchdiagnosis; fullACLnotread.
+  Completed [static permission design](2026-10-09-svupp-ancestor-permission-diagnosis.md)
+  proposesdirectoryO_PATH whilekeepingleafREADONLY andnofollows/identity.
+  Maxdecision01a11f50-6c5f-7182-9061-a0ae75b93fb9 stilllive; waitsamehandle
+  before any02implementation/booking. No userquotaissue now; no activejob.
+
 - October9 actual inventory01 CLOSED INCOMPLETE: job1604210FAILED1:0/7s,
  16controlsfailed12passed5.36s atO_RDONLYancestorbeegfs permission guard.
   No realpayloadclaim/archive/network/memberread; no inputs-absent/biologyclaim.

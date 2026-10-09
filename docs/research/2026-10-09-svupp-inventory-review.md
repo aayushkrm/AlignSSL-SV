@@ -83,3 +83,51 @@ Kanpig's newly reported native v2 beta-binomial fitting and calibration strength
 Member names can establish plausible resources or obvious absence, not verified scores, truth joins, callable masks, independence or the ONT ultra-long/HiFi pair. A complete listing cannot exclude useful vectors hidden inside an opaque RData/archive merely from filenames. Report unresolved content readiness honestly. Plausible names leave scientific readiness HOLD and require a separately pinned content protocol; metadata success must not flow automatically into scoring. Preserve the1%/10-point development selection, common-catalogue/denominator controls, independent final truth and grouped leakage constraints from the scientific reconciliation.
 
 No generic GQ paper, new confidence method, biological accuracy, clinical guarantee or publication readiness is accepted. Native attempts01/02 remain CLOSED INCOMPLETE, H_R UNTESTED and generic released-callset investment STOP. All historical charges and raw failures remain preserved. Final disposition is **CONDITIONAL ACCEPT of this exact one-shot metadata inventory and its narrow booking repin, not the content/analysis campaign.**
+
+## Actual inventory01: ACCEPT CLOSED INCOMPLETE, runtime controls failed
+
+2026-10-09. **ACCEPT the actual setup/control-failure closure and retained account. The real author-archive inventory never began.** The earlier exact-launch conditional acceptance remains preserved as historical design review, not evidence of actual-stack compatibility or successful acquisition. Its mandatory cluster-control gate failed and stopped the attempt. No retry, new allowance or future permission correction is approved by this append. Requested Sol6.1/high remains backend-unattested.
+
+Read FULL the result01 note and every text payload in raw01, including all1,382 lines/73,105 bytes of control stdout in consecutive bounded ranges, with no omitted or truncated range. Read the checksum manifest, frozen booking snapshot and current parent reservation. Independently verified all12 local payload hashes and inspected all13 local files including the manifest. No test rerun, network, job, booking, Git, caller or source edit occurred; only this review was appended. The separate permission-semantics diagnosis was not read or used to approve a correction.
+
+| Actual inspected snapshot | SHA256 |
+|---|---|
+| Result01 note, initial saved verification-pending state | `8c1097dff77073274aae8bfd1975906cb4b1d8139e16a26a9ea9575165682d9e` |
+| Raw01 checksum manifest | `1ed7a1d58ca9b0c4ad5dcea6422de317626642347222588fba38621771790c1a` |
+| Complete controls stdout | `6aeea3d684c944ac60e2f8c1702b649d6cd3fabf729bcc6e251c2604d338e4af` |
+| Frozen and current BOOKED reservation | `cbe0701ae48567d6647931dd76773d103ee944bc3f2d20e65453af98a05827f5` |
+| Booked seven-entry bundle | `b1f417bb18498b1c1572f8b9029ae8ef4185f396da1fb173a6fc39698f2cba05` |
+| Actual literal submission | `2cd214cb122c238bbd5fe8fdd6d5134a6831240519030970b76c241a207494fc` |
+| Owned review before this append | `c58f439a5b2b37dfdc885dbaf729781cceb49a9f67e3b61fb0eb0baae4540d63` |
+
+### Provenance, stop and inference limits
+
+The booked snapshot changes only the previously reviewed UNBOOKED status to BOOKED and adds `booked_at_utc=2026-10-09T06:12:17Z`. All numerical allowances and scope remain unchanged. The archived bundle preserves all six accepted source/test/wrapper pins and updates the reservation entry. Local hashes of those six files still match. The actual literal command updates both bundle-hash occurrences, and the submission claim records that same booked hash and01 ID. Slurm stdout records bundle plus all seven entries OK before the timed controls. The outer claim is present.
+
+Launch stdout records Python3.10.20/pytest8.4.2. Complete controls stdout reports16 failed,12 passed in5.36s, with no skipped cases:14 parser cases and two launcher cases failed. Every failure traceback identifies `PermissionError: [Errno 13] Permission denied: 'beegfs'` from component-wise `os.open` using O_RDONLY|O_DIRECTORY|O_NOFOLLOW at inspector line58. The wrapper converts it to a generic parent-path ValueError; many tests then fail their expected-message assertion. Those assertion failures do not establish a broken digest, encryption, traversal, mutation or cap guard: their intended branches were not reached.
+
+The passing parser symlink-parent test also deserves a limit: its generic `parent.*symlink` expectation can match this earlier ancestor-permission exception. Its PASS therefore does not demonstrate the intended symlink rejection on this cluster. The12 passing controls must not be promoted into a complete production guard validation. Existing local passes remain local evidence only.
+
+The wrapper did reach its physical working directory and controls created/read their own synthetic files. This is consistent with whole-path access being available while this component-opening strategy is not compatible with the ancestor permissions. Actual ancestor modes/ACLs and the exact read-versus-traverse mechanism were not independently queried here. Errno13 does not prove a symlink, forbidden archive member, corrupt ZIP or unsupported ZIP format. A concrete safe correction requires its separate completed diagnosis/code/control review; this closure does not prescribe or accept one.
+
+The previously pinned payload uses shell fail-fast behavior, so pytest's nonzero status stops it before the control-summary/tree checks, post-control source check and real launcher invocation. No real payload claim, downloaded ZIP, acquisition metadata, inventory, result or launcher failure marker is reported. The archive contains none of these; the absence of a launcher failure marker is expected because the shell, not `main()`, failed. Tests invoked the launcher with fake responses and synthetic ZIPs, so “no acquisition” refers to the real Zenodo asset, not absence of all test fixture bytes or mock payload claims. No author central directory, member body, genotype outcome or score/truth join was observed.
+
+Job1604210, FAILED1:0 and scheduler elapsed7s are main-reported in the result/request. The archive independently records GNU-time exit1 and6.48 wall seconds, consistent with that duration, but contains no scheduler accounting row independently confirming job identity. Main reports the exact failed source preserved/pushed as5df488c; no Git check was performed. The observed six source hashes agree with the accepted code. No separate post-failure remote source rehash is inferred from the initial Slurm checks.
+
+### Complete bounded raw and account
+
+All12 archived payload checksums PASS locally. The tree contains exactly13 regular single-link files, no links/special files or extra directories:76,846 payload bytes plus1,011 checksum bytes =77,857 total, below2MiB. Three zero-byte stderr logs are preserved and verified as empty, not missing. No ZIP or synthetic control tree was transferred. Local checksum agreement completes this review's local verification despite the result note's preserved initial “pending” wording; it is not an independent repeat of remote source hashing or transfer chronology.
+
+The parent reservation still equals the frozen BOOKED snapshot byte-for-byte; it is not a post-run closure journal. Closure/account observations come from the result note and actual timer, with the arithmetic checked here. Preserve this distinction rather than relabeling the frozen booking as live result metadata.
+
+| Accepted charge/measurement | Value |
+|---|---:|
+| Full new retained charge | 536,870,912 bytes |
+| Prior retained plus this charge | 40,772,178,827 +536,870,912 =41,309,049,739 bytes |
+| Outer user + system CPU, once | 1.10 +1.54 =2.64 seconds |
+| Cumulative measured named CPU | 561.292707 +2.64 =563.932707 seconds |
+| Outer wall / maximum RSS | 6.48 seconds /36,624KiB |
+
+Keep the entire512MiB allocation despite no real download. Do not add5.36s pytest wall time or Slurm CPU again. The180-second allowance is not actual180-second consumption. GNU-time filesystem/socket counters do not certify complete physical I/O or substitute for the named account. The whole candidate's residual1.5GiB/420 allowance seconds remain prospective maxima, not refunded failure charges or automatic authority for another run.
+
+**CLOSED INCOMPLETE is the only supported actual outcome.** No raw-integrity/account HOLD remains for this closure, but scientific data readiness remains unresolved. This attempt cannot support INPUTS INSUFFICIENT, data absence, biological null, score miscalibration, oracle room or method/publication value. Keep the consumed submission/root closed and all earlier native stops, scientific constraints and charges intact. No same-root replay, parser repair, fresh budget or replacement approval follows; assess a completed future correction under its own exact proposal.

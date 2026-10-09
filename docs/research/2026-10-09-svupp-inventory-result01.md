@@ -62,3 +62,21 @@ permission-semantics diagnosis and Sol6.1/max-requested investment decision
 are now underway, with independent actual-closure review. Any separate future
 correction needs its own explicit decision/account/launch review; none is
 booked or staged here.
+
+## Independent actual closure
+
+The maintained reviewer completes ACCEPT CLOSED INCOMPLETE: all12 hashes,
+complete control log, frozen booking/pins, exclusive claim and outer account
+checked, no raw-integrity/account HOLD. It specifically rejects data-absence
+or biological-null inference and notes that passing symlink tests can be
+masked by the earlier permission error. This is closure, not replacement
+permission. Main read the full actual-closure append.
+
+All13 raw files are tracked and pushed in c3697b3;7immutable logs needed
+explicit force-add because the repository's generic log ignore excluded them
+from the first metadata-only commit46c7449. No log byte was stripped or
+rewritten. Main stat metadata at13:20:03+07 records `/beegfs` mode711,
+`/beegfs/scratch`755 and the owned physical workspace700; no broad listing,
+chmod, unrelated job cancellation or private-key content read occurred.
+This supports the unnecessary ancestor read-access explanation without
+claiming a full ACL audit or a functioning correction.
