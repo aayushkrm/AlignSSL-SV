@@ -11,6 +11,24 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 actualprovenance/header01 COMPLETERUNTIME, Slurm1604214COMPLETED0:0/
+3s; actual3.10.20pytest8.4.2/44zero-skips0.88s, tree408157B168entries, pins
+pass. Full8outerCRC/2sourcehash/fiveauthoredtexts/threeheaders preserved;
+noGTrowsinterpreted/nestedgzipfullintegrityunassessed. All19rawfiles89269B/
+18hashes PASS aftersingleSCP0; firstcollectionlist omittedtwo stagedwrappers
+andstoppedbeforechecksum/transfer, thenbothpreserved, no jobrerun. Fullcharge
+42114356107B; outer1.55CPUonce→568.552707. [Result](docs/research/2026-10-09-svupp-provenance-header-result01.md).
+Sevenpedigreesamples/differentorders; fixedONT→HiFiscoreviews/version/truth/
+callability notestablished. Mainproposes finitepathclosure, no biology-null
+or dataabsenceelsewhere. Independentactualreviewnext. Somaticsidecar doesnot
+verify secondphysicalmix/scorequery;25webcardsvs15requesteddeviationretained.
+
+October9 provenance/header01 Slurm1604214 submittedONCE, acknowledgedSSH0.
+Exactreview/bookedsource pusheda357714 beforefreshroot14:37:42+07;3stages0,
+all8pins/bookedbundle/literalunusedclaims verify14:38:22+07. Bundle2ec99e9c,
+literale9b91e5c. Slotconsumed; actual44zero-skips required before8membertext/
+headerread. Fullraw/actualreview pending, no GT/scoring/readiness/scienceclaim.
+
 October9 provenance256MiB/60subset BOOKED07:36:03UTC afterconditionalreview/
 14:35:56+07 livefreshrootabsence/queueempty/sourceaccess/expirycheck. Full
 retained42114356107B, actualCPUstill567.002707; residual805306368B/180allowance.

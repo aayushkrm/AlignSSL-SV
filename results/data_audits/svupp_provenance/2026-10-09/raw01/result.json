@@ -1,0 +1,13 @@
+{
+  "author_code_not_executed": true,
+  "campaign_approval": false,
+  "experiment": "svupp-provenance-20261009-01",
+  "fixed_member_count": 8,
+  "genotype_records_not_interpreted": true,
+  "member_bodies_decoded": true,
+  "nested_gzip_full_crc_not_assessed": true,
+  "publication_result": false,
+  "scientific_data_readiness": "UNRESOLVED_PROVENANCE_ONLY",
+  "source_sha256": "b15665743d28151bf2e9f656ae32dc8de9a3d6a5582c8033dbf251fec71daa2c",
+  "status": "COMPLETE_PROVENANCE_HEADERS"
+}

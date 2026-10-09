@@ -32,6 +32,20 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 actualprovenance1604214 runtimecomplete0:0/3s; actual44zero-skips
+  0.88s/408157Btree/8outerCRC/2SHA/fivefulltexts/threefullheaders. SingleSCP0,
+  exact19raw89269B/all18hashes; initialcollectionomittedwrappers assertion
+  stoppedbeforechecksum/transfer; wrappersincludedunchanged, no jobreplay.
+  Fullcharge42114356107B/outer1.55once→568.552707CPU. Mainproposes finite
+  archivepathclosure: fixedONT→HiFiviews/version/truth/masks notestablished,
+  not biology-null or allpublicdataabsence. Actualindependentreviewpending;
+  noGTrows/scoring/ceiling/model/campaign. Somaticindependentphysicalmixnot
+  verified; discovery25cardsvs15requesteddeviation documented, no dataread.
+- October9 provenance/header01 singlejob1604214 ack0; source/book/review
+  pusheda357714 beforefreshroot14:37:42+07,3SCP0, all8pins/bundle/literal/
+  unusedclaims PASS14:38:22+07. Slotconsumed, no replay. Actual44zero-skips/
+  boundedcompleteheaders/rawpreservation/review pending; no GT/readiness/value
+  or publicationclaim. Currentfullretained42114356107B/actualCPU567.002707.
 - October9 provenance subset256MiB/60 BOOKED07:36:03UTC afterexactreview/
   14:35:56+07 freshlivegates. Retained42114356107B/actualCPU567.002707,
   originalresidual805306368B/180allowance. Onlyledgerstatus-time+dependent
