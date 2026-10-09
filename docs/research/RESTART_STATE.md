@@ -32,6 +32,16 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 provenance subset256MiB/60 BOOKED07:36:03UTC afterexactreview/
+  14:35:56+07 freshlivegates. Retained42114356107B/actualCPU567.002707,
+  originalresidual805306368B/180allowance. Onlyledgerstatus-time+dependent
+  pinschange:8d21a5d3/2ec99e9c/e9b91e5c; sevenfixedentries. No root/stage/job/
+  memberread yet; preservebookedrecordbeforeexactonce setup/launch.
+- October9 exactprovenance review CONDITIONAL ACCEPT; main FULLnote read,
+  8pins/literal verified, independentlocal44pass0skip0.45s notactualstack.
+  Freshlivegates/status-time-onlybooking+dependentrepin/exact44clusterpass/
+  fullraw≤1MiBinclchecksum/actualreview required. UNBOOKED atdisposition;
+  scientific/value/scoring/campaign stillHOLD; no replay/scope repair.
 - October9 boundedprovenance/header candidate frozen UNBOOKED; two Luna/max
   workers complete. Main corrects3completionflags exposedby19pass/3fail,
   keeps tests, addsreal1MiBJSONcap witness. Local44pass0skip0.31s; tree407,568B/

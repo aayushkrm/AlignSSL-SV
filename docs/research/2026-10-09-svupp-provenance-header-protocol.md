@@ -197,3 +197,46 @@ and the current-kanpig novelty boundary. A conditional acceptance may permit
 only booking status/time and their dependent hash repin; all scientific
 inputs, controls and limits must remain unchanged. New objections must be
 resolved prospectively, not after observing headers or outcomes.
+
+## Independent exact disposition
+
+Maintained Sol6.1/high-requested reviewer returns CONDITIONAL ACCEPT in
+`2026-10-09-svupp-provenance-header-review.md`; main reads the entire note.
+All eight pins and literal agree. Reviewer's independent local44pass0skip
+0.45s uses3.11.13/pytest9.1.1, not the actual cluster stack. No concrete
+code/control/account HOLD remains for this stage. Scientific readiness,
+scoring, value measurement and campaign remain HOLD.
+
+Proceed only after fresh physical/access/expiry/source/jobs/new-root checks,
+then status/timestamp-only booking and dependent reservation/bundle/both
+literal hash repin. Preserve all seven non-ledger entries. Keep complete
+explicit raw whitelist at most1MiB including checksum; oversized evidence
+stays remotely intact, never trimmed. Require independent actual review
+before accepting complete provenance/header success. Any failure or unknown
+acknowledgement consumes the slot, no replay, alternative or scope repair.
+At this dated disposition the candidate is still UNBOOKED and unexecuted.
+
+## Booking-only repin, before setup
+
+Main fresh prebooking metadata check14:35:56+07: queue empty; new root and
+claims absent; physical owned base and source parent search/access pass;
+source regular-single-link47,443,427bytes, identity[50,17171899120323951564],
+effective read true, no source body read. Scratch expiry remains
+2026-10-22T23:02:50+07. All eight UNBOOKED local pins pass.
+
+Main books the unchanged256MiB/60subset at **2026-10-09T07:36:03Z** before
+root creation or staging. Full retained bytes now42,114,356,107, measured
+CPU still567.002707 until an actual timer exists. Original candidate residual
+805,306,368bytes/180allowance seconds. Failures retain the full charge.
+Only ledger status/time change; all seven non-ledger hashes stay fixed.
+
+Final booked reservation SHA256
+`8d21a5d35ea749abcc8cdc6576e3d655afcb37c1e2a4f52f25be12fe4044ed0e`;
+eight-entry bundle
+`2ec99e9c94907f1b3a084ecadd255d1adf7a1aaaade3ccfda5619588cf287bff`;
+both literal bundle-hash occurrences repinned, literal SHA256
+`e9b91e5c9d5d5877e5e12ef2f833d6b0c96baeab2e5cc18d5928a84e9fea03d6`.
+No code/control/wrapper/member/source/numeric/scope change. Root creation,
+staging and exact once submission follow only after these booked records
+are preserved on GitHub and setup checks still pass. Scientific approval
+and outcome reads remain absent.

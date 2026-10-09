@@ -1,7 +1,7 @@
 {
   "experiment": "svupp-provenance-20261009-01",
-  "status": "UNBOOKED",
-  "booked_at_utc": null,
+  "status": "BOOKED",
+  "booked_at_utc": "2026-10-09T07:36:03Z",
   "retained_prior_bytes": 41845920651,
   "incremental_named_allowance_bytes": 268435456,
   "prospective_cumulative_retained_bytes": 42114356107,

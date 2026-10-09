@@ -11,6 +11,20 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 provenance256MiB/60subset BOOKED07:36:03UTC afterconditionalreview/
+14:35:56+07 livefreshrootabsence/queueempty/sourceaccess/expirycheck. Full
+retained42114356107B, actualCPUstill567.002707; residual805306368B/180allowance.
+Onlystatus/time+dependentpins change: ledger8d21a5d3,bundle2ec99e9c,literal
+e9b91e5c; sevenotherhashesfixed. No root/stage/member/job yet. Preserverecord
+then onceexactsetup/launch;44actualzero-skips required beforememberreads.
+
+October9 independent exactprovenance review CONDITIONAL ACCEPT; mainFULLread,
+all8pins/literal agree, reviewerlocal44pass0skip0.45s notactualstack. Only
+bookingstatus/time+dependentpins maychange; freshphysical/source/access/expiry/
+jobs/newroot gates beforebook/stage, actual44zero-skips beforememberread.
+Explicitfullraw≤1MiBinclchecksum andactualreview required; no trimming/replay.
+Scientificreadiness/value/scoring/campaign stillHOLD. StillUNBOOKED here.
+
 October9 limitedprovenance/header candidate FROZEN UNBOOKED. Two Luna/max
 workers complete reader/controls and independent launcher controls. Initial
 19pass/3fail expose missingcompletionflags; main fixes flags withoutweakening
