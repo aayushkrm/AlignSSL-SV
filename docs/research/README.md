@@ -8,6 +8,7 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-09-kanpig-calibration-prior-art.md`](2026-10-09-kanpig-calibration-prior-art.md) | Main's pinned current native confidence-control check |v2 fitting/calibration already exists; score is not posterior error; static concerns unexecuted; no campaign/endpoint change |
 | [`2026-10-09-post-native-value-decision.md`](2026-10-09-post-native-value-decision.md) | Completed Sol6.1/max-requested investment decision |One conditional confidence-value ceiling/strong-control falsifier; no method/paper selected; finite inventory first |
 | [`2026-10-09-post-native-value-review.md`](2026-10-09-post-native-value-review.md) | Independent scientific-value challenge |Final decision conditionally accepted; genericGQcoverage rejected; input readinessHOLD and exact launch unapproved |
 | [`2026-10-09-svupp-inventory-protocol.md`](2026-10-09-svupp-inventory-protocol.md) | Fixed candidate public-archive inventory, no outcomes |UNBOOKED/unexecuted; exact code/account/launch review pending; not campaign authorization |

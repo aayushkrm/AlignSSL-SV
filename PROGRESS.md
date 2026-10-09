@@ -11,6 +11,20 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 continued while reviewer capacity remains unavailable: main uses
+Exa plus Life Sciences Literature and verifies pinned kanpig2.0.2 source.
+[New prior-art check](docs/research/2026-10-09-kanpig-calibration-prior-art.md):
+native beta-binomial fitting and GQ calibration already exist; raw top-two
+likelihood ratio is not posterior error. Configuration fitting can change
+GTs, unlike selection on fixed outputs. Record-wise author holdout cannot
+substitute for locus/family/platform grouping. Static estimator discrepancies
+are not executed bug or scientific results. No author tool or labels run.
+Archive versions remain unverified; a gap on old outputs cannot establish
+improvement over the current native baseline. Endpoints and account unchanged.
+Exact reviewer resume still returns usage-limit ERRORED, not a live review.
+No booking/stage/archive/job, no new campaign. This is new source evidence
+that tightens novelty and baseline interpretation; goal remains unachieved.
+
 October9 inventory candidate and completed scientific decision/reconciliation
 are pushed in1bf148e. Main verifies28 local inventory/launcher controls pass,
 zero skips,0.81s; synthetic tree12,227bytes and shell syntax pass. Actual

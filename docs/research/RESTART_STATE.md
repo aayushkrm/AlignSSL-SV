@@ -32,6 +32,15 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 main [current kanpig source verification](2026-10-09-kanpig-calibration-prior-art.md)
+  establishes native v2 beta-binomial parameter fitting and GQ calibration.
+  Raw top-two ratio is not posterior error; fitting may change GTs. Old fixed
+  output ceilings are not performance evidence against current native v2.
+  Source-level estimator concerns are unexecuted, not a new repair project.
+  Read this note during resumed independent scrutiny. Existing1%/10-point
+  development question and unchanged finite inventory remain conditional.
+  Reviewer resume remains usage-limit ERRORED; no book, stage or archive/job.
+
 - October9 inventory candidate pushed1bf148e;28 local controls0skip0.81s,
   bounded synthetic tree12,227bytes, shell syntax pass. Exact reviewer
  01a11e73-c622-7e22-9ea6-cebd9d2b5023 is ERRORED with account usage-limit
