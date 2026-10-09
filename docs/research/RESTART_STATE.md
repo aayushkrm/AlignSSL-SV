@@ -32,6 +32,22 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 actual inventory01 CLOSED INCOMPLETE: job1604210FAILED1:0/7s,
+ 16controlsfailed12passed5.36s atO_RDONLYancestorbeegfs permission guard.
+  No realpayloadclaim/archive/network/memberread; no inputs-absent/biologyclaim.
+  [Result01](2026-10-09-svupp-inventory-result01.md), raw01complete12hashespass,
+ 77,857bytes. Full512Mretained41,309,049,739; outer2.64once →563.932707CPU.
+  Rootclosed/claimspent; originalsource5df488cimmutable. Read-onlypermission
+  diagnosis+maxinvestment decision+independentclosurereview underway. No02
+  selected/booked/staged; do not weaken guards or rerunspentroot.
+
+- October9 inventory job1604210 submitted ONCE; literal ack0, claim consumed.
+  Root created13:13:43+07 after booking;3transfers0 and7pins/reservation/
+  literal verified13:14:28+07. Finalbundleb1f417bb, literal2cd214cb; source
+  pushed5df488c. Poll this job; never duplicate it on observation timeout.
+  After terminal state collect complete metadata≤2MiB with source/local hashes,
+  no ZIP/controltree transfer. Review actual raw before interpreting readiness.
+
 - October9 exact [inventory review](2026-10-09-svupp-inventory-review.md)
   completes CONDITIONAL ACCEPT; main books512MiB06:12:17UTC BEFORE root/stage.
   Cumulative retained41,309,049,739bytes, CPUprior561.292707 unchanged. Status/

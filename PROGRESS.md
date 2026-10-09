@@ -11,6 +11,25 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 actual inventory01 CLOSED INCOMPLETE: Slurm1604210FAILED1:0/7s;
+actualstack matches, but28controls16failed12passed0skip5.36s. Componentwise
+O_RDONLY directory opening fails atancestorbeegfs errno13. Shell stops before
+realpayloadclaim/download; no author archive/content/outcomes or dataabsence
+claim. [Result](docs/research/2026-10-09-svupp-inventory-result01.md).
+All12local payloadhashes match,76,846+checksum1,011=77,857bytes; complete raw
+preserved. Full512MiBretained41,309,049,739bytes; outer2.64CPUonce yields
+563.932707namedmeasuredCPU. Root/claim closed; no replay or parserguardchange.
+Read-onlyLuna permissiondiagnosis, independentactualclosure review and
+Sol6.1/max-requested finiteinvestment decision running; no newbook/run.
+
+October9 booked inventory submitted ONCE as Slurm1604210 after independent
+exact conditional ACCEPT. New real physicalroot created13:13:43+07 after
+06:12:17UTC booking. Three staged transfers return0; all7 pins, booked
+reservation and literal command verified13:14:28+07. Finalbundleb1f417bb,
+literal2cd214cb; acknowledgement returns0 withjobID, claim consumed. Code/
+review/book/ceiling helper pushed5df488c. Await actual runtime/raw review;
+no decoded outcome, model, caller or publication claim.
+
 October9 fresh exact reviewer completes CONDITIONAL ACCEPT of the one-shot
 metadata inventory: [review](docs/research/2026-10-09-svupp-inventory-review.md).
 Main books512MiB at06:12:17UTC before creating any new cluster root/staging;

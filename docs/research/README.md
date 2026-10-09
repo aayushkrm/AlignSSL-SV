@@ -8,6 +8,8 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-09-svupp-inventory-result01.md`](2026-10-09-svupp-inventory-result01.md) | Actual first archive-inventory control failure and complete raw |CLOSED INCOMPLETE before acquisition,16failed12passed;77,857-byte raw all hashes verified; charges retained, no scientific null |
+| [`2026-10-09-svupp-inventory-review.md`](2026-10-09-svupp-inventory-review.md) | Independent exact bundle/containment/account scrutiny |Conditional metadata-only launch accepted; actual closure review pending; no scientific result approval |
 | [`2026-10-09-kanpig-calibration-prior-art.md`](2026-10-09-kanpig-calibration-prior-art.md) | Main's pinned current native confidence-control check |v2 fitting/calibration already exists; score is not posterior error; static concerns unexecuted; no campaign/endpoint change |
 | [`2026-10-09-post-native-value-decision.md`](2026-10-09-post-native-value-decision.md) | Completed Sol6.1/max-requested investment decision |One conditional confidence-value ceiling/strong-control falsifier; no method/paper selected; finite inventory first |
 | [`2026-10-09-post-native-value-review.md`](2026-10-09-post-native-value-review.md) | Independent scientific-value challenge |Final decision conditionally accepted; genericGQcoverage rejected; input readinessHOLD and exact launch unapproved |
