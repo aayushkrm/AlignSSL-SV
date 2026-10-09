@@ -11,6 +11,15 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 10 superseding [execution record](docs/research/2026-10-10-parent-sva-execution.md):
+direct job1604236 ran once but samtools could not create its remote-index cache
+in the bundle working directory. No caller or census; partial BAM is unqualified.
+Fresh body reads39,159,756B; cumulative39,225,292B including the prior prefix.
+Raw logs, journal and complete index retained. A narrow03 correction gives
+samtools its writable run directory and carries the full prior charge into
+the unchanged4GiB cap. Correct project-venv verification:27tests plus9subtests
+pass, zero skips. No scientific null, positive or parameter tuning.
+
 October 10 [execution update](docs/research/2026-10-10-parent-sva-execution.md):
 acquisition implementation completed, corrected and checked (33 local tests
 plus six subtests; seven exact cluster acquisition controls). Job1604234

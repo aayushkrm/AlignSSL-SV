@@ -6,6 +6,7 @@ import tempfile
 import threading
 import time
 import unittest
+from unittest.mock import patch
 import urllib.request
 from pathlib import Path
 
@@ -22,6 +23,10 @@ from scripts.acquire_parent_sva_region import (
     parse_range,
     running_proxy,
     validate_206,
+    run_samtools,
+    acquire,
+    BODY_LIMIT,
+    PRIOR_BYTES,
 )
 
 
@@ -197,6 +202,27 @@ class AcquisitionRangeTests(unittest.TestCase):
         ledger.close()
         self.assertEqual(ledger.snapshot()["new_upstream_body_bytes"], 2*len(body)-10)
         self.assertEqual(len(requests), 2)
+
+    def test_samtools_uses_writable_run_directory_for_remote_index_cache(self):
+        commands = []
+        with patch("scripts.acquire_parent_sva_region.subprocess.run") as run:
+            run.return_value.returncode = 0
+            run_samtools(Path("/mock/samtools"), ["--version"], self.root,
+                         "version", commands, time.monotonic() + 60)
+        self.assertEqual(run.call_args.kwargs["cwd"], self.root)
+        self.assertEqual(commands[0]["returncode"], 0)
+
+    def test_prior_attempts_are_charged_without_raising_fixed_limit(self):
+        ledger = self.ledger("prior.jsonl", limit=1024, prior=900)
+        self.assertEqual(ledger.reserve(500), 124)
+        ledger.release(124)
+        self.assertEqual(ledger.snapshot()["prior_body_bytes"], 900)
+        ledger.close()
+        for prior in (PRIOR_BYTES - 1, BODY_LIMIT, -1):
+            with self.subTest(prior=prior), self.assertRaises(AcquisitionError):
+                acquire(self.root / "not-created", Path("/mock/samtools"),
+                        prior_body_bytes=prior)
+        self.assertFalse((self.root / "not-created").exists())
 
 
 if __name__ == "__main__":

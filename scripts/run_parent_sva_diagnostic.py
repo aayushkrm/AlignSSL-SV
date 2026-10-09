@@ -55,6 +55,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--samtools", required=True)
+    parser.add_argument("--prior-body-bytes", type=int, default=65536)
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     root = Path(__file__).resolve().parents[1]
@@ -63,6 +64,7 @@ def main():
     manifest = {"started_unix": start, "state": "started", "commands": {},
                 "slurm_job_id": os.environ.get("SLURM_JOB_ID"),
                 "limits": {"genomic_http_body_bytes": 4 * 1024**3,
+                           "prior_body_bytes": args.prior_body_bytes,
                            "cpu_seconds": 1800}, "source_code": {}}
     for p in (Path(__file__), root / "scripts/acquire_parent_sva_region.py",
               root / "analysis/parent_sva_census.py"):
@@ -84,7 +86,8 @@ def main():
             "freeze": subprocess.check_output([sys.executable, "-m", "pip", "freeze"], text=True).splitlines(),
             "sniffles_version": subprocess.check_output([str(sniffles), "--version"], text=True).strip()}
         acq = command("acquire", [sys.executable, root / "scripts/acquire_parent_sva_region.py",
-            "--samtools", args.samtools, "--output", args.output / "source"])
+            "--samtools", args.samtools, "--output", args.output / "source",
+            "--prior-body-bytes", args.prior_body_bytes])
         manifest["commands"]["acquire"] = acq
         save()
         if acq["exit_code"]:

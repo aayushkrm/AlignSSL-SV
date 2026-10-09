@@ -30,7 +30,7 @@ and isolated-venv Python both ran as CPython 3.12.1. Thus the `/home` alias
 is not shown to be absent. Pre-task batch I/O is suspected, but the root
 cause is not established.
 
-## Replacement 02: prepared, not yet submitted
+## Replacement 02: ran once, acquisition incomplete
 
 Use direct `srun` with streamed stdout, avoiding the failed batch-file I/O
 route. Use verified physical bundle, runtime and scratch paths. The exact
@@ -51,5 +51,48 @@ local check returned 33 passed plus six subtests, zero skips, in 4.47 seconds;
 the exact deployed acquisition snapshot passed seven cluster controls.
 These are software checks, not genomic evidence.
 
-Goal remains active and unmet. Next: run the bounded replacement, retain all
-partial artifacts on failure, then interpret complete evidence only.
+Direct-srun job `1604236` reached the public source and verified both frozen
+HEAD checks and the full BAI. Its regional extraction failed before target
+reads or native calls could be assessed:
+
+```text
+[E::test_and_fetch] Failed to create file NA12878.CHM13.haplotagged.bam.bai in the working directory
+[main_samview] random alignment retrieval only works for indexed BAM or CRAM files.
+1604236|FAILED|00:00:27|00:01.599||1:0
+1604236.0|FAILED|00:00:26|00:01.599|39440K|1:0
+```
+
+The runner reports 25.964383 seconds wall time and 1.592349 CPU seconds.
+The measured fresh HTTP-body read is **39,159,756 bytes**. With the earlier
+65,536-byte prefix, the cumulative charge is **39,225,292 bytes**. Index
+bytes are 37,783,472, SHA256
+`14ee0700cf338cfde7e201b70ec0f285942677dffc32b805aa2080f2301795ff`.
+Loopback index bytes are reported separately, not added as new upstream reads.
+The 4,650-byte partial regional BAM is not a qualified read packet. Do not
+score it, run callers on it, or interpret it as biological absence.
+
+All partial data and complete manifests/journal/logs remain in scratch and
+are copied to the project's non-expiring home experiment tree under
+`experiments/parent_sva_native_20261010_02/raw-archive`.
+No file in 02 is repaired or replaced. Original source snapshots remain.
+
+## Replacement 03: narrow cache-directory correction
+
+Samtools 1.9 caches a remote index in its working directory. Set each samtools
+subprocess's working directory to its new acquisition output directory, where
+the run already writes its outputs. The scientific window, two native modes,
+census and acceptance predicates are unchanged. This directly addresses the
+observed cache-creation error; it does not claim to diagnose the earlier
+Slurm pre-task signal.
+
+Pass prior-body charge **39,225,292** to the new acquisition. The same global
+4-GiB cap is retained, not reset on retry. New manifests distinguish prior
+body bytes from the original prefix. The correction and prior-budget controls
+pass: 27 tests plus nine subtests, zero skips, in 0.71 seconds with the project
+venv. Two mistaken local verification invocations are retained in this record:
+system-Python unittest lacked pytest; a subsequent pytest command named a
+nonexistent docs test. Neither ran a genomic experiment. The corrected command
+uses existing `.venv` and the actual two README test files; no fixture changed.
+
+Goal remains active and unmet. Next: run 03 once, retain partial artifacts on
+failure, then interpret complete evidence only. No whole-BAM fallback.

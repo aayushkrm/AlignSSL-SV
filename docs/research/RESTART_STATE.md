@@ -32,6 +32,11 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 10 direct1604236 reached source but remote-index cache creation
+  failed; no caller/census. Full raw retained, cumulative39,225,292B including
+  prefix. Narrow03 subprocess working-directory correction and prior-account
+  carry-forward pass27tests plus9subtests. Same4GiB cap/scientific settings;
+  see [execution record](2026-10-10-parent-sva-execution.md), not a genomic null.
 - October 10 [execution record](2026-10-10-parent-sva-execution.md): worker
   complete; 33 local tests plus six subtests and seven deployed acquisition
   controls pass. Job1604234 failed before Python, signal53, no genomic result.

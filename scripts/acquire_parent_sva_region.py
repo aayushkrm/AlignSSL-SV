@@ -156,7 +156,7 @@ class BodyLedger:
     def snapshot(self) -> dict:
         with self.lock:
             return {"measurement": "bytes returned by upstream HTTP response.read; excludes headers and TLS",
-                    "limit_including_prior_prefix": self.limit, "prior_prefix_bytes": self.prior,
+                    "limit_including_prior_body": self.limit, "prior_body_bytes": self.prior,
                     "new_upstream_body_bytes": self.used,
                     "total_body_bytes_including_prior": self.prior + self.used,
                     "remaining_bytes": self.limit - self.prior - self.used,
@@ -426,7 +426,7 @@ def run_samtools(exe: Path, args: list[str], out: Path, name: str,
     started, before = utcnow(), time.monotonic()
     try:
         with stdout_path.open("xb") as stdout, stderr_path.open("xb") as stderr:
-            result = subprocess.run(argv, stdout=stdout, stderr=stderr, check=False,
+            result = subprocess.run(argv, stdout=stdout, stderr=stderr, check=False, cwd=out,
                                     timeout=max(0.1, deadline - time.monotonic()))
     except subprocess.TimeoutExpired as exc:
         commands.append({"argv": argv, "started_utc": started, "finished_utc": utcnow(),
@@ -446,7 +446,10 @@ def write_json(path: Path, value: dict) -> None:
     os.replace(temp, path)
 
 
-def acquire(output: Path, samtools_arg: Path, *, opener=None) -> dict:
+def acquire(output: Path, samtools_arg: Path, *, opener=None,
+            prior_body_bytes=PRIOR_BYTES) -> dict:
+    if not isinstance(prior_body_bytes, int) or not PRIOR_BYTES <= prior_body_bytes < BODY_LIMIT:
+        raise AcquisitionError("prior-body charge must include prefix and be below the fixed cap")
     target = output if output.is_absolute() else Path.cwd() / output
     if target.exists() or target.is_symlink() or not target.parent.is_dir():
         raise AcquisitionError("--output must be a new directory under an existing parent")
@@ -454,7 +457,7 @@ def acquire(output: Path, samtools_arg: Path, *, opener=None) -> dict:
     out = target.resolve()
     deadline, started = time.monotonic() + WALL_SECONDS, utcnow()
     manifest_path = out / "acquisition.json"
-    ledger = BodyLedger(out / "body_ledger.jsonl", deadline)
+    ledger = BodyLedger(out / "body_ledger.jsonl", deadline, prior=prior_body_bytes)
     cpu_start = cpu_seconds()
     commands: list[dict] = []
     manifest = {"status": "INCOMPLETE", "started_utc": started, "output_dir": str(out),
@@ -465,7 +468,7 @@ def acquire(output: Path, samtools_arg: Path, *, opener=None) -> dict:
                            "bai_url": BAI_URL, "bai_size_bytes": BAI_SIZE, "bai_etag": BAI_ETAG},
                 "buffer_bed": BUFFER_BED, "core_bed": CORE_BED, "samtools_commands": commands,
                 "limits": {"upstream_body_bytes_including_prior_prefix": BODY_LIMIT,
-                           "prior_prefix_bytes": PRIOR_BYTES, "wall_seconds": WALL_SECONDS,
+                           "prior_body_bytes": prior_body_bytes, "wall_seconds": WALL_SECONDS,
                            "max_explicit_bounded_bam_range_bytes": MAX_RANGE,
                            "open_streams_charge_each_actual_body_read": True,
                            "samtools_extra_threads": 0,
@@ -538,9 +541,11 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--samtools", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--prior-body-bytes", type=int, default=PRIOR_BYTES,
+                        help="Cumulative body bytes from previous attempts, including header prefix")
     args = parser.parse_args()
     try:
-        result = acquire(args.output, args.samtools)
+        result = acquire(args.output, args.samtools, prior_body_bytes=args.prior_body_bytes)
     except Exception as exc:
         result = {"status": "INCOMPLETE", "error": f"{type(exc).__name__}: {exc}"}
     print(json.dumps({"status": result["status"], "output_dir": result.get("output_dir"),
