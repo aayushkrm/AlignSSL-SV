@@ -11,6 +11,17 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 user updates full objective attachment (newSHA256
+cdce4c9e320ce1550efeb230e4a4af90930f9eb953531d41459f34b428cb9b12).
+Scientific significance, broad pivots, DeepSV exclusion, honest nulls,
+independent reviews and regularGit tracking remain required. New clause asks
+fullavailableclusterresourcesforanyjob alongsideefficient/cheapdiagnostics.
+Main reads FULL and forwardsnewobjective to maintainedreviewer andlive
+maxdecision. Async clarification asksusefulparallelcapacityvswholenodes for
+serialchecks; no newclusterjob untilresourceinterpretationresolved. Completed
+01 remainsclosedwithfullcharge/evidence, unaffectedbylaterobjectiveedit.
+Latestreview/diagnosis pushed372ebd4; maxdecisionstillpending, no02book/stage.
+
 October9 independent actual inventoryreview ACCEPTS CLOSED INCOMPLETE:
 12hashes/full73105-byte control log/pins/claims/account checked; passing
 symlink control may be masked by ancestorpermissionfailure, no dataabsence

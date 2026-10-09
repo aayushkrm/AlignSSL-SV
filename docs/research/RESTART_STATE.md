@@ -32,6 +32,14 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 NEW objective attachment nowgoverns:
+ `/Users/akm/.codex/attachments/1c5d7b81-ec81-49c6-adca-1d4c77fecdd0/goal-objective.md`
+  SHA256cdce4c9e320ce1550efeb230e4a4af90930f9eb953531d41459f34b428cb9b12.
+  Fullscientificscope intact; newfullclusterresourcesclause needsreconciling
+  with efficientserialdiagnostics. Mainasksasyncusefulparallelcapacityvs
+  wholenodes; replypending, no newjob. Both maintainedreviewer/maxdecision
+  receiveupdatedscope. Maxdecisionhandleunchanged; preserveclosed01/raw/charges.
+
 - October9 independent actual01review ACCEPTCLOSEDINCOMPLETE; all12rawhashes/
   fullcontrolstdout/claims/pins/accountchecked.13rawtracked/pushedc3697b3;
   no logrewrites. Mainstatbeegfs711supportsread/searchdiagnosis; fullACLnotread.
