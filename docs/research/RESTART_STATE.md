@@ -32,6 +32,20 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 9 resource clarification: use all useful capacity efficiently and
+  scale independent experiments fully. A live 20:59:03+07 check showed an
+  empty account queue and 13 idle `amd_256M` nodes (128 CPUs, 257,204 MB each).
+  This is not an allocation. Scratch expires October 22 at 23:02:50+07,
+  with one extension available. No job launched or cancelled. The same
+  Sol6.1/max-requested decision agent is active; discovery was bounded and
+  synthesis requested, without replacing the agent on a wait timeout.
+- October 9 recurring-review verification is incomplete: native view of the
+  existing automation rendered a card but exposed no saved settings, and
+  no local `automation.toml` was found under the configured Codex directory.
+  This is not proof of automation absence. No schedule/status/model settings
+  were changed. The maintained reviewer is requested as Sol6.1/high; model
+  requests are not backend attestations. No scientific result or campaign
+  acceptance follows from this operational check.
 - October9 retainedmetadata sidecar completed/mainFULLread:6stagedcallers
   present, sharedtruth/samplecontract unestablished. Nineteenpath lstatonly,
   notfullinventory; authorBAMlabelpathENOENT notlostasset/allHiFidataabsence.

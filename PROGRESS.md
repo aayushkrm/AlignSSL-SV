@@ -11,6 +11,23 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 9 resource clarification and live check: allocate all useful capacity
+efficiently and scale independent experiments in parallel. At 20:59:03+07,
+the account queue was empty. The `amd_256M` partition reported 13 idle nodes,
+128 CPUs and 257,204 MB per node; this is availability, not a reservation.
+Scratch expires October 22 at 23:02:50+07, with one extension available.
+No job was launched or cancelled. The same Sol6.1/max-requested decision
+agent remains active; discovery was bounded and synthesis requested.
+
+The existing scientific-review automation view rendered a card but returned
+no stored settings. No `automation.toml` was found under the configured
+Codex directory. This does not prove that the automation is absent. Its
+schedule, status and model configuration could not be verified, so none was
+changed. The maintained reviewer is requested as Sol6.1/high; requested
+agent configurations are not backend model attestations. The goal is unmet.
+Documentation checks: 15 tests passed, zero skips, in 3.75 seconds; whitespace
+check passed. This is an operational checkpoint, not a scientific result.
+
 October9 Luna/MAXretained-input metadata sidecar completes; mainFULLread.
 One19explicitpath lstatquery confirms6stagedcallers, nosharedsample/truth/
 callabilitycontract established. Author-styleBAMlabelpathENOENT notlostretained
