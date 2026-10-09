@@ -20,12 +20,29 @@ import urllib.request
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-EXPERIMENT = "native-cigar-invariance-20261009-01"
+EXPERIMENT = "native-cigar-invariance-20261009-02"
 ROOT = Path("/scratch/igorno-alignssl_restart_20260922") / EXPERIMENT
+PHYSICAL_ROOT = Path("/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922") / EXPERIMENT
 ASSET_URL = ("https://github.com/PacificBiosciences/sawfish/releases/download/v2.2.1/"
              "sawfish-v2.2.1-x86_64-unknown-linux-gnu.tar.gz")
 ASSET_SHA = "869d866d1399bd9803b3c60cc0e260ed1f60aa38a6f40d46f3093cd4bf5631f4"
 MIB = 1024**2
+
+
+def resolve_experiment_root(root):
+    """Allow the managed workspace alias only to its pinned physical leaf.
+
+    The fresh experiment leaf itself must never be a link. Use this physical
+    path for all new artifacts; keep the fixture factory's ancestor guard.
+    """
+    root = Path(root)
+    if root not in (ROOT, PHYSICAL_ROOT) or root.is_symlink() or not root.is_dir():
+        raise ValueError("unexpected, absent, or linked experiment root")
+    resolved = root.resolve(strict=True)
+    if (resolved != PHYSICAL_ROOT
+            or any(parent.is_symlink() for parent in resolved.parents)):
+        raise ValueError("experiment root does not resolve to the trusted physical path")
+    return resolved
 
 
 def new_json(path, value):
@@ -156,9 +173,10 @@ def run(root):
     from analysis.observe_native_fixture import observe_native_fixture
     from analysis.check_native_fixture_settings import check_native_settings
 
-    if root != ROOT or root.is_symlink() or not root.is_dir():
-        raise ValueError("unexpected or absent experiment root")
-    new_json(root / "payload.claim.json", {"experiment": EXPERIMENT})
+    supplied_root = root
+    root = resolve_experiment_root(root)
+    new_json(root / "payload.claim.json", {"experiment": EXPERIMENT,
+             "supplied_root": str(supplied_root), "resolved_root": str(root)})
     fixture = create_fixture(root / "fixture")
     validate_fixture(fixture)
     tree_size(fixture, 64 * 1024)
@@ -217,8 +235,12 @@ def main():
     try:
         run(args.root)
     except Exception as error:
-        if args.root == ROOT and args.root.is_dir() and not args.root.is_symlink():
-            new_json(args.root / "failure.json", {"status": "INCOMPLETE",
+        try:
+            trusted_root = resolve_experiment_root(args.root)
+        except (OSError, ValueError):
+            trusted_root = None
+        if trusted_root is not None:
+            new_json(trusted_root / "failure.json", {"status": "INCOMPLETE",
                      "error_type": type(error).__name__, "reason": str(error)[:2000],
                      "publication_result": False})
         raise

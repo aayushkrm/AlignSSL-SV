@@ -11,6 +11,16 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 prospective physical-path replacement02: original attempt01 source
+and all raw logs are preserved in pushed commit ea7f2fb. Main adds an exact
+trusted physical-root gate; fixture guard and scientific protocol unchanged.
+Luna/max-requested path-test sidecar supplied8 controls; main strengthened the
+allowed-path redirect test. All78 local controls pass0skip0.94s; shellsyntax
+passes. [Replacement](docs/research/2026-10-09-native-invariance-replacement02.md)
+has13 pinned entries and separate literal claim/ledger. Exact review pending;
+new256MiB/600CPU UNBOOKED. Metadata10:20:56+07: queue empty, both roots absent,
+scratchOct22. No asset/native experiment outcome or publication lead.
+
 October9 actual native attempt01: independently reviewed launch ran once as
 job1604208, FAILED1:0. All70 cluster controls passed0skip2.58s. The fixture
 ancestor guard then rejected the managed `/scratch` alias. No fixture, asset

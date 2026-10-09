@@ -28,6 +28,13 @@ the objective.
 
 ## Current implementation and review state
 
+- October9 prospective [physical-path replacement02](2026-10-09-native-invariance-replacement02.md):
+  exact01 failure source/raw logs preserved in pushed ea7f2fb. Trusted-root
+  resolution added, unchanged fixture guard and scientific protocol;78 local
+  controls0skip0.94s, shell syntax passes,13 entries pinned. Exact review
+  pending, new256MiB/600CPU UNBOOKED, no stage or native run. At10:20:56+07
+  queue empty/both fresh roots absent/scratchOct22. No scientific result.
+
 - October9 actual native attempt01: job1604208 FAILED1:0;70 cluster controls
   passed0skip2.58s, then the managed logical `/scratch` alias triggered the
   fixture ancestor guard. No fixture/asset/native command or biological result.

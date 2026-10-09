@@ -8,6 +8,7 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-09-native-invariance-replacement02.md`](2026-10-09-native-invariance-replacement02.md) | Separate trusted-physical-path launch |78 local controls0skip,13 pins; unchanged science/fixture guard; exact review pending, UNBOOKED |
 | [`2026-10-09-native-invariance-result01.md`](2026-10-09-native-invariance-result01.md) | Actual first native setup failure |70 cluster controls pass; scratch alias guard stops before fixture/asset/caller; closed incomplete, full charge retained |
 | [`2026-10-09-native-invariance-execution.md`](2026-10-09-native-invariance-execution.md) | Concrete one-CPU native launch, settings/containment/account/claims |70 local controls0skip,12 pins verified; common chromosome regex and actual cluster pytest corrected before outcomes; exact review pending, UNBOOKED |
 | [`2026-10-09-native-invariance-value-decision.md`](2026-10-09-native-invariance-value-decision.md) | Sol6.1/max-requested end-to-end diagnostic selection | One four-arm synthetic native test selected; not a paper lead, no execution or booking |

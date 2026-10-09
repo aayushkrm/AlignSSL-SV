@@ -315,3 +315,108 @@ These tree/log checks are postchecks. They do not prevent temporary aggregate gr
 CONDITIONAL ACCEPT permits the main's already authorized normal workflow to book, stage and submit this one exact diagnostic once the stated pre-submit gates pass. It grants no retry, threshold sweep, changed molecule set, new method, real-data campaign or major-result acceptance. No additional human permission is required by this review. Review the actual raw outcomes before any scientific conclusion, and preserve an incomplete attempt as incomplete.
 
 Only this owned review was appended. No ledger was booked, no root staged, no dependency or asset acquired, and no tests, native execution, network, SSH, genomic input or Git action occurred by this reviewer. The broader publication objective remains unmet; H_R remains UNTESTED and the generic released-callset STOP remains in force. Earlier review snapshots, charges and guards are preserved.
+
+## Actual attempt01: raw setup failure and account ACCEPTED
+
+2026-10-09. **ACCEPT attempt01 as CLOSED INCOMPLETE: setup path-alias failure before the diagnostic fixture or native caller. ACCEPT the retained byte charge and single outer CPU charge.** This is acceptance of the documented failure and account, not a native allele result, biological null or approval of a replacement. Attempt01 remains closed with no replay or selective continuation.
+
+Read the complete [result01 note](/Users/akm/aayushkrm-AlignSSL/repo/docs/research/2026-10-09-native-invariance-result01.md), all14 payload files in the [local raw archive](/Users/akm/aayushkrm-AlignSSL/repo/results/data_audits/native_invariance/2026-10-09/raw01/archive.sha256), its checksum manifest, and the complete current live reservation journal. Read the current PROGRESS opening for consistency only. All14 payload checksums independently passed. Directory inspection shows15 regular files including the checksum manifest; byte counting confirms16,696 payload bytes plus1,175 checksum bytes, totaling17,871. No replacement code was inspected, and no test, native command, network, SSH, installation, genomic input or Git action occurred. Only this owned review was appended. Requested maintained Sol6.1/high remains backend-unattested.
+
+| Evidence snapshot | Independently observed SHA256 |
+|---|---|
+| Raw archive checksum manifest | `634822693a0e0aba7dd75b1b6ab3a542b73c48381776e2e3d55236a1ed0b16e0` |
+| Frozen staged reservation in raw01 | `f8906fb0e99bb88b9dd329ce6e9a3b105b82aef8af91e0ad10cf5102d93ccfd0` |
+| Current live reservation journal | `2de94f34ed696e85cf45eb51121e7de37408f15deb575c79827b1d0a818feb2f` |
+| Result01 note | `c253e8793537dcf94b27330651b44228025f9edbf8f23e4fb687afae41516d3f` |
+| Owned review before this append | `d7ff68681882702dd611e75820144a831ebe86556962728a54cfe18d30850b5b` |
+
+### Raw observations and inference boundary
+
+The submission claim contains the exact attempt01 ID and accepted bundle hash `5fb12fce0d6a5a43a170827af88405214af59c98f99718a14733dc1503c3cfad`; the archived literal submission hash remains `cf3c89a8e773c74fce34d9d430fc6945092525d1a4d73aab0344ac487f1049f9`. Outer and payload claims are present. Slurm stdout records initial manifest/hash checks; launch stdout records all12 bundle entries OK after controls. The archived manifest matches the reviewed12-entry bundle.
+
+Controls stdout lists all70 PASSED cases and ends `70 passed in 2.58s`, without skipped cases. Launch stdout records the exact stack Python3.10.20/pysam0.24.0/HTSlib1.23.1/pytest8.4.2 and control-tree size25,894,309 bytes, below33,554,432. Captured missing-index messages arise in the sequential temporary BCF/VCF parsing controls; the CRC error is inside the deliberate damaged-BAM rejection test. They are not the cause of this attempt's setup failure. Empty controls/Slurm stderr files are preserved as actual zero-byte files, not missing outputs.
+
+The complete launch traceback reaches `run -> create_fixture -> _new_output_directory -> _require`, ending `ValueError: output directory ancestors must not be links`. `failure.json` records the same reason and INCOMPLETE status. In the previously pinned source, that ancestor check precedes directory creation, and `install_tool()` follows fixture creation and validation. Thus the intended diagnostic fixture was not created and tool acquisition/version/discover/joint-call were not reached. The controls did create their own unit-test fixtures; “no fixture” must mean the intended native-input fixture, not absence of all synthetic test artifacts.
+
+The traceback's source paths use `/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922`, while the accepted launcher root/claim uses the logical `/scratch/igorno-alignssl_restart_20260922`. This is consistent with the guard encountering a workspace alias. Main's10:11:35+07 `readlink -f` observation explicitly maps that logical workspace to the physical path; this reviewer did not repeat the remote filesystem check. The evidence supports a filesystem compatibility failure between the literal logical root and the fixture's ancestor policy. It supplies no candidate sequence, native FILTER/GT, recovery matrix, threshold-rescue outcome or native compatibility result.
+
+Job1604208, scheduler FAILED1:0 and00:00:05 elapsed are recorded in the live journal/result note. The archived timer independently records exit1 and4.52 wall seconds, consistent with the reported scheduler duration. The archived Slurm log does not itself contain a scheduler accounting row or job ID, so those scheduler identity/status facts remain main-reported, not an independent live Slurm query. Similarly, main reports post-failure all12 staged hashes still matching; the archived raw logs directly show checks before the failing fixture call, not a separate post-failure verification command. Preserve that distinction without weakening the supported setup-failure conclusion.
+
+### Frozen booking versus live journal
+
+The frozen staged reservation is `RESERVED_BEFORE_STAGING_PENDING_RUNTIME_GATES`, booked at03:03:09 UTC, with the accepted bundle, prior retained40,235,307,915 bytes, full new268,435,456 bytes and prospective40,503,743,371 bytes. The current live journal keeps those values and the staged-reservation hash, then adds submission, failure, timing, archive and closure observations. The different reservation hashes reflect preserved pre-run and post-run states; they are not evidence of corruption. Their common execution/account fields agree. Booking/root/staging chronology is journal-reported; local hashes authenticate the inspected snapshots, not the original remote clock events independently.
+
+| Account observation | Accepted value |
+|---|---:|
+| Full new retained byte charge | 268,435,456 |
+| Cumulative retained bytes | 40,503,743,371 |
+| Outer user CPU | 1.00 seconds |
+| Outer system CPU | 1.07 seconds |
+| CPU charged once for the timed tree | 2.07 seconds |
+| Cumulative measured named CPU | 558.792707 seconds |
+| Outer wall time / maximum RSS | 4.52 seconds /55,120KiB |
+
+The CPU arithmetic is556.722707 +1.00 +1.07 =558.792707. Test elapsed2.58s is a nested wall duration, not another CPU charge; scheduler accounting is not added again. The600-second reservation was an allowance, not600 seconds consumed. The complete256MiB byte charge remains retained despite unused native/asset slots. The raw archive fits its8MiB cap by a wide margin. GNU time filesystem counters are not used to replace the named allowance or claim complete measured physical I/O.
+
+The live journal also preserves an initial failed archive transport with no file, followed by successful transfer and matching local hashes. This is reported collection history, not a native replay or justification for refunding any charge. Original raw claims, failures and staged reservation remain intact.
+
+### Closure and replacement boundary
+
+ACCEPT the result01 note's incomplete disposition and its account. Seventy controls passed on the actual cluster stack, but the whole-input native assay never began. The selected scientific question remains untested by this attempt; H_R and publication readiness are unaffected.
+
+Attempt01's consumed claims and closed root must not be reused. This review does not approve attempt02, a new reservation, path-resolution code or new submission. Main's plan to preserve the exact01 code/history before a separately reviewed physical-path replacement is consistent with reproducibility, but the commit was not checked and no Git action was authorized to this reviewer. Keep the fixture guard and fixed scientific inputs; assess any concrete replacement under its own ID, pins, root checks and full account. Earlier reviews, all charges, guards and the released-callset STOP remain preserved.
+
+## Fresh replacement02: exact conditional ACCEPT
+
+2026-10-09. **CONDITIONAL ACCEPT of the separately pinned replacement02, its root-resolution correction, literal single submission and fresh256MiB/600 named CPU allowance. No concrete scientific/code HOLD remains in this snapshot.** This supersedes only the preceding absence of attempt02 approval. Attempt01 stays CLOSED INCOMPLETE, with no replay, refund or reuse of unused command slots. Replacement02 remains UNBOOKED, UNSTAGED and UNEXECUTED at this review.
+
+Read FULL the [replacement02 note](/Users/akm/aayushkrm-AlignSSL/repo/docs/research/2026-10-09-native-invariance-replacement02.md), common runner, new root tests, both replacement wrappers,13-entry manifest, reservation and literal submission file. Re-read the complete attempt01 result note and live journal for cumulative-account continuity. Independently checked all13 manifest entries against their actual local source mappings:13 OK. No tests, shell syntax checks, native commands, booking, staging, installation, network, SSH, genomic input or Git operation were performed by this reviewer. Only this owned note was appended. Requested Sol6.1/high remains backend-unattested.
+
+| Reviewed replacement snapshot | Independently observed SHA256 |
+|---|---|
+| Replacement02 note | `b6557135417f4333e7e2cbd394d24fddfa083c508c681bfa658f1016c21d4ded` |
+| Physical-root runner | `d41f3f2784cf9ff70d1dd77f679577155a79397d49b9c6942da0600ef7808f8a` |
+| New root tests | `ed09fc1d17fce431e8709d16841f573f8d287f4e61c864d4a50693a40a8f7b28` |
+|13-entry bundle manifest | `9941bcff343013e9e231135d89498a8720e52c45bfc90a9642a9151a3185c460` |
+| Outer wrapper | `b74ae514cc75d60eb2017c712533f160589375e1920e19d9aa8f67dfbcf0e278` |
+| Payload wrapper | `584ab29db870da82b9b4402009430cb9276306eccc8ab08c3a7fe76faa4cabd7` |
+| UNBOOKED reservation candidate | `18441b8c0f67b549f44706ebdb9b6dfe9f72a658b3fc8612715d25cd93845457` |
+| Literal submission file | `c7d070657cce0bbb2b063f3ee936e978108a80cd32cd6775045634f478f318ff` |
+| Owned review before this append | `d0d0269e345973f6d789f3093624887318c03de89ab1d38956213f37b753b633` |
+
+Main reports that exact01 source, wrappers and all14 raw payload files were preserved and pushed in commit `ea7f2fb48c2f6d43b762993ce7b8d4ba1c85c6d1`, with matching remote hash. That commit/push remains main-reported; this reviewer obeyed the no-Git boundary. The prior raw checksum verification and retained charge were independently reviewed above. The fresh replacement does not amend that failed outcome.
+
+### Narrow path correction and controls
+
+The runner's ID is now `native-cigar-invariance-20261009-02`. `resolve_experiment_root()` allows exactly its logical root under `/scratch/igorno-alignssl_restart_20260922` or its pinned physical root under `/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922`. It requires an existing directory and rejects a symlink experiment leaf before resolving. Strict resolution must equal the exact pinned physical leaf; any destination drift or linked spelling of the pinned physical path fails. The returned physical root is used for the payload claim, fixture, tool, arms, settings and observations. The claim records both supplied and resolved paths. Failure reporting resolves and validates the root again before writing `failure.json`, avoiding a fallback write into an unapproved destination.
+
+This corrects the observed setup incompatibility without weakening `create_fixture()` or its ancestor guard. The wrappers still enter the approved logical workspace and place their wrapper/control files there; those paths name the same managed physical workspace. Scientific/native artifacts are built from the validated physical root. Before staging, recheck that the logical workspace resolves to that same pinned physical workspace, that both02 root spellings are absent and that the new leaf is created as a real directory. The helper does not replace those pre-staging checks.
+
+The eight new controls comprise logical and physical acceptance, allowed-logical-spelling redirection rejection, linked leaf rejection, missing leaf rejection, aliased physical spelling rejection, unexpected relative/parent path rejection, and actual fixture creation through the resolved path while logical-alias creation still fails the unchanged factory guard. Main's redirect strengthening is meaningful: it changes the allowed logical spelling's destination and reaches the trusted-destination check, rather than merely submitting a disallowed name. The factory test checks creation and a manifest on the physical path. This is proportional evidence for the specific filesystem correction; no new scientific direction or model-max decision is needed.
+
+Main reports78 passed,0 skipped in0.94s on its existing workspace environment and passing shell syntax. These are not reviewer reruns. The original70 controls plus8 root cases equal78. Payload startup still verifies the actual cluster Python3.10.20/pysam0.24.0/HTSlib1.23.1/pytest8.4.2 and now requires78 passes without skips. The factory regression uses `importorskip`, but startup requires pysam and the pass-count gate rejects a skipped control. No environment upgrade is part of this change.
+
+### Scientific and exact submission continuity
+
+Fixture, observer, settings checker, the original five test suites and protocol hashes all match the accepted01 pins. Protocol remains `d4a0f851bd4536e5a3b6275dd8a11c2bc5832af9c26672b9b8fc8bfa58c6953e`. There is no changed reference, molecule, CIGAR, allele truth, arm order, evidence/reporting threshold or endpoint. The fixed common chromosome regex, observed flat-settings checks, exact same-record PASS/heterozygous recovery, conservative joint-edit UNRESOLVED state and strict REF-only candidate/final absence gates remain implemented. Canonical failure or uncertainty stops later arms. No native compatibility or recovery is asserted before execution.
+
+The literal command uses02 in the claim, job name, logs and outer-wrapper path and the actual bundle hash in both the claim and wrapper argument. `set -euo pipefail` plus `set -C` ensures failed exclusive claim creation cannot proceed to sbatch. Outer and payload claims are exclusive; the outer wrapper verifies the manifest hash and entries, and the payload verifies entries around its run. Unknown acknowledgement consumes this02 submission claim. All01 paths/claims remain separate and cannot be used as a retry mechanism.
+
+One-CPU affinity, GNU-time waited-tree accounting,480s timeout/5s grace,120s command timeouts, per-process CPU300/450s,4GiB address space, native1MiB file limit,1MiB/64-file per-arm postchecks,64KiB successful logs/fixture cap,32MiB control tree and8MiB raw archive cap are unchanged. Only the control tree permits intentional test links without following them; native trees reject links. The original distinction between postchecks and hard aggregate/physical-I/O bounds remains essential. Preserve any oversized failure remotely and stop bounded collection rather than trim results or increase the allowance silently.
+
+### Fresh account and proceed conditions
+
+| Account item | Replacement02 value |
+|---|---:|
+| Prior retained bytes, including full attempt01 charge | 40,503,743,371 |
+| New full byte reservation, to book before staging | 268,435,456 |
+| Prospective cumulative retained bytes | 40,772,178,827 |
+| Prior measured named CPU, including attempt01 once | 558.792707 seconds |
+| Fresh named CPU allowance | 600 seconds |
+| Prospective named CPU with allowance | 1,158.792707 seconds |
+
+The same64/32/96/24/24/16MiB components sum to256MiB, with separate asset, controls, native opaque, explicit fixture/output passes, archive and failure/metadata coverage. The totals fit68,719,476,736 bytes and7,200 named CPU seconds. They are a named conservative allowance, not measured physical I/O. Book this new full byte charge before02 root creation/staging; retain it on failure. After execution add only replacement02's measured outer user+system CPU once. No old byte charge is refunded and no01 allowance or slot is transferred.
+
+Main's10:20:56+07 empty queue, absent02 logical/physical roots, exact workspace resolution and Oct22 expiry are timestamped reported preflight facts, not reviewer live checks. Recheck the relevant state before staging/submission, verify the booked ledger and all staged13 pins remotely, then use this exact single-submission file. Exact-stack controls, authenticated asset/executable version, settings/input integrity, scientific stops and bounded raw collection remain runtime gates. No result is accepted before raw-result review.
+
+CONDITIONAL ACCEPT allows the main's already authorized workflow to book, stage and submit this fresh02 once those gates pass. It is limited to this filesystem correction and fixed diagnostic; no repeat of01, selective native replay, post-outcome tuning, new method, real-data campaign or publication claim follows. No additional user confirmation is required by this review. This reviewer took no launch/book/Git action and changed only the owned note. All earlier review snapshots, incomplete01 evidence, charges, guards and the released-callset STOP remain preserved.
