@@ -8,6 +8,7 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-09-gene-conversion-source-screen.md`](2026-10-09-gene-conversion-source-screen.md) | Main's selected current primary-methods check with multiple research tools | Existing gene exchange/haploid dosage controls and access constraints; no supported new residual, generic phasing/origin proposal or empirical launch |
 | [`2026-10-09-after-m1-investment-review.md`](2026-10-09-after-m1-investment-review.md) | Completed maintained independent challenge of the investment stop | Main accepts with two limits: replication gate is not a cheap-falsifier prerequisite; new methods are not the only consequential contribution. No empirical launch qualified; full goal open |
 | [`2026-10-09-after-m1-investment-decision.md`](2026-10-09-after-m1-investment-decision.md) | Completed high-impact next-investment synthesis after terminal M1 closure | Same-agent recovery preserves interrupted body; STOP near-term repeat rescue, no supportable next experiment/acquisition on reviewed evidence; reviewer scope limits govern interpretation, full goal unmet |
 | [`2026-10-09-post-provenance-scientific-review.md`](2026-10-09-post-provenance-scientific-review.md) | Maintained independent scientific-investment challenge | Initial HOLD acquisition; appended ACCEPT finite HG008 package closure as incomplete/truth-inconclusive, not a biological null; no acquisition/fallback campaign |

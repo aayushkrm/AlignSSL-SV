@@ -32,6 +32,14 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 9 main's [gene-conversion source screen](2026-10-09-gene-conversion-source-screen.md)
+  checks selected journal/preprint methods with Exa, Life Sciences Literature
+  and Firecrawl; Scite paid-access denial prompted an available alternative,
+  no billing change. Known gene exchange and haploid dosage controls defeat
+  a generic novelty premise; no exact public residual/test is established.
+  No phasing/origin reopening, acquisition or campaign. Two distinct scouts
+  active. Decision/review/tracking pushed9e3079f, remote confirmed; subsequent
+  docs15pass0skip/3.76s, not biology. Goal active and unmet.
 - October 9 after-M1 [synthesis](2026-10-09-after-m1-investment-decision.md)
   actually completed after terminal usage error and same-context recovery.
   Main read104 original lines +4 appendix; original16281-byte body unchanged

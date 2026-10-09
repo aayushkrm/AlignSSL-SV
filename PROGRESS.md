@@ -11,6 +11,19 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 9 main's [gene-conversion source screen](docs/research/2026-10-09-gene-conversion-source-screen.md)
+finds substantial current native overlap, not a selected research gap.
+Two Exa discovery queries, Life Sciences Literature publication checks and
+selected primary methods retrieved with Firecrawl were used; Scite denied
+paid-plan/trial access and supplied no scientific evidence. No account or
+billing change. Exact-v1 gene-flux Methods already use allele balance plus
+depth for haploid duplication assignment; sperm/All of Us observations are
+controlled-access. No generic phasing/origin project or experiment follows.
+The broader goal is open; two distinct empirical-falsifier scouts are active.
+Decision/review/tracking pushed as9e3079fbc4d5063da0a96b15e37495354bd822c8,
+remote confirmed. Documentation checks after that tracking edit:15 passed,
+zero skips, in3.76 seconds; not a scientific performance measurement.
+
 October 9 after-M1 scientific synthesis is now actually completed after a
 terminal agent usage-limit error and same-agent/context recovery. Main read
 all104 original lines and the four-line recovery appendix. The original
