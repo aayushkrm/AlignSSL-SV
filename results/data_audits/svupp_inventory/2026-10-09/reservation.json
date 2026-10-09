@@ -1,6 +1,7 @@
 {
   "experiment": "svupp-inventory-20261009-01",
-  "status": "UNBOOKED",
+  "status": "BOOKED",
+  "booked_at_utc": "2026-10-09T06:12:17Z",
   "retained_prior_bytes": 40772178827,
   "incremental_named_allowance_bytes": 536870912,
   "prospective_cumulative_retained_bytes": 41309049739,

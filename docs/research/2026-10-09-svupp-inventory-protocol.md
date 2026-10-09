@@ -10,6 +10,19 @@ publication result or permission for generic GQ-ranked benchmarking.
 
 ## Fixed question and input
 
+### Current execution status, superseding the candidate snapshots
+
+The fresh independent exact review completes CONDITIONAL ACCEPT. Main books
+the unchanged512MiB allowance at06:12:17UTC before any new root/staging.
+Cumulative retained bytes41,309,049,739; measured priorCPU561.292707 remains
+unchanged pending actual outer timing. Booked reservation SHA256
+`cbe0701ae48567d6647931dd76773d103ee944bc3f2d20e65453af98a05827f5`.
+The six code/test/wrapper hashes are unchanged; final7-entry bundle SHA256
+`b1f417bb18498b1c1572f8b9029ae8ef4185f396da1fb173a6fc39698f2cba05`.
+Both literal claim/submission hash occurrences are repinned. Before launch,
+verify the same final pins on cluster and use the literal command once.
+This status approves metadata acquisition only; no content/scoring campaign.
+
 Does the author assessment archive expose reproducible score/truth inputs
 that could support a useful new empirical question beyond the published
 GQ-ranked coverage comparison? A manifest alone cannot answer calibration,

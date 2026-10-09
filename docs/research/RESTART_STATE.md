@@ -32,6 +32,22 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October9 exact [inventory review](2026-10-09-svupp-inventory-review.md)
+  completes CONDITIONAL ACCEPT; main books512MiB06:12:17UTC BEFORE root/stage.
+  Cumulative retained41,309,049,739bytes, CPUprior561.292707 unchanged. Status/
+  timestamp only changed in reservation; refresh all dependent pins before
+  stage. Root absent/queue empty13:12:02+07, expiryOct22/1extension. Require
+  exactly28 actual-stack controls then singlemetadata inventory, no decode.
+  Pure ceiling helper23synthetic controls pass; not staged or empirically used.
+
+- October9 quota-status correction: current app account permits ordinary
+  usage; prior resume results were stored errors, not fresh rejection proof.
+  Fresh retry sent to SAME maintained reviewer, submission
+ 01a11f45-f45f-70e2-809c-682164c7fc3f; bounded wait nonterminal timeout.
+  Do not replace that live retry just because observation times out.
+  All7 pins/bundleac67823d unchanged06:07:55UTC; exact review pending.
+  No book/stage/archive/job. Include current kanpig prior-art note in review.
+
 - October9 main [current kanpig source verification](2026-10-09-kanpig-calibration-prior-art.md)
   establishes native v2 beta-binomial parameter fitting and GQ calibration.
   Raw top-two ratio is not posterior error; fitting may change GTs. Old fixed

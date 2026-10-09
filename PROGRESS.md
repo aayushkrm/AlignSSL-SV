@@ -11,6 +11,27 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October9 fresh exact reviewer completes CONDITIONAL ACCEPT of the one-shot
+metadata inventory: [review](docs/research/2026-10-09-svupp-inventory-review.md).
+Main books512MiB at06:12:17UTC before creating any new cluster root/staging;
+new cumulative retained bytes41,309,049,739. Numeric allowance unchanged,
+within full2GiB/600 candidate; residual1.5GiB/420 allowance seconds. Prior
+measured namedCPU561.292707 unchanged until actual outer timer is available.
+Reservation status/timestamp repin permitted by review; final hashes next.
+New pure integer-ceiling helper has23 synthetic tests passing0.07s after main
+adds99/198-boundary cases to brute enumeration. No data/model/scoring run.
+Cluster13:12:02+07 confirms physical base, freshroot absent, queue empty,
+scratchOct22 and1extension. Exact28 cluster controls required before download.
+
+October9 quota-status correction: app account check reports ordinary usage
+allowed and no reached-limit type. `resume_agent` returned the stored old
+error, which does NOT prove a new rejected request. Main sends a fresh retry
+to the same maintained reviewer (submission01a11f45-f45f-70e2-809c-682164c7fc3f).
+Its bounded wait times out without a terminal error or completion; do not
+restart/duplicate it on observation timeout. Exact review is pending, not
+accepted. All7 candidate hashes and bundleac67823d are unchanged at06:07:55UTC.
+No booking/staging/archive/job; keep full objective active and unachieved.
+
 October9 continued while reviewer capacity remains unavailable: main uses
 Exa plus Life Sciences Literature and verifies pinned kanpig2.0.2 source.
 [New prior-art check](docs/research/2026-10-09-kanpig-calibration-prior-art.md):
