@@ -8,6 +8,8 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-09-post-provenance-scientific-decision.md`](2026-10-09-post-provenance-scientific-decision.md) | Completed Sol6.1/max-requested investment comparison | Three questions compared; one bounded HG008 material prerequisite proposed; UNBOOKED and independent review pending, no method or empirical result |
+| [`2026-10-09-hg008-primary-scope-check.md`](2026-10-09-hg008-primary-scope-check.md) | Main's exact-version primary-claim check | Reported 16 misses supported by selected text; truth/control/input dependence unresolved; v3.1→v3.2 correction explained, no data package or caller run |
 | [`2026-10-09-retained-input-actionability.md`](2026-10-09-retained-input-actionability.md) | Bounded retained-file/tool metadata sidecar |Six staged caller files present; shared truth/sample contract and current cohort paths unverified; author-style BAM label path absent is not a lost retained BAM or exhaustive data absence; suggested representation pilot unselected |
 | [`2026-10-09-svupp-provenance-header-result01.md`](2026-10-09-svupp-provenance-header-result01.md) | Actual bounded provenance/header check and complete raw |Independent ACCEPT bounded execution/raw/account;44 actual zero-skip controls;19 raw files89,269B/all18hashes; finite archive path CLOSED, fixed ONT→HiFi inputs not sufficiently established; no biological null |
 | [`2026-10-09-svupp-provenance-header-review.md`](2026-10-09-svupp-provenance-header-review.md) | Independent exact and actual code/control/account scrutiny |Historical conditional acceptance preserved; actual ACCEPT bounded execution/raw/account and separate finite input-readiness closure; no scoring/campaign/pivot approval |

@@ -11,6 +11,28 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 9 [scientific investment decision](docs/research/2026-10-09-post-provenance-scientific-decision.md)
+is complete. Main read the initial 327-line view, then the full 330-line
+final note (SHA2562017d112…): the recovery ceiling requires one complete
+policy with no false somatic calls, never a truth-selected per-locus union.
+Requested Sol6.1/max configuration
+is not backend-attested. Three directions were compared; one bounded HG008
+material prerequisite is proposed for 16 published somatic-repeat misses
+and 32 independently supported controls. It is UNBOOKED, not a selected
+method or empirical result. Maintained independent scientific review is
+running; no acquisition, caller run, training or new campaign is approved.
+
+Main's [primary check](docs/research/2026-10-09-hg008-primary-scope-check.md)
+uses Firecrawl metadata and exact-version live scrape after the indexed body
+query returned no passages. Selected primary methods/results support the
+reported 16 misses, while truth dependence, normal mosaicism, case identities,
+negative controls and fair native inputs remain unresolved. The primary text
+explains initial tumor v3.1 to final v3.2 corrections; this is not itself a
+contradiction. Ordinary donor-specific assembly is already prior art. No
+genomic file, case table or curation issue was read by main here. Goal unmet.
+Documentation checks after these additions: 15 passed, zero skips, in
+3.85 seconds; whitespace check passed. These are not empirical SV results.
+
 October 9 resource clarification and live check: allocate all useful capacity
 efficiently and scale independent experiments in parallel. At 20:59:03+07,
 the account queue was empty. The `amd_256M` partition reported 13 idle nodes,

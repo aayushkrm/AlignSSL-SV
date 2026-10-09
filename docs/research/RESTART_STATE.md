@@ -32,6 +32,22 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 9 completed [scientific decision](2026-10-09-post-provenance-scientific-decision.md):
+  main read the initial 327-line view then all 330 final lines (SHA2017d112…);
+  the ceiling uses one complete zero-false-call policy, not an oracle union.
+  Sol6.1/max requested, not backend-attested. Three
+  directions compared; one bounded HG008 material prerequisite proposed for
+  16 published repeat misses and 32 supported germline-only controls. Still
+  UNBOOKED; maintained independent review running. No method, acquisition,
+  caller run, training or campaign accepted. All historical stops preserved.
+- October 9 main [primary-scope check](2026-10-09-hg008-primary-scope-check.md):
+  Firecrawl metadata plus exact-v1 live scrape after empty indexed passages.
+  Selected text supports the 16 reported misses, not current native failure
+  or novelty. Curation/caller/read dependence and normal mosaicism remain
+  case-level issues. Primary text explains initial v3.1 to final v3.2 fixes,
+  not corruption; exact coordinate bridge remains unknown. No genomic or
+  case-table/issue read. Independent scrutiny must challenge regional packet
+  fairness and the finite cost, not merely accept an existing failure report.
 - October 9 resource clarification: use all useful capacity efficiently and
   scale independent experiments fully. A live 20:59:03+07 check showed an
   empty account queue and 13 idle `amd_256M` nodes (128 CPUs, 257,204 MB each).
