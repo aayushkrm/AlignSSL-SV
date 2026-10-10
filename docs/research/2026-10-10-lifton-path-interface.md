@@ -4,7 +4,7 @@ Date: 2026-10-10. This note fixes the input and output contract for the HG002 DN
 
 ## Frozen endpoint
 
-P1 is the ordinary, whole-genome LiftOn policy on each complete same-source haplotype target, with copy search and the native rescue/isoform defaults on. Use the pinned call from the DNA-stage decision: `-polish -cds -copies --validate-output`, matched GENCODE 50 primary-assembly GFF3 and GRCh38 primary FASTA, and separate output/work directories. Keep all reference coding isoforms and all target placements. Do not restrict to canonical transcripts or one copy.
+P1 is the ordinary, whole-genome LiftOn policy on each complete same-source haplotype target, with copy search and the native rescue/isoform defaults on. Use the pinned call from the DNA-stage decision: `-polish -cds -copies --validate-output`, matched GENCODE 50 primary-assembly GFF3 and GRCh38 primary FASTA, and separate output/work directories. Keep all reference coding isoforms and all target placements retained by this fixed policy. Do not restrict inputs to canonical transcripts or one copy. Native filtering and second-locus caps do not enumerate every possible copy or ORF.
 
 The endpoint is retention of the **reference coding start and stop termini on a complete path**. A downstream ORF with a new start does not rescue a lost reference start. A `frameshift`/mutation label, protein identity, mapped gene, or successful GFF validation does not decide this endpoint.
 
@@ -26,11 +26,17 @@ There is no separate mutation-report filename established in the inspected sourc
 
 The native CLI accepts the target FASTA, reference FASTA, reference GFF3/GTF, and optional reference protein/transcript FASTAs (`-P`, `-T`). Keep the full input files and their hashes. For this GENCODE policy, use the comprehensive GFF3, not the basic or canonical subset.
 
+The table lists default report locations. With the frozen separate `-dir`
+option, resolve reports under that exact work directory, not a sibling default
+`lifton_output`. Missing or nonexistent supplied `-P`/`-T` files also trigger
+generation. Record native environment overrides, including rescue/copy caps
+and opt-in cross-locus replacement; do not silently change the fixed policy.
+
 ## Parser and row schema
 
 Parse reference GFF3 by `ID`/`Parent`; enumerate every protein-coding transcript with CDS rows. Keep the reference gene ID, transcript ID, transcript/gene biotype, sequence, strand, ordered exon/CDS blocks, each CDS phase, `start_codon`/`stop_codon` rows when present, genetic-code attributes, and `transl_except`. Retain any protein-coding transcript row without an extractable CDS as `UNKNOWN`, not as an omitted isoform. For GTF input, LiftOn transforms `transcript_id` to a suffixed internal ID; do not mix that namespace with native GFF3 IDs without a recorded mapping.
 
-Parse target GFF3 into one row per reference transcript × emitted target transcript placement. Preserve target `ID`/`Parent` separately from source `ref_gene_id`/`ref_tran_id`; preserve copy number/suffix and placement coordinates. LiftOn keeps source IDs in its model and builds forward/reverse transcript-ID maps, but this audit did not establish that those maps are serialized. Capture the crosswalk at run time or verify it in `mapped_transcript.txt`; never infer identity from coordinate proximity alone.
+Parse target GFF3 into one row per reference transcript × emitted target transcript placement. Preserve target `ID`/`Parent` separately from source gene/transcript IDs; preserve copy number/suffix and placement coordinates. `ref_gene_id`/`ref_tran_id` below are extractor fields, not established serialized native attributes. Native transcript IDs can be rewritten and copies suffixed. Capture an exact reference-ID/copy-aware crosswalk at run time or verify a serialized one; never infer identity from proximity or blindly strip suffixes.
 
 Each extracted row must contain:
 
@@ -49,7 +55,7 @@ stop_anchor_retained, complete_same_termini, internal_stop,
 path_accounting_state, source_artifact
 ```
 
-`path_origin` distinguishes projected, miniprot-only rescue, rescued isoform, second-locus rescue, and extra-copy placement. `path_accounting_state` is `emitted`, `explicitly_dropped` (with a joinable source ID and reason), or `UNKNOWN`. Keep one explicit accounting row for every reference coding transcript, even when LiftOn emitted no target row. Then aggregate to the frozen event/gene/alternate-haplotype denominator. A resolved P1 negative requires supported local allele/phase/copy, every reference coding isoform accounted for, every retained native placement examined, and no complete path retaining both reference termini.
+`path_origin` distinguishes projected, miniprot-only rescue, rescued isoform, second-locus rescue, and extra-copy placement. `path_accounting_state` is `emitted`, `explicitly_dropped` (with a joinable source ID and reason), or `UNKNOWN`. Keep one explicit accounting row for every reference coding transcript, even when LiftOn emitted no target row. Then aggregate to the frozen event/gene/alternate-haplotype denominator. A resolved P1 negative requires supported local allele/phase/copy, every reference coding isoform scientifically resolved, every retained native placement examined, and no complete path retaining both reference termini. An accounted extraction/lift/serialization/phase/mapping failure is still UNKNOWN, not a biological negative.
 
 The diagram shows the intended join. A missing join stays `UNKNOWN`.
 
@@ -60,7 +66,7 @@ flowchart LR
   L[Unmapped reports, run manifest, drop reasons] --> J
   J --> E[Extract target CDS and test reference termini]
   E -->|complete same termini| P[Native path retained]
-  E -->|all paths accounted; none pass| N[Resolved P1 negative]
+  E -->|all isoforms resolved; none pass| N[Resolved fixed-policy P1 negative]
   J -->|missing or ambiguous path| U[UNKNOWN]
 ```
 
@@ -68,9 +74,9 @@ flowchart LR
 
 LiftOn's `coding.py` defines transcript-oriented phase helpers, reverse-strand handling, genetic-code selection, translation, and `transl_except` placement. Its translation drops a trailing partial codon. It treats ATG as the start in its standard start check and gets stop codons from the selected genetic code. Apply phase once at the transcript's initial incomplete codon; retain and check phase on every later CDS block. Do not trim each exon independently. Read the target sequence from the target FASTA in transcript orientation; record stop-codon presence from DNA, not protein identity.
 
-The pinned README describes ORF search over alternative frames to maximize match to the reference protein. It also documents default miniprot stop completion when the three genomic stop bases exist and do not worsen the model. These transformations can change a path's boundary. They do not change the frozen endpoint: a newly chosen downstream start is not the reference start. The exact lower-level ORF transformation implementation was outside this six-file source audit; preserve the native output and classify any unverified terminal mapping as `UNKNOWN`.
+The pinned README describes ORF search over alternative frames to maximize match to the reference protein. It also documents default miniprot stop completion when the three genomic stop bases exist and do not worsen the model. These transformations can change a path's boundary. They do not change the frozen endpoint: a newly chosen downstream start is not the reference start. Independent source review establishes that `lifton_class.py` retains one longest ORF per frame, skips nested starts and selects by protein identity, changing boundaries only for a gain greater than0.01. Mutation tags precede that replacement. This is not enumeration of every possible same-termini ORF. Preserve native final sequence; unverified terminal mapping stays `UNKNOWN`.
 
-The runtime extractor must map each reference start/stop anchor onto the specific target path. LiftOn's IDs, protein identity, and mutation labels alone do not provide that proof. If no unambiguous path-level mapping is available, do not call the path complete or disrupted. Use the same declared genetic-code and recoding rules for DNA and any later RNA analysis.
+The runtime extractor must map both complete reference terminal codons onto the specific target path, including junction-spanning codons. Matching ATG/stop strings alone does not establish homologous anchors. LiftOn's IDs, protein identity, and mutation labels alone do not provide that proof. If no unambiguous path-level mapping is available, do not call the path complete or disrupted. Preserve original CDS phases/lengths before native recomputation; trailing-base trimming cannot create a complete endpoint. Resolve Sec/other applicable recoding declarations. Use the same rules for DNA and any later RNA analysis.
 
 ## Completeness boundary and finite open items
 
@@ -85,6 +91,8 @@ Finite items to close before S4 can classify any row:
 5. Qualify the external minimap2/miniprot executables and run behavior. Existing setup evidence covers installed Python package/CLI/imports only.
 
 No cluster input, genome run, new install, RNA, or Git operation was used for this note. No outcome or negative certification is claimed.
+
+Main applies the maintained reviewer's [finite corrections](2026-10-10-public-paired-falsifier-review.md#lifton-path-interface-sidecar-finite-independent-findings) above. Requested reviewer configuration Sol6.1/high, worker Luna/max; backend/effort not attested. Acceptance is static design only, not qualified path accounting or S4 release.
 
 ## Pinned source trail
 

@@ -272,3 +272,68 @@ Full32-test suite was not rerun here (local pytest absent); Linux pass pending.
 Legacy HOLD and original bundle01 remain preserved; exact output/job envelope,
 52GiB cumulative account, readiness NOT_ASSESSED and unreleased S2–S4/RNA stand.
 Only this correction appended; synthetic files cleaned; no external data/job.
+
+## LiftOn path-interface sidecar: finite independent findings
+
+2026-10-10. Requested maintained Sol6.1/high; backend/effort not attested.
+FULL-read the99-line completed interface note, SHA256
+`2fa0e7124b83dd6d59e9a3e2e500e1c58fe806f98f97fdd25176c82dc9a4dabd`.
+**Accept it as a static extractor design with the corrections below, not
+as qualified path accounting or a P1 result. S4 remains unreleased.**
+
+1. Artifact locations are defaults, not the paths of the frozen command.
+`_run_outdirs` uses the absolute `-dir` path as lifton_outdir. Thus
+`-o h1/lifton.gff3 -dir h1/work` puts score.txt, stats/, run_manifest.json
+and intermediate_files/ under h1/work, rather than h1/lifton_output.
+Bind the inventory to resolved argv; two different output filenames alone
+do not isolate reports. The generation condition also includes absent or
+nonexistent supplied -P/-T files, not only omitted options.
+[Pinned lifton.py](https://github.com/Kuanhao-Chao/LiftOn/blob/8378f8e4a3d8404c94d801c285a2c74291e893b7/lifton/lifton.py#L74-L89).
+
+2. Narrow “all target placements” to all placements retained by this fixed
+policy. Rescue has identity/coverage/overlap filters and a default cap of one
+additional second-locus placement per reference gene. Those defaults do not
+enumerate every competing copy. Cross-locus replacement is a separate opt-in;
+record environment overrides so it cannot silently replace the frozen policy.
+In `Lifton_TRANS`, source IDs are object fields; transcript_id, when present,
+is rewritten to the target ID, and copies suffix IDs. Do not assume emitted
+GFF has ref_gene_id/ref_tran_id attributes or strip suffixes without an exact
+reference-ID/copy-aware crosswalk. Missing joins stay UNKNOWN.
+[Pinned rescue](https://github.com/Kuanhao-Chao/LiftOn/blob/8378f8e4a3d8404c94d801c285a2c74291e893b7/lifton/miniprot_rescue.py#L538-L584),
+[transcript constructor](https://github.com/Kuanhao-Chao/LiftOn/blob/8378f8e4a3d8404c94d801c285a2c74291e893b7/lifton/lifton_class.py#L564-L583).
+
+3. The lower ORF search is in the already listed lifton_class.py. It retains
+one longest ORF per frame, skips nested starts, then selects by protein
+identity and changes CDS boundaries only for a gain greater than0.01.
+An emitted best model is not every possible same-termini ORF. Mutation tags
+are populated before this replacement, so labels cannot certify final CDS.
+Test final sequence and mapping of both complete reference terminal codons,
+including codons spanning junctions; matched ATG/stop strings alone do not
+establish homologous anchors. Keep the fixed policy; any later enumeration
+or alternative ORF choice is a separately labelled extension.
+[Pinned ORF implementation](https://github.com/Kuanhao-Chao/LiftOn/blob/8378f8e4a3d8404c94d801c285a2c74291e893b7/lifton/lifton_class.py#L1042-L1173).
+
+4. Accounting a loss is not resolving its biology. `explicitly_dropped` with
+an extraction, lift, serialization, phase or mapping failure still gives
+UNKNOWN, even with a joinable reason. The diagram's all-accounted branch
+must not convert such rows to negatives. Drop counts are class counts,
+not unique isoform counts; the manifest stores totals, not the complete
+source-ID drop set. Coding translation truncates trailing1–2 bases, and
+get_coding_trans_seq recomputes later phases. Preserve original phase/length
+evidence and check frame continuity before translation; trimming must not
+create a complete endpoint. Resolve applicable recoding declarations rather
+than interpreting a declared Sec codon as an ordinary internal stop.
+[Pinned drop ledger](https://github.com/Kuanhao-Chao/LiftOn/blob/8378f8e4a3d8404c94d801c285a2c74291e893b7/lifton/drop_ledger.py#L105-L185),
+[coding semantics](https://github.com/Kuanhao-Chao/LiftOn/blob/8378f8e4a3d8404c94d801c285a2c74291e893b7/lifton/coding.py#L195-L227).
+
+Scope: inspected selected load-bearing sections of exactly six native files
+at commit8378f8e4a3d8404c94d801c285a2c74291e893b7: lifton.py, annotation.py,
+lifton_class.py, coding.py, miniprot_rescue.py and drop_ledger.py. One oversized
+display was truncated; the finding-bearing sections were recovered in bounded
+reads. No full six-file/codebase audit is claimed. Score/stat writer schemas,
+stop-completion internals, lower alignment selection and runtime output remain
+unverified here. No new README or seventh source file was fetched. Existing
+staging/extraction, runtime and genomic observations remain main-reported.
+Only this review section was appended; no install, job, genomic read, staging,
+extractor edit, Git commit or P1 execution occurred. These finite parser and
+claim corrections do not reopen the released S0/S1 account.
