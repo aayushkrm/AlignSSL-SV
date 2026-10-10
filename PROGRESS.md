@@ -11,6 +11,15 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 10 actual [HG002 DNA intake](docs/research/2026-10-10-hg002-dna-intake-protocol.md)
+RUNNING: job1604251, hydra-n1/amd_256M,1CPU/8GiB/4h, immutable reviewed
+bundle02 matchinge0727cf. Exact path/free-space preflight passes. First
+06:02:40UTC journal snapshot454,033,408B fresh/454,230,016B cumulative;
+partial BAM is growing, not complete. This books at most4 of S1's8allocated
+CPU hours. No complete-object hash/read readiness, calling, assembly/P1 or
+RNA result. Monitor the existing job; do not launch a duplicate or reset
+failed-run charges. Full publication goal remains active and unmet.
+
 October 10 [exact DNA intake protocol](docs/research/2026-10-10-hg002-dna-intake-protocol.md):
 independent reviewer reproduced an8B cancellation-accounting gap; corrected
 signals defer errors until returned/exception-partial bytes are journaled and

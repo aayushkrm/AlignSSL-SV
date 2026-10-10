@@ -32,6 +32,13 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 10 actual [S1a launch](2026-10-10-hg002-dna-intake-protocol.md):
+  job1604251 RUNNING on n1/amd_256M,1CPU/8GiB/4h; source bundle02 matches
+  e0727cf. Review-found8B cancellation gap fixed, independently cleared;
+  deployed32controls0skip pass, exact path/free preflight passes. First live
+  snapshot454,033,408B fresh/454,230,016B cumulative, partial only. No final
+  integrity/read readiness, native calling/reconstruction/P1 or RNA. Do not
+  duplicate this job or reset cumulative costs. Full goal remains unmet.
 - October 10 [investment decision](2026-10-10-hg002-dna-stage-investment.md)
   selects exact-source DNA; independent review releases only S0/S1 with
   cumulative accounts. Bounded S1a code/launch remains in preparation.

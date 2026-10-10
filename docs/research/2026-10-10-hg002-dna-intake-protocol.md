@@ -3,7 +3,8 @@
 Prospective acquisition only. The [investment decision](2026-10-10-hg002-dna-stage-investment.md)
 and [independent S0/S1 release](2026-10-10-public-paired-falsifier-review.md#hg002-concrete-s0s1-investment-review)
 permit one exact DNA intake, not calling, reconstruction, P1 or RNA.
-No large transfer is claimed in this preparation record.
+The actual launch below supersedes the preparation state; acquisition is
+running, not complete or scientifically qualified.
 
 ## Exact execution
 
@@ -84,3 +85,21 @@ the non-expiring project home, with hashes checked. Scratch expiresOctober22;
 keep no sole needed copy there. Large genomic objects never enter Git. Track
 small unmodified manifests, complete accounting and outcome here/PROGRESS.
 S2–S4 and RNA remain unreleased even if this acquisition succeeds.
+
+## Actual launch and first live snapshot
+
+Job1604251 is RUNNING on hydra-n1/amd_256M with the exact one-CPU/8GiB/4h
+allocation. Source files match research commit
+`e0727cfb914918e88e9dd92541760a35d207ddf1`; the run uses immutable bundle02,
+not a mutable Git checkout. Read-only path preflight1604249 passes the exact
+CLI root/new-leaf check and reports55,156,068,581,376B free. Its1s elapsed
+and0.132s measuredCPU, plus1604247's1s/0.545s, belong to S0 setup controls,
+not scientific outcomes or new genomic-body charges.
+
+At the06:02:40UTC monitoring call, the read journal reaches454,033,408B new
+upstream body, cumulative454,230,016B including prior prefixes. A subsequent
+stat in the same call observes497,025,024B in the growing partial BAM; these
+are sequential live observations, not an atomic size/account comparison.
+The full transfer and BAI have not completed. No final hash, integrity,
+complete-read count, eligibility denominator or positive/negative is claimed.
+Keep the live journal and partial raw on failure; no automatic replacement.
