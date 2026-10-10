@@ -15,8 +15,9 @@ October 10 [matched GENCODE50 staging](docs/research/2026-10-10-gencode-referenc
 is prepared under the released S0 account. Frozen five-object bundle uses a
 separate2GiB reference ledger and published MD5s; deployed hashes match and
 39 controls pass with zero skips. Control1604254 completed;1604255 recovered
-missing terminal evidence, not a genomic replay. No reference acquisition
-in this entry. The [native path interface audit](docs/research/2026-10-10-lifton-path-interface.md)
+missing terminal evidence, not a genomic replay. Actual reference acquisition
+1604257 now RUNNING,1CPU/4GiB/65min; no completed/checksummed objects yet.
+The [native path interface audit](docs/research/2026-10-10-lifton-path-interface.md)
 fixes all-isoform/all-placement accounting: native drop reports alone cannot
 certify every reference path. Missing joins/terminal mapping remain UNKNOWN.
 No native annotation or P1 result; RNA untouched. Existing DNA1604251 runs

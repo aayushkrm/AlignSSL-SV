@@ -35,6 +35,7 @@ completed or closed entries supersede them.
 - October10 [S0 reference preparation](2026-10-10-gencode-reference-staging.md):
   five pinned GENCODE50 products, separate2GiB ledger,39 deployed controls
   pass.1604254/55 both completed;55 recovers terminal evidence, not acquisition.
+  Reference1604257 now RUNNING,1CPU/4GiB/65min; no completed-input claim.
   Existing S1a1604251 remains live:06:23:34UTC partial fresh8,288,993,280B,
   cumulative8,289,189,888B. No duplicate. Luna/max-requested
   [native interface audit](2026-10-10-lifton-path-interface.md) records the

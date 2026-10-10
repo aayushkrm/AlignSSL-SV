@@ -42,6 +42,12 @@ allocatedCPU seconds for the recorded jobs. Version/help/imports do not
 attest working alignments or P1.
 External minimap2/miniprot executables remain unqualified.
 
+Later finite read-only compute inventory1604259 checks only PATH and the
+`bioinfo/bin` and isolated `lifton1014_20261010/bin` directories for minimap2,
+miniprot, pbmm2, pbsv and hifiasm. None is found in those locations. This is
+not an exhaustive cluster absence claim; no executable install or genome
+run follows. Qualify the needed exact executable before its stage is released.
+
 Freeze,18 packages:
 
 ```text

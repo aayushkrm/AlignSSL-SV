@@ -52,8 +52,9 @@ non-expiring home and verify hashes; scratch expiresOctober22.
 | reused acquire_hg002_dna.py | `57524ec840fdd08a9cd25505e230fbe1063ae0e4ade70f2f9dbba77f237aef35` |
 | unchanged acquire_parent_sva_region.py | `c0f47e522d4f88b2e068f035b78eb558e63e4abc94839b4a78e32f3c6f09034b` |
 
-Seven local mocked controls pass, zero skips,0.10s; combined selection93tests
-plus9subtests passed in the preparation run, zero skips,0.97s. Tests cover independent prior0, hashes,
+Seven local mocked controls pass, zero skips,0.10s. Current combined selection
+of stage, DNA intake, cohort, parental acquisition/census/acceptance tests
+passes90tests plus9subtests, zero skips,0.98s. Tests cover independent prior0, hashes,
 published mismatch, low space, HEAD size/encoding, cancellation-accounting and
 existing-output refusal. These mocks do not attest remote206 support, real
 checksums or native annotation compatibility.
@@ -63,6 +64,16 @@ its direct terminal output was lost across a context transition. This was not
 a data-acquisition attempt. One explicit output-recovery verification1604255
 also completed: all four deployed source/test hashes above match,39 controls
 pass, zero skips,0.25s. Both allocations count against S0; neither downloaded
-genomic/reference bodies. The default macOS system Python lacked pytest;
-use the existing project venv, not a new installation. Actual reference
-acquisition is not yet started in this preparation entry.
+genomic/reference bodies.1604255 also used1s elapsed/0.483s measuredCPU,
+MaxRSS16552K. The default macOS system Python lacked pytest;
+use the existing project venv, not a new installation.
+
+## Actual launch
+
+Job1604257 is RUNNING on hydra-n1/amd_256M with the fixed1CPU/4GiB/65min
+allocation and immutable source bundle above, corresponding to research
+commit9f80613. It started after the deployed controls and separate new-leaf
+check. This books at most65allocatedCPUmin within S0, not an additional free
+allowance. It is concurrent with, not a replacement for, S1a1604251.
+No complete reference object, successful checksum or native run is yet
+claimed by this launch record.
