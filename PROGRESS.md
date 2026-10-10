@@ -11,6 +11,42 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 10 [staged investment decision](docs/research/2026-10-10-hg002-dna-stage-investment.md)
+selects exact-source HG002 DNA rather than unqualified split-assembly targets.
+S0 setup and bounded S1 intake are recommended; expensive calling, native
+reconstruction and P1 retain separate review gates. No600CPU-hour blanket
+release or RNA. Maintained independent reviewer releases S0/S1, including
+one full exact DNA transfer within52GiB cumulative genomic bytes and8
+allocatedCPUh. Exact acquisition code/launch remains in preparation; no large
+transfer has started. S2–S4 remain unreleased.
+
+Actual [LiftOn setup](docs/research/2026-10-10-hg002-runtime-setup.md):1604242
+completed on writable scratch,82s/29.169 measuredCPU seconds; three failed
+allocated pre-install attempts retained. Home is read-only on compute nodes,
+not on the login host. Wheels backed up; home venv installed offline and
+passes pip check/version. Read-only1604243 confirms imports/version on n1.
+No native genome annotation or alignment-binary qualification yet. Combined
+local verification:54tests plus9subtests pass, zero skips,0.79s; not a
+biological result. RNA remains untouched.
+
+October 10 [exact HG002 input recipe](docs/research/2026-10-10-hg002-dna-input-recipe.md):
+the study's public DNA BAM has the exact ENA run alias and an HG002_WGS
+Revio CCS header. Three capped header acquisitions total196,608B, separate
+from prior accounts. Public split-haplotype mapped BAMs do not yet establish
+complete same-source targets. Matched GENCODE50 sizes/MD5s and LiftOn1.0.14
+commit are pinned; reference bodies are not acquired or verified. No RNA or
+large DNA download in these checks; separate software setup is recorded above.
+Human resource clarification: fully scale useful
+parallel work; do not reserve idle whole nodes for serial checks.
+
+The replacement Luna/max-requested worker completed a preliminary
+[CDS-overlap index](docs/research/2026-10-10-hg002-cohort-implementation.md).
+Main read all217 code/122 test/59 note lines and independently ran31 synthetic
+tests: all pass, zero skips,0.16s. Main-found suffix-anchor, GT-range, short
+symbolic, INFO ambiguity, contig mismatch and output-overwrite defects have
+regression controls. This is not final gene/alternate-haplotype D, a linked
+event collapse, ORF assay or a genomic result. All paths remain P1 NOT_ASSESSED.
+
 October 10 [completed empirical diagnostic](docs/research/2026-10-10-parent-sva-result.md):
 job1604237 exited0. Native germline emitted0records; native mosaic emitted one
 PASS compatible3459bp insertion with actualGT0/0. Fixed census has6compatible,
@@ -19,9 +55,10 @@ names overlap the six census insertions. No exact controlled-child identity,
 population estimate or new failure. Retire this known case as a new-method
 premise: expected native policy already exposes the signal. Full raw backed
 to home; all28small plus4large artifact hashes verified. Cumulative upstream
-body charge90,836,888B; SlurmCPU4.228s/27selapsed for03. Actual independent
-audit pending: reviewer handle missing; two Luna sidecars returned usage-limit
-errors and produced no deliverables. No expensive HG002 campaign approved.
+body charge90,836,888B; SlurmCPU4.228s/27selapsed for03. Completed replacement
+independent actual-result audit accepts retirement under the frozen rule.
+The prior missing reviewer and two initial Luna usage-limit failures remain
+historical failures, not current review blockers. No expensive HG002 campaign approved.
 RNA untouched; full publication goal remains active and unmet.
 
 October 10 superseding [execution record](docs/research/2026-10-10-parent-sva-execution.md):

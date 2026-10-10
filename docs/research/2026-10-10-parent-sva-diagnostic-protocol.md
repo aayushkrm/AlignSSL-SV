@@ -4,7 +4,9 @@ Status: selected by the completed Sol6.1/max-requested decision and prospective
 independent review. [Job1604237 completed](2026-10-10-parent-sva-result.md) after
 two execution failures preserved separately. Native mosaic visibility retires
 this case's new-method premise. This is one cheap diagnostic, not a campaign.
-No major scientific positive is accepted; actual independent audit pending.
+No major scientific positive is accepted. The completed independent
+[actual-result audit](2026-10-10-public-paired-falsifier-review.md#actual-result-review-completed-parental-sva-diagnostic)
+accepts retirement of this case premise; no larger campaign is released.
 
 ## Frozen inputs and question
 

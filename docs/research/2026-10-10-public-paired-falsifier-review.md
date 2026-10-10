@@ -79,3 +79,136 @@ Used the Firecrawl skill after reading FULL its instructions and required paper/
 No jobs, genomic inputs/headers/GTs/results, installs, code implementation, bookings, Git actions or other file edits occurred in this review. The main-reported65,536B prefix acquisition is real, not a source-only zero-transfer claim. No new experiment account is calculated from an incomplete live ledger here.
 
 **Handoff:** the one-case parental native-policy diagnostic is eligible under the acceptance/compatibility rules above. The unknown-residual HG002 pilot is scientifically eligible, with P1/endpoint/null conditions to freeze before RNA; its expensive exact execution/account remains unapproved. No publication premise, major positive or campaign is accepted. These finite corrections need implementation in the actual measurement, not another general metadata-review loop.
+
+## Actual-result review: completed parental SVA diagnostic
+
+2026-10-10, Asia/Tomsk. Independent replacement reviewer; main owns the
+implementation and execution. The main task reports that reviewer handle
+`01a11e73-c622-7e22-9ea6-cebd9d2b5023` was authoritatively missing after
+service usage errors. This review replaces that missing reviewer; it is not
+a timeout restart. Requested reviewer configuration: GPT-6.1 Sol/high.
+Backend identity and reasoning effort are not independently attested.
+Repository reviewed at `0fa5307ecab6ade4cf6c78b3279ae9617cb56c0f`;
+the result records execution source `7f37667a49dc78d76465d18731c36fd4dd8bb50b`.
+
+**ACCEPT the completed diagnostic disposition: retire this known parental
+visibility case as a new caller-method premise.** The stored native mosaic
+output and sequence-bearing read evidence meet the previously frozen
+compatibility/visibility rule. Germline absence with mosaic visibility is
+the expected native-policy distinction. It does not establish a new caller
+failure, an improvement, or a publication result. No replay, tuning,
+additional metadata framework or larger campaign is needed to close this
+diagnostic.
+
+| Evidence independently checked locally | Result and interpretation |
+|---|---|
+| Original germline VCF and caller log | VCFv4.2 header and sample columns present; zero records. Log reports 784 input alignments and zero output SVs; run manifest records exit0. An empty successful output is distinct from a missing file. |
+| Original mosaic VCF and caller log | One PASS INS, chr3 POS1=71589909, SVLEN3459; log reports 784 alignments and one output SV; manifest records exit0. Actual GT remains `0/0`, GQ37, DR60, DV13, PS71380081. PASS and compatible allele visibility do not turn that GT into a non-reference diploid genotype. |
+| Native evidence fields | SUPPORT6, SUPPORT_UNSCALED6, VAF0.178, PHASE haplotype2. These values are preserved separately from genotype and census counts. |
+| All 121 retained read-evidence entries | Independent CIGAR arithmetic reproduces six compatible insertions,97 reference-compatible reads and18 inadequate-flank reads, with no duplicate retained names. All six compatible reads have MAPQ60, HP2, insertion position0=71589909, lengths3410–3466 and adequate flanks. None declares an external SA placement. The census separately records two flag exclusions:123 examined records is a stored accounting total, not an independent BAM recount here. |
+| Six native RNAMES versus six census alternate names | Five names overlap. Native-only `m64076_230330_235351/50528942/ccs` has zero aligned left-flank bases,997 right-flank bases and a chr5 SA declaration. Census-only `m84046_230427_191920_s1/119345255/ccs` has997/1000 flank bases and a3455-base compatible insertion. The sets are not equated; neither difference is adjudicated as a caller bug. |
+| Preserved insertion FASTA and event hashes | All21 retained insertion entries match their recorded lengths and sequence hashes. Native ALT SHA256 `091c67d5572104aa8c0991e6798aa54a126762bce91e27ad17e59fdf673bc00b` matches the3459-base insertion from `m54329U_230327_190242/146606681/ccs`. This supports parental sequence compatibility using the same DNA observations; it is not orthogonal validation. |
+
+The descriptive fraction remains6/103=0.0582524. The18 inadequate-flank names
+remain unresolved. This fraction is neither native VAF nor a population
+estimate or a test of the published parental fraction. The parent-side
+sequence, uncertain workbook coordinate convention and unavailable exact
+child allele do not establish child-allele recovery, transmission sensitivity
+or exact breakpoint identity. Outside supplementary alignments were not
+inspected. The native-only SA case does not invalidate the five overlapping
+adequate-flank reads or justify expanding this retired diagnostic.
+
+Custody checks: the local raw `run.json` is byte-identical to the Git manifest
+at `results/parent_sva_native/2026-10-10/03/run.json`; SHA256
+`58af3dd9bc9d59d47757aeea28359f824c18708aa50c8804e89c40050b4d20cc`.
+All28 locally available artifacts match both size and SHA256, totaling319,772B.
+The manifest lists32 artifacts totaling84,379,366B. The regional BAM,
+regional BAI and two full-index copies are absent from this local packet.
+Main reports verifying those four files on the cluster home archive; that
+verification and non-expiring custody remain attributed to main. I did not
+connect to the cluster, fetch those files or independently recount BAM reads.
+
+For03, the789 HTTP body-read journal entries sum to51,611,596B. Its seven
+attempt-end totals independently give the same sum and agree with the
+acquisition manifest; these are two views of one journal, not additive costs.
+The fresh charge includes37,783,472B of upstream index data and the partial
+open-stream BAM reads. Adding the recorded prior39,225,292B gives90,836,888B,
+below the unchanged4GiB body cap. Prior02/prefix charges were not independently
+re-audited here. Loopback index delivery and TLS/header bytes are outside this
+upstream-body measure. Runner CPU4.217957s and wall26.421046s are recorded in
+run.json; acquisition CPU is nested and must not be added again. Slurm
+elapsed27s, TotalCPU4.228s, MaxRSS39776K and exit0:0 remain main-reported;
+no live scheduler check occurred. Allocation figures are recorded requests,
+not measured use.
+
+Read scope: FULL governing objective attachment, completed result, frozen
+protocol, execution history and the entire prior review above. Also read
+FULL the Git03 manifest, result README, census implementation and diagnostic
+runner. Parsed all local read-evidence entries, both original VCFs, insertion
+FASTA, census/acquisition manifests and the complete03 request journal;
+read both native caller logs and checked the retained BAM-header dictionary,
+sample names and BED windows. All three current source hashes match run.json;
+the acquisition helper received a hash check, not a full source audit in this
+review. Runtime version, dependency freeze and command exits are corroborated
+stored records, not new execution. No new literature/source retrieval or
+exhaustive novelty review was performed. Pre-append review SHA256:
+`fab45ae8bf44b4f948c21369a10d2c7059d0a4eff3ac70c51f2ee6ce8efc56cf`.
+
+This closes the pending independent actual-result review for this diagnostic.
+The earlier HG002 scientific eligibility and unresolved concrete P1,
+endpoint, RNA-adjudication and staged-account conditions remain as stated
+above; this completed result does not release an expensive execution budget
+or authorize RNA processing. Main can continue its parallel HG002 metadata
+work. Only this actual-review section was appended. No commit, push, data
+acquisition, job, installation or other file edit occurred. The governing
+publication objective remains unmet.
+
+## HG002 concrete S0/S1 investment review
+
+2026-10-10. Independent reviewer; requested Sol6.1/high, not backend/effort
+attestation. Read FULL the74-line investment note, SHA256
+`09676284939fa2838a8bd3e7b22ad52b7d839a7fb306ffbac84a874c04951904`;
+reuse the previously full-read objective, frozen decision, recipe and headers.
+Latest native-prefix, runtime and54tests+9subtests/zero-skip checks are
+main-reported; I did not execute them or audit their raw outputs here.
+
+**RELEASE S0 and S1 under option B, including one full exact-source DNA
+BAM transfer.** The main-reported cached DNA records have complete SEQ/QUAL,
+no hard clipping, matching RG and actual HP/PS. Their supplementary status,
+two original identities and restricted placement prevent global claims but
+do not invalidate this finite intake decision. No additional prefix sampling
+is required merely to repeat usable-sequence evidence. This expenditure buys
+complete source material and a readiness result; N, novelty and publication
+remain uncertain. Unqualified split-contig provenance does not justify
+buying those BAMs as a substitute primary control.
+
+S0 release:4GiB cumulative reference/software bodies,4allocatedCPUh,
+16GiB RAM/32GiB peak disk; include existing setup and failed attempts.
+S1 release:52GiB=55,834,574,848B cumulative HG002 genomic HTTP bodies,
+including all196,608B prior headers, BAI, retries and overfetch;8allocatedCPUh,
+16GiB RAM/160GiB peak disk. Any initial readiness packet remains at most
+256MiB=268,435,456B within S1, not an extra allowance or required consumption.
+The exact BAM+BAI total48,748,908,838B leaves7,085,469,402B after prior headers;
+no budget reset or second full representation is released. Pin source
+identity during transfer and hash completed artifacts; multipart ETags are
+not full-file MD5s. Preserve byte/allocated-CPU ledgers across failures.
+
+S1 must validate complete decoding and reconcile original identities,
+orientation, unmapped reads, missing/conflicting sequence and read/base counts.
+Use compressed extraction and include custody copies/temporary files in disk
+use; raw uncompressed FASTQ cannot be assumed to fit. Missing HP/PS alone
+does not stop intake, but does not certify local phase. Stop with preserved
+outputs at a resource limit or unrecoverable sequence/integrity defect;
+such failure is input-feasibility inconclusive, not a biological null.
+S2–S4, reassembly, production annotation, GPU calling and RNA remain unreleased.
+
+Setup-history correction to the investment note: main reports four failed
+setup events:1604238 pre-task signal53;1604239 hydra-n12 home mkdir read-only;
+hydra-n1 default-partition rejection without allocation; and hydra-n1 home
+mkdir read-only. Signal cause remains unproved. These are main observations,
+not a human directive. Main now reports1604242 COMPLETED on scratch,82s,
+29.169 measuredCPU s,212128K MaxRSS,2CPUs/8GiB, with backed-up wheels and
+offline home pip-check/version success; native alignment binaries remain
+unqualified. S0/S1 may overlap when summed storage/RAM fit; use useful CPUs,
+no idle node/GPU, and preserve custody before October22 scratch expiry.
+Only this section was appended; no retrieval, job, installation or Git write.

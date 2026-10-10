@@ -72,14 +72,18 @@ Regional BAM SHA256: `61a570a03b0aa6790530575153c77e3182b1249116d209af147c988333
 Full index SHA256: `14ee0700cf338cfde7e201b70ec0f285942677dffc32b805aa2080f2301795ff`.
 See [execution failures](2026-10-10-parent-sva-execution.md) for intact01/02 history.
 
-## Review availability and next work
+## Independent review and next work
 
 The prospective independent review qualified the cheap assay before launch.
-An actual-result review was sent to the maintained reviewer; its later handle
-was missing, so no completed independent result audit is claimed. Two new
-Luna/max-requested workers returned a service usage-limit error and subsequently
-had missing handles. They produced no input recipe or cohort implementation.
-Main's raw checks are not substituted for an independent reviewer role.
+The original maintained reviewer handle was missing after service errors.
+Two initial Luna workers also returned usage-limit errors and produced no
+deliverables. Those historical failures remain recorded. A replacement
+Sol6.1/high-requested independent reviewer has now completed the
+[actual-result audit](2026-10-10-public-paired-falsifier-review.md#actual-result-review-completed-parental-sva-diagnostic).
+It accepts retirement of this known-case premise under the frozen visibility
+rule, independently checks all121 retained evidence rows,21 insertion hashes,
+both native VCFs,28 small raw hashes and the03 request charge. Cluster custody
+and scheduler observations remain attributed to main, not reviewer execution.
 
 No major positive or expensive campaign is accepted. The next eligible
 unknown-residual question remains HG002 DNA-first coding-path exclusion,

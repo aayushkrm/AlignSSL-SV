@@ -32,13 +32,32 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 10 [investment decision](2026-10-10-hg002-dna-stage-investment.md)
+  selects exact-source DNA; independent review releases only S0/S1 with
+  cumulative accounts. Bounded S1a code/launch remains in preparation.
+  No large DNA transfer, calling,
+  assembly/P1 release or RNA. [Actual setup](2026-10-10-hg002-runtime-setup.md)
+  succeeded in writable scratch via1604242,82s/29.169 measuredCPU; immutable
+  logs/wheels backed home, fresh home venv installed offline. Read-only
+  compute1604243 passes imports/version. Earlier1604238/39/41 failed before
+  pip, home mkdir read-only on n12/n1; batch signal cause remains unproved.
+  Cohort index31synthetic tests pass, not D/P1; combined54+9subtests0skip.
+- October 10 [HG002 source recipe](2026-10-10-hg002-dna-input-recipe.md):
+  exact study processed DNA source found; three capped text-header checks
+  charge196,608B. Split mapped haplotypes lack complete same-source provenance.
+  GENCODE50 products and LiftOn1.0.14 commit pinned. Routine isolated
+  LiftOn setup job1604238 initially submitted, then failed; newer actual
+  setup record above supersedes that state. No genomic inputs to setup.
+  Cohort-parser corrections and independent staged-investment scrutiny run
+  in parallel. No large DNA campaign or RNA processing has been launched.
 - October 10 actual [parental result](2026-10-10-parent-sva-result.md):1604237
   COMPLETED0:0, germline0records/mosaic1PASS compatible INS3459 withGT0/0;
   fixed census6alt97ref18unresolved, five support-name intersections. Known
   case new-method premise retired; no novel failure/exactchild/populationclaim.
   Rawhomebackupdone and28small/4large hashes match; cumulative90,836,888B.
-  Actual independent review unavailable (handle missing); two Luna sidecars
-  failed serviceusagegate/nooutputs. No largecampaign accepted; nextHG002
+  Replacement independent actual-result review accepts retirement; the old
+  missing handle and two initial usage-limit failures remain historical.
+  No largecampaign accepted; nextHG002
   DNA-only operational work remains, RNAuntouched. Fullgoal active/unmet.
 - October 10 direct1604236 reached source but remote-index cache creation
   failed; no caller/census. Full raw retained, cumulative39,225,292B including
