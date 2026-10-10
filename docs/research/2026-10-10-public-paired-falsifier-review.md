@@ -436,3 +436,73 @@ job or Git mutation occurred. One initial read-only Git status was run in
 error despite the requested no-Git scope; no later Git command was used.
 Pre-append review SHA256:
 `bd86c4e0b58f2dab16db318037573f4d30226deaccdeea75015e93d231d18fac`.
+
+## S1b finite correction and exact packet acceptance
+
+2026-10-10. Maintained replacement reviewer; requested Sol6.1/high,
+not independently attested backend/effort. **CLEAR both identified S1b
+HOLDs for the corrected hashes below. ACCEPT the exact execution packet
+conditional on the corrected frozen Linux02 bundle passing all 50 controls
+with those same hashes.** Linux01 job1604281's 41-test pass does not clear
+the historical HOLD. S1b remains UNBOOKED in the reviewed packet.
+
+FULL-read the corrected 401-line source, 286-line tests and updated 177-line
+extraction note, including its complete final command/resource packet.
+Source SHA256:
+`40679be522fbf2dd582a6826d72cfc02b9d77443f60095dcabb5a9d4efec681a`;
+tests SHA256:
+`81bebb128622925bb677cde26e12bfdd2f2b833f4e0622d994b06ce635159aee`.
+These hashes were checked again after independent controls. The extraction
+note SHA256 is
+`d98ab0557f5505031f526adb3c0fb299a5a13e34a5508e01e60e004dbf25a029`.
+Existing local suite: 50 passed in 0.80s in the existing project venv,
+with bytecode and pytest cache writes disabled. No Linux pass is inferred
+from this local result.
+
+Independently ran 41 additional synthetic cases beyond that suite:
+
+| Controls | Cases | Independent result |
+|---|---:|---|
+| Reverse missing QUAL on full/fragment records and reverse missing SEQ/QUAL; both record orders and both complete-record orientations | 12 | READY; exactly one forward read, correct sequence/quality, restored_missing_ids=1 and malformed_ids=0 |
+| Missing-quality full/fragment sequence disagreement, missing-sequence length disagreement, and conflicting complete qualities; both orders | 8 | INCOMPLETE; no emitted molecule, correct constraint/conflict state, original_bases absent as a total |
+| Deadline, SIGTERM and SIGALRM during final commit, final census, tag query, UNKNOWN query, database close, file measurement and journal close | 21 | Saved and returned INCOMPLETE, complete_census=false, original_bases=null; resolved evidence retained |
+
+All late controls verify deferred handlers are still active at injection,
+then restored with the timer disabled on return. Deadline controls report
+61s against a 60s allowance without READY. Reverse fragment checks use
+asymmetric hard clips and retained soft clips. Every saved readiness.json
+matches the returned state. One initial file-measurement mock missed the
+resolved macOS temporary path; after correcting that test hook, the complete
+21-case late-control matrix passed. No production source was changed.
+
+Accept the declared frozen02 command from
+`/beegfs/datasets/home/igorno/alignssl_restart_20260922/bundles/hg002_read_extract_20261010_02`:
+`python -B -m scripts.extract_hg002_source_reads`, on hydra-n1/amd_256M,
+1CPU/16GiB/5h, script allowance17,940s and external disk48,818,418,098B.
+Its exact home BAM is
+`/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam`,
+with input SHA256
+`b7edeb4bbc2589039c6148a912857f26924ca8fd5971cd3141337d0ce24bbde4`.
+That SHA and size48,727,325,910B match the retained acquisition manifest
+metadata checked locally; no BAM bytes were read here. The exclusive output
+is
+`/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_read_extract_20261010_01`.
+Main must check that this leaf is still absent at execution. The isolated
+CPython3.12.1/pysam0.24.1 runtime and pip-check success remain main-reported
+until the frozen Linux qualification completes.
+
+The reported20,720s S1 remainder covers the18,000s maximum allocation;
+charge actual scheduler cost. Retain the declared32MiB reserve, fixed
+external disk account, sampled-peak limitation and manifest-first use rule.
+A late journal-close cancellation can leave an earlier READY journal line;
+the final readiness manifest remains authoritative. This acceptance applies
+to complete-source extraction only. It is not a throughput/peak-fit claim,
+BAI/reference/phase qualification, S2–S4/RNA release or publication result.
+The matching corrected Linux controls are the remaining execution condition;
+no further scientific gate is added by this finite correction review.
+
+Only this section was appended. Historical review text and source/tests
+were preserved. All temporary synthetic files were cleaned. No job, network,
+install, cluster connection, actual genomic read or Git command occurred.
+Pre-append review SHA256:
+`0b1dac161a7f9980dd8671f088754b7296f6fa2526a1c902fb50af5d4b3992f8`.

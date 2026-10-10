@@ -175,3 +175,13 @@ output for timing:1.85s, zero skips. These synthetic controls are not a study re
 Corrected frozen Linux02 job1604282 verifies both matching hashes and passes
 all50 tests, zero skips,4.32s. This is mock-only qualification, not a real BAM
 census or clearance of the independent HOLD. Initial01 remains preserved.
+
+The maintained replacement reviewer now independently clears both defects
+at these exact corrected hashes and accepts this packet conditional on50
+matching Linux controls. Its50existing+41additional synthetic cases pass,
+including reverse missing-payload restoration/disagreement and21late-accounting
+expiry/cancellation injections. Frozen02 job1604282 satisfies the remaining
+condition: both hashes match and50 controls pass. Both control jobs1604281/82
+complete0:0,5s allocated each, measuredCPU0.678/0.625s, MaxRSS23216/25456K;
+charge them to routine S0. This permits the exact S1b launch below, not S2–S4
+or RNA. Historical HOLD and01 bundle stay preserved.
