@@ -32,6 +32,12 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- ActualS1b1604284 RUNNING, n1/amd_256M1CPU16GiB5h, acceptedfrozen02command.
+  Maintained replacement clearsbothHOLDs with50+41independent syntheticcases;
+  matchingLinux50controlsgatepasses. MaximumS1total26080s fits28800s.
+  Monitor this exact job/output; no duplicates or prefix-total claims.
+  [Exact packet and launch](2026-10-10-hg002-read-extraction.md).
+  Completedrawcustodyvalid, fullreadiness/calling/assembly/P1/RNA notassessed.
 - CorrectedS1b frozen02 matches source40679be.../tests81bebb...,50Linux
   controls pass through1604282,4.32s. Maintained replacement review HOLDs
   reverse missing-QUAL and late final-deadline defects; main corrections

@@ -11,6 +11,15 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+Actual [full-source read extraction](docs/research/2026-10-10-hg002-read-extraction.md)
+1604284 RUNNING on n1/amd_256M,1CPU/16GiB/5h after maintained independent
+review clears both reproduced HOLDs with50existing+41additional synthetic
+cases. Frozen02 Linux50controls and both exact hashes match. Accepted
+command uses verified home BAM and fixed external/custody disk account;
+maximum S1 booking26080s fits28800s. No duplicate or read subset. Raw DNA
+and reference custody already verified. No complete-read census/readiness,
+calling/assembly/P1/RNA result; full publication goal remains active/unmet.
+
 Corrected [S1b packet](docs/research/2026-10-10-hg002-read-extraction.md)
 remains UNBOOKED. Replacement independent review HOLDs two reproducible
 reverse-missing-QUAL/final-deadline defects. Main adds presence guards and

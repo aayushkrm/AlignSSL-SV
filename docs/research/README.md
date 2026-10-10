@@ -9,7 +9,7 @@ results.
 | Document | Role | Current status |
 |---|---|---|
 | [`2026-10-10-hg002-intake-result.md`](2026-10-10-hg002-intake-result.md) | Actual bounded DNA/reference intake and verified raw custody | DNA/ref complete, journals reconcile, all7homeSHA match; acquisition only, not complete-read/calling/P1 result |
-| [`2026-10-10-hg002-read-extraction.md`](2026-10-10-hg002-read-extraction.md) | Complete original-read reconciliation implementation |41 synthetic controls pass; summed preexisting disk/quality controls added, concrete independent acceptance and Linux qualification pending, S1bUNBOOKED |
+| [`2026-10-10-hg002-read-extraction.md`](2026-10-10-hg002-read-extraction.md) | Complete original-read reconciliation implementation | Two reproduced HOLDs fixed/independently cleared;50Linux controls pass,1604284 running exact bounded packet; no complete-read/calling/P1 result |
 | [`2026-10-10-gencode-reference-staging.md`](2026-10-10-gencode-reference-staging.md) | Routine released S0 matched reference preparation |39 deployed controls pass;1604257 completed with all5MD5s passing and verified home custody, see actual intake result; no annotation claim |
 | [`2026-10-10-lifton-path-interface.md`](2026-10-10-lifton-path-interface.md) | Luna/max-requested pinned native output audit | Static six-file findings; incomplete isoform/drop/terminal joins remain UNKNOWN, no genome run or P1 result |
 | [`2026-10-10-hg002-dna-intake-protocol.md`](2026-10-10-hg002-dna-intake-protocol.md) | Exact S1a pinned transfer and conservative accounting |1604251 completed, full journal and home custody checked, see actual intake result; no full-read/calling/assembly/P1/RNA claim |

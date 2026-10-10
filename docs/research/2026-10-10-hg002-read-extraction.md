@@ -185,3 +185,15 @@ condition: both hashes match and50 controls pass. Both control jobs1604281/82
 complete0:0,5s allocated each, measuredCPU0.678/0.625s, MaxRSS23216/25456K;
 charge them to routine S0. This permits the exact S1b launch below, not S2–S4
 or RNA. Historical HOLD and01 bundle stay preserved.
+
+## Actual S1b launch
+
+Job1604284 is RUNNING on hydra-n1/amd_256M,1CPU/16GiB/5h, with exactly the
+accepted frozen02 command above. Final new-leaf check passes. Execution
+source corresponds to90ff64e; review/packet acceptance is committed in27c88af.
+Maximum booking8080+18000=26080allocatedS1 seconds fits28800, leaving2720s
+if the full allocation is used. Actual charge comes from completion sacct.
+The job performs local source hashing and both full scans; upstream body
+charge remains unchanged. Do not start a duplicate or treat prefix counters
+as whole-source totals. No completed census, read readiness, calling,
+assembly, P1 or RNA is claimed by this launch entry.
