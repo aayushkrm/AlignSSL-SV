@@ -11,6 +11,15 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 10 [exact DNA intake protocol](docs/research/2026-10-10-hg002-dna-intake-protocol.md):
+independent reviewer reproduced an8B cancellation-accounting gap; corrected
+signals defer errors until returned/exception-partial bytes are journaled and
+retained. Legacy HOLD/bundle01 preserved. Reviewer clears the finite fix;
+frozen bundle02 job1604247 verifies hashes and passes32 Linux controls,
+zero skips,0.19s. Module entry point works; combined local86tests+9subtests
+pass,0.96s. S1a is acquisition only, not complete-read readiness. No calling,
+assembly/P1 or RNA is released. Large transfer not yet claimed in this entry.
+
 October 10 [staged investment decision](docs/research/2026-10-10-hg002-dna-stage-investment.md)
 selects exact-source HG002 DNA rather than unqualified split-assembly targets.
 S0 setup and bounded S1 intake are recommended; expensive calling, native

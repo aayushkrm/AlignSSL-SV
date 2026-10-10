@@ -212,3 +212,63 @@ offline home pip-check/version success; native alignment binaries remain
 unqualified. S0/S1 may overlap when summed storage/RAM fit; use useful CPUs,
 no idle node/GPU, and preserve custody before October22 scratch expiry.
 Only this section was appended; no retrieval, job, installation or Git write.
+
+## Exact S1a code and launch review
+
+2026-10-10. Requested independent Sol6.1/high; backend/effort not attested.
+Read FULL acquisition source221lines, tests220lines and reused helper561lines.
+Source SHA256 `92f97cf63775490aba62d354535557eca712dc901c1489e05af5cf9ef84b4a8c`;
+tests `babe8961dce2ac16d9f091b26ca5dd4c1ba78d337ca66515597499758a044c79`;
+helper matches its frozen `c0f47e522d4f88b2e068f035b78eb558e63e4abc94839b4a78e32f3c6f09034b`.
+**HOLD this exact launch for one accounting correction; S0/S1 release stands.** A synthetic control delivered SIGTERM at
+download line99 after response.read returned8B but before ledger.charge.
+The saved INCOMPLETE manifest and journal both charged0B; partial file was0B.
+This violates the declared returned-body measure even though partial custody
+and failure status survive. SIGALRM uses the same exception-raising handler.
+The existing SIGTERM test fires before GET returns and does not cover this.
+Defer cancellation exceptions until returned bytes are charged and journaled;
+add a deterministic read-return/charge-boundary control and retain bounded
+termination. This is an implementation correction, not a new science gate.
+
+Otherwise the static path provides pinned HEAD/206/ETag/range/encoding checks,
+disabled redirects,1MiB reads, no retries, prior-charge floor196,608B,
+52GiB cumulative cap, capacity checks before GET, exclusive partial files,
+exclusive publication and source/helper hashes. CLI confines the new leaf
+to the resolved project scratch root; it rejects existing/symlink leaves.
+The read-only bundle must have a scripts directory below the module-launch
+working directory; verify the actual python -m scripts.acquire_hg002_dna
+entry point there. No helper proxy, samtools, extraction or analysis runs.
+
+After that finite fix and passing Linux controls on the frozen bundle,
+the proposed hydra-n1/amd_256M job is eligible:1CPU,8GiB,4h, at most4allocated
+CPUh within S1's8h; exact new output leaf hg002_dna_s1a_20261010_01 under
+/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments;
+160GiB free before GET. Carry every additional genomic byte into the prior
+if196,608B changes; failures do not reset body or allocated-CPU accounts.
+ACQUIRED means object acquisition/hash custody only, readiness NOT_ASSESSED.
+S1b extraction still uses the remaining S1 account; S2–S4/RNA remain unreleased.
+Back up raw files via login I/O before scratch expiry; keep large data off Git.
+Linux controls and main's combined82tests+9subtests remain pending/reported,
+not independently passed here. My single cancellation reproduction used only
+temporary synthetic files, cleaned automatically. Only this section appended;
+no external retrieval, installation, cluster job, commit or other source edit.
+
+## S1a finite HOLD correction
+
+2026-10-10. FULL-read corrected source243lines and tests267lines.
+Source SHA256 `57524ec840fdd08a9cd25505e230fbe1063ae0e4ade70f2f9dbba77f237aef35`;
+tests `87ceab5c936b71b5b542b6b6d37221aa2bc82ce0eacabbcccdc925bd43777bec`;
+helper hash unchanged. Requested Sol6.1/high remains not attested.
+**CLEAR the identified accounting HOLD; corrected bundle02 launch remains
+conditional on its pending Linux controls and matching these source hashes.**
+Independently ran five network-free synthetic controls: SIGTERM and SIGALRM
+at read-return/charge each charge/journal/retain8B; partial-exception
+cancellation retains3B; cancellation during hashing retains8B; normal
+success hashes both objects and charges13B. Final manifests match journals.
+Signals only set pending state; safe points follow charge and write flush.
+Hashing checks cancellation/deadline per4MiB. The30s socket timeout bounds
+inactivity, not absolute read duration; Slurm remains the hard allocation cap.
+Full32-test suite was not rerun here (local pytest absent); Linux pass pending.
+Legacy HOLD and original bundle01 remain preserved; exact output/job envelope,
+52GiB cumulative account, readiness NOT_ASSESSED and unreleased S2–S4/RNA stand.
+Only this correction appended; synthetic files cleaned; no external data/job.

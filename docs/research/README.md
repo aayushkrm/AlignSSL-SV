@@ -8,6 +8,7 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-10-hg002-dna-intake-protocol.md`](2026-10-10-hg002-dna-intake-protocol.md) | Exact S1a pinned transfer and conservative accounting | Cancellation HOLD fixed and independently cleared;32 Linux controls pass; acquisition-only, readiness/calling/assembly/P1/RNA not claimed |
 | [`2026-10-10-hg002-dna-stage-investment.md`](2026-10-10-hg002-dna-stage-investment.md) | Completed Sol6.1/max-requested staged investment comparison | Independent reviewer releases S0/S1 exact-source DNA intake; exact launcher in preparation, calling/assembly/P1/RNA unreleased |
 | [`2026-10-10-hg002-runtime-setup.md`](2026-10-10-hg002-runtime-setup.md) | Actual isolated pinned LiftOn setup and failed-attempt history | Scratch job1604242 completed, home wheels/offline venv retained and compute-node imports pass; genome execution and external alignment binaries unqualified |
 | [`2026-10-10-hg002-cohort-implementation.md`](2026-10-10-hg002-cohort-implementation.md) | Development-only event/gene/ALT overlap index |31 synthetic controls pass; UNKNOWN/outside scope explicit, not alternate-haplotype denominator D or P1/ORF result |
