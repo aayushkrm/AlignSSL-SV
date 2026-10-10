@@ -11,6 +11,18 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 10 [matched GENCODE50 staging](docs/research/2026-10-10-gencode-reference-staging.md)
+is prepared under the released S0 account. Frozen five-object bundle uses a
+separate2GiB reference ledger and published MD5s; deployed hashes match and
+39 controls pass with zero skips. Control1604254 completed;1604255 recovered
+missing terminal evidence, not a genomic replay. No reference acquisition
+in this entry. The [native path interface audit](docs/research/2026-10-10-lifton-path-interface.md)
+fixes all-isoform/all-placement accounting: native drop reports alone cannot
+certify every reference path. Missing joins/terminal mapping remain UNKNOWN.
+No native annotation or P1 result; RNA untouched. Existing DNA1604251 runs
+without a duplicate:06:23:34UTC journal8,288,993,280B fresh/
+8,289,189,888B cumulative, partial only.
+
 October 10 actual [HG002 DNA intake](docs/research/2026-10-10-hg002-dna-intake-protocol.md)
 RUNNING: job1604251, hydra-n1/amd_256M,1CPU/8GiB/4h, immutable reviewed
 bundle02 matchinge0727cf. Exact path/free-space preflight passes. First

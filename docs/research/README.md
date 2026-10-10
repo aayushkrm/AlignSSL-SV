@@ -8,6 +8,8 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-10-gencode-reference-staging.md`](2026-10-10-gencode-reference-staging.md) | Routine released S0 matched reference preparation | Five fixed products, published MD5s and separate2GiB ledger;39 deployed controls pass, real transfer not yet started |
+| [`2026-10-10-lifton-path-interface.md`](2026-10-10-lifton-path-interface.md) | Luna/max-requested pinned native output audit | Static six-file findings; incomplete isoform/drop/terminal joins remain UNKNOWN, no genome run or P1 result |
 | [`2026-10-10-hg002-dna-intake-protocol.md`](2026-10-10-hg002-dna-intake-protocol.md) | Exact S1a pinned transfer and conservative accounting | Job1604251 running after32 Linux controls and cleared accounting HOLD; acquisition only, no readiness/calling/assembly/P1/RNA claim |
 | [`2026-10-10-hg002-dna-stage-investment.md`](2026-10-10-hg002-dna-stage-investment.md) | Completed Sol6.1/max-requested staged investment comparison | Independent reviewer releases S0/S1 exact-source DNA intake; exact launcher in preparation, calling/assembly/P1/RNA unreleased |
 | [`2026-10-10-hg002-runtime-setup.md`](2026-10-10-hg002-runtime-setup.md) | Actual isolated pinned LiftOn setup and failed-attempt history | Scratch job1604242 completed, home wheels/offline venv retained and compute-node imports pass; genome execution and external alignment binaries unqualified |

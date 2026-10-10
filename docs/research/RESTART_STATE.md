@@ -32,6 +32,15 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October10 [S0 reference preparation](2026-10-10-gencode-reference-staging.md):
+  five pinned GENCODE50 products, separate2GiB ledger,39 deployed controls
+  pass.1604254/55 both completed;55 recovers terminal evidence, not acquisition.
+  Existing S1a1604251 remains live:06:23:34UTC partial fresh8,288,993,280B,
+  cumulative8,289,189,888B. No duplicate. Luna/max-requested
+  [native interface audit](2026-10-10-lifton-path-interface.md) records the
+  source-ID/terminal-map gaps; incomplete path accounting remains UNKNOWN.
+  Complete-read extraction code is in parallel preparation, unlaunched.
+  S2–S4 and RNA remain unreleased; no publication result.
 - October 10 actual [S1a launch](2026-10-10-hg002-dna-intake-protocol.md):
   job1604251 RUNNING on n1/amd_256M,1CPU/8GiB/4h; source bundle02 matches
   e0727cf. Review-found8B cancellation gap fixed, independently cleared;
