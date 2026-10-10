@@ -17,7 +17,7 @@ The source asset URLs in the script use these versioned release paths. The scrip
 
 The [minimap2 README at its pinned commit](https://github.com/lh3/minimap2/blob/3c28777e7e2dcc90f825de1b9f17a89cca7d4452/README.md) and [miniprot README at its pinned commit](https://github.com/lh3/miniprot/blob/671db243f964a68bd724af11cd9964d840f29c43/README.md) document source compilation with GNU `make`. They list a C compiler and zlib development files. The release tag-to-commit mapping is recorded above.
 
-## Build and artifacts
+## Initial build packet and artifacts (retained history)
 
 [`setup_hg002_native_aligners.sh`](../../scripts/setup_hg002_native_aligners.sh) writes only to this new scratch leaf:
 
@@ -75,3 +75,48 @@ Expected output:
 ```
 
 `bash -n scripts/setup_hg002_native_aligners.sh` and this offline control pass. No source archive, binary, reference, or genome was downloaded or built. No cluster job was submitted, and no project test suite was run. Main continues to own live BAM job 1604284 and the later LiftOn qualification gate. This setup packet is routine software preparation; native gene mapping and P1 remain unreleased.
+
+## Main execution: first orchestration failure
+
+Main reproduces the archive-name control and passes shell syntax. Frozen script
+SHA2563cb0aad92ff31a5bed81059f30a93a842e3b85d78f56ed013034b00f4bca8bc1,
+research commit986808f. First job1604290 exits127 before the script: source
+file absent when Bash opened it. Main dispatched before the concurrent SCP
+completion was confirmed. No scratch output, archive transfer or build occurs.
+This is an orchestration failure, not a native-tool or scientific null.
+Preserve and charge the failed allocation. The completed upload now has the
+exact expected hash; a corrected dispatch may use the still-absent output
+leaf and unchanged source only after this preflight. No automatic retry.
+
+## Main execution: compiler failure and finite correction 02
+
+The unchanged, hash-verified packet actually starts in job1604291, but exits2
+at the first minimap2 compiler command. Its inherited `CC` is
+`/opt/nvidia/hpc_sdk/Linux_x86_64/26.1/compilers/bin/nvc`, which is absent on
+the compute node. The preflight `cc --version` reports GNU11.5.0, but `make`
+honors inherited `CC`. This failure is tool setup, not a scientific null.
+Both release archives have the exact pinned sizes and SHA256s. Main preserves
+the entire failed output in matching non-expiring home custody and rehashes
+both archives there. Failed1604290 charges4 allocatedCPU seconds (1s×4);
+failed1604291 charges12 (3s×4); measuredCPU respectively0.013s and0.239s.
+
+The current script uses a new exclusive scratch leaf
+`hg002_native_aligners_s0_20261010_02`, copies those two retained archives
+from home, checks their exact sizes/hashes again, and scopes `CC=cc` to each
+`make -j4`. Source URLs in its manifest are original provenance, not claims
+of a new HTTP transfer. No new software body, genomic body, shared install,
+global compiler override, or larger allocation is needed. The original
+immutable01 bundle and both failures remain unchanged. The same4CPU/4GiB/
+15minute S0 limit applies. Main must confirm upload completion and the exact
+new script digest before dispatch. Native alignment and P1 remain unqualified.
+
+Corrected02 script SHA256
+`64d8131ace3cb103f3cf31b8e97fb9e38b8ec7b4841d2679c68f6242897e2dd2`.
+Main awaits completed upload, checks this digest remotely, then dispatches
+job1604292. It COMPLETES0:0,6elapsed seconds×4CPUs=24allocatedCPU seconds;
+14.616s measuredCPU,126896K stepMaxRSS. Both GNU builds and all14 artifact
+hash checks pass. Versions are `2.31-r1302` and `0.18-r281`; version/help
+qualification is complete. Main copies the entire02 output to matching
+non-expiring home and verifies all14 hashes there. No large data or shared
+environment changes. Both failures plus success charge40allocatedS0 seconds
+in total. Native alignment, LiftOn interface joins and P1 remain unqualified.

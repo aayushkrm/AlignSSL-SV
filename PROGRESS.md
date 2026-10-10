@@ -11,6 +11,32 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+Latest S1b1604284 finishes its full first BAM pass:5,710,994records including
+578unmapped; the second FASTQ-emission pass is running. Retained57minute
+checkpoint has446,021emitted original IDs/6,670,576,296bases, partial only.
+No completed-read hash/readiness or final census yet. Tiny diagnostic1604294
+COMPLETED0:0,5allocatedCPU seconds, reports native success with zero pipeline
+failures and captured miniprot exit0. I/O121 does not recur, which does not
+prove its original cause. Complete home raw custody is retained; independent
+actual02 positive-interface review pending. No whole-genome release or
+biological result. New [caller preflight](docs/research/2026-10-10-hg002-dna-caller-preflight.md)
+finds ordinary calling can precede small-variant phasing; exact runtime
+defaults, resources and phase proof remain unresolved. Combined local finite
+selection168tests+9subtests passes2.48s, zero skips.
+
+Routine [native aligner setup](docs/research/2026-10-10-hg002-native-aligner-setup.md)
+1604292 COMPLETED0:0 after two retained setup failures. GNU builds, exact
+author source hashes, version/help and home custody hashes pass;40allocated
+S0 seconds across all three attempts. The [synthetic LiftOn fixture](docs/research/2026-10-10-lifton-interface-fixture.md)
+passes12local/12Linux controls and maintained independent eligibility review.
+Actual1604293 exits0 but is **partial_success**, with miniprot Remote I/O121;
+valid3gene/5transcript output is NOT a full-native interface pass or a P1
+result. Raw complete home custody is retained; main diagnoses the failure,
+not bypasses it. Combined local finite selection165tests+9subtests passes,
+zero skips. Full-source1604284 remains RUNNING, latest49:49prefix5,621,000
+pass1 records, still incomplete. No global census, caller, assembly, P1 or RNA
+result. S2–S4 remain unreleased; full publication goal remains active/unmet.
+
 Routine [reference expansion](docs/research/2026-10-10-hg002-reference-expansion.md)
 1604286 COMPLETED0:0,34allocatedCPU seconds/31.615measuredCPU; seven Linux
 controls pass first. All five compressed SHA/gzip CRC checks pass. Whole

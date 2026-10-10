@@ -5,7 +5,8 @@ umask 077
 
 scratch=/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922
 parent="$scratch/experiments"
-out="$parent/hg002_native_aligners_s0_20261010_01"
+out="$parent/hg002_native_aligners_s0_20261010_02"
+source_cache=/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_native_aligners_s0_20261010_01/source_archives
 [[ -d "$parent" && -w "$parent" ]] || { echo "Scratch experiment parent is not writable: $parent" >&2; exit 2; }
 [[ ! -e "$out" && ! -L "$out" ]] || { echo "Refusing existing output: $out" >&2; exit 2; }
 command -v tee >/dev/null || { echo "Missing required command: tee" >&2; exit 2; }
@@ -26,7 +27,7 @@ die() { printf 'ERROR: %s\n' "$*" >&2; exit 2; }
 nodes=${SLURM_JOB_NUM_NODES:-${SLURM_NNODES:-}}
 [[ "$nodes" == 1 ]] || die "requires exactly one node"
 [[ "${SLURM_GPUS_ON_NODE:-0}" == 0 ]] || die "GPU allocation is out of scope"
-for tool in curl tar bzip2 sha256sum make cc awk sort grep tee sed wc tr date df uname; do
+for tool in cp tar bzip2 sha256sum make cc awk sort grep tee sed wc tr date df uname; do
   command -v "$tool" >/dev/null || die "missing required command: $tool"
 done
 
@@ -45,11 +46,11 @@ cc --version | sed -n '1p'
 make --version | sed -n '1p'
 printf 'tool\tversion\ttag_commit\tarchive_bytes\tsource_sha256\tsource_url\n' > "$out/source-manifest.tsv"
 
-fetch_source() {
+copy_source() {
   local tool=$1 version=$2 commit=$3 bytes=$4 digest=$5 url=$6
   local archive="$out/source_archives/$tool.tar.bz2"
-  curl --fail --location --proto '=https' --proto-redir '=https' --silent --show-error \
-    --connect-timeout 20 --max-time 120 --max-filesize "$bytes" "$url" --output "$archive"
+  # No redownload: attempt 01 already verified these exact author assets.
+  cp -p "$source_cache/$tool.tar.bz2" "$archive"
   local actual_bytes actual_sha
   actual_bytes=$(wc -c < "$archive" | tr -d '[:space:]')
   [[ "$actual_bytes" == "$bytes" ]] || die "$tool source size mismatch: $actual_bytes != $bytes"
@@ -70,14 +71,15 @@ build_source() {
   tar -xjf "$archive" -C "$dest"
   src="$dest/$root"
   [[ -f "$src/Makefile" ]] || die "$tool source Makefile is missing"
-  make -C "$src" -j4 2>&1 | tee "$out/$tool.make.log"
+  # An inherited CC points to an absent NVIDIA compiler; use the checked cc.
+  make -C "$src" -j4 CC=cc 2>&1 | tee "$out/$tool.make.log"
   [[ -x "$src/$tool" ]] || die "$tool build did not produce an executable"
   cp -p "$src/$tool" "$out/bin/$tool"
 }
 
-fetch_source minimap2 2.31 3c28777e7e2dcc90f825de1b9f17a89cca7d4452 187931 c1351de6319c123369c2f4f37ba0ccf18c7ace47e2b1c0a35e30056b4a3bd9c9 \
+copy_source minimap2 2.31 3c28777e7e2dcc90f825de1b9f17a89cca7d4452 187931 c1351de6319c123369c2f4f37ba0ccf18c7ace47e2b1c0a35e30056b4a3bd9c9 \
   https://github.com/lh3/minimap2/releases/download/v2.31/minimap2-2.31.tar.bz2
-fetch_source miniprot 0.18 671db243f964a68bd724af11cd9964d840f29c43 71853 307428a8da5854fa4c2f078ff0ca07756143b28e1598b8247c727ca2b87b15b1 \
+copy_source miniprot 0.18 671db243f964a68bd724af11cd9964d840f29c43 71853 307428a8da5854fa4c2f078ff0ca07756143b28e1598b8247c727ca2b87b15b1 \
   https://github.com/lh3/miniprot/releases/download/v0.18/miniprot-0.18.tar.bz2
 build_source minimap2 "$out/source_archives/minimap2.tar.bz2"
 build_source miniprot "$out/source_archives/miniprot.tar.bz2"
