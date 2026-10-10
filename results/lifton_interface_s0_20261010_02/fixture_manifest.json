@@ -1,0 +1,30 @@
+{
+  "files": {
+    "expected_crosswalk.tsv": {
+      "bytes": 585,
+      "sha256": "3b2d7da51a8f1d9d84baa89acc416b9fe1e65df223fcb5574718e93b2b5f9222"
+    },
+    "expected_target.gff3": {
+      "bytes": 4973,
+      "sha256": "761f7f03bfb972053fee836e4c3ea55b3ec083010d22649fad823befbaf96567"
+    },
+    "reference.fa": {
+      "bytes": 8121,
+      "sha256": "8e5276a0a34a9130fe226d0fc89028598c2cf1c07ec16781d03ea09132916103"
+    },
+    "reference.gff3": {
+      "bytes": 2367,
+      "sha256": "177506115d0a56febaaf9686cf4407f69f6a16f0b41d21ccb5300db75e075e67"
+    },
+    "target.fa": {
+      "bytes": 12191,
+      "sha256": "9f5e1c78a54689db4731d4b1338f1ff58b9dd8551d6f6e534c04588f7465f407"
+    },
+    "truth.json": {
+      "bytes": 13241,
+      "sha256": "31cd41aeb56ab70dd3f62aec12e219f251c3ba2a800493d53675ad35bf15aa8a"
+    }
+  },
+  "fixture_version": "lifton-interface-v1",
+  "seed": 20261010
+}

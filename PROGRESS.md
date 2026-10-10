@@ -11,6 +11,17 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+Maintained independent reviewer [accepts actual02's tested positive interfaces](docs/research/2026-10-10-public-paired-falsifier-review.md#actual-synthetic1604294-tested-runtime-and-positive-interface-acceptance):
+both aligners exit0, miniprot database/candidates are usable, all5constructed
+CDS/terminal paths match. Original01 partial result stands; no originalI/O
+cause or repair is proved. This is not rescue-only/general-ID/endpoint/S4
+qualification. Full complete02 regular-file home custody matches; small raw
+synthetic results and all failures are preserved in Git. At1:03:00 S1b1604284
+remains RUNNING, completepass1/partialpass2:902,014emitted original IDs,
+13,495,803,239bases. Final readiness/census/hash and its separate independent
+audit remain pending. No caller, assembly, P1 or RNA result. Full publication
+goal remains active/unmet; no new expensive campaign has been released.
+
 Latest S1b1604284 finishes its full first BAM pass:5,710,994records including
 578unmapped; the second FASTQ-emission pass is running. Retained57minute
 checkpoint has446,021emitted original IDs/6,670,576,296bases, partial only.

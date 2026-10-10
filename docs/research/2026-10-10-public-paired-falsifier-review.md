@@ -506,3 +506,297 @@ were preserved. All temporary synthetic files were cleaned. No job, network,
 install, cluster connection, actual genomic read or Git command occurred.
 Pre-append review SHA256:
 `0b1dac161a7f9980dd8671f088754b7296f6fa2526a1c902fb50af5d4b3992f8`.
+
+## Synthetic LiftOn fixture: finite S0 interface review
+
+2026-10-10. Maintained independent reviewer, requested Sol6.1/high;
+backend/effort not independently attested. **ACCEPT the constructed fixture
+and one bounded S0 native interface observation: 1CPU/2GiB/5minutes.**
+No obvious fixture or command-interface defect warrants a HOLD. This is
+eligibility for the small synthetic run, not acceptance of a native result,
+successful source/target joins, an endpoint classifier or S4 qualification.
+Native execution remains UNBOOKED in the supplied state.
+
+FULL-read the 152-line generator, 249-line tests, 63-line fixture note and
+46-line native shell script. Independently ran the existing venv tests with
+bytecode/cache writes disabled: 12 passed in 0.29s. `bash -n` passed for the
+shell script; it was not executed. Source/test hashes match its embedded pins:
+
+| Reviewed file | SHA256 |
+|---|---|
+| Generator | `fb0c6423a1ba19235103d58debca65f921aef355e1ddff0f0a506a0fa09a94e7` |
+| Tests | `92ee8481d5cd164ed4b8e5c446f066239774445c738b774a0ea0640a649ef0b8` |
+| Fixture note | `24f979936bb7e7cfa8de019e08429767ec286ff2b450a97ee558e5645c65ddf0` |
+| Native script | `3f34f85e0368cc94ed449f468fc47d231d5c0612cf65cef27703e3ce06868535` |
+
+The deterministic fixture has three reference coding isoforms and five
+constructed target paths, including both strands and one extra plus-gene
+copy. Tests independently translate with the full standard genetic code,
+recover CDS from FASTA/GFF coordinates, check oriented terminal coordinates
+and splice sites, and bind IDs/copies to coordinate truth. All CDS blocks
+have phase0; there are no designed negative paths, split terminal codons or
+recoding exceptions. The generator publishes its pinned manifest last and
+refuses existing outputs. Expected target GFF/crosswalk files are truth,
+not native inputs. The shell command uses only the synthetic reference
+annotation and complete tiny FASTAs, omits -P/-T, and supplies separate
+resolved -o/-dir paths with the stated native policy flags.
+
+Three finite limits prevent false-pass claims from this run:
+
+1. Script exit0 and --validate-output do not compare native outputs with
+the fixture truth. They cannot certify retention of all five known paths,
+correct reference-ID joins or terminal mapping. Inspect the actual GFF,
+generated FASTA headers, score/stats and work-directory records as already
+planned; missing/ambiguous paths remain UNKNOWN. A structurally valid sparse
+output cannot become an endpoint-positive control merely through exit0.
+The stated interface-observation scope makes this a reporting limit,
+not an additional prerequisite for running the small fixture.
+
+2. The aligner-directory hash check does not by itself bind PATH execution
+to those binaries: runtime/bin precedes aligners/bin at script line20.
+Version strings are recorded, but actual resolved command paths/hashes are
+needed if the result claims execution of the specific verified binaries.
+Retain that provenance with the actual result. Completed build1604292,
+home-copy verification and versions2.31-r1302/0.18-r281 remain main-reported;
+none was independently executed or rehashed here.
+
+3. The artifact list covers regular files present at line44 on the success
+path. Later hash-check.txt and exit-status.txt are not in that list; an
+earlier native failure bypasses that hash block. Preserve failure logs and
+exit status, and hash the complete retained packet during custody handling.
+Do not claim that this script already hashes every final file or every
+failure packet. These small custody omissions do not invalidate the fixture
+or justify treating a failed native run as a scientific negative.
+
+The scheduler must supply the declared memory/time limits; the script checks
+one CPU/node and no GPU but does not itself enforce 2GiB/300s. Charge actual
+allocation to S0, including failures. No source throughput, biological
+negative, exhaustive native path search, S4 release or publication evidence
+is accepted. The reported 1604284 prefix remains an incomplete S1 pass1;
+its eventual readiness result needs the separate finite audit already planned.
+No job or prefix was independently queried in this review.
+
+Only this subsection was appended. Historical text and main source files
+were preserved. Tests used only disposable synthetic inputs. No native run,
+genomic work, network, install, cluster connection or Git command occurred.
+Pre-append review SHA256:
+`e04b8c271c1684ab3f5ca81c2ffba6f69357df3560d40fb34a2f2583fb8705eb`.
+
+## Actual synthetic1604293: partial execution and literal interface findings
+
+2026-10-10. Maintained independent reviewer, requested Sol6.1/high;
+backend/effort not independently attested. **REJECT a full integrated
+miniprot/LiftOn interface pass for1604293. ACCEPT the preserved partial
+execution evidence, the observed schema snapshot and five fixture-specific
+positive path matches.** These matches qualify neither future P1 nor S4.
+Both backend readiness and source-ID/schema joins are necessary for a full
+interface acceptance; valid GFF and aggregate completeness cannot replace
+them. No scientific gate is released.
+
+Final analysis uses the read-only local primary packet:
+`/Users/akm/aayushkrm-AlignSSL/runs/lifton-interface-20261010-01-primary`.
+The earlier recursive SCP copy was partial. Main reports stopping only its
+own SCP and preserving that copy, then copying the primary packet while
+excluding only pytest tmp controls. No transfer or remote action was made
+by this reviewer. FULL-read native stdout/stderr, the693-line run manifest,
+final GFF, raw miniprot GFF, polished Liftoff GFF, score and generated
+transcript/protein FASTAs; inspect the retained argv, versions and stats.
+
+The warning is in **native.stderr.txt**, not stdout: LiftOn reports
+`[Errno 121] Remote I/O error`, skips miniprot output and stages a Liftoff-only
+partial result. Run schema_version=2 has run.status=`partial_success`,
+pipeline_failures=1, and a nonfatal run_aligners failure for a nonempty set
+of three reference proteins. backend.step8_dispatch and step8_overlap_filter
+are `skipped`; miniprot candidate/rescue counts are zero. Some phase records,
+including run_aligners and process_miniprot_loci, nevertheless say success.
+Those phase labels and zero candidate counts cannot establish usable backend
+completion or a biological absence.
+
+Miniprot stderr reports mapping three query sequences, version0.18-r281,
+real0.056s/CPU0.057s and the actual --gff-only command. Its retained GFF has
+five mRNAs and15 CDS rows with exact expected positive paths. Thus the
+manifest's generic `launch_error`/`process did not start` label conflicts
+with actual execution/output evidence. Its returncode is **null**. No
+miniprot exit0 is inferred from timing or a complete-looking GFF. The exact
+Errno121 origin remains unproved here; neither launch failure nor fsync is
+accepted as its cause. Main's source investigation remains separate.
+
+Independent read-only reconstruction from the actual target FASTA verifies
+all five CDS chains, their453 bases and coding SHA256s, transcript order,
+phase0 and both oriented terminal-codon coordinate sets. The final LiftOn
+GFF has3 genes/5 mRNAs/15 exons/15 CDSs; every transcript has status=Liftoff
+and dna_identity/protein_identity=`1.000`. Raw miniprot and polished Liftoff
+also match all five paths. These are constructed positives, not evidence
+that the integrated miniprot parsing/rescue path ran.
+
+| Exact reference transcript | Fixture copy/location | Final LiftOn transcript ID | Raw miniprot ID |
+|---|---|---|---|
+| SYNTHT0001.1 | C1 / target_extra | SYNTHT0001.1 | MP000001 |
+| SYNTHT0002.1 | C1 / target_extra | SYNTHT0002.1 | MP000003 |
+| SYNTHT0003.1 | C0 / target_minus | SYNTHT0003.1 | MP000005 |
+| SYNTHT0001.1 | C0 / target_plus | SYNTHT0001.1_1 | MP000002 |
+| SYNTHT0002.1 | C0 / target_plus | SYNTHT0002.1_1 | MP000004 |
+
+Those joins use exact fixture CDS chains, strand and contig, not blind suffix
+stripping. Native unsuffixed plus-gene models land on fixture C1; `_1` models
+land on C0. Neither native copy rank nor a suffix is a haplotype label.
+The final GFF has ID/Parent, gene_id and transcript_id attributes but no
+ref_gene_id/ref_tran_id fields. For the extra gene ID SYNTHG0001.1_1, gene_id
+is SYNTHG0001.1; its child transcript_id is the copied target ID ending `_1`.
+The polished Liftoff GFF instead has suffixed gene_id on that extra copy.
+Therefore the two GFF layers do not have interchangeable join semantics.
+Raw miniprot mRNAs carry ID=MP..., Rank, Identity, Positive, StopCodon and
+`Target=SYNTHT... 1 151`; CDS rows join through Parent=MP... and also carry
+Target spans. No raw miniprot gene hierarchy is present.
+
+Generated FASTA headers are literally SYNTHT0001.1, SYNTHT0002.1 and
+SYNTHT0003.1, without appended descriptions. transcripts.fa has453-base
+coding sequences including the terminal stop. proteins.fa has151 characters:
+the exact150-amino-acid fixture protein plus terminal `*`. Account for that
+literal convention before protein-length/Target comparisons; do not silently
+change the frozen reference endpoint. Terminal correspondence is verified
+here through constructed coordinates, not protein identity alone.
+
+score.txt is headerless: five tab-separated rows, eight columns each.
+The literal example is
+`SYNTHT0001.1\t1.0\t0\t1.0\t1\tLiftoff\tidentical\ttarget_extra:2101-3053`.
+Column1 matches final target transcript IDs, including `_1`; column8 gives
+contig:start-end, not an oriented CDS chain. The same numeric tuple and
+Liftoff/identical fields occur in every row. This artifact read does not
+assign universal semantic names to its four numeric columns; bind those
+names to the writer before implementing a general parser. In particular,
+the numeric0 is not evidence against the excellent raw miniprot alignments.
+mapped_transcript.txt is headerless, with exact source IDs, counts2/2/1 and
+`coding`; mapped_feature.txt has source gene counts2/1. extra_copy_features.txt
+has `SYNTHG0001.1\t2\tcoding`. completeness_by_feature_type.txt has literal
+columns feature_type,n_reference,n_lifted,n_missed,n_extra_copies,n_target,
+pct_recovered and row `gene,2,2,0,1,3,1.00000` (tab-separated). Its gene-level
+100% summary is not backend readiness or transcript/path completeness.
+
+Custody scope: all52 retained files listed outside tmp in the original
+artifact manifest independently match SHA256; all six pinned fixture files
+match their fixture manifest. The46 tmp entries were excluded from this
+primary copy. hash-check.txt and exit-status.txt are present but were created
+after the original artifact hash list. No full original-manifest coverage
+or complete late-file home custody audit is claimed here. Main's broader
+home verification and runtime/binary resolution checks remain attributed
+to main. The retained shell exit-status is0 and Linux fixture log says12
+passed in0.42s. Slurm COMPLETED0:0,5 allocated seconds,2.237 measuredCPU s
+and105332K MaxRSS are main-reported, not a new scheduler query.
+
+| Finding-bearing primary artifact | SHA256 |
+|---|---|
+| Run manifest | `501341e649db706beebfc4decd467d2b53e2bd8111b482f412bc7e0f61ed2ce9` |
+| Native stderr | `e84fcddc194a25804ab911a71f00117d8b42c9180c483604667a11df8bf04fa6` |
+| Final LiftOn GFF | `9267869914e5c03418bf1fae7c787c1b17169991b219967d96ee87fda40a8d1a` |
+| Raw miniprot GFF | `cb7d27fc18c86f00832b0cf5c4466146b2cd0957d9abcf510e99431d371d76cf` |
+| Score | `9424b6eb0d15d13ec7723c868ee8bb258c2aff4aa6121abc090f01aa0141098d` |
+
+The actual miniprot command has no -t although LiftOn argv has -t1, and
+the manifest says aligners ran in parallel. Main's source check reports a
+default of four miniprot threads; actual thread count was not measured here.
+Explicit LIFTON_MINIPROT_THREADS=1 and serial aligners for any separately
+chosen tiny S0 diagnostic would control resources, not change rescue policy.
+No replay, code change or new diagnostic is ordered by this review. Preserve
+the original failure and finish its specific cause investigation. This run
+cannot qualify integrated miniprot rescue, P1 negatives or whole-genome work.
+
+Only this subsection was appended. No job, native rerun, genomic analysis,
+network, install, source edit or Git command occurred. All reconstruction
+and hash checks were read-only on synthetic artifacts. Pre-append review
+SHA256:
+`738095e800997c1d9f51529350abd301c27393eb6a6cca25f327979b136c12ec`.
+
+## Actual synthetic1604294: tested runtime and positive-interface acceptance
+
+2026-10-10. Maintained independent reviewer, requested Sol6.1/high;
+backend/effort not independently attested. **ACCEPT02 for the runtime,
+both aligner execution/import interfaces and five constructed positive
+paths actually tested.** This does not qualify rescue-only behavior, a
+general source-ID namespace, the final endpoint classifier or S4. The
+historical01 partial failure and its rejected full-pass claim stand.
+
+Read-only comparison uses the local01 and02 primary packets under
+`/Users/akm/aayushkrm-AlignSSL/runs/`. Parsed both complete run manifests;
+read02 stdout/stderr, GFF, score, database manifest, generated FASTAs,
+argv, environment, versions, resolution records and original artifact list.
+FULL-read the36-line trace entry point, its tests and updated shell script.
+The trace calls native lifton.lifton.main, records errno121 exceptions and
+restores prior traces; it does not retry, patch or suppress native results.
+Independent local trace+fixture selection:15 passed in0.32s, bytecode/cache
+writes disabled. The retained02 Linux fixture log says12 passed in0.43s;
+the local15-test result is not a claimed Linux15-test result.
+
+| Actual evidence | 01 /1604293 | 02 /1604294 |
+|---|---|---|
+| Run status / pipeline failures | partial_success /1 | success /0; failures list empty |
+| Miniprot returncode | null | 0, termination exit status0 |
+| Miniprot annotation database | skipped | gffutils built; source SHA matches raw GFF |
+| Candidates processed / submitted | 0 /0 | 5 /5 |
+| Step8 / overlap filter | skipped / skipped | serial / in_process |
+| Final GFF / raw miniprot GFF | Five correct constructed paths | Both byte-identical to01; five correct paths |
+
+All recorded minimap2 executions also return0.02 stderr shows the miniprot
+command with explicit -t1 and normal0.052s real/CPU reporting; unlike01,
+its returncode is actually captured. The manifest schedules aligners serially
+and records LIFTON_MINIPROT_THREADS=1. The miniprot database opens read-only
+with5 mRNA/15 CDS features, and its cache manifest binds the2381-byte source
+GFF SHA256. This supports usable parsing as well as command completion.
+No Errno121, fallback warning or diagnostic exception trace was observed.
+**Nonrecurrence does not identify or repair01's cause.** Serial scheduling,
+explicit threading, PATH order, trace timing and a new output leaf changed
+together; no causal attribution to one change is accepted.
+
+The six fixture payload files and pinned fixture manifest are unchanged.
+Independent reconstruction from02 target FASTA checks every ordered CDS
+chain, phase0,453-base coding sequence/hash and oriented start/stop codon
+coordinates. All five final and raw-miniprot paths match exact truth.
+The01 coordinate/strand-based ID crosswalk remains valid, including C1
+unsuffixed plus-gene models and C0 `_1` models; no suffix stripping was used.
+Generated FASTA IDs and453-base transcript/150-AA-plus-`*` convention are
+unchanged. Final GFF remains3 genes/5 mRNAs/15 exons/15 CDSs, all status=Liftoff.
+The eight-column score rows retain target IDs/locations; literal column3
+changes from `0` to `1.0` in all five rows. Do not infer backend state from
+unchanged final GFF alone, or universal numeric-column semantics from this
+fixture. Five candidates were processed, but miniprot genes emitted and
+rescued genes/isoforms remain0. Thus this input did not test a rescue-only
+positive, a missing-path negative, nonzero CDS phases or recoding exceptions.
+
+All parsed native options are unchanged except paths/normalized argv and
+serial_aligners. Polish/CDS/copy and rescue settings remain the recorded
+policy. The trace and resource changes are not accepted as a new rescue
+method. Recorded resolved minimap2/miniprot paths point to the home
+hg002_native_aligners_s0_20261010_02/bin directory. Captured binary SHA256s:
+minimap2 `cc32fb1ef7ae2653b3d67af0198eaca483f4a6f227a07d1bda3951e9db815780`;
+miniprot `9c61d40425b47e15a34f965a9449cc598eab9598978b0a76da082ab4c1bdfe0d`.
+These are retained remote resolution/hash records, not new local binary
+rehashes. Actual launch uses the runtime Python plus trace wrapper importing
+LiftOn; a recorded console-entry lifton hash alone does not pin package code.
+
+Frozen shell SHA256
+`4e60c8f25986af42a813a851044d36b1f0cf6e10b8ed8c84ab40946d7ebbd7f2`
+matches execution.txt; trace source SHA256
+`e25216e1a5b50be96b601d90c991a300125f72e0072681181c1c1c3bf72618a5`
+matches its recorded code check. Fixture source/test pins remain unchanged.
+Independently verified57 retained primary files against the original artifact
+list. The46 pytest tmp entries are omitted locally; hash-check.txt and
+exit-status.txt remain late files outside that list. No full original local
+manifest coverage is claimed. Complete unchanged home custody verification
+is main-reported. Main reports5 allocated seconds,2.584 measuredCPU seconds
+and100896K MaxRSS; no scheduler query was made here.
+
+| Finding-bearing02 artifact | SHA256 |
+|---|---|
+| Run manifest | `7daa754376d235f561577b3e6c9d0e675427e57f6c1ca816778c7f1723b4a30a` |
+| Native stderr | `5f1a711d02e58e7916e21377c48d8b2c90917f833c69f8eabcfbc2cbb24c911d` |
+| Score | `d067db5001670edb1c0c44e872d36eb2385fd5bbdaef966f87df44442c0d3d8c` |
+| Final GFF | `9267869914e5c03418bf1fae7c787c1b17169991b219967d96ee87fda40a8d1a` |
+
+This closes only the tested positive S0 interface observation. No replay,
+old-failure fix, additional fixture or whole-genome launch is requested by
+this review. The reported S1 complete pass1/ongoing pass2 does not yet supply
+a final readiness result; its separate audit remains pending. Only this
+subsection was appended. No native rerun, job, genomic work, network,
+installation, source edit or Git command occurred. Historical reviews were
+preserved. Pre-append review SHA256:
+`f4330553158faa4923cf37d13faabc1b9617b9d77c6193eb4de06070aab70241`.

@@ -143,3 +143,27 @@ excludes only pytest tmp artifacts as in01. Maintained review of actual02
 positive paths/interfaces is pending; no endpoint/rescue-only/genomic
 qualification follows from these statuses. Main's full local finite suite
 now passes168tests+9subtests,2.48s, zero skips.
+
+Maintained independent [actual02 review](2026-10-10-public-paired-falsifier-review.md#actual-synthetic1604294-tested-runtime-and-positive-interface-acceptance)
+ACCEPTS only both tested aligner execution/import interfaces and the five
+constructed positive paths. It independently rechecks their ordered CDS,
+phase0,453bases, hashes and both oriented terminal-codon coordinates. Both
+final and raw-miniprot GFFs are byte-identical to01; only the latter run has
+captured successful miniprot execution, a usable database and5processed
+candidates. The same final GFF therefore cannot certify backend readiness.
+Rescue-only paths, general ID mapping, nonzero phases/recoding, the final
+endpoint classifier and S4 remain unqualified. All complete02 regular-file
+scratch/home hash lists match, including late status/check files; the primary
+local subset remains explicitly limited as above. Nine finding-bearing
+synthetic raw files are preserved unchanged in
+`results/lifton_interface_s0_20261010_02`. No genomic data is committed.
+
+Post-run read-only code integrity check compares all85installed LiftOn
+Python files with the retained1.0.14wheel: no missing files or mismatches.
+Wheel SHA256 `aa2fe44198e834fe0a9818e2b3656130ae5a33aadf7b03c5f3ce067bdfc63b51`
+matches the original setup log's built-wheel digest; that log records the
+GitHub archive at commit8378f8e4a3d8404c94d801c285a2c74291e893b7.
+The raw check receipt is retained alongside02 findings. This binds installed
+Python source to its preserved wheel at check time, not every dependency,
+past process-loaded byte, or an independent Git source attestation. No
+package mutation, install or genomic computation occurs in this check.
