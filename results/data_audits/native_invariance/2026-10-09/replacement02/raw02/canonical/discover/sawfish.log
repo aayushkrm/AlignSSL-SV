@@ -1,0 +1,23 @@
+[2026-10-09][10:27:38][sawfish][INFO] Starting sawfish 2.2.1
+[2026-10-09][10:27:38][sawfish][INFO] cmdline: /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/sawfish discover --threads 1 --ref /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/fixture/reference.fa --bam /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/fixture/canonical.bam --disable-cnv --cov-regex ^chrSynthetic$ --output-dir /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/discover
+[2026-10-09][10:27:38][sawfish][INFO] Running on 1 threads
+[2026-10-09][10:27:38][sawfish][INFO] Writing discover settings to file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/discover/discover.settings.json'
+[2026-10-09][10:27:38][sawfish][INFO] Reading reference genome from file '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/fixture/reference.fa'
+[2026-10-09][10:27:38][sawfish][INFO] Processing alignment file '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/fixture/canonical.bam'
+[2026-10-09][10:27:38][sawfish][INFO] Finished processing all alignments
+[2026-10-09][10:27:38][sawfish][INFO] Writing depth bins to binary file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/discover/depth.mpack'
+[2026-10-09][10:27:38][sawfish][INFO] Writing max sv depth genome regions to bed file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/discover/max.depth.bed'
+[2026-10-09][10:27:38][sawfish][INFO] Completing breakpoint observation clustering
+[2026-10-09][10:27:38][sawfish][INFO] Finished breakpoint observation clustering
+[2026-10-09][10:27:38][sawfish][INFO] Consolidating adjacent indel candidates
+[2026-10-09][10:27:38][sawfish][INFO] Finding large insertion candidates
+[2026-10-09][10:27:38][sawfish][INFO] Writing breakpoint_cluster debug bed file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/discover/debug.breakpoint_clusters.bed'
+[2026-10-09][10:27:38][sawfish][INFO] Refining SV Candidates
+[2026-10-09][10:27:38][sawfish][INFO] Writing debug assembly region bed file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/discover/assembly.regions.bed'
+[2026-10-09][10:27:38][sawfish][INFO] Starting refinement of breakpoint evidence clusters 
+[2026-10-09][10:27:38][sawfish][INFO] Finished refining all breakpoint evidence clusters
+[2026-10-09][10:27:38][sawfish][INFO] Writing all contig alignments to bam file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/discover/contig.alignment.bam'
+[2026-10-09][10:27:38][sawfish][INFO] Writing candidate structural variants to file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/discover/candidate.sv.bcf'
+[2026-10-09][10:27:38][sawfish][INFO] Writing run data to file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/discover/run.data.json'
+[2026-10-09][10:27:38][sawfish][INFO] Writing run statistics to file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/discover/run.stats.json'
+[2026-10-09][10:27:38][sawfish][INFO] sawfish completed. Total Runtime: 00:00:00.086

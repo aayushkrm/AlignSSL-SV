@@ -1,0 +1,23 @@
+	Command being timed: "timeout --signal=KILL 1100s bash run_reference_throughput.sh"
+	User time (seconds): 103.64
+	System time (seconds): 2.40
+	Percent of CPU this job got: 97%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:48.72
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1800968
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 273
+	Minor (reclaiming a frame) page faults: 248748
+	Voluntary context switches: 64248
+	Involuntary context switches: 630
+	Swaps: 0
+	File system inputs: 3562190
+	File system outputs: 558
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

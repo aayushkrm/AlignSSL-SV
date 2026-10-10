@@ -1,0 +1,21 @@
+{
+  "status": "complete_software_only",
+  "date": "2026-10-08",
+  "command": "PYTHONDONTWRITEBYTECODE=1 /Users/akm/aayushkrm-AlignSSL/.venv/bin/python -m pytest -q tests/test_check_released_truth_native.py tests/test_diagnose_released_truth_metadata.py tests/test_check_released_truth_metadata.py tests/test_released_truth_units.py",
+  "exit_code": 0,
+  "passed": 101,
+  "skipped": 13,
+  "pytest_wall_seconds": 1.39,
+  "native_source_sha256": "80a04a3fd3078ad896cf7ff22cfcebbbbf355262e82bb73bd2d710fad7c217a6",
+  "native_tests_sha256": "0d1faed1c397c2acbc3d172a3855b732e0dd7918abaf1b38724e5d720206354e",
+  "corrected_review_finding": "literal coordinate/allele/genotype/phase/FORMAT interpretation must match agreeing parsed streams",
+  "added_synthetic_controls": 10,
+  "scientific_input_read": false,
+  "native_cluster_endpoints_run": false,
+  "skips_are_not_native_validation": true,
+  "earlier_local_check_preserved": "native_contract_local_check.json",
+  "expired_native_window_real_execution": "UNEXECUTED",
+  "full_suite_run": false,
+  "retained_named_input_charge_bytes": 8623306013,
+  "proposed_native_addition_booked": false
+}

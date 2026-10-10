@@ -1,0 +1,87 @@
+{
+  "accounting_limitation": "Named file-size passes are reservations; HTSlib read-ahead, BGZF decoded traffic, sort spill/peak and OS caching are not measured. Hard resource/disk enforcement is external.",
+  "caller": "cutesv",
+  "counts": {
+    "children": 51561,
+    "derived_identity_fingerprint": {
+      "records": 51561,
+      "sha256_sum": "a85f62b56a05da7e291b8bf68f74eb1cd3793bfe1362333ca17c2809341b2d99",
+      "sha256_xor": "2cee5b721cfdaacddc58586878e4bd18e7292a24b47101cb11b47f48cf761313"
+    },
+    "info_rnames_rows_removed": 0,
+    "pos_length_plus_one": 13,
+    "pos_zero": 0,
+    "source_alt_identity_fingerprint": {
+      "records": 51561,
+      "sha256_sum": "a85f62b56a05da7e291b8bf68f74eb1cd3793bfe1362333ca17c2809341b2d99",
+      "sha256_xor": "2cee5b721cfdaacddc58586878e4bd18e7292a24b47101cb11b47f48cf761313"
+    },
+    "source_records": 51561
+  },
+  "failed_phase": "norm",
+  "failure": "norm source ALT identity/projected whole-field multiset differs",
+  "failure_type": "CallerPreparationGuardError",
+  "info_rnames_policy": "omit_values_only",
+  "named_maximum_pass_reservations": {
+    "annotated": 268435456,
+    "derived": 268435456,
+    "native": 671088640,
+    "native_bgzf": 201326592,
+    "native_index": 8388608,
+    "released": 335544320,
+    "released_index": 16777216,
+    "sorted": 939524096,
+    "source": 88231428,
+    "split": 268435456
+  },
+  "norm_end_validation": "Explicit INFO/END presence/value checked from standard-parser serialization independently of stop; raw lexical normalization by the parser is not checked.",
+  "opaque_io_reservation_bytes": 268435456,
+  "output_caps": {
+    "annotated": 134217728,
+    "derived": 134217728,
+    "native": 134217728,
+    "native_bgzf": 67108864,
+    "native_index": 4194304,
+    "released": 67108864,
+    "released_index": 4194304,
+    "sort_temp": 134217728,
+    "sorted": 134217728,
+    "split": 134217728
+  },
+  "partial_files_preserved": [
+    {
+      "bytes": 34283269,
+      "hash_status": "not_reread_after_failure",
+      "path": "derived.vcf",
+      "sha256": null
+    },
+    {
+      "bytes": 31780495,
+      "hash_status": "not_reread_after_failure",
+      "path": "split.vcf",
+      "sha256": null
+    },
+    {
+      "bytes": 31780495,
+      "hash_status": "not_reread_after_failure",
+      "path": "annotated.vcf",
+      "sha256": null
+    }
+  ],
+  "partial_inventory_may_be_truncated": false,
+  "prior_global_charge_bytes": 17312214196,
+  "protocol_sha256": "22993c13479d0091474bec1436632cba7dbcd4c148a0f02da74ab3526ef081c4",
+  "reserved_charge_bytes": 3334622724,
+  "runtime": {
+    "bcftools": "1.23.1",
+    "htslib": "1.23.1",
+    "pysam": "0.24.0",
+    "python": "3.10.20",
+    "truvari": "5.4.0"
+  },
+  "source_hash_bytes": 29410475,
+  "source_observed_sha256": "9603595adebb54e656513c3ffba416e0d2173763030abef20f804e1c877209c1",
+  "source_sha256": "9603595adebb54e656513c3ffba416e0d2173763030abef20f804e1c877209c1",
+  "source_verified_sha256": "9603595adebb54e656513c3ffba416e0d2173763030abef20f804e1c877209c1",
+  "status": "incomplete"
+}

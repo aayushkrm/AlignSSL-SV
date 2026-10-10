@@ -1,0 +1,5 @@
+SYNTHT0001.1	1.0	1.0	1.0	1	Liftoff	identical	target_extra:2101-3053
+SYNTHT0002.1	1.0	1.0	1.0	1	Liftoff	identical	target_extra:2101-3053
+SYNTHT0003.1	1.0	1.0	1.0	1	Liftoff	identical	target_minus:901-1850
+SYNTHT0001.1_1	1.0	1.0	1.0	1	Liftoff	identical	target_plus:1501-2453
+SYNTHT0002.1_1	1.0	1.0	1.0	1	Liftoff	identical	target_plus:1501-2453

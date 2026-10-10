@@ -1,0 +1,43 @@
+{
+  "status": "failed",
+  "scope": "metadata_only_not_REF_or_scoring",
+  "exit_status": 2,
+  "error_type": "ValueError",
+  "error": "SVLEN contradicts canonical signed allele length",
+  "protocol_sha256": "008c6a5d7516359cd8c6c5f25dfea8dc29b4a01dbf1a113dc5cccdcc09fdb12b",
+  "checker_sha256": "8b4acc8fa8b9a86d71c9847dd3a175e6816f24a1e2827f231ddf6cf244a05fa0",
+  "helper_sha256": "4c1cf4fc3d98f4cc3e0f136c15d27095730aa1725b951ea607b4684f4ed93e93",
+  "remote_pins_verified_before_launch": true,
+  "fresh_output_paths_verified_before_launch": true,
+  "success_inventory_created": false,
+  "validated_denominator": false,
+  "failing_record_identity_recorded": false,
+  "records_checked_before_failure": null,
+  "failure_is_not_caller_coverage_or_biological_null": true,
+  "source_repair_or_record_drop_performed": false,
+  "reference_validation_performed": false,
+  "scoring_performed": false,
+  "automatic_retry_performed": false,
+  "resources": {
+    "cpu_user_seconds": 0.36,
+    "cpu_system_seconds": 0.30,
+    "wall_seconds": 1.27,
+    "maximum_rss_kib": 96876,
+    "maximum_rss_bytes": 99201024,
+    "cpu_limit_seconds": 60,
+    "wall_limit_seconds": 120,
+    "kill_grace_seconds": 5,
+    "address_space_limit_bytes": 4294967296
+  },
+  "full_retained_charge_bytes": 8588703005,
+  "reservation_bytes": 68157440,
+  "no_refund": true,
+  "raw_artifacts": {
+    "directory": "/scratch/igorno-alignssl_restart_20260922/svpg_truth_metadata_20261007_01/",
+    "command_stdout.json": {"bytes": 0, "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"},
+    "command_run.log": {"bytes": 1581, "sha256": "35a91797aacbc43f45aed908c6223a3f0618376a442b67c8237090ea3a161f32"}
+  },
+  "cluster_jobs_at_postcheck": 0,
+  "scratch_expiry_cluster_local": "2026-10-22 23:02:50",
+  "interpretation": "The exact gate failed. It does not establish source corruption or an invalid biological allele; metadata semantics versus the frozen canonical rule need separate diagnosis. No original hash/snapshot recheck after failure is claimed."
+}

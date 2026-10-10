@@ -1,0 +1,12 @@
+{
+  "status": "reserved_before_execution",
+  "prior_global_charge_bytes": 5219838743,
+  "decoded_header_prefix_reservation_bytes": 1048576,
+  "conservative_global_charge_bytes": 5220887319,
+  "global_ceiling_bytes": 12884901888,
+  "compressed_source_hash_read_bytes": 42978214,
+  "compressed_prefix_read_cap_bytes": 65536,
+  "no_refunds": true,
+  "no_truth_body_parsing": true,
+  "no_scoring": true
+}

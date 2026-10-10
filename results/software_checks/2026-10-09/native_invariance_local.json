@@ -1,0 +1,36 @@
+{
+  "status": "LOCAL_SYNTHETIC_SOFTWARE_CONTROLS_ONLY",
+  "date_utc": "2026-10-09",
+  "experiment_candidate": "native-cigar-invariance-20261009-01",
+  "native_caller_executed": false,
+  "reservation_booked": false,
+  "publication_result": false,
+  "python": "3.11.13",
+  "pysam": "0.24.1",
+  "htslib": "1.24",
+  "pytest": "9.1.1",
+  "checks": [
+    {"scope": "fixture_and_observer_before_padded_joint_correction", "passed": 32, "failed": 0, "skipped": 0, "reported_seconds": 0.65},
+    {"scope": "fixture_observer_and_readme_landing_before_padded_joint_correction", "passed": 35, "failed": 0, "skipped": 0, "reported_seconds": 0.57},
+    {"scope": "fixture_observer_and_readme_landing_after_padded_joint_correction", "passed": 39, "failed": 0, "skipped": 0, "reported_seconds": 0.69}
+  ],
+  "scientific_reference_sequence_sha256": "1e9e223b565b9f0847946d777a5c7fd4f2ba09f076174e4fab96f473156fe9ef",
+  "protocol_reviewed_controls_snapshot_sha256": "fc25e51999c854280bc8f4cdd777b60263e843fc01c5090874d758cbadcf5f57",
+  "files_sha256_basis": "Final code tested by the 39-test run after the padded joint-edit correction",
+  "files_sha256": {
+    "analysis/native_cigar_fixture.py": "d26fbfc1199e06d6506f65369e14036bc3936d0ac94a6793a3914f5d2d6c9bd7",
+    "analysis/observe_native_fixture.py": "22b5294b3865c7bd22121d0b136dc227892212aad05f54bcb0caaabbdeb4d9a9",
+    "tests/test_native_cigar_fixture.py": "25379f739735d14c939935ce03465206bff8431349fa9ca8b1e47d08cdf564dd",
+    "tests/test_observe_native_fixture.py": "44182c5ccb9d30579c2e859efbf65247e9365d675d5592c09ebdc17d3654e5e9",
+    "docs/research/2026-10-09-native-invariance-protocol.md": "d4a0f851bd4536e5a3b6275dd8a11c2bc5832af9c26672b9b8fc8bfa58c6953e"
+  },
+  "integration_findings": [
+    "Fixed reference-sequence hash replaces nonportable fixed compressed-BAM manifest hash; same-stack determinism and complete semantic validation retained.",
+    "One new mutation test initially failed while indexing an unsorted mutant; changing the first sorted read allows the intended endpoint guard to be tested.",
+    "Observer originally rejected compressed VCFs; allow BGZF final outputs and add a positive control.",
+    "Changed-input test now changes actual bytes rather than only rewriting identical content.",
+    "Empty complete output is distinct from a missing file.",
+    "Reviewer supplied a padded compatible joint-edit counterexample missed by the repeat-boundary heuristic. Guard now conservatively retains any multiple non-equivalent chrSynthetic literal records as unresolved for negative inference; four regressions preserve exact positive precedence."
+  ],
+  "limits": "No native experiment, exact-stack cluster verification, biological outcome, full-suite pass, natural prevalence or publication novelty established."
+}

@@ -1,0 +1,93 @@
+{
+  "started_unix": 1791569718.2048643,
+  "state": "incomplete",
+  "commands": {
+    "acquire": {
+      "argv": [
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/venvs/sniffles281_20261010/bin/python",
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/parent_sva_native_20261010_02/bundle/scripts/acquire_parent_sva_region.py",
+        "--samtools",
+        "/beegfs/datasets/home/igorno/miniconda3/envs/bioinfo/bin/samtools",
+        "--output",
+        "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/parent_sva_native_20261010_02/source"
+      ],
+      "exit_code": 2,
+      "wall_seconds": 24.653007745742798
+    }
+  },
+  "slurm_job_id": "1604236",
+  "limits": {
+    "genomic_http_body_bytes": 4294967296,
+    "cpu_seconds": 1800
+  },
+  "source_code": {
+    "scripts/run_parent_sva_diagnostic.py": "49884b638d0073b5f50591f6a5dac8f45b43a889c358ff28b961f634646a80c6",
+    "scripts/acquire_parent_sva_region.py": "6056c05f286d7b637e67dabf7c7f9673e23bdd7f3408ba5f76e40161aff74514",
+    "analysis/parent_sva_census.py": "07427305d22ac246fd6a5c552b2c563e539c81e19e7037277ff3b4afbe17415f"
+  },
+  "runtime": {
+    "python": "3.12.1 | packaged by Anaconda, Inc. | (main, Jan 19 2024, 15:51:05) [GCC 11.2.0]",
+    "freeze": [
+      "edlib==1.3.9.post1",
+      "numpy==2.5.3",
+      "psutil==7.2.2",
+      "pysam==0.24.1",
+      "pyspoa==0.3.2",
+      "sniffles==2.8.1"
+    ],
+    "sniffles_version": "Sniffles2, Version 2.8.1"
+  },
+  "error": "RuntimeError: Acquisition incomplete; native calls not run",
+  "artifacts": {
+    "acquire.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "acquire.stdout.txt": {
+      "bytes": 674,
+      "sha256": "3f5b00334e2f2e2f3b65e4c88f7b5081a1a3b38ad3af0cd3817f94668a16752d"
+    },
+    "source/regional.bam": {
+      "bytes": 4650,
+      "sha256": "4ba284b872e31d7080fb36f9068f48dcbbdbdda946f16b03b8be2999f1a129c7"
+    },
+    "source/buffer.bed": {
+      "bytes": 23,
+      "sha256": "cfe98b87fe0bbd6660024fe4d17b5924075383039697afed8a7e4b5780605c35"
+    },
+    "source/acquisition.json": {
+      "bytes": 10795,
+      "sha256": "d22bc6ea93308b27c5dc68eae4974e84372c2accedf9696a9552f967bd9744ab"
+    },
+    "source/core.bed": {
+      "bytes": 23,
+      "sha256": "572c6226e7b884204175ffc230c815ed76c92a8e81f607f42648075d54cef526"
+    },
+    "source/samtools-regional-view.stderr.log": {
+      "bytes": 185,
+      "sha256": "116f28327056a6e41455553a1173263b1866dc3390bb071d9266fc420d4142d4"
+    },
+    "source/source.bam.bai": {
+      "bytes": 37783472,
+      "sha256": "14ee0700cf338cfde7e201b70ec0f285942677dffc32b805aa2080f2301795ff"
+    },
+    "source/samtools-regional-view.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/body_ledger.jsonl": {
+      "bytes": 90372,
+      "sha256": "e6d926b65f8ca474789613c5ed8cd477b25b7eea2c1ddaf6b00fe706e89a9808"
+    },
+    "source/samtools-version.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/samtools-version.stdout.log": {
+      "bytes": 70,
+      "sha256": "38d3674afcf38c74a6d232aa807f58bb4cc5e016046f90930f4404fec05857db"
+    }
+  },
+  "cpu_seconds": 1.592349,
+  "wall_seconds": 25.964382648468018
+}

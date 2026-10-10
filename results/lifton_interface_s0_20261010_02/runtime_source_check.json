@@ -1,0 +1,1 @@
+{"all_match": true, "mismatches": [], "missing": [], "python_files": 85, "scope": "installed LiftOn Python source vs retained wheel only; not dependencies or source Git attestation", "wheel_sha256": "aa2fe44198e834fe0a9818e2b3656130ae5a33aadf7b03c5f3ce067bdfc63b51"}

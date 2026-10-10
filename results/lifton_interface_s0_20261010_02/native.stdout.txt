@@ -1,0 +1,15 @@
+
+*********************
+** Running Liftoff **
+*********************
+extracting features
+aligning features
+lifting features
+mapping gene copies
+aligning features
+lifting features
+polishing annotations
+
+**********************
+** Running miniprot **
+**********************

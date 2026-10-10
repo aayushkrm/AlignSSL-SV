@@ -1,0 +1,23 @@
+	Command being timed: "timeout --foreground -k 5s 120s /home/igorno/miniconda3/envs/truvari_env/bin/python -m pytest -q -p no:cacheprovider --basetemp /scratch/igorno-alignssl_restart_20260922/native-truth-compatibility-20261008-throughput01/control_fixtures tests/test_check_released_truth_native.py::test_exact_native_complete_endpoint tests/test_check_released_truth_native.py::test_exact_native_rejects_bad_literal_without_report tests/test_check_released_truth_native.py::test_exact_native_integrity_failure_no_report tests/test_check_released_truth_native.py::test_native_contradictions_and_mutation tests/test_check_released_truth_native.py::test_agreeing_parser_streams_cannot_hide_literal_field_drift tests/test_check_released_truth_metadata.py::test_actual_kernel_blocks_writes_and_keeps_independent_positions"
+	User time (seconds): 0.67
+	System time (seconds): 0.45
+	Percent of CPU this job got: 48%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:02.34
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 95636
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 675
+	Minor (reclaiming a frame) page faults: 15919
+	Voluntary context switches: 35074
+	Involuntary context switches: 743
+	Swaps: 0
+	File system inputs: 29662
+	File system outputs: 58
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

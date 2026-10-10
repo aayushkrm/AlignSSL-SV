@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-10-01** (local; source audits dated September 30 UTC). The research-restart section immediately below
+_Last updated: **2026-10-10** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,1423 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+Maintained independent reviewer [accepts actual02's tested positive interfaces](docs/research/2026-10-10-public-paired-falsifier-review.md#actual-synthetic1604294-tested-runtime-and-positive-interface-acceptance):
+both aligners exit0, miniprot database/candidates are usable, all5constructed
+CDS/terminal paths match. Original01 partial result stands; no originalI/O
+cause or repair is proved. This is not rescue-only/general-ID/endpoint/S4
+qualification. Full complete02 regular-file home custody matches; small raw
+synthetic results and all failures are preserved in Git. At1:03:00 S1b1604284
+remains RUNNING, completepass1/partialpass2:902,014emitted original IDs,
+13,495,803,239bases. Final readiness/census/hash and its separate independent
+audit remain pending. No caller, assembly, P1 or RNA result. Full publication
+goal remains active/unmet; no new expensive campaign has been released.
+
+Latest S1b1604284 finishes its full first BAM pass:5,710,994records including
+578unmapped; the second FASTQ-emission pass is running. Retained57minute
+checkpoint has446,021emitted original IDs/6,670,576,296bases, partial only.
+No completed-read hash/readiness or final census yet. Tiny diagnostic1604294
+COMPLETED0:0,5allocatedCPU seconds, reports native success with zero pipeline
+failures and captured miniprot exit0. I/O121 does not recur, which does not
+prove its original cause. Complete home raw custody is retained; independent
+actual02 positive-interface review pending. No whole-genome release or
+biological result. New [caller preflight](docs/research/2026-10-10-hg002-dna-caller-preflight.md)
+finds ordinary calling can precede small-variant phasing; exact runtime
+defaults, resources and phase proof remain unresolved. Combined local finite
+selection168tests+9subtests passes2.48s, zero skips.
+
+Routine [native aligner setup](docs/research/2026-10-10-hg002-native-aligner-setup.md)
+1604292 COMPLETED0:0 after two retained setup failures. GNU builds, exact
+author source hashes, version/help and home custody hashes pass;40allocated
+S0 seconds across all three attempts. The [synthetic LiftOn fixture](docs/research/2026-10-10-lifton-interface-fixture.md)
+passes12local/12Linux controls and maintained independent eligibility review.
+Actual1604293 exits0 but is **partial_success**, with miniprot Remote I/O121;
+valid3gene/5transcript output is NOT a full-native interface pass or a P1
+result. Raw complete home custody is retained; main diagnoses the failure,
+not bypasses it. Combined local finite selection165tests+9subtests passes,
+zero skips. Full-source1604284 remains RUNNING, latest49:49prefix5,621,000
+pass1 records, still incomplete. No global census, caller, assembly, P1 or RNA
+result. S2–S4 remain unreleased; full publication goal remains active/unmet.
+
+Routine [reference expansion](docs/research/2026-10-10-hg002-reference-expansion.md)
+1604286 COMPLETED0:0,34allocatedCPU seconds/31.615measuredCPU; seven Linux
+controls pass first. All five compressed SHA/gzip CRC checks pass. Whole
+expanded payload12,807,281,629B, under its reserved-copy S0 cap; both large
+comprehensive annotation files stay intact. Home custody1604287 rehashes
+all five and matches. No new reference body, donor annotation or P1 result.
+S1b1604284 remains RUNNING: latest retained10:30 prefix1,213,000pass1records,
+pass1 incomplete; no global original-read count. Parallel Luna/max-requested
+[calling provenance note](docs/research/2026-10-10-hg002-published-calling-recipe.md)
+records published pbsv/HiPhase claims but unknown exact caller recipe/VCF;
+future one-pbsv reproduction is not published-callset identity. Native aligner
+build preparation is separate; S2–S4/RNA remain unreleased.
+
+Actual [full-source read extraction](docs/research/2026-10-10-hg002-read-extraction.md)
+1604284 RUNNING on n1/amd_256M,1CPU/16GiB/5h after maintained independent
+review clears both reproduced HOLDs with50existing+41additional synthetic
+cases. Frozen02 Linux50controls and both exact hashes match. Accepted
+command uses verified home BAM and fixed external/custody disk account;
+maximum S1 booking26080s fits28800s. No duplicate or read subset. Raw DNA
+and reference custody already verified. No complete-read census/readiness,
+calling/assembly/P1/RNA result; full publication goal remains active/unmet.
+
+Corrected [S1b packet](docs/research/2026-10-10-hg002-read-extraction.md)
+remains UNBOOKED. Replacement independent review HOLDs two reproducible
+reverse-missing-QUAL/final-deadline defects. Main adds presence guards and
+late final-accounting checks;50local controls pass,0.81s. Frozen02 Linux
+1604282 verifies both hashes and passes50,4.32s,0skips. Original01's41-test
+pass is preserved but did not clear the defects. Full local selection146
+tests+9subtests passes,1.85s. Independent finite correction recheck pending;
+do not infer biological completeness or launch from these synthetic passes.
+
+October10 [actual HG002 intake](docs/research/2026-10-10-hg002-intake-result.md)
+COMPLETED: DNA1604251 exits0,48,748,908,838B fresh/48,749,105,446B cumulative;
+references1604257 exits0,1,152,186,383B with all five published MD5s passing.
+Main reconciles complete journals, not live partials. All seven raw objects
+copied to non-expiring home;1604280 rehashes home and all SHA256s match.
+Initial/final manifests and journals match scratch/home. S1 actual allocated
+cost8080s including conservative whole custody check, remaining20720s of8h.
+Read/BAI/reference readiness remains NOT_ASSESSED; no calling/assembly/P1/RNA.
+[S1b implementation](docs/research/2026-10-10-hg002-read-extraction.md) has
+41 local synthetic controls after main's summed-disk/quality corrections;
+combined137tests plus9subtests pass,0skips,1.67s. Old worker/reviewer usage-limit
+failures retained; replacement independent reviewer Gibbs requested. S1b
+UNBOOKED pending independent concrete acceptance and deployed controls.
+No scientific positive/negative or publication contribution from acquisition.
+
+October 10 [matched GENCODE50 staging](docs/research/2026-10-10-gencode-reference-staging.md)
+is prepared under the released S0 account. Frozen five-object bundle uses a
+separate2GiB reference ledger and published MD5s; deployed hashes match and
+39 controls pass with zero skips. Control1604254 completed;1604255 recovered
+missing terminal evidence, not a genomic replay. Actual reference acquisition
+1604257 now RUNNING,1CPU/4GiB/65min; no completed/checksummed objects yet.
+The [native path interface audit](docs/research/2026-10-10-lifton-path-interface.md)
+fixes all-isoform/all-placement accounting: native drop reports alone cannot
+certify every reference path. Missing joins/terminal mapping remain UNKNOWN.
+No native annotation or P1 result; RNA untouched. Existing DNA1604251 runs
+without a duplicate:06:23:34UTC journal8,288,993,280B fresh/
+8,289,189,888B cumulative, partial only.
+
+October 10 actual [HG002 DNA intake](docs/research/2026-10-10-hg002-dna-intake-protocol.md)
+RUNNING: job1604251, hydra-n1/amd_256M,1CPU/8GiB/4h, immutable reviewed
+bundle02 matchinge0727cf. Exact path/free-space preflight passes. First
+06:02:40UTC journal snapshot454,033,408B fresh/454,230,016B cumulative;
+partial BAM is growing, not complete. This books at most4 of S1's8allocated
+CPU hours. No complete-object hash/read readiness, calling, assembly/P1 or
+RNA result. Monitor the existing job; do not launch a duplicate or reset
+failed-run charges. Full publication goal remains active and unmet.
+
+October 10 [exact DNA intake protocol](docs/research/2026-10-10-hg002-dna-intake-protocol.md):
+independent reviewer reproduced an8B cancellation-accounting gap; corrected
+signals defer errors until returned/exception-partial bytes are journaled and
+retained. Legacy HOLD/bundle01 preserved. Reviewer clears the finite fix;
+frozen bundle02 job1604247 verifies hashes and passes32 Linux controls,
+zero skips,0.19s. Module entry point works; combined local86tests+9subtests
+pass,0.96s. S1a is acquisition only, not complete-read readiness. No calling,
+assembly/P1 or RNA is released. Large transfer not yet claimed in this entry.
+
+October 10 [staged investment decision](docs/research/2026-10-10-hg002-dna-stage-investment.md)
+selects exact-source HG002 DNA rather than unqualified split-assembly targets.
+S0 setup and bounded S1 intake are recommended; expensive calling, native
+reconstruction and P1 retain separate review gates. No600CPU-hour blanket
+release or RNA. Maintained independent reviewer releases S0/S1, including
+one full exact DNA transfer within52GiB cumulative genomic bytes and8
+allocatedCPUh. Exact acquisition code/launch remains in preparation; no large
+transfer has started. S2–S4 remain unreleased.
+
+Actual [LiftOn setup](docs/research/2026-10-10-hg002-runtime-setup.md):1604242
+completed on writable scratch,82s/29.169 measuredCPU seconds; three failed
+allocated pre-install attempts retained. Home is read-only on compute nodes,
+not on the login host. Wheels backed up; home venv installed offline and
+passes pip check/version. Read-only1604243 confirms imports/version on n1.
+No native genome annotation or alignment-binary qualification yet. Combined
+local verification:54tests plus9subtests pass, zero skips,0.79s; not a
+biological result. RNA remains untouched.
+
+October 10 [exact HG002 input recipe](docs/research/2026-10-10-hg002-dna-input-recipe.md):
+the study's public DNA BAM has the exact ENA run alias and an HG002_WGS
+Revio CCS header. Three capped header acquisitions total196,608B, separate
+from prior accounts. Public split-haplotype mapped BAMs do not yet establish
+complete same-source targets. Matched GENCODE50 sizes/MD5s and LiftOn1.0.14
+commit are pinned; reference bodies are not acquired or verified. No RNA or
+large DNA download in these checks; separate software setup is recorded above.
+Human resource clarification: fully scale useful
+parallel work; do not reserve idle whole nodes for serial checks.
+
+The replacement Luna/max-requested worker completed a preliminary
+[CDS-overlap index](docs/research/2026-10-10-hg002-cohort-implementation.md).
+Main read all217 code/122 test/59 note lines and independently ran31 synthetic
+tests: all pass, zero skips,0.16s. Main-found suffix-anchor, GT-range, short
+symbolic, INFO ambiguity, contig mismatch and output-overwrite defects have
+regression controls. This is not final gene/alternate-haplotype D, a linked
+event collapse, ORF assay or a genomic result. All paths remain P1 NOT_ASSESSED.
+
+October 10 [completed empirical diagnostic](docs/research/2026-10-10-parent-sva-result.md):
+job1604237 exited0. Native germline emitted0records; native mosaic emitted one
+PASS compatible3459bp insertion with actualGT0/0. Fixed census has6compatible,
+97reference-compatible and18inadequate-flank names; five of six native support
+names overlap the six census insertions. No exact controlled-child identity,
+population estimate or new failure. Retire this known case as a new-method
+premise: expected native policy already exposes the signal. Full raw backed
+to home; all28small plus4large artifact hashes verified. Cumulative upstream
+body charge90,836,888B; SlurmCPU4.228s/27selapsed for03. Completed replacement
+independent actual-result audit accepts retirement under the frozen rule.
+The prior missing reviewer and two initial Luna usage-limit failures remain
+historical failures, not current review blockers. No expensive HG002 campaign approved.
+RNA untouched; full publication goal remains active and unmet.
+
+October 10 superseding [execution record](docs/research/2026-10-10-parent-sva-execution.md):
+direct job1604236 ran once but samtools could not create its remote-index cache
+in the bundle working directory. No caller or census; partial BAM is unqualified.
+Fresh body reads39,159,756B; cumulative39,225,292B including the prior prefix.
+Raw logs, journal and complete index retained. A narrow03 correction gives
+samtools its writable run directory and carries the full prior charge into
+the unchanged4GiB cap. Correct project-venv verification:27tests plus9subtests
+pass, zero skips. No scientific null, positive or parameter tuning.
+
+October 10 [execution update](docs/research/2026-10-10-parent-sva-execution.md):
+acquisition implementation completed, corrected and checked (33 local tests
+plus six subtests; seven exact cluster acquisition controls). Job1604234
+failed before Python after one second, signal53; no regional data or caller
+result. Read-only same-node preflight1604235 completed. Both home aliases and
+Python work; the failed batch I/O cause is not proven. A direct-srun replacement
+uses the same frozen scientific settings and three useful CPUs; it is prepared,
+not yet submitted. No biological null or positive. A separate Luna/max-requested
+HG002 DNA-input recipe worker resolves exact staging inputs without RNA reads,
+large acquisition or launch. Maintained reviewer available; full goal unmet.
+
+October 10 main read the full161-line completed [selection](docs/research/2026-10-09-public-paired-falsifier-decision.md)
+and81-line [independent review](docs/research/2026-10-10-public-paired-falsifier-review.md).
+Select one parental SVA regional native-policy diagnostic, not a publication
+direction. Review conditions are implemented in the [prospective protocol](docs/research/2026-10-10-parent-sva-diagnostic-protocol.md):
+PASS/filter state, actual GT and sequence evidence are separate; intended
+mosaic visibility is not forced into a diploid-heterozygous representation.
+The public paired HG002 DNA-first unknown coding-path residual is scientifically
+eligible without pre-proved failure, but its operational predicate, endpoints,
+RNA adjudication and large prospective account are not qualified or released.
+No600CPU-hour campaign or major positive is accepted.
+
+An isolated cluster CPython3.12.1 runtime now actually runs Sniffles2.8.1;
+`pip check` and native-extension imports pass. Exact dependency freeze is in
+the protocol. Main implemented the frozen CIGAR census and native parallel
+run harness.26tests pass, zero skips, in3.94seconds (11newcensus/acceptance
+controls plus15docschecks); not a genomic result. Luna/max-requested bounded
+HTTP-body acquisition implementation is active. No BAI, regional read set,
+caller outcome or new Slurm job yet. Completed decision worker closed;
+maintained reviewer available. Goal active and unmet.
+
+October 10 source follow-up: main acquired one capped 65,536-byte public BAM
+prefix (HTTP206), then parsed only its text header. The prefix may contain
+bytes beyond the header; its acquisition is counted, not called zero data.
+All 13 read groups name NA12878; chr3 length and pbmm2's CHM13v2.0 reference
+filename agree with the intended source context. No alignment record was
+parsed and no target coverage, whole-file integrity or exact allele identity
+was established. See the [source-check addendum](docs/research/2026-10-10-platinum-sva-source-check.md).
+
+Main read the full completed [Sniffles native-input check](docs/research/2026-10-10-sniffles-sva-native-input-check.md)
+and its authorized fifth-file follow-up. Pinned v2.8.1 source supports regional
+indexed BAMs, uses a native constant three-read germline support floor and
+explicitly filters low-VAF calls in germline mode. Mosaic mode changes several
+native filters. This is documented intended behavior, not a new scientific
+failure. Any principal pair must retain the native policies; arbitrary shared
+merge overrides are not automatically a fair current-baseline result.
+The worker is closed after completion. Cluster interpreters: base CPython
+3.12.1, bioinfo GraalPy3.10.8, Truvari CPython3.10.20. Sniffles not found on
+current PATH; no install, BAI/regional reads, caller or cluster launch.
+The same Sol6.1/max-requested decision remains pending; no publication claim.
+Documentation checks after this follow-up: 15 passed, zero skips, in
+4.02 seconds; whitespace check passed. Not a biological performance check.
+
+October 10: both bounded empirical scouts completed; main read both full
+notes. The [transcript scout](docs/research/2026-10-09-structural-transcript-falsifier-scout.md)
+found a published controlled-access fusion case and four public paired
+reference lines, not a new validated consequence. The [family scout](docs/research/2026-10-09-family-structural-falsifier-scout.md)
+identified a specific reported NA12878 parental SVA mosaic. This is a
+candidate current-caller falsifier, not a demonstrated failure or novel result.
+Main's [original-row check](docs/research/2026-10-10-platinum-sva-source-check.md)
+confirms the 3,407-bp maternal child event; the table does not supply the
+inserted sequence or define coordinate conventions. A compatible parent call
+must not be labelled sequence-identical to the controlled child's allele.
+The unchanged publication workbook is 249,138 bytes, preserved off Git with
+SHA25634279cdd…; spreadsheet inspection made no edits or recalculation.
+
+The [runtime/access check](docs/research/2026-10-09-runtime-and-paired-access-check.md)
+finds working samtools1.9/Truvari5.4.0 and about65.4GiB local free space.
+Four public multi-ome track manifests expose bigWig/bigBed, not declared RNA
+alignments; this is not absence elsewhere. Fresh00:05:56+07 cluster check:
+own queue empty, scratch expiresOctober22, one extension available. No jobs,
+genomic reads, installation or cancellation. Completed scout workers closed;
+Sol6.1/max-requested selection and Luna/max-requested native crop/threshold
+checks remain active. Maintained independent reviewer available. No expensive
+campaign or major positive result has been accepted; goal remains unmet.
+Documentation checks: 15 passed, zero skips, in 3.94 seconds; whitespace
+check passed. These checks do not measure scientific performance.
+
+October 9 main's [gene-conversion source screen](docs/research/2026-10-09-gene-conversion-source-screen.md)
+finds substantial current native overlap, not a selected research gap.
+Two Exa discovery queries, Life Sciences Literature publication checks and
+selected primary methods retrieved with Firecrawl were used; Scite denied
+paid-plan/trial access and supplied no scientific evidence. No account or
+billing change. Exact-v1 gene-flux Methods already use allele balance plus
+depth for haploid duplication assignment; sperm/All of Us observations are
+controlled-access. No generic phasing/origin project or experiment follows.
+The broader goal is open; two distinct empirical-falsifier scouts are active.
+Decision/review/tracking pushed as9e3079fbc4d5063da0a96b15e37495354bd822c8,
+remote confirmed. Documentation checks after that tracking edit:15 passed,
+zero skips, in3.76 seconds; not a scientific performance measurement.
+
+October 9 after-M1 scientific synthesis is now actually completed after a
+terminal agent usage-limit error and same-agent/context recovery. Main read
+all104 original lines and the four-line recovery appendix. The original
+16281-byte body is unchanged (SHA2566ed874da…); final108-line note SHA256
+20db218c…. Requested Sol6.1/max remains a request, not backend attestation.
+The completed [decision](docs/research/2026-10-09-after-m1-investment-decision.md)
+stops near-term HG008 repeat-rescue investment: no distinct consequential
+residual, supported negatives or fair usable input contract is established.
+This is an investment stop, not biological falsification or global data
+absence. Main read the full completed [independent review](docs/research/2026-10-09-after-m1-investment-review.md)
+and accepts the stop with its two scope limits: two unrelated donors are a
+replication gate, not a prerequisite for every cheap falsifier; a strong
+scientific contribution need not be a new method. No empirical launch is
+qualified. The completed decision worker is closed; reviewer maintained.
+Documentation checks: 15 passed, zero skips, in 3.99 seconds. These checks
+do not measure biological performance.
+
+At16:18:52UTC account inspection reported ordinary usage allowed, five-hour
+usage1% and weekly32%; the earlier error is preserved, not reclassified as
+a completed handoff. OpenAI Docs helped check recovery options; no model
+substitution, purchase, reset-credit use or configuration change occurred.
+Fresh cluster check23:21:33+07: own queue empty, scratch expiresOctober22
+23:02:50+07, one extension available. No job launched/cancelled/extended.
+The broader publication objective remains active and unmet; the saved
+synthesis defines missing scientific evidence, not authority to reopen M1.
+Main has separately commissioned two bounded Luna/max-requested sidecars:
+structural-transcript consequences and whole-event family inheritance. They
+must find a specific test with actual public observations and strong ordinary
+controls, not rename a closed proposal. They authorize document research only,
+not input acquisition, a caller grid or a campaign.
+
+October 9 independent reviewer ACCEPTS the selected HG008 package's
+INCOMPLETE/TRUTH INCONCLUSIVE closure. Main read all20 appended review
+lines, preserving the prior103-line decision snapshot. Internal counts and
+four document hashes agree; no fixed16, valid32 negatives, native context,
+current-caller failure or biological-null claim follows. No acquisition or
+fallback launch is approved. Initial source/review/closure notes are pushed
+as9b6b428159fab5e64704cbe6920b5b31f9086a7f (remote confirmed). The same
+Sol6.1/max-requested decision agent is synthesizing the next investment;
+no duplicate agent or experiment was started. Broader publication goal unmet.
+Documentation checks after the closure review:15 passed, zero skips, in
+3.77 seconds; whitespace check passed. Not a biological performance check.
+
+October 9 [HG008 document feasibility](docs/research/2026-10-09-hg008-material-feasibility.md)
+closed INCOMPLETE / TRUTH INCONCLUSIVE at14:50:53UTC,21min02sec after start,
+before the90-active-minute limit. S9 provides19 annotated confident truncal
+CNV:TR INS/DEL rows; three earlier caller-supported records leave16 by
+subtraction, but this does not prove the exact four-callset miss mapping.
+Four normal-mosaicism curation issues overlap five candidate rows. No32
+supported stable-allele controls or complete native context/cost qualified.
+The V0.5 README explicitly describes v3.2 phasing fixes, not corrupt data.
+Four unchanged public source documents total2,290,819bytes and are preserved
+off Git with hashes. No HTS input, M1 booking, caller, score or cluster job.
+This closes one package, not all somatic-repeat research. Independent
+closure scrutiny and a bounded next-investment synthesis are requested;
+no automatic fallback, enlarged cap or campaign follows. Goal unmet.
+Documentation checks:15 passed, zero skips, in3.84 seconds; whitespace check
+passed. These checks do not measure biological performance.
+
+October 9 [independent scientific review](docs/research/2026-10-09-post-provenance-scientific-review.md)
+completed; main read all 103 lines. HOLD M1 acquisition as written. One
+finite material-feasibility question is worthwhile, but the exact 16 cases,
+32 supported controls, complete native context and 1 GiB/180 CPU account
+are unverified. No booking, caller run, training or campaign is accepted.
+The review requires current SV, diploid donor-specific and repeat controls,
+net event recovery, complete false-call accounting and honest truth bounds.
+
+Main's [repeat-control check](docs/research/2026-10-09-repeat-control-primary-check.md)
+uses Life Sciences Literature PMC metadata, selected primary TRGT methods,
+and three complete official documents at b21c6217… (README version5.1.0).
+Sequence and flanking-SNP controls are stronger than the prior abstract-only
+screen. Original clustering rules do not attest the current WGS default.
+A completed Luna/max-requested [paired-native check](docs/research/2026-10-09-paired-repeat-native-check.md)
+finds documented TRGT-denovo v0.4.0 duo mode, plausible but unverified for
+tumor copy state and cross-sample inherited-haplotype identity. Main read
+the full note; the worker is closed. Model requests are not attestations.
+
+One document-based identity/material-feasibility attempt began at
+14:29:51 UTC, with a 90-active-minute stop. This is not M1 input acquisition
+or a caller run. The exact-v1 supplement page links the published tables.
+The curation repository labels do not identify the fixed 16 misses.
+Node retrieval returned429;
+one bounded curl retrieval of the SAME publication file returned200,
+962,941 bytes, SHA256ca100745…; standard read-only table inspection is
+pending. No biological performance or complete package is claimed.
+
+October 9 [scientific investment decision](docs/research/2026-10-09-post-provenance-scientific-decision.md)
+is complete. Main read the initial 327-line view, then the full 330-line
+final note (SHA2562017d112…): the recovery ceiling requires one complete
+policy with no false somatic calls, never a truth-selected per-locus union.
+Requested Sol6.1/max configuration
+is not backend-attested. Three directions were compared; one bounded HG008
+material prerequisite is proposed for 16 published somatic-repeat misses
+and 32 independently supported controls. It is UNBOOKED, not a selected
+method or empirical result. Maintained independent scientific review is
+running; no acquisition, caller run, training or new campaign is approved.
+
+Main's [primary check](docs/research/2026-10-09-hg008-primary-scope-check.md)
+uses Firecrawl metadata and exact-version live scrape after the indexed body
+query returned no passages. Selected primary methods/results support the
+reported 16 misses, while truth dependence, normal mosaicism, case identities,
+negative controls and fair native inputs remain unresolved. The primary text
+explains initial tumor v3.1 to final v3.2 corrections; this is not itself a
+contradiction. Ordinary donor-specific assembly is already prior art. No
+genomic file, case table or curation issue was read by main here. Goal unmet.
+Documentation checks after these additions: 15 passed, zero skips, in
+3.85 seconds; whitespace check passed. These are not empirical SV results.
+
+October 9 resource clarification and live check: allocate all useful capacity
+efficiently and scale independent experiments in parallel. At 20:59:03+07,
+the account queue was empty. The `amd_256M` partition reported 13 idle nodes,
+128 CPUs and 257,204 MB per node; this is availability, not a reservation.
+Scratch expires October 22 at 23:02:50+07, with one extension available.
+No job was launched or cancelled. The same Sol6.1/max-requested decision
+agent remains active; discovery was bounded and synthesis requested.
+
+The existing scientific-review automation view rendered a card but returned
+no stored settings. No `automation.toml` was found under the configured
+Codex directory. This does not prove that the automation is absent. Its
+schedule, status and model configuration could not be verified, so none was
+changed. The maintained reviewer is requested as Sol6.1/high; requested
+agent configurations are not backend model attestations. The goal is unmet.
+Documentation checks: 15 tests passed, zero skips, in 3.75 seconds; whitespace
+check passed. This is an operational checkpoint, not a scientific result.
+
+October9 Luna/MAXretained-input metadata sidecar completes; mainFULLread.
+One19explicitpath lstatquery confirms6stagedcallers, nosharedsample/truth/
+callabilitycontract established. Author-styleBAMlabelpathENOENT notlostretained
+BAM/allHiFiabsence; unlocatedcohortpaths/software notexhaustiveabsence. Main
+addsqualification and forwardscompletednote toMAXdecision; proposedgeneric
+representationpilot remainsunselected/overlapspriorart andSTOProute. Necessary
+newdata remain possibleonlyfor distinctjustifiedreviewedscience, no universalban.
+
+October9 READMErefresh branch19dbed4 promoteddocumentationONLY todefaultmain
+60ff1dfb369d03ffebe3ffe2dccd5e645aebb702; remoteconfirmed, exact2changedfiles
+README.md + tests/test_readme_research_landing.py, main3pass0skip0.02s.
+Researchbranchdocs/PROGRESS tests11pass0skip3.78s; raw/sciencecode notpromoted.
+Appworktreecreation reportsnotGit (chatcontext); isolatedtemporaryGitcheckout
+used instead, thenremovedonlyaftercleanincludingignoredfiles/remoteproof.
+GitHub reports existingaccountPR-rulebypass; no protections/settingsmodified.
+Preserve this governancemessage; futuremain changes should usePRreviewflow.
+Reviewedarchiveclosure is not biologicalnull or publicationlead; fullgoalactive.
+
+October9 independentactual provenance ACCEPTCOMPLETEboundedexecution/raw/account
+and separately ACCEPTfinitearchivepathCLOSURE: fixedONT→HiFiviews notsufficiently
+established. MainFULL77-lineappendread; exact19files/all18hashes/bookrepins/
+44clusterpasses/fulltexts+headers/timer/account checked. NoGT/scoring/biologynull/
+globaldataabsence/replay/newcampaign. Fullgoalunmet; separate Sol6.1/MAX
+scientificinvestmentcomparison and Luna/MAXretainedinputmetadataaudit running.
+Documentationguard11pass0skip4.07s; fournewresearchindexlinks exist.
+
+October9 actualprovenance/header01 COMPLETERUNTIME, Slurm1604214COMPLETED0:0/
+3s; actual3.10.20pytest8.4.2/44zero-skips0.88s, tree408157B168entries, pins
+pass. Full8outerCRC/2sourcehash/fiveauthoredtexts/threeheaders preserved;
+noGTrowsinterpreted/nestedgzipfullintegrityunassessed. All19rawfiles89269B/
+18hashes PASS aftersingleSCP0; firstcollectionlist omittedtwo stagedwrappers
+andstoppedbeforechecksum/transfer, thenbothpreserved, no jobrerun. Fullcharge
+42114356107B; outer1.55CPUonce→568.552707. [Result](docs/research/2026-10-09-svupp-provenance-header-result01.md).
+Sevenpedigreesamples/differentorders; fixedONT→HiFiscoreviews/version/truth/
+callability notestablished. Mainproposes finitepathclosure, no biology-null
+or dataabsenceelsewhere. Independentactualreviewnext. Somaticsidecar doesnot
+verify secondphysicalmix/scorequery;25webcardsvs15requesteddeviationretained.
+
+October9 provenance/header01 Slurm1604214 submittedONCE, acknowledgedSSH0.
+Exactreview/bookedsource pusheda357714 beforefreshroot14:37:42+07;3stages0,
+all8pins/bookedbundle/literalunusedclaims verify14:38:22+07. Bundle2ec99e9c,
+literale9b91e5c. Slotconsumed; actual44zero-skips required before8membertext/
+headerread. Fullraw/actualreview pending, no GT/scoring/readiness/scienceclaim.
+
+October9 provenance256MiB/60subset BOOKED07:36:03UTC afterconditionalreview/
+14:35:56+07 livefreshrootabsence/queueempty/sourceaccess/expirycheck. Full
+retained42114356107B, actualCPUstill567.002707; residual805306368B/180allowance.
+Onlystatus/time+dependentpins change: ledger8d21a5d3,bundle2ec99e9c,literal
+e9b91e5c; sevenotherhashesfixed. No root/stage/member/job yet. Preserverecord
+then onceexactsetup/launch;44actualzero-skips required beforememberreads.
+
+October9 independent exactprovenance review CONDITIONAL ACCEPT; mainFULLread,
+all8pins/literal agree, reviewerlocal44pass0skip0.45s notactualstack. Only
+bookingstatus/time+dependentpins maychange; freshphysical/source/access/expiry/
+jobs/newroot gates beforebook/stage, actual44zero-skips beforememberread.
+Explicitfullraw≤1MiBinclchecksum andactualreview required; no trimming/replay.
+Scientificreadiness/value/scoring/campaign stillHOLD. StillUNBOOKED here.
+
+October9 limitedprovenance/header candidate FROZEN UNBOOKED. Two Luna/max
+workers complete reader/controls and independent launcher controls. Initial
+19pass/3fail expose missingcompletionflags; main fixes flags withoutweakening
+tests. New real1MiBJSONcap witness; current local44pass0skip0.31s, tree407,568B/
+168entries/maxfile267,967B, shell/inline syntaxpass. Exact8pinbundle94310367,
+literal a8a28da3. [Protocol](docs/research/2026-10-09-svupp-provenance-header-protocol.md).
+Maintained independent exactreview next; no actualmember/header/outcome read,
+book/root/stage/job. Current41845920651B/567.002707CPU unchanged. Useruseful
+capacityreply governs: scale justifiedparallelwork, no idleGPU/nodes here.
+
+October9 independent actual02 review ACCEPTS COMPLETE METADATA INVENTORY ONLY:
+all17rawhashes/exact18files/fullcontrol/preflight/timer/pins/account checked.
+Main readsFULLactualappend; readinessstillHOLD, no decoding/scoring/model/03.
+Main usesFirecrawl officialPythonZIP/gzip docs and exactCPython3.10.20CRC
+excerpt (notfullstdlibaudit) to prepare a separate limitedprovenance/header
+protocol. A Luna/max sidecar owns bounded8membertext/header reader+synthetic
+controls; no realmember reads/job/book allowed. Currentretained41845920651B,
+567.002707CPU unchanged. Raw02completeoriginalbytes will be tracked unchanged.
+
+October9 actualinventory02 COMPLETEMETADATA, Slurm1604213COMPLETED0:0/37s.
+LiveO_PATH/effectivepermissionpreflight and33controls0skip4.58s pass; tree
+13,440bytes. Pinned47,443,427-byte asset matchesMD5/stream+storedSHA
+b1566574;26centralmembers inventoried, bodiesundecoded/CRCnotverified.
+[Result02](docs/research/2026-10-09-svupp-inventory-result02.md). Complete18raw
+files16,612bytes, all17payloadhashespass aftersameSCPexit0; earlypartial
+collectioncheck is not runtime/integrity failure. Full512MiBcharge retained
+41,845,920,651; outer3.07CPUonce→567.002707. Independentactualreview next.
+VCF/textnames plausible, but no HiFi/truth/callability/GQ readiness established;
+separate limitedprovenance/headerprotocol required before anycontent/outcomes.
+No model/scoring/publicationresult;01 remainsclosed, no03 or archive replay.
+
+October9 separate metadata inventory02 submitted ONCE as Slurm1604213.
+Exactreview/bookedsource pushed317b42d; fresh physicalroot13:48:10+07 after
+06:46:50UTC book. ThreeSCP stages return0; all8source/ledger/bundle/literal
+pins verify13:48:52+07. Finalbundleca51080b/literalda2a768e, ackexit0 jobID.
+Submission slot consumed; actualruntime and rawreview pending, no replay.
+Livepreflight and33zero-skips required beforedownload. No scientificcontent,
+caller/model/scoring or publication result. Full512MiB02charge retained.
+
+October9 main books unchanged02subset512MiB at06:46:50UTC, after exact
+CONDITIONAL ACCEPT and13:46:49+07 live freshroot/claimsABSENT, queueempty,
+physicalbase/access checks andOct22expiry. New cumulative retained bytes
+41,845,920,651; prior measuredCPU563.932707 unchanged until actualtimer.
+Residual completecandidate1GiB/240allowance. Status/timestamp-only ledger
+repin, bundle andliteral finalpins next; no root/stage/archive/job yet.
+
+October9 independent [exact02 review](docs/research/2026-10-09-svupp-inventory-replacement02-review.md)
+completes CONDITIONAL ACCEPT. Main reads FULL; all8pins match, sourcechanges
+narrow, reviewer30localpasses3Linuxskips—not actualLinux validation. Conditions
+permit only bookingstatus/timestamp and dependenthash repin, freshphysical
+path/claims/liveaccess/expiry/jobs checks, then exactone submission. Live
+permission preflight and33zero-skips must precede acquisition. No content,
+scoring, campaign, automatic03 or scientific approval. StillUNBOOKED here;
+main begins permitted precreationcheck, not rootcreation/staging yet.
+
+October9 [separate02 exact candidate](docs/research/2026-10-09-svupp-inventory-replacement02.md)
+is frozen UNBOOKED: directory-only LinuxO_PATH and new02 identity;33 inventory
+controls include3permission and2selector cases. Symlink/permission exceptions
+prove intended components. Main catches and worker fixes the non-Linux
+selector's unintended realbeegfs traversal before launch. Main focused local
+run53passed3Linuxskips0.87s includes23unstaged ceiling cases; no actualLinux
+pass claimed. Wrappers/inlinePython syntax pass,8pins bundle9d62d97d; literal
+claim/submission pins it twice. Live unprivileged directory/leaf preflight and
+exact33zero-skips precede anydownload. Exact independent review pending;
+512MiB/180 remainsUNBOOKED, no freshroot/staging/archive/job or publication.
+
+October9 newest objective supersedes the previous attachment. Main reads FULL
+`/Users/akm/.codex/attachments/2fa04b13-b328-4023-872e-0c4cc9dbfaee/goal-objective.md`
+SHA25674ba6450712e7f0e763cd81de896d3a71ca73f9c4a10fec3f1ecab59b3f1b0b8.
+It explicitly names GPU, CPU, RAM and storage in the efficient resource
+clause. The user's preceding clarification—use all useful resources and
+scale parallel experiments fully—remains consistent. No idle GPU or whole
+node is needed for this serial inventory. Scientific aim and safeguards
+are unchanged. Main forwards newest objective to live test worker/reviewer;
+exact02 review must include it. No booking/staging/job or goal completion.
+
+October9 completed [Sol6.1/max decision](docs/research/2026-10-09-svupp-permission-value-decision.md)
+selects one prospective separate02, limited to Linux directory O_PATH and
+new identity/pins. Wider repair or another failure closes this candidate;
+no03 or archive substitution. Main reads the final decision in full and
+prepares the narrow diff and separate UNBOOKED wrappers. Existing51 focused
+local tests pass0skip1.24s, not Linux permission evidence. A Luna/max sidecar
+adds effective permission and intended symlink-branch controls. Cluster
+13:33:35+07: queue empty, fresh02 absent, beegfs711/base700, scratchOct22.
+No book/stage/download; exact bundle and independent review remain pending.
+
+October9 user resolves the cluster resource clause: “Use all useful resources
+efficiently; scale parallel experiments fully.” Do not reserve idle whole
+nodes for serial checks. Use workload-appropriate allocations and scale
+independent parallel experiments when justified. Main forwards this answer
+to the live decision agent and maintained reviewer. No new job, booking,
+staging or archive acquisition follows from this clarification alone.
+Objective-tracking commit848c7ab is pushed. Inventory01 remains closed;
+the proposed separate02 still requires a completed decision and exact review.
+
+October9 user updates full objective attachment (newSHA256
+cdce4c9e320ce1550efeb230e4a4af90930f9eb953531d41459f34b428cb9b12).
+Scientific significance, broad pivots, DeepSV exclusion, honest nulls,
+independent reviews and regularGit tracking remain required. New clause asks
+fullavailableclusterresourcesforanyjob alongsideefficient/cheapdiagnostics.
+Main reads FULL and forwardsnewobjective to maintainedreviewer andlive
+maxdecision. Async clarification asksusefulparallelcapacityvswholenodes for
+serialchecks; no newclusterjob untilresourceinterpretationresolved. Completed
+01 remainsclosedwithfullcharge/evidence, unaffectedbylaterobjectiveedit.
+Latestreview/diagnosis pushed372ebd4; maxdecisionstillpending, no02book/stage.
+
+October9 independent actual inventoryreview ACCEPTS CLOSED INCOMPLETE:
+12hashes/full73105-byte control log/pins/claims/account checked; passing
+symlink control may be masked by ancestorpermissionfailure, no dataabsence
+orbiologynull. All13raw files nowtracked/pushedc3697b3,7ignoredlogs explicitly
+force-added unchanged aftermetadata46c7449. Mainstat13:20:03+07beegfs711,
+scratch755, ownedbase700 supportsread-versus-traverse incompatibility, not
+ACLfullaudit. [Luna diagnosis](docs/research/2026-10-09-svupp-ancestor-permission-diagnosis.md)
+proposesLinuxO_PATH onlyfordirectoryfd, preservingNOFOLLOW/identity/leafreads;
+no code/testchange ornewrun. Sol6.1/max investmentdecision stillrunning;
+no02 selected/booked/staged, current41309049739bytes/563.932707CPU intact.
+
+October9 actual inventory01 CLOSED INCOMPLETE: Slurm1604210FAILED1:0/7s;
+actualstack matches, but28controls16failed12passed0skip5.36s. Componentwise
+O_RDONLY directory opening fails atancestorbeegfs errno13. Shell stops before
+realpayloadclaim/download; no author archive/content/outcomes or dataabsence
+claim. [Result](docs/research/2026-10-09-svupp-inventory-result01.md).
+All12local payloadhashes match,76,846+checksum1,011=77,857bytes; complete raw
+preserved. Full512MiBretained41,309,049,739bytes; outer2.64CPUonce yields
+563.932707namedmeasuredCPU. Root/claim closed; no replay or parserguardchange.
+Read-onlyLuna permissiondiagnosis, independentactualclosure review and
+Sol6.1/max-requested finiteinvestment decision running; no newbook/run.
+
+October9 booked inventory submitted ONCE as Slurm1604210 after independent
+exact conditional ACCEPT. New real physicalroot created13:13:43+07 after
+06:12:17UTC booking. Three staged transfers return0; all7 pins, booked
+reservation and literal command verified13:14:28+07. Finalbundleb1f417bb,
+literal2cd214cb; acknowledgement returns0 withjobID, claim consumed. Code/
+review/book/ceiling helper pushed5df488c. Await actual runtime/raw review;
+no decoded outcome, model, caller or publication claim.
+
+October9 fresh exact reviewer completes CONDITIONAL ACCEPT of the one-shot
+metadata inventory: [review](docs/research/2026-10-09-svupp-inventory-review.md).
+Main books512MiB at06:12:17UTC before creating any new cluster root/staging;
+new cumulative retained bytes41,309,049,739. Numeric allowance unchanged,
+within full2GiB/600 candidate; residual1.5GiB/420 allowance seconds. Prior
+measured namedCPU561.292707 unchanged until actual outer timer is available.
+Reservation status/timestamp repin permitted by review; final hashes next.
+New pure integer-ceiling helper has23 synthetic tests passing0.07s after main
+adds99/198-boundary cases to brute enumeration. No data/model/scoring run.
+Cluster13:12:02+07 confirms physical base, freshroot absent, queue empty,
+scratchOct22 and1extension. Exact28 cluster controls required before download.
+
+October9 quota-status correction: app account check reports ordinary usage
+allowed and no reached-limit type. `resume_agent` returned the stored old
+error, which does NOT prove a new rejected request. Main sends a fresh retry
+to the same maintained reviewer (submission01a11f45-f45f-70e2-809c-682164c7fc3f).
+Its bounded wait times out without a terminal error or completion; do not
+restart/duplicate it on observation timeout. Exact review is pending, not
+accepted. All7 candidate hashes and bundleac67823d are unchanged at06:07:55UTC.
+No booking/staging/archive/job; keep full objective active and unachieved.
+
+October9 continued while reviewer capacity remains unavailable: main uses
+Exa plus Life Sciences Literature and verifies pinned kanpig2.0.2 source.
+[New prior-art check](docs/research/2026-10-09-kanpig-calibration-prior-art.md):
+native beta-binomial fitting and GQ calibration already exist; raw top-two
+likelihood ratio is not posterior error. Configuration fitting can change
+GTs, unlike selection on fixed outputs. Record-wise author holdout cannot
+substitute for locus/family/platform grouping. Static estimator discrepancies
+are not executed bug or scientific results. No author tool or labels run.
+Archive versions remain unverified; a gap on old outputs cannot establish
+improvement over the current native baseline. Endpoints and account unchanged.
+Exact reviewer resume still returns usage-limit ERRORED, not a live review.
+No booking/stage/archive/job, no new campaign. This is new source evidence
+that tightens novelty and baseline interpretation; goal remains unachieved.
+
+October9 inventory candidate and completed scientific decision/reconciliation
+are pushed in1bf148e. Main verifies28 local inventory/launcher controls pass,
+zero skips,0.81s; synthetic tree12,227bytes and shell syntax pass. Actual
+cluster dependency path suppliesPython3.10.20/pytest8.4.2; queue empty and
+fresh root absent at the metadata check. No package installation needed.
+The maintained Sol6.1/high-requested exact-launch review returns ERRORED due
+to account usage limit; no review file or acceptance exists. At05:59:02UTC
+main verifies remote1bf148e and clean worktree. Launch remains HOLD,
+512MiB/180seconds UNBOOKED, no staging/acquisition/job or outcomes. Reuse
+reviewer01a11e73-c622-7e22-9ea6-cebd9d2b5023 when capacity returns; do not
+duplicate submissions or infer acceptance from the scientific review.
+The broader research goal is active and unachieved, not marked blocked.
+
+October9 completed [investment decision](docs/research/2026-10-09-post-native-value-decision.md)
+and [independent follow-up](docs/research/2026-10-09-post-native-value-review.md)
+select ONE conditional development value test, not a paper or new model.
+Use fixed SVUPP/kanpig outputs under ONT ultra-long to HiFi transfer; compare
+the maximum separate caller selection ceiling with strong ordinary controls
+at1% label discordance and a10-point neighboring-SV coverage margin. No
+cross-caller genotype oracle. Missing inputs, insufficient room or uncertain
+truth close this candidate. Generic GQ coverage is already prior art.
+The inventory launcher and bounded tests are being finalized; allowance
+512MiB/180seconds is UNBOOKED, within—not added to—the whole2GiB/600 envelope.
+No archive acquired, decoded outcomes or caller execution. Goal unachieved.
+
+October9 independent [post-native scientific review](docs/research/2026-10-09-post-native-value-review.md)
+rejects genericGQcalibration/coverage as a selectedsignificantcontribution.
+One incremental-value developmentfalsifier is conditionallydefensible,
+but truth/score/callablemask/split/readiness gates remainHOLD; no acquisition
+or campaignapproved. Main drafts one fixed47.4MB archiveinventory candidate
+only, [protocol](docs/research/2026-10-09-svupp-inventory-protocol.md), UNBOOKED,
+unexecuted; no memberpayloads or outcomesread. Exactcode/bundle review and
+the live Sol6.1/max investmentdecision remainpending. No goalcompletionclaim.
+
+October9 completed [post-native literature comparison](docs/research/2026-10-09-post-native-opportunities.md):
+Luna/max-requested worker compares three substantive directions, each conditional.
+Main's [primary check](docs/research/2026-10-09-post-native-source-check.md)
+reads complete SVUPPpaper via currentPMCdataset: matchedGQ/callcoverage is
+already priorart, not a newcontribution. Entrez/Exa date metadata conflict is
+recorded and primary2025 date retained. TechnicalNA12878 dataset separation
+is not an unrelatedfamily holdout. Author's newerZenodo lists47,443,427-byte
+assessmentzip; contents/scores/truthunverified, no body acquired. Main narrows
+the novelty inference and forwards evidence to the live Sol6.1/max decision.
+No new study, budget, archive acquisition or publicationlead selected.
+
+October9 actual replacement02: job1604209 FAILED1:0 at predefined canonical
+positive-control gate.78 cluster controls pass0skip2.90s, physical-path fix,
+authenticated Sawfish2.2.1 and both canonical native stages work. Complete
+candidate/final outputs have0records; no exactPASSheterozygous recovery.
+Remaining3arms never ran; no fragmented contrast, biologicalnull or causal
+stageclaim. [Actual result](docs/research/2026-10-09-native-invariance-result02.md).
+All52raw hashes match; payload66,500+checksum4,864=71,364 bytes, including
+allcanonicaloutputs and exactsmallfixture. Main archivedfixturesemantics,
+resolvedsettings and complete nativevariantparse pass; no callerreplay.
+Full256MiB retained:40,772,178,827 cumulativebytes; outer2.50CPUonce gives
+561.292707 namedCPU. Independent actualreview ACCEPTS CLOSED INCOMPLETE:
+all52hashes, archivedfixture/settings and completezero-recordoutputs checked;
+no causal or scientificdirectionapproval. Main's85focused controls plusREADME
+pass0skip0.91s, notfullsuite. Raw/result pushed183ac18. A Luna/max-requested
+freshprimaryliterature comparison and Sol6.1/max-requested investmentdecision
+run in parallel; no replacement03, newbudget or paperlead selected.
+
+October9 native replacement02 submitted once as job1604209 after maintained
+independent exact conditional ACCEPT. Booked256MiB at03:25:56UTC before root;
+cumulative40,772,178,827 bytes retained. All13 staged pins, booked snapshot
+and literal claim/submission hashes match at10:27:15+07. Four transfers and
+submission returned0; new root real leaf on pinned physicalworkspace.
+Live journal records the consumed claim; exact code/review pushed0f304c7.
+Runtime and raw-result review pending; no allele or publication claim.
+
+October9 prospective physical-path replacement02: original attempt01 source
+and all raw logs are preserved in pushed commit ea7f2fb. Main adds an exact
+trusted physical-root gate; fixture guard and scientific protocol unchanged.
+Luna/max-requested path-test sidecar supplied8 controls; main strengthened the
+allowed-path redirect test. All78 local controls pass0skip0.94s; shellsyntax
+passes. [Replacement](docs/research/2026-10-09-native-invariance-replacement02.md)
+has13 pinned entries and separate literal claim/ledger. Exact review pending;
+new256MiB/600CPU UNBOOKED. Metadata10:20:56+07: queue empty, both roots absent,
+scratchOct22. No asset/native experiment outcome or publication lead.
+
+October9 actual native attempt01: independently reviewed launch ran once as
+job1604208, FAILED1:0. All70 cluster controls passed0skip2.58s. The fixture
+ancestor guard then rejected the managed `/scratch` alias. No fixture, asset
+or native caller command ran; this is a setup failure, not a biological null.
+[Failure record](docs/research/2026-10-09-native-invariance-result01.md).
+Full256MiB remains charged, cumulative40,503,743,371 bytes; outer2.07CPU
+counted once, cumulative558.792707. Attempt01 is closed with no replay.
+Preserve exact source and small raw evidence before a separately reviewed
+fresh physical-path replacement. Keep the fixture guard and scientific input.
+
+October9 exact native-launch candidate: main implements the finite four-arm
+runner, with two Luna/max-requested sidecars for resolved-settings validation
+and corrupt/truncated artifact controls. All70 local launch/fixture/observer/
+settings/integrity tests pass0skip0.79s; shell syntax and all12 bundle hashes
+verify. [Exact execution candidate](docs/research/2026-10-09-native-invariance-execution.md)
+and literal claim-before-sbatch command are ready for independent review.
+Pinned source validation requires a chromosome match even with CNV disabled;
+main adds common `--cov-regex '^chrSynthetic$'` before outcomes. No scientific
+input or between-arm contrast changes. Metadata09:52:20+07 confirms cluster
+Python3.10.20/pysam0.24.0/HTSlib1.23.1, but pytest8.4.2; the initial copy of
+local9.1.1 in the draft assertion was corrected before staging, no upgrade.
+One-CPU affinity, full-tree timing,480s timeout,4GiB address space and finite
+output/archival checks are explicit. Proposed256MiB/600CPU remains UNBOOKED;
+no stage root, asset acquisition, caller execution or scientific result yet.
+The maintained reviewer is checking this exact launch; the prior code HOLD
+closure is not a launch disposition. Named allowances are not measured
+physical/opaque I/O bounds. Goal remains active and publication unmet.
+
+October9 native diagnostic preparation: the completed
+[Sol6.1/max-requested decision](docs/research/2026-10-09-native-invariance-value-decision.md)
+selects ONE same-molecule CIGAR-invariance test of complete native allele
+recovery. This is a software diagnostic, not a new method or publication lead.
+[Protocol](docs/research/2026-10-09-native-invariance-protocol.md) fixes canonical,
+fragmented, REF-only and existing-native-margin rescue arms. The independent
+[Sol6.1/high-requested reviewer](docs/research/2026-10-09-native-invariance-review.md)
+initially accepts its scientific value conditionally, holding result acceptance
+for observer scrutiny: joint edits, symbolic/multiallelic calls and missing
+outputs must not become false absence labels. Exact allele presence, explicit
+PASS and heterozygous GT are separate endpoints, with a joint recovery count.
+Fixture implementation is complete: main's15 local tests pass0skip0.40s on
+Python3.11.13/pysam0.24.1/HTSlib1.24. A cross-stack compressed-BAM hash assertion
+was replaced before native outcomes by a frozen reference-sequence hash,
+complete read/index semantics and same-stack deterministic manifests. One new
+endpoint-corruption test initially failed while making an unsorted mutant BAM;
+the test now mutates the first sorted record and reaches the intended guard.
+Observer implementation is now complete. Main corrected its rejection of
+BGZF final VCFs, added a native-format control, distinguished empty complete
+outputs from missing files, and corrected an input-mutation test that had
+rewritten unchanged bytes. It now reports query lengths, not just reference
+header lengths. Combined32 synthetic software controls pass0skip0.65s;
+with3 README landing checks,35 pass0skip0.57s. Standalone manuscript
+reconciliation passes. [Pinned local check record](results/software_checks/2026-10-09/native_invariance_local.json).
+Independent completed-code review found that padded compatible edits could
+escape the A-run boundary heuristic and yield a false resolved negative.
+Main removes that inference heuristic: any multiple nonmatching literal
+chrSynthetic records remain unresolved unless an exact positive is known.
+Four regressions cover candidate/final paths and positive precedence. Latest
+39 controls including3 README checks pass0skip0.69s. The independent reviewer
+hash-checks the exact correction and closes the code/observation HOLD.
+Exact launch/account review remains pending. No native execution approval
+or full-suite pass is claimed.
+The earlier agents saved no code after account-limit errors; fresh requested
+workers are used after current account access resumed. Actual backend model
+and effort remain unattested. At09:16:53+07 the cluster queue was empty;
+scratch expiry remainsOct22 and local free space about17.6GiB. No download,
+installation, native run, new data or reservation yet. Proposed256MiB/600CPU
+is UNBOOKED. Goal remains active and unachieved; the old screen remains STOP.
+
+October9 investment decision: main accepts the completed
+[Sol6.1/max-requested decision](docs/research/2026-10-09-post-diagnosis-value-decision.md)
+to **stop further preparation in the generic released-callset route**.
+Successful execution would still yield only a development falsifier or
+hypothesis list, not the required publication contribution. H_R remains
+UNTESTED; this is not a biological null. Guards, partials, source files and
+full charges stay intact. The maintained independent
+[reviewer](docs/research/2026-10-09-post-diagnosis-value-review.md) accepts this
+limited scientific STOP, not a biological null or budget impossibility.
+Two disjoint Luna/max-requested sidecars completed the
+[native trace interface](docs/research/2026-10-09-sawfish-trace-interface.md)
+and [closest mechanism/prior art](docs/research/2026-10-09-native-fragmentation-prior-art.md).
+TRsv already demonstrates and merges same-read repeat fragments. The initial
+Sawfish no-interval-selector finding was wrong: it omitted shared arguments.
+Main followed the call graph and [corrected it](docs/research/2026-10-09-sawfish-seed-and-target-source.md):
+hidden global target regions bound BAM scanning, not whole-reference loading,
+and targeted split-read handling differs from default. The actual source
+function gives a25bp default CIGAR evidence threshold and merges consecutive
+indel operations. Sub50bp fragments alone cannot prove seed loss. Main read
+the primary TRsv passages and pinned CLI sections, correcting the proposed
+sequence-fixed purity contrast. No native experiment or publication lead is
+selected; real native controls and a distinct consequential contrast remain
+required. Independent follow-up accepts these corrections, not an experiment.
+The later source-path/25bp function-body correction is also independently
+reviewed as main-reported source inference, not binary attestation or a
+locus-wide seed cutoff. Earlier no-selector acceptance is explicitly
+superseded in the append-only review.
+The Sawfish v2.2.1 annotated tag resolves to the inspected source commit;
+binary/runtime compatibility remains untested. Main's7 focused README checks pass0skip0.04s; standalone manuscript
+reconciliation passes. These are documentation checks, not scientific results.
+[Source correction](docs/research/2026-10-09-native-control-source-check.md):
+Svirlpool v3 also seeds annotated tandem repeats; do not assume consensus
+callers require strong indel signals everywhere. Sawfish documents intermediate
+regions/candidates/contigs, but upstream interfaces are not verified cluster
+execution. [Metadata readiness](docs/research/2026-10-09-native-tool-metadata.md)
+finds no tested native executables in the six conda bin directories or PATH,
+not a system-wide absence. Small author release assets are documented, not
+downloaded. No new data, guard revision, all-six run or budget increase.
+
+October9 actual diagnosis: exact reviewed CPU-only job**1604205** completed
+once0:0/15s;18 exact-stack controls0skip pass0.45s. All51,561 complete
+source/annotated/split rows joined. Only**serialized_END** differs in**48,286**
+source-to-annotated/source-to-split rows; annotated-to-split0 and current full
+file hashes match. Other frozen projection fields, includingstop, agree.
+This localizes a pre-norm discrepancy, not its detailed token/value cause;
+partial hashes were not recorded at the original failure. **Float drift is
+not supported as the observed real-input discrepancy**, despite the true
+synthetic witness. [Actual result and limits](docs/research/2026-10-09-projection-diagnosis-result.md).
+All13 payload files5085bytes are archived/hash-matched, checksum1095 gives
+6180 locally; independent raw-result review accepts technical completion and
+limited field localization, not a cause or next-stage execution. Full320MiB booked BEFORE
+staging; retained**40,235,307,915 bytes**, no refund. Outer13.28CPU/14.19wall,
+namedCPU**556.722707**, inner/Slurm not added again. Allslots consumed; old
+preparation remainsclosed, no replay/guardchange/scoring. The disjoint Luna/max
+[END sidecar](docs/research/2026-10-09-end-serialization-controls.md) passed
+locally: redundant END disappeared on two literal variants, preserving stop
+and other projected fields; a changed symbolic END changed stop. Local stack
+is not the pinned cluster stack; no real mechanism claim. No denominator,
+biological score or publication lead.
+Main's combined local diagnostic/Float/END/README check passed22 tests0skip
+in0.17s. An initial invocation used a nonexistent Float-test filename and
+collected no tests; the corrected invocation produced that result. This does
+not replace the18 pinned-stack launch controls or establish a full-suite pass.
+
+October9 earlier diagnostic candidate: a Luna/max-requested worker reproduces
+parsed Float drift across ordinary synthetic VCF write/read while standard
+row text is identical, on localpysam0.24.1. This does **not** identify the real
+failed-job cause. Main leaves the production guard unchanged and adds a
+[read-only complete field-localization candidate](docs/research/2026-10-09-projection-diagnosis-protocol.md)
+for original source/annotated/split only, no preparation/norm/scoring replay.
+Initial17 controls passed locally0skip0.13s; combined existing/new caller
+checks63pass2skip0.53s (old pinned-native skips). Exact independent review
+held ALT-index cardinality and the missing literal submission claim/command.
+Main requires exactlyone integerALT1/ordered integerordinal, adds the extra
+cardinality rejection and freezes claim-before-sbatch with partitionamd_256M.
+Corrected18 local controls pass0skip0.16s. At this historical candidate stage,
+exact corrected review was pending and320MiB/240CPU was **UNBOOKED**, with no
+staging or source/partial body read. Subsequent approval and the one completed
+execution are recorded above; this is not a second available slot.
+Cluster00:09:26+07 empty account
+queue, current sizes/type match, new root absent, scratch expiresOct22.
+No scientific result, accepted method or publication lead.
+
+October 8 current caller-preparation outcome: the independently approved
+all-six bundle ran once as CPU-only job **1604204**. All **48 controls passed,
+zero skips**. First real cuteSV preparation failed at the `norm` projected
+whole-field preservation check; **51,561 source records/children** and ALT
+identity fingerprints agree, but this does not prove all fields agree.
+Cause undiagnosed. The other five callers did not run. **Stage closed
+incomplete; no replay, selective continuation or scoring.**
+[Actual failure and disposition](docs/research/2026-10-08-caller-preparation-result.md).
+Full reservation booked before staging; cumulative **39,899,763,595 bytes**
+retained, no refund. Outer10.78 CPU/12.56 wall; namedCPU **543.442707**, not
+double-counting inner/Slurm timings. Thirteen small outputs**7,133 bytes** are
+archived with all13 local/remote hashes matching. Independent result review
+accepts the guard stop/account, correcting main's prior7,233-byte summation;
+the extra checksum manifest1103 gives total8236 locally, no reservation change.
+No post-failure source/partial body read or next-stage execution approval.
+The research hypothesis remains untested and no publication lead is established.
+The new README and unchanged historical result archive were published to
+default `main` at **3dc65bd**, and research branch at **582ad0e**. Four
+documentation/document-test files only were promoted; no experimental code,
+results or progress history was merged into main. GitHub accepted the normal
+push but reported a PR-only rule bypass; use the PR workflow for future main
+promotions. Historical numeric checks now read the archive without relaxed
+assertions; main independently verifies **65 focused document tests pass,
+27 existing skips** on both research and isolated main-based checkouts.
+Standalone manuscript reconciliation passes in each. Tests that inject
+temporary bad text into live documents must not overlap standalone checks;
+one concurrent check observed the injected stale progress ratio, not a new
+scientific/source mismatch. Restored standalone state passes.
+The five-file check migration is research **9494e59** and main-based
+[documentation-only PR3](https://github.com/aayushkrm/AlignSSL-SV/pull/3),
+awaiting required review; no protection bypass attempted for this follow-up.
+Historical SSL smoke failure remains; no full-suite green claim.
+
+October 8 caller preparation, earlier pre-launch checkpoint: the new strict boolean opt-in removes only
+INFO/RNAMES values from working copies, preserving sources and all other
+fields/rows. Main and the independent reviewer checked the original change;
+main then separated internal guard errors from external parser errors so
+saved reports cannot echo external read-name/variant context. Luna/max added
+explicit-false, restored-RNAMES and external-error controls. Corrected local
+caller suites: **46 passed, 2 skipped in 0.66s**; the exact cluster controls
+must pass all 48 with no skips. [Finite all-six guards and account](docs/research/2026-10-08-caller-preparation-limits.md)
+and a pinned candidate bundle are ready for [exact independent review](docs/research/2026-10-08-caller-preparation-review.md).
+No caller source transfer, reservation, preparation, score or biological result
+has occurred. Prospective retained total39,899,763,595 bytes would leave an
+unbooked24-GiB screen margin under64GiB; this is not proof of physical I/O or
+screen execution approval. Original candidate superseded before execution;
+all historical failures/results remain. Free local disk verified about15GiB;
+large work remains cluster-based. Goal remains active and unachieved.
+
+October 8 next empirical decision is complete: the existing Sol6.1/max role
+[selects A as one development kill-test path](docs/research/2026-10-08-empirical-throughput-decision.md),
+not a publication lead. Next observation: unchanged prepared-file native
+consistency; then reviewed REF/ALL-SIX scope. Retire operator appointment
+windows prospectively in favor of one immutable experiment ID, fixed payload
+slots and process limits. Expired attempts stay UNEXECUTED. The
+[new durable bundle](docs/research/2026-10-08-native-throughput-execution.md)
+has exact independent approval and completed once: **20 controls passed,
+11,490 unchanged rows native-compatible**, same source/order pins, no repair
+or drop. [Actual result](docs/research/2026-10-08-native-throughput-result.md).
+Outer tree **4.07 CPU seconds / 5.95s wall**; named CPU now 426.622707,
+not double-counting inner timings. All 11 small outputs (6,988 bytes) are
+archived and hash-verified; the maintained independent reviewer accepts
+technical completion only. Both native slots are consumed, with no replay.
+No REF/caller/scoring, biological gain or publication claim. Concrete native-control
+pin reads already exceed the old 1-MiB metadata proposal; approved 2 MiB gives
+**66 MiB total / 8,692,512,029 bytes retained**, same scientific source/parser
+caps and aggregate ceilings. No imaginary expired 65-MiB charge or refund.
+Latest local post-constant check 101 passed/13 skipped in 0.87s; shell syntax
+passes. These remain software-only, not native endpoints or publication gain.
+The REF worker initially reports 52 combined new-gate/old-reference synthetic
+tests passed, zero skips. Independent code review accepts semantics but
+finds a cap-plus-one EOF probe and unpinned decoder. Main fixes the new
+driver only, pins cluster CPython/gzip, and integrates targeted controls.
+Latest worker 62 combined passes =41 new gate +21 old reference, zero skips.
+[Exact REF bundle](docs/research/2026-10-08-reference-throughput-execution.md)
+has independent exact code/bundle and CPU-only Slurm approval. The original
+unused direct manifest is preserved. Main booked the full 7 GiB before fresh
+small-bundle staging: retained total **16,208,704,797 bytes**, no refund.
+One submission and two payload slots only. All ten staged hashes match
+(118,021 bytes). One CPU-only job **1604025** completed exit 0:0 and durable
+state COMPLETE; both payload slots consumed. [Full result](docs/research/2026-10-08-reference-throughput-result.md):
+41 controls passed, zero skips; all **11,490 original anchored REF spans
+agree**, all 86 contigs/lengths and gzip EOF/CRC verified. All 13 small outputs
+(12,383 bytes) archived with matching hashes. Outer106.04 CPU/108.72 wall,
+named CPU now532.662707, inner/Slurm timings not charged again. Independent
+raw-result review accepts technical completion; no ALT/phase/callability/caller/scoring/denominator
+or publication claim. No source repair or genomic transfer.
+Local disk remains about 15 GiB
+free; the safety guard is unchanged and large work stays on the cluster.
+Main integration check: 118 passed, 13 skipped in 4.34s across the progress
+gate and focused metadata/native/reference suites, including the new REF
+tests. Manuscript reconciliation passes separately. Synthetic/local skips
+do not validate real REF input, and this is not a full-suite green claim.
+Post-fix integration: 128 passed/13 skipped in 4.80s; manuscript and shell
+syntax pass. These software checks do not resolve the historical smoke failure.
+The all-six preparation sidecar preserves every caller's recorded metadata
+and supplies draft-only JSONs with unresolved caps. Its arithmetic does not
+prove that smaller pre-outcome guard caps are impossible; guards can be chosen
+before outcomes, with whole-run failure rather than dropped records on breach.
+Next freeze the finite all-six preparation/screen account and required shared
+truth identities under separate review. No caller experiment is approved yet.
+
+October 8 later software checkpoint: main implemented a separate uniform
+absolute-SVLEN/native consistency gate, preserving the old signed checker,
+census and every raw field. The maintained reviewer accepts the rule in
+principle, not exact execution. The interrupted effort allowance is
+unverified; its explicit 30-minute wall replacement expired before launch.
+[Protocol and full disposition](docs/research/2026-10-08-native-contract-protocol.md),
+[independent rule review](docs/research/2026-10-08-native-contract-review.md).
+**No staging, reservation, native cluster control or genomic scan occurred.**
+The proposed 65-MiB addition is unbooked; full retained charge stays
+8,623,306,013 bytes. Do not revive that expired launch or infer a native pass.
+One old local test handle returned only partial output and was missing on
+resumption. Separate software verification completed **91 passed, 13 skipped
+in 0.69s**; the Linux/pinned native skips are not data validation. Reviewer
+found a literal-to-parser field verification gap; main fixed it and added
+ten drift/no-imputation controls. Corrected software check: **101 passed,
+13 skipped in 1.39s**, no genomic input; focused correction review accepts
+the fix, independently verifies both pins, and finds no new static defect.
+Original test artifact/pins remain. Main requested the existing Sol6.1/max decision role to
+choose one useful empirical observation and a practical finite execution
+policy, rather than another operator-timer amendment. No publication lead
+or expensive campaign is selected. Cluster October 8 17:23:47 +07: no account
+jobs; sampled bioinfo paths have samtools but not sniffles/minimap2. This is
+not a complete software inventory. Goal remains active and unachieved.
+
+October 8 actual diagnostic: the independently approved whole-file
+[metadata census completed](docs/research/2026-10-08-metadata-census-result.md).
+All **11,490** rows retain exact prepared IDs; type and absolute lengths
+agree for every row. The only flags are **4,530 global sign-only mismatches**.
+Canonical counts are 6,960 INS / 4,530 DEL, but the report does not cross-tab
+type with sign; those marginal totals cannot prove all deletions are positive
+or all insertions agree. Independent review corrected main's initial stronger
+claim. The first observed contradiction is a DEL with SVLEN +75 versus -75.
+No missing/magnitude/cardinality
+or eligibility flags. Source acquisition/posthash/snapshots match the pin.
+This explains a contract incompatibility, not corrupted alleles, native
+validation, caller performance or a biological null. Declared VCF 4.2 does
+not make the reported positive deletion annotation formally compliant.
+Native/REF and denominator validation remain unmet; old screen stays closed.
+One run, exit zero: **1.02 CPU seconds, 1.16s wall**, peak RSS 56,696,832 bytes.
+Small raw outputs copied/hash-verified off scratch; input fields unchanged,
+no row dropped, repaired or scored. Full retained charge **8,623,306,013 bytes**,
+no refund. [Independent result review](docs/research/2026-10-08-metadata-diagnosis-review.md)
+accepts the technical result with that claim correction. Goal remains
+active/unachieved; publication significance is not
+established by this technical result. No new genomic data downloaded.
+
+October 8 empirical reset, prior to that execution: the [Sol6.1/max-requested decision](docs/research/2026-10-08-strategy-reset-decision.md)
+separates engineering failure from scientific rejection. Main accepts ONE
+[prospective metadata census](docs/research/2026-10-08-metadata-census-protocol.md),
+after [exact independent execution review](docs/research/2026-10-08-metadata-diagnosis-review.md).
+The old fixed screen stays closed; no REF/caller/scoring or campaign approval.
+The [contract audit](docs/research/2026-10-08-metadata-contract-audit.md)
+and [payoff audit](docs/research/2026-10-08-empirical-payoff-audit.md) are complete.
+Main found the already recorded source header: VCF 4.2, not assumed 4.5.
+The new stdlib-only diagnostic retains every provisional row and separates
+missing, sign and magnitude flags. Worker and main synthetic checks pass;
+combined initial **55 passed, 3 skipped in 0.65s**. Reviewer withheld v1 for
+an overflow-byte read; main corrected the bound and added two regressions.
+Corrected checks: **57 passed, 3 skipped in 0.45s**. V2 exact approval supplied
+the separately recorded permission for the execution above. Before execution
+the prepared VCF body was unread in this continuation. All 11,490 rows remain
+provisional, not a scoring denominator. The one 33-MiB reservation retains
+8,623,306,013 bytes; no historical refund.
+Run on the cluster's existing 11.9-MB prepared file under Linux CPU/AS limits;
+no genomic transfer or new package was needed. Independent approval was
+recorded before launch. Local disk about 15 GiB free, guard unchanged.
+No publication lead or empirical performance result is established. Conditional
+next target: controlled, recoverable native candidate-generation failure,
+not generic benchmarking or final-VCF absence alone.
+
+Final tracking checks: **18 passed in 4.14s** after isolating synthetic
+headline injections in temporary document copies; manuscript reconciliation
+passes separately. Historical CSVs/thresholds unchanged. This is not a
+full-suite rerun or resolution of the preserved legacy smoke failure.
+Post-run cluster October 8 13:31:10 +07: no account jobs; scratch expires
+October 22 23:02:50, 14 days 9 hours then remaining, one extension.
+
+October 8 next comparison: three Luna/max workers completed disjoint
+[family](docs/research/2026-10-08-family-sv-territory.md),
+[repeat-native](docs/research/2026-10-08-repeat-native-controls.md) and
+[mitochondrial](docs/research/2026-10-08-mitochondrial-sv-territory.md) checks.
+Main separately read [repeat functional/outcome sources](docs/research/2026-10-08-repeat-outcome-source-audit.md)
+and completed the [three-direction disposition](docs/research/2026-10-08-three-direction-disposition.md).
+Reject the current framings; no publication lead, assay or campaign selected.
+Family phase is not mutation timing or gametic risk, and the proposed zero
+detection bound needs a calibrated sensitivity law. Native SCIA/MosaicTR and
+edited-clone interruption work already challenge generic repeat inference.
+Changing a same-assay classification is not independent biological benefit.
+For mitochondrial deletions, one ancestral event followed by different linked
+variants in descendant lineages defeats clone-ID-to-origin inference.
+No MitoTracer availability search is authorized to rescue that label mismatch.
+Unknown outcomes remain unknown; these are not biological nulls or field-wide
+impossibility claims. [Independent reviewer addendum](docs/research/2026-10-08-new-territory-review.md)
+is complete and accepts the narrow stops, calibrated law and counterexamples;
+source facts remain reported inspections, not independent native replication. No raw genomics,
+native reconstruction, assay, solver, training or job was run. Post-checkpoint
+headline/field checks pass again, **17 passed in 4.91s**; local documentation
+links resolve; manuscript consistency and whitespace checks pass. Earlier
+smoke failure and original results stay unchanged.
+Goal remains active/unachieved. Next require a concrete consequential residual
+claim and an observation that can actually falsify it, not more wrappers.
+
+October 8 completed source/formal checkpoint: the
+[centromere outcome crosswalk](docs/research/2026-10-07-centromere-outcome-crosswalk.md)
+stops that paper as the activity-to-segregation anchor. Both balanced lines
+have the same reported activity; no paired later derivative-fate outcome is
+established. GM03417 is mosaic. Missing outcomes remain UNRESOLVED, not null.
+The [pinned CE source audit](docs/research/2026-10-07-cycleextractor-evidence-code-audit.md)
+separates MILP incidence from traversal evidence; token loss alone is not a
+measured recovery error. Native solver/code execution remains unrun. The
+[v2 paper/branch/history follow-up](docs/research/2026-10-07-native-example-followup.md)
+does not recover original v1 S3/v2 S4 inputs. Close that attempted reproduction;
+no GBM39 substitution, invented graph or continuing availability wrappers.
+
+The prior Sol/max decision saved an interrupted draft before quota failure;
+the prior reviewer supplied no completed checkpoint review. After the reset,
+authoritative usage allowed work and both old handles were unavailable. One
+fresh Sol6.1/max decision and one Sol6.1/high reviewer completed, with requested
+configuration recorded, not backend attestation. The
+[completed formal decision](docs/research/2026-10-08-functional-formal-decision.md),
+[independent review](docs/research/2026-10-08-functional-formal-review.md), and
+[main hand calculation](docs/research/2026-10-08-functional-ecdna-analytical-control.md)
+agree: **STOP the current ecDNA method framing**. The unrestricted flow model
+has sharp finite endpoint witnesses via standard circulation/cycle operations.
+The toy permits [0,1]; exact size four still permits [0,1]. Arbitrary caps or
+ordinary LP do not supply novelty. These are analytical controls, not native
+reproduction, confidence intervals or biological findings. Main accepts STOP.
+No new method or expensive campaign is selected; publication goal unachieved.
+
+Local disk now reports about 15 GiB free; unchanged safety guard remains.
+Large data/compute stay on the cluster. Read-only cluster check October 8
+12:28:52 +07: account queue empty; scratch expires October 22 23:02:50,
+14 days 10 hours then remaining, one extension. Shared 49 TiB free is not a
+user quota. No jobs launched/cancelled, solver installed or raw data acquired.
+Seventeen headline/field checks pass separately (5.20s); no full-suite rerun
+or resolution of the preserved legacy smoke failure. Three distinct Luna/max
+research sidecars are now comparing family SVs, repeat native controls and
+mitochondrial deletions; main audits repeat outcome/measurement semantics.
+They are not experiment launches or selected publication leads.
+
+October 7 subsequent storage/source checkpoint: user confirmed more free space;
+new measurement **15.04 GiB**, unchanged guard satisfied. The same two targeted
+headroom checks pass again, **2 passed in 1.13s**. Earlier failures and recovery
+records remain; no full-suite rerun or resolution of the legacy smoke failure.
+Cluster remains preferred for larger data/compute.
+[Follow-up record](results/software_checks/2026-10-07/storage_followup.json).
+The [new inversion-recurrence screen](docs/research/2026-10-07-inversion-recurrence-territory.md)
+finds affirmative current native-code overlap: cross-orientation flux controls
+and classifier training already exist. No native performance rerun or new lead.
+The [centromeric worker screen](docs/research/2026-10-07-centromeric-territory.md)
+does not establish a distinct mapping failure; its possible functional question
+lacks ready unconfounded independent outcomes. The
+[ecDNA screen](docs/research/2026-10-07-ecdna-territory.md),
+[independent review](docs/research/2026-10-07-territory-independent-review.md)
+and [max-effort-requested decision](docs/research/2026-10-07-inversion-centromere-decision.md)
+are complete. The reported similar-copy S3 merge can motivate an original-input
+native-method falsifier, not a novel claim. Main's complete pinned three-file
+CycleExtractor tree/README/example-graph check does not identify S3 generating
+cycles/input provenance; gate UNRESOLVED, no GBM39 substitution or invented graph.
+No comparator execution, new acquisition or campaign approved. Current source
+and original-input limits remain explicit; no publication lead selected.
+Seventeen existing headline/field consistency tests pass separately (4.30s),
+not a full-suite rerun or scientific gain. Broad goal remains active.
+
+October 7 newest source/decision checkpoint: the [three-territory audit](docs/research/2026-10-07-fresh-territories-and-acquisition.md)
+and [high-impact decision](docs/research/2026-10-07-next-direction-decision.md)
+reject generic inserted-sequence, junction-mechanism and molecule-acquisition
+leads under current evidence. Native prior work already covers much of the
+proposed work. No publication lead selected. A reviewed native-component
+control verifies hidden rejected lengths change BOSS estimator/strategy inputs
+at identical observed evidence, not masks, decisions, time or SV performance.
+The guard is not an estimator fix or biological contribution.
+[Exact control and independent scrutiny](docs/research/2026-10-07-acquisition-direction-review.md).
+The fixed paper-only region-C consequence check then **stopped at case identity**:
+clinical prose, supplement and cited original do not establish three C
+structures. This qualifies earlier unresolved-C/>400-kb language; no fabricated
+contrast, phenotype-selected topology, replacement case or biological null.
+[Completed case check](docs/research/2026-10-07-region-c-consequence-gate.md).
+No genomic transfer, controller or expensive campaign. Three Luna/max workers
+failed at usage limit before results; main completed bounded checks directly.
+Sol6.1/high reviewer and Sol6.1/max decision follow-ups are complete. Four new
+offline control tests pass; final checkpoint validation is recorded below.
+Latest cluster check: no account jobs; scratch October 22 23:02:50 cluster-local.
+Previous stops/full charge remain. Next establish a distinct scientific
+contrast; the broad publication goal remains active and unachieved.
+
+Current storage follow-up: user cleaned space; verified **~14.2 GiB free**.
+The two disk-guard checks now pass separately (1.16s), guard unchanged.
+Their failures below are preserved. Corrected legacy smoke failure remains;
+no full-suite green claim. User still prefers cluster compute/larger files.
+Cluster account queue empty; shared free space is not a user quota/reservation,
+scratch expiry unchanged. [Recovery evidence](results/software_checks/2026-10-07/storage_recovery.json).
+
+Earlier software caveat in this checkpoint: full run **739 passed, two failed, 35 skipped**;
+both older job-supervision checks fail the intact 10-GiB headroom guard.
+Local free space is about 1.85 GiB. No historical data deleted or guard lowered;
+large local transfers paused. User chose **continue on the cluster for now**;
+compute/larger files go there after storage checks, small local tracking and
+paper work remain possible. The legacy Boolean smoke gate was inverted and corrected
+without changing its model/thresholds/seeds. Four convention regressions added;
+focused validation **25 passed**, manuscript consistency and whitespace pass.
+The separately run corrected legacy smoke check **fails** (278.08s): returned
+False, synthetic accuracy 0.667 below unchanged 0.7 criterion. Failure/stdout
+retained; no retuning or threshold change. No post-correction full rerun or
+invented aggregate count. No all-green suite or scientific improvement claim.
+[Failure evidence and gate correction](docs/research/2026-10-07-software-validation-and-headroom.md).
+
+October 7 newest direction checkpoint: main reread the full updated objective.
+The Sol6.1/max-requested decision rejects the current copy-state proposal,
+does not select the broad missing-label risk proposal, and allowed one
+analytical rare-allele kill test. That test is complete: ordinary likelihood
+distinguishes the independent two-base toy; an allowed correlated A-only
+error channel exactly mimics the mixture. No independently measured artifact
+constraint or distinct method is supplied. The Sol6.1/high-requested
+[independent review](docs/research/2026-10-07-error-twin-independent-review.md)
+accepts stopping this method lead after explicitly assuming independent reads
+with within-read base correlation. Main accepts STOP. This is not a
+biological result or universal impossibility claim. Exact outputs and a
+reproduction recipe are in the [analytical decision](docs/research/2026-10-07-error-twin-decision.md).
+The [full main-article filtering audit](docs/research/2026-10-07-filtering-prior-art-methods.md)
+is complete; supplements/code are unread and the absence of a risk guarantee
+in these main articles does not prove novelty. No new genomic reads, cluster
+jobs, acquisition, training or expensive campaign in this checkpoint. The
+broader goal remains active and unachieved: next compare genuinely distinct
+questions, not wrappers or availability searches to rescue stopped leads.
+Saved-output recalculation, 11 documentation-scope tests, manuscript consistency
+and whitespace checks pass. Scientific code is unchanged; the earlier full
+suite of 737 passed, 35 skipped was not rerun at this checkpoint.
+
+October 7 most recent real-data checkpoint: the independently approved **real metadata gate
+failed**, and the reviewer confirms closure of the fixed released-callset
+screen. Main accepts STOP: no REF scan, real caller preparation, repair,
+selective drop, rerun or scoring. The error is `SVLEN contradicts canonical
+signed allele length`; the failing identity/count were not logged. This is a
+contract failure, not proof of corrupt truth or a biological null. The prepared
+11,490 records remain provisional, with **no validated scoring denominator**.
+Raw failure log and controller summary are retained in Git; original sources,
+outputs and failed stages remain untouched. Full charge: **8,588,703,005 bytes**,
+without refund. CPU 0.66s, wall 1.27s, peak RSS 99,201,024 bytes.
+See [validation gates and stop review](docs/research/2026-10-07-validation-gates.md).
+Pinned synthetic controls passed 38 tests after a preserved memfd-binding
+failure. Small failed-source/report backups are complete outside Git.
+The resumed Luna/max caller worker completed synthetic code; real processing
+is unapproved and now stopped for this route. No training or new method was
+selected. Cluster jobs are empty; scratch expires October 22 at 23:02:50
+(cluster-local). Full local suite: **737 passed, 35 skipped**; focused validation
+**70 passed, four skipped**; manuscript consistency passed. A fresh
+competing-direction literature comparison subsequently completed; the
+[rare-allele identifiability triage](docs/research/2026-10-07-mosaic-identifiability-triage.md)
+rejects a generic low-VAF coverage study and has no accepted novelty claim.
+The Luna/max-requested [competing-opportunity comparison](docs/research/2026-10-07-competing-opportunities.md)
+is complete: copy-state identifiability faces direct ctyper overlap, and useful
+selective-risk guarantees face nonrandom missing-truth limits. Main checked
+the primary excerpts and recorded their limitations. Sol6.1/max-requested
+decision and analytical outcome are now recorded above; no acquisition is approved.
+The broader publication goal remains active and unachieved; DeepSV is excluded,
+and SSL or the old dataset need not be retained.
+
+October 7 historical preparation checkpoint (superseded above): the final, independently approved truth-preparation
+exception **completed** and passed the preparation-only result review. The full
+scan reconciles **5,497,286 source rows/map entries** with whole gzip EOF/CRC and
+source hash/snapshot verification. There are **11,490 provisionally eligible
+records**: 1,430 current-minus-Tier1 and 10,060 intersection. REF/native metadata
+validation is still required before this is a validated scoring denominator.
+No caller coverage, biological gain or publication finding has been measured.
+CPU 168.21s, wall 169.61s, peak RSS 45,101,056 bytes. Complete VCF/map and logs
+were copied off scratch outside Git; originals and failed v2 partials remain.
+Full retained charge including the separate raw-copy reservation is
+**8,519,496,989 bytes**. No independent large-output rehash is claimed.
+See the [complete inventory and review](docs/research/2026-10-07-finite-preparation-and-control-review.md).
+Local suite: **667 passed, 31 skipped**; manuscript consistency passed.
+The [fresh novelty recheck](docs/research/2026-10-07-novelty-recheck.md) identifies
+direct prior work against generic benchmark-stability, local-equivalence,
+ensemble-ranking and pre-phased genotype proposals. No new method is selected.
+The Luna/max caller-preparation worker hit a usage limit and saved no files;
+it was closed. The Sol6.1/high reviewer completed successfully. A separate
+Sol6.1/max decision review is pending on the remaining fixed diagnostic's value.
+No real REF/caller processing/sorting/scoring/refinement or training is approved.
+The publication goal remains active and unachieved; DeepSV is excluded and SSL
+is not a requirement. Next: resolve that finite decision, then only essential
+reviewed validation and the fixed development diagnostic by October 8, or stop
+this dataset route. Do not replace this deadline with more wrapper engineering.
+
+October 7 earlier checkpoint (closed v2 attempt): the [finite preparation/control review](docs/research/2026-10-07-finite-preparation-and-control-review.md)
+closed the synthetic duplicate-truth, nonempty-FN, full-row and reader-pairing
+gaps on the pinned cluster. A reference control disproved `norm -N -c e -f`
+as a REF validator. The verified alternative without `-N` rejects mismatches,
+but its transformed output must be discarded; original truth remains the
+scoring representation. Contradictory truth INFO/native size/type are rejected
+by synthetic controls. Both BEDs now require exact truth-header names/bounds
+before body classification; gzip read-ahead is separately reserved.
+Dirac approved one exact-pinned truth-eligibility preparation pass. It **failed**
+at the 64-MiB complete-record-map limit after 376,029 source rows. CPU 11.67s,
+wall 11.86s, RSS 44,625,920 bytes. Preserve all partials/logs and the full
+**6,303,083,290-byte cumulative charge**. There is no completed eligibility
+denominator, caller score or biological null. The v2 attempt is closed; no
+automatic retry or cap raise. A separate high-impact decision recommends one
+explicit metadata-only exception (1-GiB map, eight-GiB stage ceiling), but it
+still requires independent stop-policy and exact-pin approval. No new pass is
+approved or run. Failed artifacts were copied off scratch outside Git; their
+128-MiB archival reservation gives current charge **6,437,301,018 bytes**.
+The wider publication goal remains active and unachieved. No new method,
+training campaign or publication claim is selected. Final software validation:
+**666 passed, 31 skipped**, manuscript consistency and whitespace checks pass.
+
+October 7 updated-goal checkpoint: main read the full revised objective and
+relayed it to the independent reviewer. The [truth header gate](docs/research/2026-10-07-truth-header-gate.md)
+passed under its separate approval: exact HG002 sample, 24 declared contigs,
+GT/AD and non-PASS truth FILTER declarations. No truth body row was parsed.
+Keep the full one-MiB reservation: aggregate charge is **5,220,887,319 bytes**.
+The [pinned cluster synthetic controls](docs/research/2026-10-07-updated-goal-and-synthetic-controls.md)
+passed: parent/ALT identities, dot-mode GT, boundary-record preservation and
+the identical truth-ID multiset across both arms. The initial version-call
+failure is preserved. Legal truth sentinel classification is tested but has
+not run on real truth. Focused validation: **76 passed, 1 skipped**; the skip
+is the local pinned-stack integration test, which passed separately on the
+cluster. Full local suite: **657 passed, 30 skipped**; manuscript consistency
+passed. Real eligibility/reference checks, caller preparation and scoring
+remain unrun and unapproved. Next: independently reviewed finite preparation
+and the fixed cheap diagnostic. Reviewer accepts the synthetic checkpoint
+but requires duplicate truth multiplicity, a nonempty FN control, full-row
+preservation, identity-safe reader pairing and metadata consistency controls
+before scoring. No biological gain, new method or publication
+contribution is claimed. DeepSV remains excluded; SSL is not required.
+
+October 7 historical transport checkpoint (superseded above): the [distinct standard-tool route](docs/research/2026-10-07-standard-transport-decision.md)
+completed its one independently reviewed attempt. All six frozen caller files
+are available and hash-verified. The standard parser preserved records and
+boundary positions; SVIM has 41 POS=0 records. The exact earlier rejected
+position remains unknown. No coordinate, GT, header or record repair/filter
+was made. This is local pysam 0.24.1 / bundled samtools 1.24 compatibility,
+not a guarantee for the older cluster environment or a biological result.
+The attempt used 29.15 combined CPU seconds, 26.18 wall seconds and
+197,115,904-byte child peak RSS; no guard tripped. Keep full charges of
+4,124,617,258 source bytes and 5,219,838,743 aggregate bytes. All previous
+failures/partials stay preserved. Full suite: **642 passed, 29 skipped**.
+Next: known preparation controls and the fixed diagnostic by the next working
+day, after independent execution review. Truth/sort/scoring/refinement have
+not run; no publication-worthy finding is claimed. The custom stager stays
+closed. The wider goal remains active.
+
+The [independent preparation review](docs/research/2026-10-07-preparation-review.md)
+accepts source availability and identifies the exact next controls: legal
+truth boundary records must be counted ineligible, native filters must not
+change the truth denominator, caller parent/ALT identities must survive
+standard preparation, and the scientific environment/budget must be frozen.
+A capped truth-header inspection was the next proposed scope at that review;
+the separate approval and completed result are linked above. No
+matching/scoring has run or is approved by that preparation review.
+
+October 7 historical streaming checkpoint (superseded above): the [bounded streaming follow-up](docs/research/2026-10-07-streamed-callset-stage.md)
+preserves stage-03 and final stage-04 failures. Stage-04 completed DeBreak,
+Sawfish and Sniffles, and verified the earlier cuteSV file. It then stopped
+on SVIM's position check; SVPG was not opened. The rejected value is unknown.
+VCF permits telomeric positions that our validator rejects, so this failure
+does not establish malformed published data. The custom-stager route is now
+closed: no fifth attempt, cap increase, parser redesign or five-caller union.
+Keep all partials, logs and conservative charges: 4,094,310,110 source bytes
+and 4,153,131,060 aggregate bytes. Stage-04 used 78.56 CPU seconds and
+385,282,048-byte peak RSS; no guard tripped. A distinct standard transport/
+HTSlib alternative is under separate decision and review, not approved here.
+No truth preparation, sorting, normalization, scoring or refinement has run.
+The [source/control audit](docs/research/2026-10-07-released-screen-controls.md)
+and truth driver are synthetic/software evidence, not biological improvement.
+Full validation: **617 passed, 29 skipped**; manuscript consistency passed.
+The wider publication goal remains active and unachieved.
+
+October 7 updated-goal follow-up: main read the full current goal again.
+The [independent stage review](docs/research/2026-10-07-stage-review.md) records
+two bounded engineering failures and separate approvals; neither is a
+biological null or a publication result. Stage-01 stopped on VCF/header contig
+ordering. Stage-02 retained original order and completed cuteSV (51,561 source
+records, member CRC checked), then stopped on a DeBreak line above 32 MiB.
+No caller was dropped to obtain a union result. Partial files/logs remain
+outside Git; immutable protocols, reservations and small reports are in
+`results/data_audits/svpg_2026/2026-10-07/`. The two passes retain a conservative
+2,080,329,990-byte source charge. Stage-02 used 14.58 combined CPU seconds and
+about 90.5 MB child peak RSS; no resource guard tripped. There is no automatic
+third pass. Truth parsing, scientific screening and refinement remain closed
+pending a bounded alternative and exact input/control safeguards. Pure helper
+code for identities, territories and fixed bootstrap rules is synthetic-only.
+DeepSV remains excluded as a foundation; SSL is not required. No training,
+scientific gain or selected publication contribution is claimed.
+Integrated validation: 545 tests passed, 29 skipped; manuscript consistency
+and whitespace checks passed. The reviewer recommends (but has not approved
+execution of) a streamed RNAMES-removal repair for the remaining five files.
+
+October 4 updated-goal follow-up: the full objective was re-read and sent to
+the active internal subagents. The [new prior-art challenge](docs/research/2026-10-04-updated-goal-and-prior-art.md)
+checks COSIGT, SVPG and minisv against competing research questions. Native
+confidence filtering, graph augmentation and personal-normal assembly filtering
+are already close prior art; none is a new contribution by itself. Independent
+review recommends stopping open-panel confidence as the active publication
+lead under the present budget; the main agent accepts that limited stop while
+the wider goal continues. The source-feasibility check also defers Locityper
+PAFs as structural truth. The high-impact decision selected a
+[modern caller-output completeness falsifier](docs/research/2026-10-04-modern-callset-falsifier.md).
+After a strict partial-read failure, independent review approved one whole
+SVPG call-set archive transfer. Its 2,879,666,672 bytes match the publisher MD5;
+203 entries and six frozen full-HiFi caller headers are inventoried outside
+raw-data Git storage. All six declare the same 86 contigs, but exact input,
+reference-base and graph/run identity remain unresolved. The reviewer accepts
+a narrower released-callset development estimand, not a controlled same-input
+ceiling or independent replication. The exact outcome protocol remains pending;
+no biological rows, genotype/truth comparisons or training have been scored.
+A supporting synthetic script-contract probe passes 15 tests; the full suite
+passes 483 with 29 skipped. This is software/source evidence, not biological gain.
+A fresh cluster queue is empty;
+scratch still expires October 22, with one extension available. The goal
+remains active; no publication-worthy result is claimed.
+
+October 4 follow-up: the [Locityper schema gate](docs/research/2026-10-04-locityper-schema-gate.md)
+verified the small archive and two joint native-control headers. An initial
+format failure was resolved through the publisher's pinned source and a
+separately reviewed, single-comment amendment. No outcome rows were parsed.
+All five required native channels are declared together, but the available
+sequence-distance summaries do not establish confidence-qualified structural
+panel-absence labels. This archive alone is not ready for the proposed SV
+experiment. No detector, outcome test or larger acquisition is approved;
+broader research triage continues. The bounded stage consumed at most 67.7 MB
+of decompressed output, 1.87 CPU seconds and about 17 MB peak RSS. The 36
+reader tests pass; the final full suite passed 468 tests with 29 skipped.
+This is availability evidence, not a biological gain.
+Source checkpoint `4cd90b9` is pushed to the existing
+[PR #2](https://github.com/aayushkrm/AlignSSL-SV/pull/2); review remains required.
+
+October 1 updated-goal follow-up: the [open-panel preflight](docs/research/2026-10-01-open-panel-preflight.md)
+compares candidate recall, phase-aware genotyping and structural panel
+inadequacy without committing to an architecture. The decision agent and
+independent reviewer approved only one 14.7-MB Locityper benchmark archive's
+inventory/schema stage. Native quality, unexplained reads, weighted distance
+and warnings are required controls, not a GQ-only strawman. The released
+benchmarks declare v0.17.3, distinct from the paper's v0.18.0. The phase-endpoint
+finding remains software evidence, not the biological research lead. No
+outcome scoring, training campaign or larger acquisition is approved by this
+stage; no publication-worthy result is claimed.
+
+October 1 follow-up: [confidence contracts](docs/research/2026-10-01-confidence-contracts.md)
+now distinguish Sniffles/kanpig likelihood-gap GQ from the pinned SVUPP fork's
+posterior-derived GQ; inherited PL headers are not populated-field evidence.
+A bounded synthetic endpoint fixture exposes a haplotype-label symmetry
+violation when zero phase probability is treated as missing (GT `0/1` to `0/0`,
+GQ 14 to 3 after label swap). Fourteen targeted tests pass; source Git blobs and raw
+synthetic output are pinned. This is not biological accuracy, a deployed repair
+or a publication-worthy result. Actual endpoint occurrence and assessment
+execution revision need checking before a separately reviewed biological test.
+No new genomic data or GPU campaign was started. New changes use a branch/PR
+instead of bypassing the repository's required-review rule.
+Independent Sol6.1/high-requested review accepted the synthetic scope and its
+normalization, not a biological claim; two requested test improvements were
+implemented. Full suite after the producer bridge's additional test: 432
+passed, 29 skipped; manuscript consistency and report checksum checks passed.
+The pinned QUILT2 2.0.3 output route omits likelihood-ratio capping; a constructed
+six-SNP BQ30 emission calculation rounds phase confidence to one without
+underflow. That strengthens endpoint reachability, not real frequency or
+biological impact. Independent review accepted conditional source-formula
+reachability and caught the current wrapper's 2.0.4 container version. The two
+load-bearing QUILT source files are byte/blob-identical at tags 2.0.3 and 2.0.4;
+container/run identity and real endpoint frequency are still unverified.
+Published as [PR #2](https://github.com/aayushkrm/AlignSSL-SV/pull/2), source
+checkpoint `8fe78755ea3b6bb8d4dbc911daff9090864c9b84`. The branch push and
+remote SHA match were verified; the PR is open and requires one approving
+review. No main-protection bypass or merge was attempted. A fresh cluster
+queue check found no jobs for this account; restart scratch expires October 22
+at 23:02:50 cluster-local, with one extension available.
 
 The prior negative result remains the authoritative published-project outcome;
 no new performance gain is claimed. The 2026-09-23 objective revision opens a

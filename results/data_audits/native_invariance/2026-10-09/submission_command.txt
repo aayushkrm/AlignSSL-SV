@@ -1,0 +1,4 @@
+set -euo pipefail
+set -C
+printf 'native-cigar-invariance-20261009-01 5fb12fce0d6a5a43a170827af88405214af59c98f99718a14733dc1503c3cfad\n' > /scratch/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-01/submission.claim
+sbatch --parsable --partition=amd_256M --ntasks=1 --cpus-per-task=1 --mem=4096M --time=00:09:00 --job-name=alignssl-native-cigar01 --output=/scratch/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-01/slurm.stdout.log --error=/scratch/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-01/slurm.stderr.log /scratch/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-01/run_outer.sh 5fb12fce0d6a5a43a170827af88405214af59c98f99718a14733dc1503c3cfad

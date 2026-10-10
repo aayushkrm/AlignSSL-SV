@@ -1,0 +1,14 @@
+{"python": "3.10.20", "pysam": "0.24.0", "htslib": "1.23.1", "pytest": "8.4.2"}
+control_bytes 25894309
+code/analysis/native_cigar_fixture.py: OK
+code/analysis/observe_native_fixture.py: OK
+code/analysis/check_native_fixture_settings.py: OK
+code/analysis/run_native_cigar_fixture.py: OK
+code/tests/test_native_cigar_fixture.py: OK
+code/tests/test_observe_native_fixture.py: OK
+code/tests/test_native_cigar_launcher.py: OK
+code/tests/test_native_fixture_settings.py: OK
+code/tests/test_native_fixture_artifact_integrity.py: OK
+run_outer.sh: OK
+run_payload.sh: OK
+protocol.md: OK

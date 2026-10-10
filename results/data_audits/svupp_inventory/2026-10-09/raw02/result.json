@@ -1,0 +1,10 @@
+{
+  "asset_sha256": "b15665743d28151bf2e9f656ae32dc8de9a3d6a5582c8033dbf251fec71daa2c",
+  "campaign_approval": false,
+  "experiment": "svupp-inventory-20261009-02",
+  "member_bodies_decoded": false,
+  "member_count": 26,
+  "outcomes_not_read": true,
+  "publication_result": false,
+  "status": "COMPLETE_METADATA_INVENTORY"
+}

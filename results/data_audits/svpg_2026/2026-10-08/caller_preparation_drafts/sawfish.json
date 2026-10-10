@@ -1,0 +1,59 @@
+{
+  "caller_preparation_approved": false,
+  "independent_approval_ref": "pending",
+  "purpose": "released_caller_preparation_v1",
+  "caller": "sawfish",
+  "source_basename": "sawfish.vcf",
+  "source_sha256": "fd35b27c44e2506491ce0d5706908349ef534a6fe43e87a48ae4efa201e00f9c",
+  "source_bytes": 25716015,
+  "expected_sample_label": "HG002",
+  "expected_source_records": 43944,
+  "max_source_bytes": 25716015,
+  "max_line_bytes": 25716015,
+  "max_children": null,
+  "output_caps": {
+    "annotated": null,
+    "split": null,
+    "derived": null,
+    "sorted": null,
+    "released": null,
+    "released_index": null,
+    "native": null,
+    "native_bgzf": null,
+    "native_index": null,
+    "sort_temp": null
+  },
+  "storage_cap_bytes": null,
+  "input_read_cap_bytes": null,
+  "opaque_io_reservation_bytes": null,
+  "charged_prior_global_bytes": null,
+  "preparation_reservation_bytes": null,
+  "runtime": {
+    "truvari": "5.4.0",
+    "pysam": "0.24.0",
+    "bcftools": "1.23.1",
+    "htslib": "1.23.1",
+    "python": "3.10.20"
+  },
+  "_draft": {
+    "status": "prospective_only_not_executable",
+    "execution_authorized": false,
+    "source_path_hint_unverified": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-stage-04/sawfish.vcf",
+    "source_presence_verified": false,
+    "source_pin_basis": "standard_transport_report.compatibility.sawfish.verified_sha256 and compatibility_bytes_read; not re-read here",
+    "source_metadata_protocol_sha256": "6c39249b38d990304251f19b16f14c5a632b123443f38d4426990542a2a0a472",
+    "source_pass_reservation_floor_bytes": 77148048,
+    "max_line_bytes_basis": "min(recorded source_bytes, schema maximum 128 MiB); not an observed maximum line",
+    "unresolved_fields": [
+      "max_children",
+      "output_caps",
+      "storage_cap_bytes",
+      "opaque_io_reservation_bytes",
+      "input_read_cap_bytes",
+      "charged_prior_global_bytes within the six-caller sequence",
+      "preparation_reservation_bytes"
+    ],
+    "prospective_global_start_after_ref_bytes": 16208704797,
+    "global_limit_bytes": 68719476736
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "experiment_id": "caller-projection-diagnosis-20261009-01",
+  "status": "CANDIDATE_UNBOOKED_UNEXECUTED_REQUIRES_EXACT_REVIEW",
+  "purpose": "Read-only source-to-annotated-to-split field localization; no preparation replay or scoring",
+  "cluster_root": "/scratch/igorno-alignssl_restart_20260922/caller-projection-diagnosis-20261009-01",
+  "scientific_input_root": "/scratch/igorno-alignssl_restart_20260922/released-caller-preparation-20261008-throughput01",
+  "inputs": {
+    "inputs/cutesv.vcf": {"bytes": 29410475, "sha256": "9603595adebb54e656513c3ffba416e0d2173763030abef20f804e1c877209c1"},
+    "prepared/cutesv/annotated.vcf": {"bytes": 31780495, "sha256": null},
+    "prepared/cutesv/split.vcf": {"bytes": 31780495, "sha256": null}
+  },
+  "partial_hashes_are_new_observations_not_historical_authentication": true,
+  "input_transfer_or_copy": false,
+  "preparation_norm_sort_index_scoring_or_genomic_output": false,
+  "expected_complete_biallelic_source_population": 51561,
+  "required_sample_label": "NULL",
+  "runtime": {"python": "3.10.20", "pysam": "0.24.0", "truvari": "5.4.0", "bcftools": "1.23.1", "htslib": "1.23.1"},
+  "pins": {
+    "analysis/diagnose_caller_projection.py": "e713507e30950995d9ba07c1a309ebef110afcff1bf63e86d07f7e703bf09d7b",
+    "analysis/prepare_released_callers.py": "f975699c57ec61ac4ab9062ad417623218b867213dbde127937b7b183e1c95d3",
+    "tests/test_diagnose_caller_projection.py": "8b0bee747372148e8ed4e6730607b64b75d41bf106d2ad93b5a9bc99b4ff272d",
+    "tests/test_caller_projection_serialization_diagnostic.py": "19ba5ef2dfb5ba995c6992dace202d504602a97cd00d970cf2d81b33b006e989",
+    "run_outer.sh": "b061d63230fd59465389723c2101084aaeba93f92435a52ff8d089e83a845ecc",
+    "run_diagnosis.sh": "99bdbc6e994da7c7ddfa4140bed426c435bd9e73e054e9ad34c867adedba83e2"
+  },
+  "launch": {"submission_slots": 1, "controls_slots": 1, "diagnosis_slots": 1, "required_controls_passed": 18, "required_controls_skipped": 0, "first_failure_stops": true, "no_retry": true, "durable_exclusive_claims": true, "exclusive_submission_claim_before_sbatch": "submission.claimed", "exact_submission_command_ref": "docs/research/2026-10-09-projection-diagnosis-protocol.md final submission command", "unknown_acknowledgement_consumes_claim": true},
+  "limits": {"controls_CPU_seconds": 30, "controls_wall_seconds": 60, "diagnosis_CPU_seconds": 120, "diagnosis_wall_seconds": 180, "inner_kill_grace_seconds": 5, "outer_group_KILL_wall_seconds": 300, "wrapper_own_soft_CPU_seconds": 30, "wrapper_inherited_hard_CPU_seconds": 180, "address_space_KiB": 4194304, "file_size_KiB_Bash_unset_POSIXLY_CORRECT": 128},
+  "slurm": {"cpus": 1, "memory_MiB": 4096, "partition": "amd_256M", "wall_minutes": 10, "gpu": false},
+  "account": {"whole_reservation_bytes": 335544320, "source_and_partials_three_named_passes_including_probes_bytes": 278914404, "opaque_allowance_bytes": 33554432, "metadata_controls_collection_allowance_bytes": 16777216, "unused_margin_within_reservation_bytes": 6298268, "prior_retained_charge_bytes": 39899763595, "prospective_retained_charge_bytes": 40235307915, "ceiling_bytes": 68719476736, "no_refund": true, "named_CPU_reservation_seconds": 240, "prior_measured_named_CPU_seconds": 543.442707, "prospective_CPU_with_reservation_seconds": 783.442707, "named_CPU_ceiling_seconds": 7200, "future_screen_24GiB_UNBOOKED_bytes": 25769803776, "remaining_after_future_margin_bytes": 2714365045, "not_physical_or_opaque_IO_measurements": true},
+  "collection_success_failure_abnormal": {"regular_nonsymlink_stat_before_all_content_hash_copy": true, "report_cap_bytes": 65536, "each_log_timer_scheduler_stream_cap_bytes": 16384, "state_cap_bytes": 4096, "selected_total_cap_bytes": 262144, "max_content_sized_passes": 6, "oversize_unknown_artifacts": "Preserve remotely without read/hash/fetch/truncate; record omission metadata", "complete_safe_content_inspection_before_Git": true},
+  "independent_exact_approval_required_before_booking_staging_launch": true,
+  "scratch_expiry": "2026-10-22T23:02:50+07:00"
+}

@@ -1,0 +1,20 @@
+{
+  "status": "independently_approved_before_single_execution",
+  "approval_role_requested": "GPT-6.1 Sol/high",
+  "backend_configuration_attested": false,
+  "approval_record": "docs/research/2026-10-08-metadata-diagnosis-review.md",
+  "protocol_sha256": "b1f619bccc1d6728048da6165a5c872d0f4d6e38c2b4b5fd43dd42134acdf0d4",
+  "script_sha256": "2fb977a24b4d027ee4508f2f45eb07d11866cc4dd8101ab340cf95983de1f523",
+  "helper_sha256": "4c1cf4fc3d98f4cc3e0f136c15d27095730aa1725b951ea607b4684f4ed93e93",
+  "launcher_sha256": "655a802390c88426c60da15d3821878294d9f33d3cda3889e098b6af33a56113",
+  "remote_pins_and_fresh_report_paths_verified": true,
+  "new_reservation_booked_bytes": 34603008,
+  "full_retained_read_charge_bytes": 8623306013,
+  "source_passes_authorized": 2,
+  "execution_root": "/scratch/igorno-alignssl_restart_20260922/svpg_metadata_census_20261008_02",
+  "maximum_named_experiment_cpu_with_reserved_run_seconds": 481.532707,
+  "no_refund": true,
+  "v1_withheld_unexecuted": true,
+  "no_automatic_retry": true,
+  "native_reference_scoring_authorized": false
+}

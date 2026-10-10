@@ -1,0 +1,31 @@
+{
+  "run_step": {
+    "name": "joint-call",
+    "version": "2.2.1"
+  },
+  "merge_stats": {
+    "multi_region": {
+      "sv_groups_merged_as_duplicates": 0,
+      "sv_haplotypes_merged_as_duplicates": 0,
+      "sv_candidates_merged_as_duplicates": 0,
+      "sv_groups_after_merge": 0,
+      "sv_haplotypes_after_merge": 0,
+      "sv_candidates_after_merge": 0
+    },
+    "single_region": {
+      "sv_groups_merged_as_duplicates": 0,
+      "sv_haplotypes_merged_as_duplicates": 0,
+      "sv_candidates_merged_as_duplicates": 0,
+      "sv_groups_after_merge": 0,
+      "sv_haplotypes_after_merge": 0,
+      "sv_candidates_after_merge": 0
+    }
+  },
+  "score_stats": {
+    "sv_replicate_haplotype_filter": 0,
+    "sv_gt_exclusion_filter": 0,
+    "vcf_output_record_count": 0,
+    "vcf_duplicate_record_count": 0,
+    "total_scoring_time_secs": 0.0
+  }
+}

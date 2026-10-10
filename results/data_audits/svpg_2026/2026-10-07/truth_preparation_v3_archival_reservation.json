@@ -1,0 +1,18 @@
+{
+  "purpose": "raw_copy_of_completed_truth_preparation_outside_git_not_genomic_parsing",
+  "prior_global_charge_bytes": 7519496989,
+  "reservation_bytes": 1000000000,
+  "full_conservative_charge_bytes": 8519496989,
+  "no_refund": true,
+  "source_directory": "/scratch/igorno-alignssl_restart_20260922/svpg_truth_prepare_20261007_02/",
+  "destination_directory": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-truth-preparation-02/",
+  "files": ["eligible_truth.vcf", "truth_record_map.jsonl", "truth_preparation_inventory.json", "command_run.log"],
+  "known_vcf_and_map_bytes": 997601103,
+  "inventory_bytes": 2784,
+  "remaining_log_allowance_bytes": 2396113,
+  "local_available_bytes_preflight": 12360974336,
+  "local_free_headroom_bytes": 10737418240,
+  "available_space_is_not_quota_proof": true,
+  "large_file_rehash_not_included": true,
+  "further_reads_require_separate_reservation": true
+}

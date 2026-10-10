@@ -1,0 +1,12 @@
+[E::idx_find_and_load] Could not retrieve index file for '/scratch/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/tmp/observe-native-fixture-6zw2powt/input.bcf'
+[E::idx_find_and_load] Could not retrieve index file for '/scratch/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/tmp/observe-native-fixture-3n_k9svn/input.vcf.gz'
+Traceback (most recent call last):
+  File "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/code/analysis/run_native_cigar_fixture.py", line 250, in <module>
+    main()
+  File "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/code/analysis/run_native_cigar_fixture.py", line 236, in main
+    run(args.root)
+  File "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/code/analysis/run_native_cigar_fixture.py", line 222, in run
+    validate_outcome(name, report)
+  File "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/code/analysis/run_native_cigar_fixture.py", line 164, in validate_outcome
+    raise ValueError("canonical exact PASS heterozygous control failed")
+ValueError: canonical exact PASS heterozygous control failed

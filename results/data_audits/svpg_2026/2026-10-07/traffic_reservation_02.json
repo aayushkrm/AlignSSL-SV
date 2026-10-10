@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "reserved_before_amended_stage_body_reads",
+  "max_global_decoded_traffic_bytes": 6442450944,
+  "max_source_decoded_traffic_bytes": 2147483648,
+  "prior_attempt_and_header_charge_bytes": 1043310723,
+  "prior_attempt_bytes_delivered": 9593544,
+  "full_amended_stage_reservation_bytes": 1037019267,
+  "reserved_cumulative_source_bytes": 2080329990,
+  "actual_amended_stage_bytes_decoded": null,
+  "scientific_matching_reserved": false,
+  "automatic_retry_permitted": false,
+  "amendment": "Preserve every source record and report ordering; later sorted views require separate frozen action and multiplicity checks."
+}

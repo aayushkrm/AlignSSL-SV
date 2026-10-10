@@ -36,16 +36,17 @@ def _strip_exempt(text: str) -> str:
 
 
 MS = (ROOT / "docs" / "AlignSSL_SV_manuscript.md").read_text()
-README = (ROOT / "README.md").read_text()
+README = (ROOT / "docs" / "archive" / "README-legacy-ssl.md").read_text()
 PROGRESS_RAW = (ROOT / "PROGRESS.md").read_text()
 PROGRESS = _strip_exempt(PROGRESS_RAW)
-DOCS = {"manuscript": MS, "README": README, "PROGRESS": PROGRESS}
+DOCS = {"manuscript": MS, "archived README": README, "PROGRESS": PROGRESS}
 
 
 def test_exemption_marker_is_confined_to_the_progress_log():
     """Only the append-only log may quote forbidden phrasings."""
     for name, path in (("manuscript", "docs/AlignSSL_SV_manuscript.md"),
-                       ("README", "README.md")):
+                       ("root README", "README.md"),
+                       ("archived README", "docs/archive/README-legacy-ssl.md")):
         text = (ROOT / path).read_text()
         assert EXEMPT_OPEN not in text, (
             f"{name} uses the quoted-history exemption; it is for PROGRESS.md only"

@@ -1,0 +1,15 @@
+{
+  "schema_version": 2,
+  "status": "RESERVED_NOT_EXECUTED_REVIEW_REQUIRED",
+  "prior_source_decoded_charge_bytes": 2080329990,
+  "source_pass_reservation_bytes": 1006990060,
+  "source_cumulative_reserved_bytes": 3087320050,
+  "source_cap_bytes": 3221225472,
+  "reuse_verification_reservation_bytes": 29410475,
+  "global_prior_charge_bytes": 2080329990,
+  "global_cumulative_reserved_bytes": 3116730525,
+  "global_cap_bytes": 6442450944,
+  "global_unreserved_bytes": 3325720419,
+  "failure_policy": "Keep full source and reuse reservations even if incomplete; preserve partials and logs; no automatic retry",
+  "science_policy": "No truth, sorting, matching, scientific screen or refinement reserved/approved here"
+}
