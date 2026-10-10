@@ -32,6 +32,12 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- RoutineS0 expandedreferences1604286 complete0:0,12,807,281,629payloadB,
+  wholecompressedSHA/EOFCRCpass,home1604287all5SHA match. Sourcefileswhole,
+  noisoformcrop ornewdownload. [Protocol/result](2026-10-10-hg002-reference-expansion.md).
+  LiveS1b1604284 remainsonejob, latest10:30prefix1,213,000recordsnotglobalcensus.
+  Luna/max-requestedpublishedcallingrecipe32linenotecomplete: pbsvidentity
+  notestablished, noS2release; nativealignersetupsidecarinpreparation.
 - ActualS1b1604284 RUNNING, n1/amd_256M1CPU16GiB5h, acceptedfrozen02command.
   Maintained replacement clearsbothHOLDs with50+41independent syntheticcases;
   matchingLinux50controlsgatepasses. MaximumS1total26080s fits28800s.

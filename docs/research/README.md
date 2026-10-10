@@ -8,6 +8,8 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-10-hg002-reference-expansion.md`](2026-10-10-hg002-reference-expansion.md) | Routine whole matched-reference preparation and custody |5 full sources pass SHA/CRC, expanded12.807GB within S0, home5SHA match; no donor annotation or P1 |
+| [`2026-10-10-hg002-published-calling-recipe.md`](2026-10-10-hg002-published-calling-recipe.md) | Luna/max-requested bounded primary-methods check | Published pbsv/HiPhase claims separated from artifact header; exact caller version/filters/VCF identity unknown, no S2 release |
 | [`2026-10-10-hg002-intake-result.md`](2026-10-10-hg002-intake-result.md) | Actual bounded DNA/reference intake and verified raw custody | DNA/ref complete, journals reconcile, all7homeSHA match; acquisition only, not complete-read/calling/P1 result |
 | [`2026-10-10-hg002-read-extraction.md`](2026-10-10-hg002-read-extraction.md) | Complete original-read reconciliation implementation | Two reproduced HOLDs fixed/independently cleared;50Linux controls pass,1604284 running exact bounded packet; no complete-read/calling/P1 result |
 | [`2026-10-10-gencode-reference-staging.md`](2026-10-10-gencode-reference-staging.md) | Routine released S0 matched reference preparation |39 deployed controls pass;1604257 completed with all5MD5s passing and verified home custody, see actual intake result; no annotation claim |

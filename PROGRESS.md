@@ -11,6 +11,19 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+Routine [reference expansion](docs/research/2026-10-10-hg002-reference-expansion.md)
+1604286 COMPLETED0:0,34allocatedCPU seconds/31.615measuredCPU; seven Linux
+controls pass first. All five compressed SHA/gzip CRC checks pass. Whole
+expanded payload12,807,281,629B, under its reserved-copy S0 cap; both large
+comprehensive annotation files stay intact. Home custody1604287 rehashes
+all five and matches. No new reference body, donor annotation or P1 result.
+S1b1604284 remains RUNNING: latest retained10:30 prefix1,213,000pass1records,
+pass1 incomplete; no global original-read count. Parallel Luna/max-requested
+[calling provenance note](docs/research/2026-10-10-hg002-published-calling-recipe.md)
+records published pbsv/HiPhase claims but unknown exact caller recipe/VCF;
+future one-pbsv reproduction is not published-callset identity. Native aligner
+build preparation is separate; S2–S4/RNA remain unreleased.
+
 Actual [full-source read extraction](docs/research/2026-10-10-hg002-read-extraction.md)
 1604284 RUNNING on n1/amd_256M,1CPU/16GiB/5h after maintained independent
 review clears both reproduced HOLDs with50existing+41additional synthetic

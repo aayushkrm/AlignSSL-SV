@@ -43,3 +43,30 @@ Seven local synthetic controls pass,0skips,0.17s: full five-object decode,
 exclusive output, source drift/missing file, truncated gzip CRC, low space,
 payload cap and deferred cancellation. Actual Linux qualification/decode
 remain pending in this preparation snapshot. No study BAM or RNA read here.
+
+## Actual decode
+
+Immutable source/test hashes match in1604285, all7 Linux controls pass,
+zero skips,0.09s. Actual decode1604286 completes0:0,1CPU/4GiB,
+34allocatedCPU seconds/31.615 measuredCPU seconds/19784K MaxRSS.
+Its32.866s process wall is distinct from scheduler allocation. All five
+compressed source SHA256s and whole-gzip EOF/CRCs pass. Expanded payload
+12,807,281,629B, under cap12,868,124,672B by60,843,043B. The annotations
+are large: GFF3 is4,767,708,901B and GTF4,688,772,094B. Do not estimate
+future indexing cost from the compressed sizes or restrict isoforms to fit.
+The [unchanged expansion manifest](../../results/hg002_reference_expand_20261010/manifest.json)
+records all expanded hashes/sizes. This is format/custody preparation only.
+
+The finite named S0 inventory totals3,603,477,828 apparent bytes before
+expansion, including both compressed copies/wheelhouses, both LiftOn venvs,
+the intake venv, Sniffles venv and bundles. This is scoped, not an exhaustive
+project or pip-cache census. The8GiB planning reserve retains other small
+artifacts/build headroom. Two expanded payload copies plus that reserve are
+34,204,497,850B, leaving155,240,518B below32GiB; observed physical use is
+not claimed by this reservation arithmetic. No reference body was redownloaded.
+
+New expanded files/manifests copied once to matching non-expiring home leaf.
+Separate read-only compute custody1604287 rehashes all five home payloads:
+all match the expansion manifest. Home manifest SHA256 is
+81d058277595b952fe4a69df9a25d69d131c24f7c10b5e9a44dcb82bbaa55c05.
+No sole needed copy remains on expiring scratch. Live S1b continues independently.
