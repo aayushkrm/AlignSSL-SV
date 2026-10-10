@@ -11,6 +11,15 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+Corrected [S1b packet](docs/research/2026-10-10-hg002-read-extraction.md)
+remains UNBOOKED. Replacement independent review HOLDs two reproducible
+reverse-missing-QUAL/final-deadline defects. Main adds presence guards and
+late final-accounting checks;50local controls pass,0.81s. Frozen02 Linux
+1604282 verifies both hashes and passes50,4.32s,0skips. Original01's41-test
+pass is preserved but did not clear the defects. Full local selection146
+tests+9subtests passes,1.85s. Independent finite correction recheck pending;
+do not infer biological completeness or launch from these synthetic passes.
+
 October10 [actual HG002 intake](docs/research/2026-10-10-hg002-intake-result.md)
 COMPLETED: DNA1604251 exits0,48,748,908,838B fresh/48,749,105,446B cumulative;
 references1604257 exits0,1,152,186,383B with all five published MD5s passing.

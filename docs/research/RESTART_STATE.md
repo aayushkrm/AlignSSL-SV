@@ -32,6 +32,13 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- CorrectedS1b frozen02 matches source40679be.../tests81bebb...,50Linux
+  controls pass through1604282,4.32s. Maintained replacement review HOLDs
+  reverse missing-QUAL and late final-deadline defects; main corrections
+  and9regressions pass, finite independent recheck pending. S1bUNBOOKED.
+  Prospective1CPU/16GiB/5h with17940s script deadline fits20720s remainder;
+  exact home source/new scratch output and summed disk packet are recorded
+  in [extraction note](2026-10-10-hg002-read-extraction.md). No real census yet.
 - October10 [completed intake](2026-10-10-hg002-intake-result.md): DNA1604251
   and references1604257 COMPLETED0:0, full journals reconcile; reference MD5s
   pass. All7homecustodySHA pass through1604280; metadata/journals match both

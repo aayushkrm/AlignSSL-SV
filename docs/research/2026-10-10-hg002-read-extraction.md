@@ -132,3 +132,46 @@ controls cover restoration/order/disagreement and final accounting expiry/
 cancellation. Updated50 tests pass0.81s; independent recheck pending.
 Linux01 control1604281 passed41 in3.55s but does not clear these defects.
 That bundle stays preserved and has never processed the study BAM.
+
+## Concrete corrected execution packet — UNBOOKED
+
+Immutable corrected bundle:
+`/beegfs/datasets/home/igorno/alignssl_restart_20260922/bundles/hg002_read_extract_20261010_02`.
+Source SHA40679be522fbf2dd582a6826d72cfc02b9d77443f60095dcabb5a9d4efec681a;
+test SHA81bebb128622925bb677cde26e12bfdd2f2b833f4e0622d994b06ce635159aee.
+Use isolated intake-check CPython3.12.1 with pysam0.24.1, installed offline
+from the preserved LiftOn wheelhouse; pip check passes. This is an added
+isolated dependency, not a shared-environment or prior native run change.
+
+One CPU/16GiB/5h direct srun, hydra-n1/amd_256M, no GPU/whole node. From
+that bundle, `python -B -m scripts.extract_hg002_source_reads`:
+
+```text
+--bam /beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam
+--output /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_read_extract_20261010_01
+--input-sha256 b7edeb4bbc2589039c6148a912857f26924ca8fd5971cd3141337d0ce24bbde4
+--remaining-s1-cpu-seconds 17940
+--preexisting-s1-disk-bytes 48818418098
+```
+
+No existing output at preflight. Script deadline is one minute below the
+18000s allocation. Current S1allocated8080s leaves20720s; a full5h leaves2720s.
+Charge actual scheduler cost, not process-wall estimates. Routine mock/runtime
+controls stay in S0. Both DNA raw directories have apparent48756094788B:
+raw-other excluding the source BAM48784863666B. Add32MiB reserve for small
+prior/control/final artifacts to declare48818418098B; this margin is not an
+observed file total. Source plus external packet97,545,744,008B leaves
+74,252,947,832B for extraction/index/remaining overhead below160GiB.
+Future gzip custody copies must still fit this account; no extra free budget.
+Keep these external bytes fixed and preserve both raw copies during S1b.
+Outputs go only to scratch; back up new results with hashes afterward.
+
+This packet does not release actual execution until the maintained reviewer
+clears both reproduced HOLDs and the corrected frozen Linux controls pass.
+No second library, crop, read subset, retry, calling, assembly, P1 or RNA.
+Current combined local selection146tests+9subtests passes; see actual test
+output for timing:1.85s, zero skips. These synthetic controls are not a study readset result.
+
+Corrected frozen Linux02 job1604282 verifies both matching hashes and passes
+all50 tests, zero skips,4.32s. This is mock-only qualification, not a real BAM
+census or clearance of the independent HOLD. Initial01 remains preserved.
