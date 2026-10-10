@@ -70,3 +70,7 @@ Separate read-only compute custody1604287 rehashes all five home payloads:
 all match the expansion manifest. Home manifest SHA256 is
 81d058277595b952fe4a69df9a25d69d131c24f7c10b5e9a44dcb82bbaa55c05.
 No sole needed copy remains on expiring scratch. Live S1b continues independently.
+Custody job completes0:0,15allocatedCPU seconds/12.518measuredCPU seconds;
+its memory report is24K MaxRSS. This small read-only hash command does not
+qualify native annotation. Combined local selected suite153tests+9subtests
+passes, zero skips,2.01s; infrastructure controls, not biological outcomes.
