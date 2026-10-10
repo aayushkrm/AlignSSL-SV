@@ -96,3 +96,10 @@ uses existing `.venv` and the actual two README test files; no fixture changed.
 
 Goal remains active and unmet. Next: run 03 once, retain partial artifacts on
 failure, then interpret complete evidence only. No whole-BAM fallback.
+
+## Replacement 03: completed once
+
+Job1604237 completed, exit0:0. Acquisition, both native calls and census all
+exited0; complete result, resources, limitations and custody are in the
+[result note](2026-10-10-parent-sva-result.md). This supersedes the prospective
+03 next step above. No additional replay or scientific parameter change.

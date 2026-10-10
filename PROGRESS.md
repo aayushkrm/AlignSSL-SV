@@ -11,6 +11,19 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October 10 [completed empirical diagnostic](docs/research/2026-10-10-parent-sva-result.md):
+job1604237 exited0. Native germline emitted0records; native mosaic emitted one
+PASS compatible3459bp insertion with actualGT0/0. Fixed census has6compatible,
+97reference-compatible and18inadequate-flank names; five of six native support
+names overlap the six census insertions. No exact controlled-child identity,
+population estimate or new failure. Retire this known case as a new-method
+premise: expected native policy already exposes the signal. Full raw backed
+to home; all28small plus4large artifact hashes verified. Cumulative upstream
+body charge90,836,888B; SlurmCPU4.228s/27selapsed for03. Actual independent
+audit pending: reviewer handle missing; two Luna sidecars returned usage-limit
+errors and produced no deliverables. No expensive HG002 campaign approved.
+RNA untouched; full publication goal remains active and unmet.
+
 October 10 superseding [execution record](docs/research/2026-10-10-parent-sva-execution.md):
 direct job1604236 ran once but samtools could not create its remote-index cache
 in the bundle working directory. No caller or census; partial BAM is unqualified.

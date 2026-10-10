@@ -32,6 +32,14 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October 10 actual [parental result](2026-10-10-parent-sva-result.md):1604237
+  COMPLETED0:0, germline0records/mosaic1PASS compatible INS3459 withGT0/0;
+  fixed census6alt97ref18unresolved, five support-name intersections. Known
+  case new-method premise retired; no novel failure/exactchild/populationclaim.
+  Rawhomebackupdone and28small/4large hashes match; cumulative90,836,888B.
+  Actual independent review unavailable (handle missing); two Luna sidecars
+  failed serviceusagegate/nooutputs. No largecampaign accepted; nextHG002
+  DNA-only operational work remains, RNAuntouched. Fullgoal active/unmet.
 - October 10 direct1604236 reached source but remote-index cache creation
   failed; no caller/census. Full raw retained, cumulative39,225,292B including
   prefix. Narrow03 subprocess working-directory correction and prior-account

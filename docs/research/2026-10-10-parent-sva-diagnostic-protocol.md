@@ -1,9 +1,10 @@
 # One-parent SVA native diagnostic
 
-Status: selected by the completed Sol6.1/max-requested decision; implementation
-in progress. Not yet launched. This is one cheap diagnostic, not a campaign.
-The independent reviewer is checking the decision and the much larger future
-HG002 paired proposal in parallel. No major scientific positive is accepted.
+Status: selected by the completed Sol6.1/max-requested decision and prospective
+independent review. [Job1604237 completed](2026-10-10-parent-sva-result.md) after
+two execution failures preserved separately. Native mosaic visibility retires
+this case's new-method premise. This is one cheap diagnostic, not a campaign.
+No major scientific positive is accepted; actual independent audit pending.
 
 ## Frozen inputs and question
 

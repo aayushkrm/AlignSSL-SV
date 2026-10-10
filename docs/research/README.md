@@ -8,8 +8,9 @@ results.
 
 | Document | Role | Current status |
 |---|---|---|
-| [`2026-10-10-parent-sva-execution.md`](2026-10-10-parent-sva-execution.md) | Actual cluster execution and failure custody | 01 pre-task failure; 02 index-cache failure, cumulative39,225,292B retained; narrow03 cwd correction carries prior charge, no caller result |
-| [`2026-10-10-parent-sva-diagnostic-protocol.md`](2026-10-10-parent-sva-diagnostic-protocol.md) | Prospective one-parent native comparison and independent CIGAR census | Frozen distinctions; corrected acquisition and controls pass; first launch failed pre-Python, replacement prepared |
+| [`2026-10-10-parent-sva-result.md`](2026-10-10-parent-sva-result.md) | Complete empirical native-policy diagnostic and raw custody | Native mosaic already emits compatible signal; known-case method premise retired, no novel failure; actual independent audit pending |
+| [`2026-10-10-parent-sva-execution.md`](2026-10-10-parent-sva-execution.md) | Actual cluster execution and failure custody | Intact01 pre-task and02 index-cache failures; unchanged03 correction completed once, see actual result |
+| [`2026-10-10-parent-sva-diagnostic-protocol.md`](2026-10-10-parent-sva-diagnostic-protocol.md) | Frozen one-parent native comparison and independent CIGAR census | Executed03 with no scientific parameter changes; read complete result and prior failure history |
 | [`2026-10-10-public-paired-falsifier-review.md`](2026-10-10-public-paired-falsifier-review.md) | Completed maintained independent scientific review | Conditional acceptance of cheap SVA diagnostic and HG002 scientific eligibility; executable P1/endpoint/RNA/null conditions, no600CPU-hour campaign or publication approval |
 | [`2026-10-09-public-paired-falsifier-decision.md`](2026-10-09-public-paired-falsifier-decision.md) | Completed Sol6.1/max-requested scientific selection | One parental native-policy diagnostic first; frozen HG002 DNA-first unknown-residual pilot eligible, not a selected method/paper or expensive launch |
 | [`2026-10-10-sniffles-sva-native-input-check.md`](2026-10-10-sniffles-sva-native-input-check.md) | Completed Luna/max-requested pinned native-policy and regional-input check | Five source files; constant default support floor, intended germline/mosaic differences, no empirical result or novel failure |
