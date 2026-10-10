@@ -77,3 +77,7 @@ check. This books at most65allocatedCPUmin within S0, not an additional free
 allowance. It is concurrent with, not a replacement for, S1a1604251.
 No complete reference object, successful checksum or native run is yet
 claimed by this launch record.
+
+Later:1604257 completes0:0 with all five MD5s passing; complete journal and
+home custody are checked. See [actual intake result](2026-10-10-hg002-intake-result.md).
+Earlier preparation/live entries remain historical snapshots, not current status.

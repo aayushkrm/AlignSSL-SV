@@ -337,3 +337,102 @@ staging/extraction, runtime and genomic observations remain main-reported.
 Only this review section was appended; no install, job, genomic read, staging,
 extractor edit, Git commit or P1 execution occurred. These finite parser and
 claim corrections do not reopen the released S0/S1 account.
+
+## S1b extraction code gate: independent synthetic findings
+
+2026-10-10. Replacement maintained reviewer, requested Sol6.1/high;
+backend identity and effort are not independently attested. Main owns code,
+execution and tracking. **HOLD the current S1b launch for two finite code
+corrections. S0/S1 release and completed acquisition remain accepted.**
+S1b is UNBOOKED; S2–S4 and RNA remain unreleased.
+
+FULL-read the governing objective, 78-line investment note, all prior
+339 review lines, 390-line extractor, 250-line tests, updated 124-line
+extraction note and the current intake-result note. Reviewed source SHA256:
+`c510de9d56ac6242c0e1ad5b52bb1b2850329eae12f8f0e255499b6d58e6512f`;
+tests SHA256:
+`47b6edb7a16314449234a98ba87ee9cbdd2fb62f024ca135e547061804dd90b8`.
+Independently ran the existing suite in the existing project venv:
+`python -m pytest -q -p no:cacheprovider tests/test_extract_hg002_source_reads.py`:
+41 passed in 0.64s. Additional controls used only disposable synthetic BAMs,
+temporary SQLite files and mocks in that same pysam 0.24.1 runtime.
+
+1. **Recoverable reverse records are incorrectly marked malformed.**
+At extractor lines 72–73, pysam 0.24.1 `get_forward_qualities()` raises
+`TypeError: 'NoneType' object is not subscriptable` when FLAG16 is set and
+QUAL is absent. `observe()` catches it and sets the identity's permanent
+`bad=1`, so a later valid complete record cannot restore the molecule.
+Three independent BAM controls reproduce INCOMPLETE, malformed_ids=1,
+resolved_ids=0: reverse full SEQ with missing QUAL; reverse hard-clipped
+SEQ with missing QUAL; and reverse missing SEQ/QUAL. Each has a matching
+complete record of the same QNAME. Five additional asymmetric hard/soft
+clip variants reproduce the same fault. This is a parser/runtime defect,
+not evidence that the source molecule is unrecoverable. Check raw payload
+presence before forward-orientation calls; preserve absent values and all
+available constraints. Add reverse missing-payload restoration controls,
+including fragment disagreement, with both record orders. Do not remove
+these records or weaken conflict checks.
+
+2. **Final accounting can exceed the deadline and still publish READY.**
+The timer/handlers are disabled/restored at lines 336–339. The last deadline
+test occurs before final commit, census and tag/UNKNOWN queries. A separate
+deterministic control advances the mocked monotonic clock by 61s in the final
+database commit, under a 60s allowance. The returned and saved manifest says
+READY_FOR_DNA_INPUT_REVIEW, wall_seconds=61.0 and complete_census=true.
+This is a false success for the declared deadline, although sequence checks
+passed. Keep deferred cancellation/deadline control through final accounting
+and check again after that work, before the success record is finalized.
+Retain INCOMPLETE evidence on failure and test expiry/cancellation during
+final accounting. Slurm remains the hard allocation boundary; it does not
+repair the code's incorrect readiness state.
+
+The forward full/fragment reconciliation is otherwise acceptable for the
+stated source-extraction scope. Independent controls confirm reverse IUPAC
+orientation; retention of solely secondary/supplementary full records;
+rejection of disjoint fragments without a full record; missing-quality
+fragment sequence disagreement; missing-sequence length disagreement;
+malformed duplicates; and source mutation between passes. Fifteen further
+valid asymmetric hard/soft clipping cases preserve forward offsets and
+reject changed fragment bases. No base stitching or metadata filtering was
+observed. Completeness means all identities observed in a fully decoded
+source BAM; it cannot prove that identities absent from that BAM existed
+in the original library. Archive count differences require explanation.
+
+Publication-boundary controls deliver SIGTERM and SIGALRM immediately after
+`os.link`, and inject a subsequent checkpoint commit failure. All three
+produce INCOMPLETE while the completed gzip filename remains present and
+the partial filename is absent. No false READY occurred in those controls.
+The updated extraction note now states this limitation explicitly. Accept
+that manifest-first contract for this scope: a filename alone cannot authorize
+use. A valid READY manifest and matching gzip hash are required. This
+documented filename behavior is not an additional launch HOLD.
+
+Disk observations remain sampled, not continuous. The supplied external
+account must include BAI, other raw/custody copies and retained S1 artifacts;
+keep it fixed during execution. SQLite's page cap bounds its database, but
+checkpoint peaks do not attest every transient write or external temp file.
+Use declared headroom and the scheduler's RAM/wall limits; no whole-source
+performance or peak-fit claim is accepted from these small controls.
+
+Latest custody facts are main-reported and corroborated by its result note,
+not independently rehashed here: 1604280 COMPLETED0:0, 44 allocated seconds,
+40.273 measured CPU seconds, all seven home SHA256s match. Conservative S1
+allocated total is 8,080s, leaving 20,720s. The proposed 1CPU/16GiB/5h Slurm
+envelope fits that remainder; 17,940s is its proposed script deadline, not
+an execution measurement. A full 18,000s allocation would leave 2,720s.
+The reported raw-other account is 48,784,863,666B excluding the source BAM.
+Adding the explicit 32MiB reserve gives 48,818,418,098B; the reserve is not an
+observed file total. With source BAM 48,727,325,910B, this declares
+97,545,744,008B before new output and leaves 74,252,947,832B below 160GiB
+for index, gzip and remaining overhead. It is not a compression prediction.
+
+Main can clear this exact HOLD with the two corrections, matching updated
+hashes and independent synthetic controls, then qualify the frozen Linux
+bundle and concrete final command/resource packet. No new scientific gate,
+second representation, reference/BAI/phase qualification or biological result
+is inferred. Only this review section was appended; temporary synthetic
+files were cleaned. No study BAM read, network, install, cluster connection,
+job or Git mutation occurred. One initial read-only Git status was run in
+error despite the requested no-Git scope; no later Git command was used.
+Pre-append review SHA256:
+`bd86c4e0b58f2dab16db318037573f4d30226deaccdeea75015e93d231d18fac`.

@@ -103,3 +103,7 @@ are sequential live observations, not an atomic size/account comparison.
 The full transfer and BAI have not completed. No final hash, integrity,
 complete-read count, eligibility denominator or positive/negative is claimed.
 Keep the live journal and partial raw on failure; no automatic replacement.
+
+Later:1604251 completes0:0, full body journal reconciles and both whole
+objects have verified home custody. See [actual intake result](2026-10-10-hg002-intake-result.md).
+Acquisition does not attest full read/index/alignment/phase readiness.

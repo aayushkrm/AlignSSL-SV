@@ -11,6 +11,21 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+October10 [actual HG002 intake](docs/research/2026-10-10-hg002-intake-result.md)
+COMPLETED: DNA1604251 exits0,48,748,908,838B fresh/48,749,105,446B cumulative;
+references1604257 exits0,1,152,186,383B with all five published MD5s passing.
+Main reconciles complete journals, not live partials. All seven raw objects
+copied to non-expiring home;1604280 rehashes home and all SHA256s match.
+Initial/final manifests and journals match scratch/home. S1 actual allocated
+cost8080s including conservative whole custody check, remaining20720s of8h.
+Read/BAI/reference readiness remains NOT_ASSESSED; no calling/assembly/P1/RNA.
+[S1b implementation](docs/research/2026-10-10-hg002-read-extraction.md) has
+41 local synthetic controls after main's summed-disk/quality corrections;
+combined137tests plus9subtests pass,0skips,1.67s. Old worker/reviewer usage-limit
+failures retained; replacement independent reviewer Gibbs requested. S1b
+UNBOOKED pending independent concrete acceptance and deployed controls.
+No scientific positive/negative or publication contribution from acquisition.
+
 October 10 [matched GENCODE50 staging](docs/research/2026-10-10-gencode-reference-staging.md)
 is prepared under the released S0 account. Frozen five-object bundle uses a
 separate2GiB reference ledger and published MD5s; deployed hashes match and

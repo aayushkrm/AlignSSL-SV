@@ -32,6 +32,15 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October10 [completed intake](2026-10-10-hg002-intake-result.md): DNA1604251
+  and references1604257 COMPLETED0:0, full journals reconcile; reference MD5s
+  pass. All7homecustodySHA pass through1604280; metadata/journals match both
+  locations. S1allocated8080s, remaining20720s before S1b. No need to monitor
+  or duplicate either transfer. S1b code41syntheticcontrols+fullselection137
+  plus9subtests pass, but independent concrete code acceptance/deployed controls
+  pending; old reviewer/worker erroredquota, replacementGibbsrequested.
+  S1bUNBOOKED; full sequence/BAI/phase/reference readiness NOT_ASSESSED.
+  S2–S4/RNA unreleased, fullpublicationgoalunmet.
 - October10 [S0 reference preparation](2026-10-10-gencode-reference-staging.md):
   five pinned GENCODE50 products, separate2GiB ledger,39 deployed controls
   pass.1604254/55 both completed;55 recovers terminal evidence, not acquisition.
