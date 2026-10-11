@@ -4,6 +4,22 @@ Date: 2026-10-12. Main's separate source check; not a selected study.
 
 ## Current position
 
+Later primary-source finding: the October9 [Swap-seq preprint](https://www.biorxiv.org/content/10.64898/2026.10.08.756856v1.full.pdf)
+already benchmarks actual edited alleles with AlphaGenome, Borzoi and Enformer.
+Main stops the **generic regulatory-deletion effect benchmark** as a proposed
+new contribution. The source-table reproduction below is retained as a completed
+bounded check, not a paper lead. A distinct structural/context question would
+need evidence beyond this new prior art and Xu's earlier engineered MYC study.
+
+Latest finite source check: [actual result and complete small audit](../../results/sven_source_table_audit_20261012/README.md)
+reproduces the reported absolute-expression correlation. The two plotting
+sheets have no identifiers or reference predictions; the proposed effect-
+specific contrast is not identifiable from them. This does not demonstrate
+model failure. Independent [premise review](2026-10-12-opportunity-screen-independent-review.md)
+accepts one cheap discriminating check, defers study selection, and corrects
+the scouts' overly strict clinical-outcome requirement. Review of the exact
+actual table result and the intervention-data worker remain pending here.
+
 Keep the HG002 annotation-exclusion study stopped. Its accepted DNA and software
 are reusable inputs, not a reason to continue that study. Two completed scouts
 found no supported clinical lead in [breakpoint uncertainty](2026-10-12-breakpoint-uncertainty-opportunity.md)
@@ -25,6 +41,7 @@ sequence-to-function expression models is already strong prior art.
 | [AlphaGenome, published 2026-01-28](https://www.nature.com/articles/s41586-025-10014-0) | Main benchmark sections, discussion, and availability read. Actual eQTL magnitude and sign evaluation and CRISPRi enhancer-link tests are present. Personal-genome evaluation is explicitly left open. Detailed protocols are in the supplement, not the short main Methods. | It would be false to say all modern evaluations score only absolute expression. No supplementary training/leakage audit completed here. CRISPRi is not a DNA deletion assay. |
 | [Tu et al., posted 2026-02-03, preprint](https://www.biorxiv.org/content/10.64898/2026.02.01.702969v1.full) | Main results and Online Methods read, including splits and personal-sequence construction. Across-individual expression is weak relative to a cohort-trained cis-genotype model; accessibility performs much better. The construction excludes SVs, symbolic alleles, and copy-number variants. | Generic personal-expression failure, pooled-versus-within-gene metrics, and supervised readout rescue are not new. The explicit SV exclusion leaves a task boundary, not proof of novelty or data readiness. The trained cohort baseline has more supervision than zero-shot models. |
 | [SVEN author repository](https://github.com/gao-lab/SVEN) | README and full recursive tree metadata checked at tree `29ac42b49ac13d2e1d09fe71f86f3aa92a44fdc0`. | Full and fast modes differ; authors require full mode to reproduce the paper. No installation or model download. Figure-level controls should precede hundreds of GB of model resources. |
+| [Swap-seq, posted 2026-10-09, preprint](https://www.biorxiv.org/content/10.64898/2026.10.08.756856v1.full.pdf) | Relevant full-PDF Results, actual-edit definition, model scoring, discussion and availability read. Direct RNA FlowFISH effects and reference–alternate predictions are compared. | A generic exact-deletion effect benchmark or distal expression-model failure is already present. Preserve the preprint's limits; this is not independently replicated here. |
 
 ## Cheapest discriminating check
 
@@ -62,8 +79,9 @@ a pre-proved failure before a cheap test; require a meaningful answer either way
 
 - Discovery window calculated before searching: 2026-10-12 minus 12 calendar
   months = 2025-10-12. Older strong controls allowed.
-- Exa: four scientific queries requested 10, 10, 10, and 8 results; a fifth
-  source-location query requested 5. Total 43 slots, not 43 unique papers read.
+- Exa: four initial scientific queries requested 10, 10, 10, and 8 results;
+  a fifth source-location query requested 5; a sixth exact-DNA-edit screen
+  requested 10. Total 53 slots, not 53 unique papers read.
   Many results repeat AlphaGenome or concern SNPs and CRISPRi. No field-wide
   absence claim. Full load-bearing SVEN sections and Tu main/Online Methods
   were read; AlphaGenome main benchmark sections were read, not its supplement.
@@ -82,3 +100,88 @@ a pre-proved failure before a cheap test; require a meaningful answer either way
   and orchestrator/reviewer settings are requested, not independently attested.
 - No jobs, model acquisition, installs, historical-result edits, or billing
   changes. Full publication goal remains active and unmet.
+
+## Later access recovery and completed source-table check
+
+The source-location attempt initially used PMID39738006, an unrelated antibody
+paper; it was excluded. A DOI-based Europe PMC API lookup established the
+correct PMID39738063 / PMC11685779. Its fullTextXML lists the embedded source
+ZIP size and MD5. Europe PMC supplementaryFiles supplied a 14.14MB wrapper;
+the 10.11MB Source Data member matches that listed MD5. This working alternative
+supersedes the earlier access limit above, without erasing either failed attempt.
+
+The read-only, capped script and six synthetic rank/cap controls use bundled
+Python/openpyxl, preserve every numeric pair, and alter no author workbook.
+First draft SciPy import failed before analysis; standard-library average-tie
+ranks resolved it with no install. Actual rho0.9208479244746964 for Figure3a
+rounds to0.921; FigureS4 rho0.8410704403295711. Each sheet contains94,366 pairs
+and exactly two columns. No gene-balanced, reference-only, or causal contrast
+can be constructed from those columns. Do not download the full model merely
+to produce a comparison lacking measured counterfactual truth. Small audit,
+reproduction command, original-source hashes and failure transcription are
+tracked; original14MB archive stays outside Git. No new study is selected.
+
+## Fresh prior art changes the proposed contribution
+
+A distinct exact-deletion-screen query recovered Swap-seq and a 2025 paired
+prime-editing study. The latter reports a genome-wide fitness screen, not
+matched endogenous RNA changes; its reporter assay primarily measures editing
+efficiency. It is not silently substituted as an expression truth set.
+[Weller et al., posted 2025-11-04](https://www.biorxiv.org/content/10.1101/2025.11.03.686307v1.full).
+Only its abstract, initial Results and data/code section were read here.
+
+Swap-seq, posted2026-10-09, is directly load-bearing. It designs208 edits,
+measures117, and benchmarks48 significant edits across18 elements at one
+PPIF locus in THP-1 cells. The allele replaces50–250bp with a71bp barcode
+cassette: it is not a pure deletion. Its scoring explicitly includes that
+actual cassette and maps alternate outputs back to reference coordinates.
+AlphaGenome uses1Mb context; Borzoi and Enformer use their own windows, with
+two distal elements outside Enformer's window excluded. The published positive
+subset shows strong proximal prediction and poor distal prediction. These
+findings are authors' reported results, not our reproduced model runs.
+
+Relevant model choices, actual-edit sequence, subset selection, biological
+versus barcode/technical replication, and missing edits would matter for any
+reuse. Nonsignificant edits are not proven zero effects. Expanding the subset
+from48 to117 at one locus alone is not established as a new contribution.
+The paper lists GEO GSE348496, GSE347552 and
+[EngreitzLab/Swap-seq](https://github.com/EngreitzLab/Swap-seq); body/table access
+and complete coordinate/replicate joins are not verified by that listing.
+
+The first HTML fetch returned only abstract/front matter, so it was not treated
+as full methods. Initial PDF extraction reached its110,000-character cap;
+expanded extraction returned149,396characters through the reference end.
+Main read the load-bearing benchmark, edit-definition, model-scoring,
+discussion and availability sections, not every wet-lab protocol or supplement.
+Exa's January1 timestamp is wrong for both preprints; their actual posting
+dates were read from primary text. This additional evidence prevents an
+unsupported generic novelty claim before any model download or inference.
+The retained independent reviewer was informed. Its extension and the Xu
+worker's finite crosswalk are pending; no global field closure follows.
+
+## Completed integration
+
+The maintained review extension now accepts the **scoped reported** table
+reproduction and independently accepts STOP for the generic deletion-effect
+contribution after reading relevant Swap-seq primary sections. It read code,
+tests and audit.json and independently ran synthetic controls; it did not
+independently reopen the real workbook or recompute its correlations. Original
+review text and its earlier six-test checkpoint remain intact. Main's later
+expanded eight controls pass. Do not promote that acceptance to causal accuracy.
+
+The [Xu intervention-data worker](2026-10-12-regulatory-sv-intervention-data.md)
+completed its finite metadata check. It identifies37 clone RNA accessions,
+two parental RNA records and15 partner regions, but does not make a verified
+clone–exact-junction–numeric-expression join. A large104.5GB series archive is
+not acquired merely because its metadata exists. No distinct runnable
+translocation contrast beyond published work was defined by this check.
+Measured post-edit contact ABC has extra information; it is an oracle-style
+control, not a fair sequence-only baseline. A future question would need matched
+permitted-input controls, including predicted-contact approaches where relevant.
+These source limits do not establish that exact alleles are absent everywhere.
+
+Main accepts non-selection of these bounded candidates and the review's
+clinical-gate correction. No study, model acquisition or inference job follows
+from this pass. No positive/model-failure result or field-wide closure is
+claimed. The publication objective remains active and unmet; fresh meaningful
+directions may still be pursued, without reopening the stopped HG002 premise.

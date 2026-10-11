@@ -40,6 +40,18 @@ completed or closed entries supersede them.
   engineered-SV outcome feasibility and maintained independent review remain
   active. No model acquisition, inference campaign or native HG002 job from
   this comparison. No general requirement that scientific utility be clinical.
+  Later completed [SVEN source-table reproduction](../../results/sven_source_table_audit_20261012/README.md)
+  matches reported correlation; two-column source lacks IDs/ref predictions,
+  not causal evidence. New October9 Swap-seq primary preprint already tests
+  actual edits with strongest sequence models, so generic deletion-effect
+  benchmark is stopped before inference. Eight synthetic audit controls pass.
+  Maintained review extension and Xu crosswalk remain active; no selected study.
+  Later both complete: review ACCEPTS scoped reported source reproduction and
+  generic deletion-effect STOP; original workbook not independently reread.
+  Xu metadata fails to complete exact allele/numeric-outcome join and defines
+  no runnable distinct residual; no large archive acquired. Main accepts those
+  bounded non-selections, not global absence or a clinical-only value rule.
+  Final local selection93tests+53subtests pass5.17s; no biological/native claim.
 
 - October12 main accepts the [scientific STOP/PIVOT](2026-10-11-hg002-calling-release-decision.md)
   before S2. The HG002 exclusion rule lacks a consequential external claim;

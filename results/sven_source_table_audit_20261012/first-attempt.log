@@ -1,0 +1,7 @@
+Transcription of the first tool output, before scientific table analysis.
+Traceback (most recent call last):
+  File "/Users/akm/aayushkrm-AlignSSL/repo/analysis/sven_source_table_audit.py", line 18, in <module>
+    from scipy.stats import spearmanr
+ModuleNotFoundError: No module named 'scipy'
+
+Exit code: 1. No output result file was created by this attempt.

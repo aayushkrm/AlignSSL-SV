@@ -31,6 +31,43 @@ is launched. Useful-resource parallelism applies once a meaningful cheap
 test is identified; no idle whole-node reservation. The HG002 scientific
 stop below remains in force. Full publication goal is active and unmet.
 
+Completed [SVEN source-table audit](results/sven_source_table_audit_20261012/README.md):
+archive alternative succeeds after publisher access failure; embedded ZIP
+size/MD5 match article metadata. All94,366 pairs in each of two selected sheets
+are numeric; reproduced absolute-expression correlations0.9208479244746964
+and0.8410704403295711. The two-column sheets contain no IDs or reference
+predictions, so the causal/ref-only/gene-balanced contrast is not identifiable
+there. Eight synthetic controls pass after two added source-contract checks;
+first missing-SciPy import failure is
+retained, standard-library tie ranks replace the dependency. No source workbook
+changed or committed. This is reproduction, not model failure or novelty.
+
+Fresh primary Swap-seq preprint postedOctober9 already tests real edited alleles
+and measured RNA effects with AlphaGenome/Borzoi/Enformer; it includes barcode
+insertions and coordinate realignment. Main stops a generic new deletion-effect
+benchmark or generic distal-model-failure contribution. Do not confuse one-locus
+reuse with a new research result. Independent premise review accepts a cheap
+source check, defers selection, and rejects a universal clinical-outcome gate.
+Its extension and the specific Xu crosswalk remain active. Own cluster queue
+empty at21:45UTC; no obsolete job to cancel.
+
+Later integration completes both sidecars. Maintained review accepts only the
+reported figure reproduction (no independent original-workbook recomputation),
+and independently accepts generic-benchmark STOP after actual Swap-seq Methods.
+The Xu scout finds37 clone/two parental RNA accessions but no verified exact
+edited-allele/numeric-outcome join or distinct runnable residual. No104.5GB
+archive acquired. Post-edit contact ABC is an extra-information control, not
+an equal-input DNA-only performance target. Main accepts non-selection, not
+field-wide absence; publication goal is active and unmet. No active experiment.
+
+Final local selection passes93tests+53subtests in5.17s (readme, reference inventory,
+caller comparator, CDS cohort, new source audit). The rank/schema tests need
+no optional workbook dependency; actual workbook extraction uses bundled
+openpyxl. A repo-relative venv runner path first failed before test collection;
+the documented absolute project venv ran the selection. No install, model run
+or native qualification is inferred. Research changes stay on the research
+branch; no new main promotion or protection-rule bypass is performed.
+
 ### Current scientific investment stop — 2026-10-12
 
 Main accepts the [max-effort decision](docs/research/2026-10-11-hg002-calling-release-decision.md)

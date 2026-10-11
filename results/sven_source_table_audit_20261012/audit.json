@@ -1,0 +1,204 @@
+{
+  "schema": 1,
+  "scope": "READ_ONLY_PUBLISHED_FIGURE_REPRODUCTION",
+  "source_doi": "10.1038/s41467-024-55392-7",
+  "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11685779/supplementaryFiles",
+  "outer_archive_bytes": 14139308,
+  "outer_archive_sha256": "4dea345e3bb3f6c16cc893d52e6f295b3cfdde993c712d1d56e8ef76a8d2e902",
+  "source_member": "41467_2024_55392_MOESM10_ESM.zip",
+  "source_member_bytes": 10105269,
+  "source_member_md5": "94d0a1d10a542bcef0071baa050ebfad",
+  "source_member_sha256": "8ed8b5ff791d3ba5b0ecdb4d06b8690d65a75359c559677794aba7e82f62aeac",
+  "publisher_source_md5_match": true,
+  "workbook_member": "Source Data/Source Data.xlsx",
+  "workbook_bytes": 9972334,
+  "workbook_sha256": "102d510aed55318b206d1dde5359084fa89b1e70e636e9da682f6783ad44ec42",
+  "source_members": [
+    {
+      "name": "Source Data/Figure 1b/acc_heart_exper.bw",
+      "bytes": 38806
+    },
+    {
+      "name": "Source Data/Figure 1b/acc_heart_pred.bw",
+      "bytes": 39225
+    },
+    {
+      "name": "Source Data/Figure 1b/acc_testis_exper.bw",
+      "bytes": 38773
+    },
+    {
+      "name": "Source Data/Figure 1b/acc_testis_pred.bw",
+      "bytes": 39225
+    },
+    {
+      "name": "Source Data/Figure 1b/his_H3K27ac_heart_exper.bw",
+      "bytes": 38300
+    },
+    {
+      "name": "Source Data/Figure 1b/his_H3K27ac_heart_pred.bw",
+      "bytes": 39152
+    },
+    {
+      "name": "Source Data/Figure 1b/his_H3K4me3_heart_exper.bw",
+      "bytes": 38706
+    },
+    {
+      "name": "Source Data/Figure 1b/his_H3K4me3_heart_pred.bw",
+      "bytes": 39066
+    },
+    {
+      "name": "Source Data/Figure 3d/CTCF_alt.bw",
+      "bytes": 39118
+    },
+    {
+      "name": "Source Data/Figure 3d/CTCF_diff.bw",
+      "bytes": 38736
+    },
+    {
+      "name": "Source Data/Figure 3d/CTCF_ref.bw",
+      "bytes": 39129
+    },
+    {
+      "name": "Source Data/Figure 3d/folh1.gtf",
+      "bytes": 157030
+    },
+    {
+      "name": "Source Data/Figure 3d/h3k27ac_alt.bw",
+      "bytes": 39211
+    },
+    {
+      "name": "Source Data/Figure 3d/h3k27ac_diff.bw",
+      "bytes": 38535
+    },
+    {
+      "name": "Source Data/Figure 3d/h3k27ac_ref.bw",
+      "bytes": 39197
+    },
+    {
+      "name": "Source Data/Figure 3d/h3k4me3_alt.bw",
+      "bytes": 39177
+    },
+    {
+      "name": "Source Data/Figure 3d/h3k4me3_diff.bw",
+      "bytes": 38468
+    },
+    {
+      "name": "Source Data/Figure 3d/h3k4me3_ref.bw",
+      "bytes": 39154
+    },
+    {
+      "name": "Source Data/Figure 3d/sv.bed",
+      "bytes": 24
+    },
+    {
+      "name": "Source Data/Source Data.xlsx",
+      "bytes": 9972334
+    }
+  ],
+  "workbook_inventory": [
+    {
+      "sheet": "Figure 2a",
+      "declared_rows": 219,
+      "declared_columns": 4
+    },
+    {
+      "sheet": "Figure 2b",
+      "declared_rows": 989,
+      "declared_columns": 12
+    },
+    {
+      "sheet": "Figure 3a",
+      "declared_rows": 94367,
+      "declared_columns": 2
+    },
+    {
+      "sheet": "Figure 3bc and S6",
+      "declared_rows": 6,
+      "declared_columns": 7
+    },
+    {
+      "sheet": "Figure 3e",
+      "declared_rows": 13,
+      "declared_columns": 2
+    },
+    {
+      "sheet": "Figure 3f",
+      "declared_rows": 4,
+      "declared_columns": 13
+    },
+    {
+      "sheet": "Figure 4abdef",
+      "declared_rows": 368,
+      "declared_columns": 38
+    },
+    {
+      "sheet": "Figure 4c",
+      "declared_rows": 366,
+      "declared_columns": 4
+    },
+    {
+      "sheet": "Figure S2",
+      "declared_rows": 4517,
+      "declared_columns": 4
+    },
+    {
+      "sheet": "Figure s3c",
+      "declared_rows": 3,
+      "declared_columns": 6
+    },
+    {
+      "sheet": "Figure S4",
+      "declared_rows": 94367,
+      "declared_columns": 2
+    },
+    {
+      "sheet": "Figure S7a",
+      "declared_rows": 159019,
+      "declared_columns": 2
+    },
+    {
+      "sheet": "Figure S7bcd",
+      "declared_rows": 18621,
+      "declared_columns": 3
+    }
+  ],
+  "absolute_expression_benchmarks": [
+    {
+      "sheet": "Figure 3a",
+      "range": "A1:B94367",
+      "headers": [
+        "True value",
+        "Predicted Value"
+      ],
+      "data_rows": 94366,
+      "spearman_absolute_log10_expression": 0.9208479244746964,
+      "complete_numeric_rows": 94366,
+      "missing_rows_dropped": 0,
+      "gene_or_sample_identifiers_present": false,
+      "matched_reference_predictions_present": false,
+      "causal_effect_accuracy": "NOT_IDENTIFIABLE_FROM_THIS_SHEET"
+    },
+    {
+      "sheet": "Figure S4",
+      "range": "A1:B94367",
+      "headers": [
+        "True value",
+        "Predicted Value"
+      ],
+      "data_rows": 94366,
+      "spearman_absolute_log10_expression": 0.8410704403295711,
+      "complete_numeric_rows": 94366,
+      "missing_rows_dropped": 0,
+      "gene_or_sample_identifiers_present": false,
+      "matched_reference_predictions_present": false,
+      "causal_effect_accuracy": "NOT_IDENTIFIABLE_FROM_THIS_SHEET"
+    }
+  ],
+  "claims_not_supported": [
+    "Measured SV-induced expression effect accuracy",
+    "Gene-balanced performance without a verified identifier crosswalk",
+    "Reference-only baseline comparison without reference predictions",
+    "Independent-allele sample size from unlabelled plotting rows",
+    "A model failure, new method, or publication contribution"
+  ]
+}
