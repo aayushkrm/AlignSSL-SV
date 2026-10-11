@@ -1,0 +1,7 @@
+./cleanup-receipt.txt: OK
+./disk-contract.txt: OK
+./execution.txt: OK
+./exit-status.txt: OK
+./inventory.before.tsv: OK
+./prerequisite-slurm.txt: OK
+./stat.current.txt: OK

@@ -1,0 +1,9 @@
+execution.txt
+exit-status.txt
+gzip-crc.txt
+metadata-sha256sums.txt
+raw-pair-hash-check.txt
+readset-hash-check.txt
+sqlite-check.json
+stat.after.txt
+stat.before.txt

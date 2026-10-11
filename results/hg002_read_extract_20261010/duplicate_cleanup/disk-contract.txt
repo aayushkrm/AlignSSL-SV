@@ -1,0 +1,4 @@
+named_before_bytes=140142627432
+projected_after_cleanup_and_full_copy_bytes=135119473292
+cap_bytes=171798691840
+other_small_material_reserve_bytes=1073741824

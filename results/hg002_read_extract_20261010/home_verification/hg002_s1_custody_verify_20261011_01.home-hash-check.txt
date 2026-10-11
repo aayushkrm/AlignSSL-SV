@@ -1,0 +1,9 @@
+./execution.txt: OK
+./exit-status.txt: OK
+./gzip-crc.txt: OK
+./metadata-sha256sums.txt: OK
+./raw-pair-hash-check.txt: OK
+./readset-hash-check.txt: OK
+./sqlite-check.json: OK
+./stat.after.txt: OK
+./stat.before.txt: OK

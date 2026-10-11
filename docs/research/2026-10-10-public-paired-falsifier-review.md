@@ -1006,3 +1006,111 @@ Only this review subsection was appended. No jobs, network, raw genomic body
 reads, unlink, source changes or Git commands occurred. Historical926-line
 review prefix SHA256:
 `fe790158dfe6fe6db4a28cb3b948fb4b3ba19795fdbd7e852c31ac3da14f324f`.
+
+## Actual S1 usable-input acceptance after complete HOME verification
+
+2026-10-11. Maintained independent reviewer, requested Sol6.1/high;
+backend/effort not independently attested. **ACCEPT the complete extracted
+HG002 source readset as usable DNA read input within S1.** The earlier
+terminal-QA and verified-HOME-custody conditions are now satisfied by the
+retained native evidence. No remaining concrete S1 readiness HOLD was found.
+This closes extraction/input custody only. S2–S4/RNA remain unreleased;
+the exact caller/reference/phase recipe still needs its separate release.
+
+FULL-read all local native small receipts and README context in
+results/hg002_read_extract_20261010/{custody_qa,duplicate_cleanup,home_verification},
+the unchanged readiness.json and current main result note. FULL-read the
+HOME verifier and reread the QA/cleanup scripts. Code/execution hashes match:
+QA dc6bc3daa1c68f726610cc752518609634eee14537ca3332a3303fe7befabbd0;
+cleanup523e7caf6a4426b86f60ec66f107837217f1956c83dac444d611fa6254c1c1e8;
+HOME verifier48473e8a71da32da15c699db041bc5b40b92cf624a083c41cde39b2041d9763e.
+The previously FULL-read and independently tested extractor remains pinned
+at40679be522fbf2dd582a6826d72cfc02b9d77443f60095dcabb5a9d4efec681a.
+HOME verifier bash syntax passes. No genomic body was read locally and no
+native hash/CRC/database job was repeated by this reviewer.
+
+| Completed evidence | Independent finite check of retained receipts |
+|---|---|
+|1604300 QA | Four exact HOME/scratch BAM/BAI paths OK; gzip SHA OK; whole EOF/CRC PASS; SQLite quick_check ok and census exact |
+|1604303 cleanup | Only the accepted scratch BAM is named; fresh nine-file stat receipt equals both QA stat receipts byte-for-byte |
+|1604304 HOME verification | Exact five-file readset names; every source/HOME hash check OK; accepted source hash list equals freshly computed source list |
+| Both complete evidence packets | Nine QA and seven cleanup names/hashes match HOME; all16 local native receipts independently rehashed against the retained source lists |
+| Mutation checks | All three HOME-verification before/after stat pairs byte-identical; all five scratch readset tuples also equal their prior QA tuples |
+
+The SQLite result is(5359077,5359077,80344827828,0,0,0) for total/emitted
+rows, emitted bases and conflict/bad/constraint_bad sums. It agrees with the
+READY full-source manifest: both EOF passes5,710,994 records;5,359,077
+original/resolved/emitted QNAME identities;80,344,827,828 bases; no unknown,
+conflicting, malformed or constraint-mismatched identities. The prior finite
+extraction accounting acceptance stands, including578 unmapped records and
+351,917 supplementary duplicate-full records. No prefix extrapolation or
+new restoration claim is made.
+
+| Complete readset file | Accepted SHA256, unchanged from scratch to HOME |
+|---|---|
+| identities.sqlite | `42dcd54a2aeb59951fbea8bed4e92aa8d5661bdfb0aabaef3610eb795ab519ae` |
+| manifest.initial.json | `12ed8f3f373f80efee99a3f0b5c3d4d62f88eb5367019848df5acbd0c9c9e0dc` |
+| readiness.json | `4355f3b3d5392c41f0ca92da94e389a66907bf6297d8d3fa13f2996ccf641acc` |
+| source_reads.fastq.gz | `fd9fd85d7dfadca083cd101aad00932e16d23d8b5d90db4ddec7523abaabae88` |
+| stats.jsonl | `fa7a7ae213df6cccd6f6b92f7c550fe68452390c0369510c473352c895b347da` |
+
+The four small readset hashes join exactly to1604300 metadata-sha256sums;
+the gzip hash joins to the extraction manifest and pinned QA code. Local
+readiness.json independently has the same accepted SHA. Native exact-name
+lists and hash checks cover all5+9+7 files of the three copied packets,
+including their native late exit-status receipts. Locally added README files
+are explanatory context, not part of those native inventories. The16 small
+native QA/cleanup receipt hashes all match their local copies; this replaces
+the earlier main-only report for those receipt contents, without claiming
+an independent remote filesystem inspection.
+
+Accepted permanent readset leaf:
+`/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_read_extract_20261010_01`.
+Its whole gzip EOF/CRC and SQLite integrity/census are **inherited from
+1604300 through byte-identical SHA256**, not newly run on HOME. The HOME
+verifier computes each source payload hash once, checks each HOME copy and
+compares that computed list with the known accepted values; it does not add
+a third huge known-hash pass. Stat checks cover the actual flat native file
+sets. Stable timestamps/inodes and hashes are custody evidence, not a lock
+or a guarantee against later mutation; keep accepted inputs unchanged.
+
+Cleanup receipt records only the48,727,325,910B redundant scratch BAM unlink
+at09:47:46UTC. The accepted cleanup code and successful receipts retain the
+whole HOME original BAM, both BAI copies, acquisition records and the full
+scratch extraction. Original HOME BAM SHA remains
+`b7edeb4bbc2589039c6148a912857f26924ca8fd5971cd3141337d0ce24bbde4`.
+The removed duplicate is recoverable from that verified original. The old
+cross-filesystem atomic-move rejection and failed small fetch remain history;
+neither was silently replaced with an unsafe move or dataset crop.
+
+Independent arithmetic reproduces runtime named inventory140,142,627,432B
+and cleanup/full-copy projection135,119,473,292B including1GiB reserve,
+36,679,218,548B below160GiB. Recorded readset file sizes sum42,630,429,941B;
+its native du directory figure42,630,429,946B also includes directory
+accounting. No disagreement about a missing payload follows from those five
+bytes. This remains a named inventory/reserve projection and sampled prior
+peak, not continuous measurement of every filesystem allocation. Keep other
+small S1 material within the reserve and the joint ledger.
+
+Main reports all jobs COMPLETED0:0. Retained prerequisite-slurm receipts
+confirm1604300 and1604303 terminal success;1604304 has its successful native
+exit/custody receipts plus main's authoritative terminal report. No scheduler
+query occurred here. Added actual allocated costs are1182s QA,2s cleanup and
+93s HOME verification, separately from measuredCPU1126.732/0.110/81.260s
+and MaxRSS14452/4764/2140K. S1 actual8080+7709+1182+2+93=17,066 allocated
+seconds, leaving11,734 of28,800. The upstream body-transfer charge is
+unchanged; local custody reads/copying do not acquire a second DNA library.
+
+Count agreement with ENA is not independent raw ENA sequence/quality
+equivalence, nor proof of molecules absent from the retained BAM. QNAME
+identity is the extraction unit. FASTQ does not preserve RG/HP/PS tags;
+single CCS/Revio RG,547,295 HP/PS-missing records and PS value1 do not qualify
+reference bases, local phase blocks, allele/copy state or parental labels.
+BAI hash integrity is not BAI/alignment/reference qualification. This review
+does not qualify a partial reference inventory, P1 endpoint behavior, a
+scientific positive/negative or publication readiness. The full goal is unmet.
+
+Only this finite acceptance subsection was appended. No jobs, network,
+genomic body reads, deletion, source edits, installation or Git commands
+occurred. All previous1008 lines remain intact; pre-append review SHA256:
+`48f4c604732c3154a5b9c4ef77cf9ba74574a68930ca32e065b8488643c062ff`.

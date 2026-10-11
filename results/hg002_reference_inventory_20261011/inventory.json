@@ -1,0 +1,829 @@
+{
+  "issue_examples_first_100": [
+    {
+      "feature_type": "gene",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 6
+    },
+    {
+      "feature_type": "transcript",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 7
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 8
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 8
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 9
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 9
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 10
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 10
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 11
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 11
+    },
+    {
+      "feature_type": "transcript",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 12
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 13
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 13
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 14
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 14
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 15
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 15
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 16
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 16
+    },
+    {
+      "feature_type": "transcript",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 17
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 18
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 18
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 19
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 19
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 20
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 20
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 21
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 21
+    },
+    {
+      "feature_type": "transcript",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 22
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 23
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 23
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 24
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 24
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 25
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 25
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 26
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 26
+    },
+    {
+      "feature_type": "transcript",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 27
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 28
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 28
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 29
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 29
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 30
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 30
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 31
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 31
+    },
+    {
+      "feature_type": "transcript",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 32
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 33
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 33
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 34
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 34
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 35
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 35
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 36
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 36
+    },
+    {
+      "feature_type": "transcript",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 37
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 38
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 38
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 39
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 39
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 40
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 40
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 41
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 41
+    },
+    {
+      "feature_type": "transcript",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 42
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 43
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 43
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 44
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 44
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 45
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 45
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 46
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 46
+    },
+    {
+      "feature_type": "transcript",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 47
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 48
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 48
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 49
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 49
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 50
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 50
+    },
+    {
+      "feature_type": "transcript",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 51
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 52
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 52
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 53
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 53
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 54
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 54
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 55
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 55
+    },
+    {
+      "feature_type": "transcript",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 56
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 57
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 57
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 58
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 58
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 59
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 59
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 60
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:exon_number:unquoted_attribute_value",
+      "line": 60
+    },
+    {
+      "feature_type": "transcript",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 61
+    },
+    {
+      "feature_type": "exon",
+      "issue": "malformed_attribute:level:unquoted_attribute_value",
+      "line": 62
+    }
+  ],
+  "observed_CDS_annotated_base_sum": 331792927,
+  "observed_CDS_bases_by_phase": {
+    "0": 175311978,
+    "1": 58841346,
+    "2": 97639603
+  },
+  "observed_CDS_phase_counts": {
+    "0": 1226342,
+    "1": 448114,
+    "2": 662332,
+    "malformed": 0
+  },
+  "observed_CDS_phase_malformed_value_counts": {},
+  "observed_counts": {
+    "CDS_feature_rows": 2336788,
+    "comment_lines": 5,
+    "malformed_attribute_rows": 8185980,
+    "nine_column_feature_rows": 8185980,
+    "physical_lines": 8185985,
+    "rows_with_feature_type_column": 8185980,
+    "valid_coordinate_feature_rows": 8185980
+  },
+  "observed_declared_codon_features": {
+    "start_codon": {
+      "bases_by_strand": {
+        "+": 384813,
+        "-": 381576
+      },
+      "coordinate_invalid_or_unavailable_feature_rows": 0,
+      "coordinate_valid_feature_rows": 256010,
+      "feature_rows": 256010,
+      "total_annotated_bases_sum_over_coordinate_blocks": 766389,
+      "transcript_ids_with_valid_blocks": 255463
+    },
+    "stop_codon": {
+      "bases_by_strand": {
+        "+": 378618,
+        "-": 374292
+      },
+      "coordinate_invalid_or_unavailable_feature_rows": 0,
+      "coordinate_valid_feature_rows": 252606,
+      "feature_rows": 252606,
+      "total_annotated_bases_sum_over_coordinate_blocks": 752910,
+      "transcript_ids_with_valid_blocks": 250970
+    }
+  },
+  "observed_existing_cohort_index_selection_prediction": {
+    "excluded_by_existing_gene_type_filter": 660,
+    "selected_row_multiset_fingerprint": {
+      "row_count": 2336128,
+      "sha256_tuple_digest_sum_mod_2_256": "835102805c3534329eeff719261292d10e8a531a3d07965b53936ce799e7e601",
+      "sha256_tuple_digest_xor": "3101f10c3780420e7862abe37afe8b28e8d0132b1852dcf947e2106de9cd3e41"
+    },
+    "selected_rows_by_existing_filter": 2336128,
+    "source_CDS_rows_with_valid_coordinates": 2336788
+  },
+  "observed_feature_type_counts": {
+    "CDS": 2336788,
+    "Selenocysteine": 113,
+    "UTR": 1095305,
+    "exon": 3719312,
+    "gene": 57092,
+    "start_codon": 256010,
+    "stop_codon": 252606,
+    "transcript": 468754
+  },
+  "observed_identifier_missing_by_feature_type": {
+    "CDS": {
+      "ID": 2336788,
+      "Parent": 2336788
+    },
+    "Selenocysteine": {
+      "ID": 113,
+      "Parent": 113
+    },
+    "UTR": {
+      "ID": 1095305,
+      "Parent": 1095305
+    },
+    "exon": {
+      "ID": 3719312,
+      "Parent": 3719312
+    },
+    "gene": {
+      "ID": 57092,
+      "Parent": 57092,
+      "transcript_id": 57092
+    },
+    "start_codon": {
+      "ID": 256010,
+      "Parent": 256010
+    },
+    "stop_codon": {
+      "ID": 252606,
+      "Parent": 252606
+    },
+    "transcript": {
+      "ID": 468754,
+      "Parent": 468754
+    }
+  },
+  "observed_identifier_presence_by_feature_type": {
+    "CDS": {
+      "gene_id": 2336788,
+      "transcript_id": 2336788
+    },
+    "Selenocysteine": {
+      "gene_id": 113,
+      "transcript_id": 113
+    },
+    "UTR": {
+      "gene_id": 1095305,
+      "transcript_id": 1095305
+    },
+    "exon": {
+      "gene_id": 3719312,
+      "transcript_id": 3719312
+    },
+    "gene": {
+      "gene_id": 57092
+    },
+    "start_codon": {
+      "gene_id": 256010,
+      "transcript_id": 256010
+    },
+    "stop_codon": {
+      "gene_id": 252606,
+      "transcript_id": 252606
+    },
+    "transcript": {
+      "gene_id": 468754,
+      "transcript_id": 468754
+    }
+  },
+  "observed_issue_counts": {
+    "malformed_attribute:exon_number:unquoted_attribute_value": 7660021,
+    "malformed_attribute:level:unquoted_attribute_value": 8185980
+  },
+  "observed_source_type_attribute_value_counts": {
+    "gene_biotype": {},
+    "gene_type": {
+      "IG_C_gene": 257,
+      "IG_C_pseudogene": 15,
+      "IG_D_gene": 148,
+      "IG_J_gene": 44,
+      "IG_J_pseudogene": 9,
+      "IG_V_gene": 787,
+      "IG_V_pseudogene": 476,
+      "IG_pseudogene": 3,
+      "TEC": 1811,
+      "TR_C_gene": 70,
+      "TR_D_gene": 20,
+      "TR_J_gene": 316,
+      "TR_J_pseudogene": 12,
+      "TR_V_gene": 833,
+      "TR_V_pseudogene": 124,
+      "lncRNA": 713463,
+      "miRNA": 3735,
+      "misc_RNA": 4995,
+      "processed_pseudogene": 22690,
+      "protein_coding": 7410858,
+      "rRNA": 96,
+      "rRNA_pseudogene": 1107,
+      "ribozyme": 24,
+      "sRNA": 12,
+      "scaRNA": 111,
+      "snRNA": 4413,
+      "snoRNA": 2256,
+      "transcribed_processed_pseudogene": 2669,
+      "transcribed_unitary_pseudogene": 1502,
+      "transcribed_unprocessed_pseudogene": 7570,
+      "translated_processed_pseudogene": 3,
+      "unitary_pseudogene": 305,
+      "unprocessed_pseudogene": 5234,
+      "vault_RNA": 12
+    },
+    "transcript_biotype": {},
+    "transcript_type": {
+      "IG_C_gene": 247,
+      "IG_C_pseudogene": 12,
+      "IG_D_gene": 111,
+      "IG_J_gene": 33,
+      "IG_J_pseudogene": 6,
+      "IG_V_gene": 686,
+      "IG_V_pseudogene": 340,
+      "IG_pseudogene": 2,
+      "TEC": 1316,
+      "TR_C_gene": 64,
+      "TR_D_gene": 15,
+      "TR_J_gene": 237,
+      "TR_J_pseudogene": 8,
+      "TR_V_gene": 726,
+      "TR_V_pseudogene": 91,
+      "lncRNA": 684691,
+      "miRNA": 2490,
+      "misc_RNA": 3330,
+      "non_stop_decay": 892,
+      "nonsense_mediated_decay": 1842827,
+      "processed_pseudogene": 15472,
+      "processed_transcript": 47,
+      "protein_coding": 5290336,
+      "protein_coding_CDS_not_defined": 113947,
+      "protein_coding_LoF": 1233,
+      "rRNA": 64,
+      "rRNA_pseudogene": 738,
+      "retained_intron": 150481,
+      "ribozyme": 16,
+      "sRNA": 8,
+      "scaRNA": 74,
+      "snRNA": 2942,
+      "snoRNA": 1504,
+      "transcribed_processed_pseudogene": 1837,
+      "transcribed_unitary_pseudogene": 1318,
+      "transcribed_unprocessed_pseudogene": 6548,
+      "translated_processed_pseudogene": 2,
+      "unitary_pseudogene": 238,
+      "unprocessed_pseudogene": 3951,
+      "vault_RNA": 8
+    }
+  },
+  "observed_tag_value_counts": {
+    "3_nested_supported_extension": 946,
+    "3_standard_supported_extension": 3935,
+    "454_RNA_Seq_supported": 4801,
+    "5_nested_supported_extension": 235,
+    "5_standard_supported_extension": 1416,
+    "CAGE_supported_TSS": 71393,
+    "CCDS": 2197138,
+    "EnsEMBL_merge_exception": 4,
+    "Ensembl_canonical": 516193,
+    "Ensembl_canonical_extended": 291691,
+    "GENCODE_Primary": 972995,
+    "MANE_Plus_Clinical": 2962,
+    "MANE_Select": 358333,
+    "NAGNAG_splice_site": 27110,
+    "NMD_exception": 4397,
+    "NMD_likely_if_extended": 3996,
+    "RNA_Seq_supported_only": 433888,
+    "RNA_Seq_supported_partial": 68468,
+    "RP_supported_TIS": 2522,
+    "Selenoprotein": 6,
+    "TAGENE": 5511941,
+    "alternative_3_UTR": 26670,
+    "alternative_5_UTR": 221760,
+    "appris_alternative_1": 369948,
+    "appris_alternative_2": 431173,
+    "appris_alternative_M": 4138,
+    "appris_principal_1": 669918,
+    "appris_principal_2": 176803,
+    "appris_principal_3": 209409,
+    "appris_principal_4": 449959,
+    "appris_principal_5": 4812,
+    "appris_principal_M": 3309,
+    "basic": 5331241,
+    "bicistronic": 115,
+    "cds_end_NF": 174798,
+    "cds_start_NF": 149759,
+    "confirm_experimentally": 54,
+    "dotter_confirmed": 37845,
+    "downstream_ATG": 1697,
+    "exp_conf": 113250,
+    "fragmented_locus": 1,
+    "fragmented_mixed_strand_locus": 1,
+    "inferred_exon_combination": 31644,
+    "inferred_transcript_model": 74648,
+    "low_sequence_quality": 994,
+    "mRNA_end_NF": 198219,
+    "mRNA_start_NF": 155802,
+    "ncRNA_host": 2565,
+    "nested_454_RNA_Seq_supported": 5408,
+    "non_ATG_start": 3575,
+    "non_canonical_TEC": 4993,
+    "non_canonical_U12": 12739,
+    "non_canonical_conserved": 14318,
+    "non_canonical_genome_sequence_error": 5,
+    "non_canonical_other": 582,
+    "non_canonical_polymorphism": 2332,
+    "non_submitted_evidence": 4910,
+    "not_best_in_genome_evidence": 3026,
+    "not_organism_supported": 75175,
+    "overlapping_locus": 9433,
+    "overlapping_uORF": 811,
+    "overlaps_pseudogene": 1605,
+    "polymorphic_pseudogene_no_stop": 3,
+    "pseudo_consens": 22144,
+    "readthrough_gene": 423,
+    "readthrough_transcript": 26918,
+    "reference_genome_error": 11,
+    "retained_intron_CDS": 768,
+    "retained_intron_final": 3162,
+    "retained_intron_first": 605,
+    "retrogene": 234,
+    "seleno": 1316,
+    "semi_processed": 6,
+    "sequence_error": 244,
+    "stop_codon_readthrough": 291,
+    "upstream_ATG": 19361,
+    "upstream_uORF": 2666
+  },
+  "observed_transcript_ids_with_cds_end_NF": 13134,
+  "observed_transcript_ids_with_cds_start_NF": 8739,
+  "observed_transl_except": {
+    "Sec_or_U_occurrences": 0,
+    "amino_acid_value_counts": {},
+    "attribute_occurrences": 0,
+    "feature_rows": 0,
+    "selenocysteine_feature_rows": {
+      "Selenocysteine": 113
+    },
+    "selenocysteine_tag_values": {}
+  },
+  "observed_unique_gene_ids": 57092,
+  "observed_unique_transcript_ids": 468754,
+  "schema_version": 1,
+  "scope": {
+    "counts_complete": false,
+    "counts_scope": "OBSERVED_PREFIX",
+    "derived_summary_status": "NOT_FINALIZED",
+    "eof_reached": false,
+    "last_line_number": 8185985,
+    "reason": "DeadlineExpired: wall-clock deadline reached",
+    "source_sha256_verified": false,
+    "stable_file_check": "NOT_COMPLETED",
+    "status": "INCOMPLETE"
+  }
+}

@@ -1,0 +1,7 @@
+cleanup-receipt.txt
+disk-contract.txt
+execution.txt
+exit-status.txt
+inventory.before.tsv
+prerequisite-slurm.txt
+stat.current.txt

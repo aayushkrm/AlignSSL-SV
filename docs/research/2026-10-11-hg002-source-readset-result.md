@@ -15,6 +15,12 @@ are all0. All351,917supplementary records are duplicate full-read payloads;
 secondary/QC-fail/duplicate-flag counts are0 in the full object, not a prefix.
 This is read extraction, not a biological positive/negative or paper result.
 
+The [maintained independent reviewer](2026-10-10-public-paired-falsifier-review.md#actual-s1-usable-input-acceptance-after-complete-home-verification)
+now ACCEPTS this complete readset as usable DNA input within S1 after terminal
+QA, guarded duplicate cleanup and whole HOME-copy verification. No remaining
+concrete S1 readiness HOLD was found. S2–S4/RNA remain unreleased; local
+reference/phase/copy proof and publication significance remain separate.
+
 ## Scope and integrity
 
 Completed level1 gzip:41,582,125,285B, SHA256
@@ -82,5 +88,38 @@ checks terminal QA, all fresh file identities and actual disk inventory before
 one exact recoverable unlink. The maintained independent reviewer accepts
 this exact code and storage contract before launch; all fresh guards must
 still pass. No deletion or full HOME result copy is attested by this acceptance.
+
+Actual cleanup1604303 COMPLETED0:0,2allocatedCPU seconds,0.110measuredCPU
+seconds,4764K MaxRSS. All guards and fresh same-host nine-file stat comparisons
+pass. Only the exact scratch BAM48,727,325,910B is removed09:47:46UTC;
+the whole HOME BAM, both BAI copies and all acquisition/extraction records
+stay intact. [Unchanged cleanup receipts](../../results/hg002_read_extract_20261010/duplicate_cleanup/README.md)
+show named inventory140,142,627,432B and projected cleanup/full-copy peak
+135,119,473,292B with1GiB for small extras, below160GiB. Recoverability is
+from the SHA-identical HOME original, not from a new upstream acquisition.
+
+One whole extracted-result copy to the matching HOME leaf finishes
+09:49:58UTC,42,630,429,946B. Entire QA5326B and cleanup3292B packets are
+also copied to matching HOME leaves. No source/read/locus crop or extra DNA
+download. S1 actual16973s,remaining11827s before final copy-hash verification.
+[Read-only HOME verification](../../scripts/verify_hg002_home_readset_s1.sh)
+checks complete source/HOME file sets, all hashes and stable stats plus both
+complete evidence packets,1CPU/2GiB/15min. Whole CRC/census inheritance is
+explicit through identical SHA, not another newly performed CRC test.
+Final verification and maintained usable-input acceptance remain pending.
+Actual HOME1604304 COMPLETED0:0,93allocatedCPU seconds,81.260measuredCPU
+seconds,2140K MaxRSS. All five names/hashes and before/after stats match;
+complete QA and cleanup HOME packets also match. Known1604300 source hashes
+agree, so CRC/census inheritance is supported by identical bytes. The
+[unchanged small verification receipts](../../results/hg002_read_extract_20261010/home_verification/README.md)
+are in Git, whole verification packet also copied HOME. S1 actual17066s,
+remaining11734s. Maintained independent usable-input audit is now pending
+these actual receipts; S2–S4/RNA still have no release or biological result.
+
+The subsequent maintained independent audit FULL-reads the actual receipts,
+reproduces all16 small QA/cleanup receipt hashes, checks all source/HOME sets,
+accepted hashes and stable tuples, and ACCEPTS usable input within S1.
+That actual acceptance supersedes the preceding preparation/pending snapshots.
+QNAME provenance, ENA equivalence and phase/reference/copy limits remain.
 Exact caller settings/resources/phase recipe need a
 separate S2 review; S2–S4/RNA remain unreleased. Full publication goal unmet.

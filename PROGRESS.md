@@ -22,16 +22,28 @@ raw BAM duplicates. Fresh read-only QA1604300 COMPLETED0:0,1182allocated
 CPU seconds; both raw pairs, full extracted gzip SHA/CRC, SQLite census and
 unchanged stat tuples pass. S1 actual16971s,remaining11829s. Maintained independent reviewer accepts
 the extraction record and the specific duplicate-cleanup procedure,
-conditional on QA PASS. No deletion/backup or S2 release yet. No phase/copy/
-P1/RNA result or publication-level contribution is claimed by read extraction.
+conditional on fresh guards. Cleanup1604303 COMPLETED0:0,2allocated seconds,
+removes only the48.7GB redundant scratch BAM; whole verified HOME original,
+both BAI copies and all logs remain. Complete42.63GB readset+evidence packets
+copied HOME once. Whole-copy verification1604304 COMPLETED0:0,93allocated
+seconds, complete file sets/hashes/stats and both evidence packets match.
+S1 actual17066s,remaining11734s; maintained independent reviewer ACCEPTS
+the complete readset as usable DNA input within S1. No remaining concrete
+S1 readiness HOLD. No S2 release or phase/
+copy/P1/RNA result or publication-level contribution is claimed by extraction.
 Routine [caller CLI qualification](docs/research/2026-10-10-hg002-caller-setup.md)
 1604301 COMPLETED0:0,1allocatedCPU second. pbmm2 26.2.0/pbsv2.11.0 versions
 and all help probes pass; complete original packet HOME hashes match.
 Native help resolves discover HiFi identity97% and call HiFi S0/P10 presets,
 but no calling policy, reference/phase qualification or S2 release is implied.
 Whole-reference [inventory/index-cost diagnostic](docs/research/2026-10-11-hg002-reference-inventory.md)
-1604302 is booked1CPU/16GiB/15min with11local controls passing; no gene crop,
-DNA or RNA input. [Repeat BED provenance](docs/research/2026-10-11-hg002-repeat-annotation-preflight.md)
+1604302 FAILED2:0 at840s process deadline,842allocatedCPU seconds. Only
+8,185,985lines of prefix are observed; no EOF/global count/index-cost result.
+The preserved prefix exposes numeric-field false-malformed labels, confirmed
+against official GENCODE format; a finite parser correction is in progress.
+No gene/isoform crop or automatic rerun. Corrected02's possible1h cap stays
+inside original4CPUh; scientific investment review precedes next campaign.
+[Repeat BED provenance](docs/research/2026-10-11-hg002-repeat-annotation-preflight.md)
 remains UNKNOWN for this exact FASTA; names/lengths do not certify bases.
 Cluster curl7.76.1 is bypassed with strictly capped localcurl8.7.1 software
 acquisition (15,719,120B); pbsv has only an observed hash, no author checksum.

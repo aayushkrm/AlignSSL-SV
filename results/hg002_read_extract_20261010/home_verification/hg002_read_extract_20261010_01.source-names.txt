@@ -1,0 +1,5 @@
+identities.sqlite
+manifest.initial.json
+readiness.json
+source_reads.fastq.gz
+stats.jsonl
