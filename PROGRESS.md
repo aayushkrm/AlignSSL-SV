@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-10-10** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
+_Last updated: **2026-10-11** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,26 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+Authoritative [full source extraction result](docs/research/2026-10-11-hg002-source-readset-result.md)
+1604284 COMPLETED0:0,7709allocatedCPU seconds. Both EOF passes complete;
+5,359,077original reads/80,344,827,828bases match archive counts,0unresolved
+identities,578unmapped records retained. Gzip41.58GB and all raw results stay
+on cluster; only the unchanged small readiness manifest enters Git.
+Current S1 actual15789s,remaining13011s. Home/scratch different devices block
+atomic move before any change. Full backup would exceed the cap with both
+raw BAM duplicates. Fresh read-only QA1604300 is RUNNING,1CPU/4GiB/1h;
+both raw pairs and extracted gzip SHA already pass, but full CRC/census and
+terminal status remain pending. Maintained independent reviewer accepts
+the extraction record and the specific duplicate-cleanup procedure,
+conditional on QA PASS. No deletion/backup or S2 release yet. No phase/copy/
+P1/RNA result or publication-level contribution is claimed by read extraction.
+User clarifies resource policy: allocate all resources each workload can
+use efficiently and scale independent experiments fully; do not reserve
+idle nodes/GPUs for serial checks. Routine caller CLI setup and whole-reference
+semantic-inventory implementation proceed in parallel, not S2/S3 campaigns.
+
+### Earlier checkpoints (historical state, not current job status)
 
 Maintained independent reviewer [accepts actual02's tested positive interfaces](docs/research/2026-10-10-public-paired-falsifier-review.md#actual-synthetic1604294-tested-runtime-and-positive-interface-acceptance):
 both aligners exit0, miniprot database/candidates are usable, all5constructed

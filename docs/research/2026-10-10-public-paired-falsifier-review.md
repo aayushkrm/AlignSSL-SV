@@ -800,3 +800,127 @@ subsection was appended. No native rerun, job, genomic work, network,
 installation, source edit or Git command occurred. Historical reviews were
 preserved. Pre-append review SHA256:
 `f4330553158faa4923cf37d13faabc1b9617b9d77c6193eb4de06070aab70241`.
+
+## Actual S1b1604284: finite readiness audit and conditional storage contract
+
+2026-10-11. Maintained independent reviewer, requested Sol6.1/high;
+backend/effort not independently attested. **ACCEPT the completed extraction
+record within its full-source extraction scope. Usable-input acceptance
+remains pending terminal custody QA and verified HOME result custody.**
+No caller, reference/phase/copy qualification, S2–S4 or RNA is released.
+
+Read the complete local readiness.json at
+`/Users/akm/aayushkrm-AlignSSL/runs/hg002-read-extract-20261010-final/`.
+It is valid4262-byte JSON, SHA256
+`4355f3b3d5392c41f0ca92da94e389a66907bf6297d8d3fa13f2996ccf641acc`.
+This local receipt must match the forthcoming remote metadata hash receipt;
+no independent transfer-origin attestation or complete local custody packet
+is inferred. FULL-read the unchanged extractor and current extraction note,
+and reread the governing objective and investment scope. Source SHA256 is
+`40679be522fbf2dd582a6826d72cfc02b9d77443f60095dcabb5a9d4efec681a`;
+test SHA256 is
+`81bebb128622925bb677cde26e12bfdd2f2b833f4e0622d994b06ce635159aee`.
+The manifest pins that source. Independent synthetic rerun:50 passed in0.91s,
+bytecode/cache writes disabled. Prior finite defect controls remain accepted;
+no actual BAM, FASTQ or identities database body was read by this reviewer.
+
+| Completed-record evidence | Finite conclusion |
+|---|---|
+| READY; both passes and complete_census true | Whole-source completion is reported, not a prefix estimate |
+| Pass1/pass2 each5,710,994; summed FLAG counts agree | Record accounting is internally consistent |
+| Original/resolved/emitted5,359,077 IDs;80,344,827,828 bases | All observed QNAME identities resolved and emitted under this code |
+| Conflict/malformed/constraint-mismatch/unknown IDs0 | No reported unresolved identity; unknown examples empty |
+|351,917 supplementary and duplicate-full records;578 unmapped | Duplicate full payloads do not create new molecules; unmapped records retained |
+| No hard-clipped/missing payloads or restorations | This actual input did not exercise restoration paths |
+
+Independent arithmetic also checks emitted bases, reverse FLAG totals and
+RG/HP/PS presence totals against record counts. Counter fields absent from
+the JSON, including unidentified/malformed records, are zero under this
+code's Counter serialization; they are not independently measured zeros.
+Pinned input SHA matches the expected original HOME BAM SHA. Output gzip is
+41,582,125,285B with recorded SHA256
+`fd9fd85d7dfadca083cd101aad00932e16d23d8b5d90db4ddec7523abaabae88`;
+SQLite is1,040,932,864B. These are manifest observations until custody QA.
+ENA count agreement does not establish independent ENA sequence/quality
+equivalence, completeness beyond the retained BAM, or identity provenance
+beyond QNAME. No alternative raw representation was acquired or compared.
+
+Single RG is HG002_WGS/PACBIO/REVIO with CCS metadata. HP and PS are missing
+on547,295 records; HP values1/2 cover5,163,699 records, and PS has only the
+single value1. These are record counts, not molecule phase assignments or
+validated phase blocks. FASTQ does not restore RG/HP/PS tags or qualify the
+old reference, BAI, local alleles, copy state or parental labels. The original
+BAM/BAI and metadata remain the retained provenance source.
+
+Main reports authoritative1604284 COMPLETED0:0,7709 allocated seconds,
+6988 TotalCPU seconds and101784K MaxRSS. No scheduler query was made here.
+The manifest's7708.222s is explicitly a process-wall estimate, not the
+scheduler charge;6988.313s process CPU and99,016,704B process peak RSS have
+their own scope. Charge S1 as8080+7709=15,789 allocated seconds, leaving
+13,011 of28,800. A full3600s custody QA leaves9411s before any further charged
+work. No historic booking, body-transfer account or frozen17940s extraction
+deadline is changed. Completed wall time is below that frozen deadline.
+
+**ACCEPT the proposed exact duplicate-cleanup contract, conditional on QA;
+no new scientific authority is required within the existing S1 scope.**
+The extraction note already permits redundant scratch cleanup after custody
+verification and explicit main action. Main reports atomic-rename preflight
+rejected scratch/HOME device50/52 before mutation. Preserve that failure;
+do not substitute a cross-filesystem move with hidden copy/delete behavior.
+
+| Storage order using recorded sizes | Summed-byte projection |
+|---|---:|
+| Recorded sampled extraction peak |140,176,254,335 |
+| Copy gzip+SQLite before cleanup |182,799,312,484; exceeds160GiB by11,000,620,644 |
+| Remove one48,727,325,910B duplicate scratch BAM, then copy42,623,058,149B gzip+SQLite |134,071,986,574 |
+|160GiB cap less that last projection |37,726,705,266 headroom before additional small artifacts |
+
+This is arithmetic from the declared ledger and sampled peak, not an exact
+continuous physical-storage measurement. Include current metadata, QA,
+copy temporaries and retained copies in the actual ledger, and verify HOME
+free space. Keep the complete scratch extraction while copying. No cropped
+readset, removed SQLite evidence, uncompressed FASTQ or extra result copy is
+authorized to make it fit. External bytes were frozen during extraction;
+later terminal custody operations need a separate actual ledger entry.
+
+Before cleanup, require the bounded1CPU/4GiB/1h QA to finish COMPLETED0:0
+with all four original HOME/scratch BAM/BAI hash checks, extracted gzip SHA,
+whole-gzip EOF/CRC, SQLite quick_check and exact census PASS. The cleanup
+target is only
+`/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam`.
+Main must verify this exact regular-file target and its unchanged identity
+against fresh QA receipts before unlinking it. Preserve the original HOME
+BAM/BAI, scratch BAI, acquisition manifests/ledgers/logs and extraction output.
+The removed file is recoverable from the hash-identical HOME BAM, not a
+removed original molecule or lost genomic byte. A failed/stale/mismatching QA
+does not permit cleanup or a large-copy fallback. Reviewer authorizes no
+filesystem operation and performs no deletion.
+
+FULL-read the evolving read-only QA script, including its revised census
+assertion and before/after device/inode/size/mtime/ctime comparison; bash
+syntax passes. Reviewed revision SHA256
+`dc6bc3daa1c68f726610cc752518609634eee14537ca3332a3303fe7befabbd0`.
+The earlier inspected revision printed counts without comparison; main's
+revision now asserts(5359077,5359077,80344827828,0,0,0) for total/emitted
+rows, emitted bases, conflict/bad/constraint_bad sums. That finite gap is
+closed. Hash receipts bind SQLite/stats/initial/final manifests; compare the
+remote readiness SHA with the local receipt above. They do not independently
+certify raw ENA sequence equivalence. These script checks have not run here.
+Keep terminal status and QA receipts as well as the small metadata inventory;
+do not describe an inventory excluding late receipt files as all-artifact
+coverage. After the allowed copy, verify the complete HOME result inventory
+against the unchanged scratch packet before usable-input acceptance. No
+scratch extraction deletion is part of this cleanup contract.
+
+Only this finite subsection was appended. No job, network, genomic body
+read, duplicate extraction, source edit, install or Git command occurred.
+Historical reviews were preserved. Pre-append802-line review SHA256:
+`0c87f5d011bf0c6f7ead1cef4009e07e66a54003de17b5f45b435de5803848e6`.
+
+Same-audit receipt update: the working-tree raw readiness.json is independently
+byte-identical to the off-Git local copy and has SHA2564355f3b3d5392c41f0ca92da94e389a66907bf6297d8d3fa13f2996ccf641acc.
+FULL-read main's new2026-10-11 source-readset result note; its accounts and
+pending custody limits agree with this finite finding. The QA source still
+matches dc6bc3daa1c68f726610cc752518609634eee14537ca3332a3303fe7befabbd0.
+This confirms the two local metadata receipts, not a completed remote QA.
+The original802-line review prefix independently retains its pre-append hash.
