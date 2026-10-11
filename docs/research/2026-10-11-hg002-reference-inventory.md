@@ -186,3 +186,114 @@ controls pass0.497s with zero skips; all three source/test/current-index
 SHA checks match. Wrapper SHA6d6e802f54d470df4df2204786f22d6598c4a0786b0274ac89fefaa292ae771f.
 At223elapsed seconds only a partial inventory checkpoint exists; no full
 counts, source-final hash, index cost or concordance result is reported yet.
+
+## Actual01 deadline failure and format defect
+
+1604302 FAILED2:0 after its840s process deadline,842allocatedCPU seconds,
+835.112measuredCPU seconds,1346936K MaxRSS. Initial exact GTF SHA passes;
+observed8,185,985physical lines do not reach EOF. No final source hash/stable
+certification or optional existing-index measurement completes. The unchanged
+[native failure manifest and prefix](../../results/hg002_reference_inventory_20261011/README.md)
+are retained in Git; whole small packets also stay on scratch and HOME.
+HOME/scratch hashes match: manifest93e86efdfc65648e88e80b0bc6e655b6aa67a8688cf11a6e56a490ccf20acfcb,
+inventory906b9171f26b9731a0da76460006a32259e42cd508dff82e7db49d0c9fc4d3ee.
+No global count, P1 state, unknown-gene exclusion or biological negative follows.
+
+The prefix also exposes a parser defect: it flags8,185,980valid-width rows
+for unquoted numeric `level`/`exon_number`. Fresh official
+[GENCODE format documentation](https://www.gencodegenes.org/pages/data_format.html)
+explicitly permits those numeric fields in its examples. It also lists dot
+as a legal CDS-phase value; dot is unknown/unusable for frame propagation,
+not evidence of malformed source syntax. These are annotation-declaration
+parsing corrections, not a changed endpoint or permission to infer function.
+Do not call this reference corruption. The failed01 code/bundle/results are
+unchanged; a Luna worker prepares explicit typed numeric/dot-UNKNOWN controls
+before any new code freeze. No automatic rebooking or record/isoform crop.
+
+Main considers one explicit corrected02 full-source completion attempt,
+1CPU/16GiB/1h and3540s process deadline, inside the original4allocatedCPUh
+S0 cap. Prior842s stays charged. Conservative pre-caller10,000s minus caller1s
+and01's842s leaves9157s; future toy-interface900s plus02maximum3600s would
+leave4657s. That is an upper-cost guard, not measured02 runtime or a release.
+Scientific max-effort investment review is underway;02 remains unbooked.
+
+## Finite format correction and schema 2 controls
+
+2026-10-11. This section describes the corrected local software. All preceding
+sections remain as the historical01 record. The01 raw JSON, source/runtime
+bundle and custody hashes are unchanged. In particular, the old phase labels
+and malformed-attribute counts retain their original values and schema1.
+
+The official [GENCODE format page](https://www.gencodegenes.org/pages/data_format.html)
+defines `level` as 1, 2 or 3, defines `exon_number` as an integer position from
+the transcript's 5' end, and shows both fields without quotes. The corrected
+parser permits unquoted integers only for these two explicit keys. It also
+accepts their quoted integer forms. `level` must be 1/2/3 and `exon_number`
+must be a positive decimal integer. Invalid typed values remain visible as
+`invalid_numeric_attribute_value` issues. Other string and ID values still
+require quotes. Quote errors, trailing text, missing keys/values, missing
+IDs, repeated keys and conflicting values retain their existing checks and
+counts. Parsing retains the observed values; it does not silently discard
+malformed annotations or resolve conflicting IDs.
+
+New initial/final manifests, full inventories and prefix checkpoints use
+`schema_version: 2`. Consumers must inspect that field before combining
+reports. Schema2 changes these CDS-phase meanings:
+
+| Declared phase | Row/base counter label | Meaning |
+|---|---|---|
+| `0`, `1`, `2` | The same numeric value | Numeric phase declaration |
+| `.` | `unknown` | Legal UNKNOWN; no usable frame declaration |
+| Other or missing value | `malformed` | Invalid phase; raw values remain counted, with `missing` for an empty/unavailable field |
+
+Dot is excluded from `malformed_phase_value_counts` and does not produce a
+malformed-phase issue. The full `CDS` report and prefix report include an
+explicit phase-interpretation note. Numeric phase declarations still do not
+establish a propagated reading frame, functional CDS, biological codon
+retention, complete termini or a P1 state.
+
+Transcript statuses now use `NUMERIC`, `UNKNOWN` and `MALFORMED`. A single
+observed category gives `ALL_NUMERIC`, `ALL_UNKNOWN` or `ALL_MALFORMED`.
+Multiple categories give `MIXED_NUMERIC_AND_UNKNOWN`,
+`MIXED_NUMERIC_AND_MALFORMED`, `MIXED_UNKNOWN_AND_MALFORMED`, or
+`MIXED_NUMERIC_AND_UNKNOWN_AND_MALFORMED`. These summarize only CDS rows with
+valid coordinates and an observed transcript ID, as with the existing
+transcript length summaries. All visible CDS rows still contribute their
+phase counts; invalid coordinates/identifiers remain reported separately.
+The prefix field `observed_CDS_transcript_phase_annotation_status_counts`
+retains the status aggregate as rows arrive. It requires no per-ID scan after
+a deadline. Prefix statuses and phase totals are scoped to the observed rows;
+they are not global transcript classifications without full EOF.
+
+All18 standard-library `unittest` cases pass locally in0.292s with zero skips.
+The original11 cases remain, including main's three added source-size/digest,
+post-EOF drift and failed-index-probe methods, which are byte-for-byte
+unchanged. Seven added cases check a fixed projection of the authoritative
+format examples, quoted numeric forms, rejected string/ID and invalid numeric
+forms, conflicting keys and missing IDs, all seven transcript phase-category
+combinations, a non-EOF gzip prefix, and a deadline prefix with UNKNOWN phase.
+The example fixture also checks the existing index's actual selected tuple
+and `known=True` against a fixed expected value. The phase fixture confirms
+that numeric, UNKNOWN and malformed phases keep the existing index selection.
+
+Run from the repository root, with no test dependency install:
+
+```sh
+python3 -m unittest discover -s tests -p 'test_hg002_reference_inventory.py' -v
+```
+
+Corrected local hashes, ready for main's review:
+
+- Source: `d9c4ea440513f4a911fea1dee85a872020fb1a1e2e0f9a4d7abe1aca90fdc0d1`.
+- Tests: `2acc51a135d7789dc4f07e7bcae1aea5f7a9b5cbde14d088c28bd42d94a7bf3d`.
+- Unchanged caller CDS-index source:
+  `197a54c9dbf6dd3f7f9264a3eb090d0646f08d05fdb7dfe99ae2c337f0064f4e`.
+
+The inventory's legacy attribute/filter prediction and exact index-probe code
+also compare byte-for-byte with their pre-correction versions. Source SHA
+checks, exclusive leaves, checkpoint/deadline controls, source coverage,
+selection and the `known` expression keep their previous behavior. The code's
+default deadline remains900s; any later run needs main's explicit deadline
+and a fresh leaf. This correction does not book02, change the wrapper or
+alter the historical budget record. Whole-source runtime and memory under the
+corrected parser remain unmeasured. No annotation body was fetched locally.

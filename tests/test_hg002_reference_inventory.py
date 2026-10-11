@@ -156,9 +156,13 @@ class ReferenceInventoryTests(unittest.TestCase):
         self.assertEqual(inventory["tags"]["source_transcript_ids_with_cds_end_NF"], 1)
         self.assertEqual(
             inventory["CDS"]["phase_counts"],
-            {"0": 0, "1": 1, "2": 1, "malformed": 1},
+            {"0": 0, "1": 1, "2": 1, "unknown": 1, "malformed": 0},
         )
-        self.assertEqual(inventory["CDS"]["malformed_phase_value_counts"], {"dot": 1})
+        self.assertEqual(inventory["CDS"]["malformed_phase_value_counts"], {})
+        self.assertEqual(
+            inventory["CDS"]["transcript_phase_annotation_status_counts"],
+            {"MIXED_NUMERIC_AND_UNKNOWN": 1},
+        )
         self.assertEqual(
             inventory["CDS"]["transcript_annotated_length_mod_3_counts"], {"2": 1}
         )
@@ -331,6 +335,233 @@ class ReferenceInventoryTests(unittest.TestCase):
         self.assertEqual(inventory["observed_counts"]["physical_lines"], 1)
         self.assertEqual(inventory["observed_feature_type_counts"], {"gene": 1})
         self.assertTrue(manifest["stop_reason"].startswith("RunCancelled:"))
+
+    def test_gencode_example_numeric_attributes_are_valid_source_declarations(self):
+        # Independent projection of the chr19 examples in the official GENCODE
+        # format page. Keep its actual coordinates, phases and numeric syntax;
+        # unrelated optional attributes are omitted. Do not use the row helper.
+        rows = (
+            'chr19\tHAVANA\tgene\t405438\t409170\t.\t-\t.\t'
+            'gene_id "ENSG00000183186.7"; gene_type "protein_coding"; '
+            'gene_name "C2CD4C"; level 2;\n'
+            'chr19\tHAVANA\ttranscript\t405438\t409170\t.\t-\t.\t'
+            'gene_id "ENSG00000183186.7"; transcript_id "ENST00000332235.7"; '
+            'gene_type "protein_coding"; transcript_type "protein_coding"; level 2;\n'
+            'chr19\tHAVANA\texon\t409006\t409170\t.\t-\t.\t'
+            'gene_id "ENSG00000183186.7"; transcript_id "ENST00000332235.7"; '
+            'exon_number 1; exon_id "ENSE00001322986.5"; level 2;\n'
+            'chr19\tHAVANA\tCDS\t407099\t408361\t.\t-\t0\t'
+            'gene_id "ENSG00000183186.7"; transcript_id "ENST00000332235.7"; '
+            'gene_type "protein_coding"; gene_name "C2CD4C"; '
+            'transcript_type "protein_coding"; exon_number 2; level 2;\n'
+        )
+        result, inventory, manifest = run_fixture(self.tmp_path, rows, measure=True)
+        self.assertEqual(result["run_status"], "COMPLETE")
+        self.assertEqual(inventory["schema_version"], 2)
+        self.assertEqual(manifest["schema_version"], 2)
+        self.assertEqual(inventory["counts"].get("malformed_attribute_rows", 0), 0)
+        self.assertEqual(
+            inventory["feature_type_counts"],
+            {"gene": 1, "transcript": 1, "exon": 1, "CDS": 1},
+        )
+        self.assertEqual(inventory["CDS"]["annotated_base_sum_over_feature_rows"], 1263)
+        self.assertEqual(
+            inventory["identifier_and_location_conflicts"]["issue_counts"], {}
+        )
+        self.assertFalse(inventory["scope"]["semantic_metadata_has_parse_or_id_issues"])
+        self.assertTrue(inventory["protein_coding_gene_CDS_status"]["CDS_membership_complete"])
+        probe = manifest["execution"]["existing_index_measurement"]
+        self.assertEqual(probe["status"], "MEASURED")
+        self.assertTrue(probe["selection_fingerprint_concordant"])
+        # Check the exact legacy selection and known=True against a fixed tuple.
+        selected = (
+            "chr19", 407098, 408361, "ENSG00000183186.7", "C2CD4C",
+            "ENST00000332235.7", True,
+        )
+        digest = hashlib.sha256(json.dumps(
+            selected, ensure_ascii=True, separators=(",", ":")
+        ).encode("utf-8")).hexdigest()
+        self.assertEqual(probe["actual_index_selection"], {
+            "row_count": 1,
+            "sha256_tuple_digest_xor": digest,
+            "sha256_tuple_digest_sum_mod_2_256": digest,
+        })
+
+    def test_typed_integer_attributes_accept_quoted_and_unquoted_forms(self):
+        for text, expected in (
+            ('level 1; exon_number 1;', {"level": ["1"], "exon_number": ["1"]}),
+            ('level 2; exon_number 12;', {"level": ["2"], "exon_number": ["12"]}),
+            ('level 3; exon_number 123;', {"level": ["3"], "exon_number": ["123"]}),
+            ('level "2"; exon_number "1";', {"level": ["2"], "exon_number": ["1"]}),
+        ):
+            with self.subTest(text=text):
+                attributes, problems = inventory_module.parse_attributes(text)
+                self.assertEqual(attributes, expected)
+                self.assertEqual(problems, [])
+
+    def test_numeric_exceptions_do_not_hide_malformed_strings_or_other_keys(self):
+        for text, expected_problem in (
+            ('level "two";', 'level:invalid_numeric_attribute_value'),
+            ('level two;', 'level:invalid_numeric_attribute_value'),
+            ('level 4;', 'level:invalid_numeric_attribute_value'),
+            ('level "4";', 'level:invalid_numeric_attribute_value'),
+            ('level 2.0;', 'level:invalid_numeric_attribute_value'),
+            ('exon_number 0;', 'exon_number:invalid_numeric_attribute_value'),
+            ('exon_number -1;', 'exon_number:invalid_numeric_attribute_value'),
+            ('exon_number "first";', 'exon_number:invalid_numeric_attribute_value'),
+            ('level;', 'attribute_missing_key_or_value'),
+            ('level "2;', 'level:unclosed_attribute_value'),
+            ('level "2" extra;', 'level:trailing_attribute_text'),
+            ('gene_id ENSG00000183186.7;', 'gene_id:unquoted_attribute_value'),
+            ('gene_id 123;', 'gene_id:unquoted_attribute_value'),
+            ('gene_name 2;', 'gene_name:unquoted_attribute_value'),
+            ('transcript_support_level 2;', 'transcript_support_level:unquoted_attribute_value'),
+            ('other_numeric 2;', 'other_numeric:unquoted_attribute_value'),
+        ):
+            with self.subTest(text=text):
+                _attributes, problems = inventory_module.parse_attributes(text)
+                self.assertIn(expected_problem, problems)
+
+    def test_numeric_parsing_preserves_conflicting_keys_and_missing_id_guards(self):
+        rows = (
+            'chr1\ttest\texon\t1\t3\t.\t+\t.\t'
+            'gene_id "g1"; gene_id "g2"; transcript_id "t1"; '
+            'level 2; level 3; exon_number 1; exon_number "2";\n'
+            'chr1\ttest\texon\t10\t12\t.\t+\t.\t'
+            'gene_id unquoted; transcript_id "t2"; level 2; exon_number 1;\n'
+            'chr1\ttest\texon\t20\t22\t.\t+\t.\t'
+            'gene_id ""; level 2; exon_number 1;\n'
+            'chr1\ttest\texon\t30\t32\t.\t+\t.\t'
+            'gene_id "g3"; transcript_id "t3"; level "two"; exon_number 1;\n'
+        )
+        _, inventory, _ = run_fixture(self.tmp_path, rows)
+        self.assertEqual(inventory["counts"]["malformed_attribute_rows"], 2)
+        self.assertEqual(inventory["counts"]["valid_width_rows_missing_gene_id"], 1)
+        self.assertEqual(inventory["counts"]["valid_width_rows_missing_transcript_id"], 1)
+        conflicts = inventory["identifier_and_location_conflicts"]
+        self.assertEqual(conflicts["duplicate_attribute_key_row_counts"], {
+            "gene_id": 1, "level": 1, "exon_number": 1,
+        })
+        self.assertEqual(conflicts["conflicting_duplicate_attribute_value_row_counts"], {
+            "gene_id": 1, "level": 1, "exon_number": 1,
+        })
+        self.assertEqual(conflicts["transcript_id_conflict_counts"], {"multiple_gene_ids": 1})
+        self.assertEqual(conflicts["issue_counts"], {
+            "conflicting_duplicate_attribute:gene_id": 1,
+            "malformed_attribute:gene_id:unquoted_attribute_value": 1,
+            "malformed_attribute:level:invalid_numeric_attribute_value": 1,
+            "missing_gene_id": 1,
+            "missing_transcript_id": 1,
+        })
+
+    def test_numeric_unknown_and_malformed_cds_phases_keep_separate_meanings(self):
+        # Explicit spans and phase combinations give hand-counted expected
+        # lengths and every possible nonempty transcript status combination.
+        rows = []
+        for transcript, blocks in (
+            ("numeric", [(1, 3, "0"), (10, 13, "1"), (20, 24, "2")]),
+            ("unknown", [(30, 35, ".")]),
+            ("bad", [(40, 46, "nonsense")]),
+            ("numeric_unknown", [(50, 50, "0"), (60, 61, ".")]),
+            ("numeric_bad", [(70, 72, "1"), (80, 83, "x")]),
+            ("unknown_bad", [(90, 94, "."), (100, 105, "2.5")]),
+            ("all_three", [(110, 116, "2"), (120, 127, "."), (130, 138, "3")]),
+        ):
+            for start, end, phase in blocks:
+                rows.append(gtf_line("chr1", "CDS", start, end, "+", phase,
+                                     f'gene_id "g"; transcript_id "{transcript}"; '
+                                     'gene_type "protein_coding";'))
+        _, inventory, manifest = run_fixture(self.tmp_path, "".join(rows), measure=True)
+        cds = inventory["CDS"]
+        self.assertEqual(cds["feature_rows"], 14)
+        self.assertEqual(cds["phase_counts"], {
+            "0": 2, "1": 2, "2": 2, "unknown": 4, "malformed": 4,
+        })
+        self.assertEqual(cds["annotated_bases_by_phase"], {
+            "0": 4, "1": 7, "2": 12, "unknown": 21, "malformed": 26,
+        })
+        self.assertEqual(cds["annotated_base_sum_over_feature_rows"], 70)
+        self.assertEqual(cds["malformed_phase_value_counts"], {
+            "nonsense": 1, "x": 1, "2.5": 1, "3": 1,
+        })
+        self.assertEqual(cds["transcript_phase_annotation_status_counts"], {
+            "ALL_NUMERIC": 1, "ALL_UNKNOWN": 1, "ALL_MALFORMED": 1,
+            "MIXED_NUMERIC_AND_UNKNOWN": 1, "MIXED_NUMERIC_AND_MALFORMED": 1,
+            "MIXED_UNKNOWN_AND_MALFORMED": 1,
+            "MIXED_NUMERIC_AND_UNKNOWN_AND_MALFORMED": 1,
+        })
+        self.assertEqual(cds["transcript_annotated_length_mod_3_counts"], {
+            "0": 4, "1": 2, "2": 1,
+        })
+        issues = inventory["identifier_and_location_conflicts"]["issue_counts"]
+        self.assertEqual(issues, {"malformed_CDS_phase": 4})
+        probe = manifest["execution"]["existing_index_measurement"]
+        self.assertEqual(probe["actual_index_selection"]["row_count"], 14)
+        self.assertTrue(probe["selection_fingerprint_concordant"])
+
+    def test_non_eof_prefix_retains_unknown_and_malformed_phases_and_statuses(self):
+        source = self.tmp_path / "phase-prefix.gtf.gz"
+        with gzip.open(source, "wt", encoding="utf-8") as stream:
+            stream.write(
+                'chr1\ttest\tCDS\t1\t3\t.\t+\t0\tgene_id "g"; transcript_id "t"; level 2;\n'
+                'chr1\ttest\tCDS\t10\t13\t.\t+\t.\tgene_id "g"; transcript_id "t"; exon_number 1;\n'
+                'chr1\ttest\tCDS\t20\t24\t.\t+\tbad\tgene_id "g"; transcript_id "t";\n'
+            )
+        source.write_bytes(source.read_bytes()[:-8])
+        out = self.tmp_path / "phase-prefix-leaf"
+        result = run_inventory(
+            source, out, expected_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
+            expected_size_bytes=source.stat().st_size, deadline_seconds=30,
+        )
+        inventory = json.loads((out / "inventory.json").read_text())
+        self.assertEqual(result["run_status"], "INCOMPLETE")
+        self.assertFalse(result["eof_reached"])
+        self.assertEqual(inventory["schema_version"], 2)
+        self.assertEqual(inventory["scope"]["counts_scope"], "OBSERVED_PREFIX")
+        self.assertFalse(inventory["scope"]["counts_complete"])
+        self.assertEqual(inventory["observed_counts"].get("malformed_attribute_rows", 0), 0)
+        self.assertEqual(inventory["observed_CDS_phase_counts"], {
+            "0": 1, "1": 0, "2": 0, "unknown": 1, "malformed": 1,
+        })
+        self.assertEqual(inventory["observed_CDS_bases_by_phase"], {
+            "0": 3, "unknown": 4, "malformed": 5,
+        })
+        self.assertEqual(inventory["observed_CDS_phase_malformed_value_counts"], {"bad": 1})
+        self.assertEqual(inventory["observed_CDS_transcript_phase_annotation_status_counts"], {
+            "MIXED_NUMERIC_AND_UNKNOWN_AND_MALFORMED": 1,
+        })
+        self.assertEqual(inventory["observed_issue_counts"], {"malformed_CDS_phase": 1})
+        self.assertNotIn("available_full_EOF_summary", inventory)
+
+    def test_deadline_prefix_with_dot_phase_is_unknown_without_frame_or_eof(self):
+        source = write_gtf(self.tmp_path / "reference.gtf", (
+            'chr1\ttest\tCDS\t1\t3\t.\t+\t.\tgene_id "g"; transcript_id "t"; level 2;\n'
+            'chr1\ttest\tCDS\t10\t12\t.\t+\tbad\tgene_id "g"; transcript_id "t";\n'
+        ))
+        ticks = iter(range(1000))
+        out = self.tmp_path / "unknown-deadline"
+        result = run_inventory(
+            source, out, expected_sha256=hashlib.sha256(source.read_bytes()).hexdigest(),
+            expected_size_bytes=source.stat().st_size, deadline_seconds=7,
+            checkpoint_seconds=0, _monotonic=lambda: float(next(ticks)),
+        )
+        inventory = json.loads((out / "inventory.json").read_text())
+        manifest = json.loads((out / "manifest.json").read_text())
+        self.assertEqual(result["run_status"], "INCOMPLETE")
+        self.assertFalse(result["eof_reached"])
+        self.assertEqual(inventory["observed_counts"]["physical_lines"], 1)
+        self.assertEqual(inventory["observed_CDS_phase_counts"], {
+            "0": 0, "1": 0, "2": 0, "unknown": 1, "malformed": 0,
+        })
+        self.assertEqual(inventory["observed_CDS_bases_by_phase"], {"unknown": 3})
+        self.assertEqual(inventory["observed_CDS_phase_malformed_value_counts"], {})
+        self.assertEqual(inventory["observed_CDS_transcript_phase_annotation_status_counts"], {
+            "ALL_UNKNOWN": 1,
+        })
+        self.assertFalse(inventory["scope"]["counts_complete"])
+        self.assertEqual(inventory["scope"]["counts_scope"], "OBSERVED_PREFIX")
+        self.assertTrue(manifest["stop_reason"].startswith("DeadlineExpired:"))
+        self.assertIsNone(manifest["source"]["final_sha256"])
 
     def test_initial_digest_or_size_mismatch_never_scans_source(self):
         source = write_gtf(self.tmp_path / "reference.gtf", gtf_line(

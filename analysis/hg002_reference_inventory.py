@@ -29,7 +29,19 @@ DEFAULT_DEADLINE_SECONDS = 900
 DEFAULT_CHECKPOINT_SECONDS = 15
 ISSUE_EXAMPLE_LIMIT = 100
 HASH_CHUNK_BYTES = 4 * 1024 * 1024
+SCHEMA_VERSION = 2
 PHASES = ("0", "1", "2")
+# Only these documented integer attributes may omit quotes. All other keys
+# retain the strict string-value checks, including identifiers.
+NUMERIC_ATTRIBUTE_PATTERNS = {
+    "level": r"[123]",
+    "exon_number": r"0*[1-9][0-9]*",
+}
+CDS_PHASE_INTERPRETATION = (
+    "0/1/2 are numeric phase declarations; '.' is legal UNKNOWN, reported as "
+    "unknown, and supplies no usable frame. Other values are malformed. "
+    "No CDS function or completeness is inferred."
+)
 TYPE_ATTRIBUTE_KEYS = (
     "gene_type",
     "gene_biotype",
@@ -214,6 +226,14 @@ def parse_attributes(text: str) -> tuple[dict[str, list[str]], list[str]]:
             continue
         key, raw_value = match.groups()
         value, value_problems = _decode_attribute_value(raw_value)
+        if key in NUMERIC_ATTRIBUTE_PATTERNS:
+            if re.fullmatch(NUMERIC_ATTRIBUTE_PATTERNS[key], value):
+                value_problems = [
+                    problem for problem in value_problems
+                    if problem != "unquoted_attribute_value"
+                ]
+            else:
+                value_problems.append("invalid_numeric_attribute_value")
         result[key].append(value)
         problems.extend(f"{key}:{problem}" for problem in value_problems)
     return dict(result), problems
@@ -235,6 +255,25 @@ def _ids(attributes: dict[str, list[str]], key: str) -> list[str]:
 
 def _new_entity() -> list[set[str]]:
     return [set() for _ in range(6)]
+
+
+def _cds_phase_category(phase: str) -> str:
+    if phase in PHASES:
+        return phase
+    return "unknown" if phase == "." else "malformed"
+
+
+def _transcript_phase_status(values: list[int]) -> str:
+    # Per-transcript metadata: bases, blocks, numeric, malformed, unknown.
+    categories = [
+        label for index, label in ((2, "NUMERIC"), (4, "UNKNOWN"), (3, "MALFORMED"))
+        if values[index]
+    ]
+    if not categories:
+        return "NO_PHASE_ROWS"
+    if len(categories) == 1:
+        return "ALL_" + categories[0]
+    return "MIXED_" + "_AND_".join(categories)
 
 
 class InventoryState:
@@ -277,12 +316,17 @@ class InventoryState:
         self.feature_id_meta: dict[str, list[set[str]]] = {}
         self.cds_gene_ids: set[str] = set()
         self.cds_transcript_ids: set[str] = set()
-        self.cds_phase_counts: Counter[str] = Counter({**{p: 0 for p in PHASES}, "malformed": 0})
+        self.cds_phase_counts: Counter[str] = Counter(
+            {**{p: 0 for p in PHASES}, "unknown": 0, "malformed": 0}
+        )
         self.cds_phase_malformed_values: Counter[str] = Counter()
         self.cds_bases_by_phase: Counter[str] = Counter()
         self.cds_bases = 0
         self.cds_valid_coordinate_rows = 0
         self.cds_transcript_meta: dict[str, list[int]] = {}
+        # Maintain this aggregate as rows arrive, so a deadline checkpoint can
+        # preserve transcript UNKNOWN statuses without a new per-ID scan.
+        self.cds_transcript_phase_status_counts: Counter[str] = Counter()
         self.transcript_tag_id_counts: Counter[str] = Counter()
         self.index_candidate_cds_rows = 0
         self.index_selected_rows = 0
@@ -311,13 +355,12 @@ class InventoryState:
 
     def _count_cds_phase(self, fields: list[str], line_number: int) -> None:
         phase = fields[7] if len(fields) > 7 else ""
-        if phase in PHASES:
-            self.cds_phase_counts[phase] += 1
-        else:
-            self.cds_phase_counts["malformed"] += 1
-            label = "missing" if phase == "" else "dot" if phase == "." else phase
+        category = _cds_phase_category(phase)
+        self.cds_phase_counts[category] += 1
+        if category == "malformed":
+            label = "missing" if phase == "" else phase
             self.cds_phase_malformed_values[label] += 1
-            if phase not in ("", "."):
+            if phase != "":
                 self.issue("malformed_CDS_phase", line_number, "CDS")
 
     def _count_index_selection(
@@ -467,13 +510,19 @@ class InventoryState:
             if valid_coordinates:
                 self.cds_valid_coordinate_rows += 1
                 self.cds_bases += span
-                phase = fields[7] if fields[7] in PHASES else "malformed"
+                phase = _cds_phase_category(fields[7])
                 self.cds_bases_by_phase[phase] += span
                 for transcript_id in transcript_ids:
-                    tx = self.cds_transcript_meta.setdefault(transcript_id, [0, 0, 0, 0])
+                    tx = self.cds_transcript_meta.setdefault(transcript_id, [0, 0, 0, 0, 0])
+                    if tx[1]:
+                        previous_status = _transcript_phase_status(tx)
+                        self.cds_transcript_phase_status_counts[previous_status] -= 1
+                        if not self.cds_transcript_phase_status_counts[previous_status]:
+                            del self.cds_transcript_phase_status_counts[previous_status]
                     tx[0] += span
                     tx[1] += 1
-                    tx[2 if phase in PHASES else 3] += 1
+                    tx[2 if phase in PHASES else 4 if phase == "unknown" else 3] += 1
+                    self.cds_transcript_phase_status_counts[_transcript_phase_status(tx)] += 1
             if valid_coordinates:
                 self._count_index_selection(chrom, start1 - 1, end1, fields[8], line_number)
 
@@ -526,7 +575,7 @@ class InventoryState:
 
     def observed_payload(self, reason: str, derived_summary_status: str) -> dict[str, Any]:
         return {
-            "schema_version": 1,
+            "schema_version": SCHEMA_VERSION,
             "scope": {
                 "status": "INCOMPLETE",
                 "counts_scope": "OBSERVED_PREFIX",
@@ -551,10 +600,14 @@ class InventoryState:
                 for feature_type, counts in sorted(self.identifier_missing_by_feature.items())
             },
             "observed_CDS_phase_counts": dict(sorted(self.cds_phase_counts.items())),
+            "observed_CDS_phase_interpretation": CDS_PHASE_INTERPRETATION,
             "observed_CDS_phase_malformed_value_counts": dict(
                 sorted(self.cds_phase_malformed_values.items())
             ),
             "observed_CDS_bases_by_phase": dict(sorted(self.cds_bases_by_phase.items())),
+            "observed_CDS_transcript_phase_annotation_status_counts": dict(
+                sorted(self.cds_transcript_phase_status_counts.items())
+            ),
             "observed_CDS_annotated_base_sum": self.cds_bases,
             "observed_tag_value_counts": dict(sorted(self.tag_value_counts.items())),
             "observed_transcript_ids_with_cds_start_NF": self.transcript_tag_id_counts[
@@ -745,18 +798,10 @@ class InventoryState:
         for count, (transcript_id, values) in enumerate(self.cds_transcript_meta.items(), 1):
             if count % 8192 == 0:
                 guard.check()
-            bases, _blocks, valid_phases, malformed_phases = values
+            bases = values[0]
             transcript_cds_base_sum += bases
             transcript_length_mod3[str(bases % 3)] += 1
-            if valid_phases and malformed_phases:
-                status = "MIXED_VALID_AND_MALFORMED"
-            elif valid_phases:
-                status = "ALL_VALID"
-            elif malformed_phases:
-                status = "ALL_MALFORMED"
-            else:
-                status = "NO_PHASE_ROWS"
-            phase_status_counts[status] += 1
+            phase_status_counts[_transcript_phase_status(values)] += 1
 
         start_nf = self.transcript_tag_id_counts["cds_start_NF"]
         end_nf = self.transcript_tag_id_counts["cds_end_NF"]
@@ -765,7 +810,7 @@ class InventoryState:
             or self.counters["malformed_attribute_rows"] > 0
         )
         return {
-            "schema_version": 1,
+            "schema_version": SCHEMA_VERSION,
             "scope": {
                 "status": "COMPLETE" if self.eof_reached else "INCOMPLETE",
                 "counts_scope": "FULL_SOURCE_EOF" if self.eof_reached else "OBSERVED_PREFIX",
@@ -819,6 +864,7 @@ class InventoryState:
                 "valid_coordinate_feature_rows": self.cds_valid_coordinate_rows,
                 "annotated_base_sum_over_feature_rows": self.cds_bases,
                 "phase_counts": dict(sorted(self.cds_phase_counts.items())),
+                "phase_interpretation": CDS_PHASE_INTERPRETATION,
                 "malformed_phase_value_counts": dict(sorted(self.cds_phase_malformed_values.items())),
                 "annotated_bases_by_phase": dict(sorted(self.cds_bases_by_phase.items())),
                 "transcript_ids_with_CDS_feature_rows": len(self.cds_transcript_ids),
@@ -1046,7 +1092,7 @@ def run_inventory(
     control = RunControl(deadline_seconds, cancel_event, _monotonic)
     state = InventoryState()
     manifest: dict[str, Any] = {
-        "schema_version": 1,
+        "schema_version": SCHEMA_VERSION,
         "run_status": "RUNNING",
         "started_utc": _utc_now(),
         "source": {

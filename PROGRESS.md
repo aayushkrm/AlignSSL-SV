@@ -40,7 +40,9 @@ Whole-reference [inventory/index-cost diagnostic](docs/research/2026-10-11-hg002
 1604302 FAILED2:0 at840s process deadline,842allocatedCPU seconds. Only
 8,185,985lines of prefix are observed; no EOF/global count/index-cost result.
 The preserved prefix exposes numeric-field false-malformed labels, confirmed
-against official GENCODE format; a finite parser correction is in progress.
+against official GENCODE format; schema2 correction passes18local tests.
+Unquoted numeric level/exon_number and legal dot-UNKNOWN phases are now
+distinct from malformed declarations; unchanged CDS selection remains pinned.
 No gene/isoform crop or automatic rerun. Corrected02's possible1h cap stays
 inside original4CPUh; scientific investment review precedes next campaign.
 [Repeat BED provenance](docs/research/2026-10-11-hg002-repeat-annotation-preflight.md)
@@ -49,8 +51,12 @@ Cluster curl7.76.1 is bypassed with strictly capped localcurl8.7.1 software
 acquisition (15,719,120B); pbsv has only an observed hash, no author checksum.
 User clarifies resource policy: allocate all resources each workload can
 use efficiently and scale independent experiments fully; do not reserve
-idle nodes/GPUs for serial checks. Routine caller CLI setup and whole-reference
-semantic-inventory implementation proceed in parallel, not S2/S3 campaigns.
+idle nodes/GPUs for serial checks. Independent tasks run in parallel when
+useful; serial validation does not reserve whole nodes. New
+[synthetic calling interface](docs/research/2026-10-11-hg002-calling-interface-fixture.md)
+passes28local tests; main has read the complete implementation and controls.
+Prospective3CPU/4GiB/5min native toy stays within S0, awaits independent
+review and a frozen upload. No real-data calling or S2/S3 campaign is released.
 
 ### Earlier checkpoints (historical state, not current job status)
 
