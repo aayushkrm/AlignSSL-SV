@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-10-11** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
+_Last updated: **2026-10-12** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,26 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+### New opportunity comparison — 2026-10-12
+
+Completed Luna/max-requested screens of [breakpoint uncertainty](docs/research/2026-10-12-breakpoint-uncertainty-opportunity.md)
+and [balanced/complex rearrangements](docs/research/2026-10-12-balanced-rearrangement-opportunity.md)
+select no clinical lead from the inspected public evidence. These bounded
+screens do not establish field-wide absence or require clinical outcomes for
+every valid molecular or methodological contribution.
+
+Main's [regulatory-SV source check](docs/research/2026-10-12-regulatory-sv-opportunity.md)
+compares actual SVEN, AlphaGenome and personal-genome evaluation claims.
+SVEN's large absolute-expression benchmark is not by itself causal effect
+validation; its five CRISPR tests remain separate positive evidence. Generic
+personal-expression weakness is prior art. Tu's personal-genome benchmark
+excludes SVs; that boundary alone establishes no novel contribution.
+An engineered-SV outcome-table feasibility worker and maintained independent
+reviewer are active. No inference campaign, model download or cluster job
+is launched. Useful-resource parallelism applies once a meaningful cheap
+test is identified; no idle whole-node reservation. The HG002 scientific
+stop below remains in force. Full publication goal is active and unmet.
 
 ### Current scientific investment stop — 2026-10-12
 

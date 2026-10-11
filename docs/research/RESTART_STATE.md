@@ -32,6 +32,15 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October12 new [breakpoint uncertainty](2026-10-12-breakpoint-uncertainty-opportunity.md)
+  and [balanced-rearrangement](2026-10-12-balanced-rearrangement-opportunity.md)
+  scouts complete without selecting a clinical lead. Main's separate
+  [regulatory SV-effect screen](2026-10-12-regulatory-sv-opportunity.md) checks
+  actual benchmark estimands and strong personal-genome prior art. Exact
+  engineered-SV outcome feasibility and maintained independent review remain
+  active. No model acquisition, inference campaign or native HG002 job from
+  this comparison. No general requirement that scientific utility be clinical.
+
 - October12 main accepts the [scientific STOP/PIVOT](2026-10-11-hg002-calling-release-decision.md)
   before S2. The HG002 exclusion rule lacks a consequential external claim;
   even validatedK>0 can be expected annotation incompleteness. No biological

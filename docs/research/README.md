@@ -15,6 +15,9 @@ they are not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-12-regulatory-sv-opportunity.md`](2026-10-12-regulatory-sv-opportunity.md) | Main's separate effect-specific source check | Actual benchmark estimands distinguished; no empirical failure, novelty or campaign claim; outcome-data and independent-review checks active |
+| [`2026-10-12-breakpoint-uncertainty-opportunity.md`](2026-10-12-breakpoint-uncertainty-opportunity.md) | Completed bounded Luna/max-requested scout | No active clinical study selected; equivalent anchors and probability-free VCF intervals separated from distinct structures |
+| [`2026-10-12-balanced-rearrangement-opportunity.md`](2026-10-12-balanced-rearrangement-opportunity.md) | Completed bounded Luna/max-requested scout | No clinical lead clears inspected public-truth and prior-art checks; methodological field not globally closed |
 | [`2026-10-11-hg002-calling-release-decision.md`](2026-10-11-hg002-calling-release-decision.md) | High-impact scientific investment comparison | Main and independent reviewer ACCEPT STOP/PIVOT before S2: no consequential external claim established; all further enabling/native jobs deferred |
 | [`2026-10-11-hg002-source-readset-result.md`](2026-10-11-hg002-source-readset-result.md) | Complete actual extraction, QA, recoverable duplicate cleanup and whole HOME custody | Independent usable DNA-input acceptance within S1;5,359,077identities/80,344,827,828bases; no phase/P1/biological/publication claim |
 | [`2026-10-11-hg002-reference-inventory.md`](2026-10-11-hg002-reference-inventory.md) | Whole-source declaration and index-cost diagnostic | Original01 controlled deadline failure preserved; schema2 format correction18local controls pass; corrected02 deferred by scientific stop |
