@@ -16,14 +16,25 @@ Authoritative [full source extraction result](docs/research/2026-10-11-hg002-sou
 5,359,077original reads/80,344,827,828bases match archive counts,0unresolved
 identities,578unmapped records retained. Gzip41.58GB and all raw results stay
 on cluster; only the unchanged small readiness manifest enters Git.
-Current S1 actual15789s,remaining13011s. Home/scratch different devices block
+Extraction brought S1 to15789s before custody QA. Home/scratch different devices block
 atomic move before any change. Full backup would exceed the cap with both
-raw BAM duplicates. Fresh read-only QA1604300 is RUNNING,1CPU/4GiB/1h;
-both raw pairs and extracted gzip SHA already pass, but full CRC/census and
-terminal status remain pending. Maintained independent reviewer accepts
+raw BAM duplicates. Fresh read-only QA1604300 COMPLETED0:0,1182allocated
+CPU seconds; both raw pairs, full extracted gzip SHA/CRC, SQLite census and
+unchanged stat tuples pass. S1 actual16971s,remaining11829s. Maintained independent reviewer accepts
 the extraction record and the specific duplicate-cleanup procedure,
 conditional on QA PASS. No deletion/backup or S2 release yet. No phase/copy/
 P1/RNA result or publication-level contribution is claimed by read extraction.
+Routine [caller CLI qualification](docs/research/2026-10-10-hg002-caller-setup.md)
+1604301 COMPLETED0:0,1allocatedCPU second. pbmm2 26.2.0/pbsv2.11.0 versions
+and all help probes pass; complete original packet HOME hashes match.
+Native help resolves discover HiFi identity97% and call HiFi S0/P10 presets,
+but no calling policy, reference/phase qualification or S2 release is implied.
+Whole-reference [inventory/index-cost diagnostic](docs/research/2026-10-11-hg002-reference-inventory.md)
+1604302 is booked1CPU/16GiB/15min with11local controls passing; no gene crop,
+DNA or RNA input. [Repeat BED provenance](docs/research/2026-10-11-hg002-repeat-annotation-preflight.md)
+remains UNKNOWN for this exact FASTA; names/lengths do not certify bases.
+Cluster curl7.76.1 is bypassed with strictly capped localcurl8.7.1 software
+acquisition (15,719,120B); pbsv has only an observed hash, no author checksum.
 User clarifies resource policy: allocate all resources each workload can
 use efficiently and scale independent experiments fully; do not reserve
 idle nodes/GPUs for serial checks. Routine caller CLI setup and whole-reference

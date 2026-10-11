@@ -64,12 +64,23 @@ QA packet [verify_hg002_s1_custody.sh](../../scripts/verify_hg002_s1_custody.sh)
 SHA256dc6bc3daa1c68f726610cc752518609634eee14537ca3332a3303fe7befabbd0,
 1CPU/4GiB/1h inside remaining S1. Maximum additional3600s leaves9411s;
 charge actual scheduler cost. No deletion is implemented by this script.
-QA1604300 is now RUNNING on hydra-n1/amd_256M at1CPU/4GiB/1h.
-At459elapsed seconds, both HOME/scratch raw BAM+BAI hashes and the whole
-extracted gzip SHA have passed; gzip EOF/CRC and SQLite checks are pending.
+QA1604300 COMPLETED0:0 on hydra-n1/amd_256M at1CPU/4GiB/1h:
+1182allocatedCPU seconds,1126.732measuredCPU seconds,stepMaxRSS14452K.
+Both HOME/scratch raw BAM+BAI hashes, whole extracted gzip SHA and full
+EOF/CRC pass. SQLite quick_check and exact census pass; all nine before/after
+stat tuples match. [Unchanged small QA receipts](../../results/hg002_read_extract_20261010/custody_qa/README.md)
+record this result. S1 actual16971s, remaining11829s of28800.
 The maintained independent reviewer accepts the completed extraction record
 and the exact duplicate-cleanup contract, conditional on terminal QA PASS.
 No duplicate cleanup or full HOME backup has occurred. Usable-input acceptance
-remains pending terminal QA and complete HOME result verification.
+remains pending complete HOME result verification. Compute QA deviceIDs47/48
+differ from login-host50/52, so the exact cleanup preflight will compare fresh
+stats on the same hydra-n1 compute host. No cross-host device-number equivalence
+is assumed. [The finite cleanup script](../../scripts/cleanup_hg002_verified_duplicate_s1.sh)
+SHA523e7caf6a4426b86f60ec66f107837217f1956c83dac444d611fa6254c1c1e8
+checks terminal QA, all fresh file identities and actual disk inventory before
+one exact recoverable unlink. The maintained independent reviewer accepts
+this exact code and storage contract before launch; all fresh guards must
+still pass. No deletion or full HOME result copy is attested by this acceptance.
 Exact caller settings/resources/phase recipe need a
 separate S2 review; S2–S4/RNA remain unreleased. Full publication goal unmet.

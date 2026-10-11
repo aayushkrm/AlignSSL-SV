@@ -1,0 +1,6 @@
+started_utc=2026-10-11T09:31:29Z
+body_reservation_bytes=0
+remaining_s0_cpu_seconds=10000
+remaining_s0_body_bytes=2147483648
+external_s0_reserved_bytes=34204497850
+new_leaf_and_home_reservation_bytes=134217728

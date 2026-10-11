@@ -924,3 +924,85 @@ pending custody limits agree with this finite finding. The QA source still
 matches dc6bc3daa1c68f726610cc752518609634eee14537ca3332a3303fe7befabbd0.
 This confirms the two local metadata receipts, not a completed remote QA.
 The original802-line review prefix independently retains its pre-append hash.
+
+## Finite S1 duplicate-cleanup prelaunch acceptance
+
+2026-10-11. Maintained independent reviewer, requested Sol6.1/high;
+backend/effort not independently attested. **ACCEPT the exact cleanup script
+and storage contract for the bounded main-owned cleanup job.** Permission
+is only for the one verified redundant scratch BAM. Its fresh guards must
+all pass on hydra-n1 before unlink. This finding is not usable-input acceptance,
+not a completed deletion, and not permission for calling or reconstruction.
+
+FULL-read scripts/cleanup_hg002_verified_duplicate_s1.sh. Local SHA256 matches
+the proposed frozen packet:
+`523e7caf6a4426b86f60ec66f107837217f1956c83dac444d611fa6254c1c1e8`.
+Bash syntax passes. Read the local custody README and current source-readset
+note. Main reports1604300 COMPLETED0:0,1182 allocated seconds,1126.732
+measured CPU seconds and14452K MaxRSS, with all nine QA receipts read and
+passing. The raw nine receipts are not yet present in the inspected local
+custody directory; it contains the README only. Thus this reviewer does not
+claim an independent raw-receipt audit or scheduler query. The cleanup job
+must read the actual remote receipts and enforce the checks below. No new
+whole-source hash or genomic body read is requested of this reviewer.
+
+| Guard before unlink | Reviewed behavior |
+|---|---|
+| Terminal QA | sacct1604300 must report COMPLETED/0:0; QA execution pins job ID and accepted script hash; QA exit receipt must be0 |
+| Integrity receipts | Four raw hash OK lines, exact gzip path OK, whole-gzip CRC PASS, exact SQLite integrity/census JSON |
+| Fresh input identity | QA before/after stats compare; current nine-file device/inode/size/mtime/ctime record must equal QA after record |
+| Target/original | Both regular, non-symlink,48,727,325,910B; target has exactly one link; both BAI paths regular and non-symlink |
+| Space | Named inventory plus full future readset copy and1GiB reserve below160GiB; sufficient HOME free space; HOME result leaf absent |
+| Mutation | One literal unlink of the exact scratch acquisition BAM; no directory removal, recursive delete, fallback copy or extraction deletion |
+
+Host-local device numbers may differ from the login namespace. The script
+requires hydra-n1 and compares the complete fresh stat records there; it does
+not omit device numbers to bypass the earlier failed atomic-move preflight.
+The original HOME file is not required by this code to have link count1:
+that check applies only to the deletion target. This differs from the launch
+description, but does not threaten preservation of the original. No global
+one-link assertion is accepted. Same-host file identity and verified separate
+custody copies, not arbitrary numeric device equality across hosts, govern.
+
+The sole deletion target remains
+`/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam`.
+HOME original bytes, both BAI copies, acquisition metadata/logs and the full
+scratch extraction remain. The deleted duplicate remains recoverable from
+the verified HOME BAM. Keep these files and QA receipts frozen through the
+guarded cleanup; the finite stat comparison is not a lock against concurrent
+writers. If fresh checks fail, stop before unlink; do not weaken the checks
+or reroute the deletion. No failure automatically permits another cleanup.
+
+The named du inventory measures the two acquisition directories, the full
+scratch extraction, QA and cleanup output. Its projection subtracts exactly
+one scratch BAM and adds the entire extraction directory plus1GiB. This
+includes both gzip and SQLite copies, not only the41.6GB gzip. Main must keep
+all S1 material outside that finite inventory, including bundle/log/receipt
+copies and temporary overhead, within the declared1GiB reserve and maintain
+the joint ledger. Do not treat it as exhaustive storage discovery. Using the
+previous sampled peak and gzip/index sizes gives135,145,728,398B including
+that reserve, leaving36,652,963,442B below160GiB; the runtime named inventory
+is authoritative for the guard. No continuous physical peak is attested.
+
+Independent synthetic checks, without running the cleanup script: three
+projection-boundary cases pass, including rejection at exact cap; five
+terminal-state marker cases pass, rejecting RUNNING, FAILED, nonzero exit and
+empty evidence. Read-only structural checks confirm one unlink and stat/space
+guards before it. These eight small controls are not a filesystem deletion
+test, a remote QA rerun or an expensive job. The script's four raw OK-line
+count relies on the pinned successful QA producer and unchanged receipts;
+it is not a standalone adversarial receipt validator. Main's full receipt
+inspection and the successful pinned producer are part of this contract.
+
+Actual S1 charge8080+7709+1182=16,971 seconds, leaving11,829 of28,800.
+Cleanup maximum180s plus a later maximum3600s copy/hash-verification packet
+would leave8049s; charge actual cost and include any further S1 work. Neither
+failed-rename history nor frozen extraction limits are rewritten. After the
+one permitted cleanup, complete HOME copying and unchanged-artifact hash
+comparison remain pending before usable-input acceptance. No scratch readset
+deletion or scientific gate release follows. S2–S4/RNA remain unreleased.
+
+Only this review subsection was appended. No jobs, network, raw genomic body
+reads, unlink, source changes or Git commands occurred. Historical926-line
+review prefix SHA256:
+`fe790158dfe6fe6db4a28cb3b948fb4b3ba19795fdbd7e852c31ac3da14f324f`.
