@@ -192,6 +192,25 @@ cardinality refusal, and acceptance of arbitrary native record IDs. The prior
 symbolic DEL and suffix-anchor positives still pass. A fresh bundle02 and
 independent correction recheck are required before any native launch.
 
+## Actual independent correction acceptance; native work deferred
+
+Replacement maintained Sol6.1/high-requested reviewer independently accepts
+both finite corrections on October12. Its32tests pass4.089s; a separate
+in-memory harness rejects26mutations and accepts4valid baseline/symbolic/
+equivalent-anchor/native-ID cases. The old missing review handle's queued
+recheck is not credited. Main has read the complete new review subsection.
+The unchanged production cohort still uses dict(zip) internally; this fixes
+the independent fixture success checker, not that parser's generic contract.
+
+Frozen02's ten uploaded entries match, manifestSHA
+2af276f4213bc3d41d41962dd518b817d6acc091b3d33664c1440939ba6ebd5a.
+Its source copies are unchanged by later explanatory note appends. Neither
+bundle01 nor02 ran natively. The independently accepted scientific STOP/PIVOT
+defers this toy, corrected whole-reference02 and every S2/S3/P1/RNA enabling
+job until a worthwhile question is established. No new S0 allocated cost or
+upstream-body charge follows from local controls/upload. The remaining9157s
+is not an instruction to consume it. Full goal remains active and unmet.
+
 Read scope: FULL governing objective; DNA-stage investment, caller preflight,
 cohort implementation and complete cohort source; captured native helps/versions
 and CLI custody note. No repeated metadata retrieval or broad research.

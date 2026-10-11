@@ -1114,3 +1114,263 @@ Only this finite acceptance subsection was appended. No jobs, network,
 genomic body reads, deletion, source edits, installation or Git commands
 occurred. All previous1008 lines remain intact; pre-append review SHA256:
 `48f4c604732c3154a5b9c4ef77cf9ba74574a68930ca32e065b8488643c062ff`.
+
+## Calling-interface toy: finite prelaunch comparator HOLD
+
+2026-10-11. Maintained independent reviewer, requested Sol6.1/high;
+backend/effort not independently attested. **HOLD the proposed native toy
+acceptance packet until two finite comparator false-pass defects are fixed
+and independently rechecked.** No S0 budget or scope objection was found.
+This is a software/interface-control HOLD, not a change to truth, caller
+policy, biological endpoints, source-input acceptance or S2 investment.
+
+FULL-read only the requested412-line writer/comparator,96-line shell runner,
+282-line tests and150-line note. Independent existing-venv unittest run:
+28 passed in3.915s, no bytecode/cache. Additional controls used only those
+tests' temporary synthetic fixtures and their unchanged cohort driver; no
+native author binary, real DNA/reference input, network or job was used.
+
+| Reviewed file | SHA256 |
+|---|---|
+| scripts/make_hg002_calling_interface_fixture.py | `ff24aa04af1bf7abe5c0bb16cdd1338b82c36ce1d0e4a1981c4e0bd037850ec4` |
+| scripts/run_hg002_calling_interface_fixture.sh | `97c14ec988f5846e9a6e4c69bb294aae97e98f5cd283df810d565b1e6f642133` |
+| tests/test_hg002_calling_interface_fixture.py | `0f1614352c95a003c3de3d002ece7ef7eed7ae55a4269ca033f4033553524f69` |
+| docs/research/2026-10-11-hg002-calling-interface-fixture.md | `8cb7f62aefa07991e6130e15eedd26c80ec08dcc0efdaaac19c84ccf841a6c7a` |
+
+**HOLD1: cohort rows are not joined to the actual accepted VCF observations.**
+The comparison checks gene/transcript/type/size keys and selected state
+fields, but does not require a source record or verify sample, event geometry
+and source-record linkage. The source-record loop at lines286–288 passes
+vacuously on an empty list. Four independent controls leave the valid VCF
+and all other output unchanged, then separately mutate only cohort JSONL:
+
+| Cohort mutation | Actual comparator result |
+|---|---|
+| Empty source_records on both rows | complete=true, errors=[] |
+| Both row spans changed to start0=0/end0=1 | complete=true, errors=[] |
+| DEL/INS source_records swapped across rows | complete=true, errors=[] |
+| Summary and row sample changed to WRONG_SAMPLE | complete=true, errors=[] |
+
+These are false interface passes: the fixture's broad CDS interval cannot
+validate a coordinate parser when the reported span is never checked, and
+UNKNOWN labels alone cannot prove retained source accounting. Require each
+toy cohort row and its nonempty source record(s) to join the corresponding
+accepted raw VCF observation: sample, source identity/ALT index, REF/ALT or
+retained alternate representation, FILTER/GT/phase and derived event
+coordinates/insertion boundary. Keep the existing exact whole-alternate
+sequence equivalence and accepted anchor shifts; do not force native record
+IDs to equal truth IDs or reject an equivalent representation merely because
+its anchor differs. Add explicit refusals for the four demonstrated mutations.
+This is the fixed two-event join, not a generic ID namespace requirement.
+
+**HOLD2: duplicate FORMAT keys silently discard conflicting genotype data.**
+At line223, dict(zip(...)) keeps the last duplicated field. A fifth control
+uses the exact valid truth VCF except the DEL genotype columns become
+FORMAT=`GT:GT`, sample=`1/1:0/1`. The unchanged cohort driver and independent
+comparison both read the last0/1; comparison reports complete=true,
+errors=[] and no observed reasons. Reject duplicate FORMAT keys before
+interpreting GT/phase and retain the raw record as incomplete. Add this
+specific regression; it needs no caller threshold or truth change.
+
+A sixth diagnostic, GT:PS:PS with0/1:15000:., hides PS from the independent
+VCF dictionary but the actual cohort phase check rejects it, so that case
+does NOT establish an overall false pass. Preserve this distinction rather
+than claiming all duplicate phase cases pass. No native-run defect or actual
+malformed native output has yet been observed; these are synthetic refusals
+the success checker currently lacks.
+
+The remaining prospective contract is bounded and useful: three complete
+random30kb contigs, fixed120bp DEL/150bp INS, reference-only negative,
+all60 identities/whole sequences, both strands and both broad CDS isoforms.
+The truth sequence/size checks, no-extra/nonref-PASS heterozygote requirement,
+unphased UNKNOWN and NOT_ASSESSED/final_D=null limits are appropriate for
+this toy. CDS rows are schema fixtures, not ORF/P1 qualification. The runner
+pins sources/help receipts/native binaries, verifies actual Slurm resources,
+uses absolute tools and sequential bounded commands, preserves failed leaves
+and final artifacts, and does not submit or tune a caller. No native interface
+success is inferred from the28 mock/text controls.
+
+Proposed3CPU/4GiB/5min/noGPU costs at most900 allocated S0 seconds. From
+main's conservative9157s remainder it leaves8257s; adding a separately chosen
+3600s reference retry would leave4657s. Those are reservations, not execution
+permission or measured throughput. Strictly below32MiB per leaf plus one
+HOME copy reserves64MiB INSIDE the existing8GiB other-material reservation.
+Main reports about3.603GB prior material plus78MB caller material; that and
+64MiB fit well within8GiB if the supplied external ledger stays valid. No
+new software/genomic body download or global storage allowance is added.
+Sampled50ms and per-file guards are not continuous quota enforcement;
+shared270s command budget and Slurm300s hard limit remain explicit.
+
+Only this finite subsection was appended. No source/main file was edited,
+no corrected whole-reference or campaign review was done, and no jobs, Git,
+network or raw genomic bodies were accessed. The prior1116-line review prefix
+is preserved, SHA256:
+`d5a562e9ed4bd260156504b92bf34bf8606db7b847281e35197eb1f8596754fd`.
+
+## Replacement review: calling-comparator correction and scientific investment stop
+
+2026-10-12, Asia/Tomsk. Replacement maintained independent scientific
+reviewer; requested GPT-6.1 Sol/high. This records the requested configuration,
+not an independently attested backend or reasoning effort. Main reports that
+prior Gibbs handle `01a125fa-41e6-7063-9c1f-f95b34490e66` is authoritatively
+`not_found` after an approximately11-hour interruption. Its queued recheck
+did not complete. This subsection is a new independent review; it does not
+credit that queued work. The maintained role can be reused for later milestones.
+
+| Finite matter | Independent disposition | Scope |
+|---|---|---|
+| Original calling-comparator HOLD1 and HOLD2 | ACCEPT the correction; clear both identified defects for the hashes below | Local synthetic software checks only; native calling interface remains unqualified |
+| Current HG002 publication-premise investment before S2 | ACCEPT STOP/PIVOT | Preserve accepted S1 and all raw/setup/failure evidence; no biological null or global novelty-absence claim |
+
+### Calling-comparator evidence
+
+FULL-read the current461-line writer/comparator,96-line runner,330-line tests,
+197-line fixture note,217-line unchanged cohort implementation and the complete
+last Calling-interface HOLD. The runner source is unchanged from that HOLD.
+Independently ran the ordinary existing local venv, with bytecode disabled:
+
+```sh
+/Users/akm/aayushkrm-AlignSSL/.venv/bin/python -B -m unittest discover \
+  -s tests -p test_hg002_calling_interface_fixture.py -v
+```
+
+Actual result: **32 tests passed in4.089s**, exit0, no skips reported.
+This includes shell syntax and safe early refusals, mock BAM/process controls,
+fixture/source/receipt integrity, symbolic DEL and equivalent suffix anchors.
+The suite uses automatically cleaned temporary synthetic files. No native
+pbmm2/pbsv command or real genomic input ran. Main's combined81tests/45subtests
+is a separate reported result; it was not independently rerun here.
+
+A separate reviewer-written stdin harness ran **30 in-memory comparator
+controls in0.175411s:26 refusals and4 valid positives**, all as expected.
+It constructed the fixed synthetic input in memory, used the actual unchanged
+cohort builder through StringIO, and captured comparator publication in memory.
+Filesystem publication/guard and input verification were mocked for this
+isolated comparison; the32-test suite supplies their separate local controls.
+No harness file or additional fixture output was saved.
+
+| Original false-pass control | Current actual result |
+|---|---|
+| Both source_records lists empty | complete=false; cohort_source_record_mismatch on both rows |
+| Both spans changed to start0=0/end0=1 | complete=false; cohort_geometry_mismatch on both rows |
+| DEL/INS source_records swapped | complete=false; cohort_source_record_mismatch on both rows |
+| Summary and row samples changed to WRONG_SAMPLE | complete=false; summary and both row sample errors |
+| DEL FORMAT=GT:GT, value=1/1:0/1 | complete=false; duplicate_FORMAT_key; interpreted FORMAT={} |
+
+The21 additional refusal controls changed each of11 source fields separately
+(record_id,line,POS,REF,FILTER,GT,phase,phase_status,alt_copy_count,alt_index,
+INFO_raw); changed summary-only sample,row-only sample,INS boundary,alternate
+and event_key; duplicated a source record; supplied duplicate PS or DP keys;
+and supplied too few or too many FORMAT values. All returned incomplete.
+The four valid controls were literal baseline, arbitrary native record IDs,
+exact symbolic DEL, and equivalent suffix anchors for both DEL and INS.
+All four returned complete=true with empty errors and observed reasons.
+
+HOLD1 is closed: each of the two cohort rows must join a unique truth-matching
+VCF observation, retain its exact nonempty singleton source record, agree on
+sample and derived record geometry, and match ALT/event identity. The geometry
+comes from that actual representation; it does not force the truth's anchor.
+Source equality includes native ID,line,POS,REF,FILTER,GT,phase,copy count,
+ALT index and raw INFO. Other observed errors still prevent overall success.
+HOLD2 is closed: duplicate keys or FORMAT/value cardinality mismatch are
+detected before dictionary/GT interpretation. The raw record and explicit
+failure reasons remain. The unchanged cohort parser still uses dict(zip)
+internally; this acceptance is of the independent fixture success checker,
+not a claim that the production cohort parser now rejects all malformed VCFs.
+
+| Independently rehashed local file | SHA256 |
+|---|---|
+| scripts/make_hg002_calling_interface_fixture.py | `3665c39fbd327718c2e29005f7c199ff1998b921f28469011dfe3bec63ca61cd` |
+| scripts/run_hg002_calling_interface_fixture.sh | `97c14ec988f5846e9a6e4c69bb294aae97e98f5cd283df810d565b1e6f642133` |
+| tests/test_hg002_calling_interface_fixture.py | `a9551c0e7981a693b902cd3ad565a60a19e863d04d37ad8c197d47928bf4cc85` |
+| docs/research/2026-10-11-hg002-calling-interface-fixture.md | `22ee447625fd32fc41ce473cb3dbae8f40f6d4eb9b29aeab4ac278ceca6b9141` |
+| analysis/hg002_cds_overlap_cohort.py | `197a54c9dbf6dd3f7f9264a3eb090d0646f08d05fdb7dfe99ae2c337f0064f4e` |
+
+Main reports all ten frozen02 upload entries verified, with source-manifest SHA
+`2af276f4213bc3d41d41962dd518b817d6acc091b3d33664c1440939ba6ebd5a`.
+PROGRESS records the same value. That remote bundle verification remains
+main evidence; this reviewer did not access the cluster or inspect its bytes.
+The historical28-test false passes, original sources and bundle01 remain
+preserved. No native toy job follows from clearing these finite code defects.
+Native BAM/index/signature/VCF behavior and successful whole native comparison
+remain unobserved by this review. No reference,phase,copy,P1 or S2 gate is released.
+
+### Scientific investment decision
+
+Read the complete governing objective first. FULL-read the392-line calling
+release decision,161-line frozen paired decision and78-line DNA-stage investment
+note. Read the HG002 claim/RNA/cost review and complete S0/S1, acquisition,
+extraction, LiftOn interface, actual synthetic and accepted usable-input review
+sections, plus the last calling HOLD. Read PROGRESS's current stop and input
+checkpoint. Prior scientific and native observations are retained-note evidence;
+no new literature, raw genomic audit or live scheduler inspection was performed.
+
+**No already-established consequential claim or applied practice requiring
+continuation was found in this bounded record.** The frozen exclusion rule is
+explicitly this project's proposed use of prediction. Neither the frozen
+decision nor the prior reviewer makes it a VEP/LiftOn guarantee or documents
+a real workflow with a downstream cost from applying this exact endpoint.
+The prior LiftOn interface findings also limit the search to retained native
+placements and selected ORFs. Native P1 does not exhaust biological splice paths.
+
+```mermaid
+flowchart LR
+    A[Resolved P1 negative] --> B[No retained policy path meets endpoint]
+    B --> C[Validated attributable RNA path: K greater than zero]
+    C --> D[Observed policy miss]
+    D --> E[Ordinary annotation incompleteness remains sufficient]
+    E --> F[Consequential contribution still needs evidence]
+```
+
+A fully checked K>0 could reject the proposed exclusion rule for an observed
+allele. It could also remain an expected annotation omission. Retained start/stop
+termini permit internal sequence changes; that endpoint does not establish
+protein function or functional rescue. Allele attribution does not isolate
+the overlapping SV from linked changes as the cause. Existing paired work,
+as recorded in the frozen notes, already integrates DNA and RNA. None of the
+accepted software/input milestones establishes a new mechanism or evaluation
+contribution. K=0 would also be limited by observable rows, assay depth and
+UNKNOWN states; there is no measured K,N or final D in the current record.
+
+The earlier exploratory eligibility was reasonable for a prospective residual
+test and remains preserved as a historical decision. It did not accept a
+publication direction or require consuming each conditional stage allowance.
+At this next investment boundary, the governing objective puts scientific
+significance first and explicitly permits stopping a weak direction. S1 cost
+is sunk; a clean input, remaining allocation and an empty queue do not improve
+the best-case scientific claim. The decision therefore can change before S2
+without an observed biological failure or a defect in accepted S1.
+
+I accept the sidecar's STOP/PIVOT now, including stopping further native toy,
+reference02, whole calling, assembly,P1 and RNA enabling investment for this
+premise. Calling before assembly would be the more economical order only after
+a worthwhile question is established; order alone does not justify the96-hour
+S2 ceiling or later256+96-hour S3/S4 ceilings. Those are conditional maxima,
+not measured costs or new permission. Preserve accepted S1 custody, original
+raw material, setup, frozen bundles, receipts and all failures. No new cleanup
+or requalification of the accepted readset is needed for this decision.
+
+Reopening would need a concrete supported scientific use for the unchanged
+endpoint and useful interpretations of either outcome that survive ordinary
+annotation incompleteness. A newly declared project exclusion practice cannot
+supply that evidence. This review does not commission new literature, a new
+library, an endpoint change or a broad scout to manufacture such a bridge.
+No guaranteed paper, pre-proved failure, second donor or new model is required;
+the present stop follows from the missing value, not from those extra conditions.
+No global absence of novelty, impossibility of transcript rescue or biological
+null is inferred. The overall publication objective remains unmet.
+
+| Independently rehashed decision input | SHA256 |
+|---|---|
+| Governing goal-objective.md | `74ba6450712e7f0e763cd81de896d3a71ca73f9c4a10fec3f1ecab59b3f1b0b8` |
+| 2026-10-11-hg002-calling-release-decision.md | `927def7b6df7d0f8896d71f03a901839d7bb543c2b69bde6a8e07cda578e2ffc` |
+| 2026-10-09-public-paired-falsifier-decision.md | `cd8c6115d22f892644604036c8ebab0d620b90fca81e3c9c76a3a66bc081fb0e` |
+| 2026-10-10-hg002-dna-stage-investment.md | `95528037a206d0beca5ca81b8fba39a071f483087698b5f0e463f30a9edc8a5f` |
+
+Only this owned review subsection was appended. Apart from the unittest
+harness's disposable synthetic files, no other file was written. No private
+keys, real genomic bodies, downloads, network, cluster commands, native jobs,
+installation, deletion or Git commands were used. Main's queue-empty and
+no-new-job state remain reported facts. The prior1208-line/92,145-byte review
+prefix is preserved with SHA256:
+`63a0737dcd3053802c9dc3017de5cc593d646211762cc1455c37f34b9c11190a`.

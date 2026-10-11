@@ -29,12 +29,25 @@ qualified experiments; it is not a reason to run a scientifically weak study.
 The original reviewer handle is now missing after an interruption. Its last
 written comparator HOLD remains evidence; its queued correction/scientific
 rechecks did not complete. A replacement independent Sol6.1/high-requested
-reviewer is auditing those two finite matters. Corrected comparator32controls
+reviewer completes those two finite matters: independent ACCEPT of both
+comparator corrections and scientific STOP/PIVOT. Its32tests pass; a separate
+30-control harness rejects26mutations and accepts4valid representations.
+No native calling interface is qualified by that acceptance.
+Corrected comparator32controls
 and combined81tests+45subtests pass, with no native qualification claim.
 Frozen02 upload's ten hashes all match; its manifestSHA
 2af276f4213bc3d41d41962dd518b817d6acc091b3d33664c1440939ba6ebd5a.
 The full publication objective remains active and unmet. Select a worthwhile
 research question before spending more on this stopped pipeline.
+
+README is also promoted to defaultmain in documentation-only commit0838c79,
+parent60ff1df. Exact tree comparison changes onlyREADME.md; research code,
+results and tracking are not promoted. Fresh GitHub read confirms READMEblob
+2099d0aee1455200cbcf49a2d5fc8a13dbbb4fce, identical to research12c8f5e.
+GitHub connector write returned403(Resource not accessible by integration);
+working Git transport succeeds. Server reports the existing account permission
+bypassed main's pull-request rule. No repository protection setting changed.
+Future main promotions must use a PR rather than rely on that exemption.
 
 ### Latest accepted input and software evidence
 

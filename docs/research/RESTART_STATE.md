@@ -42,8 +42,10 @@ completed or closed entries supersede them.
   Parser schema2 passes18tests; corrected comparator32controls and combined
   81tests+45subtests pass. No native/biological result from software controls.
   Prior reviewer handle is missing; queued rechecks remain unfinished. A new
-  independent Sol6.1/high-requested maintained reviewer checks the finite
-  comparator corrections and scientific stop; all prior review text stays intact.
+  independent Sol6.1/high-requested maintained reviewer ACCEPTS the finite
+  comparator corrections and scientific stop.32tests and30independent
+  in-memory controls pass(26refusals/4valid positives); no native qualification
+  or biological null follows. All prior review text stays intact.
 
 - RoutineS0 expandedreferences1604286 complete0:0,12,807,281,629payloadB,
   wholecompressedSHA/EOFCRCpass,home1604287all5SHA match. Sourcefileswhole,
