@@ -1,0 +1,89 @@
+pbmm2 align - Align PacBio reads to reference sequences
+
+Usage:
+  pbmm2 align [options] <ref.fa|xml|mmi> <in.bam|xml|fa|fq|gz|fofn> [out.aligned.bam|xml]
+
+  ref.fa|xml|mmi             STR    Reference FASTA, ReferenceSet XML, or Reference Index
+  in.bam|xml|fa|fq|gz|fofn   STR    Input BAM, DataSet XML, FASTA, or FASTQ
+  out.aligned.bam|xml        STR    Output BAM or DataSet XML
+
+Basic Options:
+  --chunk-size               INT    Process N records per chunk. [100]
+
+Sorting Options:
+  --sort                            Generate sorted BAM file.
+  -m,--sort-memory           STR    Memory per thread for sorting. [768M]
+  -J,--sort-threads          INT    Number of threads used for sorting; 0 means 25% of -j, maximum 8. [0]
+
+Parameter Set Options:
+  --preset                   STR    Set alignment mode. See below for preset parameter details. Valid choices:
+                                    (SUBREAD, CCS, HIFI, ISOSEQ, UNROLLED). [CCS]
+
+General Parameter Override Options:
+  -k                         INT    k-mer size (no larger than 28). [-1]
+  -w                         INT    Minimizer window size. [-1]
+  -u,--no-kmer-compression          Disable homopolymer-compressed k-mer (compression is active for SUBREAD & UNROLLED
+                                    presets).
+  -A                         INT    Matching score. [-1]
+  -B                         INT    Mismatch penalty. [-1]
+  -z                         INT    Z-drop score. [-1]
+  -Z                         INT    Z-drop inversion score. [-1]
+  -r                         INT    Bandwidth used in chaining and DP-based alignment. [-1]
+  -g                         INT    Stop chain enlongation if there are no minimizers in N bp. [-1]
+
+Gap Parameter Override Options (a k-long gap costs min{o+k*e,O+k*E}):
+  -o,--gap-open-1            INT    Gap open penalty 1. [-1]
+  -O,--gap-open-2            INT    Gap open penalty 2. [-1]
+  -e,--gap-extend-1          INT    Gap extension penalty 1. [-1]
+  -E,--gap-extend-2          INT    Gap extension penalty 2. [-1]
+
+IsoSeq Parameter Override Options:
+  -G                         INT    Max intron length (changes -r). [-1]
+  -C                         INT    Cost for a non-canonical GT-AG splicing (effective in ISOSEQ preset). [-1]
+  --no-splice-flank                 Do not prefer splice flanks GT-AG (effective in ISOSEQ preset).
+
+Read Group Options:
+  --sample                   STR    Sample name for all read groups. Defaults, in order of precedence: SM field in
+                                    input read group, biosample name, well sample name, "UnnamedSample".
+  --rg                       STR    Read group header line such as '@RG\tID:xyz\tSM:abc'. Only for FASTA/Q inputs.
+
+Identity Filter Options (combined with AND):
+  -y,--min-gap-comp-id-perc  FLOAT  Minimum gap-compressed sequence identity in percent. [70]
+
+Output Options:
+  -l,--min-length            INT    Minimum mapped read length in basepairs. [50]
+  -N,--best-n                INT    Output at maximum N alignments for each read, 0 means no maximum. [0]
+  --secondary                       Output secondary alignments.
+  --max-secondary-alns       INT    Retain at most N secondary alignments prior to filtering. Only effective with
+                                    --secondary. [5]
+  --strip                           Remove all kinetic and extra QV tags. Output cannot be polished.
+  --split-by-sample                 One output BAM per sample.
+  --include-fail-reads              Align fail reads. Only for consensusreadset.xml input.
+  --unmapped                        Include unmapped records in output.
+  --bam-index                STR    Generate index for sorted BAM output. Valid choices: (NONE, BAI, CSI). [BAI]
+  --short-sa-cigar                  Populate SA tag with short cigar representation.
+
+Input Manipulation Options (mutually exclusive):
+  --median-filter                   Pick one read per ZMW of median length.
+  --zmw                             Process ZMW Reads, subreadset.xml input required (activates UNROLLED preset).
+  --hqregion                        Process HQ region of each ZMW, subreadset.xml input required (activates UNROLLED
+                                    preset).
+
+Sequence Manipulation Options:
+  --collapse-homopolymers           Collapse homopolymers in reads and reference.
+
+  -h,--help                         Show this help and exit.
+  --version                         Show application version and exit.
+  -j,--num-threads           INT    Number of threads to use, 0 means autodetection. [0]
+  --log-level                STR    Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL). [WARN]
+  --log-file                 FILE   Log to a file, instead of stderr.
+
+Alignment modes of --preset:
+    SUBREAD     : -k 19 -w 19    -o 5 -O 56 -e 4 -E 1 -A 2 -B 5 -z 400 -Z 50  -r 2000   -g 5000
+    CCS or HiFi : -k 19 -w 19 -u -o 6 -O 26 -e 2 -E 1 -A 1 -B 4 -z 400 -Z 50  -r 2000   -g 5000
+    ISOSEQ      : -k 15 -w 5  -u -o 6 -O 24 -e 1 -E 0 -A 1 -B 4 -z 200 -Z 100 -r 200000 -g 2000 -C 5 -G 200000
+    UNROLLED    : -k 15 -w 15    -o 2 -O 32 -e 1 -E 0 -A 1 -B 2 -z 200 -Z 100 -r 2000   -g 10000
+
+Copyright (C) 2004-2025     Pacific Biosciences of California, Inc.
+This program comes with ABSOLUTELY NO WARRANTY; it is intended for
+Research Use Only and not for use in diagnostic procedures.
