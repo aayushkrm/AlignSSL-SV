@@ -1,0 +1,19 @@
+{
+  "child_cpu_limit_seconds": 1800,
+  "children_rusage_peak_rss_bytes": 828129280,
+  "combined_cpu_seconds": 9.413908000000001,
+  "command": [
+    "/Users/akm/aayushkrm-AlignSSL/.venv/bin/python",
+    "scripts/probe_svpg_retained_limit.py"
+  ],
+  "memory_enforcement": "Sampled external guard, not a hard RAM guarantee",
+  "partial_outputs_preserved": true,
+  "returncode": 0,
+  "rss_stop_bytes": 3221225472,
+  "sampled_peak_rss_bytes": 826945536,
+  "single_process_required": true,
+  "status": "complete",
+  "stop_reason": null,
+  "supervisor_error": null,
+  "wall_seconds": 9.93701692900504
+}

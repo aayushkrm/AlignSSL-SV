@@ -1,0 +1,39 @@
+{
+  "bounded_reader_script_sha256": "2fb977a24b4d027ee4508f2f45eb07d11866cc4dd8101ab340cf95983de1f523",
+  "canonical_kind_counts": {
+    "DEL": 4530,
+    "INS": 6960
+  },
+  "denominator_validation": "NOT_VALIDATED",
+  "eligible_truth_sha256": "c908217f7ec8eba1efe93f51605675a8a8b9676d9c9ca443d1348ad0a00f68d2",
+  "global_sign_only_flags_retained": 4530,
+  "identity_order_sha256": "13db07d2c659f578144067d45eea85684816cce6482230e190a1b01b8d627e37",
+  "input_bytes": 11853747,
+  "input_read_reservation_bytes": 69206016,
+  "input_unmodified": true,
+  "native_metadata_consistency": "PASS",
+  "normative_compliance_claim": false,
+  "opaque_parser_traffic_measured": false,
+  "parser_input_kernel_sealed": true,
+  "parser_streams_share_pysam_backend": true,
+  "protocol_sha256": "8eaf621e8ccf752417aa0286b2451298e46e17831e6bb85ca0fd4798163c630a",
+  "purpose": "absolute_metadata_native_consistency_not_REF_or_scoring",
+  "records": 11490,
+  "reference_validation": "UNASSESSED",
+  "rows_repaired_or_dropped": 0,
+  "scoring_performed": false,
+  "sealed_buffer_script_sha256": "8b4acc8fa8b9a86d71c9847dd3a175e6816f24a1e2827f231ddf6cf244a05fa0",
+  "serialized_rows_unchanged_by_native_calls": true,
+  "source_script_sha256": "f97dcf0051e09f799b689be66903f88c3fceef3dd6281043ab92e8a762616214",
+  "source_snapshot_stable": true,
+  "status": "complete",
+  "truth_units_script_sha256": "4c1cf4fc3d98f4cc3e0f136c15d27095730aa1725b951ea607b4684f4ed93e93",
+  "unique_ids": 11490,
+  "versions": {
+    "bcftools": "1.23.1",
+    "htslib": "1.23.1",
+    "pysam": "0.24.0",
+    "python": "3.10.20",
+    "truvari": "5.4.0"
+  }
+}

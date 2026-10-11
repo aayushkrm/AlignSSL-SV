@@ -1,0 +1,19 @@
+{
+  "status": "engineering_correction_pending_exact_reapproval_no_genomic_execution",
+  "old_protocol_sha256": "e0a8cdf1605c3f37d9fde2302702180bfea704e1f9f941120ded705e633c9cb8",
+  "new_protocol_sha256": "b1f619bccc1d6728048da6165a5c872d0f4d6e38c2b4b5fd43dd42134acdf0d4",
+  "new_script_sha256": "2fb977a24b4d027ee4508f2f45eb07d11866cc4dd8101ab340cf95983de1f523",
+  "new_tests_sha256": "7d86fba1eced8b284148476ed2383fc6f687ffeb2464dd480cb84d6cab0e0955",
+  "correction": "Remove overflow-byte reads from acquisition/posthash and metadata pin reader; snapshot checks reject growth. Two growth-at-cap synthetic regressions added. Launcher now checks aggregate output size before fetch.",
+  "v1_genomic_execution_performed": false,
+  "v1_staged_metadata_root_preserved": "/scratch/igorno-alignssl_restart_20260922/svpg_metadata_census_20261008_01",
+  "v2_report_root": "/scratch/igorno-alignssl_restart_20260922/svpg_metadata_census_20261008_02",
+  "original_source_unchanged": true,
+  "source_reservation_not_duplicated": true,
+  "same_total_new_read_reservation_bytes": 34603008,
+  "same_total_retained_charge_bytes_if_launched": 8623306013,
+  "no_refund": true,
+  "scientific_rules_changed": false,
+  "focused_validation": {"passed": 57, "skipped": 3, "seconds": 0.45},
+  "reference_native_scoring_performed": false
+}

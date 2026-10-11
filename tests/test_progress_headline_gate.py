@@ -18,7 +18,6 @@ disagreeing field -- not the implementation.
 
 from __future__ import annotations
 
-import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -70,9 +69,9 @@ CASES = [
 ]
 
 
-def _run() -> subprocess.CompletedProcess:
+def _run(progress: Path = PROGRESS) -> subprocess.CompletedProcess:
     return subprocess.run(
-        [sys.executable, str(CHECKER)],
+        [sys.executable, str(CHECKER), "--progress", str(progress)],
         cwd=ROOT, capture_output=True, text=True,
     )
 
@@ -91,20 +90,18 @@ def test_gate_passes_on_committed_state():
 @pytest.mark.skipif(not PROGRESS.exists(), reason="PROGRESS.md absent")
 @pytest.mark.parametrize("name,old,new", CASES, ids=[c[0] for c in CASES])
 def test_gate_fires_on_injected_defect(tmp_path, name, old, new):
-    backup = tmp_path / "PROGRESS.md.orig"
-    shutil.copy(PROGRESS, backup)
-    try:
-        text = PROGRESS.read_text(encoding="utf-8")
-        assert text.count(old) == 1, (
-            f"fixture drift: {name!r} anchor occurs {text.count(old)}x. "
-            "Update CASES to match the current table rendering."
-        )
-        PROGRESS.write_text(text.replace(old, new), encoding="utf-8")
-        hits = _progress_lines(_run().stdout)
-        assert hits, f"gate did not fire on: {name}"
-    finally:
-        shutil.copy(backup, PROGRESS)
-    assert not _progress_lines(_run().stdout), "restore failed"
+    # The checker accepts --progress. Mutate an isolated copy, not the live
+    # tracking file: concurrent checks/edits must never see synthetic claims.
+    progress_copy = tmp_path / "PROGRESS.md"
+    text = PROGRESS.read_text(encoding="utf-8")
+    assert text.count(old) == 1, (
+        f"fixture drift: {name!r} anchor occurs {text.count(old)}x. "
+        "Update CASES to match the current table rendering."
+    )
+    progress_copy.write_text(text.replace(old, new), encoding="utf-8")
+    hits = _progress_lines(_run(progress_copy).stdout)
+    assert hits, f"gate did not fire on: {name}"
+    assert not _progress_lines(_run().stdout), "live record does not reconcile"
 
 
 @pytest.mark.skipif(not PROGRESS.exists(), reason="PROGRESS.md absent")
@@ -119,17 +116,13 @@ def test_part_two_is_not_gated(tmp_path):
     text = PROGRESS.read_text(encoding="utf-8")
     marker = "# PART II"
     assert marker in text, "Part II heading missing; gate scoping is undefined"
-    backup = tmp_path / "PROGRESS.md.orig"
-    shutil.copy(PROGRESS, backup)
-    try:
-        head, tail = text.split(marker, 1)
-        stale = (
-            "\n| 1% | 35 | Classical-logreg | 0.999 ± 0.001 "
-            "| DeepSV-representation | 0.111 ± 0.001 | 0.9999 | deep |\n"
-        )
-        PROGRESS.write_text(head + marker + stale + tail, encoding="utf-8")
-        assert not _progress_lines(_run().stdout), (
-            "gate reached into Part II; it must scope to Part I"
-        )
-    finally:
-        shutil.copy(backup, PROGRESS)
+    head, tail = text.split(marker, 1)
+    stale = (
+        "\n| 1% | 35 | Classical-logreg | 0.999 ± 0.001 "
+        "| DeepSV-representation | 0.111 ± 0.001 | 0.9999 | deep |\n"
+    )
+    progress_copy = tmp_path / "PROGRESS.md"
+    progress_copy.write_text(head + marker + stale + tail, encoding="utf-8")
+    assert not _progress_lines(_run(progress_copy).stdout), (
+        "gate reached into Part II; it must scope to Part I"
+    )

@@ -1,0 +1,102 @@
+{
+  "experiment_id": "original-ref-validation-20261008-throughput01",
+  "status": "pending_exact_scheduler_addendum_not_reserved_not_staged",
+  "root": "/scratch/igorno-alignssl_restart_20260922/original-ref-validation-20261008-throughput01",
+  "protocol_sha256": "9222f371bd87f364ba9712a9f240032558fd6c461d11b8e5cbd4b5b42654e0e8",
+  "launcher_sha256": "345899f3cabc47e62ad6167b75ee86c295184b04942d058eacc090a76da66331",
+  "files_sha256": {
+    "analysis/check_released_truth_reference_gate.py": "d763f6e7a3c9e6af87cbdfa826fd44d2ef3d5fcdbf57ce975d80f86fbe10a6e9",
+    "analysis/check_released_truth_reference.py": "72155ac81968fb83db370613da54d3aa18efca11abf77780e9a49039af7cf0a4",
+    "analysis/diagnose_released_truth_metadata.py": "2fb977a24b4d027ee4508f2f45eb07d11866cc4dd8101ab340cf95983de1f523",
+    "analysis/check_released_truth_metadata.py": "8b4acc8fa8b9a86d71c9847dd3a175e6816f24a1e2827f231ddf6cf244a05fa0",
+    "analysis/released_truth_units.py": "4c1cf4fc3d98f4cc3e0f136c15d27095730aa1725b951ea607b4684f4ed93e93",
+    "tests/test_check_released_truth_reference_gate.py": "67136a5d47a13ca48d59e26d7f674b403b1113455fd5b0f9067b65ee023a5bd2",
+    "results/data_audits/svpg_2026/2026-10-08/reference_throughput_protocol.json": "9222f371bd87f364ba9712a9f240032558fd6c461d11b8e5cbd4b5b42654e0e8"
+  },
+  "reference_runtime": {
+    "buffer_size": 8192,
+    "gzip_module_sha256": "fb131d4bbe711c410f54c7f0b3c2c64292e1279199fd04c53837db03e542a907",
+    "implementation": "cpython",
+    "python": "3.10.20"
+  },
+  "native_precondition": {
+    "report_sha256": "3f86568e741577ebaccec12dc5860f515c8e27eb2e25914c7a4bef8c93525d9a",
+    "records": 11490,
+    "engineering_only": true
+  },
+  "controls": {
+    "payload_launch_slots": 1,
+    "test_file": "tests/test_check_released_truth_reference_gate.py",
+    "expected_passed": 41,
+    "skips_permitted": 0,
+    "output_bundle_max_bytes": 16384,
+    "cpu_soft_and_hard_seconds": 60,
+    "wall_seconds": 120,
+    "kill_grace_seconds": 5
+  },
+  "reference": {
+    "payload_launch_slots": 1,
+    "source_bytes": 892326179,
+    "cpu_soft_and_hard_seconds": 600,
+    "wall_seconds": 900,
+    "kill_grace_seconds": 5,
+    "output_bundle_max_bytes": 262144,
+    "source_and_runtime_pins_in_protocol": true
+  },
+  "address_space_bytes": 4294967296,
+  "launcher_caps": {
+    "own_soft_cpu_seconds": 60,
+    "inherited_hard_cpu_seconds": 600,
+    "wall_seconds": 1100,
+    "signal_at_outer_deadline": "KILL"
+  },
+  "outer_recipe": "cd exact root; reject existing launched or tree/stdout/stderr paths; verify frozen bundle hashes; ulimit -S -t 60; ulimit -H -t 600; ulimit -v 4194304; /usr/bin/time -v -o launch_tree.time.log timeout --signal=KILL 1100s bash run_reference_throughput.sh > launch.stdout.log 2> launch.stderr.log",
+  "termination_scope": "outer default group hard KILL; both inner timeouts foreground; fixed Python payloads no explicit child spawning",
+  "tree_cpu_reservation_seconds": 720,
+  "prior_named_cpu_seconds": 426.622707,
+  "named_cpu_with_reservation_seconds": 1146.622707,
+  "named_cpu_ceiling_seconds": 7200,
+  "tree_cpu_accounting": "normal waited outer tree once, inner descriptive only; abnormal loss of waited descendants or use over reservation INCOMPLETE with reserve retained",
+  "reservation_bytes": 7516192768,
+  "prior_retained_charge_bytes": 8692512029,
+  "prospective_retained_charge_bytes": 16208704797,
+  "global_ceiling_bytes": 68719476736,
+  "named_envelopes": {
+    "three_pinned_encoded_passes_bytes": 2676978537,
+    "delivered_decoded_cap_bytes": 4294967296,
+    "failure_read_ahead_bytes": 65536,
+    "three_truth_envelopes_bytes": 50331648,
+    "metadata_bytes": 67108864,
+    "sum_bytes": 7089451881,
+    "headroom_bytes": 426740887,
+    "possible_reference_posthash_growth_extra_bytes": 181415645
+  },
+  "metadata_scope": "FAI/code/runtime-library/test/protocol/native-report/fixtures/staging/pin checks/output/hash/copy/readback; <=64 MiB named allowance, not complete physical IO",
+  "staged_bundle_max_bytes": 131072,
+  "outer_state_bundle_max_bytes": 16384,
+  "all_failure_outputs_size_checked_before_transfer": true,
+  "durable_claim": "exclusive launched/control/real claim directories before spawn",
+  "no_retry": true,
+  "no_slot_renewal": true,
+  "no_refund": true,
+  "scoring_allowed": false,
+  "denominator_validation_claim_allowed": false,
+  "caller_or_original_truth_map_BED_reads_allowed": false,
+  "genomic_transfer_allowed": false,
+  "new_installation_allowed": false,
+  "physical_or_opaque_io_measured": false,
+  "batch_outer_script_sha256": "807b7594a93eaf8e661e87818463319b66d90dd3ffb5a76a0fec3aa323b3837a",
+  "previous_approved_manifest_sha256": "21581e1bad4040c752d495440c0949a0bb218660822cecdac5120a6b9027a935",
+  "batch_allocation": {
+    "submission_slots": 1,
+    "partition": "amd_256M",
+    "cpus_per_task": 1,
+    "memory_mib": 4096,
+    "wall_minutes": 20,
+    "gpus": 0,
+    "submission_claim": "exclusive mkdir submitted BEFORE sbatch; unknown submit acknowledgment forbids a second submission",
+    "command": "sbatch --parsable --partition=amd_256M --cpus-per-task=1 --mem=4G --time=00:20:00 --job-name=alignssl-ref-throughput01 --chdir=/scratch/igorno-alignssl_restart_20260922/original-ref-validation-20261008-throughput01 --output=/scratch/igorno-alignssl_restart_20260922/original-ref-validation-20261008-throughput01/slurm.%j.log --error=/scratch/igorno-alignssl_restart_20260922/original-ref-validation-20261008-throughput01/slurm.%j.err /scratch/igorno-alignssl_restart_20260922/original-ref-validation-20261008-throughput01/run_reference_batch_outer.sh",
+    "accounting": "Outer timing covers launch payload/control tree once. Slurm sacct total CPU is descriptive reconciliation only; never add it again. Missing final tree accounting retains720 reservation."
+  },
+  "batch_log_bundle_max_bytes": 16384
+}

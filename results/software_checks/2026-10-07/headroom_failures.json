@@ -1,0 +1,45 @@
+{
+  "scope": "software_validation_not_biological_experiment",
+  "full_suite_before_boolean_wrapper_correction": {
+    "failed": 2, "passed": 739, "skipped": 35, "seconds": 397.03,
+    "all_green": false
+  },
+  "isolated_repeat_before_correction": {"failed": 2, "seconds": 1.13},
+  "df_available_1024_byte_blocks": 1945112,
+  "runtime_reports_from_initial_full_suite": [
+    {
+      "child_cpu_limit_seconds": 1800,
+      "children_rusage_peak_rss_bytes": 76185600,
+      "combined_cpu_seconds": 0.15212600000000043,
+      "command": ["/Users/akm/aayushkrm-AlignSSL/.venv/bin/python", "-c", "print('synthetic')"],
+      "memory_enforcement": "Sampled external guard, not a hard RAM guarantee",
+      "partial_outputs_preserved": true,
+      "returncode": 0,
+      "rss_stop_bytes": 3221225472,
+      "sampled_peak_rss_bytes": 7684096,
+      "single_process_required": true,
+      "status": "incomplete",
+      "stop_reason": "local free-space headroom exhausted",
+      "supervisor_error": null,
+      "wall_seconds": 0.28484162798849866
+    },
+    {
+      "child_cpu_limit_seconds": 550,
+      "children_rusage_peak_rss_bytes": 76185600,
+      "combined_cpu_seconds": 0.3163029999999929,
+      "command": ["/Users/akm/aayushkrm-AlignSSL/.venv/bin/python", "-c", "import resource,time,json; limits=resource.getrlimit(resource.RLIMIT_CPU); assert limits==(550,550),limits; print(json.dumps({'synthetic':True,'child_cpu_limits':limits}),flush=True); time.sleep(0.3)"],
+      "memory_enforcement": "Sampled external guard, not a hard RAM guarantee",
+      "partial_outputs_preserved": true,
+      "returncode": -15,
+      "rss_stop_bytes": 3221225472,
+      "sampled_peak_rss_bytes": 6242304,
+      "single_process_required": true,
+      "status": "incomplete",
+      "stop_reason": "local free-space headroom exhausted",
+      "supervisor_error": null,
+      "wall_seconds": 0.477168484008871
+    }
+  ],
+  "production_headroom_guard_lowered": false,
+  "historical_sources_or_results_deleted": false
+}

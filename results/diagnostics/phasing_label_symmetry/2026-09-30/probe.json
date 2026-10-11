@@ -1,0 +1,291 @@
+{
+  "schema_version": 1,
+  "scope": "synthetic source-contract diagnostic only; no biological accuracy",
+  "read_error_probability": 0.01,
+  "genotype_prior": "uniform; heterozygous phase marginalized equally",
+  "fixtures": {
+    "endpoints_six_ref_one_alt": {
+      "zero_as_missing": {
+        "original": {
+          "gt": "0/1",
+          "posterior_before_output_floor": [
+            0.038461538461343626,
+            0.961538461534612,
+            4.044368126184709e-12
+          ],
+          "pl": [
+            14,
+            0,
+            80
+          ],
+          "gq": 14
+        },
+        "swapped": {
+          "gt": "0/0",
+          "posterior_before_output_floor": [
+            0.5465047150154378,
+            0.45349528492709534,
+            5.746692250596156e-11
+          ],
+          "pl": [
+            3,
+            3,
+            80
+          ],
+          "gq": 3
+        }
+      },
+      "zero_is_probability": {
+        "original": {
+          "gt": "0/1",
+          "posterior_before_output_floor": [
+            0.019801980197978367,
+            0.9801980197999395,
+            2.0822489362597094e-12
+          ],
+          "pl": [
+            17,
+            0,
+            80
+          ],
+          "gq": 17
+        },
+        "swapped": {
+          "gt": "0/1",
+          "posterior_before_output_floor": [
+            0.019801980197978367,
+            0.9801980197999395,
+            2.0822489362597094e-12
+          ],
+          "pl": [
+            17,
+            0,
+            80
+          ],
+          "gq": 17
+        }
+      }
+    },
+    "interior_six_ref_one_alt": {
+      "zero_as_missing": {
+        "original": {
+          "gt": "0/1",
+          "posterior_before_output_floor": [
+            0.021199826834873575,
+            0.9788001731628972,
+            2.229237502232842e-12
+          ],
+          "pl": [
+            17,
+            0,
+            80
+          ],
+          "gq": 16
+        },
+        "swapped": {
+          "gt": "0/1",
+          "posterior_before_output_floor": [
+            0.021199826834873575,
+            0.9788001731628972,
+            2.229237502232842e-12
+          ],
+          "pl": [
+            17,
+            0,
+            80
+          ],
+          "gq": 16
+        }
+      },
+      "zero_is_probability": {
+        "original": {
+          "gt": "0/1",
+          "posterior_before_output_floor": [
+            0.021199826834873575,
+            0.9788001731628972,
+            2.229237502232842e-12
+          ],
+          "pl": [
+            17,
+            0,
+            80
+          ],
+          "gq": 16
+        },
+        "swapped": {
+          "gt": "0/1",
+          "posterior_before_output_floor": [
+            0.021199826834873575,
+            0.9788001731628972,
+            2.229237502232842e-12
+          ],
+          "pl": [
+            17,
+            0,
+            80
+          ],
+          "gq": 16
+        }
+      }
+    },
+    "missing_six_ref_one_alt": {
+      "zero_as_missing": {
+        "original": {
+          "gt": "0/0",
+          "posterior_before_output_floor": [
+            0.5465047150154376,
+            0.45349528492709534,
+            5.746692250596155e-11
+          ],
+          "pl": [
+            3,
+            3,
+            80
+          ],
+          "gq": 3
+        },
+        "swapped": {
+          "gt": "0/0",
+          "posterior_before_output_floor": [
+            0.5465047150154376,
+            0.45349528492709534,
+            5.746692250596155e-11
+          ],
+          "pl": [
+            3,
+            3,
+            80
+          ],
+          "gq": 3
+        }
+      },
+      "zero_is_probability": {
+        "original": {
+          "gt": "0/0",
+          "posterior_before_output_floor": [
+            0.5465047150154376,
+            0.45349528492709534,
+            5.746692250596155e-11
+          ],
+          "pl": [
+            3,
+            3,
+            80
+          ],
+          "gq": 3
+        },
+        "swapped": {
+          "gt": "0/0",
+          "posterior_before_output_floor": [
+            0.5465047150154376,
+            0.45349528492709534,
+            5.746692250596155e-11
+          ],
+          "pl": [
+            3,
+            3,
+            80
+          ],
+          "gq": 3
+        }
+      }
+    },
+    "unphased_half_six_ref_one_alt": {
+      "zero_as_missing": {
+        "original": {
+          "gt": "0/0",
+          "posterior_before_output_floor": [
+            0.5465047150154376,
+            0.45349528492709534,
+            5.746692250596155e-11
+          ],
+          "pl": [
+            3,
+            3,
+            80
+          ],
+          "gq": 3
+        },
+        "swapped": {
+          "gt": "0/0",
+          "posterior_before_output_floor": [
+            0.5465047150154376,
+            0.45349528492709534,
+            5.746692250596155e-11
+          ],
+          "pl": [
+            3,
+            3,
+            80
+          ],
+          "gq": 3
+        }
+      },
+      "zero_is_probability": {
+        "original": {
+          "gt": "0/0",
+          "posterior_before_output_floor": [
+            0.5465047150154376,
+            0.45349528492709534,
+            5.746692250596155e-11
+          ],
+          "pl": [
+            3,
+            3,
+            80
+          ],
+          "gq": 3
+        },
+        "swapped": {
+          "gt": "0/0",
+          "posterior_before_output_floor": [
+            0.5465047150154376,
+            0.45349528492709534,
+            5.746692250596155e-11
+          ],
+          "pl": [
+            3,
+            3,
+            80
+          ],
+          "gq": 3
+        }
+      }
+    }
+  },
+  "limits": [
+    "Independent formula implementation, not execution of the upstream caller.",
+    "Real endpoint frequency and assessment execution revision are unknown.",
+    "No genomic calls, truth comparisons, calibration or effect size measured.",
+    "Counterfactual explicit-missing handling is not an adopted caller patch."
+  ],
+  "sources": [
+    {
+      "path": "src/cuteSV/cuteSV_genotype.py",
+      "url": "https://raw.githubusercontent.com/Zilong-Li/cuteSV/eb3d79de3b87ad823552f1156627c79de61d587c/src/cuteSV/cuteSV_genotype.py",
+      "commit": "eb3d79de3b87ad823552f1156627c79de61d587c",
+      "git_blob": "3a7e77fabd2005c6e6ae300be8fdec04340688cf",
+      "sha256": "fac93af946734c358b9eb86a8a1892282704d3dc63bae907aa4b5139319bb7c7",
+      "bytes": 29175,
+      "executed": false
+    },
+    {
+      "path": "src/cuteSV/cuteSV_forcecalling.py",
+      "url": "https://raw.githubusercontent.com/Zilong-Li/cuteSV/eb3d79de3b87ad823552f1156627c79de61d587c/src/cuteSV/cuteSV_forcecalling.py",
+      "commit": "eb3d79de3b87ad823552f1156627c79de61d587c",
+      "git_blob": "a4fc0d7ffda0fc8d3eddd307fcfd9984c5992da1",
+      "sha256": "dc73af045f2cd3891bcfd57c6fb5a47771d8b67457b105f97ae802820aa1dc65",
+      "bytes": 32903,
+      "executed": false
+    },
+    {
+      "path": "src/cuteSV/cuteSV",
+      "url": "https://raw.githubusercontent.com/Zilong-Li/cuteSV/eb3d79de3b87ad823552f1156627c79de61d587c/src/cuteSV/cuteSV",
+      "commit": "eb3d79de3b87ad823552f1156627c79de61d587c",
+      "git_blob": "c91edb6ece4d8d4b33d60c71c6ed5eeda9910840",
+      "sha256": "1cbc6e12184e25f6dd03fded95271af0ad6cd4c3d446b02f392d55caca2540b9",
+      "bytes": 55781,
+      "executed": false
+    }
+  ]
+}

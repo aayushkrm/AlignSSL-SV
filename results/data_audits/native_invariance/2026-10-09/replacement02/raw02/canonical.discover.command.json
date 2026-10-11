@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/sawfish",
+    "discover",
+    "--threads",
+    "1",
+    "--ref",
+    "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/fixture/reference.fa",
+    "--bam",
+    "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/fixture/canonical.bam",
+    "--disable-cnv",
+    "--cov-regex",
+    "^chrSynthetic$",
+    "--output-dir",
+    "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/discover"
+  ]
+}

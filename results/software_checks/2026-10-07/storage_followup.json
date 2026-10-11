@@ -1,0 +1,23 @@
+{
+  "scope": "subsequent_storage_measurement_and_two_targeted_software_checks",
+  "local_available_bytes": 16152895488,
+  "local_available_GiB_rounded": 15.04,
+  "unchanged_runtime_guard_bytes": 10770972672,
+  "local_runtime_guard_headroom": true,
+  "targeted_pytest": {
+    "tests": [
+      "tests/test_run_svpg_stage_bounded.py::test_success_records_cpu_memory_and_preserves_logs",
+      "tests/test_transport_svpg_standard.py::test_actual_guard_launches_child_with_real_cpu_limits"
+    ],
+    "passed": 2,
+    "seconds": 1.13,
+    "exit_code": 0
+  },
+  "user_preference": "Continue on the cluster for now",
+  "earlier_failure_and_recovery_records_preserved": true,
+  "agent_deleted_files": false,
+  "legacy_smoke_failure_resolved": false,
+  "full_suite_rerun": false,
+  "all_green_claim": false,
+  "new_cluster_check_performed_in_this_followup": false
+}

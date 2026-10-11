@@ -1,0 +1,1 @@
+/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_read_extract_20261010_01/source_reads.fastq.gz: OK

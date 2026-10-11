@@ -1,0 +1,22 @@
+{
+  "status": "metadata_preflight_only_no_genomic_body_read",
+  "original_failed_synthetic_screen_log_bytes": 946,
+  "original_failed_synthetic_screen_cpu_seconds": 0.15,
+  "original_failed_reference_control_log_bytes": 1976,
+  "original_failed_reference_control_cpu_seconds": 0.14,
+  "source_directory": "/scratch/igorno-alignssl_restart_20260922/synthetic_screen_controls_20261007_01",
+  "inspection": "stat plus two head reads capped at 8192 bytes each; both complete log sizes are below the cap",
+  "recorded_prior_cpu_seconds_from_reservation": 421.242707,
+  "reconciled_named_prior_cpu_seconds": 421.532707,
+  "maximum_after_new_60_second_census_seconds": 481.532707,
+  "aggregate_cpu_ceiling_seconds": 7200,
+  "reservation_history": "Original prospective ledger retained; its 60/600-second placeholders were conservative charges, not observed runtime or proven CPU limits. This preflight replaces uncertainty with raw user+system CPU observations, without refunding any read reservation.",
+  "cluster_python": "3.10.20",
+  "cluster_python_path": "/home/igorno/miniconda3/envs/truvari_env/bin/python",
+  "linux_time_and_timeout_available": true,
+  "fresh_report_root_absent_at_preflight": true,
+  "prepared_input_stat_bytes": 11853747,
+  "prepared_input_stat_type": "regular file",
+  "prepared_input_hash_verified_in_preflight": false,
+  "scoring_performed": false
+}

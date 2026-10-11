@@ -1,0 +1,436 @@
+{
+  "purpose": "transport_two_unfinished_v1",
+  "body_read_approved": true,
+  "independent_review": "Dirac exact code/protocol/reservation approval required before execution, separate from closed custom-stage route; Faraday requested Sol6.1/max chose A once",
+  "members": [
+    "SV_callsets/HG002_benchmark/cutesv/hifi.vcf",
+    "SV_callsets/HG002_benchmark/debreak/hifi.vcf",
+    "SV_callsets/HG002_benchmark/sawfish/hifi.vcf",
+    "SV_callsets/HG002_benchmark/sniffles/hifi.vcf",
+    "SV_callsets/HG002_benchmark/svim/hifi.vcf",
+    "SV_callsets/HG002_benchmark/svpg/hifi.vcf"
+  ],
+  "execution_callers": [
+    "svim",
+    "svpg"
+  ],
+  "reused_completed_callers": {
+    "cutesv": {
+      "report_path": "/Users/akm/aayushkrm-AlignSSL/repo/results/data_audits/svpg_2026/2026-10-07/stage_04_failure.json",
+      "report_sha256": "ba33a644a82781a70facfcbda4bb3ccceac28b7e27e228a363d367dadd73bbec",
+      "staged_path": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-stage-02/cutesv.vcf",
+      "staged_bytes": 29410475,
+      "source_sha256": "a96fd63588c1457a1762d01219bb1220ffb782f31ff36e0072f05d1e13902b43",
+      "staged_sha256": "9603595adebb54e656513c3ffba416e0d2173763030abef20f804e1c877209c1"
+    },
+    "debreak": {
+      "report_path": "/Users/akm/aayushkrm-AlignSSL/repo/results/data_audits/svpg_2026/2026-10-07/stage_04_failure.json",
+      "report_sha256": "ba33a644a82781a70facfcbda4bb3ccceac28b7e27e228a363d367dadd73bbec",
+      "staged_path": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-stage-04/debreak.vcf",
+      "staged_bytes": 935962599,
+      "source_sha256": "82f8ec62332691118329f4ef995229409b86144f5011d25eae67dece096056d1",
+      "staged_sha256": "82f8ec62332691118329f4ef995229409b86144f5011d25eae67dece096056d1"
+    },
+    "sawfish": {
+      "report_path": "/Users/akm/aayushkrm-AlignSSL/repo/results/data_audits/svpg_2026/2026-10-07/stage_04_failure.json",
+      "report_sha256": "ba33a644a82781a70facfcbda4bb3ccceac28b7e27e228a363d367dadd73bbec",
+      "staged_path": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-stage-04/sawfish.vcf",
+      "staged_bytes": 25716015,
+      "source_sha256": "fd35b27c44e2506491ce0d5706908349ef534a6fe43e87a48ae4efa201e00f9c",
+      "staged_sha256": "fd35b27c44e2506491ce0d5706908349ef534a6fe43e87a48ae4efa201e00f9c"
+    },
+    "sniffles": {
+      "report_path": "/Users/akm/aayushkrm-AlignSSL/repo/results/data_audits/svpg_2026/2026-10-07/stage_04_failure.json",
+      "report_sha256": "ba33a644a82781a70facfcbda4bb3ccceac28b7e27e228a363d367dadd73bbec",
+      "staged_path": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-stage-04/sniffles.vcf",
+      "staged_bytes": 15004300,
+      "source_sha256": "c2b0220af2867c5017b9c6c0861b318eb806a77e2cc28950fdd525f1c9926cbb",
+      "staged_sha256": "c2b0220af2867c5017b9c6c0861b318eb806a77e2cc28950fdd525f1c9926cbb"
+    }
+  },
+  "archive_bytes": 2879666672,
+  "archive_md5": "a6ea80f613130c318d36632073c6de97",
+  "archive_sha256": "fff2f1d2978234a1357c6a16ce5ed9fabf17925955247ae2f9ee2ee8564eb7ca",
+  "source_limit_bytes": 4294967296,
+  "global_limit_bytes": 12884901888,
+  "charged_prior_source_bytes": 4094310110,
+  "charged_prior_global_bytes": 4153131060,
+  "transport_reservation_bytes": 30307148,
+  "compatibility_reservation_bytes": 1036400535,
+  "pysam_version": "0.24.1",
+  "local_samtools_version": "1.24",
+  "samples": {
+    "cutesv": "NULL",
+    "debreak": "/data1/huheng/HG002/hifi.bam",
+    "sawfish": "HG002",
+    "sniffles": "SAMPLE",
+    "svim": "Sample",
+    "svpg": "Sample"
+  },
+  "header_line_counts": {
+    "cutesv": 114,
+    "debreak": 111,
+    "sawfish": 123,
+    "sniffles": 134,
+    "svim": 112,
+    "svpg": 101
+  },
+  "contigs": [
+    {
+      "name": "1",
+      "length": 249250621
+    },
+    {
+      "name": "2",
+      "length": 243199373
+    },
+    {
+      "name": "3",
+      "length": 198022430
+    },
+    {
+      "name": "4",
+      "length": 191154276
+    },
+    {
+      "name": "5",
+      "length": 180915260
+    },
+    {
+      "name": "6",
+      "length": 171115067
+    },
+    {
+      "name": "7",
+      "length": 159138663
+    },
+    {
+      "name": "8",
+      "length": 146364022
+    },
+    {
+      "name": "9",
+      "length": 141213431
+    },
+    {
+      "name": "10",
+      "length": 135534747
+    },
+    {
+      "name": "11",
+      "length": 135006516
+    },
+    {
+      "name": "12",
+      "length": 133851895
+    },
+    {
+      "name": "13",
+      "length": 115169878
+    },
+    {
+      "name": "14",
+      "length": 107349540
+    },
+    {
+      "name": "15",
+      "length": 102531392
+    },
+    {
+      "name": "16",
+      "length": 90354753
+    },
+    {
+      "name": "17",
+      "length": 81195210
+    },
+    {
+      "name": "18",
+      "length": 78077248
+    },
+    {
+      "name": "19",
+      "length": 59128983
+    },
+    {
+      "name": "20",
+      "length": 63025520
+    },
+    {
+      "name": "21",
+      "length": 48129895
+    },
+    {
+      "name": "22",
+      "length": 51304566
+    },
+    {
+      "name": "X",
+      "length": 155270560
+    },
+    {
+      "name": "Y",
+      "length": 59373566
+    },
+    {
+      "name": "MT",
+      "length": 16569
+    },
+    {
+      "name": "GL000207.1",
+      "length": 4262
+    },
+    {
+      "name": "GL000226.1",
+      "length": 15008
+    },
+    {
+      "name": "GL000229.1",
+      "length": 19913
+    },
+    {
+      "name": "GL000231.1",
+      "length": 27386
+    },
+    {
+      "name": "GL000210.1",
+      "length": 27682
+    },
+    {
+      "name": "GL000239.1",
+      "length": 33824
+    },
+    {
+      "name": "GL000235.1",
+      "length": 34474
+    },
+    {
+      "name": "GL000201.1",
+      "length": 36148
+    },
+    {
+      "name": "GL000247.1",
+      "length": 36422
+    },
+    {
+      "name": "GL000245.1",
+      "length": 36651
+    },
+    {
+      "name": "GL000197.1",
+      "length": 37175
+    },
+    {
+      "name": "GL000203.1",
+      "length": 37498
+    },
+    {
+      "name": "GL000246.1",
+      "length": 38154
+    },
+    {
+      "name": "GL000249.1",
+      "length": 38502
+    },
+    {
+      "name": "GL000196.1",
+      "length": 38914
+    },
+    {
+      "name": "GL000248.1",
+      "length": 39786
+    },
+    {
+      "name": "GL000244.1",
+      "length": 39929
+    },
+    {
+      "name": "GL000238.1",
+      "length": 39939
+    },
+    {
+      "name": "GL000202.1",
+      "length": 40103
+    },
+    {
+      "name": "GL000234.1",
+      "length": 40531
+    },
+    {
+      "name": "GL000232.1",
+      "length": 40652
+    },
+    {
+      "name": "GL000206.1",
+      "length": 41001
+    },
+    {
+      "name": "GL000240.1",
+      "length": 41933
+    },
+    {
+      "name": "GL000236.1",
+      "length": 41934
+    },
+    {
+      "name": "GL000241.1",
+      "length": 42152
+    },
+    {
+      "name": "GL000243.1",
+      "length": 43341
+    },
+    {
+      "name": "GL000242.1",
+      "length": 43523
+    },
+    {
+      "name": "GL000230.1",
+      "length": 43691
+    },
+    {
+      "name": "GL000237.1",
+      "length": 45867
+    },
+    {
+      "name": "GL000233.1",
+      "length": 45941
+    },
+    {
+      "name": "GL000204.1",
+      "length": 81310
+    },
+    {
+      "name": "GL000198.1",
+      "length": 90085
+    },
+    {
+      "name": "GL000208.1",
+      "length": 92689
+    },
+    {
+      "name": "GL000191.1",
+      "length": 106433
+    },
+    {
+      "name": "GL000227.1",
+      "length": 128374
+    },
+    {
+      "name": "GL000228.1",
+      "length": 129120
+    },
+    {
+      "name": "GL000214.1",
+      "length": 137718
+    },
+    {
+      "name": "GL000221.1",
+      "length": 155397
+    },
+    {
+      "name": "GL000209.1",
+      "length": 159169
+    },
+    {
+      "name": "GL000218.1",
+      "length": 161147
+    },
+    {
+      "name": "GL000220.1",
+      "length": 161802
+    },
+    {
+      "name": "GL000213.1",
+      "length": 164239
+    },
+    {
+      "name": "GL000211.1",
+      "length": 166566
+    },
+    {
+      "name": "GL000199.1",
+      "length": 169874
+    },
+    {
+      "name": "GL000217.1",
+      "length": 172149
+    },
+    {
+      "name": "GL000216.1",
+      "length": 172294
+    },
+    {
+      "name": "GL000215.1",
+      "length": 172545
+    },
+    {
+      "name": "GL000205.1",
+      "length": 174588
+    },
+    {
+      "name": "GL000219.1",
+      "length": 179198
+    },
+    {
+      "name": "GL000224.1",
+      "length": 179693
+    },
+    {
+      "name": "GL000223.1",
+      "length": 180455
+    },
+    {
+      "name": "GL000195.1",
+      "length": 182896
+    },
+    {
+      "name": "GL000212.1",
+      "length": 186858
+    },
+    {
+      "name": "GL000222.1",
+      "length": 186861
+    },
+    {
+      "name": "GL000200.1",
+      "length": 187035
+    },
+    {
+      "name": "GL000193.1",
+      "length": 189789
+    },
+    {
+      "name": "GL000194.1",
+      "length": 191469
+    },
+    {
+      "name": "GL000225.1",
+      "length": 211173
+    },
+    {
+      "name": "GL000192.1",
+      "length": 547496
+    },
+    {
+      "name": "NC_007605",
+      "length": 171823
+    },
+    {
+      "name": "hs37d5",
+      "length": 35477943
+    }
+  ],
+  "max_wall_seconds": 900,
+  "max_combined_cpu_seconds": 600,
+  "child_cpu_seconds": 550,
+  "rss_stop_bytes": 3221225472,
+  "no_scientific_scoring": true,
+  "no_sort_normalize_refine": true,
+  "no_coordinate_repair": true,
+  "no_record_omission": true,
+  "no_automatic_retry": true,
+  "failure_stops_dataset_route": true,
+  "success_requires_fixed_diagnostic_next_working_day": "After known preparation review, within remaining budget; no further bespoke infrastructure phase",
+  "reservation_note": "Full transport includes two one-byte EOF probes. All six files are parsed and SHA-verified once through length-bounded pipes, so four completed VCFs need no separate genomic hash pass. No prior failed-pass refunds."
+}

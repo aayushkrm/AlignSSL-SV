@@ -1,0 +1,172 @@
+{
+  "body_ledger": {
+    "attempts": [
+      {
+        "actual_body_bytes": 0,
+        "attempt": 1,
+        "error": null,
+        "finished_utc": "2026-10-10T06:01:17.279245+00:00",
+        "kind": "metadata_head",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity",
+          "If-Match": "\"8c384718d3e41cbe000453b6846a7451-5809\""
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "48727325910",
+          "Content-Range": "",
+          "ETag": "\"8c384718d3e41cbe000453b6846a7451-5809\""
+        },
+        "response_status": 200,
+        "started_utc": "2026-10-10T06:01:16.305654+00:00",
+        "url": "https://stergachis-manuscript-data.s3.us-west-1.amazonaws.com/2023/Vollger_et_al_long-read_multi-ome/HG002_WGS.haplotagged.bam"
+      },
+      {
+        "actual_body_bytes": 0,
+        "attempt": 2,
+        "error": null,
+        "finished_utc": "2026-10-10T06:01:17.945078+00:00",
+        "kind": "metadata_head",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity",
+          "If-Match": "\"b45b35aa8fd900989a2798ed22faec3c-3\""
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "21582928",
+          "Content-Range": "",
+          "ETag": "\"b45b35aa8fd900989a2798ed22faec3c-3\""
+        },
+        "response_status": 200,
+        "started_utc": "2026-10-10T06:01:17.279281+00:00",
+        "url": "https://stergachis-manuscript-data.s3.us-west-1.amazonaws.com/2023/Vollger_et_al_long-read_multi-ome/HG002_WGS.haplotagged.bam.bai"
+      },
+      {
+        "actual_body_bytes": 48727325910,
+        "attempt": 3,
+        "error": null,
+        "finished_utc": "2026-10-10T08:15:03.635081+00:00",
+        "kind": "full_object",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity",
+          "If-Match": "\"8c384718d3e41cbe000453b6846a7451-5809\"",
+          "Range": "bytes=0-48727325909"
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "48727325910",
+          "Content-Range": "bytes 0-48727325909/48727325910",
+          "ETag": "\"8c384718d3e41cbe000453b6846a7451-5809\""
+        },
+        "response_status": 206,
+        "started_utc": "2026-10-10T06:01:17.945880+00:00",
+        "url": "https://stergachis-manuscript-data.s3.us-west-1.amazonaws.com/2023/Vollger_et_al_long-read_multi-ome/HG002_WGS.haplotagged.bam"
+      },
+      {
+        "actual_body_bytes": 21582928,
+        "attempt": 4,
+        "error": null,
+        "finished_utc": "2026-10-10T08:15:11.513445+00:00",
+        "kind": "full_object",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity",
+          "If-Match": "\"b45b35aa8fd900989a2798ed22faec3c-3\"",
+          "Range": "bytes=0-21582927"
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "21582928",
+          "Content-Range": "bytes 0-21582927/21582928",
+          "ETag": "\"b45b35aa8fd900989a2798ed22faec3c-3\""
+        },
+        "response_status": 206,
+        "started_utc": "2026-10-10T08:15:03.635943+00:00",
+        "url": "https://stergachis-manuscript-data.s3.us-west-1.amazonaws.com/2023/Vollger_et_al_long-read_multi-ome/HG002_WGS.haplotagged.bam.bai"
+      }
+    ],
+    "limit_including_prior_body": 55834574848,
+    "loopback_bai_bytes_served_separately": 0,
+    "measurement": "bytes returned by upstream HTTP response.read; excludes headers and TLS",
+    "new_upstream_body_bytes": 48748908838,
+    "prior_body_bytes": 196608,
+    "remaining_bytes": 7085469402,
+    "total_body_bytes_including_prior": 48749105446
+  },
+  "code_sha256": "57524ec840fdd08a9cd25505e230fbe1063ae0e4ade70f2f9dbba77f237aef35",
+  "cpu_seconds": 201.38528499999998,
+  "finished_utc": "2026-10-10T08:15:11.513787+00:00",
+  "free_bytes_before_transfer": 55156089028608,
+  "full_S1_readiness": "NOT_ASSESSED",
+  "helper_current_sha256": "c0f47e522d4f88b2e068f035b78eb558e63e4abc94839b4a78e32f3c6f09034b",
+  "helper_expected_sha256": "c0f47e522d4f88b2e068f035b78eb558e63e4abc94839b4a78e32f3c6f09034b",
+  "limits": {
+    "body_bytes_including_prior": 55834574848,
+    "minimum_free_bytes": 171798691840,
+    "prior_body_bytes": 196608,
+    "prospective_allocation": {
+      "cpus": 1,
+      "memory_bytes": 8589934592,
+      "wall_seconds": 14400
+    },
+    "retries": 0,
+    "wall_seconds": 14400
+  },
+  "objects": [
+    {
+      "path": "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam",
+      "sha256": "b7edeb4bbc2589039c6148a912857f26924ca8fd5971cd3141337d0ce24bbde4",
+      "size_bytes": 48727325910
+    },
+    {
+      "path": "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam.bai",
+      "sha256": "5106ac6339847460842a528a312471785d9348f59cc65cca02b55b15e157e546",
+      "size_bytes": 21582928
+    }
+  ],
+  "output_dir": "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01",
+  "peak_rss_bytes": 31313920,
+  "runtime": {
+    "executable": "/beegfs/datasets/home/igorno/alignssl_restart_20260922/venvs/hg002_intake_check_20261010/bin/python",
+    "platform": "Linux-5.14.0-362.18.1.el9_3.x86_64-x86_64-with-glibc2.34",
+    "python": "3.12.1 | packaged by Anaconda, Inc. | (main, Jan 19 2024, 15:51:05) [GCC 11.2.0]"
+  },
+  "scope": "ACQUISITION_ONLY",
+  "source_head": [
+    {
+      "etag": "\"8c384718d3e41cbe000453b6846a7451-5809\"",
+      "size_bytes": 48727325910,
+      "url": "https://stergachis-manuscript-data.s3.us-west-1.amazonaws.com/2023/Vollger_et_al_long-read_multi-ome/HG002_WGS.haplotagged.bam"
+    },
+    {
+      "etag": "\"b45b35aa8fd900989a2798ed22faec3c-3\"",
+      "size_bytes": 21582928,
+      "url": "https://stergachis-manuscript-data.s3.us-west-1.amazonaws.com/2023/Vollger_et_al_long-read_multi-ome/HG002_WGS.haplotagged.bam.bai"
+    }
+  ],
+  "sources": [
+    {
+      "etag": "\"8c384718d3e41cbe000453b6846a7451-5809\"",
+      "name": "HG002_WGS.haplotagged.bam",
+      "size_bytes": 48727325910,
+      "url": "https://stergachis-manuscript-data.s3.us-west-1.amazonaws.com/2023/Vollger_et_al_long-read_multi-ome/HG002_WGS.haplotagged.bam"
+    },
+    {
+      "etag": "\"b45b35aa8fd900989a2798ed22faec3c-3\"",
+      "name": "HG002_WGS.haplotagged.bam.bai",
+      "size_bytes": 21582928,
+      "url": "https://stergachis-manuscript-data.s3.us-west-1.amazonaws.com/2023/Vollger_et_al_long-read_multi-ome/HG002_WGS.haplotagged.bam.bai"
+    }
+  ],
+  "stage": "S1a",
+  "started_utc": "2026-10-10T06:01:16.274363+00:00",
+  "status": "ACQUIRED",
+  "wall_seconds": 8035.241420734674
+}

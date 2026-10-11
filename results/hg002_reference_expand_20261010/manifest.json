@@ -1,0 +1,42 @@
+{
+  "external_reserve_bytes": 8589934592,
+  "objects": [
+    {
+      "compressed_sha256": "b760d18dbb651dd14dfc290083371b3ef3bff122d43a9cefb13ca4ecf38f05ca",
+      "name": "GRCh38.primary_assembly.genome.fa",
+      "sha256": "e49b92b3e4f321bf254c042f25b726d9931c4d74c7523e8b6bb530e63b0cfd4b",
+      "size_bytes": 3151417447
+    },
+    {
+      "compressed_sha256": "272f9972d1bfffa344889c7ae47973bbd79a75e933c55505f347cd25121876fb",
+      "name": "gencode.v50.primary_assembly.annotation.gff3",
+      "sha256": "e747fa69545f1b80015802745da6d4d8a5e45193dc5bc6c877b6b00150cd8c62",
+      "size_bytes": 4767708901
+    },
+    {
+      "compressed_sha256": "89bbad69a8c89fee5fadec0a2f14a098752d27a4ef7f24e4de9bac681e1b18f4",
+      "name": "gencode.v50.primary_assembly.annotation.gtf",
+      "sha256": "04af7379ad6c214f49758db270938a38c41bebbf7b9dc8e24065d8f3a9f08d0d",
+      "size_bytes": 4688772094
+    },
+    {
+      "compressed_sha256": "86d89ad817c77703a50a5fd867bd8dcddee5f94ac2e3eabeb8e0770a01bb15c3",
+      "name": "gencode.v50.metadata.Selenocysteine",
+      "sha256": "4c7c8e22dcbe9b9f62b1ec071a6586833205af2ecb32f68c9127d496b69b144d",
+      "size_bytes": 3372
+    },
+    {
+      "compressed_sha256": "5d6408c3a1c22d864c96a55367cf5b69f1031dea1fe2cd6d03e366ae3fc56a45",
+      "name": "gencode.v50.pc_translations.fa",
+      "sha256": "3bd7190d73230663ee1b976cbdce6106223df31304c5e58f97db18aed1e4b74d",
+      "size_bytes": 199379815
+    }
+  ],
+  "payload_cap_bytes": 12868124672,
+  "reserve_measurement": "planning reserve, not observed file total",
+  "reserved_copies": 2,
+  "scope": "S0_REFERENCE_EXPANSION_ONLY",
+  "status": "EXPANDED_CRC_VERIFIED",
+  "wall_seconds": 32.86623950116336,
+  "written_payload_bytes": 12807281629
+}

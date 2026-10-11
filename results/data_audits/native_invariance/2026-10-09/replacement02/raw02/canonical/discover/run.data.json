@@ -1,0 +1,8 @@
+{
+  "run_step": {
+    "name": "discover",
+    "version": "2.2.1"
+  },
+  "sample_name": "SYNTH",
+  "max_sv_scoring_depth": 1000
+}

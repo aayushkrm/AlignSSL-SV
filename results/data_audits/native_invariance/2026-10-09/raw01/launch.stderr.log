@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-01/code/analysis/run_native_cigar_fixture.py", line 228, in <module>
+    main()
+  File "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-01/code/analysis/run_native_cigar_fixture.py", line 218, in main
+    run(args.root)
+  File "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-01/code/analysis/run_native_cigar_fixture.py", line 162, in run
+    fixture = create_fixture(root / "fixture")
+  File "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-01/code/analysis/native_cigar_fixture.py", line 178, in create_fixture
+    directory = _new_output_directory(output_dir)
+  File "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-01/code/analysis/native_cigar_fixture.py", line 85, in _new_output_directory
+    _require(not any(parent.is_symlink() for parent in directory.absolute().parents),
+  File "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-01/code/analysis/native_cigar_fixture.py", line 33, in _require
+    raise ValueError(message)
+ValueError: output directory ancestors must not be links

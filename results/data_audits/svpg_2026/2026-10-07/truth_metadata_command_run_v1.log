@@ -1,0 +1,25 @@
+{"status": "failed", "error_type": "ValueError", "error": "SVLEN contradicts canonical signed allele length", "scope": "metadata_only_not_REF_or_scoring"}
+Command exited with non-zero status 2
+	Command being timed: "timeout -k 5s 120s env OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 /home/igorno/miniconda3/envs/truvari_env/bin/python /scratch/igorno-alignssl_restart_20260922/svpg_truth_metadata_20261007_01/check_released_truth_metadata.py --truth-path /scratch/igorno-alignssl_restart_20260922/svpg_truth_prepare_20261007_02/prepared/eligible_truth.vcf --protocol-path /scratch/igorno-alignssl_restart_20260922/svpg_truth_metadata_20261007_01/truth_metadata_protocol_v1.json --protocol-sha256 008c6a5d7516359cd8c6c5f25dfea8dc29b4a01dbf1a113dc5cccdcc09fdb12b --report-path /scratch/igorno-alignssl_restart_20260922/svpg_truth_metadata_20261007_01/truth_metadata_inventory.json"
+	User time (seconds): 0.36
+	System time (seconds): 0.30
+	Percent of CPU this job got: 53%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.27
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 96876
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 645
+	Minor (reclaiming a frame) page faults: 13533
+	Voluntary context switches: 20238
+	Involuntary context switches: 734
+	Swaps: 0
+	File system inputs: 46143
+	File system outputs: 26
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 2

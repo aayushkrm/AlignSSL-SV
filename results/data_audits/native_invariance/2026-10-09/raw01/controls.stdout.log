@@ -1,0 +1,84 @@
+......................................................................   [100%]
+==================================== PASSES ====================================
+______ test_exact_full_haplotype_summary_accepts_left_shift_and_reads_bcf ______
+----------------------------- Captured stderr call -----------------------------
+[E::idx_find_and_load] Could not retrieve index file for '/scratch/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-01/tmp/observe-native-fixture-l6prloa3/input.bcf'
+_________________ test_bgzip_final_native_output_is_supported __________________
+----------------------------- Captured stderr call -----------------------------
+[E::idx_find_and_load] Could not retrieve index file for '/scratch/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-01/tmp/observe-native-fixture-3agke_3h/input.vcf.gz'
+___________ test_damaged_bam_is_rejected_without_report[corrupt_crc] ___________
+----------------------------- Captured stderr call -----------------------------
+[E::bgzf_uncompress] CRC32 checksum mismatch
+[E::bgzf_read] Read block operation failed with error 33 after 0 of 4 bytes
+=========================== short test summary info ============================
+PASSED tests/test_native_cigar_fixture.py::test_create_is_deterministic_and_validates
+PASSED tests/test_native_cigar_fixture.py::test_cli_creates_then_validates_fixture
+PASSED tests/test_native_cigar_fixture.py::test_creation_refuses_existing_directory_and_preserves_contents
+PASSED tests/test_native_cigar_fixture.py::test_creation_refuses_symlink_destination
+PASSED tests/test_native_cigar_fixture.py::test_creation_refuses_symlink_parent
+PASSED tests/test_native_cigar_fixture.py::test_validator_rejects_record_mutations[sequence-sequence mismatch]
+PASSED tests/test_native_cigar_fixture.py::test_validator_rejects_record_mutations[quality-quality mismatch]
+PASSED tests/test_native_cigar_fixture.py::test_validator_rejects_record_mutations[NM-tags mismatch]
+PASSED tests/test_native_cigar_fixture.py::test_validator_rejects_record_mutations[MD-tags mismatch]
+PASSED tests/test_native_cigar_fixture.py::test_validator_rejects_record_mutations[CIGAR-CIGAR mismatch]
+PASSED tests/test_native_cigar_fixture.py::test_validator_rejects_record_mutations[MAPQ-MAPQ mismatch]
+PASSED tests/test_native_cigar_fixture.py::test_validator_rejects_record_mutations[flag-primary flag]
+PASSED tests/test_native_cigar_fixture.py::test_validator_rejects_record_mutations[RG-tags mismatch]
+PASSED tests/test_native_cigar_fixture.py::test_validator_rejects_record_mutations[start-start mismatch]
+PASSED tests/test_native_cigar_fixture.py::test_validator_rejects_record_mutations[name-unexpected read name]
+PASSED tests/test_observe_native_fixture.py::test_exact_full_haplotype_summary_accepts_left_shift_and_reads_bcf
+PASSED tests/test_observe_native_fixture.py::test_non_equivalent_invalid_ref_symbolic_and_multiallelic_rows_are_counted
+PASSED tests/test_observe_native_fixture.py::test_two_nonmatching_literal_edits_in_a_run_keep_negative_unresolved
+PASSED tests/test_observe_native_fixture.py::test_exact_record_presence_survives_other_unresolved_records
+PASSED tests/test_observe_native_fixture.py::test_single_nonmatching_literal_row_reports_no_exact_record_not_full_absence
+PASSED tests/test_observe_native_fixture.py::test_joint_final_recovery_counts_one_record_with_pass_and_heterozygous_gt
+PASSED tests/test_observe_native_fixture.py::test_final_requires_synth_sample_and_does_not_create_report
+PASSED tests/test_observe_native_fixture.py::test_symlink_input_is_rejected
+PASSED tests/test_observe_native_fixture.py::test_reference_negative_does_not_match_fixed_truth_scope
+PASSED tests/test_observe_native_fixture.py::test_changed_input_is_detected_before_report_creation
+PASSED tests/test_observe_native_fixture.py::test_input_caps_reject_oversized_and_combined_inputs_before_parse
+PASSED tests/test_observe_native_fixture.py::test_report_size_cap_and_exclusive_creation
+PASSED tests/test_observe_native_fixture.py::test_cli_requires_and_uses_each_explicit_input_and_report_path
+PASSED tests/test_observe_native_fixture.py::test_invalid_truth_contract_is_rejected_without_report
+PASSED tests/test_observe_native_fixture.py::test_bgzip_final_native_output_is_supported
+PASSED tests/test_observe_native_fixture.py::test_empty_complete_callsets_are_not_missing_or_unresolved
+PASSED tests/test_observe_native_fixture.py::test_missing_output_is_not_treated_as_empty
+PASSED tests/test_observe_native_fixture.py::test_padded_compatible_joint_edits_preserve_uncertainty_and_positive_precedence[False-candidate]
+PASSED tests/test_observe_native_fixture.py::test_padded_compatible_joint_edits_preserve_uncertainty_and_positive_precedence[False-final]
+PASSED tests/test_observe_native_fixture.py::test_padded_compatible_joint_edits_preserve_uncertainty_and_positive_precedence[True-candidate]
+PASSED tests/test_observe_native_fixture.py::test_padded_compatible_joint_edits_preserve_uncertainty_and_positive_precedence[True-final]
+PASSED tests/test_native_cigar_launcher.py::test_extraction_selects_only_executable_and_preserves_destination
+PASSED tests/test_native_cigar_launcher.py::test_unsafe_or_ambiguous_archive_is_rejected[names0-False]
+PASSED tests/test_native_cigar_launcher.py::test_unsafe_or_ambiguous_archive_is_rejected[names1-False]
+PASSED tests/test_native_cigar_launcher.py::test_unsafe_or_ambiguous_archive_is_rejected[names2-True]
+PASSED tests/test_native_cigar_launcher.py::test_unsafe_or_ambiguous_archive_is_rejected[names3-False]
+PASSED tests/test_native_cigar_launcher.py::test_tree_caps_and_links_are_rejected
+PASSED tests/test_native_cigar_launcher.py::test_metadata_is_exclusive
+PASSED tests/test_native_cigar_launcher.py::test_controller_uses_states_not_only_individual_unresolved_counts
+PASSED tests/test_native_fixture_settings.py::test_accepts_default_and_rescue_settings_and_returns_every_field[10]
+PASSED tests/test_native_fixture_settings.py::test_accepts_default_and_rescue_settings_and_returns_every_field[30]
+PASSED tests/test_native_fixture_settings.py::test_rejects_wrong_or_imprecisely_typed_required_values[min_indel_size-34]
+PASSED tests/test_native_fixture_settings.py::test_rejects_wrong_or_imprecisely_typed_required_values[min_indel_size-35.0]
+PASSED tests/test_native_fixture_settings.py::test_rejects_wrong_or_imprecisely_typed_required_values[disable_cnv-1]
+PASSED tests/test_native_fixture_settings.py::test_rejects_wrong_or_imprecisely_typed_required_values[min_indel_size_noise_margin-30]
+PASSED tests/test_native_fixture_settings.py::test_rejects_wrong_or_imprecisely_typed_required_values[coverage_est_regex-^chrOther$]
+PASSED tests/test_native_fixture_settings.py::test_rejects_missing_and_nested_required_fields
+PASSED tests/test_native_fixture_settings.py::test_rejects_wrong_paths[bam_filename]
+PASSED tests/test_native_fixture_settings.py::test_rejects_wrong_paths[ref_filename]
+PASSED tests/test_native_fixture_settings.py::test_rejects_wrong_paths[output_dir]
+PASSED tests/test_native_fixture_settings.py::test_rejects_duplicate_keys_and_nonstandard_numbers[,"duplicate":1,"duplicate":2}-duplicate key]
+PASSED tests/test_native_fixture_settings.py::test_rejects_duplicate_keys_and_nonstandard_numbers[,"extra":NaN}-nonstandard number]
+PASSED tests/test_native_fixture_settings.py::test_rejects_oversize_and_symlink_settings
+PASSED tests/test_native_fixture_settings.py::test_rejects_file_changed_between_read_and_posthash
+PASSED tests/test_native_fixture_artifact_integrity.py::test_truncated_bgzf_final_vcf_is_rejected_without_report
+PASSED tests/test_native_fixture_artifact_integrity.py::test_damaged_bam_is_rejected_without_report[truncated]
+PASSED tests/test_native_fixture_artifact_integrity.py::test_damaged_bam_is_rejected_without_report[corrupt_crc]
+PASSED tests/test_native_fixture_artifact_integrity.py::test_malformed_tail_in_plain_vcf_is_not_accepted_as_valid_prefix
+PASSED tests/test_native_fixture_artifact_integrity.py::test_duplicate_truth_key_is_rejected_without_report
+PASSED tests/test_native_fixture_artifact_integrity.py::test_truth_schema_rejects_permissive_types_and_unknown_fields[boolean-integer]
+PASSED tests/test_native_fixture_artifact_integrity.py::test_truth_schema_rejects_permissive_types_and_unknown_fields[float-integer]
+PASSED tests/test_native_fixture_artifact_integrity.py::test_truth_schema_rejects_permissive_types_and_unknown_fields[unknown-field]
+PASSED tests/test_native_fixture_artifact_integrity.py::test_plain_mixed_format_requires_heterozygous_gt_for_recovery[missing-GT]
+PASSED tests/test_native_fixture_artifact_integrity.py::test_plain_mixed_format_requires_heterozygous_gt_for_recovery[wrong-GT]
+PASSED tests/test_native_fixture_artifact_integrity.py::test_plain_mixed_format_requires_heterozygous_gt_for_recovery[mixed-FORMAT-control]
+70 passed in 2.58s

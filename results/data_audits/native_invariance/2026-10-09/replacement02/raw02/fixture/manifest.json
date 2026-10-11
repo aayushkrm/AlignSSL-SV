@@ -1,0 +1,42 @@
+{
+  "files": {
+    "canonical.bam": {
+      "bytes": 5334,
+      "sha256": "97de37519b30d47542d2227d4100831407bcaff7b56b4570eab3c6975a6f7948"
+    },
+    "canonical.bam.bai": {
+      "bytes": 96,
+      "sha256": "a0f127ff10d2b52fdd671b40ef2047da9a4cd91c208a1f3fa1d040419ae954b5"
+    },
+    "fragmented.bam": {
+      "bytes": 5341,
+      "sha256": "ce6b0100a9fd43fbbd8ceb95eb9ccc82a9697f07949bf0b97acbe7c35a2f396b"
+    },
+    "fragmented.bam.bai": {
+      "bytes": 96,
+      "sha256": "f9915214402bdcb5a7a70343a508ae27a870043099d83f90fdba1e240a438aba"
+    },
+    "reference.fa": {
+      "bytes": 4081,
+      "sha256": "f1cdb2ea81960791940692eac4f30bdb5ce0e16b5f40279e246a27e2a9f39260"
+    },
+    "reference.fa.fai": {
+      "bytes": 27,
+      "sha256": "0a3db7ea64681a9605e2313e12953dc8878468995b06b77b6f22cc3286aa6119"
+    },
+    "reference_only.bam": {
+      "bytes": 5248,
+      "sha256": "a5ae57ea1b5dac08b383bcec8d17a54e4b14a880492cb5aaf5f6495820442a62"
+    },
+    "reference_only.bam.bai": {
+      "bytes": 96,
+      "sha256": "e4202d8f3ecee008b7b4b5d713b3f30acb577a4b1f714cf89f7c5047640c599b"
+    },
+    "truth.json": {
+      "bytes": 430,
+      "sha256": "b324b44bc84f26ab53f9aacac21d144c27245d7f13054bf24c69a8d45cf7dbeb"
+    }
+  },
+  "seed": 1729,
+  "version": 1
+}

@@ -1,0 +1,16 @@
+{
+  "schema_version": 3,
+  "status": "RESERVED_NOT_EXECUTED_FINAL_REVIEW_REQUIRED",
+  "prior_source_decoded_charge_bytes": 3087320050,
+  "source_pass_reservation_bytes": 1006990060,
+  "source_cumulative_reserved_bytes": 4094310110,
+  "source_cap_bytes": 4294967296,
+  "reuse_verification_reservation_bytes": 29410475,
+  "global_prior_charge_bytes": 3116730525,
+  "global_cumulative_reserved_bytes": 4153131060,
+  "global_cap_bytes": 12884901888,
+  "global_unreserved_bytes": 8731770828,
+  "failure_policy": "Keep full source and reuse reservations on failure; preserve all partials/logs. No automatic retry, further cap increase or parser redesign",
+  "decision": "Faraday Sol6.1/max-requested high-impact choice A once; Dirac independent approval required before actual execution",
+  "science_policy": "No truth/preparation/sorting/scientific screen/refinement reserved or approved here. Freeze downstream reservations before outcomes."
+}

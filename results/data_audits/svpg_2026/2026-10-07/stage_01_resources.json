@@ -1,0 +1,27 @@
+{
+  "child_cpu_limit_seconds": 1800,
+  "children_rusage_peak_rss_bytes": 17588224,
+  "combined_cpu_seconds": 13.177442,
+  "command": [
+    "/Users/akm/aayushkrm-AlignSSL/.venv/bin/python",
+    "/Users/akm/aayushkrm-AlignSSL/repo/analysis/stage_svpg_callsets.py",
+    "--archive",
+    "/Users/akm/aayushkrm-AlignSSL/data/source_archives/svpg-18456502-SV_callsets.zip",
+    "--outdir",
+    "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-stage-01",
+    "--protocol",
+    "results/data_audits/svpg_2026/2026-10-07/stage_protocol.json",
+    "--protocol-sha256",
+    "d44bdeea2142bb6dae2e61f7bc6b29947beb9627199bdd28e0b1d5a70e83c4ae"
+  ],
+  "memory_enforcement": "Sampled external guard, not a hard RAM guarantee",
+  "partial_outputs_preserved": true,
+  "returncode": 2,
+  "rss_stop_bytes": 3221225472,
+  "sampled_peak_rss_bytes": 17170432,
+  "single_process_required": true,
+  "status": "incomplete",
+  "stop_reason": null,
+  "supervisor_error": null,
+  "wall_seconds": 13.101530416010064
+}

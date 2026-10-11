@@ -1,0 +1,39 @@
+{
+  "caller_preparation_approved": true,
+  "independent_approval_ref": "docs/research/2026-10-08-caller-preparation-review.md; valid only after exact bundle acceptance",
+  "purpose": "released_caller_preparation_v1",
+  "caller": "sniffles",
+  "source_basename": "sniffles.vcf",
+  "source_sha256": "c2b0220af2867c5017b9c6c0861b318eb806a77e2cc28950fdd525f1c9926cbb",
+  "source_bytes": 15004300,
+  "expected_sample_label": "SAMPLE",
+  "expected_source_records": 32567,
+  "max_source_bytes": 15004300,
+  "max_line_bytes": 15004300,
+  "max_children": 1000000,
+  "output_caps": {
+    "annotated": 134217728,
+    "split": 134217728,
+    "derived": 134217728,
+    "sorted": 134217728,
+    "released": 67108864,
+    "released_index": 4194304,
+    "native": 134217728,
+    "native_bgzf": 67108864,
+    "native_index": 4194304,
+    "sort_temp": 134217728
+  },
+  "storage_cap_bytes": 948961280,
+  "input_read_cap_bytes": 3291404199,
+  "opaque_io_reservation_bytes": 268435456,
+  "charged_prior_global_bytes": 30024655360,
+  "preparation_reservation_bytes": 3291404199,
+  "runtime": {
+    "truvari": "5.4.0",
+    "pysam": "0.24.0",
+    "bcftools": "1.23.1",
+    "htslib": "1.23.1",
+    "python": "3.10.20"
+  },
+  "omit_info_rnames": true
+}

@@ -1,0 +1,18 @@
+[2026-10-09][10:27:39][sawfish][INFO] Starting sawfish 2.2.1
+[2026-10-09][10:27:39][sawfish][INFO] cmdline: /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/sawfish joint-call --threads 1 --sample /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/discover --disable-cnv --output-dir /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/joint
+[2026-10-09][10:27:39][sawfish][INFO] Running on 1 threads
+[2026-10-09][10:27:39][sawfish][INFO] Initializing joint-call process for 1 input samples
+[2026-10-09][10:27:39][sawfish][INFO] Input sample 1 discover_dir: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/discover'
+[2026-10-09][10:27:39][sawfish][INFO] Input sample 1 alignment_file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/fixture/canonical.bam'
+[2026-10-09][10:27:39][sawfish][INFO] Reading reference genome from file '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/fixture/reference.fa'
+[2026-10-09][10:27:39][sawfish][INFO] Writing depth track to bigwig file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/joint/samples/sample0001_SYNTH/depth.bw'
+[2026-10-09][10:27:39][sawfish][INFO] Merging SV haplotypes
+[2026-10-09][10:27:39][sawfish][INFO] Finished merging SV haplotypes across samples
+[2026-10-09][10:27:39][sawfish][INFO] Writing merged contig alignments to bam file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/joint/contig.alignment.bam'
+[2026-10-09][10:27:39][sawfish][INFO] Starting SV candidate cluster genotyping
+[2026-10-09][10:27:39][sawfish][INFO] Finished genotyping all SV candidate clusters
+[2026-10-09][10:27:39][sawfish][INFO] Starting joint CNV/SV refinement
+[2026-10-09][10:27:39][sawfish][INFO] Merged 0 CNVs into corresponding breakpoint-based SVs
+[2026-10-09][10:27:39][sawfish][INFO] Writing genotyped structural variants to file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/joint/genotyped.sv.vcf.gz'
+[2026-10-09][10:27:39][sawfish][INFO] Writing run statistics to file: '/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/native-cigar-invariance-20261009-02/canonical/joint/run.stats.json'
+[2026-10-09][10:27:39][sawfish][INFO] sawfish completed. Total Runtime: 00:00:00.022

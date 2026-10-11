@@ -1,0 +1,13 @@
+{
+  "purpose": "one_truth_eligibility_preparation_attempt_only",
+  "prior_charge_bytes": 5220887319,
+  "reservation_bytes": 1082195971,
+  "full_conservative_charge_bytes": 6303083290,
+  "global_limit_bytes": 6442450944,
+  "truth_delivered_cap_bytes": 1073741824,
+  "truth_overflow_probe_bytes": 1,
+  "gzip_read_ahead_allowance_bytes": 65536,
+  "bed_caps_and_overflow_probes_bytes": 8388610,
+  "no_refund_for_unused_bytes_or_failure": true,
+  "body_or_scoring_execution_status": "pending_independent_exact_pin_review"
+}

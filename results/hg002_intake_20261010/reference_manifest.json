@@ -1,0 +1,297 @@
+{
+  "body_ledger": {
+    "attempts": [
+      {
+        "actual_body_bytes": 0,
+        "attempt": 1,
+        "error": null,
+        "finished_utc": "2026-10-10T06:24:39.779383+00:00",
+        "kind": "reference_head",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity"
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "845635028",
+          "Content-Range": "",
+          "ETag": "\"32675dd4-653d1a4cfe89d\""
+        },
+        "response_status": 200,
+        "started_utc": "2026-10-10T06:24:39.316357+00:00",
+        "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/GRCh38.primary_assembly.genome.fa.gz"
+      },
+      {
+        "actual_body_bytes": 845635028,
+        "attempt": 2,
+        "error": null,
+        "finished_utc": "2026-10-10T06:44:23.653497+00:00",
+        "kind": "full_object",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity",
+          "If-Match": "\"32675dd4-653d1a4cfe89d\"",
+          "Range": "bytes=0-845635027"
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "845635028",
+          "Content-Range": "bytes 0-845635027/845635028",
+          "ETag": "\"32675dd4-653d1a4cfe89d\""
+        },
+        "response_status": 206,
+        "started_utc": "2026-10-10T06:24:39.780053+00:00",
+        "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/GRCh38.primary_assembly.genome.fa.gz"
+      },
+      {
+        "actual_body_bytes": 0,
+        "attempt": 3,
+        "error": null,
+        "finished_utc": "2026-10-10T06:44:25.594175+00:00",
+        "kind": "reference_head",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity"
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "160763187",
+          "Content-Range": "",
+          "ETag": "\"9950d33-653d1a5988530\""
+        },
+        "response_status": 200,
+        "started_utc": "2026-10-10T06:44:25.137711+00:00",
+        "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/gencode.v50.primary_assembly.annotation.gff3.gz"
+      },
+      {
+        "actual_body_bytes": 160763187,
+        "attempt": 4,
+        "error": null,
+        "finished_utc": "2026-10-10T06:46:53.952107+00:00",
+        "kind": "full_object",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity",
+          "If-Match": "\"9950d33-653d1a5988530\"",
+          "Range": "bytes=0-160763186"
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "160763187",
+          "Content-Range": "bytes 0-160763186/160763187",
+          "ETag": "\"9950d33-653d1a5988530\""
+        },
+        "response_status": 206,
+        "started_utc": "2026-10-10T06:44:25.595033+00:00",
+        "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/gencode.v50.primary_assembly.annotation.gff3.gz"
+      },
+      {
+        "actual_body_bytes": 0,
+        "attempt": 5,
+        "error": null,
+        "finished_utc": "2026-10-10T06:46:54.554103+00:00",
+        "kind": "reference_head",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity"
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "124650284",
+          "Content-Range": "",
+          "ETag": "\"76e032c-653d1a5a928ba\""
+        },
+        "response_status": 200,
+        "started_utc": "2026-10-10T06:46:54.236631+00:00",
+        "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/gencode.v50.primary_assembly.annotation.gtf.gz"
+      },
+      {
+        "actual_body_bytes": 124650284,
+        "attempt": 6,
+        "error": null,
+        "finished_utc": "2026-10-10T06:49:00.529405+00:00",
+        "kind": "full_object",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity",
+          "If-Match": "\"76e032c-653d1a5a928ba\"",
+          "Range": "bytes=0-124650283"
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "124650284",
+          "Content-Range": "bytes 0-124650283/124650284",
+          "ETag": "\"76e032c-653d1a5a928ba\""
+        },
+        "response_status": 206,
+        "started_utc": "2026-10-10T06:46:54.554621+00:00",
+        "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/gencode.v50.primary_assembly.annotation.gtf.gz"
+      },
+      {
+        "actual_body_bytes": 0,
+        "attempt": 7,
+        "error": null,
+        "finished_utc": "2026-10-10T06:49:01.353332+00:00",
+        "kind": "reference_head",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity"
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "893",
+          "Content-Range": "",
+          "ETag": "\"37d-653d1a57a56a2\""
+        },
+        "response_status": 200,
+        "started_utc": "2026-10-10T06:49:00.752236+00:00",
+        "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/gencode.v50.metadata.Selenocysteine.gz"
+      },
+      {
+        "actual_body_bytes": 893,
+        "attempt": 8,
+        "error": null,
+        "finished_utc": "2026-10-10T06:49:01.866993+00:00",
+        "kind": "full_object",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity",
+          "If-Match": "\"37d-653d1a57a56a2\"",
+          "Range": "bytes=0-892"
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "893",
+          "Content-Range": "bytes 0-892/893",
+          "ETag": "\"37d-653d1a57a56a2\""
+        },
+        "response_status": 206,
+        "started_utc": "2026-10-10T06:49:01.353863+00:00",
+        "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/gencode.v50.metadata.Selenocysteine.gz"
+      },
+      {
+        "actual_body_bytes": 0,
+        "attempt": 9,
+        "error": null,
+        "finished_utc": "2026-10-10T06:49:02.572322+00:00",
+        "kind": "reference_head",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity"
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "21136991",
+          "Content-Range": "",
+          "ETag": "\"142865f-653d1a58feb41\""
+        },
+        "response_status": 200,
+        "started_utc": "2026-10-10T06:49:01.867873+00:00",
+        "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/gencode.v50.pc_translations.fa.gz"
+      },
+      {
+        "actual_body_bytes": 21136991,
+        "attempt": 10,
+        "error": null,
+        "finished_utc": "2026-10-10T06:49:23.415210+00:00",
+        "kind": "full_object",
+        "outcome": "verified",
+        "request_headers": {
+          "Accept-Encoding": "identity",
+          "If-Match": "\"142865f-653d1a58feb41\"",
+          "Range": "bytes=0-21136990"
+        },
+        "response_headers": {
+          "Accept-Ranges": "bytes",
+          "Content-Encoding": "",
+          "Content-Length": "21136991",
+          "Content-Range": "bytes 0-21136990/21136991",
+          "ETag": "\"142865f-653d1a58feb41\""
+        },
+        "response_status": 206,
+        "started_utc": "2026-10-10T06:49:02.572807+00:00",
+        "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/gencode.v50.pc_translations.fa.gz"
+      }
+    ],
+    "limit_including_prior_body": 2147483648,
+    "loopback_bai_bytes_served_separately": 0,
+    "measurement": "bytes returned by upstream HTTP response.read; excludes headers and TLS",
+    "new_upstream_body_bytes": 1152186383,
+    "prior_body_bytes": 0,
+    "remaining_bytes": 995297265,
+    "total_body_bytes_including_prior": 1152186383
+  },
+  "body_limit": 2147483648,
+  "code_sha256": "e104b7506f674e78248335328b4b6d9b352d74630b44e94e6953c5d01cb096ed",
+  "cpu_seconds": 9.321166,
+  "expected_bytes": 1152186383,
+  "finished_utc": "2026-10-10T06:49:23.455865+00:00",
+  "free_bytes_before": 55146563239936,
+  "objects": [
+    {
+      "actual_md5": "da1a11258be075cfa7af718162c894e7",
+      "etag": "\"32675dd4-653d1a4cfe89d\"",
+      "path": "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_gencode_s0_20261010_01/GRCh38.primary_assembly.genome.fa.gz",
+      "published_md5": "da1a11258be075cfa7af718162c894e7",
+      "sha256": "b760d18dbb651dd14dfc290083371b3ef3bff122d43a9cefb13ca4ecf38f05ca",
+      "size_bytes": 845635028,
+      "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/GRCh38.primary_assembly.genome.fa.gz"
+    },
+    {
+      "actual_md5": "bfa97cfbd5fe76ce5fb19ac08c16f25b",
+      "etag": "\"9950d33-653d1a5988530\"",
+      "path": "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_gencode_s0_20261010_01/gencode.v50.primary_assembly.annotation.gff3.gz",
+      "published_md5": "bfa97cfbd5fe76ce5fb19ac08c16f25b",
+      "sha256": "272f9972d1bfffa344889c7ae47973bbd79a75e933c55505f347cd25121876fb",
+      "size_bytes": 160763187,
+      "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/gencode.v50.primary_assembly.annotation.gff3.gz"
+    },
+    {
+      "actual_md5": "289b91e5e95e8b0450d223246f10a12e",
+      "etag": "\"76e032c-653d1a5a928ba\"",
+      "path": "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_gencode_s0_20261010_01/gencode.v50.primary_assembly.annotation.gtf.gz",
+      "published_md5": "289b91e5e95e8b0450d223246f10a12e",
+      "sha256": "89bbad69a8c89fee5fadec0a2f14a098752d27a4ef7f24e4de9bac681e1b18f4",
+      "size_bytes": 124650284,
+      "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/gencode.v50.primary_assembly.annotation.gtf.gz"
+    },
+    {
+      "actual_md5": "cf5f185bdfa2dcd0582e2f747f3a4e9b",
+      "etag": "\"37d-653d1a57a56a2\"",
+      "path": "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_gencode_s0_20261010_01/gencode.v50.metadata.Selenocysteine.gz",
+      "published_md5": "cf5f185bdfa2dcd0582e2f747f3a4e9b",
+      "sha256": "86d89ad817c77703a50a5fd867bd8dcddee5f94ac2e3eabeb8e0770a01bb15c3",
+      "size_bytes": 893,
+      "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/gencode.v50.metadata.Selenocysteine.gz"
+    },
+    {
+      "actual_md5": "509a89a4c3bb8c594baac50d4d57e589",
+      "etag": "\"142865f-653d1a58feb41\"",
+      "path": "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_gencode_s0_20261010_01/gencode.v50.pc_translations.fa.gz",
+      "published_md5": "509a89a4c3bb8c594baac50d4d57e589",
+      "sha256": "5d6408c3a1c22d864c96a55367cf5b69f1031dea1fe2cd6d03e366ae3fc56a45",
+      "size_bytes": 21136991,
+      "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_50/gencode.v50.pc_translations.fa.gz"
+    }
+  ],
+  "prior_reference_body_bytes": 0,
+  "retries": 0,
+  "scope": "matched reference acquisition, not annotation",
+  "source_hashes": {
+    "acquire_hg002_dna.py": "57524ec840fdd08a9cd25505e230fbe1063ae0e4ade70f2f9dbba77f237aef35",
+    "acquire_parent_sva_region.py": "c0f47e522d4f88b2e068f035b78eb558e63e4abc94839b4a78e32f3c6f09034b"
+  },
+  "stage": "S0_REFERENCES",
+  "started_utc": "2026-10-10T06:24:39.286921+00:00",
+  "status": "STAGED_CHECKSUM_VERIFIED",
+  "wall_seconds": 1484.1696379557252
+}

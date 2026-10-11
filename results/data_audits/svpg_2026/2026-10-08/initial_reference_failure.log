@@ -1,0 +1,34 @@
+Traceback (most recent call last):
+  File "/scratch/igorno-alignssl_restart_20260922/synthetic_screen_controls_20261007_01/probe_released_reference_controls_v1.py", line 282, in main
+    result, code = run_probe(), 0
+  File "/scratch/igorno-alignssl_restart_20260922/synthetic_screen_controls_20261007_01/probe_released_reference_controls_v1.py", line 254, in run_probe
+    ref_control = _reference_controls(root, reference, matched, mismatch_vcf, pysam, bcftools)
+  File "/scratch/igorno-alignssl_restart_20260922/synthetic_screen_controls_20261007_01/probe_released_reference_controls_v1.py", line 161, in _reference_controls
+    _need(rejected and diagnosed, "bcftools norm -N -c e -f did not reject a REF mismatch with a mismatch diagnostic")
+  File "/scratch/igorno-alignssl_restart_20260922/synthetic_screen_controls_20261007_01/probe_released_reference_controls_v1.py", line 26, in _need
+    raise RuntimeError(message)
+RuntimeError: bcftools norm -N -c e -f did not reject a REF mismatch with a mismatch diagnostic
+Command exited with non-zero status 1
+	Command being timed: "timeout -k 5s 60s /home/igorno/miniconda3/envs/truvari_env/bin/python /scratch/igorno-alignssl_restart_20260922/synthetic_screen_controls_20261007_01/probe_released_reference_controls_v1.py"
+	User time (seconds): 0.05
+	System time (seconds): 0.09
+	Percent of CPU this job got: 47%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.32
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 26288
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 235
+	Minor (reclaiming a frame) page faults: 3449
+	Voluntary context switches: 4974
+	Involuntary context switches: 279
+	Swaps: 0
+	File system inputs: 3337
+	File system outputs: 82
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1

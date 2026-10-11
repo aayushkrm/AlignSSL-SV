@@ -1,0 +1,11 @@
+analysis/prepare_released_callers.py: OK
+tests/test_prepare_released_callers.py: OK
+tests/test_prepare_released_callers_rnames.py: OK
+protocols/cutesv.json: OK
+protocols/debreak.json: OK
+protocols/sawfish.json: OK
+protocols/sniffles.json: OK
+protocols/svim.json: OK
+protocols/svpg.json: OK
+run_caller_batch_outer.sh: OK
+run_caller_preparation.sh: OK

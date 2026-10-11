@@ -79,7 +79,8 @@ def test_no_document_still_calls_the_xpop_rerun_deferred():
         r"\bDONE\b|superseding|superseded|has since been|was wrong|kept for audit",
         re.I,
     )
-    for name in ("docs/AlignSSL_SV_manuscript.md", "README.md", "PROGRESS.md"):
+    for name in ("docs/AlignSSL_SV_manuscript.md", "README.md",
+                 "docs/archive/README-legacy-ssl.md", "PROGRESS.md"):
         text = EXEMPT.sub(" ", (ROOT / name).read_text())
         for para in re.split(r"\n\s*\n|\n(?=[-*] )", text):
             if not re.search(r"cross[- ]ancestry|cross[- ]population", para, re.I):

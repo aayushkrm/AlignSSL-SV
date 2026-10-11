@@ -1,0 +1,49 @@
+{
+  "scope": "synthetic_only_no_real_genomic_inputs",
+  "scientific_stack": {"python": "3.10.20", "pysam": "0.24.0", "truvari": "5.4.0", "bcftools": "1.23.1", "htslib": "1.23.1"},
+  "test_runtime": "pytest 8.4.2 and dependencies isolated in controls_01/test_deps; scientific conda environment unchanged",
+  "failed_02": {
+    "exit_status": 1,
+    "passed": 35,
+    "failed": 2,
+    "cause": "Pinned Python does not expose os.memfd_create; native parser endpoints not reached",
+    "checker_sha256": "7b355cadba7d8d6961e76ad99051dbddcc1840f6fc22e9a51e53c95cf059f774",
+    "cpu_seconds": 0.61,
+    "wall_seconds": 1.28,
+    "maximum_rss_bytes": 45694976,
+    "junit_bytes": 13103,
+    "stdout_bytes": 8175,
+    "run_log_bytes": 1226
+  },
+  "passed_03": {
+    "exit_status": 0,
+    "passed": 38,
+    "failed": 0,
+    "pytest_seconds": 1.36,
+    "checker_sha256": "8b4acc8fa8b9a86d71c9847dd3a175e6816f24a1e2827f231ddf6cf244a05fa0",
+    "metadata_tests_sha256": "65ffd119d382eaba1c3101d4736d3c89d66c707b67b5300b6c6aefffda3e4f67",
+    "cpu_seconds": 1.08,
+    "wall_seconds": 2.08,
+    "maximum_rss_bytes": 98230272,
+    "junit_bytes": 5591,
+    "stdout_bytes": 236,
+    "run_log_bytes": 1291,
+    "kernel_seals_and_native_endpoints_passed": true
+  },
+  "reference_utility_sha256": "72155ac81968fb83db370613da54d3aa18efca11abf77780e9a49039af7cf0a4",
+  "helper_sha256": "4c1cf4fc3d98f4cc3e0f136c15d27095730aa1725b951ea607b4684f4ed93e93",
+  "reference_tests_sha256": "232c4f36f69ce8bc742ad029fb727e2b797f76bfa1e8265bc217f2a6efbce3a9",
+  "limits": {"cpu_seconds": 60, "wall_seconds": 120, "kill_grace_seconds": 5, "address_space_bytes": 4294967296, "threads": 1},
+  "raw_backup": {
+    "scp_exit_status": 0,
+    "directory": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-validation-controls/",
+    "files": 11,
+    "payload_bytes": 64891,
+    "local_stat_sizes_checked": true,
+    "independent_backup_content_rehash_claimed": false,
+    "original_sources_preserved": true,
+    "archival_reservation_bytes": 1048576,
+    "full_retained_charge_after_archive_bytes": 8520545565
+  },
+  "not_real_metadata_reference_or_scoring_validation": true
+}

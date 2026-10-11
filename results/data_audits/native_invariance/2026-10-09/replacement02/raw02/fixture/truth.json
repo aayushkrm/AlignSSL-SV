@@ -1,0 +1,11 @@
+{
+  "contig": "chrSynthetic",
+  "expected_alt_length": 4060,
+  "inserted_sequence": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+  "insertion_offset": 1500,
+  "reference_length": 4000,
+  "reference_sha256": "1e9e223b565b9f0847946d777a5c7fd4f2ba09f076174e4fab96f473156fe9ef",
+  "reference_sha256_basis": "uppercase sequence ASCII bytes; FASTA header and wrapping excluded",
+  "sample": "SYNTH",
+  "version": 1
+}

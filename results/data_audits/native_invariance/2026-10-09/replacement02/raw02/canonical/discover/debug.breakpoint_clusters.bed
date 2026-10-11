@@ -1,0 +1,3 @@
+#gffTags
+chrSynthetic	1499	1500	Name=0;BreakendId=1;BreakendDir=LeftAnchor;InsertionSize=60;EvidenceCount=20;AssemblySegmentCount=1;ConsolidatedClusterIndex=None;BreakendNeighborIndex=None
+chrSynthetic	1499	1500	Name=0;BreakendId=2;BreakendDir=RightAnchor;InsertionSize=60;EvidenceCount=20;AssemblySegmentCount=1;ConsolidatedClusterIndex=None;BreakendNeighborIndex=None

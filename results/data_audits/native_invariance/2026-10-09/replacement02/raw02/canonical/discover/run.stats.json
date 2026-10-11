@@ -1,0 +1,24 @@
+{
+  "run_step": {
+    "name": "discover",
+    "version": "2.2.1"
+  },
+  "sample_name": "SYNTH",
+  "cluster_stats": {
+    "total_breakpoint_observation_count": 20,
+    "total_breakpoint_cluster_count": 1,
+    "single_region_candidate_count": 1,
+    "consolidated_single_region_candidate_count": 1,
+    "multi_region_candidate_count": 0,
+    "large_insertion_candidate_count": 0
+  },
+  "refine_stats": {
+    "candidate_vcf_output_record_count": 0,
+    "candidate_vcf_duplicate_record_count": 0,
+    "redundant_duplications_filtered_out": 0,
+    "total_refinement_time_secs": 0.052504669,
+    "total_refinement_assembly_time_secs": 0.040729393,
+    "total_refinement_alignment_time_secs": 0.01076291,
+    "total_refinement_scoring_time_secs": 0.0
+  }
+}

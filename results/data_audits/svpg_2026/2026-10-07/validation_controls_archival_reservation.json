@@ -1,0 +1,11 @@
+{
+  "purpose": "raw_copy_of_synthetic_control_reports_and_failed_source_outside_git",
+  "prior_global_charge_bytes": 8519496989,
+  "reservation_bytes": 1048576,
+  "full_conservative_charge_bytes": 8520545565,
+  "no_refund": true,
+  "not_a_real_genomic_data_pass": true,
+  "source_directories": ["/scratch/igorno-alignssl_restart_20260922/svpg_validation_controls_20261007_02/", "/scratch/igorno-alignssl_restart_20260922/svpg_validation_controls_20261007_03/"],
+  "destination_directory": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-validation-controls/",
+  "planned_payload": "six small raw reports/logs plus failed _02 source/helper/tests; no private keys or real genomic data"
+}

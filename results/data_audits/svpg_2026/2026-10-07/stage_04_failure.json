@@ -1,0 +1,227 @@
+{
+  "charged_prior_source_decoded_bytes": 3087320050,
+  "completed_callers": {
+    "cutesv": {
+      "by_alt_representation": {
+        "breakend": 2254,
+        "sequence": 48286,
+        "symbolic": 1021
+      },
+      "by_filter": {
+        "PASS": 40934,
+        "q5": 10627
+      },
+      "by_gt": {
+        "./.": 19,
+        "0/0": 10315,
+        "0/1": 25677,
+        "1/1": 15550
+      },
+      "by_type": {
+        "BND": 2254,
+        "DEL": 21193,
+        "DUP": 753,
+        "INS": 27093,
+        "INV": 268
+      },
+      "contig_order_violations": 23,
+      "crc32": "aa90b5d1",
+      "decoded_bytes": 30029207,
+      "gt_absent": 0,
+      "gt_missing": 19,
+      "gt_phased": 0,
+      "gt_reference": 10315,
+      "header_sha256": "b314d3de38d22aabde93980d68d3b8cfffe17bc1bca4de8002334921d26656a6",
+      "input_order_policy": "preserve_and_report",
+      "member": "SV_callsets/HG002_benchmark/cutesv/hifi.vcf",
+      "omitted_RNAMES": 51561,
+      "position_order_violations": 0,
+      "records": 51561,
+      "requires_sorting": true,
+      "reuse_verification_bytes": 29410475,
+      "reused_completed_derivative": true,
+      "selected_member_crc_verified": true,
+      "source_sha256": "a96fd63588c1457a1762d01219bb1220ffb782f31ff36e0072f05d1e13902b43",
+      "staged_path": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-stage-02/cutesv.vcf",
+      "staged_sha256": "9603595adebb54e656513c3ffba416e0d2173763030abef20f804e1c877209c1"
+    },
+    "debreak": {
+      "by_alt_representation": {
+        "sequence": 25077,
+        "symbolic": 1344
+      },
+      "by_filter": {
+        "PASS": 26421
+      },
+      "by_gt": {
+        "0/1": 16590,
+        "1/1": 9831
+      },
+      "by_type": {
+        "DEL": 10320,
+        "DUP": 244,
+        "INS": 14799,
+        "INV": 389,
+        "TRA": 669
+      },
+      "contig_order_violations": 17,
+      "crc32": "de4ce2da",
+      "decoded_bytes": 935962599,
+      "gt_absent": 0,
+      "gt_missing": 0,
+      "gt_phased": 0,
+      "gt_reference": 0,
+      "header_sha256": "72de0c7af7c99c63e2b991e6f9f980ef719edecc0dbf5fc4f65ab36c5fc687cb",
+      "input_order_policy": "preserve_and_report",
+      "member": "SV_callsets/HG002_benchmark/debreak/hifi.vcf",
+      "omitted_RNAMES": 0,
+      "position_order_violations": 0,
+      "raw_line_policy": "stream_rnames",
+      "records": 26421,
+      "requires_sorting": true,
+      "selected_member_crc_verified": true,
+      "source_sha256": "82f8ec62332691118329f4ef995229409b86144f5011d25eae67dece096056d1",
+      "staged_path": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-stage-04/debreak.vcf",
+      "staged_sha256": "82f8ec62332691118329f4ef995229409b86144f5011d25eae67dece096056d1",
+      "streaming_buffers": {
+        "decoded_bytes": 935962599,
+        "max_info_key_bytes": 8,
+        "max_raw_line_bytes": 60480492,
+        "max_read_chunk_bytes": 65537,
+        "max_retained_line_bytes": 60480492,
+        "source_sha256": "82f8ec62332691118329f4ef995229409b86144f5011d25eae67dece096056d1"
+      }
+    },
+    "sawfish": {
+      "by_alt_representation": {
+        "breakend": 6460,
+        "sequence": 35552,
+        "symbolic": 1932
+      },
+      "by_filter": {
+        "ConflictingBreakpointGT": 4,
+        "InvBreakpoint": 230,
+        "MaxScoringDepth;MinQUAL": 393,
+        "MinQUAL": 1169,
+        "MinQUAL;ConflictingBreakpointGT": 4,
+        "MinQUAL;InvBreakpoint": 12,
+        "PASS": 42132
+      },
+      "by_gt": {
+        "./.": 454,
+        "./1": 472,
+        "0/0": 765,
+        "0/1": 16908,
+        "0|1": 5882,
+        "1/1": 14266,
+        "1|0": 5197
+      },
+      "by_type": {
+        "BND": 6460,
+        "DEL": 15577,
+        "DUP": 727,
+        "INS": 21119,
+        "INV": 61
+      },
+      "contig_order_violations": 0,
+      "crc32": "f900b7a6",
+      "decoded_bytes": 25716015,
+      "gt_absent": 0,
+      "gt_missing": 926,
+      "gt_phased": 11079,
+      "gt_reference": 765,
+      "header_sha256": "bdcd1a5c3eeed5ce73ec2a3e3f850bd684ff214cfee04c334526f62ebdba46cf",
+      "input_order_policy": "preserve_and_report",
+      "member": "SV_callsets/HG002_benchmark/sawfish/hifi.vcf",
+      "omitted_RNAMES": 0,
+      "position_order_violations": 0,
+      "raw_line_policy": "stream_rnames",
+      "records": 43944,
+      "requires_sorting": false,
+      "selected_member_crc_verified": true,
+      "source_sha256": "fd35b27c44e2506491ce0d5706908349ef534a6fe43e87a48ae4efa201e00f9c",
+      "staged_path": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-stage-04/sawfish.vcf",
+      "staged_sha256": "fd35b27c44e2506491ce0d5706908349ef534a6fe43e87a48ae4efa201e00f9c",
+      "streaming_buffers": {
+        "decoded_bytes": 25716015,
+        "max_info_key_bytes": 9,
+        "max_raw_line_bytes": 85630,
+        "max_read_chunk_bytes": 65537,
+        "max_retained_line_bytes": 85630,
+        "source_sha256": "fd35b27c44e2506491ce0d5706908349ef534a6fe43e87a48ae4efa201e00f9c"
+      }
+    },
+    "sniffles": {
+      "by_alt_representation": {
+        "breakend": 1900,
+        "sequence": 17421,
+        "symbolic": 13246
+      },
+      "by_filter": {
+        "GT": 3771,
+        "PASS": 28796
+      },
+      "by_gt": {
+        "./.": 91,
+        "0/0": 3452,
+        "0/1": 18754,
+        "1/1": 10270
+      },
+      "by_type": {
+        "BND": 1900,
+        "DEL": 12451,
+        "DUP": 329,
+        "INS": 17463,
+        "INV": 424
+      },
+      "contig_order_violations": 0,
+      "crc32": "c390dcc2",
+      "decoded_bytes": 15004300,
+      "gt_absent": 0,
+      "gt_missing": 91,
+      "gt_phased": 0,
+      "gt_reference": 3452,
+      "header_sha256": "cc2c8ad6d3c6ff4dc90f5aaa27d42875762230076b5ce2648dce3d314cd2888e",
+      "input_order_policy": "preserve_and_report",
+      "member": "SV_callsets/HG002_benchmark/sniffles/hifi.vcf",
+      "omitted_RNAMES": 0,
+      "position_order_violations": 0,
+      "raw_line_policy": "stream_rnames",
+      "records": 32567,
+      "requires_sorting": false,
+      "selected_member_crc_verified": true,
+      "source_sha256": "c2b0220af2867c5017b9c6c0861b318eb806a77e2cc28950fdd525f1c9926cbb",
+      "staged_path": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-stage-04/sniffles.vcf",
+      "staged_sha256": "c2b0220af2867c5017b9c6c0861b318eb806a77e2cc28950fdd525f1c9926cbb",
+      "streaming_buffers": {
+        "decoded_bytes": 15004300,
+        "max_info_key_bytes": 12,
+        "max_raw_line_bytes": 17162,
+        "max_read_chunk_bytes": 65537,
+        "max_retained_line_bytes": 17162,
+        "source_sha256": "c2b0220af2867c5017b9c6c0861b318eb806a77e2cc28950fdd525f1c9926cbb"
+      }
+    }
+  },
+  "conservative_staging_traffic_charge_bytes": 1006990060,
+  "controller_traffic_account": "results/data_audits/svpg_2026/2026-10-07/traffic_reservation_04.json",
+  "exception_message": "Invalid VCF position",
+  "exception_type": "ValueError",
+  "failed_caller": "svim",
+  "global_traffic_limit_enforced": true,
+  "max_line_bytes": 134217728,
+  "members": [
+    "SV_callsets/HG002_benchmark/cutesv/hifi.vcf",
+    "SV_callsets/HG002_benchmark/debreak/hifi.vcf",
+    "SV_callsets/HG002_benchmark/sawfish/hifi.vcf",
+    "SV_callsets/HG002_benchmark/sniffles/hifi.vcf",
+    "SV_callsets/HG002_benchmark/svim/hifi.vcf",
+    "SV_callsets/HG002_benchmark/svpg/hifi.vcf"
+  ],
+  "protocol_sha256": "4858cd824ea81a9be998a62043d3c2eb1736d724ea34b09ceb86e5973aab95ac",
+  "reuse_verification_reservation_bytes": 29410475,
+  "source_decoded_budget_used_including_prior": 4067804110,
+  "source_decoded_cap": 4294967296,
+  "staging_decoded_bytes_read": 980484060,
+  "status": "incomplete"
+}

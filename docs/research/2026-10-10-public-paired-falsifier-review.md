@@ -1,0 +1,1116 @@
+# Independent public paired-data falsifier review
+
+2026-10-10, Asia/Tomsk. Requested maintained reviewer: GPT-6.1 Sol/high; backend and effort are not independently attested. Rawls's requested Sol6.1/max is also not backend attestation. Main owns implementation and execution. Only this new note is written.
+
+## Disposition
+
+**CONDITIONAL ACCEPT the immediate parental SVA diagnostic and the scientific eligibility of one prospective HG002 DNA-first pilot.** They are different tests. The SVA diagnostic needs the success/compatibility rules below, not a new discovery or replication prerequisite. The HG002 pilot needs a concrete model-negative predicate and valid RNA adjudication before its expensive processing is accepted. This is not exact-launch approval, acceptance of the proposed600CPU-hour envelope, a new-method premise, or a publication campaign.
+
+| Test | What can change the next action | What cannot be concluded |
+|---|---|---|
+| Known parental SVA neighborhood, two native policies | Ordinary mosaic policy sees compatible parental signal; retire that case's rescue premise | Exact child-allele recovery, new inheritance discovery, prevalence, or genome-wide caller ceiling |
+| Frozen HG002 DNA-policy-negative rows, then attributable complete RNA paths | One credible counterexample to excluding a row from RNA follow-up | SV causation, protein/function rescue, clinical relevance, tissue transfer, or an unoccupied literature niche |
+
+One case can be enough for either stated falsifier. No pre-proved caller failure, unrelated-donor replication or campaign-level power is required to make a prospective exploratory measurement. Conversely, data availability and a prior published miss are not method novelty. Keep the old HG008, SVUPP and other closed routes closed.
+
+## Immediate SVA: eligible, with a precise success rule
+
+The revised estimand correctly uses **compatible parental insertion visibility**, not exact child-allele sensitivity. The original row lacks inserted sequence and an explicit coordinate convention. A3,407-bp nearby insertion is not the child's allele by definition. Both preselected half-open windows safely contain the uncertain neighborhood; neither turns the insertion's workbook end-start difference into a reference-deletion span. Preserve the reconstructed parental sequence and complete supporting molecules for later comparison, not forced-genotyping input selected from truth.
+
+Use the same regional BAM, core BED and pinned native2.8.1 policies. Native mosaic success is the relevant ordinary success control. Germline rejection near the documented mosaic range is intended behavior, not proof of a defect. The mode contrast includes merging and QC; do not attribute it solely to one AF threshold or introduce the superseded shared0.23 merge setting. The constant native support floor addresses the reviewed auto-threshold concern; it does not prove whole-genome equivalence. This remains a regional diagnostic.
+
+**Required clarification to the result table:** a nearby emitted record, an unaccepted/filtered candidate or reference-only genotype must not silently become “germline detects the allele.” Record native acceptance/filter state, GT, allele sequence and scaled/unscaled support separately. For mosaic visibility, use the mode's intended acceptance semantics plus separately audited sequence-bearing parental reads; do not impose an invented diploid-heterozygous requirement if the native mosaic representation differs. This census reuses the same DNA observations; it is not an orthogonal assay or a new material requirement. Do not translate GT0/0 into a heterozygous call. A filtered candidate can diagnose a filter but is not an ordinary-policy success. Freeze those distinctions before reading outputs.
+
+The independent census must count original molecules, not alignment records, SA segments or both supplementary and primary records as separate reads. Fix flank-spanning, mapping and sequence criteria before outputs. Show alternate, reference and ambiguous/nonspanning categories; do not infer reference from lack of an insertion CIGAR. Report sequence/placement ambiguity and missing supplementary context. The published approximate11% and emitted insertion VAF have different denominators/scaling. Neither is a required target value for this diagnostic.
+
+Compatible native mosaic success with credible reads is sufficient to retire a new-method premise **for this parent-side visibility task**. It need not await controlled child sequence to be useful. Failure in both arms permits one bounded read/filter/context explanation; it does not establish exact-allele failure, missed transmission or a reason to train. No credible parent signal is INCONCLUSIVE about the published event, not contradiction of the paper. The public parent's source and CHM13 provenance are main-reported and must not be silently replaced with the separately listed cell-line GRCh38 product.
+
+Runtime isolation, dependency checks and ordinary indexed-input validation are normal implementation work, not another scientific committee. The4GiB transfer/1,800CPU-second bounds are proposed ceilings, not measured packet cost. Their finite packet/census and resource controls still need main's actual implementation; no whole-BAM/reference fallback or parameter grid follows from a miss. Useful calls and census can run in parallel.
+
+## HG002: the useful question and the main fault to prevent
+
+I accept selecting HG002 from DNA metadata and freezing the complete DNA-defined denominator before RNA. A search for an unknown counterexample is legitimate. UDN318336 is already reported and controlled; these public lines are not substitutes for that patient's allele. They are independently useful development material. Same-sample bulk DNA/RNA is not single-cell linkage.
+
+The prioritization assumption is explicitly the project's assumption, not a promise by VEP or LiftOn. VEP HIGH is not “all coding isoforms lost.” More importantly, **LiftOn is a homology-based annotation policy, not an exhaustive splice-path impossibility test**. Its published algorithm selects coding structures/ORFs by reference-protein similarity; its current manual describes additional rescue defaults. It does not make every unproduced RNA path biologically impossible. A supported discrepancy can falsify using that fixed policy as an exclusion rule, while still being ordinary annotation incompleteness. That distinction must survive any positive result. [LiftOn primary algorithm](https://genome.cshlp.org/content/35/2/311.full), [current1.0.14 manual](https://khchao.com/LiftOn/content/function_manual.html).
+
+Three finite release conditions are necessary before the paired pilot is operationally qualified. They do not require another broad source inventory or annotation-tool campaign:
+
+1. **Make P1's three-state predicate executable before RNA.** RESOLVED POSITIVE means the fixed DNA policy produces at least one qualifying same-gene/allele coding path. RESOLVED NEGATIVE means the target allele/locus is sequence-confirmed and adequately mapped, all eligible reference coding isoforms are accounted for, and none of the declared policy's retained paths meets the frozen endpoint predicate. Failed lifts, skipped isoforms/loci, assembly gaps, uncertain copies/phase and parser failure remain UNKNOWN. GFF validation only checks structure/hierarchy; successful exit or a frameshift label does not establish biological completeness. Keep native rescue defaults and pin executable/source/settings and relevant environment overrides. Freeze how existing projected and rescued candidates enter P1; a higher-protein-identity selected ORF must not conceal another retained native path that meets the endpoint. Do not claim exhaustive enumeration of novel splicing.
+2. **Define the sequence unit and check it on ordinary controls.** Freeze insertion-boundary overlap, linked-event grouping, transcript-specific start/stop anchors, strand, CDS phase and terminal-stop conventions, partial-reference transcripts and translation exceptions. Evaluate only paths whose reference endpoints are valid and applicable; loss of those endpoints is outside the stipulated same-termini endpoint, not evidence against every possible coding transcript. A paralog/copy can compete for read mapping but cannot automatically rescue the affected syntenic allele. Separate a local-allele path from gene-level compensation. Check the same extractor/predicate on complete reference paths and DNA-policy-positive rows; use already available unaffected/reference-haplotype context where applicable to distinguish a general annotation/extraction defect from an alternate-allele discrepancy. This is a control of the measurement, not a new baseline grid.
+3. **Freeze RNA adjudication and an honest null.** Report D, resolved-negative N, UNKNOWN rows, and the subset of N for which attributable endpoint-complete RNA can actually adjudicate the presence question. K=0 with no informative rows is INCONCLUSIVE, not a null proving no residual. Mixed unexpressed/ambiguous rows remain unknown; K=0 is at most “no supported counterexample observed at this assay depth,” with the observable denominator supplied. Never count no RNA as transcript loss. A surviving K is a within-assay candidate until artifact review and the specified independent check.
+
+The endpoint is deliberately narrow: start-to-stop sequence with retained reference coding termini, not the same protein or restored function. It can miss biologically important alternative-start/stop rescue. A null must not reject broader transcript-rescue science. A P1-predicted RNA path retires that row's weak-label rationale. An RNA path absent from P1 does not prove the overlapping SV caused it: phase markers show allele attribution, not causal dependence on one event among linked variants. Use the DNA sequence, intervening phase block and alternate transcript structure to describe the discrepancy; any stronger causation claim needs separate evidence.
+
+## RNA evidence, exposure and claim bounds
+
+The source confirms amplified cDNA and MAS-array segmentation. Three original arrays/ZMWs are a useful technical support screen, not three independent input molecules. PCR can reproduce template-switch products. RNA must support the entire coding chain on appropriate full-length records, not a stitched collection of short segments or consensus assembled from incompatible isoforms. Preserve array/segment provenance and raw-sequence review; internal priming, template switching, splice-alignment correction and paralog mappings remain alternative explanations. [Paired study RNA preparation and transcript methods](https://pmc.ncbi.nlm.nih.gov/articles/PMC12077378/).
+
+Two RNA phase markers, or one plus diagnostic sequence/junction, must connect to the **same relevant DNA phase block** as the SV; two markers far from the event do not by themselves establish that connection. Local h1/h2 labels can switch between blocks. A same-individual assembly from a different culture/passaging source is not automatically the same-source target. GIAB benchmarking and good assembly summaries do not certify every CDS-disrupting allele/copy. Homozygous-looking or duplicated loci need the stated copy/placement check. If the native HiFi-only assembly cannot provide usable local diploid structure, mark those rows UNKNOWN rather than importing unbudgeted parental genomes.
+
+The frozen DEL/INS≥50bp CDS-overlap denominator is a called, reference-annotation-ascertained population. It excludes missed variants, other SV classes, regulatory events and parts of the transcriptome without informative RNA. Retain excluded/filtered/uncertain rows explicitly and freeze variant normalization and selection. Linked events, transcript isoforms and repeated RNA records do not create independent biological replicates. No binomial prevalence estimate or donor-transfer claim follows from this selected pilot.
+
+All four lines and any publicly known alleles are development-exposed. DNA-first freezing avoids favorable RNA selection; it does not make the dataset untouched validation. Do not choose genes by expression or swap lines after HG002 has no model negatives. Do not tune P1 after RNA and present the revised policy as the original negative. A later ordinary-policy fix can explain a discrepancy, but must be labeled post hoc. An important empirical counterexample does not need a new model, two donors or a population significance test to be worth examining.
+
+Novelty is not established. The source already phases genomic/RNA variation and explains a clinical fusion; LiftOn already reconstructs coding models. A raw K>0, ordinary isoform missing from annotation, or generic demonstration that RNA adds information is not enough for a paper. A consequential failure mechanism, reproducible evaluation contribution or biological finding might be enough after appropriate controls. The astrocytoma lead remains abstract-only here; neither feature absence nor an empty niche follows. No new discovery sweep is required to permit the frozen falsifier, but a major contribution claim would need stronger prior-art scrutiny.
+
+## Cost and execution boundary
+
+The paired envelope is substantially larger than a one-locus diagnostic:600CPU hours is2,160,000CPU seconds, not a cheap metadata check.60GiB archive plus10GiB reference/runtime is70GiB of proposed new transfers before derivative/custody work. That exceeds the earlier64GiB/7,200CPU contract; it needs a distinct prospective account, not a silent draw from SVUPP residuals. The user's broader goal permits a justified new account. It does not make this planning envelope measured or approved.
+
+Main must resolve the actual selected representation and useful stages, including archive conversion, usable local diploid phasing/assembly, complete alignments, temporary files, native annotation work and RNA segmentation. The512GiB disk and256GiB RAM figures are planning ceilings, not a feasibility demonstration; simultaneous stages require summed peak allocations. Native GPU calling, if required, is separately charged. A verified same-source processed product may reduce work; do not require an exhaustive hunt for one or assume another HG002 assembly is interchangeable.
+
+Keep the DNA→RNA stop useful: acquire/process RNA only after the frozen DNA stage yields adequately resolved negatives. Do not prepay both libraries merely to learn N=0. One whole-genome context pilot may be justified, but its cost must be weighed against that DNA-stage risk before committing the whole ceiling. This review does not accept an expensive campaign under the label “one pilot.” It does accept the scientific question without a pre-identified failure. No formal review is required for every routine metadata read or install; scrutiny belongs at the concrete experiment/account and major-positive boundaries.
+
+## Read scope and pins
+
+Read FULL the161-line/27,304-byte completed decision, governing objective,107-line Platinum source check,46-line transcript scout, family scout and97-line Sniffles source check including its superseding addendum. Reuse earlier accepted closures; no raw audit is repeated. Local source checks and runtime/material claims remain attributed to their authors/main, not independent executions here.
+
+Used the Firecrawl skill after reading FULL its instructions and required paper/developer references. Three known-URL live retrievals returned HTTP200: LiftOn manual33,573 extracted characters; LiftOn primary body125,580; paired PMC body149,079. Read selected load-bearing algorithm/ORF, current defaults/validation, assay/preparation/phasing and transcript-method passages, not all three documents, supplements or source code. One oversized Methods display was truncated; no full-Methods audit is claimed. No discovery search, new dataset selection or exhaustive novelty audit. No VEP, GENCODE, Platinum or Sniffles page was independently fetched in this turn; their cited evidence scope remains the local completed notes.
+
+| Local full-read snapshot | SHA256 |
+|---|---|
+| Governing objective attachment2fa04b13 | `74ba6450712e7f0e763cd81de896d3a71ca73f9c4a10fec3f1ecab59b3f1b0b8` |
+| Public paired falsifier decision | `cd8c6115d22f892644604036c8ebab0d620b90fca81e3c9c76a3a66bc081fb0e` |
+| Platinum original-source check | `9f1a6f012eccbaf764ca248abf3485b104baf03fa0d99d19c9f1e58ba7058991` |
+| Structural-transcript scout | `9866414fe181067bf1d78f00c44fd70d84a28583b20eda8318c96b30c4401484` |
+| Family structural scout | `c8a58ab1fbd856bbaf89cb1e6561f47582f60f818808a21971152fa9ef2382f5` |
+| Sniffles regional/native check and addendum | `4671a11f9327bbd109416ec9f63f63771352290ad0ebe090786ed5c11cc61d70` |
+
+No jobs, genomic inputs/headers/GTs/results, installs, code implementation, bookings, Git actions or other file edits occurred in this review. The main-reported65,536B prefix acquisition is real, not a source-only zero-transfer claim. No new experiment account is calculated from an incomplete live ledger here.
+
+**Handoff:** the one-case parental native-policy diagnostic is eligible under the acceptance/compatibility rules above. The unknown-residual HG002 pilot is scientifically eligible, with P1/endpoint/null conditions to freeze before RNA; its expensive exact execution/account remains unapproved. No publication premise, major positive or campaign is accepted. These finite corrections need implementation in the actual measurement, not another general metadata-review loop.
+
+## Actual-result review: completed parental SVA diagnostic
+
+2026-10-10, Asia/Tomsk. Independent replacement reviewer; main owns the
+implementation and execution. The main task reports that reviewer handle
+`01a11e73-c622-7e22-9ea6-cebd9d2b5023` was authoritatively missing after
+service usage errors. This review replaces that missing reviewer; it is not
+a timeout restart. Requested reviewer configuration: GPT-6.1 Sol/high.
+Backend identity and reasoning effort are not independently attested.
+Repository reviewed at `0fa5307ecab6ade4cf6c78b3279ae9617cb56c0f`;
+the result records execution source `7f37667a49dc78d76465d18731c36fd4dd8bb50b`.
+
+**ACCEPT the completed diagnostic disposition: retire this known parental
+visibility case as a new caller-method premise.** The stored native mosaic
+output and sequence-bearing read evidence meet the previously frozen
+compatibility/visibility rule. Germline absence with mosaic visibility is
+the expected native-policy distinction. It does not establish a new caller
+failure, an improvement, or a publication result. No replay, tuning,
+additional metadata framework or larger campaign is needed to close this
+diagnostic.
+
+| Evidence independently checked locally | Result and interpretation |
+|---|---|
+| Original germline VCF and caller log | VCFv4.2 header and sample columns present; zero records. Log reports 784 input alignments and zero output SVs; run manifest records exit0. An empty successful output is distinct from a missing file. |
+| Original mosaic VCF and caller log | One PASS INS, chr3 POS1=71589909, SVLEN3459; log reports 784 alignments and one output SV; manifest records exit0. Actual GT remains `0/0`, GQ37, DR60, DV13, PS71380081. PASS and compatible allele visibility do not turn that GT into a non-reference diploid genotype. |
+| Native evidence fields | SUPPORT6, SUPPORT_UNSCALED6, VAF0.178, PHASE haplotype2. These values are preserved separately from genotype and census counts. |
+| All 121 retained read-evidence entries | Independent CIGAR arithmetic reproduces six compatible insertions,97 reference-compatible reads and18 inadequate-flank reads, with no duplicate retained names. All six compatible reads have MAPQ60, HP2, insertion position0=71589909, lengths3410–3466 and adequate flanks. None declares an external SA placement. The census separately records two flag exclusions:123 examined records is a stored accounting total, not an independent BAM recount here. |
+| Six native RNAMES versus six census alternate names | Five names overlap. Native-only `m64076_230330_235351/50528942/ccs` has zero aligned left-flank bases,997 right-flank bases and a chr5 SA declaration. Census-only `m84046_230427_191920_s1/119345255/ccs` has997/1000 flank bases and a3455-base compatible insertion. The sets are not equated; neither difference is adjudicated as a caller bug. |
+| Preserved insertion FASTA and event hashes | All21 retained insertion entries match their recorded lengths and sequence hashes. Native ALT SHA256 `091c67d5572104aa8c0991e6798aa54a126762bce91e27ad17e59fdf673bc00b` matches the3459-base insertion from `m54329U_230327_190242/146606681/ccs`. This supports parental sequence compatibility using the same DNA observations; it is not orthogonal validation. |
+
+The descriptive fraction remains6/103=0.0582524. The18 inadequate-flank names
+remain unresolved. This fraction is neither native VAF nor a population
+estimate or a test of the published parental fraction. The parent-side
+sequence, uncertain workbook coordinate convention and unavailable exact
+child allele do not establish child-allele recovery, transmission sensitivity
+or exact breakpoint identity. Outside supplementary alignments were not
+inspected. The native-only SA case does not invalidate the five overlapping
+adequate-flank reads or justify expanding this retired diagnostic.
+
+Custody checks: the local raw `run.json` is byte-identical to the Git manifest
+at `results/parent_sva_native/2026-10-10/03/run.json`; SHA256
+`58af3dd9bc9d59d47757aeea28359f824c18708aa50c8804e89c40050b4d20cc`.
+All28 locally available artifacts match both size and SHA256, totaling319,772B.
+The manifest lists32 artifacts totaling84,379,366B. The regional BAM,
+regional BAI and two full-index copies are absent from this local packet.
+Main reports verifying those four files on the cluster home archive; that
+verification and non-expiring custody remain attributed to main. I did not
+connect to the cluster, fetch those files or independently recount BAM reads.
+
+For03, the789 HTTP body-read journal entries sum to51,611,596B. Its seven
+attempt-end totals independently give the same sum and agree with the
+acquisition manifest; these are two views of one journal, not additive costs.
+The fresh charge includes37,783,472B of upstream index data and the partial
+open-stream BAM reads. Adding the recorded prior39,225,292B gives90,836,888B,
+below the unchanged4GiB body cap. Prior02/prefix charges were not independently
+re-audited here. Loopback index delivery and TLS/header bytes are outside this
+upstream-body measure. Runner CPU4.217957s and wall26.421046s are recorded in
+run.json; acquisition CPU is nested and must not be added again. Slurm
+elapsed27s, TotalCPU4.228s, MaxRSS39776K and exit0:0 remain main-reported;
+no live scheduler check occurred. Allocation figures are recorded requests,
+not measured use.
+
+Read scope: FULL governing objective attachment, completed result, frozen
+protocol, execution history and the entire prior review above. Also read
+FULL the Git03 manifest, result README, census implementation and diagnostic
+runner. Parsed all local read-evidence entries, both original VCFs, insertion
+FASTA, census/acquisition manifests and the complete03 request journal;
+read both native caller logs and checked the retained BAM-header dictionary,
+sample names and BED windows. All three current source hashes match run.json;
+the acquisition helper received a hash check, not a full source audit in this
+review. Runtime version, dependency freeze and command exits are corroborated
+stored records, not new execution. No new literature/source retrieval or
+exhaustive novelty review was performed. Pre-append review SHA256:
+`fab45ae8bf44b4f948c21369a10d2c7059d0a4eff3ac70c51f2ee6ce8efc56cf`.
+
+This closes the pending independent actual-result review for this diagnostic.
+The earlier HG002 scientific eligibility and unresolved concrete P1,
+endpoint, RNA-adjudication and staged-account conditions remain as stated
+above; this completed result does not release an expensive execution budget
+or authorize RNA processing. Main can continue its parallel HG002 metadata
+work. Only this actual-review section was appended. No commit, push, data
+acquisition, job, installation or other file edit occurred. The governing
+publication objective remains unmet.
+
+## HG002 concrete S0/S1 investment review
+
+2026-10-10. Independent reviewer; requested Sol6.1/high, not backend/effort
+attestation. Read FULL the74-line investment note, SHA256
+`09676284939fa2838a8bd3e7b22ad52b7d839a7fb306ffbac84a874c04951904`;
+reuse the previously full-read objective, frozen decision, recipe and headers.
+Latest native-prefix, runtime and54tests+9subtests/zero-skip checks are
+main-reported; I did not execute them or audit their raw outputs here.
+
+**RELEASE S0 and S1 under option B, including one full exact-source DNA
+BAM transfer.** The main-reported cached DNA records have complete SEQ/QUAL,
+no hard clipping, matching RG and actual HP/PS. Their supplementary status,
+two original identities and restricted placement prevent global claims but
+do not invalidate this finite intake decision. No additional prefix sampling
+is required merely to repeat usable-sequence evidence. This expenditure buys
+complete source material and a readiness result; N, novelty and publication
+remain uncertain. Unqualified split-contig provenance does not justify
+buying those BAMs as a substitute primary control.
+
+S0 release:4GiB cumulative reference/software bodies,4allocatedCPUh,
+16GiB RAM/32GiB peak disk; include existing setup and failed attempts.
+S1 release:52GiB=55,834,574,848B cumulative HG002 genomic HTTP bodies,
+including all196,608B prior headers, BAI, retries and overfetch;8allocatedCPUh,
+16GiB RAM/160GiB peak disk. Any initial readiness packet remains at most
+256MiB=268,435,456B within S1, not an extra allowance or required consumption.
+The exact BAM+BAI total48,748,908,838B leaves7,085,469,402B after prior headers;
+no budget reset or second full representation is released. Pin source
+identity during transfer and hash completed artifacts; multipart ETags are
+not full-file MD5s. Preserve byte/allocated-CPU ledgers across failures.
+
+S1 must validate complete decoding and reconcile original identities,
+orientation, unmapped reads, missing/conflicting sequence and read/base counts.
+Use compressed extraction and include custody copies/temporary files in disk
+use; raw uncompressed FASTQ cannot be assumed to fit. Missing HP/PS alone
+does not stop intake, but does not certify local phase. Stop with preserved
+outputs at a resource limit or unrecoverable sequence/integrity defect;
+such failure is input-feasibility inconclusive, not a biological null.
+S2–S4, reassembly, production annotation, GPU calling and RNA remain unreleased.
+
+Setup-history correction to the investment note: main reports four failed
+setup events:1604238 pre-task signal53;1604239 hydra-n12 home mkdir read-only;
+hydra-n1 default-partition rejection without allocation; and hydra-n1 home
+mkdir read-only. Signal cause remains unproved. These are main observations,
+not a human directive. Main now reports1604242 COMPLETED on scratch,82s,
+29.169 measuredCPU s,212128K MaxRSS,2CPUs/8GiB, with backed-up wheels and
+offline home pip-check/version success; native alignment binaries remain
+unqualified. S0/S1 may overlap when summed storage/RAM fit; use useful CPUs,
+no idle node/GPU, and preserve custody before October22 scratch expiry.
+Only this section was appended; no retrieval, job, installation or Git write.
+
+## Exact S1a code and launch review
+
+2026-10-10. Requested independent Sol6.1/high; backend/effort not attested.
+Read FULL acquisition source221lines, tests220lines and reused helper561lines.
+Source SHA256 `92f97cf63775490aba62d354535557eca712dc901c1489e05af5cf9ef84b4a8c`;
+tests `babe8961dce2ac16d9f091b26ca5dd4c1ba78d337ca66515597499758a044c79`;
+helper matches its frozen `c0f47e522d4f88b2e068f035b78eb558e63e4abc94839b4a78e32f3c6f09034b`.
+**HOLD this exact launch for one accounting correction; S0/S1 release stands.** A synthetic control delivered SIGTERM at
+download line99 after response.read returned8B but before ledger.charge.
+The saved INCOMPLETE manifest and journal both charged0B; partial file was0B.
+This violates the declared returned-body measure even though partial custody
+and failure status survive. SIGALRM uses the same exception-raising handler.
+The existing SIGTERM test fires before GET returns and does not cover this.
+Defer cancellation exceptions until returned bytes are charged and journaled;
+add a deterministic read-return/charge-boundary control and retain bounded
+termination. This is an implementation correction, not a new science gate.
+
+Otherwise the static path provides pinned HEAD/206/ETag/range/encoding checks,
+disabled redirects,1MiB reads, no retries, prior-charge floor196,608B,
+52GiB cumulative cap, capacity checks before GET, exclusive partial files,
+exclusive publication and source/helper hashes. CLI confines the new leaf
+to the resolved project scratch root; it rejects existing/symlink leaves.
+The read-only bundle must have a scripts directory below the module-launch
+working directory; verify the actual python -m scripts.acquire_hg002_dna
+entry point there. No helper proxy, samtools, extraction or analysis runs.
+
+After that finite fix and passing Linux controls on the frozen bundle,
+the proposed hydra-n1/amd_256M job is eligible:1CPU,8GiB,4h, at most4allocated
+CPUh within S1's8h; exact new output leaf hg002_dna_s1a_20261010_01 under
+/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments;
+160GiB free before GET. Carry every additional genomic byte into the prior
+if196,608B changes; failures do not reset body or allocated-CPU accounts.
+ACQUIRED means object acquisition/hash custody only, readiness NOT_ASSESSED.
+S1b extraction still uses the remaining S1 account; S2–S4/RNA remain unreleased.
+Back up raw files via login I/O before scratch expiry; keep large data off Git.
+Linux controls and main's combined82tests+9subtests remain pending/reported,
+not independently passed here. My single cancellation reproduction used only
+temporary synthetic files, cleaned automatically. Only this section appended;
+no external retrieval, installation, cluster job, commit or other source edit.
+
+## S1a finite HOLD correction
+
+2026-10-10. FULL-read corrected source243lines and tests267lines.
+Source SHA256 `57524ec840fdd08a9cd25505e230fbe1063ae0e4ade70f2f9dbba77f237aef35`;
+tests `87ceab5c936b71b5b542b6b6d37221aa2bc82ce0eacabbcccdc925bd43777bec`;
+helper hash unchanged. Requested Sol6.1/high remains not attested.
+**CLEAR the identified accounting HOLD; corrected bundle02 launch remains
+conditional on its pending Linux controls and matching these source hashes.**
+Independently ran five network-free synthetic controls: SIGTERM and SIGALRM
+at read-return/charge each charge/journal/retain8B; partial-exception
+cancellation retains3B; cancellation during hashing retains8B; normal
+success hashes both objects and charges13B. Final manifests match journals.
+Signals only set pending state; safe points follow charge and write flush.
+Hashing checks cancellation/deadline per4MiB. The30s socket timeout bounds
+inactivity, not absolute read duration; Slurm remains the hard allocation cap.
+Full32-test suite was not rerun here (local pytest absent); Linux pass pending.
+Legacy HOLD and original bundle01 remain preserved; exact output/job envelope,
+52GiB cumulative account, readiness NOT_ASSESSED and unreleased S2–S4/RNA stand.
+Only this correction appended; synthetic files cleaned; no external data/job.
+
+## LiftOn path-interface sidecar: finite independent findings
+
+2026-10-10. Requested maintained Sol6.1/high; backend/effort not attested.
+FULL-read the99-line completed interface note, SHA256
+`2fa0e7124b83dd6d59e9a3e2e500e1c58fe806f98f97fdd25176c82dc9a4dabd`.
+**Accept it as a static extractor design with the corrections below, not
+as qualified path accounting or a P1 result. S4 remains unreleased.**
+
+1. Artifact locations are defaults, not the paths of the frozen command.
+`_run_outdirs` uses the absolute `-dir` path as lifton_outdir. Thus
+`-o h1/lifton.gff3 -dir h1/work` puts score.txt, stats/, run_manifest.json
+and intermediate_files/ under h1/work, rather than h1/lifton_output.
+Bind the inventory to resolved argv; two different output filenames alone
+do not isolate reports. The generation condition also includes absent or
+nonexistent supplied -P/-T files, not only omitted options.
+[Pinned lifton.py](https://github.com/Kuanhao-Chao/LiftOn/blob/8378f8e4a3d8404c94d801c285a2c74291e893b7/lifton/lifton.py#L74-L89).
+
+2. Narrow “all target placements” to all placements retained by this fixed
+policy. Rescue has identity/coverage/overlap filters and a default cap of one
+additional second-locus placement per reference gene. Those defaults do not
+enumerate every competing copy. Cross-locus replacement is a separate opt-in;
+record environment overrides so it cannot silently replace the frozen policy.
+In `Lifton_TRANS`, source IDs are object fields; transcript_id, when present,
+is rewritten to the target ID, and copies suffix IDs. Do not assume emitted
+GFF has ref_gene_id/ref_tran_id attributes or strip suffixes without an exact
+reference-ID/copy-aware crosswalk. Missing joins stay UNKNOWN.
+[Pinned rescue](https://github.com/Kuanhao-Chao/LiftOn/blob/8378f8e4a3d8404c94d801c285a2c74291e893b7/lifton/miniprot_rescue.py#L538-L584),
+[transcript constructor](https://github.com/Kuanhao-Chao/LiftOn/blob/8378f8e4a3d8404c94d801c285a2c74291e893b7/lifton/lifton_class.py#L564-L583).
+
+3. The lower ORF search is in the already listed lifton_class.py. It retains
+one longest ORF per frame, skips nested starts, then selects by protein
+identity and changes CDS boundaries only for a gain greater than0.01.
+An emitted best model is not every possible same-termini ORF. Mutation tags
+are populated before this replacement, so labels cannot certify final CDS.
+Test final sequence and mapping of both complete reference terminal codons,
+including codons spanning junctions; matched ATG/stop strings alone do not
+establish homologous anchors. Keep the fixed policy; any later enumeration
+or alternative ORF choice is a separately labelled extension.
+[Pinned ORF implementation](https://github.com/Kuanhao-Chao/LiftOn/blob/8378f8e4a3d8404c94d801c285a2c74291e893b7/lifton/lifton_class.py#L1042-L1173).
+
+4. Accounting a loss is not resolving its biology. `explicitly_dropped` with
+an extraction, lift, serialization, phase or mapping failure still gives
+UNKNOWN, even with a joinable reason. The diagram's all-accounted branch
+must not convert such rows to negatives. Drop counts are class counts,
+not unique isoform counts; the manifest stores totals, not the complete
+source-ID drop set. Coding translation truncates trailing1–2 bases, and
+get_coding_trans_seq recomputes later phases. Preserve original phase/length
+evidence and check frame continuity before translation; trimming must not
+create a complete endpoint. Resolve applicable recoding declarations rather
+than interpreting a declared Sec codon as an ordinary internal stop.
+[Pinned drop ledger](https://github.com/Kuanhao-Chao/LiftOn/blob/8378f8e4a3d8404c94d801c285a2c74291e893b7/lifton/drop_ledger.py#L105-L185),
+[coding semantics](https://github.com/Kuanhao-Chao/LiftOn/blob/8378f8e4a3d8404c94d801c285a2c74291e893b7/lifton/coding.py#L195-L227).
+
+Scope: inspected selected load-bearing sections of exactly six native files
+at commit8378f8e4a3d8404c94d801c285a2c74291e893b7: lifton.py, annotation.py,
+lifton_class.py, coding.py, miniprot_rescue.py and drop_ledger.py. One oversized
+display was truncated; the finding-bearing sections were recovered in bounded
+reads. No full six-file/codebase audit is claimed. Score/stat writer schemas,
+stop-completion internals, lower alignment selection and runtime output remain
+unverified here. No new README or seventh source file was fetched. Existing
+staging/extraction, runtime and genomic observations remain main-reported.
+Only this review section was appended; no install, job, genomic read, staging,
+extractor edit, Git commit or P1 execution occurred. These finite parser and
+claim corrections do not reopen the released S0/S1 account.
+
+## S1b extraction code gate: independent synthetic findings
+
+2026-10-10. Replacement maintained reviewer, requested Sol6.1/high;
+backend identity and effort are not independently attested. Main owns code,
+execution and tracking. **HOLD the current S1b launch for two finite code
+corrections. S0/S1 release and completed acquisition remain accepted.**
+S1b is UNBOOKED; S2–S4 and RNA remain unreleased.
+
+FULL-read the governing objective, 78-line investment note, all prior
+339 review lines, 390-line extractor, 250-line tests, updated 124-line
+extraction note and the current intake-result note. Reviewed source SHA256:
+`c510de9d56ac6242c0e1ad5b52bb1b2850329eae12f8f0e255499b6d58e6512f`;
+tests SHA256:
+`47b6edb7a16314449234a98ba87ee9cbdd2fb62f024ca135e547061804dd90b8`.
+Independently ran the existing suite in the existing project venv:
+`python -m pytest -q -p no:cacheprovider tests/test_extract_hg002_source_reads.py`:
+41 passed in 0.64s. Additional controls used only disposable synthetic BAMs,
+temporary SQLite files and mocks in that same pysam 0.24.1 runtime.
+
+1. **Recoverable reverse records are incorrectly marked malformed.**
+At extractor lines 72–73, pysam 0.24.1 `get_forward_qualities()` raises
+`TypeError: 'NoneType' object is not subscriptable` when FLAG16 is set and
+QUAL is absent. `observe()` catches it and sets the identity's permanent
+`bad=1`, so a later valid complete record cannot restore the molecule.
+Three independent BAM controls reproduce INCOMPLETE, malformed_ids=1,
+resolved_ids=0: reverse full SEQ with missing QUAL; reverse hard-clipped
+SEQ with missing QUAL; and reverse missing SEQ/QUAL. Each has a matching
+complete record of the same QNAME. Five additional asymmetric hard/soft
+clip variants reproduce the same fault. This is a parser/runtime defect,
+not evidence that the source molecule is unrecoverable. Check raw payload
+presence before forward-orientation calls; preserve absent values and all
+available constraints. Add reverse missing-payload restoration controls,
+including fragment disagreement, with both record orders. Do not remove
+these records or weaken conflict checks.
+
+2. **Final accounting can exceed the deadline and still publish READY.**
+The timer/handlers are disabled/restored at lines 336–339. The last deadline
+test occurs before final commit, census and tag/UNKNOWN queries. A separate
+deterministic control advances the mocked monotonic clock by 61s in the final
+database commit, under a 60s allowance. The returned and saved manifest says
+READY_FOR_DNA_INPUT_REVIEW, wall_seconds=61.0 and complete_census=true.
+This is a false success for the declared deadline, although sequence checks
+passed. Keep deferred cancellation/deadline control through final accounting
+and check again after that work, before the success record is finalized.
+Retain INCOMPLETE evidence on failure and test expiry/cancellation during
+final accounting. Slurm remains the hard allocation boundary; it does not
+repair the code's incorrect readiness state.
+
+The forward full/fragment reconciliation is otherwise acceptable for the
+stated source-extraction scope. Independent controls confirm reverse IUPAC
+orientation; retention of solely secondary/supplementary full records;
+rejection of disjoint fragments without a full record; missing-quality
+fragment sequence disagreement; missing-sequence length disagreement;
+malformed duplicates; and source mutation between passes. Fifteen further
+valid asymmetric hard/soft clipping cases preserve forward offsets and
+reject changed fragment bases. No base stitching or metadata filtering was
+observed. Completeness means all identities observed in a fully decoded
+source BAM; it cannot prove that identities absent from that BAM existed
+in the original library. Archive count differences require explanation.
+
+Publication-boundary controls deliver SIGTERM and SIGALRM immediately after
+`os.link`, and inject a subsequent checkpoint commit failure. All three
+produce INCOMPLETE while the completed gzip filename remains present and
+the partial filename is absent. No false READY occurred in those controls.
+The updated extraction note now states this limitation explicitly. Accept
+that manifest-first contract for this scope: a filename alone cannot authorize
+use. A valid READY manifest and matching gzip hash are required. This
+documented filename behavior is not an additional launch HOLD.
+
+Disk observations remain sampled, not continuous. The supplied external
+account must include BAI, other raw/custody copies and retained S1 artifacts;
+keep it fixed during execution. SQLite's page cap bounds its database, but
+checkpoint peaks do not attest every transient write or external temp file.
+Use declared headroom and the scheduler's RAM/wall limits; no whole-source
+performance or peak-fit claim is accepted from these small controls.
+
+Latest custody facts are main-reported and corroborated by its result note,
+not independently rehashed here: 1604280 COMPLETED0:0, 44 allocated seconds,
+40.273 measured CPU seconds, all seven home SHA256s match. Conservative S1
+allocated total is 8,080s, leaving 20,720s. The proposed 1CPU/16GiB/5h Slurm
+envelope fits that remainder; 17,940s is its proposed script deadline, not
+an execution measurement. A full 18,000s allocation would leave 2,720s.
+The reported raw-other account is 48,784,863,666B excluding the source BAM.
+Adding the explicit 32MiB reserve gives 48,818,418,098B; the reserve is not an
+observed file total. With source BAM 48,727,325,910B, this declares
+97,545,744,008B before new output and leaves 74,252,947,832B below 160GiB
+for index, gzip and remaining overhead. It is not a compression prediction.
+
+Main can clear this exact HOLD with the two corrections, matching updated
+hashes and independent synthetic controls, then qualify the frozen Linux
+bundle and concrete final command/resource packet. No new scientific gate,
+second representation, reference/BAI/phase qualification or biological result
+is inferred. Only this review section was appended; temporary synthetic
+files were cleaned. No study BAM read, network, install, cluster connection,
+job or Git mutation occurred. One initial read-only Git status was run in
+error despite the requested no-Git scope; no later Git command was used.
+Pre-append review SHA256:
+`bd86c4e0b58f2dab16db318037573f4d30226deaccdeea75015e93d231d18fac`.
+
+## S1b finite correction and exact packet acceptance
+
+2026-10-10. Maintained replacement reviewer; requested Sol6.1/high,
+not independently attested backend/effort. **CLEAR both identified S1b
+HOLDs for the corrected hashes below. ACCEPT the exact execution packet
+conditional on the corrected frozen Linux02 bundle passing all 50 controls
+with those same hashes.** Linux01 job1604281's 41-test pass does not clear
+the historical HOLD. S1b remains UNBOOKED in the reviewed packet.
+
+FULL-read the corrected 401-line source, 286-line tests and updated 177-line
+extraction note, including its complete final command/resource packet.
+Source SHA256:
+`40679be522fbf2dd582a6826d72cfc02b9d77443f60095dcabb5a9d4efec681a`;
+tests SHA256:
+`81bebb128622925bb677cde26e12bfdd2f2b833f4e0622d994b06ce635159aee`.
+These hashes were checked again after independent controls. The extraction
+note SHA256 is
+`d98ab0557f5505031f526adb3c0fb299a5a13e34a5508e01e60e004dbf25a029`.
+Existing local suite: 50 passed in 0.80s in the existing project venv,
+with bytecode and pytest cache writes disabled. No Linux pass is inferred
+from this local result.
+
+Independently ran 41 additional synthetic cases beyond that suite:
+
+| Controls | Cases | Independent result |
+|---|---:|---|
+| Reverse missing QUAL on full/fragment records and reverse missing SEQ/QUAL; both record orders and both complete-record orientations | 12 | READY; exactly one forward read, correct sequence/quality, restored_missing_ids=1 and malformed_ids=0 |
+| Missing-quality full/fragment sequence disagreement, missing-sequence length disagreement, and conflicting complete qualities; both orders | 8 | INCOMPLETE; no emitted molecule, correct constraint/conflict state, original_bases absent as a total |
+| Deadline, SIGTERM and SIGALRM during final commit, final census, tag query, UNKNOWN query, database close, file measurement and journal close | 21 | Saved and returned INCOMPLETE, complete_census=false, original_bases=null; resolved evidence retained |
+
+All late controls verify deferred handlers are still active at injection,
+then restored with the timer disabled on return. Deadline controls report
+61s against a 60s allowance without READY. Reverse fragment checks use
+asymmetric hard clips and retained soft clips. Every saved readiness.json
+matches the returned state. One initial file-measurement mock missed the
+resolved macOS temporary path; after correcting that test hook, the complete
+21-case late-control matrix passed. No production source was changed.
+
+Accept the declared frozen02 command from
+`/beegfs/datasets/home/igorno/alignssl_restart_20260922/bundles/hg002_read_extract_20261010_02`:
+`python -B -m scripts.extract_hg002_source_reads`, on hydra-n1/amd_256M,
+1CPU/16GiB/5h, script allowance17,940s and external disk48,818,418,098B.
+Its exact home BAM is
+`/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam`,
+with input SHA256
+`b7edeb4bbc2589039c6148a912857f26924ca8fd5971cd3141337d0ce24bbde4`.
+That SHA and size48,727,325,910B match the retained acquisition manifest
+metadata checked locally; no BAM bytes were read here. The exclusive output
+is
+`/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_read_extract_20261010_01`.
+Main must check that this leaf is still absent at execution. The isolated
+CPython3.12.1/pysam0.24.1 runtime and pip-check success remain main-reported
+until the frozen Linux qualification completes.
+
+The reported20,720s S1 remainder covers the18,000s maximum allocation;
+charge actual scheduler cost. Retain the declared32MiB reserve, fixed
+external disk account, sampled-peak limitation and manifest-first use rule.
+A late journal-close cancellation can leave an earlier READY journal line;
+the final readiness manifest remains authoritative. This acceptance applies
+to complete-source extraction only. It is not a throughput/peak-fit claim,
+BAI/reference/phase qualification, S2–S4/RNA release or publication result.
+The matching corrected Linux controls are the remaining execution condition;
+no further scientific gate is added by this finite correction review.
+
+Only this section was appended. Historical review text and source/tests
+were preserved. All temporary synthetic files were cleaned. No job, network,
+install, cluster connection, actual genomic read or Git command occurred.
+Pre-append review SHA256:
+`0b1dac161a7f9980dd8671f088754b7296f6fa2526a1c902fb50af5d4b3992f8`.
+
+## Synthetic LiftOn fixture: finite S0 interface review
+
+2026-10-10. Maintained independent reviewer, requested Sol6.1/high;
+backend/effort not independently attested. **ACCEPT the constructed fixture
+and one bounded S0 native interface observation: 1CPU/2GiB/5minutes.**
+No obvious fixture or command-interface defect warrants a HOLD. This is
+eligibility for the small synthetic run, not acceptance of a native result,
+successful source/target joins, an endpoint classifier or S4 qualification.
+Native execution remains UNBOOKED in the supplied state.
+
+FULL-read the 152-line generator, 249-line tests, 63-line fixture note and
+46-line native shell script. Independently ran the existing venv tests with
+bytecode/cache writes disabled: 12 passed in 0.29s. `bash -n` passed for the
+shell script; it was not executed. Source/test hashes match its embedded pins:
+
+| Reviewed file | SHA256 |
+|---|---|
+| Generator | `fb0c6423a1ba19235103d58debca65f921aef355e1ddff0f0a506a0fa09a94e7` |
+| Tests | `92ee8481d5cd164ed4b8e5c446f066239774445c738b774a0ea0640a649ef0b8` |
+| Fixture note | `24f979936bb7e7cfa8de019e08429767ec286ff2b450a97ee558e5645c65ddf0` |
+| Native script | `3f34f85e0368cc94ed449f468fc47d231d5c0612cf65cef27703e3ce06868535` |
+
+The deterministic fixture has three reference coding isoforms and five
+constructed target paths, including both strands and one extra plus-gene
+copy. Tests independently translate with the full standard genetic code,
+recover CDS from FASTA/GFF coordinates, check oriented terminal coordinates
+and splice sites, and bind IDs/copies to coordinate truth. All CDS blocks
+have phase0; there are no designed negative paths, split terminal codons or
+recoding exceptions. The generator publishes its pinned manifest last and
+refuses existing outputs. Expected target GFF/crosswalk files are truth,
+not native inputs. The shell command uses only the synthetic reference
+annotation and complete tiny FASTAs, omits -P/-T, and supplies separate
+resolved -o/-dir paths with the stated native policy flags.
+
+Three finite limits prevent false-pass claims from this run:
+
+1. Script exit0 and --validate-output do not compare native outputs with
+the fixture truth. They cannot certify retention of all five known paths,
+correct reference-ID joins or terminal mapping. Inspect the actual GFF,
+generated FASTA headers, score/stats and work-directory records as already
+planned; missing/ambiguous paths remain UNKNOWN. A structurally valid sparse
+output cannot become an endpoint-positive control merely through exit0.
+The stated interface-observation scope makes this a reporting limit,
+not an additional prerequisite for running the small fixture.
+
+2. The aligner-directory hash check does not by itself bind PATH execution
+to those binaries: runtime/bin precedes aligners/bin at script line20.
+Version strings are recorded, but actual resolved command paths/hashes are
+needed if the result claims execution of the specific verified binaries.
+Retain that provenance with the actual result. Completed build1604292,
+home-copy verification and versions2.31-r1302/0.18-r281 remain main-reported;
+none was independently executed or rehashed here.
+
+3. The artifact list covers regular files present at line44 on the success
+path. Later hash-check.txt and exit-status.txt are not in that list; an
+earlier native failure bypasses that hash block. Preserve failure logs and
+exit status, and hash the complete retained packet during custody handling.
+Do not claim that this script already hashes every final file or every
+failure packet. These small custody omissions do not invalidate the fixture
+or justify treating a failed native run as a scientific negative.
+
+The scheduler must supply the declared memory/time limits; the script checks
+one CPU/node and no GPU but does not itself enforce 2GiB/300s. Charge actual
+allocation to S0, including failures. No source throughput, biological
+negative, exhaustive native path search, S4 release or publication evidence
+is accepted. The reported 1604284 prefix remains an incomplete S1 pass1;
+its eventual readiness result needs the separate finite audit already planned.
+No job or prefix was independently queried in this review.
+
+Only this subsection was appended. Historical text and main source files
+were preserved. Tests used only disposable synthetic inputs. No native run,
+genomic work, network, install, cluster connection or Git command occurred.
+Pre-append review SHA256:
+`e04b8c271c1684ab3f5ca81c2ffba6f69357df3560d40fb34a2f2583fb8705eb`.
+
+## Actual synthetic1604293: partial execution and literal interface findings
+
+2026-10-10. Maintained independent reviewer, requested Sol6.1/high;
+backend/effort not independently attested. **REJECT a full integrated
+miniprot/LiftOn interface pass for1604293. ACCEPT the preserved partial
+execution evidence, the observed schema snapshot and five fixture-specific
+positive path matches.** These matches qualify neither future P1 nor S4.
+Both backend readiness and source-ID/schema joins are necessary for a full
+interface acceptance; valid GFF and aggregate completeness cannot replace
+them. No scientific gate is released.
+
+Final analysis uses the read-only local primary packet:
+`/Users/akm/aayushkrm-AlignSSL/runs/lifton-interface-20261010-01-primary`.
+The earlier recursive SCP copy was partial. Main reports stopping only its
+own SCP and preserving that copy, then copying the primary packet while
+excluding only pytest tmp controls. No transfer or remote action was made
+by this reviewer. FULL-read native stdout/stderr, the693-line run manifest,
+final GFF, raw miniprot GFF, polished Liftoff GFF, score and generated
+transcript/protein FASTAs; inspect the retained argv, versions and stats.
+
+The warning is in **native.stderr.txt**, not stdout: LiftOn reports
+`[Errno 121] Remote I/O error`, skips miniprot output and stages a Liftoff-only
+partial result. Run schema_version=2 has run.status=`partial_success`,
+pipeline_failures=1, and a nonfatal run_aligners failure for a nonempty set
+of three reference proteins. backend.step8_dispatch and step8_overlap_filter
+are `skipped`; miniprot candidate/rescue counts are zero. Some phase records,
+including run_aligners and process_miniprot_loci, nevertheless say success.
+Those phase labels and zero candidate counts cannot establish usable backend
+completion or a biological absence.
+
+Miniprot stderr reports mapping three query sequences, version0.18-r281,
+real0.056s/CPU0.057s and the actual --gff-only command. Its retained GFF has
+five mRNAs and15 CDS rows with exact expected positive paths. Thus the
+manifest's generic `launch_error`/`process did not start` label conflicts
+with actual execution/output evidence. Its returncode is **null**. No
+miniprot exit0 is inferred from timing or a complete-looking GFF. The exact
+Errno121 origin remains unproved here; neither launch failure nor fsync is
+accepted as its cause. Main's source investigation remains separate.
+
+Independent read-only reconstruction from the actual target FASTA verifies
+all five CDS chains, their453 bases and coding SHA256s, transcript order,
+phase0 and both oriented terminal-codon coordinate sets. The final LiftOn
+GFF has3 genes/5 mRNAs/15 exons/15 CDSs; every transcript has status=Liftoff
+and dna_identity/protein_identity=`1.000`. Raw miniprot and polished Liftoff
+also match all five paths. These are constructed positives, not evidence
+that the integrated miniprot parsing/rescue path ran.
+
+| Exact reference transcript | Fixture copy/location | Final LiftOn transcript ID | Raw miniprot ID |
+|---|---|---|---|
+| SYNTHT0001.1 | C1 / target_extra | SYNTHT0001.1 | MP000001 |
+| SYNTHT0002.1 | C1 / target_extra | SYNTHT0002.1 | MP000003 |
+| SYNTHT0003.1 | C0 / target_minus | SYNTHT0003.1 | MP000005 |
+| SYNTHT0001.1 | C0 / target_plus | SYNTHT0001.1_1 | MP000002 |
+| SYNTHT0002.1 | C0 / target_plus | SYNTHT0002.1_1 | MP000004 |
+
+Those joins use exact fixture CDS chains, strand and contig, not blind suffix
+stripping. Native unsuffixed plus-gene models land on fixture C1; `_1` models
+land on C0. Neither native copy rank nor a suffix is a haplotype label.
+The final GFF has ID/Parent, gene_id and transcript_id attributes but no
+ref_gene_id/ref_tran_id fields. For the extra gene ID SYNTHG0001.1_1, gene_id
+is SYNTHG0001.1; its child transcript_id is the copied target ID ending `_1`.
+The polished Liftoff GFF instead has suffixed gene_id on that extra copy.
+Therefore the two GFF layers do not have interchangeable join semantics.
+Raw miniprot mRNAs carry ID=MP..., Rank, Identity, Positive, StopCodon and
+`Target=SYNTHT... 1 151`; CDS rows join through Parent=MP... and also carry
+Target spans. No raw miniprot gene hierarchy is present.
+
+Generated FASTA headers are literally SYNTHT0001.1, SYNTHT0002.1 and
+SYNTHT0003.1, without appended descriptions. transcripts.fa has453-base
+coding sequences including the terminal stop. proteins.fa has151 characters:
+the exact150-amino-acid fixture protein plus terminal `*`. Account for that
+literal convention before protein-length/Target comparisons; do not silently
+change the frozen reference endpoint. Terminal correspondence is verified
+here through constructed coordinates, not protein identity alone.
+
+score.txt is headerless: five tab-separated rows, eight columns each.
+The literal example is
+`SYNTHT0001.1\t1.0\t0\t1.0\t1\tLiftoff\tidentical\ttarget_extra:2101-3053`.
+Column1 matches final target transcript IDs, including `_1`; column8 gives
+contig:start-end, not an oriented CDS chain. The same numeric tuple and
+Liftoff/identical fields occur in every row. This artifact read does not
+assign universal semantic names to its four numeric columns; bind those
+names to the writer before implementing a general parser. In particular,
+the numeric0 is not evidence against the excellent raw miniprot alignments.
+mapped_transcript.txt is headerless, with exact source IDs, counts2/2/1 and
+`coding`; mapped_feature.txt has source gene counts2/1. extra_copy_features.txt
+has `SYNTHG0001.1\t2\tcoding`. completeness_by_feature_type.txt has literal
+columns feature_type,n_reference,n_lifted,n_missed,n_extra_copies,n_target,
+pct_recovered and row `gene,2,2,0,1,3,1.00000` (tab-separated). Its gene-level
+100% summary is not backend readiness or transcript/path completeness.
+
+Custody scope: all52 retained files listed outside tmp in the original
+artifact manifest independently match SHA256; all six pinned fixture files
+match their fixture manifest. The46 tmp entries were excluded from this
+primary copy. hash-check.txt and exit-status.txt are present but were created
+after the original artifact hash list. No full original-manifest coverage
+or complete late-file home custody audit is claimed here. Main's broader
+home verification and runtime/binary resolution checks remain attributed
+to main. The retained shell exit-status is0 and Linux fixture log says12
+passed in0.42s. Slurm COMPLETED0:0,5 allocated seconds,2.237 measuredCPU s
+and105332K MaxRSS are main-reported, not a new scheduler query.
+
+| Finding-bearing primary artifact | SHA256 |
+|---|---|
+| Run manifest | `501341e649db706beebfc4decd467d2b53e2bd8111b482f412bc7e0f61ed2ce9` |
+| Native stderr | `e84fcddc194a25804ab911a71f00117d8b42c9180c483604667a11df8bf04fa6` |
+| Final LiftOn GFF | `9267869914e5c03418bf1fae7c787c1b17169991b219967d96ee87fda40a8d1a` |
+| Raw miniprot GFF | `cb7d27fc18c86f00832b0cf5c4466146b2cd0957d9abcf510e99431d371d76cf` |
+| Score | `9424b6eb0d15d13ec7723c868ee8bb258c2aff4aa6121abc090f01aa0141098d` |
+
+The actual miniprot command has no -t although LiftOn argv has -t1, and
+the manifest says aligners ran in parallel. Main's source check reports a
+default of four miniprot threads; actual thread count was not measured here.
+Explicit LIFTON_MINIPROT_THREADS=1 and serial aligners for any separately
+chosen tiny S0 diagnostic would control resources, not change rescue policy.
+No replay, code change or new diagnostic is ordered by this review. Preserve
+the original failure and finish its specific cause investigation. This run
+cannot qualify integrated miniprot rescue, P1 negatives or whole-genome work.
+
+Only this subsection was appended. No job, native rerun, genomic analysis,
+network, install, source edit or Git command occurred. All reconstruction
+and hash checks were read-only on synthetic artifacts. Pre-append review
+SHA256:
+`738095e800997c1d9f51529350abd301c27393eb6a6cca25f327979b136c12ec`.
+
+## Actual synthetic1604294: tested runtime and positive-interface acceptance
+
+2026-10-10. Maintained independent reviewer, requested Sol6.1/high;
+backend/effort not independently attested. **ACCEPT02 for the runtime,
+both aligner execution/import interfaces and five constructed positive
+paths actually tested.** This does not qualify rescue-only behavior, a
+general source-ID namespace, the final endpoint classifier or S4. The
+historical01 partial failure and its rejected full-pass claim stand.
+
+Read-only comparison uses the local01 and02 primary packets under
+`/Users/akm/aayushkrm-AlignSSL/runs/`. Parsed both complete run manifests;
+read02 stdout/stderr, GFF, score, database manifest, generated FASTAs,
+argv, environment, versions, resolution records and original artifact list.
+FULL-read the36-line trace entry point, its tests and updated shell script.
+The trace calls native lifton.lifton.main, records errno121 exceptions and
+restores prior traces; it does not retry, patch or suppress native results.
+Independent local trace+fixture selection:15 passed in0.32s, bytecode/cache
+writes disabled. The retained02 Linux fixture log says12 passed in0.43s;
+the local15-test result is not a claimed Linux15-test result.
+
+| Actual evidence | 01 /1604293 | 02 /1604294 |
+|---|---|---|
+| Run status / pipeline failures | partial_success /1 | success /0; failures list empty |
+| Miniprot returncode | null | 0, termination exit status0 |
+| Miniprot annotation database | skipped | gffutils built; source SHA matches raw GFF |
+| Candidates processed / submitted | 0 /0 | 5 /5 |
+| Step8 / overlap filter | skipped / skipped | serial / in_process |
+| Final GFF / raw miniprot GFF | Five correct constructed paths | Both byte-identical to01; five correct paths |
+
+All recorded minimap2 executions also return0.02 stderr shows the miniprot
+command with explicit -t1 and normal0.052s real/CPU reporting; unlike01,
+its returncode is actually captured. The manifest schedules aligners serially
+and records LIFTON_MINIPROT_THREADS=1. The miniprot database opens read-only
+with5 mRNA/15 CDS features, and its cache manifest binds the2381-byte source
+GFF SHA256. This supports usable parsing as well as command completion.
+No Errno121, fallback warning or diagnostic exception trace was observed.
+**Nonrecurrence does not identify or repair01's cause.** Serial scheduling,
+explicit threading, PATH order, trace timing and a new output leaf changed
+together; no causal attribution to one change is accepted.
+
+The six fixture payload files and pinned fixture manifest are unchanged.
+Independent reconstruction from02 target FASTA checks every ordered CDS
+chain, phase0,453-base coding sequence/hash and oriented start/stop codon
+coordinates. All five final and raw-miniprot paths match exact truth.
+The01 coordinate/strand-based ID crosswalk remains valid, including C1
+unsuffixed plus-gene models and C0 `_1` models; no suffix stripping was used.
+Generated FASTA IDs and453-base transcript/150-AA-plus-`*` convention are
+unchanged. Final GFF remains3 genes/5 mRNAs/15 exons/15 CDSs, all status=Liftoff.
+The eight-column score rows retain target IDs/locations; literal column3
+changes from `0` to `1.0` in all five rows. Do not infer backend state from
+unchanged final GFF alone, or universal numeric-column semantics from this
+fixture. Five candidates were processed, but miniprot genes emitted and
+rescued genes/isoforms remain0. Thus this input did not test a rescue-only
+positive, a missing-path negative, nonzero CDS phases or recoding exceptions.
+
+All parsed native options are unchanged except paths/normalized argv and
+serial_aligners. Polish/CDS/copy and rescue settings remain the recorded
+policy. The trace and resource changes are not accepted as a new rescue
+method. Recorded resolved minimap2/miniprot paths point to the home
+hg002_native_aligners_s0_20261010_02/bin directory. Captured binary SHA256s:
+minimap2 `cc32fb1ef7ae2653b3d67af0198eaca483f4a6f227a07d1bda3951e9db815780`;
+miniprot `9c61d40425b47e15a34f965a9449cc598eab9598978b0a76da082ab4c1bdfe0d`.
+These are retained remote resolution/hash records, not new local binary
+rehashes. Actual launch uses the runtime Python plus trace wrapper importing
+LiftOn; a recorded console-entry lifton hash alone does not pin package code.
+
+Frozen shell SHA256
+`4e60c8f25986af42a813a851044d36b1f0cf6e10b8ed8c84ab40946d7ebbd7f2`
+matches execution.txt; trace source SHA256
+`e25216e1a5b50be96b601d90c991a300125f72e0072681181c1c1c3bf72618a5`
+matches its recorded code check. Fixture source/test pins remain unchanged.
+Independently verified57 retained primary files against the original artifact
+list. The46 pytest tmp entries are omitted locally; hash-check.txt and
+exit-status.txt remain late files outside that list. No full original local
+manifest coverage is claimed. Complete unchanged home custody verification
+is main-reported. Main reports5 allocated seconds,2.584 measuredCPU seconds
+and100896K MaxRSS; no scheduler query was made here.
+
+| Finding-bearing02 artifact | SHA256 |
+|---|---|
+| Run manifest | `7daa754376d235f561577b3e6c9d0e675427e57f6c1ca816778c7f1723b4a30a` |
+| Native stderr | `5f1a711d02e58e7916e21377c48d8b2c90917f833c69f8eabcfbc2cbb24c911d` |
+| Score | `d067db5001670edb1c0c44e872d36eb2385fd5bbdaef966f87df44442c0d3d8c` |
+| Final GFF | `9267869914e5c03418bf1fae7c787c1b17169991b219967d96ee87fda40a8d1a` |
+
+This closes only the tested positive S0 interface observation. No replay,
+old-failure fix, additional fixture or whole-genome launch is requested by
+this review. The reported S1 complete pass1/ongoing pass2 does not yet supply
+a final readiness result; its separate audit remains pending. Only this
+subsection was appended. No native rerun, job, genomic work, network,
+installation, source edit or Git command occurred. Historical reviews were
+preserved. Pre-append review SHA256:
+`f4330553158faa4923cf37d13faabc1b9617b9d77c6193eb4de06070aab70241`.
+
+## Actual S1b1604284: finite readiness audit and conditional storage contract
+
+2026-10-11. Maintained independent reviewer, requested Sol6.1/high;
+backend/effort not independently attested. **ACCEPT the completed extraction
+record within its full-source extraction scope. Usable-input acceptance
+remains pending terminal custody QA and verified HOME result custody.**
+No caller, reference/phase/copy qualification, S2–S4 or RNA is released.
+
+Read the complete local readiness.json at
+`/Users/akm/aayushkrm-AlignSSL/runs/hg002-read-extract-20261010-final/`.
+It is valid4262-byte JSON, SHA256
+`4355f3b3d5392c41f0ca92da94e389a66907bf6297d8d3fa13f2996ccf641acc`.
+This local receipt must match the forthcoming remote metadata hash receipt;
+no independent transfer-origin attestation or complete local custody packet
+is inferred. FULL-read the unchanged extractor and current extraction note,
+and reread the governing objective and investment scope. Source SHA256 is
+`40679be522fbf2dd582a6826d72cfc02b9d77443f60095dcabb5a9d4efec681a`;
+test SHA256 is
+`81bebb128622925bb677cde26e12bfdd2f2b833f4e0622d994b06ce635159aee`.
+The manifest pins that source. Independent synthetic rerun:50 passed in0.91s,
+bytecode/cache writes disabled. Prior finite defect controls remain accepted;
+no actual BAM, FASTQ or identities database body was read by this reviewer.
+
+| Completed-record evidence | Finite conclusion |
+|---|---|
+| READY; both passes and complete_census true | Whole-source completion is reported, not a prefix estimate |
+| Pass1/pass2 each5,710,994; summed FLAG counts agree | Record accounting is internally consistent |
+| Original/resolved/emitted5,359,077 IDs;80,344,827,828 bases | All observed QNAME identities resolved and emitted under this code |
+| Conflict/malformed/constraint-mismatch/unknown IDs0 | No reported unresolved identity; unknown examples empty |
+|351,917 supplementary and duplicate-full records;578 unmapped | Duplicate full payloads do not create new molecules; unmapped records retained |
+| No hard-clipped/missing payloads or restorations | This actual input did not exercise restoration paths |
+
+Independent arithmetic also checks emitted bases, reverse FLAG totals and
+RG/HP/PS presence totals against record counts. Counter fields absent from
+the JSON, including unidentified/malformed records, are zero under this
+code's Counter serialization; they are not independently measured zeros.
+Pinned input SHA matches the expected original HOME BAM SHA. Output gzip is
+41,582,125,285B with recorded SHA256
+`fd9fd85d7dfadca083cd101aad00932e16d23d8b5d90db4ddec7523abaabae88`;
+SQLite is1,040,932,864B. These are manifest observations until custody QA.
+ENA count agreement does not establish independent ENA sequence/quality
+equivalence, completeness beyond the retained BAM, or identity provenance
+beyond QNAME. No alternative raw representation was acquired or compared.
+
+Single RG is HG002_WGS/PACBIO/REVIO with CCS metadata. HP and PS are missing
+on547,295 records; HP values1/2 cover5,163,699 records, and PS has only the
+single value1. These are record counts, not molecule phase assignments or
+validated phase blocks. FASTQ does not restore RG/HP/PS tags or qualify the
+old reference, BAI, local alleles, copy state or parental labels. The original
+BAM/BAI and metadata remain the retained provenance source.
+
+Main reports authoritative1604284 COMPLETED0:0,7709 allocated seconds,
+6988 TotalCPU seconds and101784K MaxRSS. No scheduler query was made here.
+The manifest's7708.222s is explicitly a process-wall estimate, not the
+scheduler charge;6988.313s process CPU and99,016,704B process peak RSS have
+their own scope. Charge S1 as8080+7709=15,789 allocated seconds, leaving
+13,011 of28,800. A full3600s custody QA leaves9411s before any further charged
+work. No historic booking, body-transfer account or frozen17940s extraction
+deadline is changed. Completed wall time is below that frozen deadline.
+
+**ACCEPT the proposed exact duplicate-cleanup contract, conditional on QA;
+no new scientific authority is required within the existing S1 scope.**
+The extraction note already permits redundant scratch cleanup after custody
+verification and explicit main action. Main reports atomic-rename preflight
+rejected scratch/HOME device50/52 before mutation. Preserve that failure;
+do not substitute a cross-filesystem move with hidden copy/delete behavior.
+
+| Storage order using recorded sizes | Summed-byte projection |
+|---|---:|
+| Recorded sampled extraction peak |140,176,254,335 |
+| Copy gzip+SQLite before cleanup |182,799,312,484; exceeds160GiB by11,000,620,644 |
+| Remove one48,727,325,910B duplicate scratch BAM, then copy42,623,058,149B gzip+SQLite |134,071,986,574 |
+|160GiB cap less that last projection |37,726,705,266 headroom before additional small artifacts |
+
+This is arithmetic from the declared ledger and sampled peak, not an exact
+continuous physical-storage measurement. Include current metadata, QA,
+copy temporaries and retained copies in the actual ledger, and verify HOME
+free space. Keep the complete scratch extraction while copying. No cropped
+readset, removed SQLite evidence, uncompressed FASTQ or extra result copy is
+authorized to make it fit. External bytes were frozen during extraction;
+later terminal custody operations need a separate actual ledger entry.
+
+Before cleanup, require the bounded1CPU/4GiB/1h QA to finish COMPLETED0:0
+with all four original HOME/scratch BAM/BAI hash checks, extracted gzip SHA,
+whole-gzip EOF/CRC, SQLite quick_check and exact census PASS. The cleanup
+target is only
+`/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam`.
+Main must verify this exact regular-file target and its unchanged identity
+against fresh QA receipts before unlinking it. Preserve the original HOME
+BAM/BAI, scratch BAI, acquisition manifests/ledgers/logs and extraction output.
+The removed file is recoverable from the hash-identical HOME BAM, not a
+removed original molecule or lost genomic byte. A failed/stale/mismatching QA
+does not permit cleanup or a large-copy fallback. Reviewer authorizes no
+filesystem operation and performs no deletion.
+
+FULL-read the evolving read-only QA script, including its revised census
+assertion and before/after device/inode/size/mtime/ctime comparison; bash
+syntax passes. Reviewed revision SHA256
+`dc6bc3daa1c68f726610cc752518609634eee14537ca3332a3303fe7befabbd0`.
+The earlier inspected revision printed counts without comparison; main's
+revision now asserts(5359077,5359077,80344827828,0,0,0) for total/emitted
+rows, emitted bases, conflict/bad/constraint_bad sums. That finite gap is
+closed. Hash receipts bind SQLite/stats/initial/final manifests; compare the
+remote readiness SHA with the local receipt above. They do not independently
+certify raw ENA sequence equivalence. These script checks have not run here.
+Keep terminal status and QA receipts as well as the small metadata inventory;
+do not describe an inventory excluding late receipt files as all-artifact
+coverage. After the allowed copy, verify the complete HOME result inventory
+against the unchanged scratch packet before usable-input acceptance. No
+scratch extraction deletion is part of this cleanup contract.
+
+Only this finite subsection was appended. No job, network, genomic body
+read, duplicate extraction, source edit, install or Git command occurred.
+Historical reviews were preserved. Pre-append802-line review SHA256:
+`0c87f5d011bf0c6f7ead1cef4009e07e66a54003de17b5f45b435de5803848e6`.
+
+Same-audit receipt update: the working-tree raw readiness.json is independently
+byte-identical to the off-Git local copy and has SHA2564355f3b3d5392c41f0ca92da94e389a66907bf6297d8d3fa13f2996ccf641acc.
+FULL-read main's new2026-10-11 source-readset result note; its accounts and
+pending custody limits agree with this finite finding. The QA source still
+matches dc6bc3daa1c68f726610cc752518609634eee14537ca3332a3303fe7befabbd0.
+This confirms the two local metadata receipts, not a completed remote QA.
+The original802-line review prefix independently retains its pre-append hash.
+
+## Finite S1 duplicate-cleanup prelaunch acceptance
+
+2026-10-11. Maintained independent reviewer, requested Sol6.1/high;
+backend/effort not independently attested. **ACCEPT the exact cleanup script
+and storage contract for the bounded main-owned cleanup job.** Permission
+is only for the one verified redundant scratch BAM. Its fresh guards must
+all pass on hydra-n1 before unlink. This finding is not usable-input acceptance,
+not a completed deletion, and not permission for calling or reconstruction.
+
+FULL-read scripts/cleanup_hg002_verified_duplicate_s1.sh. Local SHA256 matches
+the proposed frozen packet:
+`523e7caf6a4426b86f60ec66f107837217f1956c83dac444d611fa6254c1c1e8`.
+Bash syntax passes. Read the local custody README and current source-readset
+note. Main reports1604300 COMPLETED0:0,1182 allocated seconds,1126.732
+measured CPU seconds and14452K MaxRSS, with all nine QA receipts read and
+passing. The raw nine receipts are not yet present in the inspected local
+custody directory; it contains the README only. Thus this reviewer does not
+claim an independent raw-receipt audit or scheduler query. The cleanup job
+must read the actual remote receipts and enforce the checks below. No new
+whole-source hash or genomic body read is requested of this reviewer.
+
+| Guard before unlink | Reviewed behavior |
+|---|---|
+| Terminal QA | sacct1604300 must report COMPLETED/0:0; QA execution pins job ID and accepted script hash; QA exit receipt must be0 |
+| Integrity receipts | Four raw hash OK lines, exact gzip path OK, whole-gzip CRC PASS, exact SQLite integrity/census JSON |
+| Fresh input identity | QA before/after stats compare; current nine-file device/inode/size/mtime/ctime record must equal QA after record |
+| Target/original | Both regular, non-symlink,48,727,325,910B; target has exactly one link; both BAI paths regular and non-symlink |
+| Space | Named inventory plus full future readset copy and1GiB reserve below160GiB; sufficient HOME free space; HOME result leaf absent |
+| Mutation | One literal unlink of the exact scratch acquisition BAM; no directory removal, recursive delete, fallback copy or extraction deletion |
+
+Host-local device numbers may differ from the login namespace. The script
+requires hydra-n1 and compares the complete fresh stat records there; it does
+not omit device numbers to bypass the earlier failed atomic-move preflight.
+The original HOME file is not required by this code to have link count1:
+that check applies only to the deletion target. This differs from the launch
+description, but does not threaten preservation of the original. No global
+one-link assertion is accepted. Same-host file identity and verified separate
+custody copies, not arbitrary numeric device equality across hosts, govern.
+
+The sole deletion target remains
+`/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam`.
+HOME original bytes, both BAI copies, acquisition metadata/logs and the full
+scratch extraction remain. The deleted duplicate remains recoverable from
+the verified HOME BAM. Keep these files and QA receipts frozen through the
+guarded cleanup; the finite stat comparison is not a lock against concurrent
+writers. If fresh checks fail, stop before unlink; do not weaken the checks
+or reroute the deletion. No failure automatically permits another cleanup.
+
+The named du inventory measures the two acquisition directories, the full
+scratch extraction, QA and cleanup output. Its projection subtracts exactly
+one scratch BAM and adds the entire extraction directory plus1GiB. This
+includes both gzip and SQLite copies, not only the41.6GB gzip. Main must keep
+all S1 material outside that finite inventory, including bundle/log/receipt
+copies and temporary overhead, within the declared1GiB reserve and maintain
+the joint ledger. Do not treat it as exhaustive storage discovery. Using the
+previous sampled peak and gzip/index sizes gives135,145,728,398B including
+that reserve, leaving36,652,963,442B below160GiB; the runtime named inventory
+is authoritative for the guard. No continuous physical peak is attested.
+
+Independent synthetic checks, without running the cleanup script: three
+projection-boundary cases pass, including rejection at exact cap; five
+terminal-state marker cases pass, rejecting RUNNING, FAILED, nonzero exit and
+empty evidence. Read-only structural checks confirm one unlink and stat/space
+guards before it. These eight small controls are not a filesystem deletion
+test, a remote QA rerun or an expensive job. The script's four raw OK-line
+count relies on the pinned successful QA producer and unchanged receipts;
+it is not a standalone adversarial receipt validator. Main's full receipt
+inspection and the successful pinned producer are part of this contract.
+
+Actual S1 charge8080+7709+1182=16,971 seconds, leaving11,829 of28,800.
+Cleanup maximum180s plus a later maximum3600s copy/hash-verification packet
+would leave8049s; charge actual cost and include any further S1 work. Neither
+failed-rename history nor frozen extraction limits are rewritten. After the
+one permitted cleanup, complete HOME copying and unchanged-artifact hash
+comparison remain pending before usable-input acceptance. No scratch readset
+deletion or scientific gate release follows. S2–S4/RNA remain unreleased.
+
+Only this review subsection was appended. No jobs, network, raw genomic body
+reads, unlink, source changes or Git commands occurred. Historical926-line
+review prefix SHA256:
+`fe790158dfe6fe6db4a28cb3b948fb4b3ba19795fdbd7e852c31ac3da14f324f`.
+
+## Actual S1 usable-input acceptance after complete HOME verification
+
+2026-10-11. Maintained independent reviewer, requested Sol6.1/high;
+backend/effort not independently attested. **ACCEPT the complete extracted
+HG002 source readset as usable DNA read input within S1.** The earlier
+terminal-QA and verified-HOME-custody conditions are now satisfied by the
+retained native evidence. No remaining concrete S1 readiness HOLD was found.
+This closes extraction/input custody only. S2–S4/RNA remain unreleased;
+the exact caller/reference/phase recipe still needs its separate release.
+
+FULL-read all local native small receipts and README context in
+results/hg002_read_extract_20261010/{custody_qa,duplicate_cleanup,home_verification},
+the unchanged readiness.json and current main result note. FULL-read the
+HOME verifier and reread the QA/cleanup scripts. Code/execution hashes match:
+QA dc6bc3daa1c68f726610cc752518609634eee14537ca3332a3303fe7befabbd0;
+cleanup523e7caf6a4426b86f60ec66f107837217f1956c83dac444d611fa6254c1c1e8;
+HOME verifier48473e8a71da32da15c699db041bc5b40b92cf624a083c41cde39b2041d9763e.
+The previously FULL-read and independently tested extractor remains pinned
+at40679be522fbf2dd582a6826d72cfc02b9d77443f60095dcabb5a9d4efec681a.
+HOME verifier bash syntax passes. No genomic body was read locally and no
+native hash/CRC/database job was repeated by this reviewer.
+
+| Completed evidence | Independent finite check of retained receipts |
+|---|---|
+|1604300 QA | Four exact HOME/scratch BAM/BAI paths OK; gzip SHA OK; whole EOF/CRC PASS; SQLite quick_check ok and census exact |
+|1604303 cleanup | Only the accepted scratch BAM is named; fresh nine-file stat receipt equals both QA stat receipts byte-for-byte |
+|1604304 HOME verification | Exact five-file readset names; every source/HOME hash check OK; accepted source hash list equals freshly computed source list |
+| Both complete evidence packets | Nine QA and seven cleanup names/hashes match HOME; all16 local native receipts independently rehashed against the retained source lists |
+| Mutation checks | All three HOME-verification before/after stat pairs byte-identical; all five scratch readset tuples also equal their prior QA tuples |
+
+The SQLite result is(5359077,5359077,80344827828,0,0,0) for total/emitted
+rows, emitted bases and conflict/bad/constraint_bad sums. It agrees with the
+READY full-source manifest: both EOF passes5,710,994 records;5,359,077
+original/resolved/emitted QNAME identities;80,344,827,828 bases; no unknown,
+conflicting, malformed or constraint-mismatched identities. The prior finite
+extraction accounting acceptance stands, including578 unmapped records and
+351,917 supplementary duplicate-full records. No prefix extrapolation or
+new restoration claim is made.
+
+| Complete readset file | Accepted SHA256, unchanged from scratch to HOME |
+|---|---|
+| identities.sqlite | `42dcd54a2aeb59951fbea8bed4e92aa8d5661bdfb0aabaef3610eb795ab519ae` |
+| manifest.initial.json | `12ed8f3f373f80efee99a3f0b5c3d4d62f88eb5367019848df5acbd0c9c9e0dc` |
+| readiness.json | `4355f3b3d5392c41f0ca92da94e389a66907bf6297d8d3fa13f2996ccf641acc` |
+| source_reads.fastq.gz | `fd9fd85d7dfadca083cd101aad00932e16d23d8b5d90db4ddec7523abaabae88` |
+| stats.jsonl | `fa7a7ae213df6cccd6f6b92f7c550fe68452390c0369510c473352c895b347da` |
+
+The four small readset hashes join exactly to1604300 metadata-sha256sums;
+the gzip hash joins to the extraction manifest and pinned QA code. Local
+readiness.json independently has the same accepted SHA. Native exact-name
+lists and hash checks cover all5+9+7 files of the three copied packets,
+including their native late exit-status receipts. Locally added README files
+are explanatory context, not part of those native inventories. The16 small
+native QA/cleanup receipt hashes all match their local copies; this replaces
+the earlier main-only report for those receipt contents, without claiming
+an independent remote filesystem inspection.
+
+Accepted permanent readset leaf:
+`/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_read_extract_20261010_01`.
+Its whole gzip EOF/CRC and SQLite integrity/census are **inherited from
+1604300 through byte-identical SHA256**, not newly run on HOME. The HOME
+verifier computes each source payload hash once, checks each HOME copy and
+compares that computed list with the known accepted values; it does not add
+a third huge known-hash pass. Stat checks cover the actual flat native file
+sets. Stable timestamps/inodes and hashes are custody evidence, not a lock
+or a guarantee against later mutation; keep accepted inputs unchanged.
+
+Cleanup receipt records only the48,727,325,910B redundant scratch BAM unlink
+at09:47:46UTC. The accepted cleanup code and successful receipts retain the
+whole HOME original BAM, both BAI copies, acquisition records and the full
+scratch extraction. Original HOME BAM SHA remains
+`b7edeb4bbc2589039c6148a912857f26924ca8fd5971cd3141337d0ce24bbde4`.
+The removed duplicate is recoverable from that verified original. The old
+cross-filesystem atomic-move rejection and failed small fetch remain history;
+neither was silently replaced with an unsafe move or dataset crop.
+
+Independent arithmetic reproduces runtime named inventory140,142,627,432B
+and cleanup/full-copy projection135,119,473,292B including1GiB reserve,
+36,679,218,548B below160GiB. Recorded readset file sizes sum42,630,429,941B;
+its native du directory figure42,630,429,946B also includes directory
+accounting. No disagreement about a missing payload follows from those five
+bytes. This remains a named inventory/reserve projection and sampled prior
+peak, not continuous measurement of every filesystem allocation. Keep other
+small S1 material within the reserve and the joint ledger.
+
+Main reports all jobs COMPLETED0:0. Retained prerequisite-slurm receipts
+confirm1604300 and1604303 terminal success;1604304 has its successful native
+exit/custody receipts plus main's authoritative terminal report. No scheduler
+query occurred here. Added actual allocated costs are1182s QA,2s cleanup and
+93s HOME verification, separately from measuredCPU1126.732/0.110/81.260s
+and MaxRSS14452/4764/2140K. S1 actual8080+7709+1182+2+93=17,066 allocated
+seconds, leaving11,734 of28,800. The upstream body-transfer charge is
+unchanged; local custody reads/copying do not acquire a second DNA library.
+
+Count agreement with ENA is not independent raw ENA sequence/quality
+equivalence, nor proof of molecules absent from the retained BAM. QNAME
+identity is the extraction unit. FASTQ does not preserve RG/HP/PS tags;
+single CCS/Revio RG,547,295 HP/PS-missing records and PS value1 do not qualify
+reference bases, local phase blocks, allele/copy state or parental labels.
+BAI hash integrity is not BAI/alignment/reference qualification. This review
+does not qualify a partial reference inventory, P1 endpoint behavior, a
+scientific positive/negative or publication readiness. The full goal is unmet.
+
+Only this finite acceptance subsection was appended. No jobs, network,
+genomic body reads, deletion, source edits, installation or Git commands
+occurred. All previous1008 lines remain intact; pre-append review SHA256:
+`48f4c604732c3154a5b9c4ef77cf9ba74574a68930ca32e065b8488643c062ff`.

@@ -1,0 +1,116 @@
+
+====================================================================
+An accurate homology lift-over tool between assemblies
+====================================================================
+
+
+    ██╗     ██╗███████╗████████╗ ██████╗ ███╗   ██╗
+    ██║     ██║██╔════╝╚══██╔══╝██╔═══██╗████╗  ██║
+    ██║     ██║█████╗     ██║   ██║   ██║██╔██╗ ██║
+    ██║     ██║██╔══╝     ██║   ██║   ██║██║╚██╗██║
+    ███████╗██║██║        ██║   ╚██████╔╝██║ ╚████║
+    ╚══════╝╚═╝╚═╝        ╚═╝    ╚═════╝ ╚═╝  ╚═══╝
+    
+>> Reading target genome ...
+>> Target genome: 3 sequence(s), 12,000 bases; longest sequence 4,000 bases.
+>> Reading reference genome ...
+
+>> Creating reference annotation database :  /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/input/reference.gff3
+
+[LiftOn] Building annotation database: /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/input/reference.gff3
+[LiftOn]   strategy='create_unique'  infer_genes=False  infer_transcripts=False
+  ✓ gffutils database built successfully [file='reference.gff3', strategy='create_unique']
+>> gene-like lift (default): auto-detected gene-like feature types ['gene'] (written to /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/work/intermediate_files/auto_feature_types.txt); pass --gene-only to lift only `gene`
+>> Creating transcript DNA dictionary from the reference annotation ...
+>> Creating transcript protein dictionary from the reference annotation ...
+Extracted features (streaming) for 2 features
+	 * number of transcripts:  3
+	 * number of proteins:  3
+		 * number of truncated proteins:  0
+[M::mm_idx_gen::0.003*1.33] collected minimizers
+[M::mm_idx_gen::0.003*1.28] sorted minimizers
+[M::main::0.004*1.21] loaded/built the index for 3 target sequence(s)
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 3
+[M::mm_idx_stat::0.004*1.20] distinct minimizers: 1926 (81.83% are singletons); average occurrences: 1.182; average spacing: 5.272; total length: 12000
+[M::main] Version: 2.31-r1302
+[M::main] CMD: minimap2 -a --end-bonus 5 --eqx -N 50 -p 0.5 -t 1 -d /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/work/intermediate_files/.target_all.mmi.2gkerz5m.tmp /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/input/target.fa
+[M::main] Real time: 0.005 sec; CPU: 0.005 sec; Peak RSS: 0.080 GB
+[M::main::0.004*1.04] loaded/built the index for 3 target sequence(s)
+[M::mm_mapopt_update::0.004*1.04] mid_occ = 10
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 3
+[M::mm_idx_stat::0.004*1.03] distinct minimizers: 1926 (81.83% are singletons); average occurrences: 1.182; average spacing: 5.272; total length: 12000
+[M::worker_pipeline::0.006*0.96] mapped 2 sequences
+[M::main] Version: 2.31-r1302
+[M::main] CMD: minimap2 -a --end-bonus 5 --eqx -N 50 -p 0.5 -t 1 -o /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/work/intermediate_files/.reference_all_to_target_all.sam.ixej4vb_.tmp /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/work/intermediate_files/target_all.mmi /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/work/intermediate_files//reference_all_genes.fa
+[M::main] Real time: 0.006 sec; CPU: 0.006 sec; Peak RSS: 0.080 GB
+[M::main::0.003*1.17] loaded/built the index for 3 target sequence(s)
+[M::mm_mapopt_update::0.004*1.16] mid_occ = 10
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 3
+[M::mm_idx_stat::0.004*1.16] distinct minimizers: 1926 (81.83% are singletons); average occurrences: 1.182; average spacing: 5.272; total length: 12000
+[M::worker_pipeline::0.005*1.05] mapped 2 sequences
+[M::main] Version: 2.31-r1302
+[M::main] CMD: minimap2 -a --end-bonus 5 --eqx -N 50 -p 0.5 -t 1 -o /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/work/intermediate_files/.reference_all_to_target_all.sam.vn502qce.tmp /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/work/intermediate_files/target_all.mmi /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/work/intermediate_files//reference_all_genes.fa
+[M::main] Real time: 0.006 sec; CPU: 0.006 sec; Peak RSS: 0.080 GB
+[M::mp_ntseq_read@0.001*1.96] read 12000 bases in 3 contigs
+[M::mp_idx_build@0.001*1.93] 96 blocks
+[M::mp_idx_build@0.001*1.52] collected syncmers
+[M::mp_idx_build@0.041*1.01] 6027 kmer-block pairs
+[M::mp_idx_print_stat] 5156 distinct k-mers; mean occ of infrequent k-mers: 1.17; 0 frequent k-mers accounting for 0 occurrences
+[M::worker_pipeline::0.051*1.01] mapped 3 sequences
+[M::main] Version: 0.18-r281
+[M::main] CMD: miniprot --gff-only -t 1 /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/input/target.fa /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/work/intermediate_files/proteins.fa
+[M::main] Real time: 0.052 sec; CPU: 0.052 sec; Peak RSS: 0.143 GB
+
+>> Creating liftoff annotation database : /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/work/liftoff/liftoff.gff3_polished
+
+[LiftOn] Building annotation database: /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/work/liftoff/liftoff.gff3_polished
+[LiftOn]   strategy='create_unique'  infer_genes=False  infer_transcripts=False
+  ✓ gffutils database built successfully [file='liftoff.gff3_polished', strategy='create_unique']
+>> Creating miniprot annotation database : /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/work/miniprot/miniprot.gff3
+
+[LiftOn] Building annotation database: /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/work/miniprot/miniprot.gff3
+[LiftOn]   strategy='create_unique'  infer_genes=False  infer_transcripts=False
+  ✓ gffutils database built successfully [file='miniprot.gff3', strategy='create_unique']
+
+
+*********************************************
+* Total features in reference		: 2
+* Lifted feature			: 2 (2 + 0 + 0)
+	* Protein-coding feature	: 2
+	* Non-coding feature		: 0
+	* Other feature			: 0
+* Missed feature			: 0
+
+* Total features in target		: 3 (3 + 0 + 0)
+	* Protein-coding feature	: 3 (1 + 2)
+		* single copy		: 1
+		* > 1 copy		: 1, 2 in total
+	* Non-coding feature		: 0 (0 + 0)
+		* single copy		: 0
+		* > 1 copy		: 0, 0 in total
+	* Other feature			: 0 (0 + 0)
+		* single copy		: 0
+		* > 1 copy		: 0, 0 in total
+* Completeness by feature type:
+	* gene	: 2/2 (100.0%)
+*********************************************
+
+
+*********************************************
+** Validating output GFF3                  **
+*********************************************
+╔══════════════════════════════════════════════════════════════════════╗
+║  GFF3 VALIDATION REPORT — ✅  VALID                                  ║
+╠══════════════════════════════════════════════════════════════════════╣
+║  File    : /beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/lifton_interface_s0_20261010_02/.lifton.gff3.9gs8pqpc.tmp  ║
+║  Lines   : 39 total (38 data, 1 comment/blank)                         ║
+╠══════════════════════════════════════════════════════════════════════╣
+║  FEATURE COUNTS:                                                       ║
+║    CDS                           : 15                                  ║
+║    exon                          : 15                                  ║
+║    gene                          : 3                                   ║
+║    mRNA                          : 5                                   ║
+╠══════════════════════════════════════════════════════════════════════╣
+║  Errors   : 0                                                          ║
+║  Warnings : 0                                                          ║
+╚══════════════════════════════════════════════════════════════════════╝

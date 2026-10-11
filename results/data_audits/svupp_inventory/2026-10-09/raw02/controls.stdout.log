@@ -1,0 +1,37 @@
+.................................                                        [100%]
+==================================== PASSES ====================================
+=========================== short test summary info ============================
+PASSED tests/test_pinned_research_zip.py::test_valid_inventory_verifies_hashes_and_writes_bounded_manifest
+PASSED tests/test_pinned_research_zip.py::test_expected_size_and_md5_are_required_before_inventory[True-False]
+PASSED tests/test_pinned_research_zip.py::test_expected_size_and_md5_are_required_before_inventory[False-True]
+PASSED tests/test_pinned_research_zip.py::test_expected_input_size_cannot_exceed_candidate_cap
+PASSED tests/test_pinned_research_zip.py::test_source_change_during_directory_inspection_leaves_no_manifest
+PASSED tests/test_pinned_research_zip.py::test_existing_manifest_is_never_overwritten
+PASSED tests/test_pinned_research_zip.py::test_encrypted_or_masked_metadata_flags_are_rejected[1]
+PASSED tests/test_pinned_research_zip.py::test_encrypted_or_masked_metadata_flags_are_rejected[64]
+PASSED tests/test_pinned_research_zip.py::test_encrypted_or_masked_metadata_flags_are_rejected[8192]
+PASSED tests/test_pinned_research_zip.py::test_unsupported_compression_metadata_is_rejected
+PASSED tests/test_pinned_research_zip.py::test_duplicate_and_traversal_names_are_rejected
+PASSED tests/test_pinned_research_zip.py::test_symlink_special_member_and_linked_source_are_rejected
+PASSED tests/test_pinned_research_zip.py::test_symlink_parent_is_rejected
+PASSED tests/test_pinned_research_zip.py::test_member_count_and_filename_caps_are_enforced
+PASSED tests/test_pinned_research_zip.py::test_central_directory_byte_cap_is_enforced
+PASSED tests/test_pinned_research_zip.py::test_manifest_byte_cap_is_enforced_before_exclusive_create
+PASSED tests/test_svupp_archive_launcher.py::test_complete_run_writes_exclusive_metadata_inventory_marker
+PASSED tests/test_svupp_archive_launcher.py::test_invalid_acquisition_never_writes_completion_marker[truncated-False]
+PASSED tests/test_svupp_archive_launcher.py::test_invalid_acquisition_never_writes_completion_marker[oversized-False]
+PASSED tests/test_svupp_archive_launcher.py::test_invalid_acquisition_never_writes_completion_marker[complete-True]
+PASSED tests/test_svupp_archive_launcher.py::test_stored_sha_mismatch_never_writes_completion_marker
+PASSED tests/test_svupp_archive_launcher.py::test_duplicate_payload_claim_prevents_network_replay
+PASSED tests/test_svupp_archive_launcher.py::test_untrusted_root_is_rejected_before_network[different]
+PASSED tests/test_svupp_archive_launcher.py::test_untrusted_root_is_rejected_before_network[symlink]
+PASSED tests/test_svupp_archive_launcher.py::test_control_tree_size_counts_hardlinks_and_does_not_follow_symlinks
+PASSED tests/test_svupp_archive_launcher.py::test_control_tree_size_enforces_byte_and_entry_caps
+PASSED tests/test_svupp_archive_launcher.py::test_control_tree_size_rejects_special_files
+PASSED tests/test_svupp_archive_launcher.py::test_new_metadata_never_overwrites_existing_file
+PASSED tests/test_pinned_research_zip_permissions.py::test_searchable_unreadable_owned_directory_allows_inspection_and_manifest
+PASSED tests/test_pinned_research_zip_permissions.py::test_unsearchable_intermediate_fails_before_archive_read_or_manifest
+PASSED tests/test_pinned_research_zip_permissions.py::test_unreadable_archive_leaf_fails_before_read_or_manifest
+PASSED tests/test_pinned_research_zip_permissions.py::test_linux_without_opath_fails_closed_before_any_open
+PASSED tests/test_pinned_research_zip_permissions.py::test_nonlinux_parent_open_uses_readonly_and_closes_directory_descriptors
+33 passed in 4.58s

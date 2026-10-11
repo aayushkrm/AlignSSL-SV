@@ -1,0 +1,6 @@
+CLUSTER total: 52.504669ms asm: 40.729393ms aln: 10.76291ms score: 0ns bp: Breakpoint:
+ be1: Breakend: Segment: 0:[1499-1500) dir: LeftAnchor
+ be2: Some(Breakend: Segment: 0:[1499-1500) dir: RightAnchor)
+ insert: SizeRange([60-61))
+ insert_size: 60
+is_precise: false

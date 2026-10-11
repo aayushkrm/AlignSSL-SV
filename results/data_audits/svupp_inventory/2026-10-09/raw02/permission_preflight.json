@@ -1,0 +1,72 @@
+{
+  "ancestors": [
+    {
+      "gid": 0,
+      "mode": "0o555",
+      "path": "/",
+      "read_access": true,
+      "search_access": true,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "mode": "0o711",
+      "path": "/beegfs",
+      "read_access": false,
+      "search_access": true,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "mode": "0o755",
+      "path": "/beegfs/scratch",
+      "read_access": true,
+      "search_access": true,
+      "uid": 0
+    },
+    {
+      "gid": 0,
+      "mode": "0o755",
+      "path": "/beegfs/scratch/ws",
+      "read_access": true,
+      "search_access": true,
+      "uid": 0
+    },
+    {
+      "gid": 9999,
+      "mode": "0o755",
+      "path": "/beegfs/scratch/ws/ws1",
+      "read_access": true,
+      "search_access": true,
+      "uid": 9999
+    },
+    {
+      "gid": 1638200010,
+      "mode": "0o700",
+      "path": "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922",
+      "read_access": true,
+      "search_access": true,
+      "uid": 1638200118
+    },
+    {
+      "gid": 1638200010,
+      "mode": "0o700",
+      "path": "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-02",
+      "read_access": true,
+      "search_access": true,
+      "uid": 1638200118
+    }
+  ],
+  "egid": 1638200010,
+  "euid": 1638200118,
+  "genomic_scoring": false,
+  "groups": [
+    1638200010
+  ],
+  "member_bodies_decoded": false,
+  "root_identity": [
+    47,
+    2098855965386392407
+  ],
+  "status": "LIVE_OPATH_DIRECTORY_REFERENCE_PASS"
+}

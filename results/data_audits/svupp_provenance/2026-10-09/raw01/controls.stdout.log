@@ -1,0 +1,60 @@
+............................................                             [100%]
+==================================== PASSES ====================================
+_ test_cli_cannot_override_fixed_source_or_source_url[--source-/tmp/alternate-archive.zip] _
+----------------------------- Captured stderr call -----------------------------
+usage: run_svupp_provenance_headers [-h] --root ROOT
+run_svupp_provenance_headers: error: unrecognized arguments: --source /tmp/alternate-archive.zip
+_ test_cli_cannot_override_fixed_source_or_source_url[--source-url-https://example.invalid/archive.zip] _
+----------------------------- Captured stderr call -----------------------------
+usage: run_svupp_provenance_headers [-h] --root ROOT
+run_svupp_provenance_headers: error: unrecognized arguments: --source-url https://example.invalid/archive.zip
+_ test_cli_cannot_override_fixed_source_or_source_url[--url-https://example.invalid/archive.zip] _
+----------------------------- Captured stderr call -----------------------------
+usage: run_svupp_provenance_headers [-h] --root ROOT
+run_svupp_provenance_headers: error: unrecognized arguments: --url https://example.invalid/archive.zip
+=========================== short test summary info ============================
+PASSED tests/test_svupp_provenance_headers.py::test_fixed_member_map_matches_the_protocol
+PASSED tests/test_svupp_provenance_headers.py::test_complete_eight_member_read_preserves_provenance_and_headers
+PASSED tests/test_svupp_provenance_headers.py::test_sites_only_eight_column_header_is_valid_and_marks_missing_inputs
+PASSED tests/test_svupp_provenance_headers.py::test_format_column_without_samples_is_rejected
+PASSED tests/test_svupp_provenance_headers.py::test_header_at_exact_256_kib_limit_is_accepted
+PASSED tests/test_svupp_provenance_headers.py::test_header_beyond_256_kib_limit_is_rejected
+PASSED tests/test_svupp_provenance_headers.py::test_missing_or_invalid_header_fails_without_report[##fileformat=VCFv4.2\n1\t1\tRECORD_BEFORE_CHROM\n-before #CHROM]
+PASSED tests/test_svupp_provenance_headers.py::test_missing_or_invalid_header_fails_without_report[##fileformat=VCFv4.2\n#CHROM\tPOS\tBAD\n-fixed-column prefix]
+PASSED tests/test_svupp_provenance_headers.py::test_missing_or_invalid_header_fails_without_report[##fileformat=VCFv4.2\n#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tDUP\tDUP\n-sample names must be unique]
+PASSED tests/test_svupp_provenance_headers.py::test_eof_before_chrom_is_rejected
+PASSED tests/test_svupp_provenance_headers.py::test_invalid_nested_gzip_stops_without_report
+PASSED tests/test_svupp_provenance_headers.py::test_text_member_requires_strict_utf8
+PASSED tests/test_svupp_provenance_headers.py::test_vcf_header_requires_strict_utf8
+PASSED tests/test_svupp_provenance_headers.py::test_wrong_source_hash_and_size_stop_before_report
+PASSED tests/test_svupp_provenance_headers.py::test_wrong_md5_stops_before_report
+PASSED tests/test_svupp_provenance_headers.py::test_source_mutation_during_member_read_is_rejected
+PASSED tests/test_svupp_provenance_headers.py::test_outer_zip_crc_corruption_is_rejected
+PASSED tests/test_svupp_provenance_headers.py::test_missing_fixed_member_and_declared_size_mismatch_stop
+PASSED tests/test_svupp_provenance_headers.py::test_existing_manifest_is_never_overwritten
+PASSED tests/test_svupp_provenance_headers.py::test_source_symlink_hardlink_and_symlink_parent_are_rejected
+PASSED tests/test_svupp_provenance_headers.py::test_manifest_writer_enforces_one_mib_cap
+PASSED tests/test_svupp_provenance_headers.py::test_combined_json_escaping_hits_real_one_mib_cap_without_partial_report
+PASSED tests/test_svupp_provenance_launcher.py::test_valid_run_writes_claim_manifest_and_completion_exclusively
+PASSED tests/test_svupp_provenance_launcher.py::test_reader_exception_writes_failure_metadata_but_no_completion
+PASSED tests/test_svupp_provenance_launcher.py::test_report_outside_frozen_scope_never_writes_completion[inspection_status-INCOMPLETE]
+PASSED tests/test_svupp_provenance_launcher.py::test_report_outside_frozen_scope_never_writes_completion[source_archive_sha256-0000000000000000000000000000000000000000000000000000000000000000]
+PASSED tests/test_svupp_provenance_launcher.py::test_report_outside_frozen_scope_never_writes_completion[fixed_member_count-7]
+PASSED tests/test_svupp_provenance_launcher.py::test_report_outside_frozen_scope_never_writes_completion[all_selected_outer_zip_members_read_to_crc_eof-False]
+PASSED tests/test_svupp_provenance_launcher.py::test_report_outside_frozen_scope_never_writes_completion[author_text_executed-True]
+PASSED tests/test_svupp_provenance_launcher.py::test_report_outside_frozen_scope_never_writes_completion[bodies_decoded-False]
+PASSED tests/test_svupp_provenance_launcher.py::test_report_outside_frozen_scope_never_writes_completion[genotype_records_not_interpreted-False]
+PASSED tests/test_svupp_provenance_launcher.py::test_report_outside_frozen_scope_never_writes_completion[nested_gzip_full_crc_not_assessed-False]
+PASSED tests/test_svupp_provenance_launcher.py::test_report_outside_frozen_scope_never_writes_completion[nested_gzip_body_integrity_not_assessed-False]
+PASSED tests/test_svupp_provenance_launcher.py::test_report_outside_frozen_scope_never_writes_completion[gzip_read_ahead_may_include_body_bytes-False]
+PASSED tests/test_svupp_provenance_launcher.py::test_report_outside_frozen_scope_never_writes_completion[usable_data_readiness_assessed-True]
+PASSED tests/test_svupp_provenance_launcher.py::test_consumed_payload_claim_prevents_reader_replay
+PASSED tests/test_svupp_provenance_launcher.py::test_untrusted_root_is_rejected_before_claim_reader_or_failure_metadata[different]
+PASSED tests/test_svupp_provenance_launcher.py::test_untrusted_root_is_rejected_before_claim_reader_or_failure_metadata[symlink]
+PASSED tests/test_svupp_provenance_launcher.py::test_untrusted_root_is_rejected_before_claim_reader_or_failure_metadata[ancestor-symlink]
+PASSED tests/test_svupp_provenance_launcher.py::test_cli_cannot_override_fixed_source_or_source_url[--source-/tmp/alternate-archive.zip]
+PASSED tests/test_svupp_provenance_launcher.py::test_cli_cannot_override_fixed_source_or_source_url[--source-url-https://example.invalid/archive.zip]
+PASSED tests/test_svupp_provenance_launcher.py::test_cli_cannot_override_fixed_source_or_source_url[--url-https://example.invalid/archive.zip]
+PASSED tests/test_svupp_provenance_launcher.py::test_failure_metadata_does_not_replace_existing_failure
+PASSED tests/test_svupp_provenance_launcher.py::test_new_metadata_accepts_exact_64_kib_and_rejects_larger_payload
+44 passed in 0.88s

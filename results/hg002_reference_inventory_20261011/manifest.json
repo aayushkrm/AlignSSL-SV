@@ -1,0 +1,54 @@
+{
+  "execution": {
+    "checkpoint_seconds": 15.0,
+    "deadline_seconds": 840.0,
+    "existing_index_measurement": {
+      "status": "NOT_REQUESTED"
+    },
+    "existing_index_measurement_requested": true,
+    "last_line_number": 8185985,
+    "observed_error": null,
+    "observed_error_type": null,
+    "pid": 3049244,
+    "scan_eof_reached": false
+  },
+  "finished_utc": "2026-10-11T09:56:26.025393+00:00",
+  "run_status": "INCOMPLETE",
+  "schema_version": 1,
+  "source": {
+    "expected_sha256": "04af7379ad6c214f49758db270938a38c41bebbf7b9dc8e24065d8f3a9f08d0d",
+    "expected_size_bytes": 4688772094,
+    "final_sha256": null,
+    "final_sha256_verified": false,
+    "final_stat_after_hash": null,
+    "final_stat_before_hash": null,
+    "initial_sha256": "04af7379ad6c214f49758db270938a38c41bebbf7b9dc8e24065d8f3a9f08d0d",
+    "initial_sha256_verified": true,
+    "initial_stat_after_hash": {
+      "ctime_ns": 1791640387000000000,
+      "device": 48,
+      "inode": 14853768497615501058,
+      "mtime_ns": 1791640287000000000,
+      "size_bytes": 4688772094
+    },
+    "initial_stat_before_hash": {
+      "ctime_ns": 1791640387000000000,
+      "device": 48,
+      "inode": 14853768497615501058,
+      "mtime_ns": 1791640287000000000,
+      "size_bytes": 4688772094
+    },
+    "path": "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_reference_expand_20261010_01/gencode.v50.primary_assembly.annotation.gtf",
+    "scan_stat_after": null,
+    "scan_stat_before": {
+      "ctime_ns": 1791640387000000000,
+      "device": 48,
+      "inode": 14853768497615501058,
+      "mtime_ns": 1791640287000000000,
+      "size_bytes": 4688772094
+    },
+    "stable_file_check": "NOT_COMPLETED"
+  },
+  "started_utc": "2026-10-11T09:42:26.025107+00:00",
+  "stop_reason": "DeadlineExpired: wall-clock deadline reached"
+}

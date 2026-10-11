@@ -1,0 +1,36 @@
+{
+  "bed_decoded_bytes_read": 916384,
+  "body_records_seen": 376029,
+  "boundary_counts": {
+    "boundary_or_mixed_territory": 955,
+    "ineligible_boundary": 0
+  },
+  "charged_prior_global_decoded_bytes": 5220887319,
+  "eligible_counts": {
+    "current_minus_tier1": 29,
+    "intersection": 577
+  },
+  "exclusion_counts": {
+    "ambiguous_base": 17,
+    "below_min_length": 59900,
+    "complex_replacement": 222275,
+    "missing_or_partial_gt": 82127,
+    "symbolic_or_star": 10149
+  },
+  "failure": "record map exceeds its 67108864-byte limit",
+  "failure_type": "ValueError",
+  "global_charge_plus_reservation_bytes": 6303083290,
+  "gt_absent_records": 0,
+  "gt_duplicate_records": 0,
+  "gzip_read_ahead_reservation_bytes": 65536,
+  "partial_files_preserved": [
+    "eligible_truth.vcf.partial",
+    "truth_record_map.jsonl.partial"
+  ],
+  "protocol_sha256": "56e94e3ecf4b0ebb161539dba82b6dbf5d0a67b4d4766afedc1a11aac8109138",
+  "record_map_bytes_written": 67108700,
+  "status": "incomplete",
+  "truth_decoded_bytes_delivered": 21305391,
+  "truth_preparation_reservation_bytes": 1082195971,
+  "truth_sha256": "edb582ceec508f6d745acd0a8c522ee4f235ff5bf4754ba6bdc4c3abee122b5c"
+}

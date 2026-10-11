@@ -1,0 +1,18 @@
+{"python": "3.10.20", "pytest": "8.4.2"}
+control_bytes 13440
+code/analysis/inspect_pinned_research_zip.py: OK
+code/analysis/run_svupp_archive_inventory.py: OK
+code/tests/test_pinned_research_zip.py: OK
+code/tests/test_svupp_archive_launcher.py: OK
+code/tests/test_pinned_research_zip_permissions.py: OK
+run_outer.sh: OK
+run_payload.sh: OK
+reservation.json: OK
+code/analysis/inspect_pinned_research_zip.py: OK
+code/analysis/run_svupp_archive_inventory.py: OK
+code/tests/test_pinned_research_zip.py: OK
+code/tests/test_svupp_archive_launcher.py: OK
+code/tests/test_pinned_research_zip_permissions.py: OK
+run_outer.sh: OK
+run_payload.sh: OK
+reservation.json: OK

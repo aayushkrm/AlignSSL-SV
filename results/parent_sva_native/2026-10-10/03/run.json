@@ -1,0 +1,345 @@
+{
+  "started_unix": 1791569923.2021468,
+  "state": "completed_regional_diagnostic",
+  "commands": {
+    "acquire": {
+      "argv": [
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/venvs/sniffles281_20261010/bin/python",
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/parent_sva_native_20261010_03/bundle/scripts/acquire_parent_sva_region.py",
+        "--samtools",
+        "/beegfs/datasets/home/igorno/miniconda3/envs/bioinfo/bin/samtools",
+        "--output",
+        "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/parent_sva_native_20261010_03/source",
+        "--prior-body-bytes",
+        "39225292"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 23.00057077407837
+    },
+    "germline": {
+      "argv": [
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/venvs/sniffles281_20261010/bin/sniffles",
+        "--input",
+        "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/parent_sva_native_20261010_03/source/regional.bam",
+        "--regions",
+        "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/parent_sva_native_20261010_03/core.bed",
+        "--threads",
+        "1",
+        "--output-rnames",
+        "--vcf",
+        "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/parent_sva_native_20261010_03/parent.germline.vcf"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.9864215850830078
+    },
+    "mosaic": {
+      "argv": [
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/venvs/sniffles281_20261010/bin/sniffles",
+        "--input",
+        "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/parent_sva_native_20261010_03/source/regional.bam",
+        "--regions",
+        "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/parent_sva_native_20261010_03/core.bed",
+        "--threads",
+        "1",
+        "--output-rnames",
+        "--vcf",
+        "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/parent_sva_native_20261010_03/parent.mosaic.vcf",
+        "--mosaic"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 1.9936683177947998
+    },
+    "census": {
+      "argv": [
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/venvs/sniffles281_20261010/bin/python",
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/parent_sva_native_20261010_03/bundle/analysis/parent_sva_census.py",
+        "--bam",
+        "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/parent_sva_native_20261010_03/source/regional.bam",
+        "--output",
+        "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/parent_sva_native_20261010_03/census"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 0.7844130992889404
+    }
+  },
+  "slurm_job_id": "1604237",
+  "limits": {
+    "genomic_http_body_bytes": 4294967296,
+    "prior_body_bytes": 39225292,
+    "cpu_seconds": 1800
+  },
+  "source_code": {
+    "scripts/run_parent_sva_diagnostic.py": "a1253b0671e26682b498af359771190f09a7e6d7ee62850730c597c0d3f326fe",
+    "scripts/acquire_parent_sva_region.py": "c0f47e522d4f88b2e068f035b78eb558e63e4abc94839b4a78e32f3c6f09034b",
+    "analysis/parent_sva_census.py": "07427305d22ac246fd6a5c552b2c563e539c81e19e7037277ff3b4afbe17415f"
+  },
+  "runtime": {
+    "python": "3.12.1 | packaged by Anaconda, Inc. | (main, Jan 19 2024, 15:51:05) [GCC 11.2.0]",
+    "freeze": [
+      "edlib==1.3.9.post1",
+      "numpy==2.5.3",
+      "psutil==7.2.2",
+      "pysam==0.24.1",
+      "pyspoa==0.3.2",
+      "sniffles==2.8.1"
+    ],
+    "sniffles_version": "Sniffles2, Version 2.8.1"
+  },
+  "native_records": {
+    "germline": [],
+    "mosaic": [
+      {
+        "chrom": "chr3",
+        "pos1": 71589909,
+        "id": "Sniffles2.INS.0S0",
+        "qual": 60.0,
+        "filter": [
+          "PASS"
+        ],
+        "info": {
+          "PRECISE": true,
+          "MOSAIC": true,
+          "SVTYPE": "INS",
+          "SVLEN": 3459,
+          "SUPPORT": 6,
+          "RNAMES": [
+            "m54329U_230327_190242/31720006/ccs",
+            "m84046_230424_215157_s4/18088064/ccs",
+            "m84046_230427_191920_s1/48566352/ccs",
+            "m54329U_230214_013859/62523109/ccs",
+            "m64076_230330_235351/50528942/ccs",
+            "m54329U_230327_190242/146606681/ccs"
+          ],
+          "COVERAGE": [
+            67.0,
+            68.0,
+            73.0,
+            75.0,
+            77.0
+          ],
+          "STRAND": "+-",
+          "NM": [
+            0.0020000000949949026
+          ],
+          "PHASE": [
+            "2",
+            "71380081",
+            "6",
+            "6",
+            "PASS",
+            "PASS"
+          ],
+          "STDEV_LEN": 6.13100004196167,
+          "STDEV_POS": 0.0,
+          "SUPPORT_LONG": 0,
+          "SUPPORT_UNSCALED": 6.0,
+          "VAF": 0.17800000309944153
+        },
+        "samples": {
+          "SAMPLE": {
+            "GT": [
+              0,
+              0
+            ],
+            "GQ": 37,
+            "DR": 60,
+            "DV": 13,
+            "PS": 71380081
+          }
+        },
+        "alt_lengths": [
+          3459
+        ],
+        "alt_sha256": [
+          "091c67d5572104aa8c0991e6798aa54a126762bce91e27ad17e59fdf673bc00b"
+        ],
+        "explicit_sequence_alt": [
+          true
+        ],
+        "compatible_by_location_length": true,
+        "native_filter_pass": true,
+        "has_nonreference_gt": false
+      }
+    ]
+  },
+  "census": {
+    "scope": "CIGAR compatibility, not exact child allele or a sensitivity estimate",
+    "anchor0": 71589909,
+    "buffer_bed": [
+      "chr3",
+      71539909,
+      71643317
+    ],
+    "core_bed": [
+      "chr3",
+      71579909,
+      71603317
+    ],
+    "policy": {
+      "mapq_min": 20,
+      "min_aligned_bases_each_1000bp_flank": 500,
+      "breakpoint_distance_max": 500,
+      "insertion_length_bounds": [
+        2726,
+        4088
+      ]
+    },
+    "bam_sha256": "61a570a03b0aa6790530575153c77e3182b1249116d209af147c988333a28e60",
+    "counts": {
+      "reference_compatible_cigar": 97,
+      "insufficient_aligned_flanks": 18,
+      "compatible_insertion": 6
+    },
+    "excluded_records": {
+      "excluded_flags": 2
+    },
+    "classified_alt_plus_ref": 103,
+    "raw_compatible_fraction": 0.05825242718446602,
+    "fraction_is_not_sniffles_vaf": true,
+    "primary_names_with_external_sa": 6,
+    "artifacts": {
+      "insertion_sequences.fasta": {
+        "bytes": 26732,
+        "sha256": "77ec0b640b9aec043811da1b67ce13cea24ec56f76ccb381146074acb8ae035e"
+      },
+      "read_evidence.json": {
+        "bytes": 85977,
+        "sha256": "19a2449851e4bf098792ab84dc066855f99f014b09d3442495a121fe9b4302c2"
+      }
+    }
+  },
+  "claim_scope": "Compatible parental evidence, not exact child truth, prevalence or novelty",
+  "acceptance_distinction": "FILTER PASS, allele evidence and GT are separate. Germline reference-only GT is not nonreference success; intended mosaic visibility does not require invented diploid heterozygosity.",
+  "artifacts": {
+    "acquire.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "acquire.stdout.txt": {
+      "bytes": 613,
+      "sha256": "0aad2a41de1414bd350f29c56515f06ea188e2efdd877156cf8cfc4ae9904651"
+    },
+    "mosaic.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "parent.germline.vcf": {
+      "bytes": 6486,
+      "sha256": "cbcab88bf68e8ea4030861ca4edd4c6511faf5090d3cfeed05f77e54cdce598c"
+    },
+    "core.bed": {
+      "bytes": 23,
+      "sha256": "572c6226e7b884204175ffc230c815ed76c92a8e81f607f42648075d54cef526"
+    },
+    "mosaic.stdout.txt": {
+      "bytes": 2449,
+      "sha256": "7474ba1a87f01d5d63c683a661ba549eed2ca0f9f8bb237a756dbc8dfa92ec01"
+    },
+    "census.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "parent.mosaic.vcf": {
+      "bytes": 10463,
+      "sha256": "fb043ef834d96392cfd3aed6f1fb21e5112a2f5b2a49d3fad5cf335248200a79"
+    },
+    "germline.stdout.txt": {
+      "bytes": 2446,
+      "sha256": "583285f1eca9449e3a55a2500561f6ee6dd2f6daa59585737d173a9366611066"
+    },
+    "germline.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "census.stdout.txt": {
+      "bytes": 981,
+      "sha256": "b235a5df8964a4f5c5d344650800aa0d0f6a2510a51cae92f1c4c9ef22405097"
+    },
+    "census/insertion_sequences.fasta": {
+      "bytes": 26732,
+      "sha256": "77ec0b640b9aec043811da1b67ce13cea24ec56f76ccb381146074acb8ae035e"
+    },
+    "census/read_evidence.json": {
+      "bytes": 85977,
+      "sha256": "19a2449851e4bf098792ab84dc066855f99f014b09d3442495a121fe9b4302c2"
+    },
+    "census/census.json": {
+      "bytes": 1151,
+      "sha256": "d9a512e515df4ed20f82745b0e974a3ec6524a005ff6caaf0d05844a5446b213"
+    },
+    "source/regional.bam": {
+      "bytes": 8456194,
+      "sha256": "61a570a03b0aa6790530575153c77e3182b1249116d209af147c988333a28e60"
+    },
+    "source/samtools-index.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/buffer.bed": {
+      "bytes": 23,
+      "sha256": "cfe98b87fe0bbd6660024fe4d17b5924075383039697afed8a7e4b5780605c35"
+    },
+    "source/regional.bam.bai": {
+      "bytes": 36456,
+      "sha256": "420f0189cd24e76ebb0bae117a3f62daa85f8d848c43505b2c2b43ce923cb33e"
+    },
+    "source/acquisition.json": {
+      "bytes": 14504,
+      "sha256": "ae6bf29ca7b1d4d16477979863904f9d63a5092a969cebd8ca15023b297c8168"
+    },
+    "source/core.bed": {
+      "bytes": 23,
+      "sha256": "572c6226e7b884204175ffc230c815ed76c92a8e81f607f42648075d54cef526"
+    },
+    "source/samtools-regional-view.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/NA12878.CHM13.haplotagged.bam.bai": {
+      "bytes": 37783472,
+      "sha256": "14ee0700cf338cfde7e201b70ec0f285942677dffc32b805aa2080f2301795ff"
+    },
+    "source/source.bam.bai": {
+      "bytes": 37783472,
+      "sha256": "14ee0700cf338cfde7e201b70ec0f285942677dffc32b805aa2080f2301795ff"
+    },
+    "source/samtools-quickcheck.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/samtools-quickcheck.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/samtools-regional-view.stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/body_ledger.jsonl": {
+      "bytes": 118556,
+      "sha256": "da3a01ae9dd8230144c294491e6a7da16f309752cbc9a1f814f865e23125964d"
+    },
+    "source/samtools-header.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/samtools-version.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/samtools-version.stdout.log": {
+      "bytes": 70,
+      "sha256": "38d3674afcf38c74a6d232aa807f58bb4cc5e016046f90930f4404fec05857db"
+    },
+    "source/samtools-index.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source/regional.header.sam": {
+      "bytes": 49275,
+      "sha256": "822294536eae612fac11706d7eeaacfd10e2c7868cc11643430c4e020285a1d3"
+    }
+  },
+  "cpu_seconds": 4.217957,
+  "wall_seconds": 26.421045780181885
+}

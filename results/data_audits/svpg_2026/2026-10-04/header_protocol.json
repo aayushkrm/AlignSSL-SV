@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "purpose": "Frozen full-HiFi caller header inspection; no biological records or outcomes",
+  "source_record": "https://zenodo.org/records/18456502",
+  "source_archive_name": "svpg-18456502-SV_callsets.zip",
+  "expected_archive_bytes": 2879666672,
+  "expected_archive_md5": "a6ea80f613130c318d36632073c6de97",
+  "verified_archive_sha256": "fff2f1d2978234a1357c6a16ce5ed9fabf17925955247ae2f9ee2ee8564eb7ca",
+  "selection_rule": "All six caller directories with a root hifi.vcf inside HG002_benchmark, selected solely from central-directory metadata, before reading any VCF headers or records",
+  "members": [
+    "SV_callsets/HG002_benchmark/cutesv/hifi.vcf",
+    "SV_callsets/HG002_benchmark/debreak/hifi.vcf",
+    "SV_callsets/HG002_benchmark/sawfish/hifi.vcf",
+    "SV_callsets/HG002_benchmark/sniffles/hifi.vcf",
+    "SV_callsets/HG002_benchmark/svim/hifi.vcf",
+    "SV_callsets/HG002_benchmark/svpg/hifi.vcf"
+  ],
+  "max_uncompressed_header_bytes_per_member": 1048576,
+  "max_selected_members": 6,
+  "max_uncompressed_header_bytes_total": 6291456,
+  "no_extraction": true,
+  "no_downloaded_code_execution": true,
+  "biological_records_parsed": 0,
+  "outcomes_scored": false,
+  "whole_zip_member_crc_validation": "NOT_PERFORMED; only header prefixes will be read",
+  "review_scope": "Independent approval permits bounded frozen-member header inspection after whole-size/MD5 verification. No outcome protocol is approved."
+}

@@ -1,0 +1,18 @@
+{
+  "native_gate_approved": true,
+  "purpose": "absolute_metadata_native_consistency_not_REF_or_scoring",
+  "expected_records": 11490,
+  "expected_input_bytes": 11853747,
+  "expected_sample": "HG002",
+  "eligible_truth_sha256": "c908217f7ec8eba1efe93f51605675a8a8b9676d9c9ca443d1348ad0a00f68d2",
+  "identity_order_sha256": "13db07d2c659f578144067d45eea85684816cce6482230e190a1b01b8d627e37",
+  "source_script_sha256": "f97dcf0051e09f799b689be66903f88c3fceef3dd6281043ab92e8a762616214",
+  "truth_units_script_sha256": "4c1cf4fc3d98f4cc3e0f136c15d27095730aa1725b951ea607b4684f4ed93e93",
+  "bounded_reader_script_sha256": "2fb977a24b4d027ee4508f2f45eb07d11866cc4dd8101ab340cf95983de1f523",
+  "sealed_buffer_script_sha256": "8b4acc8fa8b9a86d71c9847dd3a175e6816f24a1e2827f231ddf6cf244a05fa0",
+  "versions": {
+    "python": "3.10.20", "pysam": "0.24.0", "truvari": "5.4.0",
+    "bcftools": "1.23.1", "htslib": "1.23.1"
+  },
+  "input_read_reservation_bytes": 69206016
+}

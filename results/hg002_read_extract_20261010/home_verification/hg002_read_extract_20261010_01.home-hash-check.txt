@@ -1,0 +1,5 @@
+./identities.sqlite: OK
+./manifest.initial.json: OK
+./readiness.json: OK
+./source_reads.fastq.gz: OK
+./stats.jsonl: OK

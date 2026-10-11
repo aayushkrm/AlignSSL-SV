@@ -1,0 +1,37 @@
+pbsv discover - Find structural variant (SV) signatures in read alignments (BAM to SVSIG).
+
+Usage:
+  pbsv discover [options] <ref.in.bam|xml> <ref.out.svsig.gz>
+
+  ref.in.bam|xml                  STR    Coordinate-sorted aligned reads in which to identify SV signatures.
+  ref.out.svsig.gz                STR    Structural variant signatures output.
+
+Basic Options:
+  --hifi,--ccs                           Use options optimized for HiFi reads: -y 97
+
+Sample Options:
+  -s,--sample                     STR    Override sample name tag from BAM read group.
+
+Alignment Filter Options:
+  -q,--min-mapq                   INT    Ignore alignments with mapping quality < N. [5]
+  -m,--min-ref-span               STR    Ignore alignments with reference length < N bp. [100]
+  -y,--min-gap-comp-id-perc       FLOAT  Ignore alignments with gap-compressed sequence identity < N%. [70]
+
+Downsample Options:
+  -w,--downsample-window-length   STR    Window in which to limit coverage, in basepairs. [10K]
+  -a,--downsample-max-alignments  INT    Consider up to N alignments in a window; 0 means disabled. [100]
+
+Discovery Options:
+  -r,--region                     STR    Limit discovery to this reference region: CHR|CHR:START-END.
+  -l,--min-svsig-length           STR    Ignore SV signatures with length < N bp. [7]
+  -b,--tandem-repeats             STR    Tandem repeat intervals for indel clustering.
+  -k,--max-skip-split             STR    Ignore alignment pairs separated by > N bp of a read or reference. [100]
+
+  -h,--help                              Show this help and exit.
+  --version                              Show application version and exit.
+  --log-level                     STR    Set log level. Valid choices: (TRACE, DEBUG, INFO, WARN, FATAL). [WARN]
+  --log-file                      FILE   Log to a file, instead of stderr.
+
+Copyright (C) 2004-2024     Pacific Biosciences of California, Inc.
+This program comes with ABSOLUTELY NO WARRANTY; it is intended for
+Research Use Only and not for use in diagnostic procedures.

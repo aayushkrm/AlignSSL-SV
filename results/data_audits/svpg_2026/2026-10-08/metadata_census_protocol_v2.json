@@ -1,0 +1,11 @@
+{
+  "diagnosis_approved": true,
+  "purpose": "technical_metadata_census_not_REF_native_or_scoring",
+  "expected_records": 11490,
+  "expected_sample": "HG002",
+  "expected_input_bytes": 11853747,
+  "eligible_truth_sha256": "c908217f7ec8eba1efe93f51605675a8a8b9676d9c9ca443d1348ad0a00f68d2",
+  "source_script_sha256": "2fb977a24b4d027ee4508f2f45eb07d11866cc4dd8101ab340cf95983de1f523",
+  "truth_units_script_sha256": "4c1cf4fc3d98f4cc3e0f136c15d27095730aa1725b951ea607b4684f4ed93e93",
+  "source_read_reservation_bytes": 34603008
+}

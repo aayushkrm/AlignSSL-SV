@@ -1,0 +1,95 @@
+{
+  "compatibility": {
+    "cutesv": {
+      "compatibility_bytes_read": 29410475,
+      "pos_length_plus_one": 13,
+      "pos_zero": 0,
+      "positions_repaired": 0,
+      "records": 51561,
+      "records_filtered": 0,
+      "records_rewritten": 0,
+      "verified_sha256": "9603595adebb54e656513c3ffba416e0d2173763030abef20f804e1c877209c1"
+    },
+    "debreak": {
+      "compatibility_bytes_read": 935962599,
+      "pos_length_plus_one": 1,
+      "pos_zero": 0,
+      "positions_repaired": 0,
+      "records": 26421,
+      "records_filtered": 0,
+      "records_rewritten": 0,
+      "verified_sha256": "82f8ec62332691118329f4ef995229409b86144f5011d25eae67dece096056d1"
+    },
+    "sawfish": {
+      "compatibility_bytes_read": 25716015,
+      "pos_length_plus_one": 0,
+      "pos_zero": 0,
+      "positions_repaired": 0,
+      "records": 43944,
+      "records_filtered": 0,
+      "records_rewritten": 0,
+      "verified_sha256": "fd35b27c44e2506491ce0d5706908349ef534a6fe43e87a48ae4efa201e00f9c"
+    },
+    "sniffles": {
+      "compatibility_bytes_read": 15004300,
+      "pos_length_plus_one": 0,
+      "pos_zero": 0,
+      "positions_repaired": 0,
+      "records": 32567,
+      "records_filtered": 0,
+      "records_rewritten": 0,
+      "verified_sha256": "c2b0220af2867c5017b9c6c0861b318eb806a77e2cc28950fdd525f1c9926cbb"
+    },
+    "svim": {
+      "compatibility_bytes_read": 6682295,
+      "pos_length_plus_one": 0,
+      "pos_zero": 41,
+      "positions_repaired": 0,
+      "records": 49512,
+      "records_filtered": 0,
+      "records_rewritten": 0,
+      "verified_sha256": "efb823e8d4022290279400ff632a529d4adcc4c7081479fe2a76456e736f81ce"
+    },
+    "svpg": {
+      "compatibility_bytes_read": 23624851,
+      "pos_length_plus_one": 0,
+      "pos_zero": 0,
+      "positions_repaired": 0,
+      "records": 31720,
+      "records_filtered": 0,
+      "records_rewritten": 0,
+      "verified_sha256": "8a50b1213be4878801f2466b907f5357e1e5bcc9478053a3e75b7d176f916b7f"
+    }
+  },
+  "compatibility_reservation_bytes": 1036400535,
+  "conservative_global_charge_bytes": 5219838743,
+  "conservative_source_charge_bytes": 4124617258,
+  "local_samtools_version": "1.24",
+  "protocol_sha256": "6c39249b38d990304251f19b16f14c5a632b123443f38d4426990542a2a0a472",
+  "pysam_version": "0.24.1",
+  "scientific_scoring_performed": false,
+  "status": "complete",
+  "transport_reservation_bytes": 30307148,
+  "transported_callers": {
+    "svim": {
+      "crc32": "3c58306d",
+      "decoded_bytes": 6682295,
+      "last_byte_lf": true,
+      "member": "SV_callsets/HG002_benchmark/svim/hifi.vcf",
+      "newlines": 49624,
+      "path": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-standard-01/svim.vcf",
+      "selected_member_crc_verified": true,
+      "source_sha256": "efb823e8d4022290279400ff632a529d4adcc4c7081479fe2a76456e736f81ce"
+    },
+    "svpg": {
+      "crc32": "3c2eddd3",
+      "decoded_bytes": 23624851,
+      "last_byte_lf": true,
+      "member": "SV_callsets/HG002_benchmark/svpg/hifi.vcf",
+      "newlines": 31821,
+      "path": "/Users/akm/aayushkrm-AlignSSL/data/derived/svpg_2026/2026-10-07-standard-01/svpg.vcf",
+      "selected_member_crc_verified": true,
+      "source_sha256": "8a50b1213be4878801f2466b907f5357e1e5bcc9478053a3e75b7d176f916b7f"
+    }
+  }
+}

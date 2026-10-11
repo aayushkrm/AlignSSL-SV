@@ -1,0 +1,20 @@
+{
+  "scope": "legacy_synthetic_software_smoke_not_new_scientific_benchmark",
+  "test": "tests/test_scripts_as_pytest.py::test_end_to_end_pipeline",
+  "corrected_assertion": "main() is True",
+  "actual_main_return": false,
+  "pytest_exit": 1,
+  "failed": 1,
+  "seconds": 278.08,
+  "displayed_accuracy": 0.667,
+  "unchanged_required_accuracy": 0.7,
+  "displayed_pretrain_loss": [23.369, 21.491],
+  "OMP_NUM_THREADS": 1,
+  "OPENBLAS_NUM_THREADS": 1,
+  "MKL_NUM_THREADS": 1,
+  "model_metric_threshold_or_seed_changed": false,
+  "historical_scientific_result_files_modified": false,
+  "full_suite_after_wrapper_correction_rerun": false,
+  "all_green_claim": false,
+  "captured_stdout_file": "legacy_smoke_stdout.txt"
+}

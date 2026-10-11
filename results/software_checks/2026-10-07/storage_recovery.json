@@ -1,0 +1,22 @@
+{
+  "scope": "storage_prerequisite_and_software_guard_not_scientific_result",
+  "user_preference": "Continue on the cluster for now",
+  "user_subsequently_reported_local_space_cleaned": true,
+  "local_available_bytes": 15237808128,
+  "unchanged_runtime_guard_bytes": 10770972672,
+  "local_runtime_guard_headroom": true,
+  "two_previously_failing_headroom_checks": {"passed": 2, "seconds": 1.16},
+  "cluster_shared_filesystem_available_1024_byte_blocks": 51599217664,
+  "cluster_df_is_not_a_user_quota_or_reservation": true,
+  "account_queue_empty": true,
+  "scratch_workspace": "/scratch/igorno-alignssl_restart_20260922",
+  "scratch_expiry_cluster_local": "2026-10-22 23:02:50",
+  "scratch_remaining_days": 15,
+  "scratch_remaining_hours": 0,
+  "scratch_extensions_available": 1,
+  "job_launched_or_cancelled": false,
+  "agent_deleted_historical_sources_or_results": false,
+  "legacy_smoke_failure_resolved": false,
+  "full_suite_after_boolean_correction_rerun": false,
+  "all_green_claim": false
+}

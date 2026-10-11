@@ -1,0 +1,14 @@
+{
+  "egid": 1638200010,
+  "euid": 1638200118,
+  "genotype_records_not_interpreted": true,
+  "root": "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-provenance-20261009-01",
+  "source": "/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/svupp-inventory-20261009-02/SVUPP_paper.zip",
+  "source_body_read": false,
+  "source_bytes": 47443427,
+  "source_identity": [
+    47,
+    17171899120323951564
+  ],
+  "status": "LIVE_PROVENANCE_ROOT_SOURCE_METADATA_PASS"
+}

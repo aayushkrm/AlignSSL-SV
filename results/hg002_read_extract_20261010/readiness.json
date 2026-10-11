@@ -1,0 +1,141 @@
+{
+  "alignment_calling_phase_qualification": "NOT_ASSESSED",
+  "allocated_cpu_seconds": 7708.222263030708,
+  "allocation_measurement": "process wall at one requested CPU; charge actual Slurm allocation separately",
+  "archive": {
+    "bases": 80344827828,
+    "ids": 5359077
+  },
+  "archive_differences": {
+    "complete_census": true,
+    "observed_ids_minus_archive": 0,
+    "resolved_bases_minus_archive": 0
+  },
+  "census": {
+    "conflicting_ids": 0,
+    "constraint_mismatch_ids": 0,
+    "malformed_ids": 0,
+    "original_bases": 80344827828,
+    "original_ids": 5359077,
+    "resolved_bases": 80344827828,
+    "resolved_ids": 5359077,
+    "restored_hardclip_ids": 0,
+    "restored_missing_ids": 0,
+    "unknown_ids": 0
+  },
+  "code_sha256": "40679be522fbf2dd582a6826d72cfc02b9d77443f60095dcabb5a9d4efec681a",
+  "count_scope": "Observed prefix until both passes finish; never infer unseen identities",
+  "counts": {
+    "FLAG_0": 2698250,
+    "FLAG_16": 2660249,
+    "FLAG_2048": 183849,
+    "FLAG_2064": 168068,
+    "FLAG_4": 578,
+    "HP_missing": 547295,
+    "HP_present": 5163699,
+    "PS_missing": 547295,
+    "PS_present": 5163699,
+    "RG_present": 5710994,
+    "duplicate_flag_records": 0,
+    "duplicate_full_records": 351917,
+    "emitted_bases": 80344827828,
+    "emitted_ids": 5359077,
+    "hard_clipped_records": 0,
+    "missing_quality_records": 0,
+    "missing_sequence_records": 0,
+    "qcfail_records": 0,
+    "records_pass1": 5710994,
+    "records_pass2": 5710994,
+    "reverse_records": 2828317,
+    "secondary_records": 0,
+    "supplementary_records": 351917,
+    "unmapped_records": 578
+  },
+  "expected_input_sha256": "b7edeb4bbc2589039c6148a912857f26924ca8fd5971cd3141337d0ce24bbde4",
+  "gzip_bytes": 41582125285,
+  "index_bytes": 1040932864,
+  "index_peak_measurement": "Checkpoint/final file sizes; SQLite page cap also enforced",
+  "input_sha256": "b7edeb4bbc2589039c6148a912857f26924ca8fd5971cd3141337d0ce24bbde4",
+  "input_stat": [
+    48,
+    8000318496950740351,
+    48727325910,
+    1791620060000000000,
+    1791638324000000000
+  ],
+  "limits": {
+    "cpus": 1,
+    "index_bytes": 5368709120,
+    "memory_bytes": 17179869184,
+    "minimum_filesystem_free_bytes": 1073741824,
+    "preexisting_s1_disk_bytes": 48818418098,
+    "remaining_s1_cpu_seconds": 17940,
+    "s1_total_disk_bytes": 171798691840,
+    "wall_seconds": 17940
+  },
+  "measured_cpu_seconds": 6988.312996175,
+  "objects": {
+    "extracted_gzip_sha256": "fd9fd85d7dfadca083cd101aad00932e16d23d8b5d90db4ddec7523abaabae88"
+  },
+  "pass1_complete": true,
+  "pass2_complete": true,
+  "peak_index_bytes": 1045690920,
+  "peak_rss_bytes": 99016704,
+  "read_groups": [
+    {
+      "DS": "READTYPE=CCS;Ipd:Frames=ip;PulseWidth:Frames=pw;BINDINGKIT=102-739-100;SEQUENCINGKIT=102-118-800;BASECALLERVERSION=5.0;FRAMERATEHZ=100.000000;BarcodeFile=metadata/m84039_230418_220405_s4.barcodes.fasta;BarcodeHash=51e6110cd99a934f044f41d026ecf155;BarcodeCount=3;BarcodeMode=Symmetric;BarcodeQuality=Score",
+      "ID": "HG002_WGS",
+      "LB": "HG002_Pbiome",
+      "PL": "PACBIO",
+      "PM": "REVIO",
+      "PU": "m84039_230418_220405_s4",
+      "SM": "HG002_WGS"
+    }
+  ],
+  "runtime": {
+    "executable": "/beegfs/datasets/home/igorno/alignssl_restart_20260922/venvs/hg002_intake_check_20261010/bin/python",
+    "pysam": "0.24.1",
+    "python": "3.12.1 | packaged by Anaconda, Inc. | (main, Jan 19 2024, 15:51:05) [GCC 11.2.0]",
+    "sqlite": "3.41.2"
+  },
+  "sampled_peak_s1_disk_bytes": 140176254335,
+  "scope": "FULL_SOURCE_READ_EXTRACTION_ONLY",
+  "source": "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam",
+  "stage": "S1b",
+  "status": "READY_FOR_DNA_INPUT_REVIEW",
+  "tag_counts": {
+    "HP": {
+      "distinct_values": 2,
+      "examples": [
+        [
+          "2",
+          2642271
+        ],
+        [
+          "1",
+          2521428
+        ]
+      ]
+    },
+    "PS": {
+      "distinct_values": 1,
+      "examples": [
+        [
+          "1",
+          5163699
+        ]
+      ]
+    },
+    "RG": {
+      "distinct_values": 1,
+      "examples": [
+        [
+          "HG002_WGS",
+          5710994
+        ]
+      ]
+    }
+  },
+  "unknown_examples": [],
+  "wall_seconds": 7708.222263030708
+}

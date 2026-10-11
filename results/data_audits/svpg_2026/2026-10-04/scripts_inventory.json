@@ -1,0 +1,124 @@
+{
+  "actual_bytes": 18200,
+  "actual_md5": "57dce6316194c5147628b9cb933367fb",
+  "biological_records_parsed": 0,
+  "downloaded_code_executed": false,
+  "limits": [
+    "Names and header declarations do not establish caller stage or callability.",
+    "Header declarations do not establish score calibration or record completeness.",
+    "No internal-candidate ceiling, genotype accuracy or publication claim."
+  ],
+  "max_uncompressed_header_bytes_per_member": 1048576,
+  "member_count": 12,
+  "member_extraction_performed": false,
+  "members": [
+    {
+      "compressed_size": 0,
+      "compression_method": 0,
+      "crc32": "00000000",
+      "header_offset": 0,
+      "name": "scripts/",
+      "uncompressed_size": 0
+    },
+    {
+      "compressed_size": 1371,
+      "compression_method": 8,
+      "crc32": "a4d20c2f",
+      "header_offset": 70,
+      "name": "scripts/complex_gfa_bed.py",
+      "uncompressed_size": 3946
+    },
+    {
+      "compressed_size": 1934,
+      "compression_method": 8,
+      "crc32": "d51919ea",
+      "header_offset": 1545,
+      "name": "scripts/eval_inconsistency.py",
+      "uncompressed_size": 6919
+    },
+    {
+      "compressed_size": 447,
+      "compression_method": 8,
+      "crc32": "c32a856c",
+      "header_offset": 3586,
+      "name": "scripts/eval_jaccard.sh",
+      "uncompressed_size": 1164
+    },
+    {
+      "compressed_size": 3401,
+      "compression_method": 8,
+      "crc32": "6378df4e",
+      "header_offset": 4134,
+      "name": "scripts/eval_somatic.py",
+      "uncompressed_size": 12812
+    },
+    {
+      "compressed_size": 2102,
+      "compression_method": 8,
+      "crc32": "ef9c066c",
+      "header_offset": 7636,
+      "name": "scripts/eval_trio.py",
+      "uncompressed_size": 8243
+    },
+    {
+      "compressed_size": 1881,
+      "compression_method": 8,
+      "crc32": "e98b8e8e",
+      "header_offset": 9836,
+      "name": "scripts/gaf_stat.py",
+      "uncompressed_size": 7074
+    },
+    {
+      "compressed_size": 668,
+      "compression_method": 8,
+      "crc32": "496b0175",
+      "header_offset": 11814,
+      "name": "scripts/hifiasm_augment_pipeline.sh",
+      "uncompressed_size": 1497
+    },
+    {
+      "compressed_size": 1052,
+      "compression_method": 8,
+      "crc32": "d7eb8192",
+      "header_offset": 12595,
+      "name": "scripts/merge_specfic.vcf.py",
+      "uncompressed_size": 3597
+    },
+    {
+      "compressed_size": 1052,
+      "compression_method": 8,
+      "crc32": "435d1545",
+      "header_offset": 13753,
+      "name": "scripts/simulate.sh",
+      "uncompressed_size": 2080
+    },
+    {
+      "compressed_size": 915,
+      "compression_method": 8,
+      "crc32": "248d4175",
+      "header_offset": 14902,
+      "name": "scripts/simulate_add_alt.py",
+      "uncompressed_size": 2872
+    },
+    {
+      "compressed_size": 1023,
+      "compression_method": 8,
+      "crc32": "623c05a0",
+      "header_offset": 15922,
+      "name": "scripts/truvari_preprocess.py",
+      "uncompressed_size": 3767
+    }
+  ],
+  "official_md5": "57dce6316194c5147628b9cb933367fb",
+  "purpose": "Source inventory and header semantics only",
+  "schema_version": 1,
+  "sha256": "cc7f077cee6a1e0c503aa21d04e935feae44f79ee32857343017bdb16215091e",
+  "source_archive_name": "svpg-18456502-scripts.zip",
+  "source_manifest_bytes": 18200,
+  "source_url": "https://zenodo.org/api/records/18456502/files/scripts.zip/content",
+  "source_url_query_redacted": false,
+  "truth_or_performance_outputs_scored": false,
+  "vcf_headers": [],
+  "whole_archive_md5_verification": "VERIFIED",
+  "whole_archive_payload_downloaded": true
+}
