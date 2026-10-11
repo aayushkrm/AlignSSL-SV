@@ -6,12 +6,25 @@ The files separate verified code findings, experimental plans, external
 literature, and independent criticism so that hypotheses cannot silently become
 results.
 
+Current scientific decision,2026-10-12: STOP/PIVOT from the HG002 annotation
+exclusion-rule premise before any new enabling or whole-genome job. A missed
+RNA path is not automatically a consequential or novel finding. Accepted whole
+DNA input and all historical results stay preserved. The publication goal
+remains active and unmet. Older rows below retain their dated checkpoints;
+they are not current launch permissions.
+
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-11-hg002-calling-release-decision.md`](2026-10-11-hg002-calling-release-decision.md) | High-impact scientific investment comparison | Main accepts STOP/PIVOT before S2: no consequential external claim established; all further enabling/native jobs deferred, independent stop review pending |
+| [`2026-10-11-hg002-source-readset-result.md`](2026-10-11-hg002-source-readset-result.md) | Complete actual extraction, QA, recoverable duplicate cleanup and whole HOME custody | Independent usable DNA-input acceptance within S1;5,359,077identities/80,344,827,828bases; no phase/P1/biological/publication claim |
+| [`2026-10-11-hg002-reference-inventory.md`](2026-10-11-hg002-reference-inventory.md) | Whole-source declaration and index-cost diagnostic | Original01 controlled deadline failure preserved; schema2 format correction18local controls pass; corrected02 deferred by scientific stop |
+| [`2026-10-11-hg002-calling-interface-fixture.md`](2026-10-11-hg002-calling-interface-fixture.md) | Synthetic caller/cohort controls | Two independent comparator HOLDs fixed;32local tests and combined81+45subtests pass, recheck pending; frozen02 verified but native execution deferred |
+| [`2026-10-11-hg002-repeat-annotation-preflight.md`](2026-10-11-hg002-repeat-annotation-preflight.md) | Primary recommended-BED provenance | Exact source FASTA base compatibility UNKNOWN; no automatic BED reuse or generator/calling release |
+| [`2026-10-10-hg002-caller-setup.md`](2026-10-10-hg002-caller-setup.md) | Actual pinned CLI and complete raw custody |1604301 COMPLETED0:0; pbmm2 26.2.0/pbsv2.11.0 actual helps pass; native whole-data interface and scientific value not established |
 | [`2026-10-10-hg002-reference-expansion.md`](2026-10-10-hg002-reference-expansion.md) | Routine whole matched-reference preparation and custody |5 full sources pass SHA/CRC, expanded12.807GB within S0, home5SHA match; no donor annotation or P1 |
 | [`2026-10-10-hg002-published-calling-recipe.md`](2026-10-10-hg002-published-calling-recipe.md) | Luna/max-requested bounded primary-methods check | Published pbsv/HiPhase claims separated from artifact header; exact caller version/filters/VCF identity unknown, no S2 release |
 | [`2026-10-10-hg002-intake-result.md`](2026-10-10-hg002-intake-result.md) | Actual bounded DNA/reference intake and verified raw custody | DNA/ref complete, journals reconcile, all7homeSHA match; acquisition only, not complete-read/calling/P1 result |
-| [`2026-10-10-hg002-read-extraction.md`](2026-10-10-hg002-read-extraction.md) | Complete original-read reconciliation implementation | Two reproduced HOLDs fixed/independently cleared;50Linux controls pass,1604284 running exact bounded packet; no complete-read/calling/P1 result |
+| [`2026-10-10-hg002-read-extraction.md`](2026-10-10-hg002-read-extraction.md) | Complete original-read reconciliation implementation |1604284 and whole QA/custody completed; current usable-input acceptance and limits are in the October11 source result |
 | [`2026-10-10-gencode-reference-staging.md`](2026-10-10-gencode-reference-staging.md) | Routine released S0 matched reference preparation |39 deployed controls pass;1604257 completed with all5MD5s passing and verified home custody, see actual intake result; no annotation claim |
 | [`2026-10-10-lifton-path-interface.md`](2026-10-10-lifton-path-interface.md) | Luna/max-requested pinned native output audit | Static six-file findings; incomplete isoform/drop/terminal joins remain UNKNOWN, no genome run or P1 result |
 | [`2026-10-10-hg002-dna-intake-protocol.md`](2026-10-10-hg002-dna-intake-protocol.md) | Exact S1a pinned transfer and conservative accounting |1604251 completed, full journal and home custody checked, see actual intake result; no full-read/calling/assembly/P1/RNA claim |

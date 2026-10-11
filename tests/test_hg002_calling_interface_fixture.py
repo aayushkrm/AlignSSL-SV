@@ -190,6 +190,54 @@ class FixtureTests(unittest.TestCase):
         report = self.comparison(change); self.assertFalse(report["complete"])
         self.assertIn("unexpected_phase_tag", report["observed"][0]["reasons"])
 
+    def test_cohort_provenance_and_geometry_mutations_refused(self):
+        for case in ("empty_sources", "coordinates", "swapped_sources", "wrong_sample",
+                     "source_line", "source_ref", "source_filter", "source_gt", "source_alt_index",
+                     "alternate", "event_key"):
+            with self.subTest(case=case):
+                for name in ("calls.vcf", "cohort.jsonl", "comparison.json"):
+                    (self.root/name).unlink(missing_ok=True)
+                vcf, cohort = self.write_calls()
+                rows = [json.loads(line) for line in cohort.read_text().splitlines()]
+                if case == "empty_sources":
+                    for row in rows[1:]: row["source_records"] = []
+                elif case == "coordinates":
+                    for row in rows[1:]: row.update(start0=0, end0=1)
+                elif case == "swapped_sources":
+                    rows[1]["source_records"], rows[2]["source_records"] = rows[2]["source_records"], rows[1]["source_records"]
+                elif case == "wrong_sample":
+                    for row in rows: row["sample"] = "WRONG_SAMPLE"
+                elif case.startswith("source_"):
+                    key, value = {"source_line": ("line", 999), "source_ref": ("REF", "N"),
+                        "source_filter": ("FILTER", "bad"), "source_gt": ("GT", "1/1"),
+                        "source_alt_index": ("alt_index", 2)}[case]
+                    rows[1]["source_records"][0][key] = value
+                else: rows[1][case] = "WRONG"
+                cohort.write_text("".join(json.dumps(row)+"\n" for row in rows))
+                report = fixture.compare(self.inputs, vcf, cohort, self.root/"comparison.json")
+                self.assertFalse(report["complete"], case)
+                self.assertTrue(report["errors"], case)
+
+    def test_conflicting_duplicate_format_gt_rejected_before_interpretation(self):
+        def change(rows): rows[0][8:10] = ["GT:GT", "1/1:0/1"]
+        report = self.comparison(change)
+        self.assertFalse(report["complete"])
+        self.assertIn("duplicate_FORMAT_key", report["observed"][0]["reasons"])
+        self.assertEqual(report["observed"][0]["FORMAT"], {})
+
+    def test_format_cardinality_mismatch_rejected(self):
+        def change(rows): rows[0][8:10] = ["GT:DP", "0/1"]
+        report = self.comparison(change)
+        self.assertFalse(report["complete"])
+        self.assertIn("FORMAT_cardinality_mismatch", report["observed"][0]["reasons"])
+
+    def test_native_ids_need_not_equal_truth_ids(self):
+        def change(rows):
+            rows[0][2] = "pbsv.DEL.native-id"
+            rows[1][2] = "pbsv.INS.native-id"
+        report = self.comparison(change)
+        self.assertTrue(report["complete"], report)
+
     def test_comparison_output_existing_refused(self):
         vcf, cohort = self.write_calls(); out = self.root / "result.json"; out.write_text("keep")
         with self.assertRaises(FileExistsError): fixture.compare(self.inputs, vcf, cohort, out)

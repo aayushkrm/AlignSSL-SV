@@ -145,6 +145,53 @@ Synthetic success would qualify only this ordinary interface, not real-data
 sensitivity, source/reference compatibility, phase/copy readiness, P1,
 causation, whole-genome biology or S2 release.
 
+## Main pre-execution review and frozen upload
+
+Main read all four files in full. Independent local reruns pass28 fixture
+tests and18 reference-parser tests. Pytest, which also collects the legacy
+cohort's function-style tests, passes77 tests and34 subtests in4.48s, zero
+skips. A unittest-only invocation of that legacy cohort collects0 tests and
+is **not** cohort regression evidence.
+
+Code is committed in `da9d0eb` and pushed to the research branch. Frozen HOME
+bundle `bundles/hg002_calling_interface_s0_20261011_01` has ten complete
+source/receipt entries, all verified after upload. Its source manifest SHA is
+`7d99a04510bcc635c954cf845f58e0e4952078412ddb57438c617c7d919fb73e`;
+whole bundle apparent bytes81,171. The frozen copy of this note predates this
+append. No native toy job has run at this checkpoint.
+
+Conservative remaining S0 account is9157 allocated seconds; a900-second
+booking would leave8257 before actual runtime reconciliation. For the runner's
+other-material guard, main will reserve7GiB for the already named other S0
+material and headroom, rather than claim an exhaustive measured total. This
+is **inside**, not additional to, the existing8GiB reserve. The64MiB new
+scratch+HOME toy pair also fits inside that reserve. Both expanded reference
+copies and the separate caller128MiB pair remain charged. Physical scratch
+space exceeds the required64MiB. No body transfer or useful genomic download
+is needed. Independent reviewer acceptance remains pending at this checkpoint.
+
+## Independent HOLD and finite comparator correction
+
+The independent prelaunch review reproduces five false passes in the original
+28-test comparator: empty or swapped cohort source records, incorrect cohort
+spans or sample, and duplicate FORMAT `GT:GT` with `1/1:0/1`. Original source,
+test and bundle01 hashes stay retained; no native run used that bundle.
+
+Main adds explicit source-observation joins. Each cohort row now matches a
+unique accepted native VCF observation, its native event identity and alternate,
+its independently trimmed record geometry, and its complete nonempty source
+record (native ID, line, POS, REF, FILTER, GT, phase, ALT index and raw INFO).
+Native IDs need not equal truth IDs. Equivalent anchor shifts remain accepted.
+Summary and row samples must match the synthetic sample. Duplicate FORMAT keys
+and unequal FORMAT/value cardinality are rejected before genotype interpretation.
+The unchanged cohort source and fixed input truth are not modified.
+
+All32 local unittest cases pass in4.136s. New controls reproduce all five
+reviewer failures, add seven other source/alternate/event-link mutations,
+cardinality refusal, and acceptance of arbitrary native record IDs. The prior
+symbolic DEL and suffix-anchor positives still pass. A fresh bundle02 and
+independent correction recheck are required before any native launch.
+
 Read scope: FULL governing objective; DNA-stage investment, caller preflight,
 cohort implementation and complete cohort source; captured native helps/versions
 and CLI custody note. No repeated metadata retrieval or broad research.

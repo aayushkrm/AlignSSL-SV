@@ -32,6 +32,19 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October12 main accepts the [scientific STOP/PIVOT](2026-10-11-hg002-calling-release-decision.md)
+  before S2. The HG002 exclusion rule lacks a consequential external claim;
+  even validatedK>0 can be expected annotation incompleteness. No biological
+  null or global lack of opportunity follows. Accepted whole S1 input/custody
+  and all S0 successes/failures remain permanent. No new enabling/native job
+  (toy, corrected reference02, calling, assembly, P1 or RNA) is booked; fresh
+  own queue is empty. Full publication goal remains active and unmet.
+  Parser schema2 passes18tests; corrected comparator32controls and combined
+  81tests+45subtests pass. No native/biological result from software controls.
+  Prior reviewer handle is missing; queued rechecks remain unfinished. A new
+  independent Sol6.1/high-requested maintained reviewer checks the finite
+  comparator corrections and scientific stop; all prior review text stays intact.
+
 - RoutineS0 expandedreferences1604286 complete0:0,12,807,281,629payloadB,
   wholecompressedSHA/EOFCRCpass,home1604287all5SHA match. Sourcefileswhole,
   noisoformcrop ornewdownload. [Protocol/result](2026-10-10-hg002-reference-expansion.md).

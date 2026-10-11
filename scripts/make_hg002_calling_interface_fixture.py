@@ -207,7 +207,7 @@ def compare(fixture, vcf, cohort, output):
     fixture = Path(fixture); verify_inputs(fixture)
     truth = json.loads((fixture / "truth.json").read_text()); refs = fasta(fixture / "reference.fa")
     observed, errors, samples = [], [], None
-    for line in Path(vcf).read_text().splitlines():
+    for line_number, line in enumerate(Path(vcf).read_text().splitlines(), 1):
         if line.startswith("#CHROM\t"):
             samples = line.split("\t")[9:]
             if samples != [SAMPLE]: errors.append("sample_columns_not_exact")
@@ -220,18 +220,26 @@ def compare(fixture, vcf, cohort, output):
                 key, _, value = entry.partition("=")
                 if key in info: bad.append("duplicate_INFO_" + key)
                 info[key] = value
-            fields = dict(zip(f[8].split(":"), f[9].split(":")))
+            format_keys, format_values = f[8].split(":"), f[9].split(":")
+            format_problems = []
+            if len(format_keys) != len(set(format_keys)):
+                format_problems.append("duplicate_FORMAT_key")
+            if len(format_keys) != len(format_values):
+                format_problems.append("FORMAT_cardinality_mismatch")
+            # Never interpret conflicting duplicate fields using last-value wins.
+            fields = {} if format_problems else dict(zip(format_keys, format_values))
             gt = fields.get("GT", "")
             for i, alt in enumerate(f[4].split(","), 1):
                 item = dict(raw=line, chrom=f[0], POS=f[1], REF=f[3], ALT=alt, FILTER=f[6],
-                            FORMAT=fields, alt_index=i, reasons=list(bad), matched_truth=None)
+                            FORMAT=fields, alt_index=i, reasons=list(bad) + format_problems,
+                            matched_truth=None)
                 observed.append(item)
                 try:
                     ref = refs[f[0]]; pos = int(f[1]) - 1
                     if pos < 0 or ref[pos:pos+len(f[3])] != f[3]:
                         raise ValueError("REF_mismatch")
                     tokens = gt.replace("|", "/").split("/")
-                    valid_gt = all(t.isdigit() and int(t) <= len(f[4].split(",")) for t in tokens)
+                    valid_gt = bool(tokens) and all(t.isdigit() and int(t) <= len(f[4].split(",")) for t in tokens)
                     item["nonref"] = i in [int(t) for t in tokens if t.isdigit()]
                     if not valid_gt: item["reasons"].append("invalid_GT")
                     if not item["nonref"] and valid_gt: continue
@@ -241,16 +249,39 @@ def compare(fixture, vcf, cohort, output):
                         if size <= 0 or int(info["SVLEN"]) != -size or end > len(ref):
                             raise ValueError("symbolic_DEL_geometry")
                         kind = "DEL"; alternate = ref[:pos+1] + ref[end:]
+                        start0, end0, boundary0 = pos+1, end, None
                     elif alt and all(c in "ACGT" for c in f[3] + alt):
                         alternate = ref[:pos] + alt + ref[pos+len(f[3]):]
                         delta = len(alt) - len(f[3]); size = abs(delta)
                         kind = "INS" if delta > 0 else "DEL" if delta < 0 else "OTHER"
+                        # Derive this record's minimal geometry, not the truth's
+                        # original anchor. Equivalent native anchor shifts stay valid.
+                        remaining_ref, remaining_alt = f[3], alt
+                        point = pos
+                        while remaining_ref and remaining_alt and remaining_ref[0] == remaining_alt[0]:
+                            remaining_ref, remaining_alt = remaining_ref[1:], remaining_alt[1:]
+                            point += 1
+                        while remaining_ref and remaining_alt and remaining_ref[-1] == remaining_alt[-1]:
+                            remaining_ref, remaining_alt = remaining_ref[:-1], remaining_alt[:-1]
+                        if kind == "DEL" and remaining_ref and not remaining_alt:
+                            start0, end0, boundary0 = point, point+len(remaining_ref), None
+                        elif kind == "INS" and remaining_alt and not remaining_ref:
+                            start0, end0, boundary0 = None, None, point
+                        else:
+                            raise ValueError("complex_geometry_unresolved")
                         if "SVLEN" in info and int(info["SVLEN"]) != delta:
                             raise ValueError("SVLEN_disagreement")
                     else:
                         raise ValueError("sequence_unresolved_or_other_type")
                     if info.get("SVTYPE", kind) != kind: raise ValueError("SVTYPE_disagreement")
                     item.update(svtype=kind, size_bp=size, alternate_sha256=sha(alternate.encode()))
+                    item["cohort_geometry"] = dict(start0=start0, end0=end0, insertion_boundary0=boundary0)
+                    phase = {key: fields[key] for key in ("PS", "PID", "PGT", "HP") if key in fields}
+                    item["expected_source_record"] = dict(record_id=f[2], line=line_number,
+                        POS=int(f[1]), REF=f[3], FILTER=f[6], GT=gt, phase=phase,
+                        phase_status="UNPHASED", alt_copy_count=1, alt_index=i, INFO_raw=f[7])
+                    identity = [f[0], f[1], f[3], alt, kind, start0, end0, boundary0, size, None]
+                    item["expected_event_key"] = sha(json.dumps(identity, separators=(",", ":")).encode())[:20]
                     matches = [e for e in truth["events"] if e["chrom"] == f[0] and e["svtype"] == kind
                                and e["size_bp"] == size and e["alternate_sha256"] == item["alternate_sha256"]]
                     if len(matches) == 1: item["matched_truth"] = matches[0]["event_id"]
@@ -271,6 +302,7 @@ def compare(fixture, vcf, cohort, output):
     if not rows or rows[0].get("final_D", "missing") is not None:
         errors.append("cohort_summary_or_final_D")
     summary = rows[0] if rows else {}; counters = summary.get("counters", {})
+    if summary.get("sample") != SAMPLE: errors.append("cohort_summary_sample")
     for key in ("input_records", "input_alt_observations", "OVERLAPS_CDS", "UNKNOWN", "index_rows"):
         if counters.get(key) != truth["expected_cohort"][key]: errors.append("cohort_counter_" + key)
     if any(value for key, value in counters.items() if key.startswith("out_of_primary_")):
@@ -279,12 +311,29 @@ def compare(fixture, vcf, cohort, output):
     seen = []
     for row in rows[1:]:
         seen.append((row.get("chrom"), row.get("gene_id"), tuple(row.get("transcripts", [])), row.get("svtype"), row.get("size_bp")))
+        if row.get("sample") != SAMPLE: errors.append("cohort_row_sample")
+        matches = [item for item in observed if item.get("matched_truth") is not None
+                   and item.get("chrom") == row.get("chrom")
+                   and item.get("svtype") == row.get("svtype")
+                   and item.get("size_bp") == row.get("size_bp")]
+        if len(matches) != 1:
+            errors.append("cohort_source_join_not_unique")
+        else:
+            expected = matches[0]
+            if any(row.get(key) != value for key, value in expected["cohort_geometry"].items()):
+                errors.append("cohort_geometry_mismatch")
+            if row.get("alternate") != expected["ALT"] or row.get("event_key") != expected["expected_event_key"]:
+                errors.append("cohort_event_identity_mismatch")
+            if row.get("source_records") != [expected["expected_source_record"]]:
+                errors.append("cohort_source_record_mismatch")
         if row.get("candidate_state") != "UNKNOWN" or "unphased_GT" not in row.get("unknown_reasons", []):
             errors.append("cohort_phase_unknown_not_retained")
         if row.get("p1_state") != "NOT_ASSESSED" or row.get("overlap_status") != "OVERLAPS_CDS":
             errors.append("cohort_role_or_overlap")
         for source in row.get("source_records", []):
-            if source.get("phase_status") != "UNPHASED" or source.get("phase") or source.get("alt_copy_count") != 1:
+            if (source.get("phase_status") != "UNPHASED"
+                    or any(value not in (None, ".") for value in source.get("phase", {}).values())
+                    or source.get("alt_copy_count") != 1):
                 errors.append("cohort_source_phase_or_copy")
     # The cohort merges the two isoforms of each gene into one row, not two rows.
     if len(seen) != 2 or set(seen) != expected_keys: errors.append("cohort_rows_or_isoforms")

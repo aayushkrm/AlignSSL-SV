@@ -8,11 +8,26 @@ context only. It is not the foundation for new work.
 
 ## Verified and planned
 
+Current decision (2026-10-12): stop the HG002 annotation-exclusion pilot before
+genome-wide calling. Its best possible positive could reflect ordinary
+annotation incompleteness. An important external claim or diagnostic decision
+tested by that endpoint has not been established. This is a scientific
+investment stop, not a biological null.
+
+The complete HG002 DNA read input passed extraction and custody review:
+5,359,077 original read identities and 80,344,827,828 bases. Full input data
+remain on the cluster, outside Git. No new calling, assembly or RNA campaign
+is released. New research questions are being compared; no publication result
+is claimed. See [the decision](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-11-hg002-calling-release-decision.md)
+and [the input result](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-11-hg002-source-readset-result.md).
+
+Earlier checkpoints:
+
 Completed engineering diagnostics (2026-10-08): 20 native controls passed; all
 11,490 unchanged rows are metadata-compatible. 41 REF controls passed; all
 11,490 anchored REF spans agree. Source and row-order pins remained stable.
 
-Latest input check (2026-10-09): 44 cluster controls passed. The bounded
+Earlier input check (2026-10-09): 44 cluster controls passed. The bounded
 SVUPP provenance/header check and its complete raw evidence passed independent
 review. The archive route is closed: the required ONT-to-HiFi caller views
 were not sufficiently established. No genotype outcome was scored. This is
@@ -33,7 +48,7 @@ record. A passing engineering check is not a biological result.
 - Technical records: [native controls](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-08-native-throughput-result.md),
   [REF controls](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-08-reference-throughput-result.md), [metadata census](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-08-metadata-census-result.md), and
   [caller preparation review](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-08-caller-preparation-review.md).
-- Latest input decision: [provenance result](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-09-svupp-provenance-header-result01.md) and
+- Earlier input decision: [provenance result](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-09-svupp-provenance-header-result01.md) and
   [independent review](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-09-svupp-provenance-header-review.md).
 - [results/](results/) contains earlier SSL benchmarks and technical audit
   outputs. Use the research notes to interpret them.

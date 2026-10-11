@@ -11,6 +11,33 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+### Current scientific investment stop — 2026-10-12
+
+Main accepts the [max-effort decision](docs/research/2026-10-11-hg002-calling-release-decision.md)
+to STOP/PIVOT from the current HG002 exclusion-rule publication premise.
+Even a phase-validated RNA path missed by native annotation can be ordinary
+annotation incompleteness. No consequential external claim or applied practice
+tested by the frozen endpoint is established. This is an investment stop,
+not a biological null, failed input, or claim that the field has no opportunity.
+
+No new native toy, reference02, genome-wide caller, assembly, P1 or RNA job
+is booked. Fresh own queue is empty at2026-10-11 21:22:57UTC. Complete accepted
+S1 material and all earlier raw results/failures remain on permanent HOME.
+No further deletion is proposed. Useful-resource parallelism still applies to
+qualified experiments; it is not a reason to run a scientifically weak study.
+
+The original reviewer handle is now missing after an interruption. Its last
+written comparator HOLD remains evidence; its queued correction/scientific
+rechecks did not complete. A replacement independent Sol6.1/high-requested
+reviewer is auditing those two finite matters. Corrected comparator32controls
+and combined81tests+45subtests pass, with no native qualification claim.
+Frozen02 upload's ten hashes all match; its manifestSHA
+2af276f4213bc3d41d41962dd518b817d6acc091b3d33664c1440939ba6ebd5a.
+The full publication objective remains active and unmet. Select a worthwhile
+research question before spending more on this stopped pipeline.
+
+### Latest accepted input and software evidence
+
 Authoritative [full source extraction result](docs/research/2026-10-11-hg002-source-readset-result.md)
 1604284 COMPLETED0:0,7709allocatedCPU seconds. Both EOF passes complete;
 5,359,077original reads/80,344,827,828bases match archive counts,0unresolved
@@ -54,7 +81,10 @@ use efficiently and scale independent experiments fully; do not reserve
 idle nodes/GPUs for serial checks. Independent tasks run in parallel when
 useful; serial validation does not reserve whole nodes. New
 [synthetic calling interface](docs/research/2026-10-11-hg002-calling-interface-fixture.md)
-passes28local tests; main has read the complete implementation and controls.
+initially passes28local tests; independent review reproduces two comparator
+false-pass defects. Main fixes exact cohort-to-VCF provenance joins and
+duplicate FORMAT handling;32local controls pass, independent recheck pending.
+Original frozen01 remains unchanged and never ran natively.
 Prospective3CPU/4GiB/5min native toy stays within S0, awaits independent
 review and a frozen upload. No real-data calling or S2/S3 campaign is released.
 
