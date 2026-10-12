@@ -1,0 +1,7 @@
+Local revision attempt notes (transcribed; no raw terminal log):
+
+1. The first header parser omitted four VCF metadata aliases. The retained-source audit found ##commandline, ##cmdline, and ##bcftools_viewCommand command headers, plus ##bcftools_viewVersion version headers. The local corrected-parser pass counted: commandline=8, cmdline=1, bcftools_viewCommand=4, bcftools_viewVersion=4. The original sources.json remains unchanged.
+
+2. The first local Git-blob verifier attempt encoded the Git header terminator as the two characters backslash and zero, not one NUL byte. That verifier attempt failed. The corrected local verifier used b'blob ' + decimal_size + bytes([0]) + source_body; all 25 retained source files then matched their recorded size, SHA-256, and Git blob SHA-1. This was a verifier-command error. It did not change any source file and caused no network request.
+
+This revision reuses the original 25 retained source bodies. Historical source_bytes_transferred is preserved from sources.json; new_operation_network_bytes is 0. No biological interpretation is made.

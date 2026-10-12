@@ -32,6 +32,20 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October13 [actual fixed inversion panel](../../results/inv_fixed_case_20261013/README.md)
+  and [conditional path result](../../results/inv_path_equivalence_20261013/README.md):
+  source25files6.088MB fully pass; one nearby/eight spanning INV records.
+  All36pure-INV comparisons differ under frozen canonical reference/two modes;
+  maintained independent recomputation accepts narrow negative, not a caller
+  defect or full allele inequality. Both freezes precede their new body access.
+  Original receipt preserved; corrected command headers add17lines with0new
+  network bytes. Combined157tests+62subtests pass5.55s; one-process diagnostic
+  0.16s/16.9MB, no native caller/GPU/cluster job. Existing whole mapped/indexed
+  HG002 DNA and native pysam runtime verified for a separate bounded input
+  track. Trace code in preparation, no booking; old annotation/HG008 stops and
+  active/unmet publication goal remain. Do not mistake this Tier1 simple case
+  for proof of the original complex-INV linkage mechanism.
+
 - October13 [interruption/current comparator checkpoint](2026-10-13-comparator-checkpoint.md):
   completed Weller inventory and two functional scouts preserved; no modelling
   campaign. Main's recovered GEO listing is RNA/guide-only in inspected scope.

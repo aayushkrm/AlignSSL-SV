@@ -11,6 +11,36 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+### Fixed inversion source and conditional path result — 2026-10-13
+
+The [published-case scout](docs/research/2026-10-13-inversion-case-feasibility.md)
+fixes the first TableS10 HG002 row before VCF bodies, commit8e8c76e. Actual
+[25-file source panel](results/inv_fixed_case_20261013/README.md) completes:
+6,087,705B, all sizes/Git blob/SHA256 pass,3wholegzipEOF/CRC checks. Truth
+3,205bp has one nearby and8larger spanning caller declarations, not blank output.
+INV-only source2025 release is not the attested2026 nine-caller execution.
+Independent review accepts that bounded source finding, not allele recovery.
+One local-only header revision restores17omitted metadata lines; source bodies,
+original receipt and all biology fields remain unchanged; no re-download.
+
+Main freezes a [pure-INV diagnostic](docs/research/2026-10-13-inversion-path-equivalence-protocol.md)
+before reading29kb canonical reference, commit8c55560. Actual
+[all36 comparisons](results/inv_path_equivalence_20261013/README.md) have0exact
+equalities across the9records and4coordinate pairs. Independent recomputation
+accepts this conditional negative. Original FASTA/coordinate/molecular-allele
+scope remains unknown; no native caller defect, complex-INV mechanism or
+publication result is established. No threshold or favorable case/mode selected.
+157tests+62subtests pass5.55s. Actual one-process check0.16s wall/16.9MB RSS;
+no genome scan, model, GPU, native caller or cluster job for this result.
+
+Next [one mapped-input trace](docs/research/2026-10-13-inversion-mapped-input-trace-protocol.md)
+is in preparation. Fresh whole preserved BAM48.727GB/BAI21.583MB metadata,
+header/index opening and native Python3.12.1/pysam0.24.1 succeed. This existing
+CCS/Revio HG002_WGS track is distinct from the20benchmark inputs; no new DNA
+is required for the bounded trace, and no case alignment bodies have been
+read yet. Code worker active; no run booked. HG002 annotation/HG008 generic
+detection remain stopped. Full publication goal active and unmet.
+
 ### Research comparison and interruption recovery — 2026-10-13
 
 Later actual [fixed HG008 comparator check](results/svpg_named_case_20261013/README.md)

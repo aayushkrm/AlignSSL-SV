@@ -1,0 +1,1399 @@
+{
+  "call_record_count": 9,
+  "call_records": [
+    {
+      "alt": "<INV>",
+      "carrier_or_detection_interpretation": "NOT_ASSESSED",
+      "chromosome": "chr2",
+      "end": 240702018,
+      "filter": "PASS",
+      "filter_raw": "PASS",
+      "format": "GT:GQ:VAF:hVAF:DR:DV",
+      "genotypes": [
+        "0/0"
+      ],
+      "id": "severus_INV4312",
+      "info": "PRECISE;SVTYPE=INV;SVLEN=16229;STRANDS=++;MAPQ=60.0;END=240702018",
+      "position": 240685789,
+      "qual": "60.0",
+      "raw_fields": [
+        "chr2",
+        "240685789",
+        "severus_INV4312",
+        "N",
+        "<INV>",
+        "60.0",
+        "PASS",
+        "PRECISE;SVTYPE=INV;SVLEN=16229;STRANDS=++;MAPQ=60.0;END=240702018",
+        "GT:GQ:VAF:hVAF:DR:DV",
+        "0/0:242:0.12:0.12,0.00,0.00:22:3"
+      ],
+      "raw_gt_values": [
+        "0/0"
+      ],
+      "raw_record": "chr2\t240685789\tseverus_INV4312\tN\t<INV>\t60.0\tPASS\tPRECISE;SVTYPE=INV;SVLEN=16229;STRANDS=++;MAPQ=60.0;END=240702018\tGT:GQ:VAF:hVAF:DR:DV\t0/0:242:0.12:0.12,0.00,0.00:22:3",
+      "record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_minimap2.vcf#bucket=nearby_records:index=0:line=73",
+      "ref": "N",
+      "sample_columns": [
+        "0/0:242:0.12:0.12,0.00,0.00:22:3"
+      ],
+      "selection": {
+        "bucket": "nearby_records",
+        "bucket_index": 0,
+        "line_number": 73
+      },
+      "source": {
+        "git_blob_sha1": "0fa3a0129151cdb810734a2e3edecaf2e7e1fda4",
+        "group": "long_read_caller_panel",
+        "path": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_minimap2.vcf",
+        "sha256": "3c1a0d0b65605371dcdc9139cfc4bf51995c13a436b53fd24173fbc9e7fcff7b",
+        "size": 28846
+      }
+    },
+    {
+      "alt": "<INV>",
+      "carrier_or_detection_interpretation": "NOT_ASSESSED",
+      "chromosome": "chr2",
+      "end": 240698636,
+      "filter": "PASS",
+      "filter_raw": "PASS",
+      "format": "GT:GQ:VAF:hVAF:DR:DV",
+      "genotypes": [
+        "0/0"
+      ],
+      "id": "severus_INV6608",
+      "info": "PRECISE;SVTYPE=INV;SVLEN=22369;STRANDS=--;MAPQ=60.0;CLUSTERID=severus_32;END=240698636",
+      "position": 240676267,
+      "qual": "60.0",
+      "raw_fields": [
+        "chr2",
+        "240676267",
+        "severus_INV6608",
+        "N",
+        "<INV>",
+        "60.0",
+        "PASS",
+        "PRECISE;SVTYPE=INV;SVLEN=22369;STRANDS=--;MAPQ=60.0;CLUSTERID=severus_32;END=240698636",
+        "GT:GQ:VAF:hVAF:DR:DV",
+        "0/0:255:0.12:0.12,0.00,0.00:23:3"
+      ],
+      "raw_gt_values": [
+        "0/0"
+      ],
+      "raw_record": "chr2\t240676267\tseverus_INV6608\tN\t<INV>\t60.0\tPASS\tPRECISE;SVTYPE=INV;SVLEN=22369;STRANDS=--;MAPQ=60.0;CLUSTERID=severus_32;END=240698636\tGT:GQ:VAF:hVAF:DR:DV\t0/0:255:0.12:0.12,0.00,0.00:23:3",
+      "record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=0:line=332",
+      "ref": "N",
+      "sample_columns": [
+        "0/0:255:0.12:0.12,0.00,0.00:23:3"
+      ],
+      "selection": {
+        "bucket": "spanning_records",
+        "bucket_index": 0,
+        "line_number": 332
+      },
+      "source": {
+        "git_blob_sha1": "a923dd4de22271446ce644ef05afba82dad1feb2",
+        "group": "long_read_caller_panel",
+        "path": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf",
+        "sha256": "95c9be5a7de923f0f19cd426a103f3887d30b5dbcba3afa83045b5b5046579b5",
+        "size": 322379
+      }
+    },
+    {
+      "alt": "<INV>",
+      "carrier_or_detection_interpretation": "NOT_ASSESSED",
+      "chromosome": "chr2",
+      "end": 240698570,
+      "filter": "PASS",
+      "filter_raw": "PASS",
+      "format": "GT:GQ:VAF:hVAF:DR:DV",
+      "genotypes": [
+        "0/1"
+      ],
+      "id": "severus_INV6609",
+      "info": "PRECISE;SVTYPE=INV;SVLEN=22240;STRANDS=--;MAPQ=60.0;CLUSTERID=severus_32;END=240698570",
+      "position": 240676330,
+      "qual": "60.0",
+      "raw_fields": [
+        "chr2",
+        "240676330",
+        "severus_INV6609",
+        "N",
+        "<INV>",
+        "60.0",
+        "PASS",
+        "PRECISE;SVTYPE=INV;SVLEN=22240;STRANDS=--;MAPQ=60.0;CLUSTERID=severus_32;END=240698570",
+        "GT:GQ:VAF:hVAF:DR:DV",
+        "0/1:183:0.23:0.23,0.00,0.00:20:6"
+      ],
+      "raw_gt_values": [
+        "0/1"
+      ],
+      "raw_record": "chr2\t240676330\tseverus_INV6609\tN\t<INV>\t60.0\tPASS\tPRECISE;SVTYPE=INV;SVLEN=22240;STRANDS=--;MAPQ=60.0;CLUSTERID=severus_32;END=240698570\tGT:GQ:VAF:hVAF:DR:DV\t0/1:183:0.23:0.23,0.00,0.00:20:6",
+      "record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=1:line=333",
+      "ref": "N",
+      "sample_columns": [
+        "0/1:183:0.23:0.23,0.00,0.00:20:6"
+      ],
+      "selection": {
+        "bucket": "spanning_records",
+        "bucket_index": 1,
+        "line_number": 333
+      },
+      "source": {
+        "git_blob_sha1": "a923dd4de22271446ce644ef05afba82dad1feb2",
+        "group": "long_read_caller_panel",
+        "path": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf",
+        "sha256": "95c9be5a7de923f0f19cd426a103f3887d30b5dbcba3afa83045b5b5046579b5",
+        "size": 322379
+      }
+    },
+    {
+      "alt": "<INV>",
+      "carrier_or_detection_interpretation": "NOT_ASSESSED",
+      "chromosome": "chr2",
+      "end": 240693788,
+      "filter": "PASS",
+      "filter_raw": "PASS",
+      "format": "GT:GQ:VAF:hVAF:DR:DV",
+      "genotypes": [
+        "0/1"
+      ],
+      "id": "severus_INV6610",
+      "info": "PRECISE;SVTYPE=INV;SVLEN=12863;STRANDS=++;MAPQ=60.0;CLUSTERID=severus_32;END=240693788",
+      "position": 240680925,
+      "qual": "60.0",
+      "raw_fields": [
+        "chr2",
+        "240680925",
+        "severus_INV6610",
+        "N",
+        "<INV>",
+        "60.0",
+        "PASS",
+        "PRECISE;SVTYPE=INV;SVLEN=12863;STRANDS=++;MAPQ=60.0;CLUSTERID=severus_32;END=240693788",
+        "GT:GQ:VAF:hVAF:DR:DV",
+        "0/1:193:0.36:0.36,0.00,0.00:23:13"
+      ],
+      "raw_gt_values": [
+        "0/1"
+      ],
+      "raw_record": "chr2\t240680925\tseverus_INV6610\tN\t<INV>\t60.0\tPASS\tPRECISE;SVTYPE=INV;SVLEN=12863;STRANDS=++;MAPQ=60.0;CLUSTERID=severus_32;END=240693788\tGT:GQ:VAF:hVAF:DR:DV\t0/1:193:0.36:0.36,0.00,0.00:23:13",
+      "record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=2:line=334",
+      "ref": "N",
+      "sample_columns": [
+        "0/1:193:0.36:0.36,0.00,0.00:23:13"
+      ],
+      "selection": {
+        "bucket": "spanning_records",
+        "bucket_index": 2,
+        "line_number": 334
+      },
+      "source": {
+        "git_blob_sha1": "a923dd4de22271446ce644ef05afba82dad1feb2",
+        "group": "long_read_caller_panel",
+        "path": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf",
+        "sha256": "95c9be5a7de923f0f19cd426a103f3887d30b5dbcba3afa83045b5b5046579b5",
+        "size": 322379
+      }
+    },
+    {
+      "alt": "<INV>",
+      "carrier_or_detection_interpretation": "NOT_ASSESSED",
+      "chromosome": "chr2",
+      "end": 240698591,
+      "filter": "PASS",
+      "filter_raw": "PASS",
+      "format": "GT:GQ:VAF:hVAF:DR:DV",
+      "genotypes": [
+        "0/0"
+      ],
+      "id": "severus_INV6311",
+      "info": "PRECISE;SVTYPE=INV;SVLEN=22282;STRANDS=--;MAPQ=60.0;CLUSTERID=severus_94;END=240698591",
+      "position": 240676309,
+      "qual": "60.0",
+      "raw_fields": [
+        "chr2",
+        "240676309",
+        "severus_INV6311",
+        "N",
+        "<INV>",
+        "60.0",
+        "PASS",
+        "PRECISE;SVTYPE=INV;SVLEN=22282;STRANDS=--;MAPQ=60.0;CLUSTERID=severus_94;END=240698591",
+        "GT:GQ:VAF:hVAF:DR:DV",
+        "0/0:217:0.19:0.19,0.00,0.00:22:5"
+      ],
+      "raw_gt_values": [
+        "0/0"
+      ],
+      "raw_record": "chr2\t240676309\tseverus_INV6311\tN\t<INV>\t60.0\tPASS\tPRECISE;SVTYPE=INV;SVLEN=22282;STRANDS=--;MAPQ=60.0;CLUSTERID=severus_94;END=240698591\tGT:GQ:VAF:hVAF:DR:DV\t0/0:217:0.19:0.19,0.00,0.00:22:5",
+      "record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=0:line=292",
+      "ref": "N",
+      "sample_columns": [
+        "0/0:217:0.19:0.19,0.00,0.00:22:5"
+      ],
+      "selection": {
+        "bucket": "spanning_records",
+        "bucket_index": 0,
+        "line_number": 292
+      },
+      "source": {
+        "git_blob_sha1": "0f35baa274c02cd6c88deff282046edd6a1d777f",
+        "group": "long_read_caller_panel",
+        "path": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf",
+        "sha256": "bda18e73e9b0801251c85e657344893d014866c556807ec8dd5389697005f823",
+        "size": 285844
+      }
+    },
+    {
+      "alt": "<INV>",
+      "carrier_or_detection_interpretation": "NOT_ASSESSED",
+      "chromosome": "chr2",
+      "end": 240693788,
+      "filter": "PASS",
+      "filter_raw": "PASS",
+      "format": "GT:GQ:VAF:hVAF:DR:DV",
+      "genotypes": [
+        "0/1"
+      ],
+      "id": "severus_INV6312",
+      "info": "PRECISE;SVTYPE=INV;SVLEN=12863;STRANDS=++;MAPQ=60.0;CLUSTERID=severus_94;END=240693788",
+      "position": 240680925,
+      "qual": "60.0",
+      "raw_fields": [
+        "chr2",
+        "240680925",
+        "severus_INV6312",
+        "N",
+        "<INV>",
+        "60.0",
+        "PASS",
+        "PRECISE;SVTYPE=INV;SVLEN=12863;STRANDS=++;MAPQ=60.0;CLUSTERID=severus_94;END=240693788",
+        "GT:GQ:VAF:hVAF:DR:DV",
+        "0/1:153:0.26:0.26,0.00,0.00:17:6"
+      ],
+      "raw_gt_values": [
+        "0/1"
+      ],
+      "raw_record": "chr2\t240680925\tseverus_INV6312\tN\t<INV>\t60.0\tPASS\tPRECISE;SVTYPE=INV;SVLEN=12863;STRANDS=++;MAPQ=60.0;CLUSTERID=severus_94;END=240693788\tGT:GQ:VAF:hVAF:DR:DV\t0/1:153:0.26:0.26,0.00,0.00:17:6",
+      "record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=1:line=293",
+      "ref": "N",
+      "sample_columns": [
+        "0/1:153:0.26:0.26,0.00,0.00:17:6"
+      ],
+      "selection": {
+        "bucket": "spanning_records",
+        "bucket_index": 1,
+        "line_number": 293
+      },
+      "source": {
+        "git_blob_sha1": "0f35baa274c02cd6c88deff282046edd6a1d777f",
+        "group": "long_read_caller_panel",
+        "path": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf",
+        "sha256": "bda18e73e9b0801251c85e657344893d014866c556807ec8dd5389697005f823",
+        "size": 285844
+      }
+    },
+    {
+      "alt": "<INV>",
+      "carrier_or_detection_interpretation": "NOT_ASSESSED",
+      "chromosome": "chr2",
+      "end": 240698570,
+      "filter": "PASS",
+      "filter_raw": "PASS",
+      "format": "GT:GQ:DR:DV",
+      "genotypes": [
+        "0/1"
+      ],
+      "id": "Sniffles2.INV.A76S1",
+      "info": "PRECISE;SVTYPE=INV;SVLEN=22240;END=240698570;SUPPORT=6;COVERAGE=24,38,27,10,21;STRAND=+;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.240",
+      "position": 240676330,
+      "qual": "60",
+      "raw_fields": [
+        "chr2",
+        "240676330",
+        "Sniffles2.INV.A76S1",
+        "G",
+        "<INV>",
+        "60",
+        "PASS",
+        "PRECISE;SVTYPE=INV;SVLEN=22240;END=240698570;SUPPORT=6;COVERAGE=24,38,27,10,21;STRAND=+;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.240",
+        "GT:GQ:DR:DV",
+        "0/1:7:19:6"
+      ],
+      "raw_gt_values": [
+        "0/1"
+      ],
+      "raw_record": "chr2\t240676330\tSniffles2.INV.A76S1\tG\t<INV>\t60\tPASS\tPRECISE;SVTYPE=INV;SVLEN=22240;END=240698570;SUPPORT=6;COVERAGE=24,38,27,10,21;STRAND=+;STDEV_LEN=0.000;STDEV_POS=0.000;VAF=0.240\tGT:GQ:DR:DV\t0/1:7:19:6",
+      "record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=0:line=310",
+      "ref": "G",
+      "sample_columns": [
+        "0/1:7:19:6"
+      ],
+      "selection": {
+        "bucket": "spanning_records",
+        "bucket_index": 0,
+        "line_number": 310
+      },
+      "source": {
+        "git_blob_sha1": "59abb64e048603ad20550c8d70c81488552a7091",
+        "group": "long_read_caller_panel",
+        "path": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf",
+        "sha256": "7cbfff9711fc64da46fb4511217c7813120be38c2a971bf91e28e32958fd21cf",
+        "size": 306672
+      }
+    },
+    {
+      "alt": "<INV>",
+      "carrier_or_detection_interpretation": "NOT_ASSESSED",
+      "chromosome": "chr2",
+      "end": 240693788,
+      "filter": "PASS",
+      "filter_raw": "PASS",
+      "format": "GT:GQ:DR:DV",
+      "genotypes": [
+        "0/1"
+      ],
+      "id": "Sniffles2.INV.A77S1",
+      "info": "PRECISE;SVTYPE=INV;SVLEN=12863;END=240693788;SUPPORT=10;COVERAGE=42,30,28,24,12;STRAND=-;STDEV_LEN=1.633;STDEV_POS=0.816;VAF=0.312",
+      "position": 240680925,
+      "qual": "60",
+      "raw_fields": [
+        "chr2",
+        "240680925",
+        "Sniffles2.INV.A77S1",
+        "A",
+        "<INV>",
+        "60",
+        "PASS",
+        "PRECISE;SVTYPE=INV;SVLEN=12863;END=240693788;SUPPORT=10;COVERAGE=42,30,28,24,12;STRAND=-;STDEV_LEN=1.633;STDEV_POS=0.816;VAF=0.312",
+        "GT:GQ:DR:DV",
+        "0/1:38:22:10"
+      ],
+      "raw_gt_values": [
+        "0/1"
+      ],
+      "raw_record": "chr2\t240680925\tSniffles2.INV.A77S1\tA\t<INV>\t60\tPASS\tPRECISE;SVTYPE=INV;SVLEN=12863;END=240693788;SUPPORT=10;COVERAGE=42,30,28,24,12;STRAND=-;STDEV_LEN=1.633;STDEV_POS=0.816;VAF=0.312\tGT:GQ:DR:DV\t0/1:38:22:10",
+      "record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=1:line=311",
+      "ref": "A",
+      "sample_columns": [
+        "0/1:38:22:10"
+      ],
+      "selection": {
+        "bucket": "spanning_records",
+        "bucket_index": 1,
+        "line_number": 311
+      },
+      "source": {
+        "git_blob_sha1": "59abb64e048603ad20550c8d70c81488552a7091",
+        "group": "long_read_caller_panel",
+        "path": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf",
+        "sha256": "7cbfff9711fc64da46fb4511217c7813120be38c2a971bf91e28e32958fd21cf",
+        "size": 306672
+      }
+    },
+    {
+      "alt": "<INV>",
+      "carrier_or_detection_interpretation": "NOT_ASSESSED",
+      "chromosome": "chr2",
+      "end": 240693790,
+      "filter": "PASS",
+      "filter_raw": "PASS",
+      "format": "GT:GQ:DR:DV",
+      "genotypes": [
+        "0/1"
+      ],
+      "id": "Sniffles2.INV.9C2S1",
+      "info": "PRECISE;SVTYPE=INV;SVLEN=12863;END=240693790;SUPPORT=6;COVERAGE=29,23,18,17,10;STRAND=-;STDEV_LEN=2.000;STDEV_POS=1.000;VAF=0.261",
+      "position": 240680927,
+      "qual": "60",
+      "raw_fields": [
+        "chr2",
+        "240680927",
+        "Sniffles2.INV.9C2S1",
+        "A",
+        "<INV>",
+        "60",
+        "PASS",
+        "PRECISE;SVTYPE=INV;SVLEN=12863;END=240693790;SUPPORT=6;COVERAGE=29,23,18,17,10;STRAND=-;STDEV_LEN=2.000;STDEV_POS=1.000;VAF=0.261",
+        "GT:GQ:DR:DV",
+        "0/1:12:17:6"
+      ],
+      "raw_gt_values": [
+        "0/1"
+      ],
+      "raw_record": "chr2\t240680927\tSniffles2.INV.9C2S1\tA\t<INV>\t60\tPASS\tPRECISE;SVTYPE=INV;SVLEN=12863;END=240693790;SUPPORT=6;COVERAGE=29,23,18,17,10;STRAND=-;STDEV_LEN=2.000;STDEV_POS=1.000;VAF=0.261\tGT:GQ:DR:DV\t0/1:12:17:6",
+      "record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_pb_vacmap.vcf#bucket=spanning_records:index=0:line=307",
+      "ref": "A",
+      "sample_columns": [
+        "0/1:12:17:6"
+      ],
+      "selection": {
+        "bucket": "spanning_records",
+        "bucket_index": 0,
+        "line_number": 307
+      },
+      "source": {
+        "git_blob_sha1": "d69c0b5487e0967cfdc1a92764b0e0c13144a2cf",
+        "group": "long_read_caller_panel",
+        "path": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_pb_vacmap.vcf",
+        "sha256": "9b687ea49294f35436c3b33da748504f5b55a65dfcd78bca56d2531d22e1c604",
+        "size": 297101
+      }
+    }
+  ],
+  "carrier_recovery_claimed": false,
+  "case": {
+    "chromosome": "chr2",
+    "original_coordinate_build_status": "UNKNOWN_PENDING_INDEPENDENT_HEADER_AND_RECORD_REVIEW",
+    "original_coordinate_convention_status": "UNKNOWN; coordinates are used verbatim without conversion",
+    "published_coordinate_label": "GRCh38/hg38",
+    "reference": {
+      "base_counts_casefolded": {
+        "A": 5496,
+        "C": 8967,
+        "G": 8824,
+        "T": 5713
+      },
+      "case_counts": {
+        "lowercase_bases": 6400,
+        "uppercase_bases": 22600
+      },
+      "chromosome": "chr2",
+      "dna_sha256_casefolded": "ecb39b7eb34964b213989ea986ffd8f67475c9ccff9910f0ac22d065621e4edb",
+      "end": 240704000,
+      "genome": "hg38",
+      "json_sha256": "d28acc720fd15ca939a1e9f5d885ed3da0970ff4edbfdf93bea081ed71036656",
+      "length": 29000,
+      "original_caller_fasta_identity": "UNKNOWN",
+      "start": 240675000
+    },
+    "reference_window": {
+      "chromosome": "chr2",
+      "end": 240704000,
+      "genome": "hg38",
+      "length": 29000,
+      "start": 240675000
+    },
+    "truth_end": 240688980,
+    "truth_length_bp": 3205,
+    "truth_position": 240685775
+  },
+  "comparison_count": 36,
+  "comparisons": [
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "72a352917f5f83d9e91453f69fdfe396f6c32a05efeb648f9e05ce9806eba415",
+      "call_interval_zero_based_half_open": [
+        240685789,
+        240702018
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_minimap2.vcf#bucket=nearby_records:index=0:line=73",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_minimap2.vcf#bucket=nearby_records:index=0:line=73::truth_A_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 12055,
+      "mode_pair_key": "truth_A_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "1f4a3fec7760394a06d6cd55d856fd044215f54d67247a953beff82e673a7d01",
+      "call_interval_zero_based_half_open": [
+        240685788,
+        240702017
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_minimap2.vcf#bucket=nearby_records:index=0:line=73",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_minimap2.vcf#bucket=nearby_records:index=0:line=73::truth_A_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 12108,
+      "mode_pair_key": "truth_A_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "72a352917f5f83d9e91453f69fdfe396f6c32a05efeb648f9e05ce9806eba415",
+      "call_interval_zero_based_half_open": [
+        240685789,
+        240702018
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_minimap2.vcf#bucket=nearby_records:index=0:line=73",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_minimap2.vcf#bucket=nearby_records:index=0:line=73::truth_B_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 12041,
+      "mode_pair_key": "truth_B_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "1f4a3fec7760394a06d6cd55d856fd044215f54d67247a953beff82e673a7d01",
+      "call_interval_zero_based_half_open": [
+        240685788,
+        240702017
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_minimap2.vcf#bucket=nearby_records:index=0:line=73",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_minimap2.vcf#bucket=nearby_records:index=0:line=73::truth_B_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 12137,
+      "mode_pair_key": "truth_B_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "eeeecb367d3c75532fe632b3c355fad62797aa1a19b93adab1c48943e96d4a3b",
+      "call_interval_zero_based_half_open": [
+        240676267,
+        240698636
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=0:line=332",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=0:line=332::truth_A_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 16301,
+      "mode_pair_key": "truth_A_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "1ce0ab8e58a52ca3e7e73248d73934f7fd42e9f39e7bb171f876c72e5bbdefc0",
+      "call_interval_zero_based_half_open": [
+        240676266,
+        240698635
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=0:line=332",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=0:line=332::truth_A_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 16088,
+      "mode_pair_key": "truth_A_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "eeeecb367d3c75532fe632b3c355fad62797aa1a19b93adab1c48943e96d4a3b",
+      "call_interval_zero_based_half_open": [
+        240676267,
+        240698636
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=0:line=332",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=0:line=332::truth_B_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 16238,
+      "mode_pair_key": "truth_B_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "1ce0ab8e58a52ca3e7e73248d73934f7fd42e9f39e7bb171f876c72e5bbdefc0",
+      "call_interval_zero_based_half_open": [
+        240676266,
+        240698635
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=0:line=332",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=0:line=332::truth_B_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 16168,
+      "mode_pair_key": "truth_B_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "3a04e4e1e9720468ff84babe8f434d131046fead1f9bbbed321ebde4e3b79c12",
+      "call_interval_zero_based_half_open": [
+        240676330,
+        240698570
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=1:line=333",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=1:line=333::truth_A_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9473,
+      "mode_pair_key": "truth_A_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "5cdfdde6dfc03910802541073842490d8d42f20036808e8b18e5901f495f2c39",
+      "call_interval_zero_based_half_open": [
+        240676329,
+        240698569
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=1:line=333",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=1:line=333::truth_A_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 15970,
+      "mode_pair_key": "truth_A_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "3a04e4e1e9720468ff84babe8f434d131046fead1f9bbbed321ebde4e3b79c12",
+      "call_interval_zero_based_half_open": [
+        240676330,
+        240698570
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=1:line=333",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=1:line=333::truth_B_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9503,
+      "mode_pair_key": "truth_B_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "5cdfdde6dfc03910802541073842490d8d42f20036808e8b18e5901f495f2c39",
+      "call_interval_zero_based_half_open": [
+        240676329,
+        240698569
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=1:line=333",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=1:line=333::truth_B_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 15976,
+      "mode_pair_key": "truth_B_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "5b3a123840f64611af41559f02888fdffa7b07e3ebf96411c21fdee3fea85717",
+      "call_interval_zero_based_half_open": [
+        240680925,
+        240693788
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=2:line=334",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=2:line=334::truth_A_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9355,
+      "mode_pair_key": "truth_A_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "785d59e39444f65c6fcdcc072403cebb5003cf363034a0d183cec26b3602b923",
+      "call_interval_zero_based_half_open": [
+        240680924,
+        240693787
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=2:line=334",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=2:line=334::truth_A_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9331,
+      "mode_pair_key": "truth_A_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "5b3a123840f64611af41559f02888fdffa7b07e3ebf96411c21fdee3fea85717",
+      "call_interval_zero_based_half_open": [
+        240680925,
+        240693788
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=2:line=334",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=2:line=334::truth_B_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9332,
+      "mode_pair_key": "truth_B_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "785d59e39444f65c6fcdcc072403cebb5003cf363034a0d183cec26b3602b923",
+      "call_interval_zero_based_half_open": [
+        240680924,
+        240693787
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=2:line=334",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_ont_vacmap.vcf#bucket=spanning_records:index=2:line=334::truth_B_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9360,
+      "mode_pair_key": "truth_B_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "3a04e4e1e9720468ff84babe8f434d131046fead1f9bbbed321ebde4e3b79c12",
+      "call_interval_zero_based_half_open": [
+        240676309,
+        240698591
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=0:line=292",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=0:line=292::truth_A_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9473,
+      "mode_pair_key": "truth_A_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "5f6365e0554d52bf2e3ef4e8e26cfaea3f1f2fed8d1773f4d0c099c96b17b34c",
+      "call_interval_zero_based_half_open": [
+        240676308,
+        240698590
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=0:line=292",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=0:line=292::truth_A_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 15998,
+      "mode_pair_key": "truth_A_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "3a04e4e1e9720468ff84babe8f434d131046fead1f9bbbed321ebde4e3b79c12",
+      "call_interval_zero_based_half_open": [
+        240676309,
+        240698591
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=0:line=292",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=0:line=292::truth_B_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9503,
+      "mode_pair_key": "truth_B_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "5f6365e0554d52bf2e3ef4e8e26cfaea3f1f2fed8d1773f4d0c099c96b17b34c",
+      "call_interval_zero_based_half_open": [
+        240676308,
+        240698590
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=0:line=292",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=0:line=292::truth_B_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 16004,
+      "mode_pair_key": "truth_B_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "5b3a123840f64611af41559f02888fdffa7b07e3ebf96411c21fdee3fea85717",
+      "call_interval_zero_based_half_open": [
+        240680925,
+        240693788
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=1:line=293",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=1:line=293::truth_A_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9355,
+      "mode_pair_key": "truth_A_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "785d59e39444f65c6fcdcc072403cebb5003cf363034a0d183cec26b3602b923",
+      "call_interval_zero_based_half_open": [
+        240680924,
+        240693787
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=1:line=293",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=1:line=293::truth_A_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9331,
+      "mode_pair_key": "truth_A_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "5b3a123840f64611af41559f02888fdffa7b07e3ebf96411c21fdee3fea85717",
+      "call_interval_zero_based_half_open": [
+        240680925,
+        240693788
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=1:line=293",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=1:line=293::truth_B_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9332,
+      "mode_pair_key": "truth_B_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "785d59e39444f65c6fcdcc072403cebb5003cf363034a0d183cec26b3602b923",
+      "call_interval_zero_based_half_open": [
+        240680924,
+        240693787
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=1:line=293",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_severus_pb_vacmap.vcf#bucket=spanning_records:index=1:line=293::truth_B_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9360,
+      "mode_pair_key": "truth_B_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "3a04e4e1e9720468ff84babe8f434d131046fead1f9bbbed321ebde4e3b79c12",
+      "call_interval_zero_based_half_open": [
+        240676330,
+        240698570
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=0:line=310",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=0:line=310::truth_A_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9473,
+      "mode_pair_key": "truth_A_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "5cdfdde6dfc03910802541073842490d8d42f20036808e8b18e5901f495f2c39",
+      "call_interval_zero_based_half_open": [
+        240676329,
+        240698569
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=0:line=310",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=0:line=310::truth_A_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 15970,
+      "mode_pair_key": "truth_A_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "3a04e4e1e9720468ff84babe8f434d131046fead1f9bbbed321ebde4e3b79c12",
+      "call_interval_zero_based_half_open": [
+        240676330,
+        240698570
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=0:line=310",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=0:line=310::truth_B_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9503,
+      "mode_pair_key": "truth_B_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "5cdfdde6dfc03910802541073842490d8d42f20036808e8b18e5901f495f2c39",
+      "call_interval_zero_based_half_open": [
+        240676329,
+        240698569
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=0:line=310",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=0:line=310::truth_B_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 15976,
+      "mode_pair_key": "truth_B_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "5b3a123840f64611af41559f02888fdffa7b07e3ebf96411c21fdee3fea85717",
+      "call_interval_zero_based_half_open": [
+        240680925,
+        240693788
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=1:line=311",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=1:line=311::truth_A_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9355,
+      "mode_pair_key": "truth_A_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "785d59e39444f65c6fcdcc072403cebb5003cf363034a0d183cec26b3602b923",
+      "call_interval_zero_based_half_open": [
+        240680924,
+        240693787
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=1:line=311",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=1:line=311::truth_A_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9331,
+      "mode_pair_key": "truth_A_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "5b3a123840f64611af41559f02888fdffa7b07e3ebf96411c21fdee3fea85717",
+      "call_interval_zero_based_half_open": [
+        240680925,
+        240693788
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=1:line=311",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=1:line=311::truth_B_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9332,
+      "mode_pair_key": "truth_B_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "785d59e39444f65c6fcdcc072403cebb5003cf363034a0d183cec26b3602b923",
+      "call_interval_zero_based_half_open": [
+        240680924,
+        240693787
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=1:line=311",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_ont_vacmap.vcf#bucket=spanning_records:index=1:line=311::truth_B_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9360,
+      "mode_pair_key": "truth_B_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "b17c2680c7eb77e73eb1969c3db81f6d9315017bfcd4a3f4990d31a88695827f",
+      "call_interval_zero_based_half_open": [
+        240680927,
+        240693790
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_pb_vacmap.vcf#bucket=spanning_records:index=0:line=307",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_pb_vacmap.vcf#bucket=spanning_records:index=0:line=307::truth_A_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9373,
+      "mode_pair_key": "truth_A_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "fde8d48e38fa24ed17a4cf731492ba42554a0f4908a87669746b68d1909bf4fa",
+      "call_interval_zero_based_half_open": [
+        240680926,
+        240693789
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_pb_vacmap.vcf#bucket=spanning_records:index=0:line=307",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_pb_vacmap.vcf#bucket=spanning_records:index=0:line=307::truth_A_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9276,
+      "mode_pair_key": "truth_A_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "e7831a41283628b8bedae57fa44fa372ac15c78041a6c5f0a216b6b5d29aab20",
+      "truth_interval_zero_based_half_open": [
+        240685775,
+        240688980
+      ],
+      "truth_mode": "A"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "b17c2680c7eb77e73eb1969c3db81f6d9315017bfcd4a3f4990d31a88695827f",
+      "call_interval_zero_based_half_open": [
+        240680927,
+        240693790
+      ],
+      "call_mode": "A",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_pb_vacmap.vcf#bucket=spanning_records:index=0:line=307",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_pb_vacmap.vcf#bucket=spanning_records:index=0:line=307::truth_B_call_A",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9392,
+      "mode_pair_key": "truth_B_call_A",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    },
+    {
+      "call_alternate_equals_reference": false,
+      "call_alternate_sha256": "fde8d48e38fa24ed17a4cf731492ba42554a0f4908a87669746b68d1909bf4fa",
+      "call_interval_zero_based_half_open": [
+        240680926,
+        240693789
+      ],
+      "call_mode": "B",
+      "call_record_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_pb_vacmap.vcf#bucket=spanning_records:index=0:line=307",
+      "comparison_key": "data_zenodo/inv_call_5samples/30x/hg002/inv_sniffles2_pb_vacmap.vcf#bucket=spanning_records:index=0:line=307::truth_B_call_B",
+      "conditional_claim_limit": "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "equivalence_claim_eligible": false,
+      "exact_string_equal": false,
+      "mismatched_positions": 9286,
+      "mode_pair_key": "truth_B_call_B",
+      "truth_alternate_equals_reference": false,
+      "truth_alternate_sha256": "9260c201bdd53dc7ce179da78c0ca9cf5df22d27ee8ceb0884aa8ed054b4408a",
+      "truth_interval_zero_based_half_open": [
+        240685774,
+        240688979
+      ],
+      "truth_mode": "B"
+    }
+  ],
+  "diagnostic": "conditional_pure_inversion_path_equivalence",
+  "inputs": {
+    "manifest_json_sha256": "cf2afb766f55035dc03c8cb095599eda35ba4d85c4713044b41ea64356312ca7",
+    "reference_json_sha256": "d28acc720fd15ca939a1e9f5d885ed3da0970ff4edbfdf93bea081ed71036656",
+    "whole_source_set_sha256": "8fd16c647109c46f1fca7728bce5a31e40c4d5d40b6a04ab7bc160845527a35d"
+  },
+  "model": {
+    "alternate_construction": "replace interval in the same full 29,000-base reference context with its reverse complement",
+    "claim_limits": [
+      "An exact match applies only to the declared pure-INV model, the stated UCSC hg38 reference window, and the tested coordinate-mode pair.",
+      "It does not establish the original caller FASTA identity, haplotype sequence or phase, dosage, carrier genotype, copy state, or caller-input identity.",
+      "These nine declarations are not independent biological events, and this fixed case is development data. A GT value, including 0/0, is retained as metadata and is not a carrier or detection conclusion.",
+      "Symbolic INV may encode partial-junction evidence; reverse-complement substitution is a conditional full-context model, not an observed allele.",
+      "If every eligible comparison differs, reject this exact normalization explanation only; do not infer that all original structures were missed or that a new architecture will rescue them.",
+      "Any major positive conclusion needs independent review; later evidence should inspect qualified molecules, alignments, and candidate evidence."
+    ],
+    "coordinate_modes": {
+      "A": "[POS, END)",
+      "B": "[POS-1, END-1)"
+    },
+    "mode_pair_keys": [
+      "truth_A_call_A",
+      "truth_A_call_B",
+      "truth_B_call_A",
+      "truth_B_call_B"
+    ]
+  },
+  "provenance_pin": {
+    "chr2_declared_length_bp_all_sources": 242193529,
+    "commit": "ee77a2f336bf055e5234d7565389aafda56b85cd",
+    "original_caller_fasta_identity": "UNKNOWN",
+    "repository": "jamesc99/INV-Benchmark",
+    "source_count": 25,
+    "source_group_counts": {
+      "long_read_caller_panel": 20,
+      "supplemental_short_read_controls": 2,
+      "truth_set": 3
+    },
+    "tree_entry_count": 603,
+    "tree_url": "https://api.github.com/repos/jamesc99/INV-Benchmark/git/trees/ee77a2f336bf055e5234d7565389aafda56b85cd?recursive=1"
+  },
+  "schema_version": 1,
+  "truth": {
+    "alt": "<INV>",
+    "chromosome": "chr2",
+    "end": 240688980,
+    "filter": "PRECISE",
+    "format": "GT",
+    "genotypes": [
+      "0/1"
+    ],
+    "id": ".",
+    "info": "SVTYPE=INV;END=240688980;LABEL=INV;CIPOS=-14,-14;CIEND=14,14;SOURCE=MATERNAL;ORIGINAL_LOCUS=chr2_240685789_240688966;SVLEN=3205;SUPMQ_START_MAT=60,60;SUPSTRAND_START_MAT=-,-;SUPMQ_END_MAT=60,60;SUPSTRAND_END_MAT=+,+;VALID_UNIQ_CLUSTER_START_MAT=1;VALID_UNIQ_CLUSTER_END_MAT=1;VALID_CLUSTER_PAIR=1;MERGED_HAP=PRECISE_CONF;CIPOS_MAT=-14,-14;CIEND_MAT=14,14;Repeat_ge5Kb=rp2sides;Repeat_ge10Kb=rp2sides",
+    "length_bp": 3205,
+    "merged_duplicate": {
+      "raw_record_sha256": "f8d05a9116c412346b22af44d0b1971e4bd5787d9e7d66159ad5e540b8b30bf9",
+      "record_key": "data_zenodo/truvari_ref_vcf/HG002/HG002_T2Tv1.1_asm_ref_2aligners.merged.vcf.gz#bucket=nearby_records:index=0:line=89",
+      "source": {
+        "git_blob_sha1": "cc4891c00d17fe374bba556f065c1d2d2b011b7e",
+        "group": "truth_set",
+        "path": "data_zenodo/truvari_ref_vcf/HG002/HG002_T2Tv1.1_asm_ref_2aligners.merged.vcf.gz",
+        "sha256": "2c2d876e8f79044f76e7807e18a0f89bf0f1f405a8ebc53fa12191937d6be177",
+        "size": 10775
+      }
+    },
+    "merged_duplicate_verified": true,
+    "position": 240685775,
+    "qual": ".",
+    "raw_gt_values": [
+      "0/1"
+    ],
+    "raw_record": "chr2\t240685775\t.\tN\t<INV>\t.\tPRECISE\tSVTYPE=INV;END=240688980;LABEL=INV;CIPOS=-14,-14;CIEND=14,14;SOURCE=MATERNAL;ORIGINAL_LOCUS=chr2_240685789_240688966;SVLEN=3205;SUPMQ_START_MAT=60,60;SUPSTRAND_START_MAT=-,-;SUPMQ_END_MAT=60,60;SUPSTRAND_END_MAT=+,+;VALID_UNIQ_CLUSTER_START_MAT=1;VALID_UNIQ_CLUSTER_END_MAT=1;VALID_CLUSTER_PAIR=1;MERGED_HAP=PRECISE_CONF;CIPOS_MAT=-14,-14;CIEND_MAT=14,14;Repeat_ge5Kb=rp2sides;Repeat_ge10Kb=rp2sides\tGT\t0/1",
+    "record_key": "data_zenodo/truvari_ref_vcf/HG002/HG002_T2Tv1.1_asm_ref_2aligners.merged.vcf_Tier1.vcf.gz#bucket=nearby_records:index=0:line=79",
+    "ref": "N",
+    "sample_columns": [
+      "0/1"
+    ],
+    "source": {
+      "git_blob_sha1": "553296fba9df7faace9d04a64f658ff6b03d2ee5",
+      "group": "truth_set",
+      "path": "data_zenodo/truvari_ref_vcf/HG002/HG002_T2Tv1.1_asm_ref_2aligners.merged.vcf_Tier1.vcf.gz",
+      "sha256": "f4010131e14799c59f4188e26b1f6ad2f5ee99f0fba497518af7b8e5b66afcec",
+      "size": 5708
+    }
+  }
+}
