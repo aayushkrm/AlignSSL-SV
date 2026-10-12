@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "checked_at_utc": "2026-10-12 18:41 UTC",
+  "scope": "WHOLE_EXISTING_LOCAL_ARCHIVE_AND_FIXED_MEMBER_BINDING",
+  "archive_path": "/Users/akm/aayushkrm-AlignSSL/data/source_archives/svpg-18456502-SV_callsets.zip",
+  "archive_bytes": 2879666672,
+  "archive_md5": "a6ea80f613130c318d36632073c6de97",
+  "archive_sha256": "fff2f1d2978234a1357c6a16ce5ed9fabf17925955247ae2f9ee2ee8564eb7ca",
+  "size_and_mtime_ns_unchanged_during_read": true,
+  "md5_matches_published_metadata": true,
+  "sha256_matches_october_4_execution_ledger": true,
+  "member_manifest": "results/svpg_named_case_20261013/sources.json",
+  "member_manifest_sha256": "a564e1591c51a49ebb25ab966792003e05d8f4470c0eb85282d36b1ffa8ea95b",
+  "all_11_exact_members_match_manifest_size_sha256_crc32": true,
+  "zipfile_full_member_crc_check_passed": true,
+  "all_other_member_crcs_checked": false,
+  "new_whole_archive_download": false,
+  "historical_sources_json_changed": false,
+  "biological_allele_validation": "NOT_ASSESSED"
+}

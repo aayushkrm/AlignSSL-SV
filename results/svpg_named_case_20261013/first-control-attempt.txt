@@ -1,0 +1,19 @@
+Offline software check before correction, 2026-10-13 Asia/Tomsk
+Worker requested configuration: GPT-6 Luna/max; backend not independently attested.
+Command: /Users/akm/aayushkrm-AlignSSL/.venv/bin/python -B -m pytest -q -p no:cacheprovider tests/test_svpg_case_source_contracts.py
+Result reported by worker: 15 passed, 2 failed.
+
+Failure 1: test_range_reader_does_not_exceed_cumulative_cap_on_overlong_body
+A three-byte response to a two-byte request was read and charged as three bytes
+before rejection, when the cumulative body-byte cap was two. The oversize probe
+needed its own reserved byte within the cap. Corrected refusal occurs before HTTP
+when no probe budget remains; that test now checks pre-read cap rejection.
+
+Failure 2: test_fetch_accepts_member_within_8_mib_even_if_above_single_range_cap
+A permitted 4 MiB+1-byte stored member was passed to archive.read as one read,
+which exceeded the four-MiB single-range limit. Corrected member acquisition uses
+ZipExtFile one-MiB reads to full EOF, preserving member CRC/length validation.
+
+This is a transcription of the worker's failure report, not a raw captured pytest log.
+Actual eleven source members were all below these limits, with passing hashes/CRC.
+Historical source/index manifests are unchanged; corrections do not re-fetch data.

@@ -1,0 +1,19 @@
+Transcriptions of two source-inventory attempts. Neither emitted inventory.json.
+
+First ad-hoc strict numeric probe:
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ValueError: could not convert string to float: 'NA'
+Exit code: 1.
+
+First saved-script attempt, before explicit missing-flag handling:
+Traceback (most recent call last):
+  File "/Users/akm/aayushkrm-AlignSSL/repo/analysis/prime_deletion_table_inventory.py", line 105, in <module>
+    main()
+  File "/Users/akm/aayushkrm-AlignSSL/repo/analysis/prime_deletion_table_inventory.py", line 94, in main
+    result = summarize(payload.decode("utf-8-sig"))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akm/aayushkrm-AlignSSL/repo/analysis/prime_deletion_table_inventory.py", line 51, in summarize
+    raise ValueError(f"Unexpected flag: {name}")
+ValueError: Unexpected flag: dropout
+Exit code: 1.

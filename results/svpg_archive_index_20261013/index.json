@@ -1,0 +1,1545 @@
+{
+  "schema": 1,
+  "scope": "ZIP_DIRECTORY_ONLY",
+  "url": "https://zenodo.org/api/records/18456502/files/SV_callsets.zip/content",
+  "declared_archive_bytes": 2879666672,
+  "transferred_range_bytes": 23727,
+  "last_modified": null,
+  "range_receipts": [
+    {
+      "start": 2879666650,
+      "end": 2879666671,
+      "bytes": 22,
+      "sha256": "33c5236b14d64dc36acd79d84860d993c25739d96ff3189d5bd9357563c24efb"
+    },
+    {
+      "start": 2879666630,
+      "end": 2879666649,
+      "bytes": 20,
+      "sha256": "04a50485e1acf50efbc0f83bdd09d612772518c17e2140f0f54437a4c8b9fa01"
+    },
+    {
+      "start": 2879642965,
+      "end": 2879666649,
+      "bytes": 23685,
+      "sha256": "d6e3d43977130f3fa6fea27b42f9a38198d70e87b73b7905dd16f0d10623a98f"
+    }
+  ],
+  "file_entries": 189,
+  "entries": [
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hg003_hifi.vcf",
+      "uncompressed_bytes": 30392024,
+      "compressed_bytes": 6137549,
+      "local_header_offset": 261,
+      "compression_method": 8,
+      "crc32": "4657e594"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hg003_ont.vcf",
+      "uncompressed_bytes": 29347919,
+      "compressed_bytes": 6896371,
+      "local_header_offset": 6137937,
+      "compression_method": 8,
+      "crc32": "09537cc1"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hg004_hifi.vcf",
+      "uncompressed_bytes": 28151117,
+      "compressed_bytes": 5650522,
+      "local_header_offset": 13034434,
+      "compression_method": 8,
+      "crc32": "c73af390"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hg004_ont.vcf",
+      "uncompressed_bytes": 29912204,
+      "compressed_bytes": 7084932,
+      "local_header_offset": 18685083,
+      "compression_method": 8,
+      "crc32": "1af3e1f1"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hg005_hifi.vcf",
+      "uncompressed_bytes": 26654907,
+      "compressed_bytes": 5537398,
+      "local_header_offset": 25770141,
+      "compression_method": 8,
+      "crc32": "6e8a7d46"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hg005_ont.vcf",
+      "uncompressed_bytes": 24950511,
+      "compressed_bytes": 5932689,
+      "local_header_offset": 31307666,
+      "compression_method": 8,
+      "crc32": "853c7ac8"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hg005_replicate1.vcf",
+      "uncompressed_bytes": 20822408,
+      "compressed_bytes": 4207357,
+      "local_header_offset": 37240481,
+      "compression_method": 8,
+      "crc32": "73e7ba10"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hg005_replicate2.vcf",
+      "uncompressed_bytes": 22058856,
+      "compressed_bytes": 4411189,
+      "local_header_offset": 41447971,
+      "compression_method": 8,
+      "crc32": "140c104a"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hg006_hifi.vcf",
+      "uncompressed_bytes": 25493237,
+      "compressed_bytes": 5322386,
+      "local_header_offset": 45859293,
+      "compression_method": 8,
+      "crc32": "99727507"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hg006_ont.vcf",
+      "uncompressed_bytes": 23828482,
+      "compressed_bytes": 5609963,
+      "local_header_offset": 51181806,
+      "compression_method": 8,
+      "crc32": "c6400062"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hg007_hifi.vcf",
+      "uncompressed_bytes": 26785677,
+      "compressed_bytes": 5595167,
+      "local_header_offset": 56791895,
+      "compression_method": 8,
+      "crc32": "1e5eade8"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hg007_ont.vcf",
+      "uncompressed_bytes": 22561936,
+      "compressed_bytes": 5349767,
+      "local_header_offset": 62387189,
+      "compression_method": 8,
+      "crc32": "1ed1168a"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hifi.vcf",
+      "uncompressed_bytes": 30029207,
+      "compressed_bytes": 6118453,
+      "local_header_offset": 67737082,
+      "compression_method": 8,
+      "crc32": "aa90b5d1"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hifi_10x.vcf",
+      "uncompressed_bytes": 25508850,
+      "compressed_bytes": 5010755,
+      "local_header_offset": 73855656,
+      "compression_method": 8,
+      "crc32": "3a314eb2"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hifi_20x.vcf",
+      "uncompressed_bytes": 27413081,
+      "compressed_bytes": 5508465,
+      "local_header_offset": 78866536,
+      "compression_method": 8,
+      "crc32": "7082968d"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/hifi_5x.vcf",
+      "uncompressed_bytes": 33270736,
+      "compressed_bytes": 5968587,
+      "local_header_offset": 84375126,
+      "compression_method": 8,
+      "crc32": "46ef5653"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/ont.vcf",
+      "uncompressed_bytes": 26044070,
+      "compressed_bytes": 6217550,
+      "local_header_offset": 90343837,
+      "compression_method": 8,
+      "crc32": "7837f6c6"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/ont_10x.vcf",
+      "uncompressed_bytes": 20328045,
+      "compressed_bytes": 4662687,
+      "local_header_offset": 96561507,
+      "compression_method": 8,
+      "crc32": "d482b3e5"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/ont_10x_repicate.vcf",
+      "uncompressed_bytes": 20120202,
+      "compressed_bytes": 4600014,
+      "local_header_offset": 101224318,
+      "compression_method": 8,
+      "crc32": "5f9c0cb3"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/ont_20x.vcf",
+      "uncompressed_bytes": 24436394,
+      "compressed_bytes": 5776637,
+      "local_header_offset": 105824465,
+      "compression_method": 8,
+      "crc32": "37cdf546"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/ont_20x_replicate.vcf",
+      "uncompressed_bytes": 24392589,
+      "compressed_bytes": 5744541,
+      "local_header_offset": 111601226,
+      "compression_method": 8,
+      "crc32": "f1f119bf"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/ont_5x.vcf",
+      "uncompressed_bytes": 18379639,
+      "compressed_bytes": 4006527,
+      "local_header_offset": 117345901,
+      "compression_method": 8,
+      "crc32": "b32b2301"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/cutesv/ont_5x_replicate.vcf",
+      "uncompressed_bytes": 18597704,
+      "compressed_bytes": 4095396,
+      "local_header_offset": 121352551,
+      "compression_method": 8,
+      "crc32": "c5daf4ce"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hg003_hifi.vcf",
+      "uncompressed_bytes": 1044519166,
+      "compressed_bytes": 227262141,
+      "local_header_offset": 125448178,
+      "compression_method": 8,
+      "crc32": "503472ac"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hg003_ont.vcf",
+      "uncompressed_bytes": 210738848,
+      "compressed_bytes": 48440111,
+      "local_header_offset": 352710447,
+      "compression_method": 8,
+      "crc32": "612f4f90"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hg004_hifi.vcf",
+      "uncompressed_bytes": 989959916,
+      "compressed_bytes": 216757791,
+      "local_header_offset": 401150685,
+      "compression_method": 8,
+      "crc32": "9f6ac586"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hg004_ont.vcf",
+      "uncompressed_bytes": 228858417,
+      "compressed_bytes": 51589263,
+      "local_header_offset": 617908604,
+      "compression_method": 8,
+      "crc32": "2aba0abf"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hg005_hifi.vcf",
+      "uncompressed_bytes": 339956037,
+      "compressed_bytes": 73774944,
+      "local_header_offset": 669497994,
+      "compression_method": 8,
+      "crc32": "aad10551"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hg005_ont.vcf",
+      "uncompressed_bytes": 213808515,
+      "compressed_bytes": 45671999,
+      "local_header_offset": 743273066,
+      "compression_method": 8,
+      "crc32": "52836206"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hg005_replicate1.vcf",
+      "uncompressed_bytes": 273920661,
+      "compressed_bytes": 58069436,
+      "local_header_offset": 788945192,
+      "compression_method": 8,
+      "crc32": "3c58bbe8"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hg005_replicate2.vcf",
+      "uncompressed_bytes": 220743554,
+      "compressed_bytes": 49416007,
+      "local_header_offset": 847014762,
+      "compression_method": 8,
+      "crc32": "817de10c"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hg006_hifi.vcf",
+      "uncompressed_bytes": 325738294,
+      "compressed_bytes": 73656926,
+      "local_header_offset": 896430903,
+      "compression_method": 8,
+      "crc32": "59644a2f"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hg006_ont.vcf",
+      "uncompressed_bytes": 240695334,
+      "compressed_bytes": 55449045,
+      "local_header_offset": 970087957,
+      "compression_method": 8,
+      "crc32": "45546e93"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hg007_hifi.vcf",
+      "uncompressed_bytes": 354319354,
+      "compressed_bytes": 76901245,
+      "local_header_offset": 1025537129,
+      "compression_method": 8,
+      "crc32": "e9e2e04d"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hg007_ont.vcf",
+      "uncompressed_bytes": 169656900,
+      "compressed_bytes": 39342872,
+      "local_header_offset": 1102438502,
+      "compression_method": 8,
+      "crc32": "34251a7f"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hifi.vcf",
+      "uncompressed_bytes": 935962599,
+      "compressed_bytes": 204459727,
+      "local_header_offset": 1141781501,
+      "compression_method": 8,
+      "crc32": "de4ce2da"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hifi_10x.vcf",
+      "uncompressed_bytes": 1078767267,
+      "compressed_bytes": 235324850,
+      "local_header_offset": 1346241350,
+      "compression_method": 8,
+      "crc32": "c0868e8b"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hifi_20x.vcf",
+      "uncompressed_bytes": 912635533,
+      "compressed_bytes": 197616442,
+      "local_header_offset": 1581566326,
+      "compression_method": 8,
+      "crc32": "fd154223"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/hifi_5x.vcf",
+      "uncompressed_bytes": 1342707003,
+      "compressed_bytes": 298641632,
+      "local_header_offset": 1779182894,
+      "compression_method": 8,
+      "crc32": "350d5a23"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/ont.vcf",
+      "uncompressed_bytes": 165954239,
+      "compressed_bytes": 38345922,
+      "local_header_offset": 2077824651,
+      "compression_method": 8,
+      "crc32": "e7389683"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/ont_10x.vcf",
+      "uncompressed_bytes": 238958546,
+      "compressed_bytes": 54383182,
+      "local_header_offset": 2116170694,
+      "compression_method": 8,
+      "crc32": "a486336b"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/ont_10x_replicate.vcf",
+      "uncompressed_bytes": 293231240,
+      "compressed_bytes": 59817195,
+      "local_header_offset": 2170554001,
+      "compression_method": 8,
+      "crc32": "9a6ee58a"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/ont_20x.vcf",
+      "uncompressed_bytes": 229088725,
+      "compressed_bytes": 50214893,
+      "local_header_offset": 2230371331,
+      "compression_method": 8,
+      "crc32": "46ac49cd"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/ont_20x_replicate.vcf",
+      "uncompressed_bytes": 269664587,
+      "compressed_bytes": 59164934,
+      "local_header_offset": 2280586349,
+      "compression_method": 8,
+      "crc32": "1aeb75e2"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/ont_5x.vcf",
+      "uncompressed_bytes": 343564273,
+      "compressed_bytes": 78716425,
+      "local_header_offset": 2339751418,
+      "compression_method": 8,
+      "crc32": "9d8e98d2"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/debreak/ont_5x_replicate.vcf",
+      "uncompressed_bytes": 329138517,
+      "compressed_bytes": 70890087,
+      "local_header_offset": 2418467967,
+      "compression_method": 8,
+      "crc32": "df05fbf3"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sawfish/hg003.vcf",
+      "uncompressed_bytes": 24758855,
+      "compressed_bytes": 4961539,
+      "local_header_offset": 2489358286,
+      "compression_method": 8,
+      "crc32": "fae837e6"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sawfish/hg004.vcf",
+      "uncompressed_bytes": 24129965,
+      "compressed_bytes": 4929734,
+      "local_header_offset": 2494319948,
+      "compression_method": 8,
+      "crc32": "d9f67212"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sawfish/hg005.vcf",
+      "uncompressed_bytes": 25206303,
+      "compressed_bytes": 5069648,
+      "local_header_offset": 2499249805,
+      "compression_method": 8,
+      "crc32": "5ce9b0ca"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sawfish/hg005_replicate1.vcf",
+      "uncompressed_bytes": 17766744,
+      "compressed_bytes": 3635712,
+      "local_header_offset": 2504319576,
+      "compression_method": 8,
+      "crc32": "fc8b9f0a"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sawfish/hg005_replicate2.vcf",
+      "uncompressed_bytes": 18800687,
+      "compressed_bytes": 3770519,
+      "local_header_offset": 2507955422,
+      "compression_method": 8,
+      "crc32": "71b8282c"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sawfish/hg006.vcf",
+      "uncompressed_bytes": 24483163,
+      "compressed_bytes": 4971180,
+      "local_header_offset": 2511726075,
+      "compression_method": 8,
+      "crc32": "5fa2d51f"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sawfish/hg007.vcf",
+      "uncompressed_bytes": 25349050,
+      "compressed_bytes": 5135662,
+      "local_header_offset": 2516697378,
+      "compression_method": 8,
+      "crc32": "5a215c8d"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sawfish/hifi.vcf",
+      "uncompressed_bytes": 25716015,
+      "compressed_bytes": 5155442,
+      "local_header_offset": 2521833163,
+      "compression_method": 8,
+      "crc32": "f900b7a6"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sawfish/hifi_10x.vcf",
+      "uncompressed_bytes": 19453509,
+      "compressed_bytes": 4018685,
+      "local_header_offset": 2526988727,
+      "compression_method": 8,
+      "crc32": "d555944a"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sawfish/hifi_20x.vcf",
+      "uncompressed_bytes": 22816545,
+      "compressed_bytes": 4677308,
+      "local_header_offset": 2531007538,
+      "compression_method": 8,
+      "crc32": "a4fd0d24"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sawfish/hifi_5x.vcf",
+      "uncompressed_bytes": 13658743,
+      "compressed_bytes": 2869783,
+      "local_header_offset": 2535684972,
+      "compression_method": 8,
+      "crc32": "9ec19cfa"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hg003_hifi.vcf",
+      "uncompressed_bytes": 14558272,
+      "compressed_bytes": 2698318,
+      "local_header_offset": 2538554979,
+      "compression_method": 8,
+      "crc32": "40d69909"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hg003_ont.vcf",
+      "uncompressed_bytes": 12600848,
+      "compressed_bytes": 3075213,
+      "local_header_offset": 2541253426,
+      "compression_method": 8,
+      "crc32": "0dd9be57"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hg004_hifi.vcf",
+      "uncompressed_bytes": 14436631,
+      "compressed_bytes": 2677917,
+      "local_header_offset": 2544328767,
+      "compression_method": 8,
+      "crc32": "1b8c09e3"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hg004_ont.vcf",
+      "uncompressed_bytes": 12497905,
+      "compressed_bytes": 3071405,
+      "local_header_offset": 2547006813,
+      "compression_method": 8,
+      "crc32": "b9d33f60"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hg005_hifi.vcf",
+      "uncompressed_bytes": 13190292,
+      "compressed_bytes": 2455702,
+      "local_header_offset": 2550078346,
+      "compression_method": 8,
+      "crc32": "a539b8d2"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hg005_ont.vcf",
+      "uncompressed_bytes": 12590305,
+      "compressed_bytes": 2930714,
+      "local_header_offset": 2552534177,
+      "compression_method": 8,
+      "crc32": "4b606b0e"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hg005_replicate1.vcf",
+      "uncompressed_bytes": 10779896,
+      "compressed_bytes": 1946785,
+      "local_header_offset": 2555465019,
+      "compression_method": 8,
+      "crc32": "e5b4006a"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hg005_replicate2.vcf",
+      "uncompressed_bytes": 11234169,
+      "compressed_bytes": 2003591,
+      "local_header_offset": 2557411939,
+      "compression_method": 8,
+      "crc32": "9cc38794"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hg006_hifi.vcf",
+      "uncompressed_bytes": 12672384,
+      "compressed_bytes": 2327667,
+      "local_header_offset": 2559415665,
+      "compression_method": 8,
+      "crc32": "c5155160"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hg006_ont.vcf",
+      "uncompressed_bytes": 12961850,
+      "compressed_bytes": 2956090,
+      "local_header_offset": 2561743461,
+      "compression_method": 8,
+      "crc32": "97543384"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hg007_hifi.vcf",
+      "uncompressed_bytes": 13157830,
+      "compressed_bytes": 2431052,
+      "local_header_offset": 2564699679,
+      "compression_method": 8,
+      "crc32": "a78eac6a"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hg007_ont.vcf",
+      "uncompressed_bytes": 13113110,
+      "compressed_bytes": 2980492,
+      "local_header_offset": 2567130860,
+      "compression_method": 8,
+      "crc32": "fd49854d"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hifi.vcf",
+      "uncompressed_bytes": 15004300,
+      "compressed_bytes": 2767454,
+      "local_header_offset": 2570111480,
+      "compression_method": 8,
+      "crc32": "c390dcc2"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hifi_10x.vcf",
+      "uncompressed_bytes": 12440753,
+      "compressed_bytes": 2217267,
+      "local_header_offset": 2572879057,
+      "compression_method": 8,
+      "crc32": "56d1aa02"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hifi_20x.vcf",
+      "uncompressed_bytes": 14120219,
+      "compressed_bytes": 2556266,
+      "local_header_offset": 2575096451,
+      "compression_method": 8,
+      "crc32": "db302275"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/hifi_5x.vcf",
+      "uncompressed_bytes": 9263117,
+      "compressed_bytes": 1640122,
+      "local_header_offset": 2577652844,
+      "compression_method": 8,
+      "crc32": "fbee38ae"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/ont.vcf",
+      "uncompressed_bytes": 13179105,
+      "compressed_bytes": 3182569,
+      "local_header_offset": 2579293092,
+      "compression_method": 8,
+      "crc32": "6f526bed"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/ont_10x.vcf",
+      "uncompressed_bytes": 12916200,
+      "compressed_bytes": 2953536,
+      "local_header_offset": 2582475783,
+      "compression_method": 8,
+      "crc32": "b70d634e"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/ont_10x_replicate.vcf",
+      "uncompressed_bytes": 12810843,
+      "compressed_bytes": 2929801,
+      "local_header_offset": 2585429445,
+      "compression_method": 8,
+      "crc32": "1ee1e4ed"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/ont_20x.vcf",
+      "uncompressed_bytes": 13445417,
+      "compressed_bytes": 3149935,
+      "local_header_offset": 2588359382,
+      "compression_method": 8,
+      "crc32": "4ce290b1"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/ont_20x_replicate.vcf",
+      "uncompressed_bytes": 13559738,
+      "compressed_bytes": 3181078,
+      "local_header_offset": 2591509443,
+      "compression_method": 8,
+      "crc32": "5ab613c5"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/ont_5x.vcf",
+      "uncompressed_bytes": 9892078,
+      "compressed_bytes": 2230901,
+      "local_header_offset": 2594690657,
+      "compression_method": 8,
+      "crc32": "f0cc1518"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/sniffles/ont_5x_replicate.vcf",
+      "uncompressed_bytes": 9854092,
+      "compressed_bytes": 2210555,
+      "local_header_offset": 2596921683,
+      "compression_method": 8,
+      "crc32": "842a7785"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hg003_hifi.vcf",
+      "uncompressed_bytes": 6412600,
+      "compressed_bytes": 1324915,
+      "local_header_offset": 2599132468,
+      "compression_method": 8,
+      "crc32": "9e703636"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hg003_ont.vcf",
+      "uncompressed_bytes": 8653188,
+      "compressed_bytes": 1333458,
+      "local_header_offset": 2600457508,
+      "compression_method": 8,
+      "crc32": "26d34eee"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hg004_hifi.vcf",
+      "uncompressed_bytes": 6001989,
+      "compressed_bytes": 1222408,
+      "local_header_offset": 2601791090,
+      "compression_method": 8,
+      "crc32": "d44e0ffa"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hg004_ont.vcf",
+      "uncompressed_bytes": 6049020,
+      "compressed_bytes": 1361396,
+      "local_header_offset": 2603013623,
+      "compression_method": 8,
+      "crc32": "cde4672b"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hg005_hifi.vcf",
+      "uncompressed_bytes": 5920894,
+      "compressed_bytes": 1170049,
+      "local_header_offset": 2604375143,
+      "compression_method": 8,
+      "crc32": "bc06a239"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hg005_ont.vcf",
+      "uncompressed_bytes": 4711976,
+      "compressed_bytes": 1048578,
+      "local_header_offset": 2605545317,
+      "compression_method": 8,
+      "crc32": "5ad634d9"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hg005_replicate1.vcf",
+      "uncompressed_bytes": 4685296,
+      "compressed_bytes": 827231,
+      "local_header_offset": 2606594019,
+      "compression_method": 8,
+      "crc32": "67581443"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hg005_replicate2.vcf",
+      "uncompressed_bytes": 4978194,
+      "compressed_bytes": 878182,
+      "local_header_offset": 2607421381,
+      "compression_method": 8,
+      "crc32": "92b19967"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hg006_hifi.vcf",
+      "uncompressed_bytes": 5747685,
+      "compressed_bytes": 1128872,
+      "local_header_offset": 2608299694,
+      "compression_method": 8,
+      "crc32": "44a95326"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hg006_ont.vcf",
+      "uncompressed_bytes": 4502098,
+      "compressed_bytes": 995436,
+      "local_header_offset": 2609428691,
+      "compression_method": 8,
+      "crc32": "3d4cf30f"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hg007_hifi.vcf",
+      "uncompressed_bytes": 5854862,
+      "compressed_bytes": 1151015,
+      "local_header_offset": 2610424251,
+      "compression_method": 8,
+      "crc32": "dd1560a2"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hg007_ont.vcf",
+      "uncompressed_bytes": 4021031,
+      "compressed_bytes": 771297,
+      "local_header_offset": 2611575391,
+      "compression_method": 8,
+      "crc32": "515c3097"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hifi.vcf",
+      "uncompressed_bytes": 6682295,
+      "compressed_bytes": 1377734,
+      "local_header_offset": 2612346812,
+      "compression_method": 8,
+      "crc32": "3c58306d"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hifi_10x.vcf",
+      "uncompressed_bytes": 5500240,
+      "compressed_bytes": 980220,
+      "local_header_offset": 2613724665,
+      "compression_method": 8,
+      "crc32": "c7553ec4"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hifi_20x.vcf",
+      "uncompressed_bytes": 5814380,
+      "compressed_bytes": 1128284,
+      "local_header_offset": 2614705008,
+      "compression_method": 8,
+      "crc32": "aa0962b1"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/hifi_5x.vcf",
+      "uncompressed_bytes": 8653188,
+      "compressed_bytes": 1333412,
+      "local_header_offset": 2615833415,
+      "compression_method": 8,
+      "crc32": "e77396de"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/ont.vcf",
+      "uncompressed_bytes": 12977760,
+      "compressed_bytes": 2660524,
+      "local_header_offset": 2617166949,
+      "compression_method": 8,
+      "crc32": "bef72ada"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/ont_10x.vcf",
+      "uncompressed_bytes": 4665899,
+      "compressed_bytes": 928511,
+      "local_header_offset": 2619827591,
+      "compression_method": 8,
+      "crc32": "eab35974"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/ont_10x_replicate.vcf",
+      "uncompressed_bytes": 4644201,
+      "compressed_bytes": 924222,
+      "local_header_offset": 2620756224,
+      "compression_method": 8,
+      "crc32": "12d00c3e"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/ont_20x.vcf",
+      "uncompressed_bytes": 5845120,
+      "compressed_bytes": 1205243,
+      "local_header_offset": 2621680578,
+      "compression_method": 8,
+      "crc32": "ed628419"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/ont_20x_replicate.vcf",
+      "uncompressed_bytes": 7790031,
+      "compressed_bytes": 1575546,
+      "local_header_offset": 2622885943,
+      "compression_method": 8,
+      "crc32": "7863b225"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/ont_5x.vcf",
+      "uncompressed_bytes": 4318092,
+      "compressed_bytes": 790489,
+      "local_header_offset": 2624461621,
+      "compression_method": 8,
+      "crc32": "23b96000"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svim/ont_5x_replicate.vcf",
+      "uncompressed_bytes": 4276431,
+      "compressed_bytes": 783618,
+      "local_header_offset": 2625252231,
+      "compression_method": 8,
+      "crc32": "5f517a5b"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hg003_hifi.vcf",
+      "uncompressed_bytes": 14627937,
+      "compressed_bytes": 3013521,
+      "local_header_offset": 2626036075,
+      "compression_method": 8,
+      "crc32": "cb8d2cd5"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hg003_ont.vcf",
+      "uncompressed_bytes": 16057424,
+      "compressed_bytes": 3093963,
+      "local_header_offset": 2629049721,
+      "compression_method": 8,
+      "crc32": "d5422220"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hg004_hifi.vcf",
+      "uncompressed_bytes": 14266632,
+      "compressed_bytes": 2911793,
+      "local_header_offset": 2632143808,
+      "compression_method": 8,
+      "crc32": "477f9d2f"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hg004_ont.vcf",
+      "uncompressed_bytes": 15980842,
+      "compressed_bytes": 3105165,
+      "local_header_offset": 2635055726,
+      "compression_method": 8,
+      "crc32": "3f222fb6"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hg005_hifi.vcf",
+      "uncompressed_bytes": 13988109,
+      "compressed_bytes": 2800603,
+      "local_header_offset": 2638161015,
+      "compression_method": 8,
+      "crc32": "78ea89a8"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hg005_ont.vcf",
+      "uncompressed_bytes": 15006284,
+      "compressed_bytes": 2928843,
+      "local_header_offset": 2640961743,
+      "compression_method": 8,
+      "crc32": "5d227208"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hg005_replicate1.vcf",
+      "uncompressed_bytes": 11145921,
+      "compressed_bytes": 2232124,
+      "local_header_offset": 2643890710,
+      "compression_method": 8,
+      "crc32": "0e4cd8b8"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hg005_replicate2.vcf",
+      "uncompressed_bytes": 11736712,
+      "compressed_bytes": 2333764,
+      "local_header_offset": 2646122965,
+      "compression_method": 8,
+      "crc32": "1446d00e"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hg006_hifi.vcf",
+      "uncompressed_bytes": 13808006,
+      "compressed_bytes": 2778287,
+      "local_header_offset": 2648456860,
+      "compression_method": 8,
+      "crc32": "df0f570b"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hg006_ont.vcf",
+      "uncompressed_bytes": 15419767,
+      "compressed_bytes": 3064129,
+      "local_header_offset": 2651235272,
+      "compression_method": 8,
+      "crc32": "5d677448"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hg007_hifi.vcf",
+      "uncompressed_bytes": 13977724,
+      "compressed_bytes": 2841775,
+      "local_header_offset": 2654299525,
+      "compression_method": 8,
+      "crc32": "442ccea9"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hg007_ont.vcf",
+      "uncompressed_bytes": 14638270,
+      "compressed_bytes": 2836030,
+      "local_header_offset": 2657141425,
+      "compression_method": 8,
+      "crc32": "227d4814"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hifi.vcf",
+      "uncompressed_bytes": 23624851,
+      "compressed_bytes": 4769710,
+      "local_header_offset": 2659977579,
+      "compression_method": 8,
+      "crc32": "3c2eddd3"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hifi_10x.vcf",
+      "uncompressed_bytes": 16340123,
+      "compressed_bytes": 3255915,
+      "local_header_offset": 2664747408,
+      "compression_method": 8,
+      "crc32": "d5d893e6"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hifi_20x.vcf",
+      "uncompressed_bytes": 19588789,
+      "compressed_bytes": 3881399,
+      "local_header_offset": 2668003446,
+      "compression_method": 8,
+      "crc32": "44bd41cb"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/hifi_5x.vcf",
+      "uncompressed_bytes": 14698116,
+      "compressed_bytes": 2938752,
+      "local_header_offset": 2671884968,
+      "compression_method": 8,
+      "crc32": "5b41624b"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/ont.vcf",
+      "uncompressed_bytes": 59370167,
+      "compressed_bytes": 14473378,
+      "local_header_offset": 2674823842,
+      "compression_method": 8,
+      "crc32": "110aff3b"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/ont_10x.vcf",
+      "uncompressed_bytes": 25481534,
+      "compressed_bytes": 5726978,
+      "local_header_offset": 2689297338,
+      "compression_method": 8,
+      "crc32": "129edde3"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/ont_10x_replicate.vcf",
+      "uncompressed_bytes": 14492343,
+      "compressed_bytes": 2819564,
+      "local_header_offset": 2695024438,
+      "compression_method": 8,
+      "crc32": "9a371c4a"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/ont_20x.vcf",
+      "uncompressed_bytes": 35651530,
+      "compressed_bytes": 8218073,
+      "local_header_offset": 2697844134,
+      "compression_method": 8,
+      "crc32": "6d52edb7"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/ont_20x_replicate.vcf",
+      "uncompressed_bytes": 16269693,
+      "compressed_bytes": 3136877,
+      "local_header_offset": 2706062329,
+      "compression_method": 8,
+      "crc32": "95e759fa"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/ont_5x.vcf",
+      "uncompressed_bytes": 17426764,
+      "compressed_bytes": 3749053,
+      "local_header_offset": 2709199338,
+      "compression_method": 8,
+      "crc32": "4b9d9888"
+    },
+    {
+      "name": "SV_callsets/HG002_benchmark/svpg/ont_5x_replicate.vcf",
+      "uncompressed_bytes": 12047423,
+      "compressed_bytes": 2313782,
+      "local_header_offset": 2712948512,
+      "compression_method": 8,
+      "crc32": "d0c4ef97"
+    },
+    {
+      "name": "SV_callsets/multi_sample/merged_jasmine_sawfish_filtered.vcf",
+      "uncompressed_bytes": 149923649,
+      "compressed_bytes": 21061249,
+      "local_header_offset": 2715262512,
+      "compression_method": 8,
+      "crc32": "8c10cbd7"
+    },
+    {
+      "name": "SV_callsets/multi_sample/merged_jasmine_sniffles_filtered.vcf",
+      "uncompressed_bytes": 127333105,
+      "compressed_bytes": 20196276,
+      "local_header_offset": 2736323899,
+      "compression_method": 8,
+      "crc32": "9b43fb4a"
+    },
+    {
+      "name": "SV_callsets/multi_sample/merged_jasmine_svpg_filtered.vcf",
+      "uncompressed_bytes": 92966705,
+      "compressed_bytes": 14710416,
+      "local_header_offset": 2756520314,
+      "compression_method": 8,
+      "crc32": "49fc7eed"
+    },
+    {
+      "name": "SV_callsets/rare_SV/hg002_hifi_minisv.vcf",
+      "uncompressed_bytes": 1004533,
+      "compressed_bytes": 234576,
+      "local_header_offset": 2771230947,
+      "compression_method": 8,
+      "crc32": "49c63ace"
+    },
+    {
+      "name": "SV_callsets/rare_SV/hg002_hifi_svarp_svtigs.fa",
+      "uncompressed_bytes": 33344209,
+      "compressed_bytes": 9188112,
+      "local_header_offset": 2771465642,
+      "compression_method": 8,
+      "crc32": "78a9f6bf"
+    },
+    {
+      "name": "SV_callsets/rare_SV/hg002_hifi_svpg.vcf",
+      "uncompressed_bytes": 582862,
+      "compressed_bytes": 153221,
+      "local_header_offset": 2780653878,
+      "compression_method": 8,
+      "crc32": "21125bd2"
+    },
+    {
+      "name": "SV_callsets/rare_SV/hg002_hifi_svtigs_svim-asm.vcf",
+      "uncompressed_bytes": 2278003,
+      "compressed_bytes": 512071,
+      "local_header_offset": 2780807216,
+      "compression_method": 8,
+      "crc32": "0755ba39"
+    },
+    {
+      "name": "SV_callsets/rare_SV/hg002_ont_minisv.vcf",
+      "uncompressed_bytes": 717387,
+      "compressed_bytes": 190298,
+      "local_header_offset": 2781319415,
+      "compression_method": 8,
+      "crc32": "ffdba057"
+    },
+    {
+      "name": "SV_callsets/rare_SV/hg002_ont_svpg.vcf",
+      "uncompressed_bytes": 767740,
+      "compressed_bytes": 195456,
+      "local_header_offset": 2781509831,
+      "compression_method": 8,
+      "crc32": "86e548f6"
+    },
+    {
+      "name": "SV_callsets/rare_SV/hg002_ont_svtigs.fa",
+      "uncompressed_bytes": 149583151,
+      "compressed_bytes": 42987794,
+      "local_header_offset": 2781705403,
+      "compression_method": 8,
+      "crc32": "27372148"
+    },
+    {
+      "name": "SV_callsets/rare_SV/hg002_ont_svtigs_svim-asm.vcf",
+      "uncompressed_bytes": 2301131,
+      "compressed_bytes": 424249,
+      "local_header_offset": 2824693314,
+      "compression_method": 8,
+      "crc32": "ed3e9d1f"
+    },
+    {
+      "name": "SV_callsets/rare_SV/simulate_ground_truth.gz",
+      "uncompressed_bytes": 3299006,
+      "compressed_bytes": 3299521,
+      "local_header_offset": 2825117690,
+      "compression_method": 8,
+      "crc32": "52da3fd0"
+    },
+    {
+      "name": "SV_callsets/rare_SV/simulate_hifi_minisv.vcf",
+      "uncompressed_bytes": 80294008,
+      "compressed_bytes": 23142349,
+      "local_header_offset": 2828417333,
+      "compression_method": 8,
+      "crc32": "323b442b"
+    },
+    {
+      "name": "SV_callsets/rare_SV/simulate_hifi_svpg.vcf",
+      "uncompressed_bytes": 6051844,
+      "compressed_bytes": 1055511,
+      "local_header_offset": 2851559804,
+      "compression_method": 8,
+      "crc32": "675552b0"
+    },
+    {
+      "name": "SV_callsets/rare_SV/simulate_ont_minisv.vcf",
+      "uncompressed_bytes": 77316785,
+      "compressed_bytes": 22268128,
+      "local_header_offset": 2852615435,
+      "compression_method": 8,
+      "crc32": "cb144a31"
+    },
+    {
+      "name": "SV_callsets/rare_SV/simulate_ont_svpg.vcf",
+      "uncompressed_bytes": 6139569,
+      "compressed_bytes": 1063613,
+      "local_header_offset": 2874883684,
+      "compression_method": 8,
+      "crc32": "4f8b6011"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/colo829_benchmark_grch38.vcf",
+      "uncompressed_bytes": 26032,
+      "compressed_bytes": 4273,
+      "local_header_offset": 2875947594,
+      "compression_method": 8,
+      "crc32": "bbedb396"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/hs38.reg.bed",
+      "uncompressed_bytes": 984,
+      "compressed_bytes": 451,
+      "local_header_offset": 2875952004,
+      "compression_method": 8,
+      "crc32": "11fa0746"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/manta.filter.vcf",
+      "uncompressed_bytes": 390074,
+      "compressed_bytes": 82011,
+      "local_header_offset": 2875952576,
+      "compression_method": 8,
+      "crc32": "2d8e08d5"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/manta.vcf",
+      "uncompressed_bytes": 733122,
+      "compressed_bytes": 149633,
+      "local_header_offset": 2876034712,
+      "compression_method": 8,
+      "crc32": "871cfd13"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/minisv.filter.vcf",
+      "uncompressed_bytes": 29813,
+      "compressed_bytes": 9490,
+      "local_header_offset": 2876184463,
+      "compression_method": 8,
+      "crc32": "3efd259f"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/minisv.vcf",
+      "uncompressed_bytes": 30959,
+      "compressed_bytes": 9774,
+      "local_header_offset": 2876194079,
+      "compression_method": 8,
+      "crc32": "d9824417"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/nanomonsv.filter.vcf",
+      "uncompressed_bytes": 41154,
+      "compressed_bytes": 10245,
+      "local_header_offset": 2876203972,
+      "compression_method": 8,
+      "crc32": "c6b32cd0"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/nanomonsv.vcf",
+      "uncompressed_bytes": 61589,
+      "compressed_bytes": 14433,
+      "local_header_offset": 2876214346,
+      "compression_method": 8,
+      "crc32": "f0c192c2"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/severus.filter.vcf",
+      "uncompressed_bytes": 34905,
+      "compressed_bytes": 7769,
+      "local_header_offset": 2876228901,
+      "compression_method": 8,
+      "crc32": "d8947b5c"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/severus.vcf",
+      "uncompressed_bytes": 42785,
+      "compressed_bytes": 8571,
+      "local_header_offset": 2876236797,
+      "compression_method": 8,
+      "crc32": "c696feae"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/sniffles.vcf",
+      "uncompressed_bytes": 451779,
+      "compressed_bytes": 92303,
+      "local_header_offset": 2876245488,
+      "compression_method": 8,
+      "crc32": "5d9df5f3"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/svarp.filter.vcf",
+      "uncompressed_bytes": 663674,
+      "compressed_bytes": 160232,
+      "local_header_offset": 2876337912,
+      "compression_method": 8,
+      "crc32": "3082d2de"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/svarp.vcf",
+      "uncompressed_bytes": 673797,
+      "compressed_bytes": 163641,
+      "local_header_offset": 2876498269,
+      "compression_method": 8,
+      "crc32": "2d02db3c"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/svpg.filter.vcf",
+      "uncompressed_bytes": 30742,
+      "compressed_bytes": 6486,
+      "local_header_offset": 2876662028,
+      "compression_method": 8,
+      "crc32": "ef26d958"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/colo829/svpg.vcf",
+      "uncompressed_bytes": 33991,
+      "compressed_bytes": 6943,
+      "local_header_offset": 2876668638,
+      "compression_method": 8,
+      "crc32": "ea871fba"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/consensus_truth.vcf",
+      "uncompressed_bytes": 131730,
+      "compressed_bytes": 24473,
+      "local_header_offset": 2876675791,
+      "compression_method": 8,
+      "crc32": "38b1df91"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/hs38.reg.bed",
+      "uncompressed_bytes": 984,
+      "compressed_bytes": 451,
+      "local_header_offset": 2876700392,
+      "compression_method": 8,
+      "crc32": "11fa0746"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/manta.filter.vcf",
+      "uncompressed_bytes": 444333,
+      "compressed_bytes": 109565,
+      "local_header_offset": 2876700964,
+      "compression_method": 8,
+      "crc32": "699793ae"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/manta.vcf",
+      "uncompressed_bytes": 634845,
+      "compressed_bytes": 147152,
+      "local_header_offset": 2876810654,
+      "compression_method": 8,
+      "crc32": "2a4ca0e6"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/minisv.filter.vcf",
+      "uncompressed_bytes": 350450,
+      "compressed_bytes": 101033,
+      "local_header_offset": 2876957924,
+      "compression_method": 8,
+      "crc32": "968ceeac"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/minisv.vcf",
+      "uncompressed_bytes": 326306,
+      "compressed_bytes": 92652,
+      "local_header_offset": 2877059083,
+      "compression_method": 8,
+      "crc32": "474fa819"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/nanomonsv.filter.vcf",
+      "uncompressed_bytes": 116997,
+      "compressed_bytes": 30312,
+      "local_header_offset": 2877151854,
+      "compression_method": 8,
+      "crc32": "71b41582"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/nanomonsv.vcf",
+      "uncompressed_bytes": 170113,
+      "compressed_bytes": 41952,
+      "local_header_offset": 2877182295,
+      "compression_method": 8,
+      "crc32": "be35e08b"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/severus.filter.vcf",
+      "uncompressed_bytes": 382150,
+      "compressed_bytes": 71906,
+      "local_header_offset": 2877224369,
+      "compression_method": 8,
+      "crc32": "c30dc9a7"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/severus.vcf",
+      "uncompressed_bytes": 453615,
+      "compressed_bytes": 81100,
+      "local_header_offset": 2877296402,
+      "compression_method": 8,
+      "crc32": "a6106ce0"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/sniffles.vcf",
+      "uncompressed_bytes": 1001409,
+      "compressed_bytes": 187318,
+      "local_header_offset": 2877377622,
+      "compression_method": 8,
+      "crc32": "de3e1959"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/svarp.filter.vcf",
+      "uncompressed_bytes": 2242177,
+      "compressed_bytes": 568903,
+      "local_header_offset": 2877565061,
+      "compression_method": 8,
+      "crc32": "3429ff18"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/svarp.vcf",
+      "uncompressed_bytes": 2272469,
+      "compressed_bytes": 578893,
+      "local_header_offset": 2878134089,
+      "compression_method": 8,
+      "crc32": "20236506"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/svpg.filter.vcf",
+      "uncompressed_bytes": 119195,
+      "compressed_bytes": 24614,
+      "local_header_offset": 2878713100,
+      "compression_method": 8,
+      "crc32": "e4ae46d0"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/svpg.vcf",
+      "uncompressed_bytes": 140392,
+      "compressed_bytes": 27959,
+      "local_header_offset": 2878737838,
+      "compression_method": 8,
+      "crc32": "701e9e40"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hcc1395/validated_truth.vcf",
+      "uncompressed_bytes": 23022,
+      "compressed_bytes": 5550,
+      "local_header_offset": 2878765914,
+      "compression_method": 8,
+      "crc32": "5d03b9b7"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/GRCh38_HG008-T-V0.3_somatic-stvar.draftbenchmark.bed",
+      "uncompressed_bytes": 18374,
+      "compressed_bytes": 7764,
+      "local_header_offset": 2878771683,
+      "compression_method": 8,
+      "crc32": "e7d62998"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/GRCh38_HG008-T-V0.3_somatic-stvar_PASS.draftbenchmark.filtered.vcf",
+      "uncompressed_bytes": 32414,
+      "compressed_bytes": 7543,
+      "local_header_offset": 2878779606,
+      "compression_method": 8,
+      "crc32": "4821b289"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/GRCh38_HG008-T-V0.3_somatic-stvar_PASS.draftbenchmark.vcf",
+      "uncompressed_bytes": 38511,
+      "compressed_bytes": 8424,
+      "local_header_offset": 2878787322,
+      "compression_method": 8,
+      "crc32": "d5135174"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/manta.filter.vcf",
+      "uncompressed_bytes": 522197,
+      "compressed_bytes": 111203,
+      "local_header_offset": 2878795910,
+      "compression_method": 8,
+      "crc32": "509bd1c6"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/manta.vcf",
+      "uncompressed_bytes": 966969,
+      "compressed_bytes": 195177,
+      "local_header_offset": 2878907236,
+      "compression_method": 8,
+      "crc32": "76f66a22"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/minisv.filter.vcf",
+      "uncompressed_bytes": 106330,
+      "compressed_bytes": 29169,
+      "local_header_offset": 2879102529,
+      "compression_method": 8,
+      "crc32": "e43a8cdd"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/minisv.vcf",
+      "uncompressed_bytes": 108750,
+      "compressed_bytes": 29817,
+      "local_header_offset": 2879131822,
+      "compression_method": 8,
+      "crc32": "cb568869"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/nanomonsv.filter.vcf",
+      "uncompressed_bytes": 141755,
+      "compressed_bytes": 32303,
+      "local_header_offset": 2879161756,
+      "compression_method": 8,
+      "crc32": "7f17727b"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/nanomonsv.vcf",
+      "uncompressed_bytes": 220862,
+      "compressed_bytes": 48327,
+      "local_header_offset": 2879194186,
+      "compression_method": 8,
+      "crc32": "9e4fd42e"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/severus.filter.vcf",
+      "uncompressed_bytes": 77849,
+      "compressed_bytes": 18518,
+      "local_header_offset": 2879242633,
+      "compression_method": 8,
+      "crc32": "dc7f53cf"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/severus.vcf",
+      "uncompressed_bytes": 90419,
+      "compressed_bytes": 19871,
+      "local_header_offset": 2879261276,
+      "compression_method": 8,
+      "crc32": "a3808c4e"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/sniffles.vcf",
+      "uncompressed_bytes": 569289,
+      "compressed_bytes": 114673,
+      "local_header_offset": 2879281265,
+      "compression_method": 8,
+      "crc32": "210a371c"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/svarp.filter.vcf",
+      "uncompressed_bytes": 601279,
+      "compressed_bytes": 115114,
+      "local_header_offset": 2879396057,
+      "compression_method": 8,
+      "crc32": "4ce5f937"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/svarp.vcf",
+      "uncompressed_bytes": 622223,
+      "compressed_bytes": 120860,
+      "local_header_offset": 2879511294,
+      "compression_method": 8,
+      "crc32": "c3ed71bb"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/svpg.filter.vcf",
+      "uncompressed_bytes": 20320,
+      "compressed_bytes": 4972,
+      "local_header_offset": 2879632270,
+      "compression_method": 8,
+      "crc32": "f693cf37"
+    },
+    {
+      "name": "SV_callsets/somatic_SV/hg008/svpg.vcf",
+      "uncompressed_bytes": 23759,
+      "compressed_bytes": 5486,
+      "local_header_offset": 2879637364,
+      "compression_method": 8,
+      "crc32": "8678d7c8"
+    }
+  ],
+  "whole_archive_checksum_verified": false,
+  "member_bodies_read": 0
+}

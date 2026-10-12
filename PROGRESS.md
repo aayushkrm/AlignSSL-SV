@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-10-12** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
+_Last updated: **2026-10-13** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,49 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+### Research comparison and interruption recovery — 2026-10-13
+
+Later actual [fixed HG008 comparator check](results/svpg_named_case_20261013/README.md)
+closes the generic new deletion-presence lead: archived Severus already reports
+the named419bp deletion's endpoints/length and GT0/1. Independent maintained
+review and max-effort decision accept this scoped STOP, not sequence identity,
+somatic origin or a publication result. SVPG/miniSV report nearby partial events;
+no native guided rescue is observed or needed to stop this proposed investment.
+All11 members match the freshly rechecked existing2.88GB local archive.
+Only23,727index +236,857case remote bytes were read; no new whole archive.
+The October4 audit was HG002 headers only, so this HG008 body analysis is new.
+No large graph/read acquisition, caller or training job follows. Three replacement
+agents completed their finite checks; the independent reviewer role continues.
+Older pending descriptions below retain their prior snapshot, superseded here.
+Later software checks preserve15pass/2fail first attempts, then fix response
+probe budgeting and chunked ZIP member reads. Combined116tests+62subtests
+pass5.00s; ten complete cached VCF parser outputs reproduce the saved report.
+No source outcome changed. A new Luna/max worker is checking the published
+INV validation supplement for a fixed, qualified case; no experiment released.
+
+The [current checkpoint](docs/research/2026-10-13-comparator-checkpoint.md)
+records completed Weller, Shred-seq and exon-screen evidence plus the
+max-effort conditional complex-inversion recommendation. No functional-screen
+modelling campaign selected. The [actual Weller source inventory](results/prime_deletion_inventory_20261012/README.md)
+has10,471constructs/136columns,5missing outcomes,1,196depleted/82enriched;
+guide abundance is not confirmed allele fitness. All source hashes unchanged.
+99tests+62subtests pass5.01s; no model or native genetic result follows.
+
+Main recovered exon-screen GEO metadata via an alternative: RNA/guide files
+listed, no DNA genotype table in that series listing. Primary SVPG provides a
+concrete graph-represented somatic omission to challenge with its native guided
+mode and strong paired callers. No rescue, new failure or novelty is assumed.
+The public caller ZIP is2.88GB; index/case access is checked before downloading
+large assets. The inversion preprint7-callers and later9-caller paper remain
+distinct evidence versions; main's full published Methods are unverified.
+
+Old reviewer/scout/max handles are authoritative not_found after interruption.
+Completed notes remain; queued SVPG decision is unfinished, not accepted.
+Replacement Luna/max interface worker, Sol6.1/max decision and maintained
+Sol6.1/high reviewer requested. Fresh own queue empty; scratch9days21h with
+one unused extension. No new job, cancellation or deletion. Full publication
+goal active and unmet; HG002 annotation-exclusion remains stopped before S2.
 
 ### New opportunity comparison — 2026-10-12
 

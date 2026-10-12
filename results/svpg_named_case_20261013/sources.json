@@ -1,0 +1,575 @@
+{
+  "schema": 1,
+  "scope": "PUBLISHED_NAMED_CASE_SOURCE_PANEL",
+  "url": "https://zenodo.org/api/records/18456502/files/SV_callsets.zip/content",
+  "archive_bytes": 2879666672,
+  "whole_archive_checksum_verified": false,
+  "selection": {
+    "paper_chr7_position": 19196736,
+    "reported_deletion_length": 419,
+    "fixed_neighborhood_start": 19195736,
+    "fixed_neighborhood_end": 19198155,
+    "chr7_7_alias_is_not_reference_base_identity_proof": true
+  },
+  "files": [
+    {
+      "member": "SV_callsets/somatic_SV/hg008/GRCh38_HG008-T-V0.3_somatic-stvar.draftbenchmark.bed",
+      "local_basename": "GRCh38_HG008-T-V0.3_somatic-stvar.draftbenchmark.bed",
+      "bytes": 18374,
+      "sha256": "0c9942cfc0d0214dcc53b9bff29115d76a674862d3d829d22374fc7d184ecc4d",
+      "crc32": "e7d62998",
+      "member_crc_verified": true
+    },
+    {
+      "member": "SV_callsets/somatic_SV/hg008/GRCh38_HG008-T-V0.3_somatic-stvar_PASS.draftbenchmark.vcf",
+      "local_basename": "GRCh38_HG008-T-V0.3_somatic-stvar_PASS.draftbenchmark.vcf",
+      "bytes": 38511,
+      "sha256": "84b1ba3c68706e33eb9de89974ac6289e8270d505192cf64b70a0d7ae82c40c6",
+      "crc32": "d5135174",
+      "member_crc_verified": true,
+      "total_records_read": 149,
+      "selected_headers": [
+        "##fileformat=VCFv4.3",
+        "##reference=https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/references/GRCh38/GRCh38_GIABv3_no_alt_analysis_set_maskedGRC_decoys_MAP2K3_KMT2C_KCNJ18.fasta.gz",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tHG008-T"
+      ],
+      "nearby_records": [
+        {
+          "raw_record": "chr7\t19196736\tSV_62\tAAGATCCAAAATTGACACCCTAACATCACAATTAAAAGAACTAGAAAAGCAAGAGCAGACACATTCAAAAGCTAGCAGAAGGCAAGAAATAACGAAAATCAGAGCAGAACTGAAGGAAATAGAGACACAAAAAACCCTTCAAAAAATTAATGAATCCAGGAGCTGGTTTTTTGAAAGGATCAACAAAATTGATAGACCACTAGCAAGACTAATAAAGAAAAAAAGACAGAAGAATCAAATAGACGCAAAAAAAATGATAAAGGGGATATCATCACTGATCCCACAGAAATACGAACTACCATCAGAGAATACTACAAACACCTCTATGCAAATAAACTAGAAAATCTAGAAGAAATGGATAAATTCCTCGACACATACACTCTCCCAAGACTAAACCAGGAAGAAGTTGAATCTCTGAAT\tA\t.\tPASS\tSVTYPE=DEL;EVENTTYPE=DEL;SVLEN=-419;END=19197155;CIPOS=0,3;HOMLEN=3;HOMSEQ=AGA;SUBCLONAL=n;COMPLEX=n\tGT:PSL:PSO:CN\t0/1:.:.:.",
+          "chromosome": "chr7",
+          "position": 19196736,
+          "end_field_values": [
+            "19197155"
+          ],
+          "id": "SV_62",
+          "ref": "AAGATCCAAAATTGACACCCTAACATCACAATTAAAAGAACTAGAAAAGCAAGAGCAGACACATTCAAAAGCTAGCAGAAGGCAAGAAATAACGAAAATCAGAGCAGAACTGAAGGAAATAGAGACACAAAAAACCCTTCAAAAAATTAATGAATCCAGGAGCTGGTTTTTTGAAAGGATCAACAAAATTGATAGACCACTAGCAAGACTAATAAAGAAAAAAAGACAGAAGAATCAAATAGACGCAAAAAAAATGATAAAGGGGATATCATCACTGATCCCACAGAAATACGAACTACCATCAGAGAATACTACAAACACCTCTATGCAAATAAACTAGAAAATCTAGAAGAAATGGATAAATTCCTCGACACATACACTCTCCCAAGACTAAACCAGGAAGAAGTTGAATCTCTGAAT",
+          "alt": "A",
+          "filter": "PASS",
+          "info": "SVTYPE=DEL;EVENTTYPE=DEL;SVLEN=-419;END=19197155;CIPOS=0,3;HOMLEN=3;HOMSEQ=AGA;SUBCLONAL=n;COMPLEX=n",
+          "format_and_samples": [
+            "GT:PSL:PSO:CN",
+            "0/1:.:.:."
+          ]
+        }
+      ]
+    },
+    {
+      "member": "SV_callsets/somatic_SV/hg008/GRCh38_HG008-T-V0.3_somatic-stvar_PASS.draftbenchmark.filtered.vcf",
+      "local_basename": "GRCh38_HG008-T-V0.3_somatic-stvar_PASS.draftbenchmark.filtered.vcf",
+      "bytes": 32414,
+      "sha256": "aed413c9749e655c2613cc6335be1ba8c186c2ae3af04ecc8afed1ae64cfba93",
+      "crc32": "4821b289",
+      "member_crc_verified": true,
+      "total_records_read": 119,
+      "selected_headers": [
+        "##fileformat=VCFv4.3",
+        "##reference=https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/references/GRCh38/GRCh38_GIABv3_no_alt_analysis_set_maskedGRC_decoys_MAP2K3_KMT2C_KCNJ18.fasta.gz",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tHG008-T"
+      ],
+      "nearby_records": [
+        {
+          "raw_record": "chr7\t19196736\tSV_62\tAAGATCCAAAATTGACACCCTAACATCACAATTAAAAGAACTAGAAAAGCAAGAGCAGACACATTCAAAAGCTAGCAGAAGGCAAGAAATAACGAAAATCAGAGCAGAACTGAAGGAAATAGAGACACAAAAAACCCTTCAAAAAATTAATGAATCCAGGAGCTGGTTTTTTGAAAGGATCAACAAAATTGATAGACCACTAGCAAGACTAATAAAGAAAAAAAGACAGAAGAATCAAATAGACGCAAAAAAAATGATAAAGGGGATATCATCACTGATCCCACAGAAATACGAACTACCATCAGAGAATACTACAAACACCTCTATGCAAATAAACTAGAAAATCTAGAAGAAATGGATAAATTCCTCGACACATACACTCTCCCAAGACTAAACCAGGAAGAAGTTGAATCTCTGAAT\tA\t.\tPASS\tSVTYPE=DEL;EVENTTYPE=DEL;SVLEN=-419;CIPOS=0,3;HOMLEN=3;HOMSEQ=AGA;SUBCLONAL=n;COMPLEX=n\tGT:PSL:PSO:CN\t0/1:.:.:.",
+          "chromosome": "chr7",
+          "position": 19196736,
+          "end_field_values": [],
+          "id": "SV_62",
+          "ref": "AAGATCCAAAATTGACACCCTAACATCACAATTAAAAGAACTAGAAAAGCAAGAGCAGACACATTCAAAAGCTAGCAGAAGGCAAGAAATAACGAAAATCAGAGCAGAACTGAAGGAAATAGAGACACAAAAAACCCTTCAAAAAATTAATGAATCCAGGAGCTGGTTTTTTGAAAGGATCAACAAAATTGATAGACCACTAGCAAGACTAATAAAGAAAAAAAGACAGAAGAATCAAATAGACGCAAAAAAAATGATAAAGGGGATATCATCACTGATCCCACAGAAATACGAACTACCATCAGAGAATACTACAAACACCTCTATGCAAATAAACTAGAAAATCTAGAAGAAATGGATAAATTCCTCGACACATACACTCTCCCAAGACTAAACCAGGAAGAAGTTGAATCTCTGAAT",
+          "alt": "A",
+          "filter": "PASS",
+          "info": "SVTYPE=DEL;EVENTTYPE=DEL;SVLEN=-419;CIPOS=0,3;HOMLEN=3;HOMSEQ=AGA;SUBCLONAL=n;COMPLEX=n",
+          "format_and_samples": [
+            "GT:PSL:PSO:CN",
+            "0/1:.:.:."
+          ]
+        }
+      ]
+    },
+    {
+      "member": "SV_callsets/somatic_SV/hg008/svpg.vcf",
+      "local_basename": "svpg.vcf",
+      "bytes": 23759,
+      "sha256": "02e8364a436eff6b13c41148df76cfada84b36856c8507afbe0cf6eb58aeb605",
+      "crc32": "8678d7c8",
+      "member_crc_verified": true,
+      "total_records_read": 189,
+      "selected_headers": [
+        "##fileformat=VCFv4.2",
+        "##fileDate=2025-11-24|12:31:38PM|CST|+0800",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tSample"
+      ],
+      "nearby_records": [
+        {
+          "raw_record": "chr7\t19196745\tSVPG.INS.71\tN\t<INS>\t8\tPASS\tSVTYPE=INS;END=19196745;SVLEN=130;SUPPORT=8\tGT:DP:AD\t1/1:.:.,.",
+          "chromosome": "chr7",
+          "position": 19196745,
+          "end_field_values": [
+            "19196745"
+          ],
+          "id": "SVPG.INS.71",
+          "ref": "N",
+          "alt": "<INS>",
+          "filter": "PASS",
+          "info": "SVTYPE=INS;END=19196745;SVLEN=130;SUPPORT=8",
+          "format_and_samples": [
+            "GT:DP:AD",
+            "1/1:.:.,."
+          ]
+        },
+        {
+          "raw_record": "chr7\t19196966\tSVPG.DEL.88\tN\t<DEL>\t9\tPASS\tSVTYPE=DEL;END=19197157;SVLEN=-191;SUPPORT=9\tGT:DP:AD\t1/1:.:.,.",
+          "chromosome": "chr7",
+          "position": 19196966,
+          "end_field_values": [
+            "19197157"
+          ],
+          "id": "SVPG.DEL.88",
+          "ref": "N",
+          "alt": "<DEL>",
+          "filter": "PASS",
+          "info": "SVTYPE=DEL;END=19197157;SVLEN=-191;SUPPORT=9",
+          "format_and_samples": [
+            "GT:DP:AD",
+            "1/1:.:.,."
+          ]
+        }
+      ]
+    },
+    {
+      "member": "SV_callsets/somatic_SV/hg008/svpg.filter.vcf",
+      "local_basename": "svpg.filter.vcf",
+      "bytes": 20320,
+      "sha256": "d3b4c23cc37917d0973cce055e0968d06d50854ce0d605fb6340e76ec00e094e",
+      "crc32": "f693cf37",
+      "member_crc_verified": true,
+      "total_records_read": 163,
+      "selected_headers": [
+        "##fileformat=VCFv4.2",
+        "##fileDate=2025-11-24|12:31:38PM|CST|+0800",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tSample"
+      ],
+      "nearby_records": [
+        {
+          "raw_record": "chr7\t19196745\tSVPG.INS.71\tN\t<INS>\t8\tPASS\tSVTYPE=INS;END=19196745;SVLEN=130;SUPPORT=8\tGT:DP:AD\t1/1:.:.,.",
+          "chromosome": "chr7",
+          "position": 19196745,
+          "end_field_values": [
+            "19196745"
+          ],
+          "id": "SVPG.INS.71",
+          "ref": "N",
+          "alt": "<INS>",
+          "filter": "PASS",
+          "info": "SVTYPE=INS;END=19196745;SVLEN=130;SUPPORT=8",
+          "format_and_samples": [
+            "GT:DP:AD",
+            "1/1:.:.,."
+          ]
+        },
+        {
+          "raw_record": "chr7\t19196966\tSVPG.DEL.88\tN\t<DEL>\t9\tPASS\tSVTYPE=DEL;END=19197157;SVLEN=-191;SUPPORT=9\tGT:DP:AD\t1/1:.:.,.",
+          "chromosome": "chr7",
+          "position": 19196966,
+          "end_field_values": [
+            "19197157"
+          ],
+          "id": "SVPG.DEL.88",
+          "ref": "N",
+          "alt": "<DEL>",
+          "filter": "PASS",
+          "info": "SVTYPE=DEL;END=19197157;SVLEN=-191;SUPPORT=9",
+          "format_and_samples": [
+            "GT:DP:AD",
+            "1/1:.:.,."
+          ]
+        }
+      ]
+    },
+    {
+      "member": "SV_callsets/somatic_SV/hg008/severus.vcf",
+      "local_basename": "severus.vcf",
+      "bytes": 90419,
+      "sha256": "782c7baf91970b9104cf9275d74ad7be985035e6468a72a3ed14ef1e6ecf8a83",
+      "crc32": "a3808c4e",
+      "member_crc_verified": true,
+      "total_records_read": 224,
+      "selected_headers": [
+        "##fileformat=VCFv4.2",
+        "##source=Severus_v1.5",
+        "##fileDate=2025-10-22",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\ttumor_tagged.part1"
+      ],
+      "nearby_records": [
+        {
+          "raw_record": "chr7\t19196736\tseverus_DEL6498\tN\t<DEL>\t60.0\tPASS\tPRECISE;SVTYPE=DEL;SVLEN=419;END=19197155;STRANDS=+-;MAPQ=60.0;PHASESETID=19154003;HP=1\tGT:VAF:hVAF:DR:DV\t0/1:0.44:0.00,1.00,0.00:27:21",
+          "chromosome": "chr7",
+          "position": 19196736,
+          "end_field_values": [
+            "19197155"
+          ],
+          "id": "severus_DEL6498",
+          "ref": "N",
+          "alt": "<DEL>",
+          "filter": "PASS",
+          "info": "PRECISE;SVTYPE=DEL;SVLEN=419;END=19197155;STRANDS=+-;MAPQ=60.0;PHASESETID=19154003;HP=1",
+          "format_and_samples": [
+            "GT:VAF:hVAF:DR:DV",
+            "0/1:0.44:0.00,1.00,0.00:27:21"
+          ]
+        }
+      ]
+    },
+    {
+      "member": "SV_callsets/somatic_SV/hg008/severus.filter.vcf",
+      "local_basename": "severus.filter.vcf",
+      "bytes": 77849,
+      "sha256": "4566f5bdacc22d867ff7b630c6d09b56d0df986f9c3bd29b1c98b259af86a633",
+      "crc32": "dc7f53cf",
+      "member_crc_verified": true,
+      "total_records_read": 176,
+      "selected_headers": [
+        "##fileformat=VCFv4.2",
+        "##source=Severus_v1.5",
+        "##fileDate=2025-10-22",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\ttumor_tagged.part1"
+      ],
+      "nearby_records": [
+        {
+          "raw_record": "chr7\t19196736\tseverus_DEL6498\tN\t<DEL>\t60\tPASS\tPRECISE;SVTYPE=DEL;SVLEN=419;END=19197155;STRANDS=+-;MAPQ=60;PHASESETID=19154003;HP=1\tGT:VAF:hVAF:DR:DV\t0/1:0.44:0,1,0:27:21",
+          "chromosome": "chr7",
+          "position": 19196736,
+          "end_field_values": [
+            "19197155"
+          ],
+          "id": "severus_DEL6498",
+          "ref": "N",
+          "alt": "<DEL>",
+          "filter": "PASS",
+          "info": "PRECISE;SVTYPE=DEL;SVLEN=419;END=19197155;STRANDS=+-;MAPQ=60;PHASESETID=19154003;HP=1",
+          "format_and_samples": [
+            "GT:VAF:hVAF:DR:DV",
+            "0/1:0.44:0,1,0:27:21"
+          ]
+        }
+      ]
+    },
+    {
+      "member": "SV_callsets/somatic_SV/hg008/nanomonsv.vcf",
+      "local_basename": "nanomonsv.vcf",
+      "bytes": 220862,
+      "sha256": "89f19ed90b2889643bd690683a83157c5bc86237046ac221c24061f2894eb408",
+      "crc32": "9e4fd42e",
+      "member_crc_verified": true,
+      "total_records_read": 1049,
+      "selected_headers": [
+        "##fileformat=VCFv4.3",
+        "##fileDate=20250305",
+        "##source=nanomonsv-0.7.2",
+        "##reference=/home/gaoruntian/somatic_data/data_somatic/HG008/GRCh38_GIABv3_no_alt_analysis_set_maskedGRC_decoys_MAP2K3_KMT2C_KCNJ18.fasta.gz",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tTUMOR\tCONTROL"
+      ],
+      "nearby_records": []
+    },
+    {
+      "member": "SV_callsets/somatic_SV/hg008/nanomonsv.filter.vcf",
+      "local_basename": "nanomonsv.filter.vcf",
+      "bytes": 141755,
+      "sha256": "493a5c9b2725f6f2c74dcdc582b0b1196c4daf98a303361961438b406ed6f2c0",
+      "crc32": "7f17727b",
+      "member_crc_verified": true,
+      "total_records_read": 634,
+      "selected_headers": [
+        "##fileformat=VCFv4.3",
+        "##fileDate=20250305",
+        "##source=nanomonsv-0.7.2",
+        "##reference=/home/gaoruntian/somatic_data/data_somatic/HG008/GRCh38_GIABv3_no_alt_analysis_set_maskedGRC_decoys_MAP2K3_KMT2C_KCNJ18.fasta.gz",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tTUMOR\tCONTROL"
+      ],
+      "nearby_records": []
+    },
+    {
+      "member": "SV_callsets/somatic_SV/hg008/minisv.vcf",
+      "local_basename": "minisv.vcf",
+      "bytes": 108750,
+      "sha256": "90ef60f3fa805d598d3d7a6b149b4e91794e59c96293dca836439ed650841bb5",
+      "crc32": "cb568869",
+      "member_crc_verified": true,
+      "total_records_read": 186,
+      "selected_headers": [
+        "##fileformat=VCFv4.3",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tsample"
+      ],
+      "nearby_records": [
+        {
+          "raw_record": "chr7\t19196966\tdel_42\tN\t<DEL>\t24\tPASS\tSVTYPE=DEL;SVLEN=-195;END=19197160;SEQ=agaatcaaatagacgcaaaaaaaatgataaaggggatatcatcactgatcccacagaaatacgaactaccatcagagaatactacaaacacctctatgcaaataaactagaaaatctagaagaaatggataaattcctcgacacatacactctcccaagactaaaccaggaagaagttgaatctctgaatagacc\tGT\t1/1",
+          "chromosome": "chr7",
+          "position": 19196966,
+          "end_field_values": [
+            "19197160"
+          ],
+          "id": "del_42",
+          "ref": "N",
+          "alt": "<DEL>",
+          "filter": "PASS",
+          "info": "SVTYPE=DEL;SVLEN=-195;END=19197160;SEQ=agaatcaaatagacgcaaaaaaaatgataaaggggatatcatcactgatcccacagaaatacgaactaccatcagagaatactacaaacacctctatgcaaataaactagaaaatctagaagaaatggataaattcctcgacacatacactctcccaagactaaaccaggaagaagttgaatctctgaatagacc",
+          "format_and_samples": [
+            "GT",
+            "1/1"
+          ]
+        }
+      ]
+    },
+    {
+      "member": "SV_callsets/somatic_SV/hg008/minisv.filter.vcf",
+      "local_basename": "minisv.filter.vcf",
+      "bytes": 106330,
+      "sha256": "71d7b709c2400b4561d4dbf72eb9af264afe101930bfce59b51b8aea79d75fb8",
+      "crc32": "e43a8cdd",
+      "member_crc_verified": true,
+      "total_records_read": 168,
+      "selected_headers": [
+        "##fileformat=VCFv4.3",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tsample"
+      ],
+      "nearby_records": [
+        {
+          "raw_record": "chr7\t19196966\tdel_42\tN\t<DEL>\t24\tPASS\tSVTYPE=DEL;SVLEN=-195;END=19197160;SEQ=agaatcaaatagacgcaaaaaaaatgataaaggggatatcatcactgatcccacagaaatacgaactaccatcagagaatactacaaacacctctatgcaaataaactagaaaatctagaagaaatggataaattcctcgacacatacactctcccaagactaaaccaggaagaagttgaatctctgaatagacc\tGT\t1/1",
+          "chromosome": "chr7",
+          "position": 19196966,
+          "end_field_values": [
+            "19197160"
+          ],
+          "id": "del_42",
+          "ref": "N",
+          "alt": "<DEL>",
+          "filter": "PASS",
+          "info": "SVTYPE=DEL;SVLEN=-195;END=19197160;SEQ=agaatcaaatagacgcaaaaaaaatgataaaggggatatcatcactgatcccacagaaatacgaactaccatcagagaatactacaaacacctctatgcaaataaactagaaaatctagaagaaatggataaattcctcgacacatacactctcccaagactaaaccaggaagaagttgaatctctgaatagacc",
+          "format_and_samples": [
+            "GT",
+            "1/1"
+          ]
+        }
+      ]
+    }
+  ],
+  "comparative_allele_recovery_claim": "NOT_ASSESSED",
+  "transferred_range_bytes": 236857,
+  "range_receipts": [
+    {
+      "start": 2879666650,
+      "end": 2879666671,
+      "bytes": 22,
+      "sha256": "33c5236b14d64dc36acd79d84860d993c25739d96ff3189d5bd9357563c24efb"
+    },
+    {
+      "start": 2879666630,
+      "end": 2879666649,
+      "bytes": 20,
+      "sha256": "04a50485e1acf50efbc0f83bdd09d612772518c17e2140f0f54437a4c8b9fa01"
+    },
+    {
+      "start": 2879642965,
+      "end": 2879666649,
+      "bytes": 23685,
+      "sha256": "d6e3d43977130f3fa6fea27b42f9a38198d70e87b73b7905dd16f0d10623a98f"
+    },
+    {
+      "start": 2878771683,
+      "end": 2878771712,
+      "bytes": 30,
+      "sha256": "75c0ba05ace78b0621f25c9d66378e94499bcab5744a0cdbe9e5ca50e8bb7a96"
+    },
+    {
+      "start": 2878771713,
+      "end": 2878771793,
+      "bytes": 81,
+      "sha256": "1d9ee35eed15b8a1c4c0ee36f4214d2701f212d04ac91f5ef99146585328fbe4"
+    },
+    {
+      "start": 2878771826,
+      "end": 2878779589,
+      "bytes": 7764,
+      "sha256": "6de4f5e8e8fb0ae6bef7fe783998e4c62a07c7009812ff83f2409708fb7b163d"
+    },
+    {
+      "start": 2878787322,
+      "end": 2878787351,
+      "bytes": 30,
+      "sha256": "c1781d0f99d4046924a6099ab4eb030edd33de14a162fdf6633f6cfa4c276341"
+    },
+    {
+      "start": 2878787352,
+      "end": 2878787437,
+      "bytes": 86,
+      "sha256": "d8e616230fa7c17097f67dddabb9af9d51bfdcf64afe6365d57c7313615fbee2"
+    },
+    {
+      "start": 2878787470,
+      "end": 2878795893,
+      "bytes": 8424,
+      "sha256": "18f5f3bbdaa3f13f8683ab33c6f600744ceef53e36c0e70751b0b6e578ffdcd4"
+    },
+    {
+      "start": 2878779606,
+      "end": 2878779635,
+      "bytes": 30,
+      "sha256": "7aa64ff0112e88b1e3b0e5930acac8332318003245d63b9718f8f71a3939d8e4"
+    },
+    {
+      "start": 2878779636,
+      "end": 2878779730,
+      "bytes": 95,
+      "sha256": "741793d9c9c226cb5c46cf5e94d08a0ddf50f7697711b41ab24d05722424a71a"
+    },
+    {
+      "start": 2878779763,
+      "end": 2878787305,
+      "bytes": 7543,
+      "sha256": "96fea272fabe55862bde8cbc3f1558a5f8c84c568e8977ebef78eb135079108b"
+    },
+    {
+      "start": 2879637364,
+      "end": 2879637393,
+      "bytes": 30,
+      "sha256": "40162fe5e9112117c54e6e58afbf0db390c1917928676f3a975cb9010eda7a72"
+    },
+    {
+      "start": 2879637394,
+      "end": 2879637430,
+      "bytes": 37,
+      "sha256": "0f763ae2b09e247bc8dd5084f1190ca7ee47ff941bd6f5a975fad457d4d269ce"
+    },
+    {
+      "start": 2879637463,
+      "end": 2879642948,
+      "bytes": 5486,
+      "sha256": "90a1d7e927bd8a89bc1acda504fddfa381a4d1fb80e02f80388786f7b83cf52e"
+    },
+    {
+      "start": 2879632270,
+      "end": 2879632299,
+      "bytes": 30,
+      "sha256": "6aafa9cc7f07349ab5cadb9bd94eb380a01fe65f1ef2d370b204c52e5e6d623d"
+    },
+    {
+      "start": 2879632300,
+      "end": 2879632343,
+      "bytes": 44,
+      "sha256": "097086b81a19297ea0b509699fe436490bf89227caca3d173ffdc6d1050071d9"
+    },
+    {
+      "start": 2879632376,
+      "end": 2879637347,
+      "bytes": 4972,
+      "sha256": "d3ffdea57dc3a6ac6dddc234dc44f6f0e35e63fabfda83f19fe97c4e918227f7"
+    },
+    {
+      "start": 2879261276,
+      "end": 2879261305,
+      "bytes": 30,
+      "sha256": "ab328e4155cc4dfb76a3650bd636221332072e352803bcd6f8f3129d4daeb998"
+    },
+    {
+      "start": 2879261306,
+      "end": 2879261345,
+      "bytes": 40,
+      "sha256": "7138303d59d4a6c479fadcf85099b99dc894ea82668927269f1cdd676c9ab9e4"
+    },
+    {
+      "start": 2879261378,
+      "end": 2879281248,
+      "bytes": 19871,
+      "sha256": "0c01f3acfaabb7a77aa4f5489299ed654fda04842c741143d91e754e02b135c0"
+    },
+    {
+      "start": 2879242633,
+      "end": 2879242662,
+      "bytes": 30,
+      "sha256": "d7abeb513de99d48b6624b35d1e2e70510b96e2a51424ea012c13211ab2acf04"
+    },
+    {
+      "start": 2879242663,
+      "end": 2879242709,
+      "bytes": 47,
+      "sha256": "f2a379d741d0e14172fe3e2e2daef77a03e0501ad200ca8b83f9176eef8298b3"
+    },
+    {
+      "start": 2879242742,
+      "end": 2879261259,
+      "bytes": 18518,
+      "sha256": "31f2b37d6250146f6d59609fef9f64a57c0c55f11bda1b8054bbc1522ead451e"
+    },
+    {
+      "start": 2879194186,
+      "end": 2879194215,
+      "bytes": 30,
+      "sha256": "36dbd16d88f637dfb2625f04fcc84ba5fbe38b56e2919629e34c1de156737189"
+    },
+    {
+      "start": 2879194216,
+      "end": 2879194257,
+      "bytes": 42,
+      "sha256": "521c5747c2feecb392a4d0857dd3bcb94e5bcf7c57964b777cf586e675b9adc6"
+    },
+    {
+      "start": 2879194290,
+      "end": 2879242616,
+      "bytes": 48327,
+      "sha256": "9c4fd5340a8b501c2d151048306ec92ea704de20983f437bdc80c51c01bc18f4"
+    },
+    {
+      "start": 2879161756,
+      "end": 2879161785,
+      "bytes": 30,
+      "sha256": "5fd990beaf0334cd92b02ad6a2e5ac73ff1d0e28246913763b9b3cd6afb629e1"
+    },
+    {
+      "start": 2879161786,
+      "end": 2879161834,
+      "bytes": 49,
+      "sha256": "29f68f7398f3479b97e88302bf810db4a18b1dd830f01db885c20334fde80618"
+    },
+    {
+      "start": 2879161867,
+      "end": 2879194169,
+      "bytes": 32303,
+      "sha256": "50d2334f3c66a08d9e3d57810579164a60911c7622c0175549c75ffc652e9e5e"
+    },
+    {
+      "start": 2879131822,
+      "end": 2879131851,
+      "bytes": 30,
+      "sha256": "506b2e28ec819fc1438224278010c93519dd3f738babe5ad6992951764cf0fed"
+    },
+    {
+      "start": 2879131852,
+      "end": 2879131890,
+      "bytes": 39,
+      "sha256": "9aaf54fcbf78e7d4d410d0f373da16bc150337be8b87166170c1d706f23f649a"
+    },
+    {
+      "start": 2879131923,
+      "end": 2879161739,
+      "bytes": 29817,
+      "sha256": "938aac5cf4460bfbe13bbbe75fa286206eb3bcfd474779c757768cd14591621c"
+    },
+    {
+      "start": 2879102529,
+      "end": 2879102558,
+      "bytes": 30,
+      "sha256": "b66a364be82ca2705727e39cafb79f74d0bb50e12247c9a2530109c5ba6f7e33"
+    },
+    {
+      "start": 2879102559,
+      "end": 2879102604,
+      "bytes": 46,
+      "sha256": "5cea581cf40e968c66a06ee2e30a249358f8e37727fc8e02b5fde0a77a8876de"
+    },
+    {
+      "start": 2879102637,
+      "end": 2879131805,
+      "bytes": 29169,
+      "sha256": "12089e89f529bdc9ea2d564dcc9665e98884aaeef577c22b4d13b19374687dc7"
+    }
+  ],
+  "last_modified": null
+}

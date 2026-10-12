@@ -32,6 +32,27 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October13 [interruption/current comparator checkpoint](2026-10-13-comparator-checkpoint.md):
+  completed Weller inventory and two functional scouts preserved; no modelling
+  campaign. Main's recovered GEO listing is RNA/guide-only in inspected scope.
+  New SVPG somatic native-mode comparator question remains untested. Existing
+  max recommendation retains conditional complex-INV falsifier;7/9caller
+  source versions cannot be conflated. Old three handles return not_found;
+  queued SVPG decision unfinished. Replacements requested, no inferred acceptance.
+  Own queue empty, scratch9days21h/one extension, accepted data permanent.
+  99tests+62subtests pass5.01s; full goal active/unmet, old HG002 study stopped.
+  Later [actual fixed HG008 comparison](../../results/svpg_named_case_20261013/README.md)
+  finds Severus already reports the named419bp DEL geometry and GT0/1.
+  Maintained reviewer and max-effort decision accept STOP for the generic new
+  detection premise. Exact sequence/native guided rescue/somatic origin remain
+  unknown, not failures or novelty. Replacement interface/decision/review notes
+  complete. Existing whole cache MD5/SHA pass; all11 members match range bodies.
+  No new whole archive/graph/read transfer or caller job; no INV job released.
+  Two offline access-limit defects corrected after preserved15pass/2fail;
+  combined116tests+62subtests pass5.00s, all10cached VCF projections reproduce.
+  New Luna/max source worker checks published INV supplementary missed cases;
+  this is read-only case qualification, not a selected study or compute release.
+
 - October12 new [breakpoint uncertainty](2026-10-12-breakpoint-uncertainty-opportunity.md)
   and [balanced-rearrangement](2026-10-12-balanced-rearrangement-opportunity.md)
   scouts complete without selecting a clinical lead. Main's separate
