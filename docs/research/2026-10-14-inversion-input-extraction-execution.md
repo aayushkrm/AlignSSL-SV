@@ -55,3 +55,31 @@ all accepted source data and this diagnostic output are on permanent HOME.
 No obsolete project job is found or cancelled. No other user's jobs are touched.
 Job identity/status must be recorded after actual submission; preparation here
 is not evidence that it ran. Raw sequence/quality JSONL stays outside Git.
+
+## First launch failure and separate execution correction
+
+Frozen source commit `e4bfe5b1b98b34984f1c3cddb407ce8bca8a773a` was pushed
+before source access. Batch job1604869 FAILED0:53 at22:25:35 local time,
+reported elapsed00:00:00 and measuredCPU00:00:00; its batch step CANCELLED0:53.
+No stdout/stderr, execution, fixture or case file exists. No case alignment
+body was read. This is pre-task failure, not a scientific null or zero
+allocation claim. Signal cause is unproved. The first bundle remains unchanged.
+An initial accounting query also rejected unsupported `StdOut`/`StdErr`
+fields; the corrected query and controller state establish the outcome.
+
+Previous October10 records already show the same pre-task batch signal,
+successful direct `srun` recovery and read-only compute HOME. The original
+01 output path incorrectly reused HOME despite that known restriction.
+Separate02 uses writable physical scratch for every new output and direct
+`srun`, while retaining the exact extractor, fixture, reference, source BAM/BAI,
+limits and endpoints. This addresses execution paths, not a proven cause of
+signal53. [02 hashes](../../results/inv_mapped_trace_20261014/SHA256SUMS-02)
+freeze launcher `d71dbaaf4acee6ae069b6c3297fdbd3ee766e42e1de30fa4f9fd0c3164182a47`.
+
+New exclusive output:
+`/beegfs/scratch/ws/ws1/igorno-alignssl_restart_20260922/experiments/inv_mapped_trace_20261014_02`.
+One direct allocation, unchanged1CPU/1GiB/15min on hydra-n1/amd_256M, noGPU.
+Main will preserve all outputs, even failures, in a separate non-expiring HOME
+leaf through writable login I/O and verify the copies before October22.
+No automatic retry, case repair, scientific parameter change or old-result
+overwrite is allowed. Both attempts stay in resource accounting.
