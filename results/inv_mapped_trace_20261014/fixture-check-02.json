@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "scope": "SYNTHETIC_NATIVE_PYSAM_ABI_ONLY",
+  "pysam_version": "0.24.1",
+  "records": 4,
+  "study_bam_opened": false,
+  "source_fixture_unchanged": true,
+  "extractor_sha256": "27287805842e46ad3651f2e222d6ec85737bc9104fa43e126704c24123b336ef"
+}

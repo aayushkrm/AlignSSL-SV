@@ -1,0 +1,6 @@
+Transcription of sacct output, 2026-10-14. This file is not the raw scheduler stream.
+JobID|JobName|Partition|State|ExitCode|Elapsed|AllocCPUS|ReqMem|TotalCPU|MaxRSS|NodeList
+1604869|alignssl_inv_trace_20261014_01|amd_256M|FAILED|0:53|00:00:00|1|1G|00:00:00||hydra-n1
+1604869.batch|batch||CANCELLED|0:53|00:00:00|1||00:00:00||hydra-n1
+1604870|alignssl_inv_trace_20261014_02|amd_256M|COMPLETED|0:0|00:00:02|1|1G|00:00.907||hydra-n1
+1604870.0|alignssl_inv_trace_20261014_02||COMPLETED|0:0|00:00:01|1||00:00.907|17424K|hydra-n1

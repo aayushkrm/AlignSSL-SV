@@ -11,6 +11,30 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+### Complete fixed-locus input census — 2026-10-14
+
+Direct cluster job **1604870 completed** after first batch launch1604869 failed
+before task execution. Both attempts are preserved. The [actual result](results/inv_mapped_trace_20261014/README.md)
+contains all 52 regional alignment records from 47 QNAME labels, region EOF,
+no cap or decoder failure. The maintained independent reviewer recomputes
+hashes, all counts, CIGAR walks and local reference witnesses, and accepts the
+bounded census. Full raw rows, sequence, quality, controls and logs are kept
+outside Git in byte-identical scratch/HOME copies and a local copy.
+
+Two labels have three fetched segments with contiguous stored-query coverage
+and opposite-strand interiors. A third multi-record pattern and an unfetched
+chr10 SA entry are also retained. These are descriptive alignments, not proof
+of the true allele, unique mapping, genotype, original benchmark reproduction
+or caller failure. All local '=' observations agree with the canonical context;
+nine reference positions remain unwitnessed. The separate input track and
+3,177 bp interior do not replace the frozen 3,205 bp truth interval.
+
+Successful allocation: 1 CPU, 1 GiB requested, 2 s elapsed, 0.907 s measured
+CPU, 17424K MaxRSS; no GPU or idle node. 69 combined inversion software tests
+pass in 3.37 s. New independent max-effort decision compares one finite next
+falsifier with closing this case; no caller/training campaign released.
+The full publication goal is active and unmet. Prior scientific stops stand.
+
 ### Bounded mapped-input extraction preparation — 2026-10-14
 
 The [execution packet](docs/research/2026-10-14-inversion-input-extraction-execution.md)

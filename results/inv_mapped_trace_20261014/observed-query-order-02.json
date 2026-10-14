@@ -1,0 +1,2429 @@
+{
+  "schema_version": 1,
+  "summary_type": "observed_mapped_case_input_descriptive_summary",
+  "region": {
+    "chromosome": "chr2",
+    "start_zero_based_inclusive": 240675000,
+    "end_zero_based_exclusive": 240704000,
+    "length_bp": 29000
+  },
+  "jsonl_header": {
+    "record_type": "header",
+    "schema_version": 1,
+    "region": {
+      "chromosome": "chr2",
+      "start_zero_based_inclusive": 240675000,
+      "end_zero_based_exclusive": 240704000,
+      "length_bp": 29000
+    },
+    "coordinate_system": "zero-based half-open"
+  },
+  "provenance": {
+    "records_jsonl_path": "/Users/akm/aayushkrm-AlignSSL/runs/inv-mapped-trace-20261014-02.SEsMRo/inv_mapped_trace_20261014_02/case/alignments.jsonl",
+    "records_jsonl_sha256": "ca77cd139dcb8344cf0697dc7468e97db35344c3d10dfdb42d28eedcbd43df18",
+    "records_jsonl_bytes": 4527955,
+    "records_jsonl_header_line_sha256": "c6338a9918b605fd87d3363362cf67d4af9a4cc455fd8cc8957423ab63a9b30b",
+    "records_jsonl_stat_stable_during_summary": true,
+    "extractor_manifest_path": "/Users/akm/aayushkrm-AlignSSL/runs/inv-mapped-trace-20261014-02.SEsMRo/inv_mapped_trace_20261014_02/case/manifest.json",
+    "extractor_manifest_sha256": "80f29373616a355ce4c2b23dbba49ade7796ac28a094032c4598b65f508aae3a",
+    "extractor_manifest_stat_stable_during_summary": true,
+    "summarizer_sha256": "09aca137feed01ffbafcf303f11f78a346b4715796a3a21888236f957e2c36df",
+    "retained_alignment_records": 52,
+    "source_bam": {
+      "path": "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam",
+      "stable_during_extraction": true,
+      "stat_before": {
+        "size_bytes": 48727325910,
+        "mtime_ns": 1791620060000000000,
+        "ctime_ns": 1791638324000000000,
+        "device": 48,
+        "inode": 8000318496950740351
+      },
+      "stat_after": {
+        "size_bytes": 48727325910,
+        "mtime_ns": 1791620060000000000,
+        "ctime_ns": 1791638324000000000,
+        "device": 48,
+        "inode": 8000318496950740351
+      }
+    },
+    "source_index": {
+      "path": "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam.bai",
+      "stable_during_extraction": true,
+      "stat_before": {
+        "size_bytes": 21582928,
+        "mtime_ns": 1791620111000000000,
+        "ctime_ns": 1791638286000000000,
+        "device": 48,
+        "inode": 3360392405955206129
+      },
+      "stat_after": {
+        "size_bytes": 21582928,
+        "mtime_ns": 1791620111000000000,
+        "ctime_ns": 1791638286000000000,
+        "device": 48,
+        "inode": 3360392405955206129
+      }
+    },
+    "reference_json": {
+      "path": "reference.json",
+      "json_sha256": "d28acc720fd15ca939a1e9f5d885ed3da0970ff4edbfdf93bea081ed71036656",
+      "dna_sha256": "ecb39b7eb34964b213989ea986ffd8f67475c9ccff9910f0ac22d065621e4edb",
+      "stat_before": {
+        "size_bytes": 29159,
+        "mtime_ns": 1791991665000000000,
+        "ctime_ns": 1791991665000000000,
+        "device": 47,
+        "inode": 9557366840087557033
+      },
+      "stability_basis": "COMPLETE manifest with no extraction failures; reference post-read stat is not retained by schema v1"
+    }
+  },
+  "counts": {
+    "observed_alignment_records": 52,
+    "unique_named_qnames": 47,
+    "unnamed_qname_alignment_records": 0,
+    "qnames_with_multiple_records": 3,
+    "qnames_with_cross_strand_records": 3,
+    "record_pattern_labels": {
+      "multiple_records_cross_strand": 3,
+      "single_observed_record": 44
+    },
+    "full_query_payload_status": {
+      "STORED_SEQUENCE_AND_QUALITY_PRESENT": 52
+    }
+  },
+  "qnames": [
+    {
+      "qname": "m84039_230418_220405_s4/101781792/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 47,
+          "forward_query_interval": [
+            0,
+            12111
+          ],
+          "query_length": 12111,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240697956,
+            240710067
+          ],
+          "reference_span_bp": 12111,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/105120986/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 8,
+          "forward_query_interval": [
+            0,
+            14338
+          ],
+          "query_length": 14338,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240666542,
+            240680885
+          ],
+          "reference_span_bp": 14343,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/105513326/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 7,
+          "forward_query_interval": [
+            0,
+            9833
+          ],
+          "query_length": 9833,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240666437,
+            240676272
+          ],
+          "reference_span_bp": 9835,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/119476495/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 11,
+          "forward_query_interval": [
+            0,
+            21033
+          ],
+          "query_length": 21033,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240668772,
+            240689812
+          ],
+          "reference_span_bp": 21040,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/131273663/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 2,
+          "forward_query_interval": [
+            0,
+            18902
+          ],
+          "query_length": 18902,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240658452,
+            240677337
+          ],
+          "reference_span_bp": 18885,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/135859030/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 40,
+          "forward_query_interval": [
+            0,
+            19135
+          ],
+          "query_length": 19135,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240691171,
+            240710502
+          ],
+          "reference_span_bp": 19331,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/140644688/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 28,
+          "forward_query_interval": [
+            0,
+            12499
+          ],
+          "query_length": 12499,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240682096,
+            240694783
+          ],
+          "reference_span_bp": 12687,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/143787150/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 23,
+          "forward_query_interval": [
+            0,
+            21524
+          ],
+          "query_length": 21524,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240677683,
+            240699223
+          ],
+          "reference_span_bp": 21540,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/147658533/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 48,
+          "forward_query_interval": [
+            0,
+            20587
+          ],
+          "query_length": 20587,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240698164,
+            240718758
+          ],
+          "reference_span_bp": 20594,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/148703880/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 10,
+          "forward_query_interval": [
+            0,
+            18500
+          ],
+          "query_length": 21051,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240667252,
+            240685789
+          ],
+          "reference_span_bp": 18537,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/157161026/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 42,
+          "forward_query_interval": [
+            0,
+            22791
+          ],
+          "query_length": 22791,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240694233,
+            240717040
+          ],
+          "reference_span_bp": 22807,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/159912286/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 38,
+          "forward_query_interval": [
+            0,
+            24290
+          ],
+          "query_length": 24290,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240690092,
+            240714610
+          ],
+          "reference_span_bp": 24518,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/160891137/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 26,
+          "forward_query_interval": [
+            0,
+            17939
+          ],
+          "query_length": 18322,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240681740,
+            240699869
+          ],
+          "reference_span_bp": 18129,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/166594328/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 24,
+          "forward_query_interval": [
+            0,
+            10741
+          ],
+          "query_length": 10741,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240679103,
+            240689885
+          ],
+          "reference_span_bp": 10782,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/169218442/ccs",
+      "observed_record_count": 3,
+      "observed_strand_count": 2,
+      "cross_strand_observed": true,
+      "record_pattern_label": "multiple_records_cross_strand",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 3,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 3,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 35,
+          "forward_query_interval": [
+            0,
+            564
+          ],
+          "query_length": 20304,
+          "flag": 2064,
+          "primary": false,
+          "secondary": false,
+          "supplementary": true,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240688966,
+            240689531
+          ],
+          "reference_span_bp": 565,
+          "mapping_quality": 12,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": [
+            {
+              "type": "Z",
+              "value": "chr2,240669170,-,30=1D151=1X91=1X1=1X3=1X5=1X11=1X744=1D86=1X85=1X86=1D828=1X451=1D21=1D533=1I21=1D493=1X373=1D41=1D237=10I476=1X114=1X500=1D149=1X67=1D42=1X22=1X390=1X55=1X378=2X65=1I44=1D7=1I12=1X107=1X29=1X1568=1D1864=1D19=1X83=1X45=1D63=1D658=1X11=1X497=1I57=1X30=1D36=1D19=35D32=1X212=1I86=1D92=1D4=1X6=1X117=1X31=1D230=1X2=1X196=1D19=1X78=1D72=1D63=1D251=1X48=1X20=1X30=1X132=1X18=1I4=1X68=1X13=1X63=2X43=1X176=1X468=1I5=1X101=1X82=1D313=1X2=1X38=2D1X9=1X7=1X1=1X11=1X1=1X1=1X11=1X9=1D4=1X61=1X139=1X6=1X5=1X8=1X50=3D41=1X35=1X5=1X14=1X29=1X37=1X20=1X1=2X4=1X7=1X21=1X7=1X91=1I14=1X2=1X43=1I425=1X23=1X28=1X17=1X57=1D8=1X237=1D74=1I27=1D50=1X13=3733S,60,85;chr2,240685790,+,564S233=1D140=1D83=1D391=1X49=1D74=1I9=1D22=1D125=1D320=1X7=1D344=1I276=1D94=1D245=1D30=1D253=1I12=1X74=1I35=1I273=1D72=16571S,12,3;"
+            }
+          ]
+        },
+        {
+          "source_record_index": 30,
+          "forward_query_interval": [
+            564,
+            3733
+          ],
+          "query_length": 20304,
+          "flag": 2048,
+          "primary": false,
+          "secondary": false,
+          "supplementary": true,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240685789,
+            240688966
+          ],
+          "reference_span_bp": 3177,
+          "mapping_quality": 12,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": [
+            {
+              "type": "Z",
+              "value": "chr2,240669170,-,30=1D151=1X91=1X1=1X3=1X5=1X11=1X744=1D86=1X85=1X86=1D828=1X451=1D21=1D533=1I21=1D493=1X373=1D41=1D237=10I476=1X114=1X500=1D149=1X67=1D42=1X22=1X390=1X55=1X378=2X65=1I44=1D7=1I12=1X107=1X29=1X1568=1D1864=1D19=1X83=1X45=1D63=1D658=1X11=1X497=1I57=1X30=1D36=1D19=35D32=1X212=1I86=1D92=1D4=1X6=1X117=1X31=1D230=1X2=1X196=1D19=1X78=1D72=1D63=1D251=1X48=1X20=1X30=1X132=1X18=1I4=1X68=1X13=1X63=2X43=1X176=1X468=1I5=1X101=1X82=1D313=1X2=1X38=2D1X9=1X7=1X1=1X11=1X1=1X1=1X11=1X9=1D4=1X61=1X139=1X6=1X5=1X8=1X50=3D41=1X35=1X5=1X14=1X29=1X37=1X20=1X1=2X4=1X7=1X21=1X7=1X91=1I14=1X2=1X43=1I425=1X23=1X28=1X17=1X57=1D8=1X237=1D74=1I27=1D50=1X13=3733S,60,85;chr2,240688967,-,19740S13=1X238=1D67=1D62=1X20=1X8=1I97=2X53=,12,5;"
+            }
+          ]
+        },
+        {
+          "source_record_index": 12,
+          "forward_query_interval": [
+            3733,
+            20304
+          ],
+          "query_length": 20304,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240669169,
+            240685789
+          ],
+          "reference_span_bp": 16620,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": [
+            {
+              "type": "Z",
+              "value": "chr2,240685790,+,564S233=1D140=1D83=1D391=1X49=1D74=1I9=1D22=1D125=1D320=1X7=1D344=1I276=1D94=1D245=1D30=1D253=1I12=1X74=1I35=1I273=1D72=16571S,12,3;chr2,240688967,-,19740S13=1X238=1D67=1D62=1X20=1X8=1I97=2X53=,12,5;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/174983982/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 29,
+          "forward_query_interval": [
+            0,
+            10229
+          ],
+          "query_length": 10229,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240685000,
+            240695223
+          ],
+          "reference_span_bp": 10223,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/176690722/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 37,
+          "forward_query_interval": [
+            0,
+            29485
+          ],
+          "query_length": 29485,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240689176,
+            240718838
+          ],
+          "reference_span_bp": 29662,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/192877561/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 16,
+          "forward_query_interval": [
+            0,
+            17934
+          ],
+          "query_length": 17934,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240670723,
+            240688660
+          ],
+          "reference_span_bp": 17937,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/197137013/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 44,
+          "forward_query_interval": [
+            0,
+            11544
+          ],
+          "query_length": 11544,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240696758,
+            240708354
+          ],
+          "reference_span_bp": 11596,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/19927977/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 0,
+          "forward_query_interval": [
+            0,
+            28112
+          ],
+          "query_length": 28112,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240653496,
+            240681649
+          ],
+          "reference_span_bp": 28153,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/203951278/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 1,
+          "forward_query_interval": [
+            0,
+            17460
+          ],
+          "query_length": 17460,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240658185,
+            240675630
+          ],
+          "reference_span_bp": 17445,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/207820160/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 9,
+          "forward_query_interval": [
+            0,
+            20495
+          ],
+          "query_length": 20495,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240667032,
+            240687531
+          ],
+          "reference_span_bp": 20499,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/210505410/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 25,
+          "forward_query_interval": [
+            0,
+            20728
+          ],
+          "query_length": 22156,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240681680,
+            240702015
+          ],
+          "reference_span_bp": 20335,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": [
+            {
+              "type": "Z",
+              "value": "chr10,95197476,+,20946S12=1I28=1X2=1X3=1X7=1X47=1X8=1X13=1X4=1X5=1X22=1X14=1X14=1X1=1X20=1X104=1X45=1X17=1X6=1X15=1X16=1X7=1X23=1X33=2X34=1X67=1X57=1X2=1X9=1X7=1X17=1X3=1X1=1X31=1X1=1X18=461S,1,35;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/215680230/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 49,
+          "forward_query_interval": [
+            0,
+            26241
+          ],
+          "query_length": 26241,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240698532,
+            240724846
+          ],
+          "reference_span_bp": 26314,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/222364479/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 13,
+          "forward_query_interval": [
+            0,
+            16184
+          ],
+          "query_length": 16184,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240669204,
+            240685410
+          ],
+          "reference_span_bp": 16206,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/236721082/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 14,
+          "forward_query_interval": [
+            0,
+            12105
+          ],
+          "query_length": 12105,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240669211,
+            240681344
+          ],
+          "reference_span_bp": 12133,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/239404949/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 27,
+          "forward_query_interval": [
+            107,
+            20692
+          ],
+          "query_length": 20692,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240681823,
+            240702015
+          ],
+          "reference_span_bp": 20192,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/242221584/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 41,
+          "forward_query_interval": [
+            0,
+            20716
+          ],
+          "query_length": 20716,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240694063,
+            240714795
+          ],
+          "reference_span_bp": 20732,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/245306562/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 34,
+          "forward_query_interval": [
+            0,
+            18859
+          ],
+          "query_length": 19885,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240688966,
+            240708031
+          ],
+          "reference_span_bp": 19065,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/248779173/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 32,
+          "forward_query_interval": [
+            0,
+            3844
+          ],
+          "query_length": 3844,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240687030,
+            240690874
+          ],
+          "reference_span_bp": 3844,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/248971635/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 21,
+          "forward_query_interval": [
+            0,
+            11125
+          ],
+          "query_length": 11125,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240673979,
+            240685148
+          ],
+          "reference_span_bp": 11169,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/259786768/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 39,
+          "forward_query_interval": [
+            0,
+            17917
+          ],
+          "query_length": 17917,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240691088,
+            240709205
+          ],
+          "reference_span_bp": 18117,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/27855644/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 5,
+          "forward_query_interval": [
+            0,
+            23346
+          ],
+          "query_length": 23346,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240663898,
+            240687353
+          ],
+          "reference_span_bp": 23455,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/32639433/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 46,
+          "forward_query_interval": [
+            0,
+            22758
+          ],
+          "query_length": 22758,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240697623,
+            240720410
+          ],
+          "reference_span_bp": 22787,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/35524807/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 6,
+          "forward_query_interval": [
+            0,
+            14090
+          ],
+          "query_length": 14094,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240664229,
+            240678316
+          ],
+          "reference_span_bp": 14087,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/39785314/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 22,
+          "forward_query_interval": [
+            0,
+            17842
+          ],
+          "query_length": 17842,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240675373,
+            240693268
+          ],
+          "reference_span_bp": 17895,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/43849379/ccs",
+      "observed_record_count": 2,
+      "observed_strand_count": 2,
+      "cross_strand_observed": true,
+      "record_pattern_label": "multiple_records_cross_strand",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 2,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 2,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 51,
+          "forward_query_interval": [
+            1,
+            5003
+          ],
+          "query_length": 24698,
+          "flag": 2064,
+          "primary": false,
+          "secondary": false,
+          "supplementary": true,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240702015,
+            240707026
+          ],
+          "reference_span_bp": 5011,
+          "mapping_quality": 32,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": [
+            {
+              "type": "Z",
+              "value": "chr2,240672311,+,5003S33=1X6=1X1=1X19=1D2X3=1X2=1X1=1X2=2X8=1X1=1X6=1X22=1X4=1X13=1X1=1X3=6I7=1X6=1X2=1I4X1=1X1=2X8=1X14=1X1=9I2=2I7=1X2=1X3=1X1=1X5=1X5=1X3=1X1=1X4=1X4=1X10=1X3=1X1=1X13=2X11=23D8=1X5=1X11=1X10=1X3=2X6=1X14=1X14=1X9=1X3=1X23=1X2=1X6=1X3=1X5=1X10=1X2=1X14=1X10=1X8=1X34=1X10=1X13=1X7=1X2=1D1=1X3=7D7=1X2=1X3=1D4=2X10=2X4=1X19=1X12=2X3=2X11=1X8=1X11=1X5=1X32=2X7=1X21=1X41=13I1=1I10=1X37=1X10=1X2=1X36=1X17=1X3=1X70=1X50=1X8=1X1=1X2=3X1=2X8=1X4=2X30=2X2=1X6=2X3=2X23=1X8=331D1X99=1X59=1X216=1X84=1X179=1X3=2X3=1X16=1D103=1D24=1X60=1X100=1X28=244D1X6=1X2=1X204=1X2=1D62=1X141=1X209=1D147=1X107=1X29=1X192=1X286=1I272=1X291=1X380=1D258=1D313=1D22=1I24=1D188=1D126=1I230=1D168=1D254=1D64=1I245=1D108=1X103=1X45=1D722=1X11=1X487=1D66=1X86=39D29=1X49=1D157=1X40=1I148=1X6=1X117=1X262=1X2=1X216=1X11=1D298=1I88=1D172=1D221=1X13=1X63=2X43=1X274=1X64=1D140=1I272=1X488=1X7=1X325=1X145=1X1=2X4=1X7=1X21=1X7=1X34=1I71=1X2=1X39=1D6=1I155=1D296=2X253=1I409=1D604=1D93=1X334=1D268=1X66=1I535=1D540=1D123=1X838=1X86=1X17=1X28=1X23=1X471=1X20=1X114=1X139=1X22=2X147=1X93=1D78=1D494=1X147=1X11=1X454=1I348=1X578=,60,193;"
+            }
+          ]
+        },
+        {
+          "source_record_index": 19,
+          "forward_query_interval": [
+            5003,
+            24698
+          ],
+          "query_length": 24698,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240672310,
+            240692637
+          ],
+          "reference_span_bp": 20327,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": [
+            {
+              "type": "Z",
+              "value": "chr2,240702016,-,19695S52=1I25=1X58=1D490=1D210=1D26=1I180=1X486=1D34=1X96=1I41=1D66=1D67=1X108=1D117=1X27=1X9=1I163=1X8=1I37=1D43=1D144=1D6=1D42=1I110=1I57=1D19=1D2=1X28=1I535=1D1X148=1D43=1X300=1D82=1X18=1D264=1D723=1I118=1S,32,11;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/46860765/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 50,
+          "forward_query_interval": [
+            0,
+            5316
+          ],
+          "query_length": 5316,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240699049,
+            240704363
+          ],
+          "reference_span_bp": 5314,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/50401294/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 36,
+          "forward_query_interval": [
+            0,
+            23811
+          ],
+          "query_length": 23811,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240689041,
+            240713120
+          ],
+          "reference_span_bp": 24079,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/58200598/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 20,
+          "forward_query_interval": [
+            112,
+            14238
+          ],
+          "query_length": 14238,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240673791,
+            240688200
+          ],
+          "reference_span_bp": 14409,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/61734952/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 17,
+          "forward_query_interval": [
+            0,
+            13693
+          ],
+          "query_length": 13693,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240671360,
+            240685104
+          ],
+          "reference_span_bp": 13744,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/78253641/ccs",
+      "observed_record_count": 3,
+      "observed_strand_count": 2,
+      "cross_strand_observed": true,
+      "record_pattern_label": "multiple_records_cross_strand",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 3,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 3,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 3,
+          "forward_query_interval": [
+            0,
+            23406
+          ],
+          "query_length": 28242,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240662336,
+            240685789
+          ],
+          "reference_span_bp": 23453,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": [
+            {
+              "type": "Z",
+              "value": "chr2,240685790,-,1659S850=1X264=1I125=1I156=1D57=1X22=1D1243=1X123=2X330=23406S,60,5;chr2,240688967,+,26583S13=1X369=1X20=1X8=1I97=2X153=1I348=1X20=1X89=1I25=1X36=1X37=1X29=1X14=1X5=1X13=1X22=2X33=3I56=1X8=1X5=1X6=1X35=1X103=1X61=1X6=1D1X18=,60,24;"
+            }
+          ]
+        },
+        {
+          "source_record_index": 31,
+          "forward_query_interval": [
+            23406,
+            26583
+          ],
+          "query_length": 28242,
+          "flag": 2064,
+          "primary": false,
+          "secondary": false,
+          "supplementary": true,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240685789,
+            240688966
+          ],
+          "reference_span_bp": 3177,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": [
+            {
+              "type": "Z",
+              "value": "chr2,240662337,+,586=1D265=1X157=1X330=1X126=1I1182=1I228=1X63=1X295=1D136=1I329=1I533=1D58=1X61=1D334=1I968=1X24=1D62=1I50=1D12=1X459=1I605=2X136=1X91=1X1=1X3=1X5=1X11=1X140=1D18=1D250=1I421=1X85=1X86=1X35=1I790=1I3=1X32=1D101=1D19=3I31=1I266=1D289=1D780=1X145=1I508=10I180=2I296=1X53=1I36=1I25=1X331=1I169=1D149=1X110=1X22=1X163=1D226=1X55=1X294=2X82=2X33=1D95=1X107=1X29=1X101=1D136=1D331=1D190=1I319=1D469=1D132=1D785=1D405=1D138=1D387=1I51=1X83=1X375=1D92=1D130=1D30=1D137=1X11=1X69=1D484=1X58=38D58=1X175=2X83=1D5=1D129=1X6=1X117=1X262=1X2=1X42=1D173=1X50=1I74=1D342=1X48=1X20=1X30=1X98=1D33=1X18=1I4=1X68=1X13=1X63=2X42=1D1=1X175=1X456=1D11=1I5=1X101=1X60=1I27=1D308=1X2=1X38=2D1X9=1X7=1X1=1X11=1X1=1X1=1X11=1X14=1X12=1D48=1X139=1X6=1X5=1X8=1X50=3D41=1X35=1X5=1X14=1X29=1X37=1X20=1X1=2X4=1X7=1X21=1X3=1D3=1X105=1X2=1X60=1D287=1I120=1X23=1X28=1X17=1X57=1D8=1X390=1X13=4836S,60,100;chr2,240688967,+,26583S13=1X369=1X20=1X8=1I97=2X153=1I348=1X20=1X89=1I25=1X36=1X37=1X29=1X14=1X5=1X13=1X22=2X33=3I56=1X8=1X5=1X6=1X35=1X103=1X61=1X6=1D1X18=,60,24;"
+            }
+          ]
+        },
+        {
+          "source_record_index": 33,
+          "forward_query_interval": [
+            26583,
+            28242
+          ],
+          "query_length": 28242,
+          "flag": 2048,
+          "primary": false,
+          "secondary": false,
+          "supplementary": true,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240688966,
+            240690620
+          ],
+          "reference_span_bp": 1654,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": [
+            {
+              "type": "Z",
+              "value": "chr2,240662337,+,586=1D265=1X157=1X330=1X126=1I1182=1I228=1X63=1X295=1D136=1I329=1I533=1D58=1X61=1D334=1I968=1X24=1D62=1I50=1D12=1X459=1I605=2X136=1X91=1X1=1X3=1X5=1X11=1X140=1D18=1D250=1I421=1X85=1X86=1X35=1I790=1I3=1X32=1D101=1D19=3I31=1I266=1D289=1D780=1X145=1I508=10I180=2I296=1X53=1I36=1I25=1X331=1I169=1D149=1X110=1X22=1X163=1D226=1X55=1X294=2X82=2X33=1D95=1X107=1X29=1X101=1D136=1D331=1D190=1I319=1D469=1D132=1D785=1D405=1D138=1D387=1I51=1X83=1X375=1D92=1D130=1D30=1D137=1X11=1X69=1D484=1X58=38D58=1X175=2X83=1D5=1D129=1X6=1X117=1X262=1X2=1X42=1D173=1X50=1I74=1D342=1X48=1X20=1X30=1X98=1D33=1X18=1I4=1X68=1X13=1X63=2X42=1D1=1X175=1X456=1D11=1I5=1X101=1X60=1I27=1D308=1X2=1X38=2D1X9=1X7=1X1=1X11=1X1=1X1=1X11=1X14=1X12=1D48=1X139=1X6=1X5=1X8=1X50=3D41=1X35=1X5=1X14=1X29=1X37=1X20=1X1=2X4=1X7=1X21=1X3=1D3=1X105=1X2=1X60=1D287=1I120=1X23=1X28=1X17=1X57=1D8=1X390=1X13=4836S,60,100;chr2,240685790,-,1659S850=1X264=1I125=1I156=1D57=1X22=1D1243=1X123=2X330=23406S,60,5;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/83429685/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 18,
+          "forward_query_interval": [
+            0,
+            26273
+          ],
+          "query_length": 26273,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240672185,
+            240698479
+          ],
+          "reference_span_bp": 26294,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/86115765/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 43,
+          "forward_query_interval": [
+            0,
+            12884
+          ],
+          "query_length": 12884,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240696090,
+            240708976
+          ],
+          "reference_span_bp": 12886,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/88806705/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 15,
+          "forward_query_interval": [
+            0,
+            31893
+          ],
+          "query_length": 31893,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240670457,
+            240702395
+          ],
+          "reference_span_bp": 31938,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/95619484/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 4,
+          "forward_query_interval": [
+            0,
+            12772
+          ],
+          "query_length": 12772,
+          "flag": 0,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "+",
+          "reference": "chr2",
+          "reference_interval": [
+            240663878,
+            240676639
+          ],
+          "reference_span_bp": 12761,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    },
+    {
+      "qname": "m84039_230418_220405_s4/95814529/ccs",
+      "observed_record_count": 1,
+      "observed_strand_count": 1,
+      "cross_strand_observed": false,
+      "record_pattern_label": "single_observed_record",
+      "non_hard_clipped_hash_consistency": {
+        "sequence": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        },
+        "quality": {
+          "status": "CONSISTENT",
+          "eligible_record_count": 1,
+          "missing_hash_record_count": 0,
+          "unique_hash_count": 1
+        }
+      },
+      "observed_alignment_records": [
+        {
+          "source_record_index": 45,
+          "forward_query_interval": [
+            0,
+            10241
+          ],
+          "query_length": 10241,
+          "flag": 16,
+          "primary": true,
+          "secondary": false,
+          "supplementary": false,
+          "strand": "-",
+          "reference": "chr2",
+          "reference_interval": [
+            240697154,
+            240707393
+          ],
+          "reference_span_bp": 10239,
+          "mapping_quality": 60,
+          "full_query_payload_status": "STORED_SEQUENCE_AND_QUALITY_PRESENT",
+          "hard_clipped": false,
+          "sa_raw_metadata": []
+        }
+      ]
+    }
+  ],
+  "unnamed_alignment_records": [],
+  "interpretation_limits": [
+    "Rows describe alignments retained by the regional iterator and grouped by QNAME.",
+    "QNAME labels do not establish independent molecules or replicate support.",
+    "SA values are raw alignment metadata; SA-described records were not independently fetched or counted.",
+    "Cross-strand and multiple-record labels are descriptive and do not measure inversion support.",
+    "No sequence or quality strings, genotype claims, or phase claims are emitted.",
+    "No thresholds or biological classifications are applied."
+  ]
+}

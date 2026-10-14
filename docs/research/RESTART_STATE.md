@@ -32,6 +32,19 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October14 [actual separate-input census](../../results/inv_mapped_trace_20261014/README.md):
+  direct1604870 COMPLETE0:0,52records/47QNAMElabels, EOF/no cap. Pre-task
+  batch1604869 FAILED0:53 remains preserved; signal cause unproved. Scratch
+  output corrects the known compute-HOME write restriction. Full outputs
+  copied via login to permanent HOME02; bundle/output hashes and recursive
+  byte comparison pass, local copy retained. Independent reviewer reproduces
+  all52rows/hash/CIGAR/witness counts and accepts only bounded census.
+  Two three-segment query tiles and third discordant pattern are descriptive,
+  not unique allele, genotype, benchmark reproduction or caller failure.
+  One CPU/1GiB/2s allocation,0.907s measuredCPU/17424K;69tests pass3.37s.
+  Max-effort scientific next-step decision pending; no campaign released.
+  Full publication goal active/unmet, old HG002/HG008 scientific stops stand.
+
 - October14 [frozen extraction packet](2026-10-14-inversion-input-extraction-execution.md):
   total 10 MiB cap corrected before study access, query/CIGAR disagreement is
   UNKNOWN. Four-record native fixture and 14 offline controls pass locally.

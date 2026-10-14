@@ -117,3 +117,24 @@ for this cheap inspection. The publication goal remains unmet.
 
 Audit: no Git, job booking, source BAM access, secrets, download or other-file
 write. Only this note was created. Independent reviewer role continues.
+
+## Execution correction addendum
+
+Main reports job1604869 FAILED0:53 at00:00:00, batch CANCELLED0:53, with no
+execution/fixture/case outputs or study-body access. This is a failed launch,
+not input absence. Compute HOME read-only and prior direct-srun success are
+reported setup evidence; the cause of signal53 remains unproved.
+I independently compared launchers01/02: only the comment and bundle path
+change, to existing physical scratch/new02. Bash syntax passes. Launcher02
+SHA256 is `d71dbaaf4acee6ae069b6c3297fdbd3ee766e42e1de30fa4f9fd0c3164182a47`;
+it matches `results/inv_mapped_trace_20261014/SHA256SUMS-02`, which retains the
+accepted extractor, fixture and reference hashes. No science or gate changes.
+Accept one replacement direct-srun attempt with the same one-CPU/1-GiB/15-min
+allocation, native fixture gate and outer timeouts. Main must preserve outputs
+through login into separate permanent HOME02 and verify hashes before the
+October22 scratch deadline. That preservation is pending, not attested here.
+No scheduler diagnostics or jobs were duplicated. Case acceptance stays pending.
+
+## Actual extraction review: job1604870
+
+ACCEPT the retained COMPLETE02 regional extraction census, superseding the pending census statements above. Independently read all 52 local rows; recomputed JSONL SHA256 `ca77cd139dcb8344cf0697dc7468e97db35344c3d10dfdb42d28eedcbd43df18` and manifest SHA256 `80f29373616a355ce4c2b23dbba49ade7796ac28a094032c4598b65f508aae3a`; all four bundle and three output checksum entries match. JSONL4,527,955B + manifest462,702B =4,990,657B, below both individual and combined caps. Independently reproduced all census histograms, coordinate/CIGAR walks, forward SEQ/QUAL hashes and equality observations: 52 records, 47 QNAME labels, five duplicate-label records; 47 primary, five supplementary, zero secondary; MAPQ60/12/32 counts49/2/1. All stored SEQ/QUAL lengths and CIGAR consumption agree; no hard clipping or missing payload in these case rows. Recomputed 522,266 local '=' comparisons, zero conflicts, 28,991 covered positions; nine context positions remain unwitnessed. COMPLETE/EOF, no stop/failure, stdout and 195-SQ header agree. Recorded BAM/BAI/reference stats are unchanged; BAM/BAI sizes match custody, with no fresh whole hashes. Native fixture receipt, four saved rows including missing hard-clipped payload, raw SA and reverse orientation pass inspection; the hash-bound sequential launcher enforces fixture-before-case. Both stderr files are empty; retained job1604870 exit receipt is0. These verify packet consistency and the reported iterator completion, not an independent source-BAM enumeration or current-index proof. Main reports COMPLETED0:0, 2s allocation, 1s step, TotalCPU0.907s, MaxRSS17424K and matching scratch/permanent-HOME copies; scheduler accounting and remote preservation were not independently queried. The initial pre-SCP FileNotFoundError is a supplied transient local-read failure, not a rerun, source mutation or negative result. No INV-support, phase/genotype, molecular-inequality, caller-failure or campaign claim is accepted. This remains a separate Vollger/Stergachis input track. Review used local retained data only; no cluster/network, jobs, Git or other-file write. Reviewer continues; publication goal unmet.

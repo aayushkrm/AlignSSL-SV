@@ -83,3 +83,36 @@ Main will preserve all outputs, even failures, in a separate non-expiring HOME
 leaf through writable login I/O and verify the copies before October22.
 No automatic retry, case repair, scientific parameter change or old-result
 overwrite is allowed. Both attempts stay in resource accounting.
+
+## Actual02 completion and custody
+
+Direct job1604870 COMPLETED0:0. Execution15:28:10–15:28:11UTC on hydra-n1;
+Slurm allocation elapsed2s, step1s, measuredCPU0.907s, MaxRSS17424K.
+AllocatedCPU×elapsed is2CPU-s (plus01 reported0s; not zero setup overhead).
+The extractor reports0.608538806438446s. No GPU or idle whole node allocated.
+Both failure and replacement remain in accounting, not just the success.
+
+The four-record native fixture PASS precedes the case. The actual case is
+COMPLETE with regionEOFtrue,52records/47QNAMElabels, no decoder/finalization
+failure. JSONL4,527,955B plus manifest462,702B =4,990,657B, below10MiB.
+JSONL SHA256 `ca77cd139dcb8344cf0697dc7468e97db35344c3d10dfdb42d28eedcbd43df18`;
+manifest `80f29373616a355ce4c2b23dbba49ade7796ac28a094032c4598b65f508aae3a`;
+native receipt `e905bbd688d4084e475998c4f4da4aff3a2469223a7502af4764d80eb854c2b9`.
+Historical BAM/BAI hashes remain historical; no whole48GB reread occurred.
+
+Main copies the entire02 leaf through login into permanent HOME
+`experiments/inv_mapped_trace_20261014_02` without changing scratch output.
+Both bundle/output SHA checks pass there; recursive byte comparison of HOME
+and scratch reports no differences. The complete leaf is also retained outside
+Git locally at `runs/inv-mapped-trace-20261014-02.SEsMRo/inv_mapped_trace_20261014_02`.
+It includes full sequences/qualities and all synthetic controls, not merely a
+selected read screenshot. No sole copy depends on October22 scratch expiry.
+
+Main initially attempted to inspect the local manifest before SCP completed:
+FileNotFoundError, then waited for the same transfer; no case rerun. A first
+ad-hoc tag print assumed tuple tags and raised KeyError0; actual schema is
+name/type/value objects. Corrected read-only inspection uses that schema and
+does not mutate rows. These inspection errors are not genomic failures.
+
+Actual interpretation and maintained independent review follow separately;
+completion alone accepts no inversion, genotype, mechanism or publication claim.
