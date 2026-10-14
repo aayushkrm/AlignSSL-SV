@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-10-13** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
+_Last updated: **2026-10-14** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,20 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+### Bounded mapped-input extraction preparation — 2026-10-14
+
+The [execution packet](docs/research/2026-10-14-inversion-input-extraction-execution.md)
+fixes a 9 MiB record plus 1 MiB manifest budget and makes query/CIGAR length
+disagreement explicitly UNKNOWN. All 14 offline controls pass in 0.27 s.
+A four-record native pysam fixture passes locally, including reverse sequence,
+missing hard-clipped payload, typed tags, duplicate QNAMEs, MAPQ0 and refusal
+to build a missing study index. The [independent reviewer](docs/research/2026-10-14-inversion-input-extraction-review.md)
+accepts one small extraction conditional on that native fixture passing again
+in the same cluster job before study-input access. Exact packet hashes are
+frozen; booking and actual outcome must follow separately. One CPU, 1 GiB,
+15 min, no GPU; no new DNA, caller, training or revived annotation experiment.
+Own queue is empty. The publication goal remains active and unmet.
 
 ### Fixed inversion source and conditional path result — 2026-10-13
 

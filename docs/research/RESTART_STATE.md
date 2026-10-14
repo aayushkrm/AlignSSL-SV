@@ -32,6 +32,15 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October14 [frozen extraction packet](2026-10-14-inversion-input-extraction-execution.md):
+  total 10 MiB cap corrected before study access, query/CIGAR disagreement is
+  UNKNOWN. Four-record native fixture and 14 offline controls pass locally.
+  [Maintained independent review](2026-10-14-inversion-input-extraction-review.md)
+  accepts one 1-CPU/1-GiB/15-min indexed extraction if the native fixture passes
+  first in that job. Existing separate CCS/Revio BAM/BAI remain unchanged; no
+  new DNA or index build, caller or training campaign. Booking/outcome pending.
+  Publication goal active and unmet; prior scientific stops remain in force.
+
 - October13 [actual fixed inversion panel](../../results/inv_fixed_case_20261013/README.md)
   and [conditional path result](../../results/inv_path_equivalence_20261013/README.md):
   source25files6.088MB fully pass; one nearby/eight spanning INV records.

@@ -15,6 +15,8 @@ they are not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-14-inversion-input-extraction-execution.md`](2026-10-14-inversion-input-extraction-execution.md) | Frozen one-CPU mapped-input diagnostic | 14 offline controls and four-record native fixture pass locally; one native-fixture-gated extraction prepared, actual outcome pending |
+| [`2026-10-14-inversion-input-extraction-review.md`](2026-10-14-inversion-input-extraction-review.md) | Maintained independent extraction review | Accepts one cheap extraction conditional on native fixture; no caller, mechanism or publication claim |
 | [`../../results/inv_path_equivalence_20261013/README.md`](../../results/inv_path_equivalence_20261013/README.md) | Actual conditional exact-string falsifier |0/36equalities; independent recomputation accepts only reference/model/mode-conditioned negative; no caller or publication claim |
 | [`../../results/inv_fixed_case_20261013/README.md`](../../results/inv_fixed_case_20261013/README.md) | Complete small pinned inversion source panel |25wholefiles/hash/3gzipCRC pass; one nearby/eight spanning declarations; corrected headers retained separately |
 | [`2026-10-13-inversion-equivalence-result-review.md`](2026-10-13-inversion-equivalence-result-review.md) | Maintained independent actual-result review | Recomputes all36 hashes/flags/differences; accepts bounded negative/header correction; mechanism and full allele claims HOLD |

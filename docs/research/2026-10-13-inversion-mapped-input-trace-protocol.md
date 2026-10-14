@@ -63,6 +63,12 @@ Use an exclusive new output leaf; preserve raw source, original receipts and
 every failure. Keep sequence/quality payload outside Git, with small hashes/
 summaries in Git. No new genomic download, model, GPU or native caller.
 
+Pre-execution clarification, October14: reserve9MiB for alignment JSONL
+(including its header) and1MiB for the provenance manifest. Combined retained
+case output therefore stays within10MiB. The initial worker implementation
+allowed10MiB plus1MiB; main corrects that mismatch before any real extraction.
+Query/CIGAR length disagreement is also explicitly UNKNOWN, not full payload.
+
 ## What a trace can and cannot decide
 
 This can identify observed ordered segments, local reference witnesses and
