@@ -11,6 +11,33 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+### Pivot comparison and real-input screen preparation — 2026-10-14
+
+The [two-scout integration](docs/research/2026-10-14-pivot-integration.md) rejects
+the proposed public Breakinator-report join: personal-reference alignments
+cannot identify GRCh38-relative inversion support loss. Main verifies this in
+the primary Methods before downloading any185MB report or multi-GB PAF archive.
+The complex-path scout remains an unverified residual, not a ready experiment;
+vcfdist/phab/TT-Mars overlap, absent caller paths are UNKNOWN and coding impact
+is optional. [Independent review](docs/research/2026-10-14-pivot-scout-review.md)
+preserves these corrections and rejects a known-tradeoff synthetic study.
+
+One [direct existing-HiFi geometry screen](docs/research/2026-10-14-tier2-geometry-screen-protocol.md)
+is scientifically selected: all53Tier2 source rows, fixed printed endpoints
+with +/-25kb windows, native default flags on SA-consistent observed groups.
+UNKNOWN groups remain separate. A flag would only identify an adjudication
+candidate, not authenticate inversion support or a filter/caller error.
+No real-input screen is booked or executed. Two Luna/max workers implement
+the bounded collector and native ABI controls on disjoint files.
+
+The native helper's11local controls pass in0.43s, no skips. Author Linux
+v1.1.1 software asset is3,547,379B and passes the publisher SHA256 on cluster.
+The first laptop transfer timed out after111,117B; it is preserved. The
+alternative cluster transfer completes, without a genomic download. A separate
+small ABI-only allocation is in preparation while the collector is built;
+that will access synthetic controls, not study alignments. No full campaign,
+new genomic acquisition, remapping or training. Publication goal active/unmet.
+
 ### Simple-inversion investment stop and next comparison — 2026-10-14
 
 Main accepts the [max-effort decision](docs/research/2026-10-14-inversion-post-trace-investment.md)

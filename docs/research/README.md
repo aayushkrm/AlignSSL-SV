@@ -12,11 +12,17 @@ known allele competition, read linkage and local assembly do not define a
 distinct contribution. Earlier HG002 annotation and HG008 generic-presence
 stops remain in force. Accepted whole DNA and all historical results stay
 preserved. The publication goal remains active and unmet. Two stronger
-questions are being compared; no new campaign is selected. Older rows below
+questions have been compared; a bounded existing-input geometry screen is
+selected, not a research campaign. Older rows below
 retain dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-14-pivot-integration.md`](2026-10-14-pivot-integration.md) | Main's concrete two-scout comparison | Rejects personal-reference report join; selects only an existing-HiFi geometry viability screen |
+| [`2026-10-14-tier2-geometry-screen-protocol.md`](2026-10-14-tier2-geometry-screen-protocol.md) | Prospective all53-row real-input screen | Fixed +/-25kb endpoint selection; native flags are candidates only; code/runtime pending, no study run |
+| [`2026-10-14-pivot-scout-review.md`](2026-10-14-pivot-scout-review.md) | Maintained independent scientific challenge | Corrects initial table recommendation after primary Methods; accepts one scoped real-HiFi viability check, not code or results |
+| [`2026-10-14-inversion-artifact-opportunity.md`](2026-10-14-inversion-artifact-opportunity.md) | Artifact-filter scout and explicit correction | Withdraws support-loss endpoint: personal-reference classes do not identify GRCh38-relative inversion support |
+| [`2026-10-14-complex-event-evaluation-opportunity.md`](2026-10-14-complex-event-evaluation-opportunity.md) | Complete-event evaluation scout | Residual unverified; no finite event/caller path, no automatic coding-impact gate or memory-based unsupported claim |
 | [`2026-10-14-inversion-post-trace-investment.md`](2026-10-14-inversion-post-trace-investment.md) | Sol6.1/max-requested scientific decision | STOP one simple-case method lead, zero further case compute; independent challenge accepts scoped investment stop |
 | [`2026-10-14-inversion-allele-competition-prior-art.md`](2026-10-14-inversion-allele-competition-prior-art.md) | Main's verified primary-method controls | SVJedi-graph allele competition and gSV local assembly/multi-match overlap; no native performance claim |
 | [`2026-10-14-svjedi-graph-input-interface.md`](2026-10-14-svjedi-graph-input-interface.md) | Bounded pinned baseline interface | v1.2.2 local input feasible on inspected parser; unselected, no install, run or global-uniqueness claim |
