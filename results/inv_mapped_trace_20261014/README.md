@@ -6,6 +6,12 @@ alignment records, reached region EOF and did not hit a cap. The maintained
 accepts the bounded census and its local consistency checks. It does not accept
 an inversion-support, genotype or caller-failure claim.
 
+Subsequent [investment decision](../../docs/research/2026-10-14-inversion-post-trace-investment.md):
+**STOP this case as a new-method lead; no further case compute.** The independent
+reviewer accepts this scoped stop. Basic allele competition, linked junctions
+and local assembly have direct prior art. The packet remains reusable evidence,
+not a biological null or evidence that a native control succeeds here.
+
 ## What was observed
 
 - 52 alignment records from 47 QNAME labels: 47 primary and 5 supplementary.

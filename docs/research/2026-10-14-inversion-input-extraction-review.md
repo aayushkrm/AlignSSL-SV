@@ -12,16 +12,11 @@ and integration. This decision accepts neither an actual case result nor an
 expensive campaign, major positive claim, mechanism or publication conclusion.
 Actual case evidence remains uninspected by this reviewer.
 
-Use one CPU, 1 GiB RAM and at most 15 minutes. Keep the existing source BAM/BAI
-in place. No GPU, new DNA, caller, model, index build or whole-genome scan is
-needed. The fresh header/index interface supports access, not a locus finding.
+Use one CPU, 1 GiB RAM and at most 15 minutes. Keep the existing source BAM/BAI in place. No GPU, new DNA, caller, model, index build or whole-genome scan is needed. The fresh header/index interface supports access, not a locus finding.
 
 ## Basis and independent checks
 
-Read the full attached goal, the full extractor and all 629 test-file lines,
-plus the mapped-input trace protocol, equivalence-result review and residual
-investment decision dated 13 October. No broad literature refresh is needed
-for this implementation review. DeepSV is not the scientific foundation.
+Read the full attached goal, the full extractor and all 629 test-file lines, plus the mapped-input trace protocol, equivalence-result review and residual investment decision dated 13 October. No broad literature refresh is needed for this implementation review. DeepSV is not the scientific foundation.
 
 Reviewed source identities, computed locally without Git:
 
@@ -138,3 +133,7 @@ No scheduler diagnostics or jobs were duplicated. Case acceptance stays pending.
 ## Actual extraction review: job1604870
 
 ACCEPT the retained COMPLETE02 regional extraction census, superseding the pending census statements above. Independently read all 52 local rows; recomputed JSONL SHA256 `ca77cd139dcb8344cf0697dc7468e97db35344c3d10dfdb42d28eedcbd43df18` and manifest SHA256 `80f29373616a355ce4c2b23dbba49ade7796ac28a094032c4598b65f508aae3a`; all four bundle and three output checksum entries match. JSONL4,527,955B + manifest462,702B =4,990,657B, below both individual and combined caps. Independently reproduced all census histograms, coordinate/CIGAR walks, forward SEQ/QUAL hashes and equality observations: 52 records, 47 QNAME labels, five duplicate-label records; 47 primary, five supplementary, zero secondary; MAPQ60/12/32 counts49/2/1. All stored SEQ/QUAL lengths and CIGAR consumption agree; no hard clipping or missing payload in these case rows. Recomputed 522,266 local '=' comparisons, zero conflicts, 28,991 covered positions; nine context positions remain unwitnessed. COMPLETE/EOF, no stop/failure, stdout and 195-SQ header agree. Recorded BAM/BAI/reference stats are unchanged; BAM/BAI sizes match custody, with no fresh whole hashes. Native fixture receipt, four saved rows including missing hard-clipped payload, raw SA and reverse orientation pass inspection; the hash-bound sequential launcher enforces fixture-before-case. Both stderr files are empty; retained job1604870 exit receipt is0. These verify packet consistency and the reported iterator completion, not an independent source-BAM enumeration or current-index proof. Main reports COMPLETED0:0, 2s allocation, 1s step, TotalCPU0.907s, MaxRSS17424K and matching scratch/permanent-HOME copies; scheduler accounting and remote preservation were not independently queried. The initial pre-SCP FileNotFoundError is a supplied transient local-read failure, not a rerun, source mutation or negative result. No INV-support, phase/genotype, molecular-inequality, caller-failure or campaign claim is accepted. This remains a separate Vollger/Stergachis input track. Review used local retained data only; no cluster/network, jobs, Git or other-file write. Reviewer continues; publication goal unmet.
+
+## Independent challenge: post-trace STOP decision
+
+ACCEPT STOP of this selected simple-INV case as a new-method lead, with zero further case compute. Read the full post-trace investment decision and supplied primary-method check; no data rerun or new literature verification. The defensible reason is opportunity cost: the specified next positive answers an existing known-allele/linkage/assembly task, while no distinct contribution is presently defined. This is sufficient to retire the lead without proving that a control succeeds here. Method overlap does not establish that existing methods solve this case, exhaust the field or exclude a useful future contribution. The decision preserves those distinctions. Two shown labels and a three-read floor neither bound all informative reads nor establish a biological null; the decision explicitly says so. Unmatched original inputs and absent candidate logs prevent causal attribution to the published callers, not investment closure. No clinical outcome is required. The STOP applies to this case branch, not the broader goal, complex-SV discovery or a future distinct allele/information-limit question. Future cheap diagnostics need not start with a pre-proved caller failure. No replacement direction or expensive campaign is accepted here; main may compare stronger questions next. No substantive correction is required. Only this review note changed; earlier prose was reflowed without content changes to retain the 140-line limit. Reviewer configuration remains requested, not independently attested.

@@ -11,6 +11,34 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+### Simple-inversion investment stop and next comparison — 2026-10-14
+
+Main accepts the [max-effort decision](docs/research/2026-10-14-inversion-post-trace-investment.md)
+to stop the selected simple-inversion case as a new-method lead, with zero
+further case compute. The [maintained independent reviewer](docs/research/2026-10-14-inversion-input-extraction-review.md#independent-challenge-post-trace-stop-decision)
+accepts that scope. The diagnostic paths are useful evidence, but the proposed
+next positive would demonstrate known allele-genotyping/linkage/assembly
+capabilities. It would not establish a distinct contribution. This is not a
+biological null, a claim that existing callers solve the case, or a ban on
+broader inversion/complex-SV research.
+
+New [primary-method checks](docs/research/2026-10-14-inversion-allele-competition-prior-art.md)
+verify relevant SVJedi-graph and gSV overlap. A bounded
+[SVJedi-graph interface assessment](docs/research/2026-10-14-svjedi-graph-input-interface.md)
+is preserved as unselected; no install or run follows. Two Luna/max-requested
+scouts now compare complete-event evaluation and real/artifactual strand-switch
+discrimination. They must find a distinct question, defensible public evidence,
+strong controls and a cheap kill test, or reject the direction. Neither is a
+selected campaign. Own cluster queue is empty; accepted data remain permanent.
+The full publication goal is active and unmet; DeepSV remains historical only.
+
+The research-branch root README now records the October14 stop and links the
+actual census and decision. The first README check found the stale October12
+"Current decision" assertion (1 failed, 7 passed); it is updated to retain
+that stop as earlier history and check the new current scope. A new check
+reconciles displayed regional counts with the complete descriptive summary.
+No default-main promotion or protection-rule change accompanies this update.
+
 ### Complete fixed-locus input census — 2026-10-14
 
 Direct cluster job **1604870 completed** after first batch launch1604869 failed

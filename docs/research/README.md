@@ -6,15 +6,20 @@ The files separate verified code findings, experimental plans, external
 literature, and independent criticism so that hypotheses cannot silently become
 results.
 
-Current scientific decision,2026-10-12: STOP/PIVOT from the HG002 annotation
-exclusion-rule premise before any new enabling or whole-genome job. A missed
-RNA path is not automatically a consequential or novel finding. Accepted whole
-DNA input and all historical results stay preserved. The publication goal
-remains active and unmet. Older rows below retain their dated checkpoints;
-they are not current launch permissions.
+Current scientific decision, 2026-10-14: STOP the selected simple-inversion
+case as a new-method lead. The accepted input census remains evidence, but
+known allele competition, read linkage and local assembly do not define a
+distinct contribution. Earlier HG002 annotation and HG008 generic-presence
+stops remain in force. Accepted whole DNA and all historical results stay
+preserved. The publication goal remains active and unmet. Two stronger
+questions are being compared; no new campaign is selected. Older rows below
+retain dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-14-inversion-post-trace-investment.md`](2026-10-14-inversion-post-trace-investment.md) | Sol6.1/max-requested scientific decision | STOP one simple-case method lead, zero further case compute; independent challenge accepts scoped investment stop |
+| [`2026-10-14-inversion-allele-competition-prior-art.md`](2026-10-14-inversion-allele-competition-prior-art.md) | Main's verified primary-method controls | SVJedi-graph allele competition and gSV local assembly/multi-match overlap; no native performance claim |
+| [`2026-10-14-svjedi-graph-input-interface.md`](2026-10-14-svjedi-graph-input-interface.md) | Bounded pinned baseline interface | v1.2.2 local input feasible on inspected parser; unselected, no install, run or global-uniqueness claim |
 | [`../../results/inv_mapped_trace_20261014/README.md`](../../results/inv_mapped_trace_20261014/README.md) | Actual separate-input alignment census | Job1604870 COMPLETE; all52records/47QNAMElabels; descriptive ordered segments, no INV-support or caller claim |
 | [`2026-10-14-inversion-input-extraction-execution.md`](2026-10-14-inversion-input-extraction-execution.md) | One-CPU execution and preservation | Failed pre-task1604869 retained; direct-srun1604870 completes; full scratch/HOME copies byte-identical |
 | [`2026-10-14-inversion-input-extraction-review.md`](2026-10-14-inversion-input-extraction-review.md) | Maintained independent extraction review | Accepts actual census after independent all-row/hash/witness recomputation; no mechanism or publication claim |

@@ -24,7 +24,10 @@ def test_landing_page_states_scope_and_evidence_limits():
         "truth denominator, ALT alleles, phase, callability, or scoring",
         "Caller preparation follows a fixed reviewed process",
         "Earlier input check (2026-10-09): 44 cluster controls passed.",
-        "Current decision (2026-10-12): stop the HG002 annotation-exclusion pilot",
+        "Current decision (2026-10-14): stop the selected simple-inversion case",
+        "no further case compute is allocated",
+        "This does not show biological absence or native caller success.",
+        "Earlier decision (2026-10-12): stop the HG002 annotation-exclusion pilot",
         "before genome-wide calling",
         "scientific investment stop, not a biological null",
         "No new calling, assembly or RNA campaign is released.",
@@ -53,6 +56,8 @@ def test_current_research_links_use_the_named_branch_without_fetching():
         "docs/research/2026-10-09-svupp-provenance-header-review.md",
         "docs/research/2026-10-11-hg002-calling-release-decision.md",
         "docs/research/2026-10-11-hg002-source-readset-result.md",
+        "results/inv_mapped_trace_20261014/README.md",
+        "docs/research/2026-10-14-inversion-post-trace-investment.md",
     )
     for path in paths:
         url = BRANCH_BASE + path
@@ -77,3 +82,18 @@ def test_current_read_counts_match_complete_retained_extraction_evidence():
     assert f"{census['original_bases']:,} bases" in README
     assert raw["alignment_calling_phase_qualification"] == "NOT_ASSESSED"
     assert "no publication result is claimed" in README
+
+
+def test_current_regional_counts_match_complete_descriptive_summary():
+    report = json.loads(
+        (ROOT / "results/inv_mapped_trace_20261014/observed-query-order-02.json").read_text()
+    )
+    counts = report["counts"]
+    assert counts["observed_alignment_records"] == report["provenance"]["retained_alignment_records"]
+    assert sum(item["observed_record_count"] for item in report["qnames"]) == counts["observed_alignment_records"]
+    assert len(report["qnames"]) == counts["unique_named_qnames"]
+    phrase = (
+        f"{counts['observed_alignment_records']} alignment records from "
+        f"{counts['unique_named_qnames']} read-name labels"
+    )
+    assert phrase in README

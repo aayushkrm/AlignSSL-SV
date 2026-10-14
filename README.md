@@ -8,7 +8,17 @@ context only. It is not the foundation for new work.
 
 ## Verified and planned
 
-Current decision (2026-10-12): stop the HG002 annotation-exclusion pilot before
+Current decision (2026-10-14): stop the selected simple-inversion case as a
+new-method lead. The complete regional input census has 52 alignment records
+from 47 read-name labels and passed independent review. It contains useful
+linked alignment patterns, but the proposed next positive would demonstrate
+existing allele-genotyping, read-linkage or local-assembly capabilities.
+No distinct contribution is established, so no further case compute is
+allocated. This does not show biological absence or native caller success.
+See [the actual census](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/results/inv_mapped_trace_20261014/README.md)
+and [the investment decision](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-14-inversion-post-trace-investment.md).
+
+Earlier decision (2026-10-12): stop the HG002 annotation-exclusion pilot before
 genome-wide calling. Its best possible positive could reflect ordinary
 annotation incompleteness. An important external claim or diagnostic decision
 tested by that endpoint has not been established. This is a scientific

@@ -32,6 +32,18 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+- October14 main accepts the [post-trace investment STOP](2026-10-14-inversion-post-trace-investment.md),
+  independently accepted by maintained reviewer: close only the selected
+  simple-INV case as a new-method lead, zero further case compute. Useful
+  linked alignment evidence does not define a new capability beyond verified
+  SVJedi-graph/SVision-pro/gSV prior art. No biological null, caller success,
+  global absence or clinical-only criterion follows. Baseline CLI sidecar is
+  preserved as unselected, not a launch. Two source-only Luna/max scouts now
+  compare complete complex-event evaluation and strand-switch artifact
+  discrimination, each needing one useful cheap falsifier or STOP. No new
+  campaign. Own queue empty, scratch8days/one extension, all accepted data
+  permanent. Full publication goal active/unmet; earlier scientific stops stand.
+
 - October14 [actual separate-input census](../../results/inv_mapped_trace_20261014/README.md):
   direct1604870 COMPLETE0:0,52records/47QNAMElabels, EOF/no cap. Pre-task
   batch1604869 FAILED0:53 remains preserved; signal cause unproved. Scratch
