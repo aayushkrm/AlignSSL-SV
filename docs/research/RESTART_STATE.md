@@ -32,6 +32,26 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+Operational handoff, October14 15:55 UTC: scoped simple-case STOP and research-
+branch README update are pushed at `aa6125c`. Combined inversion/README checks
+pass78tests in0.98s. No main promotion. Two actual subagent handles remain
+nonterminal on the latest bounded wait (not separate sidebar chats):
+
+- Complete-event evaluation scout Arendt:
+  `01a13b1a-3440-7fb3-90a5-ef283f71d448`, requested Luna/max, owns only
+  `2026-10-14-complex-event-evaluation-opportunity.md`.
+- Sequencing-artifact scout Hume:
+  `01a13b1a-34a4-71b1-847d-3012ac7b8155`, requested Luna/max, owns only
+  `2026-10-14-inversion-artifact-opportunity.md`.
+
+Next: collect these same handles, read their primary evidence, and choose a
+useful cheap falsifier or reject the direction. Do not count a proposed test
+as executed or restart after an observation timeout. Maintained reviewer
+Avicenna `01a13afa-c3ef-79e2-ac93-69b14d4248b6` has completed the scoped STOP
+review and remains available, requested Sol6.1/high. Backend configurations
+are not independently attested. Earlier max decision and baseline-interface
+workers are complete and closed. No new cluster job is running or selected.
+
 - October14 main accepts the [post-trace investment STOP](2026-10-14-inversion-post-trace-investment.md),
   independently accepted by maintained reviewer: close only the selected
   simple-INV case as a new-method lead, zero further case compute. Useful
