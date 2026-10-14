@@ -67,3 +67,28 @@ The software stays in read-only compute HOME; logs and controls go to scratch.
 Main preserves every success/failure through login into a new permanent HOME
 leaf and verifies bytes before22October. Job ID and actual resource/result
 must be added after submission. Preparation is not evidence that it ran.
+
+## Actual qualification:1604874
+
+Direct job1604874 COMPLETED0:0, allocation1s/1CPU/512MiB; measuredCPU0.294s,
+MaxRSS22088K. Step elapsed is rounded to0s; that does not mean zero resource
+use. The four synthetic groups produce the exact expected three breakpoint
+rows and summary counts. Version prints `breakinator 1.0` as expected from the
+pinned source; executable hash matches. No study input was accessed.
+
+Unchanged small [raw receipts](../../results/breakinator_abi_20261014/README.md)
+include the native report, stdout, run manifest and execution status. The
+complete output, including the559B synthetic BAM and empty stderr files,
+is byte-identical in scratch/permanent HOME and retained locally under the
+same parent as the failed laptop download. Permanent leaf is
+`experiments/breakinator_abi_20261014_01`; no sole copy expires with scratch.
+Run-manifest SHA256 `400d8e98c14d617a9b19720f31831a2241ac034257bf9071f5b56381fd3561a8`;
+report `4963fd9597fe8607ab012f53adcd37ac87000a90add24d70836dad056e159fa9`;
+synthetic BAM `13e69ee9e2883b2edace734aacafeb373e8692a011d1669dcaeb43052da5b7a4`.
+
+Main briefly queried an apparent line-count change during staging; fresh
+SHA checks prove helper8ad7... and tests134186... never differed from the
+frozen upload. No packet or run was replaced. Main's11checks pass with the
+project venv; the worker's separate runner reports10pass/1skip for absent
+pysam. The actual cluster control exercises real pysam0.24.1 successfully.
+This qualifies one interface route, not biological artifact labels or a caller.

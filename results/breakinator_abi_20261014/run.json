@@ -1,0 +1,110 @@
+{
+  "binary": {
+    "bytes": 9225032,
+    "path": "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/breakinator_runtime_20261014_01/breakinator-v1.1.1/bin/breakinator",
+    "sha256": "049948306338709b9b4e3fa7e9750770bbbb659558723472c1507b821b84e29a"
+  },
+  "controls_bam": {
+    "bytes": 559,
+    "file": "controls.namesorted.bam",
+    "sha256": "13e69ee9e2883b2edace734aacafeb373e8692a011d1669dcaeb43052da5b7a4"
+  },
+  "native_command": {
+    "argv": [
+      "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/breakinator_runtime_20261014_01/breakinator-v1.1.1/bin/breakinator",
+      "-i",
+      "controls.namesorted.bam",
+      "-o",
+      "native-report.txt",
+      "--rcoord",
+      "-t",
+      "1"
+    ],
+    "exit_code": 0,
+    "report_bytes": 337,
+    "report_file": "native-report.txt",
+    "report_sha256": "4963fd9597fe8607ab012f53adcd37ac87000a90add24d70836dad056e159fa9",
+    "stderr_file": "native-stderr.txt",
+    "stdout_file": "native-stdout.txt",
+    "timed_out": false
+  },
+  "parsed_breakpoints": [
+    {
+      "break1_chr": "chrSynthetic",
+      "break1_loc": 1500,
+      "break1_read": 500,
+      "break2_chr": "chrSynthetic",
+      "break2_loc": 1500,
+      "break2_read": 500,
+      "class_name": "PutativeFoldback",
+      "direction": "><",
+      "mapq": 60,
+      "native_class": "Foldback",
+      "read_id": "10_foldback_center"
+    },
+    {
+      "break1_chr": "chrSynthetic",
+      "break1_loc": 2250,
+      "break1_read": 250,
+      "break2_chr": "chrSynthetic",
+      "break2_loc": 2250,
+      "break2_read": 250,
+      "class_name": "TrueBreak",
+      "direction": "><",
+      "mapq": 60,
+      "native_class": "Pass",
+      "read_id": "20_foldback_j250"
+    },
+    {
+      "break1_chr": "chrSynthetic",
+      "break1_loc": 3500,
+      "break1_read": 500,
+      "break2_chr": "chrOther",
+      "break2_loc": 4000,
+      "break2_read": 500,
+      "class_name": "PutativeChimeric",
+      "direction": ">>",
+      "mapq": 60,
+      "native_class": "Chimeric",
+      "read_id": "30_two_chromosomes"
+    }
+  ],
+  "schema_version": 1,
+  "upstream": {
+    "cli_version_output_from_source": "breakinator 1.0",
+    "commit": "2a5b7138aee9368c6c613c0837f3d8152437957c",
+    "release_asset": "breakinator-v1.1.1-x86_64-unknown-linux-musl.tar.gz",
+    "release_asset_bytes": 3547379,
+    "release_asset_sha256": "00747b208e25887eac9e61db57496085d2a593cb6899e1b2940ca9ab1c9c2310",
+    "release_asset_url": "https://github.com/jheinz27/breakinator/releases/download/v1.1.1/breakinator-v1.1.1-x86_64-unknown-linux-musl.tar.gz",
+    "repository": "https://github.com/jheinz27/breakinator",
+    "semantics": {
+      "chimera": "different contigs or same-contig reference distance>=1000000",
+      "default_input": "SAM/BAM/CRAM; PAF mode is off unless --paf is set",
+      "filters": "drop unmapped, secondary, MAPQ<10, and query-aligned length<200; supplementary records are retained",
+      "foldback": "opposing directions, same-contig reference distance<=200; default requires the implementation's symmetric-window check with margin=0.1",
+      "qname_groups": "consecutive equal-QNAME records; input must be name-sorted",
+      "report_coordinates": "--rcoord adds break1_read=read_length-query_end(first) and break2_read=query_loc(second)",
+      "symmetric_window_detail": "source check_sym assigns r2_loc to both local variables; effective default window tests r2_loc against read_length/2 +/- margin*read_length",
+      "within_group_order": "filtered records sort by query_loc: forward uses leading soft/hard clip; reverse uses trailing soft/hard clip"
+    },
+    "source_files": [
+      "breakinator/src/cli.rs",
+      "breakinator/src/sam.rs",
+      "breakinator/src/lib.rs"
+    ],
+    "tag": "v1.1.1"
+  },
+  "validation_error": null,
+  "version_command": {
+    "argv": [
+      "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/breakinator_runtime_20261014_01/breakinator-v1.1.1/bin/breakinator",
+      "--version"
+    ],
+    "exit_code": 0,
+    "observed_stdout": "breakinator 1.0",
+    "stderr_file": "native-version.stderr.txt",
+    "stdout_file": "native-version.stdout.txt",
+    "timed_out": false
+  }
+}

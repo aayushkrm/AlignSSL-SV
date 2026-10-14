@@ -121,3 +121,23 @@ inflation after an outcome. Review before expensive work or major positives.
 The [independent pivot review](2026-10-14-pivot-scout-review.md) accepts the
 scientific scope of one real-input screen, not code/runtime or an actual result.
 The full publication goal remains active and unmet. DeepSV is historical only.
+
+## Pre-execution implementation clarification
+
+Main corrects four issues before any new selected alignment is read: identify
+repeat retrievals by physical BAM record offset plus SAM digest, preserving
+distinct identical source records; assign a group only to original endpoint
+windows its observed alignments overlap, not every endpoint in a merged chain;
+mark query/CIGAR consumption disagreement UNKNOWN; and check stage/time limits
+again after grouping/finalization. These do not change the frozen endpoints,
+native thresholds or interpretation. Eight collector controls plus eleven
+native-helper checks pass locally; the full focused selection has97passes.
+
+The generated selection contains53rows,59merged windows and3,692,176bp.
+Main independently compares every printed coordinate, source row order, ID and
+SOURCE against a standard-library whole-gzip parse; all53match. The selection's
+internal seal is `9d31881ee1b0c9496faf238546e4b3070bea884150f1c307c7e664b03a1828d8`;
+the exact plan-file SHA256 is `bff54ad8c1d2e2fd51ae02a93fe9de611b13c2309dce7fb2c237923328264917`.
+These are different hashes by design. The metadata-only VCF reader warns that
+no tabix index exists, then completes sequential parsing; it creates no index.
+The selection manifest is not a real-input result.

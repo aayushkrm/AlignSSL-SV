@@ -11,6 +11,26 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+### Native interface qualified; all53-row plan frozen — 2026-10-14
+
+Synthetic ABI-only job1604874 COMPLETED0:0; all four geometry controls match
+the author executable. Actual native version string is1.0, distinct from its
+v1.1.1 release tag. One CPU/512MiB/1s allocation,0.294s measuredCPU/22088K
+MaxRSS. Complete output is byte-identical in scratch/HOME; small unchanged
+[raw receipts](results/breakinator_abi_20261014/README.md) are in Git. This is
+interface qualification, not a scientific filter result.
+
+The [all53-row selection](results/tier2_geometry_screen_20261014/README.md) is
+frozen before new alignment-body access:59merged windows/3,692,176bp. Main
+independently compares every source coordinate/order/ID/SOURCE; all match.
+Collector integration preserves distinct identical physical source records,
+limits event associations to actual endpoint-window overlap, makes CIGAR/query
+disagreement UNKNOWN and checks final stage/time limits. Full focused suite:
+97pass in1.64s; the worker's original five collector controls pass and three
+main regressions pass. No original source, selection endpoint or native
+classification threshold is changed. OneCPU/2GiB/15min real-input screen is
+prepared, not yet booked; no biological or publication result claimed.
+
 ### Pivot comparison and real-input screen preparation — 2026-10-14
 
 The [two-scout integration](docs/research/2026-10-14-pivot-integration.md) rejects
