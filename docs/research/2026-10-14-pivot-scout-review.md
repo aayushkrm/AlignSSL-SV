@@ -239,3 +239,41 @@ No arbitrary >=3 threshold is needed for this presence screen. The screen is
 useful because either outcome can bound this particular available-data lead;
 it is not a requirement to exhaust all future controls first. No new primary
 search, raw-case analysis, implementation or job accompanied this critique.
+
+## Prospective run02 storage correction after run01 cap stop
+
+ACCEPT one separately recorded capacity correction rather than abandoning
+the assay solely because the initial storage guard was too small. Main reports
+job1604877 exit2, collection INCOMPLETE before any native study classification;
+controls passed. Reported partials: rawBAM134,770,508B, sortedBAM136,523,769B,
+groups about5.3MB and manifest about59KB. These are supplied execution facts,
+not independently re-audited raw outputs in this decision. No biological or
+native-classification outcome is available to optimize against.
+
+Raising each derived-BAM guard128->512MiB and the retained-leaf allowance
+1->2GiB is an engineering amendment, not a change in the scientific endpoint,
+provided all53 source rows,59 windows/3,692,176bp, record cap, grouping rules,
+tags and native defaults remain frozen as proposed. The amendment must be
+prospective and explicit; it does not make run01 compliant or complete.
+The protocol's original no-cap-inflation rule should retain its history with
+this documented technical exception, not be silently rewritten after failure.
+
+Use the observed prefix counts/bytes/CPU to cost full collection, sorting and
+native work before booking, as main proposes. A fourfold storage allowance
+does not prove completion or imply a fourfold time/RAM allowance. Count both
+BAMs, metadata, temporary/sort files and buffered overshoot in the leaf budget;
+sampled guards are not hard filesystem quotas. The previous overshoot remains
+reported. Disk capacity and the unchanged2GiB RAM limit are different bounds.
+
+OneCPU/2GiB/15min remains the proposed envelope. A longer deadline, if needed,
+requires its own explicit bounded cost amendment; it is not released here.
+No fresh scientific controls or broader validation campaign are prerequisites
+for this capacity correction. This accepts its rationale, not an uninspected
+code change, a guaranteed resource forecast or any eventual study result.
+
+Preserve the full unmodified01 and its exit/cap evidence before02, in a separate
+leaf; charge both attempts and preserve their hashes/receipts. No native study
+classification should follow an incomplete02 collection. Another cap/failure
+remains INCOMPLETE, not zero flags or an automatic license for further retries.
+No prefix eligibility or classification-based reselection is authorized.
+Only this review addendum changed; no code, jobs, Git or raw data were touched.

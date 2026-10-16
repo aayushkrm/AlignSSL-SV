@@ -1,0 +1,2648 @@
+{
+  "bai_stat_after": {
+    "ctime_ns": 1791638286000000000,
+    "device": 48,
+    "inode": 3360392405955206129,
+    "mtime_ns": 1791620111000000000,
+    "path": "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam.bai",
+    "size": 21582928
+  },
+  "bai_stat_before": {
+    "ctime_ns": 1791638286000000000,
+    "device": 48,
+    "inode": 3360392405955206129,
+    "mtime_ns": 1791620111000000000,
+    "path": "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam.bai",
+    "size": 21582928
+  },
+  "bam_path": "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam",
+  "bounds": {
+    "bam_nominal_bytes_each": 134217728,
+    "bgzf_block_overshoot_allowance_bytes": 65536,
+    "max_fetched_records": 50000,
+    "soft_runtime_seconds": 300,
+    "stage_bytes_check": 1073741824,
+    "stage_limit_is_hard_quota": false
+  },
+  "elapsed_seconds": 58.008,
+  "events": [
+    {
+      "dot_id": ".",
+      "eligible_groups": 179,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 183,
+      "row_index": 1,
+      "source_field": "PATERNAL",
+      "unknown_groups": 4
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 152,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 175,
+      "row_index": 2,
+      "source_field": "MATERNAL",
+      "unknown_groups": 23
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 195,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 252,
+      "row_index": 3,
+      "source_field": "MATERNAL",
+      "unknown_groups": 57
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 232,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 290,
+      "row_index": 4,
+      "source_field": "PATERNAL",
+      "unknown_groups": 58
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 237,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            1,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 238,
+      "row_index": 5,
+      "source_field": null,
+      "unknown_groups": 1
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 214,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 225,
+      "row_index": 6,
+      "source_field": "PATERNAL",
+      "unknown_groups": 11
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 152,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 159,
+      "row_index": 7,
+      "source_field": "MATERNAL",
+      "unknown_groups": 7
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 224,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 236,
+      "row_index": 8,
+      "source_field": "MATERNAL",
+      "unknown_groups": 12
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 236,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 247,
+      "row_index": 9,
+      "source_field": "PATERNAL",
+      "unknown_groups": 11
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 1365,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            1,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 1508,
+      "row_index": 10,
+      "source_field": null,
+      "unknown_groups": 143
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 403,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 546,
+      "row_index": 11,
+      "source_field": "PATERNAL",
+      "unknown_groups": 143
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 402,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 545,
+      "row_index": 12,
+      "source_field": "MATERNAL",
+      "unknown_groups": 143
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 1779,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 2971,
+      "row_index": 13,
+      "source_field": "MATERNAL",
+      "unknown_groups": 1192
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 1779,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 2971,
+      "row_index": 14,
+      "source_field": "PATERNAL",
+      "unknown_groups": 1192
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 146,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 151,
+      "row_index": 15,
+      "source_field": "MATERNAL",
+      "unknown_groups": 5
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 134,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 158,
+      "row_index": 16,
+      "source_field": "MATERNAL",
+      "unknown_groups": 24
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 238,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 261,
+      "row_index": 17,
+      "source_field": "PATERNAL",
+      "unknown_groups": 23
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 137,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 152,
+      "row_index": 18,
+      "source_field": "PATERNAL",
+      "unknown_groups": 15
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 140,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 161,
+      "row_index": 19,
+      "source_field": "MATERNAL",
+      "unknown_groups": 21
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 247,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 329,
+      "row_index": 20,
+      "source_field": "PATERNAL",
+      "unknown_groups": 82
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 208,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 358,
+      "row_index": 21,
+      "source_field": "MATERNAL",
+      "unknown_groups": 150
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 193,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 209,
+      "row_index": 22,
+      "source_field": "MATERNAL",
+      "unknown_groups": 16
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 106,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            1,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 108,
+      "row_index": 23,
+      "source_field": null,
+      "unknown_groups": 2
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 316,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 321,
+      "row_index": 24,
+      "source_field": "MATERNAL",
+      "unknown_groups": 5
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 328,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 335,
+      "row_index": 25,
+      "source_field": "PATERNAL",
+      "unknown_groups": 7
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 271,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 283,
+      "row_index": 26,
+      "source_field": "MATERNAL",
+      "unknown_groups": 12
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 294,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 308,
+      "row_index": 27,
+      "source_field": "PATERNAL",
+      "unknown_groups": 14
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 233,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 335,
+      "row_index": 28,
+      "source_field": "PATERNAL",
+      "unknown_groups": 102
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 652,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 790,
+      "row_index": 29,
+      "source_field": "MATERNAL",
+      "unknown_groups": 138
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 174,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 176,
+      "row_index": 30,
+      "source_field": "PATERNAL",
+      "unknown_groups": 2
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 185,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 188,
+      "row_index": 31,
+      "source_field": "MATERNAL",
+      "unknown_groups": 3
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 89,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            1,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 95,
+      "row_index": 32,
+      "source_field": null,
+      "unknown_groups": 6
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 251,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 282,
+      "row_index": 33,
+      "source_field": "MATERNAL",
+      "unknown_groups": 31
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 264,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 304,
+      "row_index": 34,
+      "source_field": "PATERNAL",
+      "unknown_groups": 40
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 246,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            1,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 251,
+      "row_index": 35,
+      "source_field": null,
+      "unknown_groups": 5
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 291,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 319,
+      "row_index": 36,
+      "source_field": "MATERNAL",
+      "unknown_groups": 28
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 237,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 255,
+      "row_index": 37,
+      "source_field": "MATERNAL",
+      "unknown_groups": 18
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 101,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 326,
+      "row_index": 38,
+      "source_field": "PATERNAL",
+      "unknown_groups": 225
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 179,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 1740,
+      "row_index": 39,
+      "source_field": "MATERNAL",
+      "unknown_groups": 1561
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 255,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            1,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 317,
+      "row_index": 40,
+      "source_field": null,
+      "unknown_groups": 62
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 214,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            1,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 261,
+      "row_index": 41,
+      "source_field": null,
+      "unknown_groups": 47
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 0,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 0,
+      "row_index": 42,
+      "source_field": "PATERNAL",
+      "unknown_groups": 0
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 0,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 0,
+      "row_index": 43,
+      "source_field": "MATERNAL",
+      "unknown_groups": 0
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 0,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 0,
+      "row_index": 44,
+      "source_field": "PATERNAL",
+      "unknown_groups": 0
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 0,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 0,
+      "row_index": 45,
+      "source_field": "PATERNAL",
+      "unknown_groups": 0
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 0,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 0,
+      "row_index": 46,
+      "source_field": "PATERNAL",
+      "unknown_groups": 0
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 0,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 0,
+      "row_index": 47,
+      "source_field": "MATERNAL",
+      "unknown_groups": 0
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 0,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 0,
+      "row_index": 48,
+      "source_field": "MATERNAL",
+      "unknown_groups": 0
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 0,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 0,
+      "row_index": 49,
+      "source_field": "PATERNAL",
+      "unknown_groups": 0
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 0,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 0,
+      "row_index": 50,
+      "source_field": "MATERNAL",
+      "unknown_groups": 0
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 0,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 0,
+      "row_index": 51,
+      "source_field": "PATERNAL",
+      "unknown_groups": 0
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 0,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 0,
+      "row_index": 52,
+      "source_field": "MATERNAL",
+      "unknown_groups": 0
+    },
+    {
+      "dot_id": ".",
+      "eligible_groups": 0,
+      "genotypes": {
+        "SAMPLE": {
+          "GT": [
+            0,
+            1
+          ],
+          "phased": false
+        }
+      },
+      "qname_groups": 0,
+      "row_index": 53,
+      "source_field": "MATERNAL",
+      "unknown_groups": 0
+    }
+  ],
+  "fetch_complete": false,
+  "fetched_records": 16469,
+  "groups_bytes": 5334340,
+  "groups_complete": true,
+  "groups_eof": true,
+  "groups_file": "groups.jsonl",
+  "historical_source_fingerprint": {
+    "bai_bytes": 21582928,
+    "bai_sha256": "5106ac6339847460842a528a312471785d9348f59cc65cca02b55b15e157e546",
+    "bam_bytes": 48727325910,
+    "bam_sha256": "b7edeb4bbc2589039c6148a912857f26924ca8fd5971cd3141337d0ce24bbde4",
+    "verification": "historical metadata only; this screen does not rehash the 48 GB source"
+  },
+  "incomplete_reason": "raw_bam_size_cap",
+  "interpretation_limit": "SA consistency is not proof of complete molecule or all placements.",
+  "name_sorted_bam": "namesorted.bam",
+  "name_sorted_bam_bytes": 136523769,
+  "plan_path": "plan.json",
+  "plan_sha256": "9d31881ee1b0c9496faf238546e4b3070bea884150f1c307c7e664b03a1828d8",
+  "raw_bam": "raw_subset.bam",
+  "raw_bam_bytes": 134770508,
+  "retained_stage_bytes_at_check": 276628617,
+  "source_stat_after": {
+    "ctime_ns": 1791638324000000000,
+    "device": 48,
+    "inode": 8000318496950740351,
+    "mtime_ns": 1791620060000000000,
+    "path": "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam",
+    "size": 48727325910
+  },
+  "source_stat_before": {
+    "ctime_ns": 1791638324000000000,
+    "device": 48,
+    "inode": 8000318496950740351,
+    "mtime_ns": 1791620060000000000,
+    "path": "/beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/hg002_dna_s1a_20261010_01/HG002_WGS.haplotagged.bam",
+    "size": 48727325910
+  },
+  "source_stats_stable": true,
+  "status": "INCOMPLETE",
+  "unique_records": 16448,
+  "windows": [
+    {
+      "contig": "chr1",
+      "duplicate_records": 0,
+      "end": 13101214,
+      "endpoint_associations": [
+        {
+          "contig": "chr1",
+          "end": 13101214,
+          "endpoint": "END",
+          "point0": 13076214,
+          "row_index": 1,
+          "start": 13051214
+        },
+        {
+          "contig": "chr1",
+          "end": 13076143,
+          "endpoint": "POS",
+          "point0": 13051143,
+          "row_index": 1,
+          "start": 13026143
+        },
+        {
+          "contig": "chr1",
+          "end": 13086665,
+          "endpoint": "POS",
+          "point0": 13061665,
+          "row_index": 2,
+          "start": 13036665
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 183,
+      "globally_duplicate_records": 0,
+      "qname_groups": 183,
+      "start": 13026143,
+      "unique_records": 183,
+      "window_id": "W0001"
+    },
+    {
+      "contig": "chr1",
+      "duplicate_records": 0,
+      "end": 13190124,
+      "endpoint_associations": [
+        {
+          "contig": "chr1",
+          "end": 13190124,
+          "endpoint": "END",
+          "point0": 13165124,
+          "row_index": 2,
+          "start": 13140124
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 45,
+      "globally_duplicate_records": 0,
+      "qname_groups": 45,
+      "start": 13140124,
+      "unique_records": 45,
+      "window_id": "W0002"
+    },
+    {
+      "contig": "chr1",
+      "duplicate_records": 0,
+      "end": 16705840,
+      "endpoint_associations": [
+        {
+          "contig": "chr1",
+          "end": 16705840,
+          "endpoint": "POS",
+          "point0": 16680840,
+          "row_index": 3,
+          "start": 16655840
+        },
+        {
+          "contig": "chr1",
+          "end": 16705840,
+          "endpoint": "POS",
+          "point0": 16680840,
+          "row_index": 4,
+          "start": 16655840
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 174,
+      "globally_duplicate_records": 0,
+      "qname_groups": 174,
+      "start": 16655840,
+      "unique_records": 174,
+      "window_id": "W0003"
+    },
+    {
+      "contig": "chr1",
+      "duplicate_records": 0,
+      "end": 16887267,
+      "endpoint_associations": [
+        {
+          "contig": "chr1",
+          "end": 16874180,
+          "endpoint": "END",
+          "point0": 16849180,
+          "row_index": 3,
+          "start": 16824180
+        },
+        {
+          "contig": "chr1",
+          "end": 16887267,
+          "endpoint": "END",
+          "point0": 16862267,
+          "row_index": 4,
+          "start": 16837267
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 118,
+      "globally_duplicate_records": 0,
+      "qname_groups": 118,
+      "start": 16824180,
+      "unique_records": 118,
+      "window_id": "W0004"
+    },
+    {
+      "contig": "chr1",
+      "duplicate_records": 0,
+      "end": 120217771,
+      "endpoint_associations": [
+        {
+          "contig": "chr1",
+          "end": 120217771,
+          "endpoint": "POS",
+          "point0": 120192771,
+          "row_index": 5,
+          "start": 120167771
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 118,
+      "globally_duplicate_records": 0,
+      "qname_groups": 118,
+      "start": 120167771,
+      "unique_records": 118,
+      "window_id": "W0005"
+    },
+    {
+      "contig": "chr1",
+      "duplicate_records": 0,
+      "end": 120600595,
+      "endpoint_associations": [
+        {
+          "contig": "chr1",
+          "end": 120600595,
+          "endpoint": "END",
+          "point0": 120575595,
+          "row_index": 5,
+          "start": 120550595
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 120,
+      "globally_duplicate_records": 0,
+      "qname_groups": 120,
+      "start": 120550595,
+      "unique_records": 120,
+      "window_id": "W0006"
+    },
+    {
+      "contig": "chr1",
+      "duplicate_records": 0,
+      "end": 146089275,
+      "endpoint_associations": [
+        {
+          "contig": "chr1",
+          "end": 146089275,
+          "endpoint": "POS",
+          "point0": 146064275,
+          "row_index": 6,
+          "start": 146039275
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 123,
+      "globally_duplicate_records": 0,
+      "qname_groups": 123,
+      "start": 146039275,
+      "unique_records": 123,
+      "window_id": "W0007"
+    },
+    {
+      "contig": "chr1",
+      "duplicate_records": 0,
+      "end": 146353672,
+      "endpoint_associations": [
+        {
+          "contig": "chr1",
+          "end": 146353672,
+          "endpoint": "POS",
+          "point0": 146328672,
+          "row_index": 7,
+          "start": 146303672
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 46,
+      "globally_duplicate_records": 0,
+      "qname_groups": 46,
+      "start": 146303672,
+      "unique_records": 46,
+      "window_id": "W0008"
+    },
+    {
+      "contig": "chr1",
+      "duplicate_records": 0,
+      "end": 148353367,
+      "endpoint_associations": [
+        {
+          "contig": "chr1",
+          "end": 148313470,
+          "endpoint": "END",
+          "point0": 148288470,
+          "row_index": 6,
+          "start": 148263470
+        },
+        {
+          "contig": "chr1",
+          "end": 148353367,
+          "endpoint": "POS",
+          "point0": 148328367,
+          "row_index": 8,
+          "start": 148303367
+        },
+        {
+          "contig": "chr1",
+          "end": 148353367,
+          "endpoint": "POS",
+          "point0": 148328367,
+          "row_index": 9,
+          "start": 148303367
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 184,
+      "globally_duplicate_records": 0,
+      "qname_groups": 180,
+      "start": 148263470,
+      "unique_records": 184,
+      "window_id": "W0009"
+    },
+    {
+      "contig": "chr1",
+      "duplicate_records": 0,
+      "end": 149375751,
+      "endpoint_associations": [
+        {
+          "contig": "chr1",
+          "end": 149375751,
+          "endpoint": "END",
+          "point0": 149350751,
+          "row_index": 9,
+          "start": 149325751
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 124,
+      "globally_duplicate_records": 0,
+      "qname_groups": 124,
+      "start": 149325751,
+      "unique_records": 124,
+      "window_id": "W0010"
+    },
+    {
+      "contig": "chr1",
+      "duplicate_records": 0,
+      "end": 149581813,
+      "endpoint_associations": [
+        {
+          "contig": "chr1",
+          "end": 149581813,
+          "endpoint": "END",
+          "point0": 149556813,
+          "row_index": 7,
+          "start": 149531813
+        },
+        {
+          "contig": "chr1",
+          "end": 149581813,
+          "endpoint": "END",
+          "point0": 149556813,
+          "row_index": 8,
+          "start": 149531813
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 113,
+      "globally_duplicate_records": 0,
+      "qname_groups": 113,
+      "start": 149531813,
+      "unique_records": 113,
+      "window_id": "W0011"
+    },
+    {
+      "contig": "chr2",
+      "duplicate_records": 0,
+      "end": 90314048,
+      "endpoint_associations": [
+        {
+          "contig": "chr2",
+          "end": 90314048,
+          "endpoint": "POS",
+          "point0": 90289048,
+          "row_index": 10,
+          "start": 90264048
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 214,
+      "globally_duplicate_records": 0,
+      "qname_groups": 178,
+      "start": 90264048,
+      "unique_records": 214,
+      "window_id": "W0012"
+    },
+    {
+      "contig": "chr2",
+      "duplicate_records": 0,
+      "end": 90403974,
+      "endpoint_associations": [
+        {
+          "contig": "chr2",
+          "end": 90403974,
+          "endpoint": "END",
+          "point0": 90378974,
+          "row_index": 10,
+          "start": 90353974
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 1426,
+      "globally_duplicate_records": 0,
+      "qname_groups": 1330,
+      "start": 90353974,
+      "unique_records": 1426,
+      "window_id": "W0013"
+    },
+    {
+      "contig": "chr4",
+      "duplicate_records": 0,
+      "end": 49351405,
+      "endpoint_associations": [
+        {
+          "contig": "chr4",
+          "end": 49349218,
+          "endpoint": "END",
+          "point0": 49324218,
+          "row_index": 11,
+          "start": 49299218
+        },
+        {
+          "contig": "chr4",
+          "end": 49315329,
+          "endpoint": "POS",
+          "point0": 49290329,
+          "row_index": 11,
+          "start": 49265329
+        },
+        {
+          "contig": "chr4",
+          "end": 49351405,
+          "endpoint": "END",
+          "point0": 49326405,
+          "row_index": 12,
+          "start": 49301405
+        },
+        {
+          "contig": "chr4",
+          "end": 49315601,
+          "endpoint": "POS",
+          "point0": 49290601,
+          "row_index": 12,
+          "start": 49265601
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 557,
+      "globally_duplicate_records": 0,
+      "qname_groups": 546,
+      "start": 49265329,
+      "unique_records": 557,
+      "window_id": "W0014"
+    },
+    {
+      "contig": "chr5",
+      "duplicate_records": 0,
+      "end": 49670170,
+      "endpoint_associations": [
+        {
+          "contig": "chr5",
+          "end": 49669437,
+          "endpoint": "END",
+          "point0": 49644437,
+          "row_index": 13,
+          "start": 49619437
+        },
+        {
+          "contig": "chr5",
+          "end": 49624346,
+          "endpoint": "POS",
+          "point0": 49599346,
+          "row_index": 13,
+          "start": 49574346
+        },
+        {
+          "contig": "chr5",
+          "end": 49670170,
+          "endpoint": "END",
+          "point0": 49645170,
+          "row_index": 14,
+          "start": 49620170
+        },
+        {
+          "contig": "chr5",
+          "end": 49624346,
+          "endpoint": "POS",
+          "point0": 49599346,
+          "row_index": 14,
+          "start": 49574346
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 5998,
+      "globally_duplicate_records": 0,
+      "qname_groups": 2971,
+      "start": 49574346,
+      "unique_records": 5998,
+      "window_id": "W0015"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 5920687,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 5920687,
+          "endpoint": "POS",
+          "point0": 5895687,
+          "row_index": 15,
+          "start": 5870687
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 73,
+      "globally_duplicate_records": 0,
+      "qname_groups": 73,
+      "start": 5870687,
+      "unique_records": 73,
+      "window_id": "W0016"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 6771717,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 6771717,
+          "endpoint": "END",
+          "point0": 6746717,
+          "row_index": 15,
+          "start": 6721717
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 78,
+      "globally_duplicate_records": 0,
+      "qname_groups": 78,
+      "start": 6721717,
+      "unique_records": 78,
+      "window_id": "W0017"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 60983578,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 60944631,
+          "endpoint": "POS",
+          "point0": 60919631,
+          "row_index": 16,
+          "start": 60894631
+        },
+        {
+          "contig": "chr7",
+          "end": 60983578,
+          "endpoint": "POS",
+          "point0": 60958578,
+          "row_index": 17,
+          "start": 60933578
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 268,
+      "globally_duplicate_records": 0,
+      "qname_groups": 266,
+      "start": 60894631,
+      "unique_records": 268,
+      "window_id": "W0018"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 61603028,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 61603028,
+          "endpoint": "END",
+          "point0": 61578028,
+          "row_index": 16,
+          "start": 61553028
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 20,
+      "globally_duplicate_records": 0,
+      "qname_groups": 20,
+      "start": 61553028,
+      "unique_records": 20,
+      "window_id": "W0019"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 61654973,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 61654973,
+          "endpoint": "END",
+          "point0": 61629973,
+          "row_index": 17,
+          "start": 61604973
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 69,
+      "globally_duplicate_records": 15,
+      "qname_groups": 69,
+      "start": 61604973,
+      "unique_records": 69,
+      "window_id": "W0020"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 62083774,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 62051103,
+          "endpoint": "POS",
+          "point0": 62026103,
+          "row_index": 18,
+          "start": 62001103
+        },
+        {
+          "contig": "chr7",
+          "end": 62083774,
+          "endpoint": "POS",
+          "point0": 62058774,
+          "row_index": 19,
+          "start": 62033774
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 14,
+      "globally_duplicate_records": 0,
+      "qname_groups": 14,
+      "start": 62001103,
+      "unique_records": 14,
+      "window_id": "W0021"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 62317449,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 62301879,
+          "endpoint": "END",
+          "point0": 62276879,
+          "row_index": 18,
+          "start": 62251879
+        },
+        {
+          "contig": "chr7",
+          "end": 62301879,
+          "endpoint": "END",
+          "point0": 62276879,
+          "row_index": 19,
+          "start": 62251879
+        },
+        {
+          "contig": "chr7",
+          "end": 62317449,
+          "endpoint": "POS",
+          "point0": 62292449,
+          "row_index": 20,
+          "start": 62267449
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 189,
+      "globally_duplicate_records": 0,
+      "qname_groups": 189,
+      "start": 62251879,
+      "unique_records": 189,
+      "window_id": "W0022"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 62383881,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 62383881,
+          "endpoint": "POS",
+          "point0": 62358881,
+          "row_index": 21,
+          "start": 62333881
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 200,
+      "globally_duplicate_records": 4,
+      "qname_groups": 185,
+      "start": 62333881,
+      "unique_records": 200,
+      "window_id": "W0023"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 62458087,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 62458087,
+          "endpoint": "END",
+          "point0": 62433087,
+          "row_index": 20,
+          "start": 62408087
+        },
+        {
+          "contig": "chr7",
+          "end": 62458087,
+          "endpoint": "END",
+          "point0": 62433087,
+          "row_index": 21,
+          "start": 62408087
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 176,
+      "globally_duplicate_records": 1,
+      "qname_groups": 175,
+      "start": 62408087,
+      "unique_records": 176,
+      "window_id": "W0024"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 65252296,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 65252296,
+          "endpoint": "POS",
+          "point0": 65227296,
+          "row_index": 22,
+          "start": 65202296
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 114,
+      "globally_duplicate_records": 0,
+      "qname_groups": 114,
+      "start": 65202296,
+      "unique_records": 114,
+      "window_id": "W0025"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 65654981,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 65654981,
+          "endpoint": "END",
+          "point0": 65629981,
+          "row_index": 22,
+          "start": 65604981
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 95,
+      "globally_duplicate_records": 0,
+      "qname_groups": 95,
+      "start": 65604981,
+      "unique_records": 95,
+      "window_id": "W0026"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 70998892,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 70998892,
+          "endpoint": "END",
+          "point0": 70973892,
+          "row_index": 23,
+          "start": 70948892
+        },
+        {
+          "contig": "chr7",
+          "end": 70986198,
+          "endpoint": "POS",
+          "point0": 70961198,
+          "row_index": 23,
+          "start": 70936198
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 154,
+      "globally_duplicate_records": 0,
+      "qname_groups": 108,
+      "start": 70936198,
+      "unique_records": 154,
+      "window_id": "W0027"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 144211947,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 144211947,
+          "endpoint": "POS",
+          "point0": 144186947,
+          "row_index": 24,
+          "start": 144161947
+        },
+        {
+          "contig": "chr7",
+          "end": 144211947,
+          "endpoint": "POS",
+          "point0": 144186947,
+          "row_index": 25,
+          "start": 144161947
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 116,
+      "globally_duplicate_records": 0,
+      "qname_groups": 116,
+      "start": 144161947,
+      "unique_records": 116,
+      "window_id": "W0028"
+    },
+    {
+      "contig": "chr7",
+      "duplicate_records": 0,
+      "end": 144364444,
+      "endpoint_associations": [
+        {
+          "contig": "chr7",
+          "end": 144321193,
+          "endpoint": "END",
+          "point0": 144296193,
+          "row_index": 24,
+          "start": 144271193
+        },
+        {
+          "contig": "chr7",
+          "end": 144364444,
+          "endpoint": "END",
+          "point0": 144339444,
+          "row_index": 25,
+          "start": 144314444
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 349,
+      "globally_duplicate_records": 0,
+      "qname_groups": 347,
+      "start": 144271193,
+      "unique_records": 349,
+      "window_id": "W0029"
+    },
+    {
+      "contig": "chr8",
+      "duplicate_records": 0,
+      "end": 7356874,
+      "endpoint_associations": [
+        {
+          "contig": "chr8",
+          "end": 7356874,
+          "endpoint": "POS",
+          "point0": 7331874,
+          "row_index": 26,
+          "start": 7306874
+        },
+        {
+          "contig": "chr8",
+          "end": 7356874,
+          "endpoint": "POS",
+          "point0": 7331874,
+          "row_index": 27,
+          "start": 7306874
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 131,
+      "globally_duplicate_records": 0,
+      "qname_groups": 131,
+      "start": 7306874,
+      "unique_records": 131,
+      "window_id": "W0030"
+    },
+    {
+      "contig": "chr8",
+      "duplicate_records": 0,
+      "end": 12636697,
+      "endpoint_associations": [
+        {
+          "contig": "chr8",
+          "end": 12636697,
+          "endpoint": "END",
+          "point0": 12611697,
+          "row_index": 26,
+          "start": 12586697
+        },
+        {
+          "contig": "chr8",
+          "end": 12632564,
+          "endpoint": "END",
+          "point0": 12607564,
+          "row_index": 27,
+          "start": 12582564
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 201,
+      "globally_duplicate_records": 0,
+      "qname_groups": 180,
+      "start": 12582564,
+      "unique_records": 201,
+      "window_id": "W0031"
+    },
+    {
+      "contig": "chr8",
+      "duplicate_records": 0,
+      "end": 85793213,
+      "endpoint_associations": [
+        {
+          "contig": "chr8",
+          "end": 85782789,
+          "endpoint": "END",
+          "point0": 85757789,
+          "row_index": 28,
+          "start": 85732789
+        },
+        {
+          "contig": "chr8",
+          "end": 85767405,
+          "endpoint": "POS",
+          "point0": 85742405,
+          "row_index": 28,
+          "start": 85717405
+        },
+        {
+          "contig": "chr8",
+          "end": 85793213,
+          "endpoint": "END",
+          "point0": 85768213,
+          "row_index": 29,
+          "start": 85743213
+        },
+        {
+          "contig": "chr8",
+          "end": 85768604,
+          "endpoint": "POS",
+          "point0": 85743604,
+          "row_index": 29,
+          "start": 85718604
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 844,
+      "globally_duplicate_records": 0,
+      "qname_groups": 792,
+      "start": 85717405,
+      "unique_records": 844,
+      "window_id": "W0032"
+    },
+    {
+      "contig": "chr9",
+      "duplicate_records": 0,
+      "end": 64103851,
+      "endpoint_associations": [
+        {
+          "contig": "chr9",
+          "end": 64095972,
+          "endpoint": "END",
+          "point0": 64070972,
+          "row_index": 30,
+          "start": 64045972
+        },
+        {
+          "contig": "chr9",
+          "end": 64058286,
+          "endpoint": "POS",
+          "point0": 64033286,
+          "row_index": 30,
+          "start": 64008286
+        },
+        {
+          "contig": "chr9",
+          "end": 64103851,
+          "endpoint": "END",
+          "point0": 64078851,
+          "row_index": 31,
+          "start": 64053851
+        },
+        {
+          "contig": "chr9",
+          "end": 64061308,
+          "endpoint": "POS",
+          "point0": 64036308,
+          "row_index": 31,
+          "start": 64011308
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 194,
+      "globally_duplicate_records": 0,
+      "qname_groups": 194,
+      "start": 64008286,
+      "unique_records": 194,
+      "window_id": "W0033"
+    },
+    {
+      "contig": "chr11",
+      "duplicate_records": 0,
+      "end": 1940724,
+      "endpoint_associations": [
+        {
+          "contig": "chr11",
+          "end": 1940724,
+          "endpoint": "END",
+          "point0": 1915724,
+          "row_index": 32,
+          "start": 1890724
+        },
+        {
+          "contig": "chr11",
+          "end": 1919041,
+          "endpoint": "POS",
+          "point0": 1894041,
+          "row_index": 32,
+          "start": 1869041
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 206,
+      "globally_duplicate_records": 0,
+      "qname_groups": 95,
+      "start": 1869041,
+      "unique_records": 206,
+      "window_id": "W0034"
+    },
+    {
+      "contig": "chr16",
+      "duplicate_records": 0,
+      "end": 14952877,
+      "endpoint_associations": [
+        {
+          "contig": "chr16",
+          "end": 14919751,
+          "endpoint": "POS",
+          "point0": 14894751,
+          "row_index": 33,
+          "start": 14869751
+        },
+        {
+          "contig": "chr16",
+          "end": 14952877,
+          "endpoint": "POS",
+          "point0": 14927877,
+          "row_index": 34,
+          "start": 14902877
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 248,
+      "globally_duplicate_records": 0,
+      "qname_groups": 226,
+      "start": 14869751,
+      "unique_records": 248,
+      "window_id": "W0035"
+    },
+    {
+      "contig": "chr16",
+      "duplicate_records": 0,
+      "end": 15347388,
+      "endpoint_associations": [
+        {
+          "contig": "chr16",
+          "end": 15347388,
+          "endpoint": "END",
+          "point0": 15322388,
+          "row_index": 33,
+          "start": 15297388
+        },
+        {
+          "contig": "chr16",
+          "end": 15347388,
+          "endpoint": "END",
+          "point0": 15322388,
+          "row_index": 34,
+          "start": 15297388
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 136,
+      "globally_duplicate_records": 0,
+      "qname_groups": 136,
+      "start": 15297388,
+      "unique_records": 136,
+      "window_id": "W0036"
+    },
+    {
+      "contig": "chr16",
+      "duplicate_records": 0,
+      "end": 21422674,
+      "endpoint_associations": [
+        {
+          "contig": "chr16",
+          "end": 21422674,
+          "endpoint": "POS",
+          "point0": 21397674,
+          "row_index": 35,
+          "start": 21372674
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 103,
+      "globally_duplicate_records": 0,
+      "qname_groups": 103,
+      "start": 21372674,
+      "unique_records": 103,
+      "window_id": "W0037"
+    },
+    {
+      "contig": "chr16",
+      "duplicate_records": 0,
+      "end": 22461933,
+      "endpoint_associations": [
+        {
+          "contig": "chr16",
+          "end": 22461933,
+          "endpoint": "END",
+          "point0": 22436933,
+          "row_index": 35,
+          "start": 22411933
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 149,
+      "globally_duplicate_records": 0,
+      "qname_groups": 148,
+      "start": 22411933,
+      "unique_records": 149,
+      "window_id": "W0038"
+    },
+    {
+      "contig": "chr16",
+      "duplicate_records": 0,
+      "end": 32763645,
+      "endpoint_associations": [
+        {
+          "contig": "chr16",
+          "end": 32763645,
+          "endpoint": "POS",
+          "point0": 32738645,
+          "row_index": 36,
+          "start": 32713645
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 124,
+      "globally_duplicate_records": 0,
+      "qname_groups": 123,
+      "start": 32713645,
+      "unique_records": 124,
+      "window_id": "W0039"
+    },
+    {
+      "contig": "chr16",
+      "duplicate_records": 0,
+      "end": 32836761,
+      "endpoint_associations": [
+        {
+          "contig": "chr16",
+          "end": 32836761,
+          "endpoint": "END",
+          "point0": 32811761,
+          "row_index": 36,
+          "start": 32786761
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 198,
+      "globally_duplicate_records": 1,
+      "qname_groups": 197,
+      "start": 32786761,
+      "unique_records": 198,
+      "window_id": "W0040"
+    },
+    {
+      "contig": "chr16",
+      "duplicate_records": 0,
+      "end": 33067601,
+      "endpoint_associations": [
+        {
+          "contig": "chr16",
+          "end": 33067601,
+          "endpoint": "POS",
+          "point0": 33042601,
+          "row_index": 37,
+          "start": 33017601
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 199,
+      "globally_duplicate_records": 0,
+      "qname_groups": 199,
+      "start": 33017601,
+      "unique_records": 199,
+      "window_id": "W0041"
+    },
+    {
+      "contig": "chr16",
+      "duplicate_records": 0,
+      "end": 33211823,
+      "endpoint_associations": [
+        {
+          "contig": "chr16",
+          "end": 33211823,
+          "endpoint": "END",
+          "point0": 33186823,
+          "row_index": 37,
+          "start": 33161823
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 56,
+      "globally_duplicate_records": 0,
+      "qname_groups": 56,
+      "start": 33161823,
+      "unique_records": 56,
+      "window_id": "W0042"
+    },
+    {
+      "contig": "chr16",
+      "duplicate_records": 0,
+      "end": 34617657,
+      "endpoint_associations": [
+        {
+          "contig": "chr16",
+          "end": 34572855,
+          "endpoint": "POS",
+          "point0": 34547855,
+          "row_index": 38,
+          "start": 34522855
+        },
+        {
+          "contig": "chr16",
+          "end": 34617657,
+          "endpoint": "POS",
+          "point0": 34592657,
+          "row_index": 39,
+          "start": 34567657
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 1646,
+      "globally_duplicate_records": 0,
+      "qname_groups": 1563,
+      "start": 34522855,
+      "unique_records": 1646,
+      "window_id": "W0043"
+    },
+    {
+      "contig": "chr16",
+      "duplicate_records": 0,
+      "end": 36363971,
+      "endpoint_associations": [
+        {
+          "contig": "chr16",
+          "end": 36363971,
+          "endpoint": "END",
+          "point0": 36338971,
+          "row_index": 38,
+          "start": 36313971
+        },
+        {
+          "contig": "chr16",
+          "end": 36359290,
+          "endpoint": "END",
+          "point0": 36334290,
+          "row_index": 39,
+          "start": 36309290
+        }
+      ],
+      "fetch_eof": true,
+      "fetched_records": 231,
+      "globally_duplicate_records": 0,
+      "qname_groups": 203,
+      "start": 36309290,
+      "unique_records": 231,
+      "window_id": "W0044"
+    },
+    {
+      "contig": "chr17",
+      "duplicate_records": 0,
+      "end": 43347882,
+      "endpoint_associations": [
+        {
+          "contig": "chr17",
+          "end": 43326627,
+          "endpoint": "END",
+          "point0": 43301627,
+          "row_index": 40,
+          "start": 43276627
+        },
+        {
+          "contig": "chr17",
+          "end": 43256404,
+          "endpoint": "POS",
+          "point0": 43231404,
+          "row_index": 40,
+          "start": 43206404
+        },
+        {
+          "contig": "chr17",
+          "end": 43347882,
+          "endpoint": "END",
+          "point0": 43322882,
+          "row_index": 41,
+          "start": 43297882
+        },
+        {
+          "contig": "chr17",
+          "end": 43302614,
+          "endpoint": "POS",
+          "point0": 43277614,
+          "row_index": 41,
+          "start": 43252614
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 345,
+      "globally_duplicate_records": 0,
+      "qname_groups": 317,
+      "start": 43206404,
+      "unique_records": 345,
+      "window_id": "W0045"
+    },
+    {
+      "contig": "chr17",
+      "duplicate_records": 0,
+      "end": 45603418,
+      "endpoint_associations": [
+        {
+          "contig": "chr17",
+          "end": 45603418,
+          "endpoint": "POS",
+          "point0": 45578418,
+          "row_index": 42,
+          "start": 45553418
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 45553418,
+      "unique_records": 0,
+      "window_id": "W0046"
+    },
+    {
+      "contig": "chr17",
+      "duplicate_records": 0,
+      "end": 46516231,
+      "endpoint_associations": [
+        {
+          "contig": "chr17",
+          "end": 46516231,
+          "endpoint": "END",
+          "point0": 46491231,
+          "row_index": 42,
+          "start": 46466231
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 46466231,
+      "unique_records": 0,
+      "window_id": "W0047"
+    },
+    {
+      "contig": "chr18",
+      "duplicate_records": 0,
+      "end": 20630277,
+      "endpoint_associations": [
+        {
+          "contig": "chr18",
+          "end": 20630277,
+          "endpoint": "END",
+          "point0": 20605277,
+          "row_index": 43,
+          "start": 20580277
+        },
+        {
+          "contig": "chr18",
+          "end": 20586562,
+          "endpoint": "POS",
+          "point0": 20561562,
+          "row_index": 43,
+          "start": 20536562
+        },
+        {
+          "contig": "chr18",
+          "end": 20586562,
+          "endpoint": "POS",
+          "point0": 20561562,
+          "row_index": 44,
+          "start": 20536562
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 20536562,
+      "unique_records": 0,
+      "window_id": "W0048"
+    },
+    {
+      "contig": "chr18",
+      "duplicate_records": 0,
+      "end": 20721388,
+      "endpoint_associations": [
+        {
+          "contig": "chr18",
+          "end": 20721388,
+          "endpoint": "END",
+          "point0": 20696388,
+          "row_index": 44,
+          "start": 20671388
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 20671388,
+      "unique_records": 0,
+      "window_id": "W0049"
+    },
+    {
+      "contig": "chr20",
+      "duplicate_records": 0,
+      "end": 25786965,
+      "endpoint_associations": [
+        {
+          "contig": "chr20",
+          "end": 25786965,
+          "endpoint": "POS",
+          "point0": 25761965,
+          "row_index": 45,
+          "start": 25736965
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 25736965,
+      "unique_records": 0,
+      "window_id": "W0050"
+    },
+    {
+      "contig": "chr20",
+      "duplicate_records": 0,
+      "end": 26062621,
+      "endpoint_associations": [
+        {
+          "contig": "chr20",
+          "end": 26062621,
+          "endpoint": "END",
+          "point0": 26037621,
+          "row_index": 45,
+          "start": 26012621
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 26012621,
+      "unique_records": 0,
+      "window_id": "W0051"
+    },
+    {
+      "contig": "chr20",
+      "duplicate_records": 0,
+      "end": 28534327,
+      "endpoint_associations": [
+        {
+          "contig": "chr20",
+          "end": 28534327,
+          "endpoint": "END",
+          "point0": 28509327,
+          "row_index": 46,
+          "start": 28484327
+        },
+        {
+          "contig": "chr20",
+          "end": 28520321,
+          "endpoint": "POS",
+          "point0": 28495321,
+          "row_index": 46,
+          "start": 28470321
+        },
+        {
+          "contig": "chr20",
+          "end": 28534315,
+          "endpoint": "END",
+          "point0": 28509315,
+          "row_index": 47,
+          "start": 28484315
+        },
+        {
+          "contig": "chr20",
+          "end": 28522302,
+          "endpoint": "POS",
+          "point0": 28497302,
+          "row_index": 47,
+          "start": 28472302
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 28470321,
+      "unique_records": 0,
+      "window_id": "W0052"
+    },
+    {
+      "contig": "chr20",
+      "duplicate_records": 0,
+      "end": 29913966,
+      "endpoint_associations": [
+        {
+          "contig": "chr20",
+          "end": 29913966,
+          "endpoint": "POS",
+          "point0": 29888966,
+          "row_index": 48,
+          "start": 29863966
+        },
+        {
+          "contig": "chr20",
+          "end": 29913966,
+          "endpoint": "POS",
+          "point0": 29888966,
+          "row_index": 49,
+          "start": 29863966
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 29863966,
+      "unique_records": 0,
+      "window_id": "W0053"
+    },
+    {
+      "contig": "chr20",
+      "duplicate_records": 0,
+      "end": 30481076,
+      "endpoint_associations": [
+        {
+          "contig": "chr20",
+          "end": 30479472,
+          "endpoint": "END",
+          "point0": 30454472,
+          "row_index": 48,
+          "start": 30429472
+        },
+        {
+          "contig": "chr20",
+          "end": 30481076,
+          "endpoint": "END",
+          "point0": 30456076,
+          "row_index": 49,
+          "start": 30431076
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 30429472,
+      "unique_records": 0,
+      "window_id": "W0054"
+    },
+    {
+      "contig": "chr22",
+      "duplicate_records": 0,
+      "end": 11590893,
+      "endpoint_associations": [
+        {
+          "contig": "chr22",
+          "end": 11572336,
+          "endpoint": "POS",
+          "point0": 11547336,
+          "row_index": 50,
+          "start": 11522336
+        },
+        {
+          "contig": "chr22",
+          "end": 11590893,
+          "endpoint": "POS",
+          "point0": 11565893,
+          "row_index": 51,
+          "start": 11540893
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 11522336,
+      "unique_records": 0,
+      "window_id": "W0055"
+    },
+    {
+      "contig": "chr22",
+      "duplicate_records": 0,
+      "end": 12199044,
+      "endpoint_associations": [
+        {
+          "contig": "chr22",
+          "end": 12151673,
+          "endpoint": "END",
+          "point0": 12126673,
+          "row_index": 50,
+          "start": 12101673
+        },
+        {
+          "contig": "chr22",
+          "end": 12199044,
+          "endpoint": "END",
+          "point0": 12174044,
+          "row_index": 51,
+          "start": 12149044
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 12101673,
+      "unique_records": 0,
+      "window_id": "W0056"
+    },
+    {
+      "contig": "chrX",
+      "duplicate_records": 0,
+      "end": 71765419,
+      "endpoint_associations": [
+        {
+          "contig": "chrX",
+          "end": 71765419,
+          "endpoint": "END",
+          "point0": 71740419,
+          "row_index": 52,
+          "start": 71715419
+        },
+        {
+          "contig": "chrX",
+          "end": 71722860,
+          "endpoint": "POS",
+          "point0": 71697860,
+          "row_index": 52,
+          "start": 71672860
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 71672860,
+      "unique_records": 0,
+      "window_id": "W0057"
+    },
+    {
+      "contig": "chrX",
+      "duplicate_records": 0,
+      "end": 141029283,
+      "endpoint_associations": [
+        {
+          "contig": "chrX",
+          "end": 141029283,
+          "endpoint": "POS",
+          "point0": 141004283,
+          "row_index": 53,
+          "start": 140979283
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 140979283,
+      "unique_records": 0,
+      "window_id": "W0058"
+    },
+    {
+      "contig": "chrX",
+      "duplicate_records": 0,
+      "end": 141614188,
+      "endpoint_associations": [
+        {
+          "contig": "chrX",
+          "end": 141614188,
+          "endpoint": "END",
+          "point0": 141589188,
+          "row_index": 53,
+          "start": 141564188
+        }
+      ],
+      "fetch_eof": false,
+      "fetched_records": 0,
+      "globally_duplicate_records": 0,
+      "qname_groups": 0,
+      "start": 141564188,
+      "unique_records": 0,
+      "window_id": "W0059"
+    }
+  ]
+}

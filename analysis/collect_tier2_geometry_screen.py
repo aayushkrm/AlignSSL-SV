@@ -340,10 +340,14 @@ def _group_summary(qname, records, record_windows, plan):
 
 def collect_bam(bam_path, plan_path, output_dir, *, pysam_module=None,
                 max_records=MAX_RECORDS, soft_seconds=SOFT_SECONDS,
+                max_bam_bytes=MAX_BAM_BYTES, max_stage_bytes=MAX_STAGE_BYTES,
                 expected_sha256=TRUTH_SHA256, expected_bytes=TRUTH_BYTES,
                 expected_rows=TRUTH_ROWS):
     """Collect only the frozen windows. A cap produces INCOMPLETE, never a prefix claim."""
     out = _empty_dir(output_dir)
+    if any(type(value) is not int or value <= 0
+           for value in (max_bam_bytes, max_stage_bytes)):
+        raise ScreenError("storage bounds must be positive integer byte counts")
     if pysam_module is None:
         import pysam as pysam_module
     started = time.monotonic()
@@ -359,9 +363,9 @@ def collect_bam(bam_path, plan_path, output_dir, *, pysam_module=None,
             "bai_sha256": "5106ac6339847460842a528a312471785d9348f59cc65cca02b55b15e157e546",
             "verification": "historical metadata only; this screen does not rehash the 48 GB source"},
         "bounds": {"max_fetched_records": max_records,
-            "bam_nominal_bytes_each": MAX_BAM_BYTES,
+            "bam_nominal_bytes_each": max_bam_bytes,
             "bgzf_block_overshoot_allowance_bytes": BGZF_SLACK,
-            "stage_bytes_check": MAX_STAGE_BYTES,
+            "stage_bytes_check": max_stage_bytes,
             "stage_limit_is_hard_quota": False,
             "soft_runtime_seconds": soft_seconds}}
     raw_path, name_path = out / "raw_subset.bam", out / "namesorted.bam"
@@ -430,7 +434,7 @@ def collect_bam(bam_path, plan_path, output_dir, *, pysam_module=None,
                             continue
                         seen.add(source_record)
                         raw.write(aln)
-                        if raw_path.stat().st_size > MAX_BAM_BYTES + BGZF_SLACK:
+                        if raw_path.stat().st_size > max_bam_bytes + BGZF_SLACK:
                             why_incomplete = "raw_bam_size_cap"
                             break
                     if why_incomplete:
@@ -441,16 +445,16 @@ def collect_bam(bam_path, plan_path, output_dir, *, pysam_module=None,
                     w["fetch_eof"] for w in windows)
         manifest["incomplete_reason"] = why_incomplete
         if raw_path.exists():
-            if raw_path.stat().st_size > MAX_BAM_BYTES + BGZF_SLACK:
+            if raw_path.stat().st_size > max_bam_bytes + BGZF_SLACK:
                 why_incomplete = why_incomplete or "raw_bam_size_cap"
             if time.monotonic() - started >= soft_seconds:
                 why_incomplete = why_incomplete or "soft_runtime_limit_before_sort"
             else:
                 pysam_module.sort("-n", "-m", "128M", "-@", "0", "-T",
                     str(out / "sort_tmp"), "-o", str(name_path), str(raw_path))
-                if name_path.stat().st_size > MAX_BAM_BYTES + BGZF_SLACK:
+                if name_path.stat().st_size > max_bam_bytes + BGZF_SLACK:
                     why_incomplete = why_incomplete or "name_sorted_bam_size_cap"
-                if _stage_bytes(out) > MAX_STAGE_BYTES:
+                if _stage_bytes(out) > max_stage_bytes:
                     why_incomplete = why_incomplete or "retained_stage_size_cap"
                 if time.monotonic() - started >= soft_seconds:
                     why_incomplete = why_incomplete or "soft_runtime_limit_after_sort"
@@ -489,7 +493,7 @@ def collect_bam(bam_path, plan_path, output_dir, *, pysam_module=None,
                 manifest["events"] = [{"row_index": e["row_index"], "dot_id": e["dot_id"],
                     "source_field": e["source_field"], "genotypes": e["genotypes"],
                     **event_counts[e["row_index"]]} for e in plan["events"]]
-        if _stage_bytes(out) > MAX_STAGE_BYTES:
+        if _stage_bytes(out) > max_stage_bytes:
             why_incomplete = why_incomplete or "retained_stage_size_cap_after_grouping"
         after = _snapshot(bam_path)
         bai_after = _snapshot(bai)
@@ -554,9 +558,15 @@ def main(argv=None):
     parser.add_argument("--truth-gz")
     parser.add_argument("--plan")
     parser.add_argument("--output-dir", required=True)
+    parser.add_argument("--bam-cap-mib", type=int, choices=(128, 512), default=128)
+    parser.add_argument("--stage-cap-mib", type=int, choices=(1024, 2048), default=1024)
     args = parser.parse_args(argv)
     try:
+        if (args.bam_cap_mib, args.stage_cap_mib) not in {(128, 1024), (512, 2048)}:
+            raise ScreenError("use the original 128/1024 or explicit run02 512/2048 storage pair")
         if args.plan_only:
+            if (args.bam_cap_mib, args.stage_cap_mib) != (128, 1024):
+                raise ScreenError("storage overrides apply to collection, not selection")
             if not args.truth_gz or args.plan:
                 raise ScreenError("plan-only requires --truth-gz and does not accept --plan")
             plan = build_plan(args.truth_gz)
@@ -565,7 +575,9 @@ def main(argv=None):
             return 0
         if not args.plan or args.truth_gz:
             raise ScreenError("run mode requires --bam and --plan; omit --truth-gz")
-        status = collect_bam(args.bam, args.plan, args.output_dir)
+        status = collect_bam(args.bam, args.plan, args.output_dir,
+                             max_bam_bytes=args.bam_cap_mib * 1024**2,
+                             max_stage_bytes=args.stage_cap_mib * 1024**2)
         print(f"collection {status}: {args.output_dir}")
         return 0 if status == "COMPLETE" else 2
     except Exception as exc:

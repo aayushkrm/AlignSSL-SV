@@ -32,6 +32,25 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+October16 recovery: real-input01 job1604877 is terminal FAILED2:0 after its
+128MiB BAM cap, before any study native classification.44/59source windows
+EOF,16,469fetched/16,448retained; full277MB failure preserved in HOME and
+scratch with fresh byte comparison/SHA checks. Source unchanged; no biological
+zero. See [actual01 and prospective02](2026-10-16-tier2-geometry-capacity-execution.md).
+New512MiB-BAM/2GiB-leaf02 is explicitly opt-in, same source/selection/defaults,
+record/time bounds and1CPU/2GiB/15min. Fresh independent review approves it;
+21focused tests pass.02 remains UNBOOKED at this checkpoint. No old process
+should be restarted based only on an expired observation session.
+
+Old reviewer handles are now `not_found`; finished notes remain evidence.
+Replacement maintained Euclid `01a142aa-03d2-7ac2-85c8-c176ad39bd67` requested
+Sol6.1/high has completed the finite02 code/command review and remains available.
+Luna/max worker Galileo `01a142aa-044d-73e2-8337-0627d2e0895b` implements a
+synthetic-only offline result summarizer; no study raw access or jobs delegated.
+Main owns current collector changes and booking. Backend configurations are
+not independently attested. Scratch has6days21hours/one extension; needed
+source/failure copies are permanent. Full research goal remains active/unmet.
+
 Operational handoff, October14 15:55 UTC: scoped simple-case STOP and research-
 branch README update are pushed at `aa6125c`. Combined inversion/README checks
 pass78tests in0.98s. No main promotion. Two actual subagent handles remain

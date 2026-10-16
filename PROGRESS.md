@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-10-14** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
+_Last updated: **2026-10-16** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,25 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+### Real-input run01 incomplete; capacity-only run02 approved — 2026-10-16
+
+Actual job1604877 FAILED2:0 on14October at the128MiB BAM guard, before native
+study classification.44/59 windows reached EOF;16,469 records were fetched,
+16,448 physical records retained. This is not zero flags or a biological null.
+The entire277,457,883B failed leaf is preserved in scratch/permanent HOME;
+fresh16October byte comparison and four SHA checks match.59allocatedCPU-s,
+55.094measuredCPU-s and207084K MaxRSS remain charged. The source is unchanged.
+
+The [execution amendment](docs/research/2026-10-16-tier2-geometry-capacity-execution.md)
+and [independent review](docs/research/2026-10-16-tier2-capacity-review.md)
+approve one separate02 attempt:512MiB per BAM/2GiB leaf, explicitly opted in;
+old128/1024MiB defaults remain. Same53rows/59windows, all tags/records,
+50,000-record cap, native defaults and endpoint; same1CPU/2GiB RAM/15min.
+No study classification was available to tune against.21 focused code checks
+pass, including same-record equivalence under both capacities. No automatic
+further retry, campaign or positive scientific claim follows.02 is prepared,
+not yet booked. Full publication goal remains active and unmet.
 
 ### Native interface qualified; all53-row plan frozen — 2026-10-14
 

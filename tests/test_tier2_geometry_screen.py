@@ -222,3 +222,42 @@ def test_identical_distinct_source_records_are_not_collapsed(tmp_path):
     assert manifest["unique_records"] == 2
     groups = [json.loads(line) for line in (out / "groups.jsonl").read_text().splitlines()]
     assert groups[0]["nrecords"] == 2 and groups[0]["status"] == "UNKNOWN"
+
+
+def test_capacity_override_is_explicit_and_does_not_change_records(tmp_path):
+    plan = _plan(tmp_path)
+    plan_file = tmp_path / "fixed-plan.json"
+    plan_file.write_bytes(screen._json_bytes(plan, pretty=True))
+    bam = tmp_path / "synthetic.bam"
+    _indexed_bam(bam)
+    outputs = []
+    for label, capacity in (("original", {}), ("run02", {
+            "max_bam_bytes": 512 * 1024**2, "max_stage_bytes": 2 * 1024**3})):
+        out = tmp_path / label
+        out.mkdir()
+        assert screen.collect_bam(bam, plan_file, out,
+            expected_sha256=plan["truth_sha256"], expected_bytes=plan["truth_bytes"],
+            expected_rows=53, **capacity) == "COMPLETE"
+        manifest = json.loads((out / "manifest.json").read_text())
+        with pysam.AlignmentFile(str(out / "namesorted.bam"), "rb") as handle:
+            records = [r.to_string() for r in handle]
+        outputs.append((manifest, records, (out / "groups.jsonl").read_bytes()))
+    assert outputs[0][1:] == outputs[1][1:]
+    assert outputs[0][0]["events"] == outputs[1][0]["events"]
+    assert outputs[0][0]["windows"] == outputs[1][0]["windows"]
+    assert outputs[0][0]["bounds"]["bam_nominal_bytes_each"] == 128 * 1024**2
+    assert outputs[1][0]["bounds"]["bam_nominal_bytes_each"] == 512 * 1024**2
+    assert outputs[1][0]["bounds"]["stage_bytes_check"] == 2 * 1024**3
+    for key in ("max_fetched_records", "soft_runtime_seconds"):
+        assert outputs[0][0]["bounds"][key] == outputs[1][0]["bounds"][key]
+
+
+def test_cli_rejects_mixed_or_selection_capacity_settings(tmp_path):
+    out = tmp_path / "empty"
+    out.mkdir()
+    assert screen.main(["--bam", "unused", "--plan", "unused",
+                        "--bam-cap-mib", "512", "--output-dir", str(out)]) == 2
+    assert screen.main(["--plan-only", "--truth-gz", "unused",
+                        "--bam-cap-mib", "512", "--stage-cap-mib", "2048",
+                        "--output-dir", str(out)]) == 2
+    assert not any(out.iterdir())
