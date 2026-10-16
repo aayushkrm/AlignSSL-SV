@@ -8,7 +8,26 @@ context only. It is not the foundation for new work.
 
 ## Verified and planned
 
-Current decision (2026-10-12): stop the HG002 annotation-exclusion pilot before
+Latest diagnostic (2026-10-16): the all-53-row Tier2 geometry screen completed.
+It retained 15,460 observed read-name groups, including 4,170 UNKNOWN groups.
+Native output contains 21 Chimeric breakpoint labels and no Foldback labels;
+17 Chimeric labels occur in SA-consistent observed groups. Independent review
+accepts the accounting. These labels do not establish artifacts, true inversion
+support or a filter error. No follow-up campaign is released.
+See [the complete screen](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/results/tier2_geometry_screen_20261014/README.md)
+and [the result review](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-16-tier2-result-review.md).
+
+Current decision (2026-10-14): stop the selected simple-inversion case as a
+new-method lead. The complete regional input census has 52 alignment records
+from 47 read-name labels and passed independent review. It contains useful
+linked alignment patterns, but the proposed next positive would demonstrate
+existing allele-genotyping, read-linkage or local-assembly capabilities.
+No distinct contribution is established, so no further case compute is
+allocated. This does not show biological absence or native caller success.
+See [the actual census](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/results/inv_mapped_trace_20261014/README.md)
+and [the investment decision](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-14-inversion-post-trace-investment.md).
+
+Earlier decision (2026-10-12): stop the HG002 annotation-exclusion pilot before
 genome-wide calling. Its best possible positive could reflect ordinary
 annotation incompleteness. An important external claim or diagnostic decision
 tested by that endpoint has not been established. This is a scientific
