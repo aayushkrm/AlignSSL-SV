@@ -1,6 +1,13 @@
-# Tier2 geometry screen: run01 incomplete
+# Tier2 geometry screen: run02 complete, biological status unresolved
 
-**No native study-classification result yet.** Run01 job1604877 stopped at
+Run02 job1604949 completes0:0 with all59windows at EOF/all53rows. Native report:
+1,648breakpoint rows,1,627Pass/21Chimeric/0Foldback;17Chimeric rows in eligible
+observed groups and4in UNKNOWN groups. Full raw input/output is preserved in
+permanent cluster HOME. See [actual result](../../docs/research/2026-10-16-tier2-geometry-result.md)
+and [run02 metadata/report/summary](run02/). No artifact, true support, filter
+error or publication claim follows. Actual result/investment reviews are pending.
+
+Run01 job1604877 stopped at
 its BAM size guard;44/59windows reached EOF. The [raw manifest](run01/manifest.json)
 and exit receipts preserve INCOMPLETE, not a negative result. The full failed
 leaf remains in permanent cluster HOME, with both BAMs/metadata unchanged.

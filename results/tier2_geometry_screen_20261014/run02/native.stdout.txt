@@ -1,0 +1,18 @@
+****************************************************************************************************
+Breakinator summary report:
+Command: /beegfs/datasets/home/igorno/alignssl_restart_20260922/experiments/breakinator_runtime_20261014_01/breakinator-v1.1.1/bin/breakinator -i collection/namesorted.bam -o native-report.txt --rcoord -t 1
+Filtering Criteria: MapQ ≥ 10 and min_alignment_len ≥ 200
+
+Results
+--------------------
+Num reads passed filter: 9,818
+Num breakpoints detected: 1,648 on 1,032 unique reads
+
+Foldback artifacts:
+Num Foldback READS detected: 0  (0.000% of all reads)
+Num Foldback BREAKPOINTS detected: 0  (0.000% of all breakpoints)
+
+Chimeric artifacts:
+Num Chimeric READS detected: 21  (0.214% of all reads)
+Num chimeric BREAKPOINTS detected: 21  (1.274% of all breakpoints)
+****************************************************************************************************

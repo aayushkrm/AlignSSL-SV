@@ -18,10 +18,12 @@ retain dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-16-tier2-geometry-result.md`](2026-10-16-tier2-geometry-result.md) | Actual complete02 and limits |59EOF/53rows;17eligible native Chimeric flags,4UNKNOWN; no biological error/support claim |
+| [`2026-10-16-tier2-summary-review.md`](2026-10-16-tier2-summary-review.md) | Independent summary-code review | Approves offline accounting; completion/authentication must come from separate execution receipts |
 | [`2026-10-16-tier2-geometry-capacity-execution.md`](2026-10-16-tier2-geometry-capacity-execution.md) | Actual incomplete01 and explicit02 amendment |01 cap stop before study classification, full preservation/account; same scientific input, larger storage guards only |
 | [`2026-10-16-tier2-capacity-review.md`](2026-10-16-tier2-capacity-review.md) | Replacement maintained independent reviewer | Approves one bounded capacity-only02; no automatic retry or result acceptance |
 | [`../../results/breakinator_abi_20261014/README.md`](../../results/breakinator_abi_20261014/README.md) | Actual native synthetic ABI qualification |1604874 COMPLETED0:0; four geometry groups match, raw/pins preserved; no study read access |
-| [`../../results/tier2_geometry_screen_20261014/README.md`](../../results/tier2_geometry_screen_20261014/README.md) | Frozen real-input selection |53rows/59windows/3.69Mb; plan-only complete, no real-input result yet |
+| [`../../results/tier2_geometry_screen_20261014/README.md`](../../results/tier2_geometry_screen_20261014/README.md) | Frozen selection and both actual attempts |53rows/59windows/3.69Mb;01incomplete/02complete; all native rows retained |
 | [`2026-10-14-pivot-integration.md`](2026-10-14-pivot-integration.md) | Main's concrete two-scout comparison | Rejects personal-reference report join; selects only an existing-HiFi geometry viability screen |
 | [`2026-10-14-tier2-geometry-screen-protocol.md`](2026-10-14-tier2-geometry-screen-protocol.md) | Prospective all53-row real-input screen | Fixed +/-25kb endpoint selection; native flags are candidates only; code/runtime pending, no study run |
 | [`2026-10-14-pivot-scout-review.md`](2026-10-14-pivot-scout-review.md) | Maintained independent scientific challenge | Corrects initial table recommendation after primary Methods; accepts one scoped real-HiFi viability check, not code or results |

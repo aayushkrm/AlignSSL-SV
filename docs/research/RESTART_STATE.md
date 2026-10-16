@@ -32,6 +32,19 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+October16 actual02: job1604949 COMPLETED0:0 in75s;59/59fetchEOF, all53rows,
+stable source and complete groups. Full329,789,011B leaf copied to permanent
+HOME with recursive byte match and all eight output hashes passing in both
+locations. Own queue empty. [Result](2026-10-16-tier2-geometry-result.md):
+15,460groups/11,290eligible/4,170UNKNOWN;1,648native rows (1,627Pass,
+21Chimeric,0Foldback),17eligible Chimeric rows and4UNKNOWN. No flagged join
+links opposite endpoints of the same truth row inside frozen windows; no
+biological conclusion follows. Euclid reviews the actual packet; Meitner
+`01a142b5-a2bf-7fa0-b190-ef90544f70ac`, requestedSol6.1/max, assesses investment
+or STOP. Galileo completed the summary and is closed. Main preserves native
+report/metadata receipts in Git; BAMs/groups remain in permanent cluster leaf.
+Do not resubmit02 or start a campaign from nonzero flags. Goal remains unmet.
+
 October16 recovery: real-input01 job1604877 is terminal FAILED2:0 after its
 128MiB BAM cap, before any study native classification.44/59source windows
 EOF,16,469fetched/16,448retained; full277MB failure preserved in HOME and
@@ -39,14 +52,16 @@ scratch with fresh byte comparison/SHA checks. Source unchanged; no biological
 zero. See [actual01 and prospective02](2026-10-16-tier2-geometry-capacity-execution.md).
 New512MiB-BAM/2GiB-leaf02 is explicitly opt-in, same source/selection/defaults,
 record/time bounds and1CPU/2GiB/15min. Fresh independent review approves it;
-21focused tests pass.02 remains UNBOOKED at this checkpoint. No old process
-should be restarted based only on an expired observation session.
+21focused tests pass.02 is now job1604949, started2026-10-16T03:12:36Z on
+hydra-n1 after four bundle SHA checks and an empty own queue. Main observes
+the same direct-srun session; do not resubmit after an observation timeout.
 
 Old reviewer handles are now `not_found`; finished notes remain evidence.
 Replacement maintained Euclid `01a142aa-03d2-7ac2-85c8-c176ad39bd67` requested
 Sol6.1/high has completed the finite02 code/command review and remains available.
-Luna/max worker Galileo `01a142aa-044d-73e2-8337-0627d2e0895b` implements a
+Luna/max worker Galileo `01a142aa-044d-73e2-8337-0627d2e0895b` completed a
 synthetic-only offline result summarizer; no study raw access or jobs delegated.
+The maintained reviewer checks this separate code while the cluster run works.
 Main owns current collector changes and booking. Backend configurations are
 not independently attested. Scratch has6days21hours/one extension; needed
 source/failure copies are permanent. Full research goal remains active/unmet.

@@ -11,6 +11,28 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+### Complete native geometry screen; result review pending — 2026-10-16
+
+Job1604949 completes0:0 in75s: all59windows at EOF/all53rows/stable source.
+The full330MB leaf is byte-identical in scratch/permanent HOME; all eight
+output hashes pass. Actual measuredCPU71.283s, MaxRSS208436K. Both real-input
+attempts remain charged and preserved:134allocatedCPU-s/126.377measuredCPU-s.
+Own queue is empty after completion.
+
+The [actual result](docs/research/2026-10-16-tier2-geometry-result.md) contains
+15,460 observed groups:11,290eligible and4,170UNKNOWN. Native output has
+1,648breakpoint rows:1,627Pass,21Chimeric,0Foldback. Seventeen Chimeric rows
+are in eligible groups; four are UNKNOWN. All17 eligible joins are retained,
+with no opposite endpoints of the same truth row inside the frozen windows.
+These are geometry labels, not authenticated artifacts, inversion support,
+filter/caller error or a publication result. UNKNOWN is not negative.
+
+The [reviewed offline summary](docs/research/2026-10-16-tier2-summary-review.md)
+preserves all53censuses, native rows/QNAME sets and direct endpoint context.
+Maintained independent review now checks the actual packet; a separate
+Sol6.1/max-requested decision review assesses follow-up value or STOP.
+No automatic campaign or positive claim. Full research goal remains unmet.
+
 ### Real-input run01 incomplete; capacity-only run02 approved — 2026-10-16
 
 Actual job1604877 FAILED2:0 on14October at the128MiB BAM guard, before native
@@ -27,8 +49,11 @@ old128/1024MiB defaults remain. Same53rows/59windows, all tags/records,
 50,000-record cap, native defaults and endpoint; same1CPU/2GiB RAM/15min.
 No study classification was available to tune against.21 focused code checks
 pass, including same-record equivalence under both capacities. No automatic
-further retry, campaign or positive scientific claim follows.02 is prepared,
-not yet booked. Full publication goal remains active and unmet.
+further retry, campaign or positive scientific claim follows.02 started as
+job1604949 on hydra-n1 at2026-10-16T03:12:36Z after four bundle SHA checks
+and an empty own queue. One CPU is useful for this serial collector; no idle
+GPU or whole-node reservation. Independent summary code review runs in
+parallel. Full publication goal remains active and unmet.
 
 ### Native interface qualified; all53-row plan frozen — 2026-10-14
 

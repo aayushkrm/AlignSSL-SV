@@ -87,4 +87,14 @@ Filesystem free space is ample, but `df` does not attest a per-user quota.
 The old reviewer handles now return `not_found`. Finished reviews remain
 evidence. A replacement Sol6.1/high-requested reviewer checks the narrow code
 and command amendment; configuration is not independently backend-attested.
-The full research goal remains active and unmet. No02 job is booked here.
+The full research goal remains active and unmet.
+
+## Actual02 launch
+
+Job1604949 started2026-10-16T03:12:36Z on hydra-n1. Four uploaded bundle
+hashes pass; the own queue was empty before launch. The direct `srun` requests
+one CPU,2GiB RAM and15min, with no GPU. The collector is serial, so extra CPUs
+or GPUs would not accelerate this bounded job. The user explicitly confirms
+using all useful resources efficiently and scaling independent experiments
+in parallel, not idle whole-node reservations. The separate summary-code
+review runs concurrently. No result or successful completion is assumed here.
