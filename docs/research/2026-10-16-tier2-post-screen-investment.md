@@ -42,13 +42,12 @@ flowchart TD
 
 ## Evidence used and accepted scope
 
-I read the full attached
-[goal](/Users/akm/.codex/attachments/2fa04b13-b328-4023-872e-0c4cc9dbfaee/goal-objective.md),
-the [pivot integration](/Users/akm/aayushkrm-AlignSSL/repo/docs/research/2026-10-14-pivot-integration.md),
-[frozen protocol](/Users/akm/aayushkrm-AlignSSL/repo/docs/research/2026-10-14-tier2-geometry-screen-protocol.md),
-[post-trace investment decision](/Users/akm/aayushkrm-AlignSSL/repo/docs/research/2026-10-14-inversion-post-trace-investment.md),
-[summary implementation review](/Users/akm/aayushkrm-AlignSSL/repo/docs/research/2026-10-16-tier2-summary-review.md),
-and completed [independent actual-packet review](/Users/akm/aayushkrm-AlignSSL/repo/docs/research/2026-10-16-tier2-result-review.md).
+I read the full attached goal,
+the [pivot integration](2026-10-14-pivot-integration.md),
+[frozen protocol](2026-10-14-tier2-geometry-screen-protocol.md),
+[post-trace investment decision](2026-10-14-inversion-post-trace-investment.md),
+[summary implementation review](2026-10-16-tier2-summary-review.md),
+and completed [independent actual-packet review](2026-10-16-tier2-result-review.md).
 I also inspected the actual local `summary.json`, `plan.json`, complete
 `collection/manifest.json` and `collection/groups.jsonl`, native report,
 native stdout and local execution/control receipts under

@@ -32,6 +32,33 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+October16 next-action checkpoint: the completed geometry assay/reviews and
+current allocation STOP are pushed (55a2f75; raw small packet ab4a89e).
+Main README only is promoted at98c3d9c, fetched/verified onlyREADME.md changed.
+Two new opportunity scouts are complete and closed; Euclid remains the
+maintained reviewer. No new publication direction is selected.
+
+Main [actual synVII supplement census](2026-10-16-synvii-source-census.md)
+retrieves6,589,861B across3 official PMC files, allMD5match+freshSHA256.
+Raw small TableS3/receipt in `results/synvii_source_census_20261016/`:
+127unique named strains,67SCRaMbLE labels35circular/32linear. Not a full219-
+clone quantitative genotype/phenotype matrix; no figure digitization. Local
+full supplements at `runs/synvii-source-census-20261016.vSHPPz` under projectroot.
+No genomic reads or job. Next: CNP0002230 manifest/source-data alias, path,
+dosage and phenotype/control availability, with selection/missingness explicit.
+Do not create all-perfect-clone gates or manufacture replicates from colony
+counts. Reviewer independently accepts actual source counts/hashes and limits.
+No usable contrast is established. Goal remains active/unmet.
+
+Human-source corrections: COLO829 sequence/germline/somatic files are listed
+open but require portal login; exact items/reference/passage remain unverified.
+HitSV's germline across-platform results are not somatic-mixture evidence.
+Potential3-junction benchmark crosswalk is not selected/no arbitrary2-of3gate.
+Expected out-of-scope reference absence is not an error or new contribution.
+UCSC Exa reader fails; bounded curl produces no matching metadata lines, not
+proof the public track is absent. Main pins COLOauthorcode commit1e8454e2;
+targeted benchmark-script search reads SNV-related lines, not a fullSV audit.
+
 October16 actual02: job1604949 COMPLETED0:0 in75s;59/59fetchEOF, all53rows,
 stable source and complete groups. Full329,789,011B leaf copied to permanent
 HOME with recursive byte match and all eight output hashes passing in both

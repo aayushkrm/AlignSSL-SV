@@ -18,6 +18,11 @@ retain dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-10-16-synvii-source-census.md`](2026-10-16-synvii-source-census.md) | Actual checksum-verified supplement census |127named strains/67SCRaMbLE labels; not the full219-clone quantitative panel; next source manifest check |
+| [`2026-10-16-controlled-sv-opportunity-scout.md`](2026-10-16-controlled-sv-opportunity-scout.md) | Controlled non-human resource comparison | Broad dosage mechanism already prior art; conditional matched-dosage architecture source diagnostic only |
+| [`2026-10-16-new-evidence-opportunity-scout.md`](2026-10-16-new-evidence-opportunity-scout.md) | Recent human/somatic/edited evidence comparison | No publication lead selected; COLO829 access and germline/somatic distinctions explicit |
+| [`2026-10-16-new-evidence-scout-review.md`](2026-10-16-new-evidence-scout-review.md) | Independent challenge to opportunity exclusions | Scope/label/cost corrections; a small unexplained allele-level residual could still justify a diagnostic |
+| [`2026-10-16-new-source-verification.md`](2026-10-16-new-source-verification.md) | Main primary-source and author-tree checks | COLO829 listed open with login; no raw-size exclusion or unsupported benchmark-error conclusion |
 | [`2026-10-16-tier2-geometry-result.md`](2026-10-16-tier2-geometry-result.md) | Actual complete02 and limits |59EOF/53rows;17eligible native Chimeric flags,4UNKNOWN; no biological error/support claim |
 | [`2026-10-16-tier2-result-review.md`](2026-10-16-tier2-result-review.md) | Independent actual-packet review | Accepts counts, direct endpoint context and local hashes; no allele-authenticated error or campaign release |
 | [`2026-10-16-tier2-post-screen-investment.md`](2026-10-16-tier2-post-screen-investment.md) | Max-effort current investment decision | Deprioritize this available-HiFi filter-error lead; useful cheap diagnostics/new evidence remain possible, no pre-proved novelty gate |

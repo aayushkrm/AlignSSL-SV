@@ -1,0 +1,34 @@
+{
+  "schema": "synvii-published-source-census-v1",
+  "status": "SOURCE_INVENTORY_ONLY",
+  "date": "2026-10-16",
+  "article": {"pmid": "38020968", "pmcid": "PMC10667312", "doi": "10.1016/j.xgen.2023.100364", "pmc_version": 1},
+  "source_license_from_current_pmc_metadata": "CC BY",
+  "source_files": [
+    {"name": "mmc1.pdf", "bytes": 1601903, "pages": 16, "md5": "08ed5a0def96294e723bc9bd6188ad39", "sha256": "c1365d3c8ee40ea81cd2fdbed5388adc02f95a3ae87fa7297c1e424c54ca228e", "published_md5_match": true},
+    {"name": "mmc2.xlsx", "git_copy": "source-table-s3.xlsx", "bytes": 18157, "md5": "d88d814047fc514a1607a065512c6070", "sha256": "b7fcd9867096dcd52f6e551c28287c9f2c8d9c0a46236c1a53fc6524803ed3c5", "published_md5_match": true},
+    {"name": "mmc3.pdf", "bytes": 4969801, "pages": 35, "md5": "4b47847b4feb4128eb303f502181b0bb", "sha256": "c7ae7c32c6b5df5c1e4420c696ae08c9c7953767d39f4380080779591210f678", "published_md5_match": true}
+  ],
+  "downloaded_source_bytes": 6589861,
+  "workbook_census": {
+    "sheet": "Sheet1",
+    "populated_range": "A1:E136",
+    "openpyxl_dimension_rows_including_last_blank": 137,
+    "columns": ["Strain ID", "Allias name", "Genotype", "Comments", "Notes"],
+    "named_strain_rule": "Column A starts with YSy or BY; counts are labels, not biological replicates",
+    "named_strain_rows": 127,
+    "unique_named_strain_ids": 127,
+    "duplicate_named_strain_ids": 0,
+    "scramble_rule": "Named row with column D starting SCRaMbLEd strains with",
+    "scramble_rows_inclusive": [59, 125],
+    "scramble_named_rows": 67,
+    "circular_comment_rows": 35,
+    "linear_comment_rows": 32,
+    "nonempty_cells": 530,
+    "formula_cells": 0
+  },
+  "scientific_status": "No linked complete structure/phenotype matrix or matched-dosage contrast verified",
+  "genomic_reads_downloaded": false,
+  "workbook_modified_or_reexported": false,
+  "figure_values_digitized": false
+}

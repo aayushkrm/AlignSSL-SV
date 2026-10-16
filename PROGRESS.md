@@ -11,6 +11,35 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+### Competing sources reviewed; actual synVII source census — 2026-10-16
+
+Two distinct Luna/max scouts compare recent human/somatic/edited material
+and controlled non-human rearrangements. No publication direction is selected.
+The [independent challenge](docs/research/2026-10-16-new-evidence-scout-review.md)
+corrects broad STOP logic, task-specific cost limits and claim-inappropriate
+label requirements. [Main primary checks](docs/research/2026-10-16-new-source-verification.md)
+confirm COLO829 sequences/calls are listed open, with portal login required;
+HitSV germline results do not establish low-VAF somatic performance. Exact
+COLO829 files/reference/passage/scoring scope remain unresolved. No absence
+from GRCh38-only territory is counted as a new caller or benchmark error.
+
+Main then executes one [synVII source census](docs/research/2026-10-16-synvii-source-census.md):
+three official PMC supplement files,6,589,861B, all published MD5s match and
+fresh SHA256s retained. No raw sequence. TableS3 has127 unique named strains,
+including67 SCRaMbLE entries (35circular/32linear), not a complete219-clone
+structure/phenotype matrix. FiguresS10/S11 are visually checked; no values
+digitized. [Raw small table and receipt](results/synvii_source_census_20261016/README.md)
+are retained. Source/clone ascertainment and missing fields remain explicit.
+
+Next finite action: inspect CNP0002230 member/source-data records for an
+identifiable same-dosage/different-structure contrast, including controls,
+stable IDs and quantitative measurements. This is a source diagnostic, not
+a selected yeast mechanism or new-model campaign. No current cluster job;
+full useful resources remain available for a justified workload. Maintained
+Sol6.1/high-requested review independently accepts the actual source packet's
+counts/hashes and limits; no usable contrast or campaign is accepted. Latest
+tracking/geometry/README regressions:40pass in5.68s. Goal remains unmet.
+
 ### Complete geometry screen; current filter-error investment stopped — 2026-10-16
 
 Job1604949 completes0:0 in75s: all59windows at EOF/all53rows/stable source.
@@ -41,6 +70,12 @@ required before a useful diagnostic. No automatic campaign or positive claim.
 A distinct Luna/max scout searches
 new public experimental/orthogonal evidence, away from this filter lead.
 Full research goal remains unmet.
+
+Research evidence/review is pushed at55a2f75 (complete raw small packet at
+ab4a89e). Under the user's prior documentation-only approval, main README is
+updated at98c3d9c; fresh fetched commit inspection shows onlyREADME.md changed.
+Its Git blob matches the research README,67e9e7100f91cb1a9ec4c97ac5f64f8faab2933f.
+No experimental code, result directory or research-note tree is promoted to main.
 
 ### Real-input run01 incomplete; capacity-only run02 approved — 2026-10-16
 
