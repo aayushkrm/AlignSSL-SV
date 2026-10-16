@@ -11,7 +11,7 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
-### Complete native geometry screen; result review pending — 2026-10-16
+### Complete geometry screen; current filter-error investment stopped — 2026-10-16
 
 Job1604949 completes0:0 in75s: all59windows at EOF/all53rows/stable source.
 The full330MB leaf is byte-identical in scratch/permanent HOME; all eight
@@ -29,9 +29,18 @@ filter/caller error or a publication result. UNKNOWN is not negative.
 
 The [reviewed offline summary](docs/research/2026-10-16-tier2-summary-review.md)
 preserves all53censuses, native rows/QNAME sets and direct endpoint context.
-Maintained independent review now checks the actual packet; a separate
-Sol6.1/max-requested decision review assesses follow-up value or STOP.
-No automatic campaign or positive claim. Full research goal remains unmet.
+Maintained independent review
+[accepts the actual accounting](docs/research/2026-10-16-tier2-result-review.md),
+including independently rebuilt endpoint associations and exact summary.
+A separate [Sol6.1/max-requested decision](docs/research/2026-10-16-tier2-post-screen-investment.md)
+stops current investment in this available-HiFi filter-error lead. Main accepts
+that narrow prioritization, with the independent review's challenge: assignment
+limits are not project limits, and a cheap search for concrete independent
+evidence can change the decision. No pre-proved novelty or caller failure is
+required before a useful diagnostic. No automatic campaign or positive claim.
+A distinct Luna/max scout searches
+new public experimental/orthogonal evidence, away from this filter lead.
+Full research goal remains unmet.
 
 ### Real-input run01 incomplete; capacity-only run02 approved — 2026-10-16
 

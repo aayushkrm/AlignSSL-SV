@@ -39,11 +39,17 @@ locations. Own queue empty. [Result](2026-10-16-tier2-geometry-result.md):
 15,460groups/11,290eligible/4,170UNKNOWN;1,648native rows (1,627Pass,
 21Chimeric,0Foldback),17eligible Chimeric rows and4UNKNOWN. No flagged join
 links opposite endpoints of the same truth row inside frozen windows; no
-biological conclusion follows. Euclid reviews the actual packet; Meitner
+biological conclusion follows. Euclid accepts actual accounting; Meitner
 `01a142b5-a2bf-7fa0-b190-ef90544f70ac`, requestedSol6.1/max, assesses investment
-or STOP. Galileo completed the summary and is closed. Main preserves native
+or STOP. Its completed note recommends current STOP; main accepts scoped
+deprioritization with Euclid's challenge, not a ban on useful future diagnostic
+work or new data/compute. No pre-proved failure is required before a cheap
+informative test. Galileo completed the summary and is closed. Main preserves native
 report/metadata receipts in Git; BAMs/groups remain in permanent cluster leaf.
-Do not resubmit02 or start a campaign from nonzero flags. Goal remains unmet.
+Do not resubmit02 or start a campaign from nonzero flags. Harvey
+`01a142b9-442b-7921-9462-ef5e5d54ac14`, requestedLuna/max, scouts distinct new
+public experimental evidence; no current artifact-lead research duplicated.
+Goal remains unmet.
 
 October16 recovery: real-input01 job1604877 is terminal FAILED2:0 after its
 128MiB BAM cap, before any study native classification.44/59source windows

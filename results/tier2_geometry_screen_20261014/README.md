@@ -5,7 +5,11 @@ Run02 job1604949 completes0:0 with all59windows at EOF/all53rows. Native report:
 observed groups and4in UNKNOWN groups. Full raw input/output is preserved in
 permanent cluster HOME. See [actual result](../../docs/research/2026-10-16-tier2-geometry-result.md)
 and [run02 metadata/report/summary](run02/). No artifact, true support, filter
-error or publication claim follows. Actual result/investment reviews are pending.
+error or publication claim follows. Independent review accepts actual accounting;
+the [investment decision](../../docs/research/2026-10-16-tier2-post-screen-investment.md)
+stops this lead at its current point. This is prioritization, not evidence of
+safe filtering or absence of real rearrangements. A useful new evidence route
+can change the decision; no follow-up is queued.
 
 Run01 job1604877 stopped at
 its BAM size guard;44/59windows reached EOF. The [raw manifest](run01/manifest.json)

@@ -111,9 +111,21 @@ execution/hash evidence above is separate. The combined seven-file regression
 selection passes80 tests; adding the fixed-source tests gives101 passing tests
 across eight test files in6.54s. The collector/native/summary tests alone pass27.
 
-The maintained Sol6.1/high-requested reviewer now checks the actual packet.
-A separate Sol6.1/max-requested agent assesses whether complete-population
-adjudication has enough scientific decision value, or this lead should stop.
+The maintained Sol6.1/high-requested reviewer
+[accepts the actual local accounting](2026-10-16-tier2-result-review.md).
+It independently rebuilds endpoint associations/censuses from recorded
+intervals, checks native coordinates against strand-specific boundaries,
+reconciles all counts and recomputes the exact summary. Fifteen eligible flags
+have both breaks in some original endpoint windows; two have only one. None
+connects the same source row at both ends. Remote custody/BAM hashes remain
+main's supplied evidence, not independently repeated by the local reviewer.
+A separate [Sol6.1/max-requested investment review](2026-10-16-tier2-post-screen-investment.md)
+recommends STOP at the current investment point. Main accepts deprioritization,
+not a field-wide conclusion. The independent challenge preserves the potential
+value of a cheap source-availability check for orthogonal evidence at actual
+joins. No such source is verified or test selected here. Agent no-execution
+limits do not restrict the project's authority to acquire data or compute.
+Useful diagnostics need not begin with pre-proved novelty or caller failure.
 Requested backend configurations are not independently attested. Neither review
 can turn these flags alone into authenticated artifacts, true allele support,
 filter/caller error, clinical evidence or a publication result. No follow-up

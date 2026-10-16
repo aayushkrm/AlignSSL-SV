@@ -19,6 +19,9 @@ retain dated checkpoints, not current launch permissions.
 | Document | Role | Current status |
 |---|---|---|
 | [`2026-10-16-tier2-geometry-result.md`](2026-10-16-tier2-geometry-result.md) | Actual complete02 and limits |59EOF/53rows;17eligible native Chimeric flags,4UNKNOWN; no biological error/support claim |
+| [`2026-10-16-tier2-result-review.md`](2026-10-16-tier2-result-review.md) | Independent actual-packet review | Accepts counts, direct endpoint context and local hashes; no allele-authenticated error or campaign release |
+| [`2026-10-16-tier2-post-screen-investment.md`](2026-10-16-tier2-post-screen-investment.md) | Max-effort current investment decision | Deprioritize this available-HiFi filter-error lead; useful cheap diagnostics/new evidence remain possible, no pre-proved novelty gate |
+| [`2026-10-16-pubmed-opportunity-check.md`](2026-10-16-pubmed-opportunity-check.md) | Complementary Life Sciences Literature check | Three recent candidate identifiers; one supported abstract, public labels/data utility unresolved; no selected experiment |
 | [`2026-10-16-tier2-summary-review.md`](2026-10-16-tier2-summary-review.md) | Independent summary-code review | Approves offline accounting; completion/authentication must come from separate execution receipts |
 | [`2026-10-16-tier2-geometry-capacity-execution.md`](2026-10-16-tier2-geometry-capacity-execution.md) | Actual incomplete01 and explicit02 amendment |01 cap stop before study classification, full preservation/account; same scientific input, larger storage guards only |
 | [`2026-10-16-tier2-capacity-review.md`](2026-10-16-tier2-capacity-review.md) | Replacement maintained independent reviewer | Approves one bounded capacity-only02; no automatic retry or result acceptance |
