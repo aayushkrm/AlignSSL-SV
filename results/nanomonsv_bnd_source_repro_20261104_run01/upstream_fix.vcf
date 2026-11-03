@@ -1,0 +1,40 @@
+##fileformat=VCFv4.3
+##fileDate=20261104
+##source=nanomonsv-0.8.2b1
+##reference=/Users/akm/aayushkrm-AlignSSL/repo/results/nanomonsv_bnd_source_repro_20261104_run01/synthetic.fa
+##contig=<ID=chrA,length=100>
+##contig=<ID=chrB,length=100>
+##FILTER=<ID=Duplicate_with_close_SV,Description="When multiple SVs that share breakpoints in close proximity are detected, all but one SVs are filtered.">
+##FILTER=<ID=Duplicate_with_insertion,Description="Breakend SVs that are inferred to be the same as any of detected insertions">
+##FILTER=<ID=Duplicate_with_close_insertion,Description="When multiple insertions in close proximity are detected, all but one insertions are filtered.">
+##FILTER=<ID=SV_with_decoy,Description="SVs involving decoy contigs">
+##FILTER=<ID=Too_small_size,Description="Insertions whose size is below the threshould (currently 100bp)">
+##FILTER=<ID=Too_low_VAF,Description="SVs whose variant allele frequencies are inferred to be low">
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Type of structural variant">
+##INFO=<ID=SVLEN,Number=1,Type=Integer,Description="Difference in length between REF and ALT alleles">
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position of the variant described in this record">
+##INFO=<ID=MATEID,Number=1,Type=String,Description="ID of mate breakend">
+##INFO=<ID=SVINSLEN,Number=1,Type=Integer,Description="Length of insertion">
+##INFO=<ID=SVINSSEQ,Number=1,Type=String,Description="Sequence of insertion">
+##ALT=<ID=DEL,Description="Deletion">
+##ALT=<ID=INS,Description="Insertion">
+##ALT=<ID=DUP,Description="Duplication">
+##FORMAT=<ID=TR,Number=1,Type=Integer,Description="The number of reads around the breakpoints">
+##FORMAT=<ID=VR,Number=1,Type=Integer,Description="The number of variant supporting reads determined in the validation realignment step">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	TUMOR
+chrA	10	case1_0	A	A]chrB:30]	.	PASS	SVTYPE=BND;MATEID=case1_1	TR:VR	10:3
+chrA	11	case2_0	A	AACG]chrB:31]	.	PASS	SVTYPE=BND;MATEID=case2_1;SVINSLEN=3;SVINSSEQ=ACG	TR:VR	10:3
+chrA	12	case3_0	A	A[chrB:32[	.	PASS	SVTYPE=BND;MATEID=case3_1	TR:VR	10:3
+chrA	13	case4_0	A	AACG[chrB:33[	.	PASS	SVTYPE=BND;MATEID=case4_1;SVINSLEN=3;SVINSSEQ=ACG	TR:VR	10:3
+chrA	14	case5_0	A	]chrB:34]A	.	PASS	SVTYPE=BND;MATEID=case5_1	TR:VR	10:3
+chrA	15	case6_0	A	]chrB:35]ACGA	.	PASS	SVTYPE=BND;MATEID=case6_1;SVINSLEN=3;SVINSSEQ=ACG	TR:VR	10:3
+chrA	16	case7_0	A	[chrB:36[A	.	PASS	SVTYPE=BND;MATEID=case7_1	TR:VR	10:3
+chrA	17	case8_0	A	[chrB:37[ACGA	.	PASS	SVTYPE=BND;MATEID=case8_1;SVINSLEN=3;SVINSSEQ=ACG	TR:VR	10:3
+chrB	30	case1_1	C	C]chrA:10]	.	PASS	SVTYPE=BND;MATEID=case1_0	TR:VR	10:3
+chrB	31	case2_1	C	CCGT]chrA:11]	.	PASS	SVTYPE=BND;MATEID=case2_0;SVINSLEN=3;SVINSSEQ=CGT	TR:VR	10:3
+chrB	32	case3_1	C	]chrA:12]C	.	PASS	SVTYPE=BND;MATEID=case3_0	TR:VR	10:3
+chrB	33	case4_1	C	]chrA:13]CGTC	.	PASS	SVTYPE=BND;MATEID=case4_0;SVINSLEN=3;SVINSSEQ=CGT	TR:VR	10:3
+chrB	34	case5_1	C	C[chrA:14[	.	PASS	SVTYPE=BND;MATEID=case5_0	TR:VR	10:3
+chrB	35	case6_1	C	CCGT[chrA:15[	.	PASS	SVTYPE=BND;MATEID=case6_0;SVINSLEN=3;SVINSSEQ=CGT	TR:VR	10:3
+chrB	36	case7_1	C	[chrA:16[C	.	PASS	SVTYPE=BND;MATEID=case7_0	TR:VR	10:3
+chrB	37	case8_1	C	[chrA:17[CGTC	.	PASS	SVTYPE=BND;MATEID=case8_0;SVINSLEN=3;SVINSSEQ=CGT	TR:VR	10:3

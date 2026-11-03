@@ -1,0 +1,20 @@
+[INFO] verix version v0.0.2
+[INFO] 
+ ***Params***
+ command: bench
+ output_dir: results/colo829_verix_alias_diagnostic_20261103_run01/normalized_to_original
+ match_thr: 0
+ sizemin: 0
+ sizemax: None
+ merge_thr: 0
+ passonly: False
+ enforce_type: False
+ enforce_genotype: False
+ enforce_ins: False
+ formats: []
+ csv_links: []
+ types: []
+ breakend_mode: True
+ query: /Users/akm/aayushkrm-AlignSSL/runs/colo829-der3-20261103/caller.case-normalized.vcf.gz
+ target: /Users/akm/aayushkrm-AlignSSL/runs/colo829-der3-20261103/caller.vcf.gz
+ plot: False

@@ -1,0 +1,9 @@
+Chr_1	Pos_1	Dir_1	Chr_2	Pos_2	Dir_2	SV_ID	Is_Filter	Inserted_Seq	Checked_Read_Num_Tumor	Supporting_Read_Num_Tumor
+chrA	10	+	chrB	30	+	case1	PASS	---	10	3
+chrA	11	+	chrB	31	+	case2	PASS	ACG	10	3
+chrA	12	+	chrB	32	-	case3	PASS	---	10	3
+chrA	13	+	chrB	33	-	case4	PASS	ACG	10	3
+chrA	14	-	chrB	34	+	case5	PASS	---	10	3
+chrA	15	-	chrB	35	+	case6	PASS	ACG	10	3
+chrA	16	-	chrB	36	-	case7	PASS	---	10	3
+chrA	17	-	chrB	37	-	case8	PASS	ACG	10	3

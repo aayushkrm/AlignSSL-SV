@@ -1,0 +1,400 @@
+{
+  "cases": [
+    {
+      "id": "case1",
+      "dir1": "+",
+      "dir2": "+",
+      "input_insertion": "---",
+      "v0.7.1": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 10,
+          "ref": "A",
+          "alt": "A]chrB:30]",
+          "local_sequence": "A",
+          "local_anchor": "A",
+          "side": "left"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 30,
+          "ref": "C",
+          "alt": "C]chrA:10]",
+          "local_sequence": "C",
+          "local_anchor": "C",
+          "side": "left"
+        }
+      },
+      "upstream_fix": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 10,
+          "ref": "A",
+          "alt": "A]chrB:30]",
+          "local_sequence": "A",
+          "local_anchor": "A",
+          "side": "left"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 30,
+          "ref": "C",
+          "alt": "C]chrA:10]",
+          "local_sequence": "C",
+          "local_anchor": "C",
+          "side": "left"
+        }
+      }
+    },
+    {
+      "id": "case2",
+      "dir1": "+",
+      "dir2": "+",
+      "input_insertion": "ACG",
+      "v0.7.1": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 11,
+          "ref": "A",
+          "alt": "AACG]chrB:31]",
+          "local_sequence": "AACG",
+          "local_anchor": "A",
+          "side": "left"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 31,
+          "ref": "C",
+          "alt": "CCGT]chrA:11]",
+          "local_sequence": "CCGT",
+          "local_anchor": "C",
+          "side": "left"
+        }
+      },
+      "upstream_fix": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 11,
+          "ref": "A",
+          "alt": "AACG]chrB:31]",
+          "local_sequence": "AACG",
+          "local_anchor": "A",
+          "side": "left"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 31,
+          "ref": "C",
+          "alt": "CCGT]chrA:11]",
+          "local_sequence": "CCGT",
+          "local_anchor": "C",
+          "side": "left"
+        }
+      }
+    },
+    {
+      "id": "case3",
+      "dir1": "+",
+      "dir2": "-",
+      "input_insertion": "---",
+      "v0.7.1": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 12,
+          "ref": "A",
+          "alt": "A[chrB:32[",
+          "local_sequence": "A",
+          "local_anchor": "A",
+          "side": "left"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 32,
+          "ref": "C",
+          "alt": "]chrA:12]C",
+          "local_sequence": "C",
+          "local_anchor": "C",
+          "side": "right"
+        }
+      },
+      "upstream_fix": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 12,
+          "ref": "A",
+          "alt": "A[chrB:32[",
+          "local_sequence": "A",
+          "local_anchor": "A",
+          "side": "left"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 32,
+          "ref": "C",
+          "alt": "]chrA:12]C",
+          "local_sequence": "C",
+          "local_anchor": "C",
+          "side": "right"
+        }
+      }
+    },
+    {
+      "id": "case4",
+      "dir1": "+",
+      "dir2": "-",
+      "input_insertion": "ACG",
+      "v0.7.1": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 13,
+          "ref": "A",
+          "alt": "AACG[chrB:33[",
+          "local_sequence": "AACG",
+          "local_anchor": "A",
+          "side": "left"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 33,
+          "ref": "C",
+          "alt": "]chrA:13]CGTC",
+          "local_sequence": "CGTC",
+          "local_anchor": "C",
+          "side": "right"
+        }
+      },
+      "upstream_fix": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 13,
+          "ref": "A",
+          "alt": "AACG[chrB:33[",
+          "local_sequence": "AACG",
+          "local_anchor": "A",
+          "side": "left"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 33,
+          "ref": "C",
+          "alt": "]chrA:13]CGTC",
+          "local_sequence": "CGTC",
+          "local_anchor": "C",
+          "side": "right"
+        }
+      }
+    },
+    {
+      "id": "case5",
+      "dir1": "-",
+      "dir2": "+",
+      "input_insertion": "---",
+      "v0.7.1": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 14,
+          "ref": "A",
+          "alt": "]chrB:34]C",
+          "local_sequence": "C",
+          "local_anchor": "C",
+          "side": "right"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 34,
+          "ref": "C",
+          "alt": "C[chrA:14[",
+          "local_sequence": "C",
+          "local_anchor": "C",
+          "side": "left"
+        }
+      },
+      "upstream_fix": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 14,
+          "ref": "A",
+          "alt": "]chrB:34]A",
+          "local_sequence": "A",
+          "local_anchor": "A",
+          "side": "right"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 34,
+          "ref": "C",
+          "alt": "C[chrA:14[",
+          "local_sequence": "C",
+          "local_anchor": "C",
+          "side": "left"
+        }
+      }
+    },
+    {
+      "id": "case6",
+      "dir1": "-",
+      "dir2": "+",
+      "input_insertion": "ACG",
+      "v0.7.1": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 15,
+          "ref": "A",
+          "alt": "]chrB:35]ACGC",
+          "local_sequence": "ACGC",
+          "local_anchor": "C",
+          "side": "right"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 35,
+          "ref": "C",
+          "alt": "CCGT[chrA:15[",
+          "local_sequence": "CCGT",
+          "local_anchor": "C",
+          "side": "left"
+        }
+      },
+      "upstream_fix": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 15,
+          "ref": "A",
+          "alt": "]chrB:35]ACGA",
+          "local_sequence": "ACGA",
+          "local_anchor": "A",
+          "side": "right"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 35,
+          "ref": "C",
+          "alt": "CCGT[chrA:15[",
+          "local_sequence": "CCGT",
+          "local_anchor": "C",
+          "side": "left"
+        }
+      }
+    },
+    {
+      "id": "case7",
+      "dir1": "-",
+      "dir2": "-",
+      "input_insertion": "---",
+      "v0.7.1": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 16,
+          "ref": "A",
+          "alt": "[chrB:36[C",
+          "local_sequence": "C",
+          "local_anchor": "C",
+          "side": "right"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 36,
+          "ref": "C",
+          "alt": "[chrA:16[C",
+          "local_sequence": "C",
+          "local_anchor": "C",
+          "side": "right"
+        }
+      },
+      "upstream_fix": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 16,
+          "ref": "A",
+          "alt": "[chrB:36[A",
+          "local_sequence": "A",
+          "local_anchor": "A",
+          "side": "right"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 36,
+          "ref": "C",
+          "alt": "[chrA:16[C",
+          "local_sequence": "C",
+          "local_anchor": "C",
+          "side": "right"
+        }
+      }
+    },
+    {
+      "id": "case8",
+      "dir1": "-",
+      "dir2": "-",
+      "input_insertion": "ACG",
+      "v0.7.1": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 17,
+          "ref": "A",
+          "alt": "[chrB:37[ACGC",
+          "local_sequence": "ACGC",
+          "local_anchor": "C",
+          "side": "right"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 37,
+          "ref": "C",
+          "alt": "[chrA:17[CGTC",
+          "local_sequence": "CGTC",
+          "local_anchor": "C",
+          "side": "right"
+        }
+      },
+      "upstream_fix": {
+        "first": {
+          "chrom": "chrA",
+          "pos": 17,
+          "ref": "A",
+          "alt": "[chrB:37[ACGA",
+          "local_sequence": "ACGA",
+          "local_anchor": "A",
+          "side": "right"
+        },
+        "mate": {
+          "chrom": "chrB",
+          "pos": 37,
+          "ref": "C",
+          "alt": "[chrA:17[CGTC",
+          "local_sequence": "CGTC",
+          "local_anchor": "C",
+          "side": "right"
+        }
+      }
+    }
+  ],
+  "counts": {
+    "v0.7.1": {
+      "first_anchors_by_dir1": {
+        "+": {
+          "A": 4
+        },
+        "-": {
+          "C": 4
+        }
+      },
+      "mate_anchors": {
+        "C": 8
+      }
+    },
+    "upstream_fix": {
+      "first_anchors_by_dir1": {
+        "+": {
+          "A": 4
+        },
+        "-": {
+          "A": 4
+        }
+      },
+      "mate_anchors": {
+        "C": 8
+      }
+    }
+  }
+}

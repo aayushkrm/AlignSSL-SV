@@ -1,0 +1,1672 @@
+{
+  "original": {
+    "input_sha256": "3098b53e8c550e688fab12d742a28a9e80a9a231e8175a858b4a2945717d8652",
+    "group_count": 66,
+    "group_sizes": {
+      "1": 66
+    },
+    "groups_with_reciprocal_mate_ids": 0,
+    "groups": [
+      {
+        "native_group_id": "1",
+        "records": [
+          {
+            "id": "r_0_0",
+            "mate_ids": [
+              "r_0_1"
+            ],
+            "chrom": "chr1",
+            "pos": 33053495
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "7",
+        "records": [
+          {
+            "id": "r_1_0",
+            "mate_ids": [
+              "r_1_1"
+            ],
+            "chrom": "chr1",
+            "pos": 165892148
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "8",
+        "records": [
+          {
+            "id": "r_2_0",
+            "mate_ids": [
+              "r_2_1"
+            ],
+            "chrom": "chr1",
+            "pos": 168055350
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "14",
+        "records": [
+          {
+            "id": "r_80_0",
+            "mate_ids": [
+              "r_80_1"
+            ],
+            "chrom": "chr2",
+            "pos": 94278255
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "16",
+        "records": [
+          {
+            "id": "r_80_1",
+            "mate_ids": [
+              "r_80_0"
+            ],
+            "chrom": "chr2",
+            "pos": 94293015
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "18",
+        "records": [
+          {
+            "id": "r_84_0",
+            "mate_ids": [
+              "r_84_1"
+            ],
+            "chrom": "chr2",
+            "pos": 203191330
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "19",
+        "records": [
+          {
+            "id": "r_85_0",
+            "mate_ids": [
+              "r_85_1"
+            ],
+            "chrom": "chr2",
+            "pos": 203987190
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "21",
+        "records": [
+          {
+            "id": "r_99_0",
+            "mate_ids": [
+              "r_99_1"
+            ],
+            "chrom": "chr3",
+            "pos": 24523618
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "22",
+        "records": [
+          {
+            "id": "r_99_1",
+            "mate_ids": [
+              "r_99_0"
+            ],
+            "chrom": "chr3",
+            "pos": 24524688
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "23",
+        "records": [
+          {
+            "id": "r_24_1",
+            "mate_ids": [
+              "r_24_0"
+            ],
+            "chrom": "chr3",
+            "pos": 25359111
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "24",
+        "records": [
+          {
+            "id": "r_12_1",
+            "mate_ids": [
+              "r_12_0"
+            ],
+            "chrom": "chr3",
+            "pos": 25359568
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "25",
+        "records": [
+          {
+            "id": "r_101_0",
+            "mate_ids": [
+              "r_101_1"
+            ],
+            "chrom": "chr3",
+            "pos": 26390428
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "26",
+        "records": [
+          {
+            "id": "r_102_0",
+            "mate_ids": [
+              "r_102_1"
+            ],
+            "chrom": "chr3",
+            "pos": 26622430
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "27",
+        "records": [
+          {
+            "id": "r_102_1",
+            "mate_ids": [
+              "r_102_0"
+            ],
+            "chrom": "chr3",
+            "pos": 26623008
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "28",
+        "records": [
+          {
+            "id": "r_73_1",
+            "mate_ids": [
+              "r_73_0"
+            ],
+            "chrom": "chr3",
+            "pos": 48210573
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "33",
+        "records": [
+          {
+            "id": "r_108_0",
+            "mate_ids": [
+              "r_108_1"
+            ],
+            "chrom": "chr3",
+            "pos": 88973182
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "34",
+        "records": [
+          {
+            "id": "r_85_1",
+            "mate_ids": [
+              "r_85_0"
+            ],
+            "chrom": "chr3",
+            "pos": 156100595
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "35",
+        "records": [
+          {
+            "id": "r_8_1",
+            "mate_ids": [
+              "r_8_0"
+            ],
+            "chrom": "chr3",
+            "pos": 164201497
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "39",
+        "records": [
+          {
+            "id": "r_15_1",
+            "mate_ids": [
+              "r_15_0"
+            ],
+            "chrom": "chr4",
+            "pos": 174290429
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "40",
+        "records": [
+          {
+            "id": "r_57_1",
+            "mate_ids": [
+              "r_57_0"
+            ],
+            "chrom": "chr4",
+            "pos": 180957136
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "43",
+        "records": [
+          {
+            "id": "r_120_0",
+            "mate_ids": [
+              "r_120_1"
+            ],
+            "chrom": "chr5",
+            "pos": 43088857
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "45",
+        "records": [
+          {
+            "id": "r_32_1",
+            "mate_ids": [
+              "r_32_0"
+            ],
+            "chrom": "chr5",
+            "pos": 44540663
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "47",
+        "records": [
+          {
+            "id": "r_122_0",
+            "mate_ids": [
+              "r_122_1"
+            ],
+            "chrom": "chr5",
+            "pos": 84943797
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "49",
+        "records": [
+          {
+            "id": "r_0_1",
+            "mate_ids": [
+              "r_0_0"
+            ],
+            "chrom": "chr6",
+            "pos": 2919923
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "50",
+        "records": [
+          {
+            "id": "r_75_1",
+            "mate_ids": [
+              "r_75_0"
+            ],
+            "chrom": "chr6",
+            "pos": 13190786
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "51",
+        "records": [
+          {
+            "id": "r_101_1",
+            "mate_ids": [
+              "r_101_0"
+            ],
+            "chrom": "chr6",
+            "pos": 26193811
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "52",
+        "records": [
+          {
+            "id": "r_21_1",
+            "mate_ids": [
+              "r_21_0"
+            ],
+            "chrom": "chr6",
+            "pos": 27888535
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "59",
+        "records": [
+          {
+            "id": "r_120_1",
+            "mate_ids": [
+              "r_120_0"
+            ],
+            "chrom": "chr7",
+            "pos": 80914433
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "66",
+        "records": [
+          {
+            "id": "r_142_0",
+            "mate_ids": [
+              "r_142_1"
+            ],
+            "chrom": "chr7",
+            "pos": 126458437
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "67",
+        "records": [
+          {
+            "id": "r_142_1",
+            "mate_ids": [
+              "r_142_0"
+            ],
+            "chrom": "chr7",
+            "pos": 126527387
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "72",
+        "records": [
+          {
+            "id": "r_56_1",
+            "mate_ids": [
+              "r_56_0"
+            ],
+            "chrom": "chr7",
+            "pos": 151049570
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "74",
+        "records": [
+          {
+            "id": "r_122_1",
+            "mate_ids": [
+              "r_122_0"
+            ],
+            "chrom": "chr8",
+            "pos": 135955473
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "75",
+        "records": [
+          {
+            "id": "r_151_0",
+            "mate_ids": [
+              "r_151_1"
+            ],
+            "chrom": "chr9",
+            "pos": 28031837
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "76",
+        "records": [
+          {
+            "id": "r_152_0",
+            "mate_ids": [
+              "r_152_1"
+            ],
+            "chrom": "chr9",
+            "pos": 28031865
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "78",
+        "records": [
+          {
+            "id": "r_152_1",
+            "mate_ids": [
+              "r_152_0"
+            ],
+            "chrom": "chr9",
+            "pos": 28034469
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "79",
+        "records": [
+          {
+            "id": "r_151_1",
+            "mate_ids": [
+              "r_151_0"
+            ],
+            "chrom": "chr9",
+            "pos": 28059142
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "88",
+        "records": [
+          {
+            "id": "r_84_1",
+            "mate_ids": [
+              "r_84_0"
+            ],
+            "chrom": "chr9",
+            "pos": 129429540
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "89",
+        "records": [
+          {
+            "id": "r_6_0",
+            "mate_ids": [
+              "r_6_1"
+            ],
+            "chrom": "chr10",
+            "pos": 7017550
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "90",
+        "records": [
+          {
+            "id": "r_7_0",
+            "mate_ids": [
+              "r_7_1"
+            ],
+            "chrom": "chr10",
+            "pos": 7090910
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "91",
+        "records": [
+          {
+            "id": "r_8_0",
+            "mate_ids": [
+              "r_8_1"
+            ],
+            "chrom": "chr10",
+            "pos": 36471521
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "92",
+        "records": [
+          {
+            "id": "r_12_0",
+            "mate_ids": [
+              "r_12_1"
+            ],
+            "chrom": "chr10",
+            "pos": 58717464
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "93",
+        "records": [
+          {
+            "id": "r_13_0",
+            "mate_ids": [
+              "r_13_1"
+            ],
+            "chrom": "chr10",
+            "pos": 58717662
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "96",
+        "records": [
+          {
+            "id": "r_15_0",
+            "mate_ids": [
+              "r_15_1"
+            ],
+            "chrom": "chr10",
+            "pos": 97348545
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "99",
+        "records": [
+          {
+            "id": "r_21_0",
+            "mate_ids": [
+              "r_21_1"
+            ],
+            "chrom": "chr11",
+            "pos": 84105337
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "100",
+        "records": [
+          {
+            "id": "r_24_0",
+            "mate_ids": [
+              "r_24_1"
+            ],
+            "chrom": "chr12",
+            "pos": 72273112
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "101",
+        "records": [
+          {
+            "id": "r_13_1",
+            "mate_ids": [
+              "r_13_0"
+            ],
+            "chrom": "chr12",
+            "pos": 72273294
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "109",
+        "records": [
+          {
+            "id": "r_32_0",
+            "mate_ids": [
+              "r_32_1"
+            ],
+            "chrom": "chr13",
+            "pos": 48788103
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "117",
+        "records": [
+          {
+            "id": "r_51_0",
+            "mate_ids": [
+              "r_51_1"
+            ],
+            "chrom": "chr15",
+            "pos": 23440420
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "118",
+        "records": [
+          {
+            "id": "r_52_0",
+            "mate_ids": [
+              "r_52_1"
+            ],
+            "chrom": "chr15",
+            "pos": 23461732
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "119",
+        "records": [
+          {
+            "id": "r_53_0",
+            "mate_ids": [
+              "r_53_1"
+            ],
+            "chrom": "chr15",
+            "pos": 23586511
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "120",
+        "records": [
+          {
+            "id": "r_53_1",
+            "mate_ids": [
+              "r_53_0"
+            ],
+            "chrom": "chr15",
+            "pos": 23747556
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "121",
+        "records": [
+          {
+            "id": "r_54_0",
+            "mate_ids": [
+              "r_54_1"
+            ],
+            "chrom": "chr15",
+            "pos": 43077676
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "122",
+        "records": [
+          {
+            "id": "r_56_0",
+            "mate_ids": [
+              "r_56_1"
+            ],
+            "chrom": "chr15",
+            "pos": 84141973
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "124",
+        "records": [
+          {
+            "id": "r_57_0",
+            "mate_ids": [
+              "r_57_1"
+            ],
+            "chrom": "chr15",
+            "pos": 100390939
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "132",
+        "records": [
+          {
+            "id": "r_1_1",
+            "mate_ids": [
+              "r_1_0"
+            ],
+            "chrom": "chr16",
+            "pos": 56741036
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "137",
+        "records": [
+          {
+            "id": "r_66_0",
+            "mate_ids": [
+              "r_66_1"
+            ],
+            "chrom": "chr17",
+            "pos": 27211251
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "140",
+        "records": [
+          {
+            "id": "r_6_1",
+            "mate_ids": [
+              "r_6_0"
+            ],
+            "chrom": "chr19",
+            "pos": 17286002
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "141",
+        "records": [
+          {
+            "id": "r_7_1",
+            "mate_ids": [
+              "r_7_0"
+            ],
+            "chrom": "chr19",
+            "pos": 17286831
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "142",
+        "records": [
+          {
+            "id": "r_73_0",
+            "mate_ids": [
+              "r_73_1"
+            ],
+            "chrom": "chr19",
+            "pos": 20405198
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "143",
+        "records": [
+          {
+            "id": "r_2_1",
+            "mate_ids": [
+              "r_2_0"
+            ],
+            "chrom": "chr19",
+            "pos": 23850382
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "145",
+        "records": [
+          {
+            "id": "r_75_0",
+            "mate_ids": [
+              "r_75_1"
+            ],
+            "chrom": "chr19",
+            "pos": 44546296
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "146",
+        "records": [
+          {
+            "id": "r_54_1",
+            "mate_ids": [
+              "r_54_0"
+            ],
+            "chrom": "chr20",
+            "pos": 5287777
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "152",
+        "records": [
+          {
+            "id": "r_51_1",
+            "mate_ids": [
+              "r_51_0"
+            ],
+            "chrom": "chr20",
+            "pos": 38645824
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "153",
+        "records": [
+          {
+            "id": "r_52_1",
+            "mate_ids": [
+              "r_52_0"
+            ],
+            "chrom": "chr20",
+            "pos": 38646024
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "154",
+        "records": [
+          {
+            "id": "r_66_1",
+            "mate_ids": [
+              "r_66_0"
+            ],
+            "chrom": "chr20",
+            "pos": 47589927
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      },
+      {
+        "native_group_id": "165",
+        "records": [
+          {
+            "id": "r_108_1",
+            "mate_ids": [
+              "r_108_0"
+            ],
+            "chrom": "chrX",
+            "pos": 121267978
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": false
+      }
+    ]
+  },
+  "normalized": {
+    "input_sha256": "8d7b9503bbd698fb5e6e7fde18d256630f0b03b770af94664081aa72a96fe4f2",
+    "group_count": 33,
+    "group_sizes": {
+      "2": 33
+    },
+    "groups_with_reciprocal_mate_ids": 33,
+    "groups": [
+      {
+        "native_group_id": "1",
+        "records": [
+          {
+            "id": "r_0_0",
+            "mate_ids": [
+              "r_0_1"
+            ],
+            "chrom": "chr1",
+            "pos": 33053495
+          },
+          {
+            "id": "r_0_1",
+            "mate_ids": [
+              "r_0_0"
+            ],
+            "chrom": "chr6",
+            "pos": 2919923
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "7",
+        "records": [
+          {
+            "id": "r_1_0",
+            "mate_ids": [
+              "r_1_1"
+            ],
+            "chrom": "chr1",
+            "pos": 165892148
+          },
+          {
+            "id": "r_1_1",
+            "mate_ids": [
+              "r_1_0"
+            ],
+            "chrom": "chr16",
+            "pos": 56741036
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "8",
+        "records": [
+          {
+            "id": "r_2_0",
+            "mate_ids": [
+              "r_2_1"
+            ],
+            "chrom": "chr1",
+            "pos": 168055350
+          },
+          {
+            "id": "r_2_1",
+            "mate_ids": [
+              "r_2_0"
+            ],
+            "chrom": "chr19",
+            "pos": 23850382
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "14",
+        "records": [
+          {
+            "id": "r_80_0",
+            "mate_ids": [
+              "r_80_1"
+            ],
+            "chrom": "chr2",
+            "pos": 94278255
+          },
+          {
+            "id": "r_80_1",
+            "mate_ids": [
+              "r_80_0"
+            ],
+            "chrom": "chr2",
+            "pos": 94293015
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "18",
+        "records": [
+          {
+            "id": "r_84_0",
+            "mate_ids": [
+              "r_84_1"
+            ],
+            "chrom": "chr2",
+            "pos": 203191330
+          },
+          {
+            "id": "r_84_1",
+            "mate_ids": [
+              "r_84_0"
+            ],
+            "chrom": "chr9",
+            "pos": 129429540
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "19",
+        "records": [
+          {
+            "id": "r_85_0",
+            "mate_ids": [
+              "r_85_1"
+            ],
+            "chrom": "chr2",
+            "pos": 203987190
+          },
+          {
+            "id": "r_85_1",
+            "mate_ids": [
+              "r_85_0"
+            ],
+            "chrom": "chr3",
+            "pos": 156100595
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "21",
+        "records": [
+          {
+            "id": "r_99_0",
+            "mate_ids": [
+              "r_99_1"
+            ],
+            "chrom": "chr3",
+            "pos": 24523618
+          },
+          {
+            "id": "r_99_1",
+            "mate_ids": [
+              "r_99_0"
+            ],
+            "chrom": "chr3",
+            "pos": 24524688
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "23",
+        "records": [
+          {
+            "id": "r_24_1",
+            "mate_ids": [
+              "r_24_0"
+            ],
+            "chrom": "chr3",
+            "pos": 25359111
+          },
+          {
+            "id": "r_24_0",
+            "mate_ids": [
+              "r_24_1"
+            ],
+            "chrom": "chr12",
+            "pos": 72273112
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "24",
+        "records": [
+          {
+            "id": "r_12_1",
+            "mate_ids": [
+              "r_12_0"
+            ],
+            "chrom": "chr3",
+            "pos": 25359568
+          },
+          {
+            "id": "r_12_0",
+            "mate_ids": [
+              "r_12_1"
+            ],
+            "chrom": "chr10",
+            "pos": 58717464
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "25",
+        "records": [
+          {
+            "id": "r_101_0",
+            "mate_ids": [
+              "r_101_1"
+            ],
+            "chrom": "chr3",
+            "pos": 26390428
+          },
+          {
+            "id": "r_101_1",
+            "mate_ids": [
+              "r_101_0"
+            ],
+            "chrom": "chr6",
+            "pos": 26193811
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "26",
+        "records": [
+          {
+            "id": "r_102_0",
+            "mate_ids": [
+              "r_102_1"
+            ],
+            "chrom": "chr3",
+            "pos": 26622430
+          },
+          {
+            "id": "r_102_1",
+            "mate_ids": [
+              "r_102_0"
+            ],
+            "chrom": "chr3",
+            "pos": 26623008
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "28",
+        "records": [
+          {
+            "id": "r_73_1",
+            "mate_ids": [
+              "r_73_0"
+            ],
+            "chrom": "chr3",
+            "pos": 48210573
+          },
+          {
+            "id": "r_73_0",
+            "mate_ids": [
+              "r_73_1"
+            ],
+            "chrom": "chr19",
+            "pos": 20405198
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "33",
+        "records": [
+          {
+            "id": "r_108_0",
+            "mate_ids": [
+              "r_108_1"
+            ],
+            "chrom": "chr3",
+            "pos": 88973182
+          },
+          {
+            "id": "r_108_1",
+            "mate_ids": [
+              "r_108_0"
+            ],
+            "chrom": "chrX",
+            "pos": 121267978
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "35",
+        "records": [
+          {
+            "id": "r_8_1",
+            "mate_ids": [
+              "r_8_0"
+            ],
+            "chrom": "chr3",
+            "pos": 164201497
+          },
+          {
+            "id": "r_8_0",
+            "mate_ids": [
+              "r_8_1"
+            ],
+            "chrom": "chr10",
+            "pos": 36471521
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "39",
+        "records": [
+          {
+            "id": "r_15_1",
+            "mate_ids": [
+              "r_15_0"
+            ],
+            "chrom": "chr4",
+            "pos": 174290429
+          },
+          {
+            "id": "r_15_0",
+            "mate_ids": [
+              "r_15_1"
+            ],
+            "chrom": "chr10",
+            "pos": 97348545
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "40",
+        "records": [
+          {
+            "id": "r_57_1",
+            "mate_ids": [
+              "r_57_0"
+            ],
+            "chrom": "chr4",
+            "pos": 180957136
+          },
+          {
+            "id": "r_57_0",
+            "mate_ids": [
+              "r_57_1"
+            ],
+            "chrom": "chr15",
+            "pos": 100390939
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "43",
+        "records": [
+          {
+            "id": "r_120_0",
+            "mate_ids": [
+              "r_120_1"
+            ],
+            "chrom": "chr5",
+            "pos": 43088857
+          },
+          {
+            "id": "r_120_1",
+            "mate_ids": [
+              "r_120_0"
+            ],
+            "chrom": "chr7",
+            "pos": 80914433
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "45",
+        "records": [
+          {
+            "id": "r_32_1",
+            "mate_ids": [
+              "r_32_0"
+            ],
+            "chrom": "chr5",
+            "pos": 44540663
+          },
+          {
+            "id": "r_32_0",
+            "mate_ids": [
+              "r_32_1"
+            ],
+            "chrom": "chr13",
+            "pos": 48788103
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "47",
+        "records": [
+          {
+            "id": "r_122_0",
+            "mate_ids": [
+              "r_122_1"
+            ],
+            "chrom": "chr5",
+            "pos": 84943797
+          },
+          {
+            "id": "r_122_1",
+            "mate_ids": [
+              "r_122_0"
+            ],
+            "chrom": "chr8",
+            "pos": 135955473
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "50",
+        "records": [
+          {
+            "id": "r_75_1",
+            "mate_ids": [
+              "r_75_0"
+            ],
+            "chrom": "chr6",
+            "pos": 13190786
+          },
+          {
+            "id": "r_75_0",
+            "mate_ids": [
+              "r_75_1"
+            ],
+            "chrom": "chr19",
+            "pos": 44546296
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "52",
+        "records": [
+          {
+            "id": "r_21_1",
+            "mate_ids": [
+              "r_21_0"
+            ],
+            "chrom": "chr6",
+            "pos": 27888535
+          },
+          {
+            "id": "r_21_0",
+            "mate_ids": [
+              "r_21_1"
+            ],
+            "chrom": "chr11",
+            "pos": 84105337
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "66",
+        "records": [
+          {
+            "id": "r_142_0",
+            "mate_ids": [
+              "r_142_1"
+            ],
+            "chrom": "chr7",
+            "pos": 126458437
+          },
+          {
+            "id": "r_142_1",
+            "mate_ids": [
+              "r_142_0"
+            ],
+            "chrom": "chr7",
+            "pos": 126527387
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "72",
+        "records": [
+          {
+            "id": "r_56_1",
+            "mate_ids": [
+              "r_56_0"
+            ],
+            "chrom": "chr7",
+            "pos": 151049570
+          },
+          {
+            "id": "r_56_0",
+            "mate_ids": [
+              "r_56_1"
+            ],
+            "chrom": "chr15",
+            "pos": 84141973
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "75",
+        "records": [
+          {
+            "id": "r_151_0",
+            "mate_ids": [
+              "r_151_1"
+            ],
+            "chrom": "chr9",
+            "pos": 28031837
+          },
+          {
+            "id": "r_151_1",
+            "mate_ids": [
+              "r_151_0"
+            ],
+            "chrom": "chr9",
+            "pos": 28059142
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "76",
+        "records": [
+          {
+            "id": "r_152_0",
+            "mate_ids": [
+              "r_152_1"
+            ],
+            "chrom": "chr9",
+            "pos": 28031865
+          },
+          {
+            "id": "r_152_1",
+            "mate_ids": [
+              "r_152_0"
+            ],
+            "chrom": "chr9",
+            "pos": 28034469
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "89",
+        "records": [
+          {
+            "id": "r_6_0",
+            "mate_ids": [
+              "r_6_1"
+            ],
+            "chrom": "chr10",
+            "pos": 7017550
+          },
+          {
+            "id": "r_6_1",
+            "mate_ids": [
+              "r_6_0"
+            ],
+            "chrom": "chr19",
+            "pos": 17286002
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "90",
+        "records": [
+          {
+            "id": "r_7_0",
+            "mate_ids": [
+              "r_7_1"
+            ],
+            "chrom": "chr10",
+            "pos": 7090910
+          },
+          {
+            "id": "r_7_1",
+            "mate_ids": [
+              "r_7_0"
+            ],
+            "chrom": "chr19",
+            "pos": 17286831
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "93",
+        "records": [
+          {
+            "id": "r_13_0",
+            "mate_ids": [
+              "r_13_1"
+            ],
+            "chrom": "chr10",
+            "pos": 58717662
+          },
+          {
+            "id": "r_13_1",
+            "mate_ids": [
+              "r_13_0"
+            ],
+            "chrom": "chr12",
+            "pos": 72273294
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "117",
+        "records": [
+          {
+            "id": "r_51_0",
+            "mate_ids": [
+              "r_51_1"
+            ],
+            "chrom": "chr15",
+            "pos": 23440420
+          },
+          {
+            "id": "r_51_1",
+            "mate_ids": [
+              "r_51_0"
+            ],
+            "chrom": "chr20",
+            "pos": 38645824
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "118",
+        "records": [
+          {
+            "id": "r_52_0",
+            "mate_ids": [
+              "r_52_1"
+            ],
+            "chrom": "chr15",
+            "pos": 23461732
+          },
+          {
+            "id": "r_52_1",
+            "mate_ids": [
+              "r_52_0"
+            ],
+            "chrom": "chr20",
+            "pos": 38646024
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "119",
+        "records": [
+          {
+            "id": "r_53_0",
+            "mate_ids": [
+              "r_53_1"
+            ],
+            "chrom": "chr15",
+            "pos": 23586511
+          },
+          {
+            "id": "r_53_1",
+            "mate_ids": [
+              "r_53_0"
+            ],
+            "chrom": "chr15",
+            "pos": 23747556
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "121",
+        "records": [
+          {
+            "id": "r_54_0",
+            "mate_ids": [
+              "r_54_1"
+            ],
+            "chrom": "chr15",
+            "pos": 43077676
+          },
+          {
+            "id": "r_54_1",
+            "mate_ids": [
+              "r_54_0"
+            ],
+            "chrom": "chr20",
+            "pos": 5287777
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      },
+      {
+        "native_group_id": "137",
+        "records": [
+          {
+            "id": "r_66_0",
+            "mate_ids": [
+              "r_66_1"
+            ],
+            "chrom": "chr17",
+            "pos": 27211251
+          },
+          {
+            "id": "r_66_1",
+            "mate_ids": [
+              "r_66_0"
+            ],
+            "chrom": "chr20",
+            "pos": 47589927
+          }
+        ],
+        "two_records_with_reciprocal_mate_ids": true
+      }
+    ]
+  }
+}

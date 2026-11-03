@@ -1,0 +1,20 @@
+[W::bcf_hdr_check_sanity] AD should be declared as Number=R
+[W::bcf_hdr_check_sanity] AD should be declared as Type=Integer
+[W::bcf_hdr_check_sanity] DP should be declared as Type=Integer
+[E::idx_find_and_load] Could not retrieve index file for '/Users/akm/aayushkrm-AlignSSL/runs/colo829-der3-20261103/caller.vcf.gz'
+Traceback (most recent call last):
+  File "/Users/akm/aayushkrm-AlignSSL/runs/verix-native-20261103-env/bin/verix", line 10, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/Users/akm/aayushkrm-AlignSSL/runs/verix-native-20261103-env/lib/python3.12/site-packages/verix/main.py", line 121, in main
+    args.func(args)
+  File "/Users/akm/aayushkrm-AlignSSL/runs/verix-native-20261103-env/lib/python3.12/site-packages/verix/main.py", line 67, in benchmark
+    target_svs = parse_vcf(args.target, ft, lt, tt, args.sizemin, args.sizemax, args.merge_thr, passonly=args.passonly,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/akm/aayushkrm-AlignSSL/runs/verix-native-20261103-env/lib/python3.12/site-packages/verix/io.py", line 72, in parse_vcf
+    vcf = VariantFile(input_file)
+          ^^^^^^^^^^^^^^^^^^^^^^^
+  File "pysam/libcbcf.pyx", line 4745, in pysam.libcbcf.VariantFile.__init__
+  File "pysam/libcbcf.pyx", line 5010, in pysam.libcbcf.VariantFile.open
+  File "pysam/libchtslib.pyx", line 543, in pysam.libchtslib.HTSFile.tell
+NotImplementedError: seek not implemented in files compressed by method 1

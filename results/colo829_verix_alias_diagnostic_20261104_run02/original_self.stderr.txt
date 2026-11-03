@@ -1,0 +1,6 @@
+[W::bcf_hdr_check_sanity] AD should be declared as Number=R
+[W::bcf_hdr_check_sanity] AD should be declared as Type=Integer
+[W::bcf_hdr_check_sanity] DP should be declared as Type=Integer
+
+  0%|          | 0/66 [00:00<?, ?it/s]
+100%|██████████| 66/66 [00:00<00:00, 2346.09it/s]

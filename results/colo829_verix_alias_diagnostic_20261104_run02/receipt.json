@@ -1,0 +1,112 @@
+{
+  "native_git_commit": "7cb8524a941ce0d81dd04b0de51e009199386614",
+  "cases": [
+    {
+      "name": "original_self",
+      "command": [
+        "/Users/akm/aayushkrm-AlignSSL/runs/verix-native-20261103-env/bin/verix",
+        "bench",
+        "--query",
+        "/Users/akm/aayushkrm-AlignSSL/runs/colo829-der3-20261103/caller.original.plain.vcf",
+        "--target",
+        "/Users/akm/aayushkrm-AlignSSL/runs/colo829-der3-20261103/caller.original.plain.vcf",
+        "--output_dir",
+        "results/colo829_verix_alias_diagnostic_20261104_run02/original_self",
+        "--breakend_mode",
+        "--match_thr",
+        "0",
+        "--merge_thr",
+        "0"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "normalized_self",
+      "command": [
+        "/Users/akm/aayushkrm-AlignSSL/runs/verix-native-20261103-env/bin/verix",
+        "bench",
+        "--query",
+        "/Users/akm/aayushkrm-AlignSSL/runs/colo829-der3-20261103/caller.case-normalized.plain.vcf",
+        "--target",
+        "/Users/akm/aayushkrm-AlignSSL/runs/colo829-der3-20261103/caller.case-normalized.plain.vcf",
+        "--output_dir",
+        "results/colo829_verix_alias_diagnostic_20261104_run02/normalized_self",
+        "--breakend_mode",
+        "--match_thr",
+        "0",
+        "--merge_thr",
+        "0"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "original_to_normalized",
+      "command": [
+        "/Users/akm/aayushkrm-AlignSSL/runs/verix-native-20261103-env/bin/verix",
+        "bench",
+        "--query",
+        "/Users/akm/aayushkrm-AlignSSL/runs/colo829-der3-20261103/caller.original.plain.vcf",
+        "--target",
+        "/Users/akm/aayushkrm-AlignSSL/runs/colo829-der3-20261103/caller.case-normalized.plain.vcf",
+        "--output_dir",
+        "results/colo829_verix_alias_diagnostic_20261104_run02/original_to_normalized",
+        "--breakend_mode",
+        "--match_thr",
+        "0",
+        "--merge_thr",
+        "0"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "normalized_to_original",
+      "command": [
+        "/Users/akm/aayushkrm-AlignSSL/runs/verix-native-20261103-env/bin/verix",
+        "bench",
+        "--query",
+        "/Users/akm/aayushkrm-AlignSSL/runs/colo829-der3-20261103/caller.case-normalized.plain.vcf",
+        "--target",
+        "/Users/akm/aayushkrm-AlignSSL/runs/colo829-der3-20261103/caller.original.plain.vcf",
+        "--output_dir",
+        "results/colo829_verix_alias_diagnostic_20261104_run02/normalized_to_original",
+        "--breakend_mode",
+        "--match_thr",
+        "0",
+        "--merge_thr",
+        "0"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "sha256": {
+    "input-check.json": "453dd64e37ca69846f819de4b08edecb887f888b8c0bb7fb2007d42a914c6d3d",
+    "normalized_self/main.log": "c1b7aeb598b547eedbc805e4ec13cf945930fab7846d26a8c7e800e4166d0adc",
+    "normalized_self/matches.vcf": "c96bb7f8896690e5a651fd5bbd5cb9158f9d47515acd2bf659cdb4fac86f8085",
+    "normalized_self/query.vcf": "f9a3af3146b125bbf7f5ff084aa26d1779ada2d61425f4898c0a1e10d982c287",
+    "normalized_self/report.json": "9c47bf3e11fd67bbab374eb679d8a7c853250e4a0cccf35d0094ec158b85dc36",
+    "normalized_self/target.vcf": "f9a3af3146b125bbf7f5ff084aa26d1779ada2d61425f4898c0a1e10d982c287",
+    "normalized_self.stderr.txt": "db2d671a57220c0be9b8f4eb9b4c4882631c0c322432297e8b54114539981118",
+    "normalized_self.stdout.txt": "c1b7aeb598b547eedbc805e4ec13cf945930fab7846d26a8c7e800e4166d0adc",
+    "normalized_to_original/main.log": "99a27ce7757e2854993c51940f9e8337686f69197f4ac21342fb1e41d2d512e1",
+    "normalized_to_original/matches.vcf": "cd3703a4828a79dbcbe03b4f9e10d91ce1683abfcee32a5b2f9786ff6dcc2fcd",
+    "normalized_to_original/query.vcf": "f9a3af3146b125bbf7f5ff084aa26d1779ada2d61425f4898c0a1e10d982c287",
+    "normalized_to_original/report.json": "49ef5362f94b8e83372656a698b135c19a0e3f81559a99a895dcee0a70c6765d",
+    "normalized_to_original/target.vcf": "1d420e1457e7738b2c816c54b27c347f06e5bd50bb2128152fd273110b2aff12",
+    "normalized_to_original.stderr.txt": "6db5463fb4ea65a1608e1d241c7d82a35e92d17983f0dfe734bbaad40ca2068d",
+    "normalized_to_original.stdout.txt": "99a27ce7757e2854993c51940f9e8337686f69197f4ac21342fb1e41d2d512e1",
+    "original_self/main.log": "12338eaeba54747514b197cab13dbf8ee4f319436350e13ffb5da76a0694a5dd",
+    "original_self/matches.vcf": "d29664ea7eed4f0776b12ec97b543e44d1f6a08672bb329ca1120d46f7a9b72d",
+    "original_self/query.vcf": "1d420e1457e7738b2c816c54b27c347f06e5bd50bb2128152fd273110b2aff12",
+    "original_self/report.json": "f5ae928b99d2183500edb8c3c3abb58f3b0ccad8a335ec0b79649a35a3826834",
+    "original_self/target.vcf": "1d420e1457e7738b2c816c54b27c347f06e5bd50bb2128152fd273110b2aff12",
+    "original_self.stderr.txt": "e7aac64345936ec68b74a4118017142d412d73de39e4e0a2e629cd468db54083",
+    "original_self.stdout.txt": "12338eaeba54747514b197cab13dbf8ee4f319436350e13ffb5da76a0694a5dd",
+    "original_to_normalized/main.log": "929f7c8ce83dbfc11125f8cbddbf5f78a511c5a7a8516925b796dab03de38698",
+    "original_to_normalized/matches.vcf": "182340265fc23c92378a8cd0e10756f51d1295d37f7fc98df01c020865cf96b7",
+    "original_to_normalized/query.vcf": "1d420e1457e7738b2c816c54b27c347f06e5bd50bb2128152fd273110b2aff12",
+    "original_to_normalized/report.json": "e66c3555e19e3267bb942ed8c97964f722fc4eb81efae8e1b46cba720d87ab5a",
+    "original_to_normalized/target.vcf": "f9a3af3146b125bbf7f5ff084aa26d1779ada2d61425f4898c0a1e10d982c287",
+    "original_to_normalized.stderr.txt": "9ec38c8c915fe29148f112edbad550a6a2c137256c40ea8aef3b5813c8c6da4a",
+    "original_to_normalized.stdout.txt": "929f7c8ce83dbfc11125f8cbddbf5f78a511c5a7a8516925b796dab03de38698"
+  }
+}

@@ -6,7 +6,12 @@ The files separate verified code findings, experimental plans, external
 literature, and independent criticism so that hypotheses cannot silently become
 results.
 
-Current scientific state, 2026-11-03: the actual synVII archive crosswalk
+Current scientific state, 2026-11-03 UTC: exploratory COLO829 representation
+checks reproduce a known upstream nanomonsv fix and a possible SnpEff case
+mechanism; the real-data findings remain independently unreviewed. Recent
+clinical studies already apply sequence-aware SpliceAI to long insertions;
+no generic MEI-splice method novelty or suitable independent cohort is shown.
+The actual synVII archive crosswalk
 establishes metadata membership, not an eligible structural/phenotype
 contrast. Park retrospective fitness inference pending specific missing
 evidence. Earlier simple-inversion, HG002 annotation, HG008 generic-presence
@@ -17,6 +22,13 @@ dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-11-03-colo829-contig-alias-diagnostic.md`](2026-11-03-colo829-contig-alias-diagnostic.md) | Exploratory native-tool real-file interoperability check | 66 singleton versus 33 paired BND groups; exact input change and failed attempt retained; independent review pending |
+| [`2026-11-03-colo829-bnd-anchor-census.md`](2026-11-03-colo829-bnd-anchor-census.md) | Whole-file caller/truth BND census | Differences alone are not errors; source investigation and synthetic replay link caller pattern to known version behavior |
+| [`2026-11-03-colo829-junction-sequence-check.md`](2026-11-03-colo829-junction-sequence-check.md) | Unfinished worker draft | J1–J3 sequence interpretations remain unaccepted; discrepancy and incomplete worker status explicit |
+| [`2026-11-04-nanomonsv-source-reproduction.md`](2026-11-04-nanomonsv-source-reproduction.md) | Synthetic known-fix reproduction | Old and fixed official source versions run on eight artificial cases; no claim about exact historical binary |
+| [`2026-11-04-snpeff-case-reproduction.md`](2026-11-04-snpeff-case-reproduction.md) | Synthetic SnpEff parser/serializer replay | 5.1d uppercases two synthetic ALT mate contigs; historical pipeline provenance unproven |
+| [`2026-11-04-mei-prior-art-check.md`](2026-11-04-mei-prior-art-check.md) | Primary-literature challenge to MEI scout | Two clinical papers already use sequence-aware SpliceAI; cohort and specific residual unestablished |
+| [`2026-11-03-independent-opportunity.md`](2026-11-03-independent-opportunity.md) | Conditional MEI-splice scout | Retained proposal; follow-up prior-art check supersedes generic novelty premise |
 | [`2026-11-03-verix-native-diagnostic.md`](2026-11-03-verix-native-diagnostic.md) | Actual synthetic native-interface experiment | Related four packets, controls and header correction; no real caller error |
 | [`2026-11-03-verix-independent-review.md`](2026-11-03-verix-independent-review.md) | Independent actual-packet and correction review | Accepts scoped breakpoint-set observation; flags validator and phase limits |
 | [`2026-11-03-complex-path-real-evidence.md`](2026-11-03-complex-path-real-evidence.md) | Concrete COLO829 source and evidence limits | Three junctions, unphased/ungrouped caller records; no independent phased-path claim |

@@ -32,6 +32,31 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+November3 UTC later checkpoint: exploratory COLO829 [BND anchor census](2026-11-03-colo829-bnd-anchor-census.md)
+and [case-alias native diagnostic](2026-11-03-colo829-contig-alias-diagnostic.md)
+are complete but **independent review is pending**. The caller has 66 BNDs,
+15 local anchor differences; the separate truth has 26 BNDs, 13 differences.
+Differences alone are not errors. Synthetic replays reproduce a known
+[nanomonsv upstream fix](2026-11-04-nanomonsv-source-reproduction.md) and
+[SnpEff 5.1d ALT uppercasing](2026-11-04-snpeff-case-reproduction.md).
+The exact historical binaries/intermediate files remain unverified. On one
+public VCF the pinned Verix parser groups 66 records as singletons before,
+and 33 reciprocal-MATEID pairs after, a case-only ALT token change. The
+original failed gzip attempt and all successful native outputs are preserved.
+Do not infer accuracy, phase, clinical harm, prevalence, or a novel method.
+
+[MEI prior-art check](2026-11-04-mei-prior-art-check.md): APC and TCOF1
+papers already apply sequence-aware SpliceAI; a generic sequence-aware
+MEI-splice method is not novel. No cohort with independently measured effects
+and suitable negative controls is established. Invas is relevant inversion-
+transcript prior art. No large campaign or major positive result is accepted.
+All four current worker/reviewer agents stopped with a usage-limit error; the
+runtime suggested retry November4 03:14 AM without a timezone. Their current
+tasks remain unfinished. Request a new Terra/max independent review after
+availability returns, and use Luna/max workers for distinct work. The earlier
+reviewed Verix synthetic packet is unaffected. Own queue was empty. The main
+model effort and agent routing are not independently backend-attested.
+
 November3 later checkpoint: two synthetic Verix input families and their
 header-corrected repeats are complete. [Native result](2026-11-03-verix-native-diagnostic.md)
 and [independent review](2026-11-03-verix-independent-review.md) distinguish

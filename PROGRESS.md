@@ -11,6 +11,48 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+### COLO829 representation checks and MEI prior art — 2026-11-03 UTC
+
+An exploratory [whole-file BND census](docs/research/2026-11-03-colo829-bnd-anchor-census.md)
+records 66 caller BNDs and 26 truth BNDs, with 15 and 13 local ALT anchors
+respectively differing from local REF. VCF local replacements may legitimately
+differ, so counts alone are not errors. The caller header names nanomonsv
+0.7.1. An eight-case [synthetic source replay](docs/research/2026-11-04-nanomonsv-source-reproduction.md)
+reproduces its corresponding source behavior and the author's 2026 upstream
+fix. The actual historical binary and converter input remain unavailable; no
+cause is assigned to the separate truth file.
+
+In one [native Verix alias diagnostic](docs/research/2026-11-03-colo829-contig-alias-diagnostic.md),
+changing only 66 BND ALT mate-contig tokens to the unique case-insensitive
+header spelling changes the pinned tool's grouping from 66 singletons to
+33 reciprocal-MATEID pairs. Four successful native comparisons and the prior
+gzip seek failure are retained. A [synthetic SnpEff 5.1d replay](docs/research/2026-11-04-snpeff-case-reproduction.md)
+shows one plausible mechanism for this case pattern, but does not prove the
+public file's intermediate history. Source annotations were not repaired;
+this is not a general-purpose normalized callset, biological accuracy result,
+or a demonstrated publication contribution.
+
+A [primary-literature check](docs/research/2026-11-04-mei-prior-art-check.md)
+finds that APC and TCOF1 clinical studies already applied sequence-aware
+SpliceAI to long mobile-element insertions. The generic MEI-splice prediction
+idea is not novel. More precise gaps and a suitable independent, balanced
+cohort remain unestablished. Invas is additional inversion-transcript prior
+art. No expensive campaign or positive biological claim is released.
+
+All four requested subagents, including the current independent reviewer,
+stopped with the runtime's usage-limit error before completing their assigned
+follow-ups. The message offered retry on November 4 at 03:14 AM without a
+stated timezone. The earlier independent review of the synthetic Verix packet
+remains valid; the new real-data checks and MEI investment decision are
+**provisional, with independent review pending**. The serving model reports
+GPT-6.1 Terra; its effort is not independently attested. Agent model/effort
+values are requests, not verified backend configuration. Own cluster queue
+was empty at this checkpoint; no unrelated jobs or workspaces were changed.
+The targeted checks passed 42 tests in 6.61 seconds, and all 61 files named
+in the four new experiment receipts passed SHA256 verification. Native log
+whitespace is preserved as emitted.
+The goal remains active and unmet.
+
 ### Native Verix diagnostic and real-data follow-up — 2026-11-03
 
 The [native diagnostic](docs/research/2026-11-03-verix-native-diagnostic.md)

@@ -1,0 +1,64 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:22) [Clang 22.1.3 ]",
+  "platform": "macOS-14.8.9-x86_64-i386-64bit",
+  "pysam": "0.24.1",
+  "script_sha256": "ab326c9d7ec20c2ee23f871505a9008bbb17321093f686673be501efca89df54",
+  "sources": {
+    "v0.7.1": {
+      "path": "/Users/akm/aayushkrm-AlignSSL/runs/nanomonsv-v0.7.1",
+      "commit": "88cb30538c3e9004f317caec27dbc953b4c788f5",
+      "source_sha256": {
+        "nanomonsv/vcf_convert.py": "32820b374e409a6fc02f8d4b39ef2e591ed6be27dbc234055dfe94ca91b84bb8",
+        "nanomonsv/my_seq.py": "3fdc5fa98f540decb0958eabeeb705433ef64f2468ce23f3e3d60173995e7938",
+        "nanomonsv/version.py": "31065baca522a9c524ac029a04aa77e0bd7852c10606e186d834a4e65e39ed44"
+      }
+    },
+    "upstream_fix": {
+      "path": "/Users/akm/aayushkrm-AlignSSL/runs/nanomonsv-fix-04da795",
+      "commit": "04da795fa71adf495e50c857099ebf3a6ef6f64a",
+      "source_sha256": {
+        "nanomonsv/vcf_convert.py": "9cce7e54782a84d33dce4ac99d221c98672c53ba17980ae405b13b5f2f554746",
+        "nanomonsv/my_seq.py": "3fdc5fa98f540decb0958eabeeb705433ef64f2468ce23f3e3d60173995e7938",
+        "nanomonsv/version.py": "31d258e15ef77ac4bbe3032687ce59902a0d9688fc03bb577286f2dead1fb5da"
+      }
+    }
+  },
+  "commands": {
+    "v0.7.1": {
+      "argv": [
+        "/Users/akm/aayushkrm-AlignSSL/runs/verix-native-20261103-env/bin/python",
+        "-c",
+        "import importlib, sys, types\nfrom pathlib import Path\nroot, source, output, reference = sys.argv[1:]\npackage = types.ModuleType('nanomonsv')\npackage.__path__ = [str(Path(root) / 'nanomonsv')]\nsys.modules['nanomonsv'] = package\nmodule = importlib.import_module('nanomonsv.vcf_convert')\nprint('converter_version=' + module.__version__)\nmodule.genomesv2vcf_convert(source, output, reference)\n",
+        "/Users/akm/aayushkrm-AlignSSL/runs/nanomonsv-v0.7.1",
+        "/Users/akm/aayushkrm-AlignSSL/repo/results/nanomonsv_bnd_source_repro_20261104_run01/synthetic.tsv",
+        "/Users/akm/aayushkrm-AlignSSL/repo/results/nanomonsv_bnd_source_repro_20261104_run01/v0.7.1.vcf",
+        "/Users/akm/aayushkrm-AlignSSL/repo/results/nanomonsv_bnd_source_repro_20261104_run01/synthetic.fa"
+      ],
+      "exit_code": 0
+    },
+    "upstream_fix": {
+      "argv": [
+        "/Users/akm/aayushkrm-AlignSSL/runs/verix-native-20261103-env/bin/python",
+        "-c",
+        "import importlib, sys, types\nfrom pathlib import Path\nroot, source, output, reference = sys.argv[1:]\npackage = types.ModuleType('nanomonsv')\npackage.__path__ = [str(Path(root) / 'nanomonsv')]\nsys.modules['nanomonsv'] = package\nmodule = importlib.import_module('nanomonsv.vcf_convert')\nprint('converter_version=' + module.__version__)\nmodule.genomesv2vcf_convert(source, output, reference)\n",
+        "/Users/akm/aayushkrm-AlignSSL/runs/nanomonsv-fix-04da795",
+        "/Users/akm/aayushkrm-AlignSSL/repo/results/nanomonsv_bnd_source_repro_20261104_run01/synthetic.tsv",
+        "/Users/akm/aayushkrm-AlignSSL/repo/results/nanomonsv_bnd_source_repro_20261104_run01/upstream_fix.vcf",
+        "/Users/akm/aayushkrm-AlignSSL/repo/results/nanomonsv_bnd_source_repro_20261104_run01/synthetic.fa"
+      ],
+      "exit_code": 0
+    }
+  },
+  "files_sha256": {
+    "comparison.json": "345220929dcc51bb382b1f19e0bf44b58085abc82c1668625beb3ed54586220b",
+    "synthetic.fa": "e562f9b6b298ea529309c96f2e2d14d90b9657d90f34ab0ef0774baf33bc7740",
+    "synthetic.fa.fai": "e6dd47998ac640152db3d4848e5bf8569a06526dd754c57ff988dd027a8b832b",
+    "synthetic.tsv": "59ea37aba8831bed21d7dc3de5f5704fb68d706a0e3073a7419e63f8f45f4093",
+    "upstream_fix.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "upstream_fix.stdout.txt": "93e30c687c5b1fce3523b6e6992ba8e81231361b0119c7d70a16549d112ed3ba",
+    "upstream_fix.vcf": "a3a3fd8ed74af41338e7d780ef4fc0a5dff6745685668cc60133c8bb69d92976",
+    "v0.7.1.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "v0.7.1.stdout.txt": "caa2498b0576fc9735457bf7c3e029102c2c3185e2128b99f3457cb37ed0d471",
+    "v0.7.1.vcf": "cb7c1424c479d54432300152e9df3d7aa1ca236a19a03fa49dbcae071fff3fdb"
+  }
+}

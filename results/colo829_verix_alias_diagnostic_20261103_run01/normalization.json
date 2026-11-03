@@ -1,0 +1,479 @@
+{
+  "source_sha256": "ae2d7b02fea3dda159e602c6124ef1911324efb692682ad9977eac697d6e5042",
+  "source_uncompressed_sha256": "3098b53e8c550e688fab12d742a28a9e80a9a231e8175a858b4a2945717d8652",
+  "normalized_sha256": "4a22eaba7f2b9f838a83aa38e87974321406b0780db02562811e88e61975238d",
+  "normalized_uncompressed_sha256": "8d7b9503bbd698fb5e6e7fde18d256630f0b03b770af94664081aa72a96fe4f2",
+  "counts": {
+    "header_contigs": 195,
+    "all_records": 168,
+    "bnd_records": 66,
+    "already_exact": 0,
+    "case_only_changes": 66
+  },
+  "changes": [
+    {
+      "record_id": "r_0_0",
+      "local_chrom": "chr1",
+      "local_pos": 33053495,
+      "remote_original": "CHR6",
+      "remote_header_alias": "chr6"
+    },
+    {
+      "record_id": "r_1_0",
+      "local_chrom": "chr1",
+      "local_pos": 165892148,
+      "remote_original": "CHR16",
+      "remote_header_alias": "chr16"
+    },
+    {
+      "record_id": "r_2_0",
+      "local_chrom": "chr1",
+      "local_pos": 168055350,
+      "remote_original": "CHR19",
+      "remote_header_alias": "chr19"
+    },
+    {
+      "record_id": "r_80_0",
+      "local_chrom": "chr2",
+      "local_pos": 94278255,
+      "remote_original": "CHR2",
+      "remote_header_alias": "chr2"
+    },
+    {
+      "record_id": "r_80_1",
+      "local_chrom": "chr2",
+      "local_pos": 94293015,
+      "remote_original": "CHR2",
+      "remote_header_alias": "chr2"
+    },
+    {
+      "record_id": "r_84_0",
+      "local_chrom": "chr2",
+      "local_pos": 203191330,
+      "remote_original": "CHR9",
+      "remote_header_alias": "chr9"
+    },
+    {
+      "record_id": "r_85_0",
+      "local_chrom": "chr2",
+      "local_pos": 203987190,
+      "remote_original": "CHR3",
+      "remote_header_alias": "chr3"
+    },
+    {
+      "record_id": "r_99_0",
+      "local_chrom": "chr3",
+      "local_pos": 24523618,
+      "remote_original": "CHR3",
+      "remote_header_alias": "chr3"
+    },
+    {
+      "record_id": "r_99_1",
+      "local_chrom": "chr3",
+      "local_pos": 24524688,
+      "remote_original": "CHR3",
+      "remote_header_alias": "chr3"
+    },
+    {
+      "record_id": "r_24_1",
+      "local_chrom": "chr3",
+      "local_pos": 25359111,
+      "remote_original": "CHR12",
+      "remote_header_alias": "chr12"
+    },
+    {
+      "record_id": "r_12_1",
+      "local_chrom": "chr3",
+      "local_pos": 25359568,
+      "remote_original": "CHR10",
+      "remote_header_alias": "chr10"
+    },
+    {
+      "record_id": "r_101_0",
+      "local_chrom": "chr3",
+      "local_pos": 26390428,
+      "remote_original": "CHR6",
+      "remote_header_alias": "chr6"
+    },
+    {
+      "record_id": "r_102_0",
+      "local_chrom": "chr3",
+      "local_pos": 26622430,
+      "remote_original": "CHR3",
+      "remote_header_alias": "chr3"
+    },
+    {
+      "record_id": "r_102_1",
+      "local_chrom": "chr3",
+      "local_pos": 26623008,
+      "remote_original": "CHR3",
+      "remote_header_alias": "chr3"
+    },
+    {
+      "record_id": "r_73_1",
+      "local_chrom": "chr3",
+      "local_pos": 48210573,
+      "remote_original": "CHR19",
+      "remote_header_alias": "chr19"
+    },
+    {
+      "record_id": "r_108_0",
+      "local_chrom": "chr3",
+      "local_pos": 88973182,
+      "remote_original": "CHRX",
+      "remote_header_alias": "chrX"
+    },
+    {
+      "record_id": "r_85_1",
+      "local_chrom": "chr3",
+      "local_pos": 156100595,
+      "remote_original": "CHR2",
+      "remote_header_alias": "chr2"
+    },
+    {
+      "record_id": "r_8_1",
+      "local_chrom": "chr3",
+      "local_pos": 164201497,
+      "remote_original": "CHR10",
+      "remote_header_alias": "chr10"
+    },
+    {
+      "record_id": "r_15_1",
+      "local_chrom": "chr4",
+      "local_pos": 174290429,
+      "remote_original": "CHR10",
+      "remote_header_alias": "chr10"
+    },
+    {
+      "record_id": "r_57_1",
+      "local_chrom": "chr4",
+      "local_pos": 180957136,
+      "remote_original": "CHR15",
+      "remote_header_alias": "chr15"
+    },
+    {
+      "record_id": "r_120_0",
+      "local_chrom": "chr5",
+      "local_pos": 43088857,
+      "remote_original": "CHR7",
+      "remote_header_alias": "chr7"
+    },
+    {
+      "record_id": "r_32_1",
+      "local_chrom": "chr5",
+      "local_pos": 44540663,
+      "remote_original": "CHR13",
+      "remote_header_alias": "chr13"
+    },
+    {
+      "record_id": "r_122_0",
+      "local_chrom": "chr5",
+      "local_pos": 84943797,
+      "remote_original": "CHR8",
+      "remote_header_alias": "chr8"
+    },
+    {
+      "record_id": "r_0_1",
+      "local_chrom": "chr6",
+      "local_pos": 2919923,
+      "remote_original": "CHR1",
+      "remote_header_alias": "chr1"
+    },
+    {
+      "record_id": "r_75_1",
+      "local_chrom": "chr6",
+      "local_pos": 13190786,
+      "remote_original": "CHR19",
+      "remote_header_alias": "chr19"
+    },
+    {
+      "record_id": "r_101_1",
+      "local_chrom": "chr6",
+      "local_pos": 26193811,
+      "remote_original": "CHR3",
+      "remote_header_alias": "chr3"
+    },
+    {
+      "record_id": "r_21_1",
+      "local_chrom": "chr6",
+      "local_pos": 27888535,
+      "remote_original": "CHR11",
+      "remote_header_alias": "chr11"
+    },
+    {
+      "record_id": "r_120_1",
+      "local_chrom": "chr7",
+      "local_pos": 80914433,
+      "remote_original": "CHR5",
+      "remote_header_alias": "chr5"
+    },
+    {
+      "record_id": "r_142_0",
+      "local_chrom": "chr7",
+      "local_pos": 126458437,
+      "remote_original": "CHR7",
+      "remote_header_alias": "chr7"
+    },
+    {
+      "record_id": "r_142_1",
+      "local_chrom": "chr7",
+      "local_pos": 126527387,
+      "remote_original": "CHR7",
+      "remote_header_alias": "chr7"
+    },
+    {
+      "record_id": "r_56_1",
+      "local_chrom": "chr7",
+      "local_pos": 151049570,
+      "remote_original": "CHR15",
+      "remote_header_alias": "chr15"
+    },
+    {
+      "record_id": "r_122_1",
+      "local_chrom": "chr8",
+      "local_pos": 135955473,
+      "remote_original": "CHR5",
+      "remote_header_alias": "chr5"
+    },
+    {
+      "record_id": "r_151_0",
+      "local_chrom": "chr9",
+      "local_pos": 28031837,
+      "remote_original": "CHR9",
+      "remote_header_alias": "chr9"
+    },
+    {
+      "record_id": "r_152_0",
+      "local_chrom": "chr9",
+      "local_pos": 28031865,
+      "remote_original": "CHR9",
+      "remote_header_alias": "chr9"
+    },
+    {
+      "record_id": "r_152_1",
+      "local_chrom": "chr9",
+      "local_pos": 28034469,
+      "remote_original": "CHR9",
+      "remote_header_alias": "chr9"
+    },
+    {
+      "record_id": "r_151_1",
+      "local_chrom": "chr9",
+      "local_pos": 28059142,
+      "remote_original": "CHR9",
+      "remote_header_alias": "chr9"
+    },
+    {
+      "record_id": "r_84_1",
+      "local_chrom": "chr9",
+      "local_pos": 129429540,
+      "remote_original": "CHR2",
+      "remote_header_alias": "chr2"
+    },
+    {
+      "record_id": "r_6_0",
+      "local_chrom": "chr10",
+      "local_pos": 7017550,
+      "remote_original": "CHR19",
+      "remote_header_alias": "chr19"
+    },
+    {
+      "record_id": "r_7_0",
+      "local_chrom": "chr10",
+      "local_pos": 7090910,
+      "remote_original": "CHR19",
+      "remote_header_alias": "chr19"
+    },
+    {
+      "record_id": "r_8_0",
+      "local_chrom": "chr10",
+      "local_pos": 36471521,
+      "remote_original": "CHR3",
+      "remote_header_alias": "chr3"
+    },
+    {
+      "record_id": "r_12_0",
+      "local_chrom": "chr10",
+      "local_pos": 58717464,
+      "remote_original": "CHR3",
+      "remote_header_alias": "chr3"
+    },
+    {
+      "record_id": "r_13_0",
+      "local_chrom": "chr10",
+      "local_pos": 58717662,
+      "remote_original": "CHR12",
+      "remote_header_alias": "chr12"
+    },
+    {
+      "record_id": "r_15_0",
+      "local_chrom": "chr10",
+      "local_pos": 97348545,
+      "remote_original": "CHR4",
+      "remote_header_alias": "chr4"
+    },
+    {
+      "record_id": "r_21_0",
+      "local_chrom": "chr11",
+      "local_pos": 84105337,
+      "remote_original": "CHR6",
+      "remote_header_alias": "chr6"
+    },
+    {
+      "record_id": "r_24_0",
+      "local_chrom": "chr12",
+      "local_pos": 72273112,
+      "remote_original": "CHR3",
+      "remote_header_alias": "chr3"
+    },
+    {
+      "record_id": "r_13_1",
+      "local_chrom": "chr12",
+      "local_pos": 72273294,
+      "remote_original": "CHR10",
+      "remote_header_alias": "chr10"
+    },
+    {
+      "record_id": "r_32_0",
+      "local_chrom": "chr13",
+      "local_pos": 48788103,
+      "remote_original": "CHR5",
+      "remote_header_alias": "chr5"
+    },
+    {
+      "record_id": "r_51_0",
+      "local_chrom": "chr15",
+      "local_pos": 23440420,
+      "remote_original": "CHR20",
+      "remote_header_alias": "chr20"
+    },
+    {
+      "record_id": "r_52_0",
+      "local_chrom": "chr15",
+      "local_pos": 23461732,
+      "remote_original": "CHR20",
+      "remote_header_alias": "chr20"
+    },
+    {
+      "record_id": "r_53_0",
+      "local_chrom": "chr15",
+      "local_pos": 23586511,
+      "remote_original": "CHR15",
+      "remote_header_alias": "chr15"
+    },
+    {
+      "record_id": "r_53_1",
+      "local_chrom": "chr15",
+      "local_pos": 23747556,
+      "remote_original": "CHR15",
+      "remote_header_alias": "chr15"
+    },
+    {
+      "record_id": "r_54_0",
+      "local_chrom": "chr15",
+      "local_pos": 43077676,
+      "remote_original": "CHR20",
+      "remote_header_alias": "chr20"
+    },
+    {
+      "record_id": "r_56_0",
+      "local_chrom": "chr15",
+      "local_pos": 84141973,
+      "remote_original": "CHR7",
+      "remote_header_alias": "chr7"
+    },
+    {
+      "record_id": "r_57_0",
+      "local_chrom": "chr15",
+      "local_pos": 100390939,
+      "remote_original": "CHR4",
+      "remote_header_alias": "chr4"
+    },
+    {
+      "record_id": "r_1_1",
+      "local_chrom": "chr16",
+      "local_pos": 56741036,
+      "remote_original": "CHR1",
+      "remote_header_alias": "chr1"
+    },
+    {
+      "record_id": "r_66_0",
+      "local_chrom": "chr17",
+      "local_pos": 27211251,
+      "remote_original": "CHR20",
+      "remote_header_alias": "chr20"
+    },
+    {
+      "record_id": "r_6_1",
+      "local_chrom": "chr19",
+      "local_pos": 17286002,
+      "remote_original": "CHR10",
+      "remote_header_alias": "chr10"
+    },
+    {
+      "record_id": "r_7_1",
+      "local_chrom": "chr19",
+      "local_pos": 17286831,
+      "remote_original": "CHR10",
+      "remote_header_alias": "chr10"
+    },
+    {
+      "record_id": "r_73_0",
+      "local_chrom": "chr19",
+      "local_pos": 20405198,
+      "remote_original": "CHR3",
+      "remote_header_alias": "chr3"
+    },
+    {
+      "record_id": "r_2_1",
+      "local_chrom": "chr19",
+      "local_pos": 23850382,
+      "remote_original": "CHR1",
+      "remote_header_alias": "chr1"
+    },
+    {
+      "record_id": "r_75_0",
+      "local_chrom": "chr19",
+      "local_pos": 44546296,
+      "remote_original": "CHR6",
+      "remote_header_alias": "chr6"
+    },
+    {
+      "record_id": "r_54_1",
+      "local_chrom": "chr20",
+      "local_pos": 5287777,
+      "remote_original": "CHR15",
+      "remote_header_alias": "chr15"
+    },
+    {
+      "record_id": "r_51_1",
+      "local_chrom": "chr20",
+      "local_pos": 38645824,
+      "remote_original": "CHR15",
+      "remote_header_alias": "chr15"
+    },
+    {
+      "record_id": "r_52_1",
+      "local_chrom": "chr20",
+      "local_pos": 38646024,
+      "remote_original": "CHR15",
+      "remote_header_alias": "chr15"
+    },
+    {
+      "record_id": "r_66_1",
+      "local_chrom": "chr20",
+      "local_pos": 47589927,
+      "remote_original": "CHR17",
+      "remote_header_alias": "chr17"
+    },
+    {
+      "record_id": "r_108_1",
+      "local_chrom": "chrX",
+      "local_pos": 121267978,
+      "remote_original": "CHR3",
+      "remote_header_alias": "chr3"
+    }
+  ],
+  "scope": "BND ALT remote chromosome name only; INFO/ANN remain untouched",
+  "native_git_commit": "7cb8524a941ce0d81dd04b0de51e009199386614"
+}

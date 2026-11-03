@@ -1,0 +1,3 @@
+[W::bcf_hdr_check_sanity] AD should be declared as Number=R
+[W::bcf_hdr_check_sanity] AD should be declared as Type=Integer
+[W::bcf_hdr_check_sanity] DP should be declared as Type=Integer

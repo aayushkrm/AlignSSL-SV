@@ -1,0 +1,57 @@
+{
+  "package_url": "https://conda.anaconda.org/bioconda/noarch/snpeff-5.1d-hdfd78af_0.tar.bz2",
+  "package_api": "https://api.anaconda.org/package/bioconda/snpeff",
+  "package_md5_matches_api": "dec2846e410bfefffee53a182106569d",
+  "compiler_url": "https://repo.maven.apache.org/maven2/org/eclipse/jdt/ecj/3.38.0/ecj-3.38.0.jar",
+  "compiler_sha1_matches_maven": "86b2e4ab1d6aef91cb21f4d2ec364afb75d05b2c",
+  "sha256": {
+    "bioconda_package": "019c7bc5a32eeadf5ea955129191b3794c3871a2c79a5f70e95d7b0ad1648689",
+    "snpeff_jar": "802383117ce2b414d44b98d9ee385209ca4d164b58b640183f46e843e47ce42f",
+    "ecj_jar": "97c566b120009c203a2fc8b291f4a9adbc171cf1ccb70f06f6b4e1828c00ce8e",
+    "java_harness": "d832b53948674c3e81345ba320859c1fccfe1f2e7ae04a69f1766ff52f50ec1e",
+    "compiled_class": "fa2ee6806e167870f2bd428ed192b2144bd7efe6f3c5d1dc0868775a768149d7"
+  },
+  "java_version": "openjdk version \"21.0.5\" 2024-10-15 LTS\nOpenJDK Runtime Environment Temurin-21.0.5+11 (build 21.0.5+11-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.5+11 (build 21.0.5+11-LTS, mixed mode)",
+  "snpeff_version": "SnpEff\t5.1d\t2022-04-19",
+  "compiler_version": "Eclipse Compiler for Java(TM) v20240524-2033, 3.38.0, Copyright IBM Corp 2000, 2020. All rights reserved.",
+  "commands": [
+    [
+      "java",
+      "-jar",
+      "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-5.1d-interop/ecj-3.38.0.jar",
+      "-11",
+      "-classpath",
+      "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-5.1d-interop/share/snpeff-5.1d-0/snpEff.jar",
+      "-d",
+      "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-5.1d-interop/classes",
+      "analysis/SnpEffVcfRoundTrip.java"
+    ],
+    [
+      "java",
+      "-cp",
+      "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-5.1d-interop/classes:/Users/akm/aayushkrm-AlignSSL/runs/snpeff-5.1d-interop/share/snpeff-5.1d-0/snpEff.jar",
+      "SnpEffVcfRoundTrip",
+      "results/snpeff_case_repro_20261104_run01/input.vcf"
+    ]
+  ],
+  "command_exit_codes": [
+    0,
+    0
+  ],
+  "input_output_all_non_alt_fields_equal": true,
+  "input_alts": [
+    "A[chrB:20[",
+    "]chrA:10]C"
+  ],
+  "output_alts": [
+    "A[CHRB:20[",
+    "]CHRA:10]C"
+  ],
+  "packet_file_sha256": {
+    "compile.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "input.vcf": "83e3c33b4f804b0413ba53b3d46eee0607f36b361d5b88ce296dc3255f784079",
+    "output.vcfbody": "d86ea376af1c9b36e269a539157c6f25f1a963b8b0b124e36fc90e1d029292bb",
+    "run.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
