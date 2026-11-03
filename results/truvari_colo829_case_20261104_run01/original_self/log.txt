@@ -1,0 +1,62 @@
+2026-11-04 01:59:41,490 [INFO] Truvari v5.4.0
+2026-11-04 01:59:41,490 [INFO] Command /Users/akm/aayushkrm-AlignSSL/runs/truvari-native-20261104-env/lib/python3.12/site-packages/truvari/__main__.py bench --base /Users/akm/aayushkrm-AlignSSL/runs/truvari-colo829-case-20261104-run01/original.vcf.gz --comp /Users/akm/aayushkrm-AlignSSL/runs/truvari-colo829-case-20261104-run01/original.vcf.gz --output /Users/akm/aayushkrm-AlignSSL/repo/results/truvari_colo829_case_20261104_run01/original_self --bnddist 1 --refdist 1 --sizemin 0 --sizefilt 0 --pctseq 0
+2026-11-04 01:59:41,491 [INFO] Params:
+{
+    "base": "/Users/akm/aayushkrm-AlignSSL/runs/truvari-colo829-case-20261104-run01/original.vcf.gz",
+    "comp": "/Users/akm/aayushkrm-AlignSSL/runs/truvari-colo829-case-20261104-run01/original.vcf.gz",
+    "output": "/Users/akm/aayushkrm-AlignSSL/repo/results/truvari_colo829_case_20261104_run01/original_self",
+    "includebed": null,
+    "extend": 0,
+    "debug": false,
+    "reference": null,
+    "refdist": 1,
+    "pctseq": 0.0,
+    "pctsize": 0.7,
+    "pctovl": 0.0,
+    "typeignore": false,
+    "no_roll": false,
+    "chunksize": 1000,
+    "bSample": null,
+    "cSample": null,
+    "dup_to_ins": false,
+    "bnddist": 1,
+    "sizemin": 0,
+    "sizefilt": 0,
+    "sizemax": 50000,
+    "passonly": false,
+    "no_ref": false,
+    "pick": "single",
+    "ignore_monref": true,
+    "check_multi": true,
+    "check_monref": true,
+    "no_single_bnd": true,
+    "write_resolved": false,
+    "decompose": true,
+    "short_circuit": false,
+    "skip_gt": true,
+    "max_resolve": 25000
+}
+2026-11-04 01:59:41,565 [INFO] Zipped 132 variants Counter({'base': 66, 'comp': 66})
+2026-11-04 01:59:41,565 [INFO] 59 chunks of 132 variants Counter({'base': 66, 'comp': 66})
+2026-11-04 01:59:41,646 [INFO] Stats: {
+    "TP-base": 66,
+    "TP-comp": 66,
+    "FP": 0,
+    "FN": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "base cnt": 66,
+    "comp cnt": 66,
+    "TP-comp_TP-gt": 0,
+    "TP-comp_FP-gt": 66,
+    "TP-base_TP-gt": 0,
+    "TP-base_FP-gt": 66,
+    "gt_concordance": 0.0,
+    "gt_matrix": {
+        "None": {
+            "None": 66
+        }
+    }
+}
+2026-11-04 01:59:41,646 [INFO] Finished bench

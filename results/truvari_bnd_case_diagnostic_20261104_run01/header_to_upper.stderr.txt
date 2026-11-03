@@ -1,0 +1,58 @@
+2026-11-04 01:57:58,572 [INFO] Truvari v5.4.0
+2026-11-04 01:57:58,572 [INFO] Command /Users/akm/aayushkrm-AlignSSL/runs/truvari-native-20261104-env/lib/python3.12/site-packages/truvari/__main__.py bench --base /Users/akm/aayushkrm-AlignSSL/repo/results/truvari_bnd_case_diagnostic_20261104_run01/header_case.vcf.gz --comp /Users/akm/aayushkrm-AlignSSL/repo/results/truvari_bnd_case_diagnostic_20261104_run01/upper_case.vcf.gz --output /Users/akm/aayushkrm-AlignSSL/repo/results/truvari_bnd_case_diagnostic_20261104_run01/header_to_upper --bnddist 1 --refdist 1 --sizemin 0 --sizefilt 0 --pctseq 0 --passonly
+2026-11-04 01:57:58,573 [INFO] Params:
+{
+    "base": "/Users/akm/aayushkrm-AlignSSL/repo/results/truvari_bnd_case_diagnostic_20261104_run01/header_case.vcf.gz",
+    "comp": "/Users/akm/aayushkrm-AlignSSL/repo/results/truvari_bnd_case_diagnostic_20261104_run01/upper_case.vcf.gz",
+    "output": "/Users/akm/aayushkrm-AlignSSL/repo/results/truvari_bnd_case_diagnostic_20261104_run01/header_to_upper",
+    "includebed": null,
+    "extend": 0,
+    "debug": false,
+    "reference": null,
+    "refdist": 1,
+    "pctseq": 0.0,
+    "pctsize": 0.7,
+    "pctovl": 0.0,
+    "typeignore": false,
+    "no_roll": false,
+    "chunksize": 1000,
+    "bSample": "SYNTHETIC",
+    "cSample": "SYNTHETIC",
+    "dup_to_ins": false,
+    "bnddist": 1,
+    "sizemin": 0,
+    "sizefilt": 0,
+    "sizemax": 50000,
+    "passonly": true,
+    "no_ref": false,
+    "pick": "single",
+    "ignore_monref": true,
+    "check_multi": true,
+    "check_monref": true,
+    "no_single_bnd": true,
+    "write_resolved": false,
+    "decompose": true,
+    "short_circuit": false,
+    "skip_gt": false,
+    "max_resolve": 25000
+}
+2026-11-04 01:57:58,597 [INFO] Zipped 4 variants Counter({'base': 2, 'comp': 2})
+2026-11-04 01:57:58,597 [INFO] 2 chunks of 4 variants Counter({'base': 2, 'comp': 2})
+2026-11-04 01:57:58,622 [INFO] Stats: {
+    "TP-base": 0,
+    "TP-comp": 0,
+    "FP": 2,
+    "FN": 2,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": null,
+    "base cnt": 2,
+    "comp cnt": 2,
+    "TP-comp_TP-gt": 0,
+    "TP-comp_FP-gt": 0,
+    "TP-base_TP-gt": 0,
+    "TP-base_FP-gt": 0,
+    "gt_concordance": 0,
+    "gt_matrix": {}
+}
+2026-11-04 01:57:58,622 [INFO] Finished bench

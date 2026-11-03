@@ -1,0 +1,174 @@
+{
+  "inventory_sha256": "a45a996440f7e47b1b11dc4ec05ab43fd312a5ba38f804cf68835c916aa997e9",
+  "head": {
+    "Content-Length": "15234584453",
+    "ETag": null,
+    "Last-Modified": "Tue, 15 Sep 2026 19:12:31 GMT"
+  },
+  "bytes_transferred": 1048898,
+  "range_requests": [
+    {
+      "start": 11892735272,
+      "end": 11892735301,
+      "bytes": 30,
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "start": 11892735302,
+      "end": 11892735354,
+      "bytes": 53,
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "start": 11892735355,
+      "end": 11892997498,
+      "bytes": 262144,
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "start": 2000535600,
+      "end": 2000535629,
+      "bytes": 30,
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "start": 2000535630,
+      "end": 2000535682,
+      "bytes": 53,
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "start": 2000535683,
+      "end": 2000797826,
+      "bytes": 262144,
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "start": 3303731138,
+      "end": 3303731167,
+      "bytes": 30,
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "start": 3303731168,
+      "end": 3303731216,
+      "bytes": 49,
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "start": 3303731217,
+      "end": 3303993360,
+      "bytes": 262144,
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "start": 12337600386,
+      "end": 12337600415,
+      "bytes": 30,
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "start": 12337600416,
+      "end": 12337600462,
+      "bytes": 47,
+      "etag": null,
+      "last_modified": null
+    },
+    {
+      "start": 12337600463,
+      "end": 12337862606,
+      "bytes": 262144,
+      "etag": null,
+      "last_modified": null
+    }
+  ],
+  "prefix_limit_per_member": 262144,
+  "results": [
+    {
+      "name": "1100VCF/ONT_HG00096_minimap2_sniffles2_HG00096.vcf.gz",
+      "member_offset": 11892735355,
+      "prefix_bytes": 262144,
+      "prefix_sha256": "de9abe81ac6885857d0f2b5bf3845bb7856d15f7626d948652983770d1493a06",
+      "header_complete": true,
+      "header_bytes": 12672,
+      "header_sha256": "27a17b73fc8603147af70b82fa0e70e935cb7ddeaddbdfdb50bb4a785ff35eb7",
+      "contig_declarations": 194,
+      "selected_header_lines": [
+        "##fileformat=VCFv4.2",
+        "##source=Sniffles2_2.2",
+        "##ALT=<ID=BND,Description=\"Breakend; Translocation\">",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tSAMPLE"
+      ],
+      "has_snpeff_header": false,
+      "has_ann_info_header": false,
+      "member_crc_verified": false
+    },
+    {
+      "name": "1100VCF/CCS_HG00512_minimap2_sniffles2_HG00512.vcf.gz",
+      "member_offset": 2000535683,
+      "prefix_bytes": 262144,
+      "prefix_sha256": "a8c6f1e725940a45548b999c9dc1d821c3082767c8f3eaf59398d6b81ba50f4f",
+      "header_complete": true,
+      "header_bytes": 12672,
+      "header_sha256": "f98239b90092fe3ac9f8a537980c5c4460f58d593d3ce2b522e8b877a061b20b",
+      "contig_declarations": 194,
+      "selected_header_lines": [
+        "##fileformat=VCFv4.2",
+        "##source=Sniffles2_2.2",
+        "##ALT=<ID=BND,Description=\"Breakend; Translocation\">",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tSAMPLE"
+      ],
+      "has_snpeff_header": false,
+      "has_ann_info_header": false,
+      "member_crc_verified": false
+    },
+    {
+      "name": "1100VCF/CCS_NA12878_minimap2_delly_NA12878.vcf.gz",
+      "member_offset": 3303731217,
+      "prefix_bytes": 262144,
+      "prefix_sha256": "504c8a354144cb46d8261ce434e99565dcf047484e3d506b4c65ccb60e91aacb",
+      "header_complete": true,
+      "header_bytes": 12250,
+      "header_sha256": "1a20f9bc413636035df497e8569bb1f1c4d01cd20e629b253421b1369d78c0dc",
+      "contig_declarations": 194,
+      "selected_header_lines": [
+        "##fileformat=VCFv4.2",
+        "##ALT=<ID=BND,Description=\"Translocation\">",
+        "##reference=/home/lz/Data_sequence/2023_11_14/Genome/hg38/genome.fa",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tNA12878"
+      ],
+      "has_snpeff_header": false,
+      "has_ann_info_header": false,
+      "member_crc_verified": false
+    },
+    {
+      "name": "1100VCF/ONT_HG002_minimap2_svision_HG002.vcf.gz",
+      "member_offset": 12337600463,
+      "prefix_bytes": 262144,
+      "prefix_sha256": "245eafa2f3f0a0e8c6a489199f58c1bb4b75b2dd234dd81df44ccc41d4250d29",
+      "header_complete": true,
+      "header_bytes": 10771,
+      "header_sha256": "35e97f19f462c2f2bfcbbde298cab0f8d936304de89663a866c50278dce2c71f",
+      "contig_declarations": 194,
+      "selected_header_lines": [
+        "##fileformat=VCFv4.3",
+        "##source=SVision v1.3.8",
+        "#CHROM\tPOS\tID\tREF\tALT\tQUAL\tFILTER\tINFO\tFORMAT\tHG002"
+      ],
+      "has_snpeff_header": false,
+      "has_ann_info_header": false,
+      "member_crc_verified": false
+    }
+  ],
+  "limits": "Selected prefixes and headers only; full member CRCs and archive MD5 were not verified."
+}

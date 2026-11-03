@@ -1,0 +1,182 @@
+[
+  {
+    "case": "original_self",
+    "argv": [
+      "/Users/akm/aayushkrm-AlignSSL/runs/truvari-native-20261104-env/bin/python",
+      "-m",
+      "truvari",
+      "bench",
+      "--base",
+      "/Users/akm/aayushkrm-AlignSSL/runs/truvari-colo829-case-20261104-run01/original.vcf.gz",
+      "--comp",
+      "/Users/akm/aayushkrm-AlignSSL/runs/truvari-colo829-case-20261104-run01/original.vcf.gz",
+      "--output",
+      "/Users/akm/aayushkrm-AlignSSL/repo/results/truvari_colo829_case_20261104_run01/original_self",
+      "--bnddist",
+      "1",
+      "--refdist",
+      "1",
+      "--sizemin",
+      "0",
+      "--sizefilt",
+      "0",
+      "--pctseq",
+      "0"
+    ],
+    "exit_code": 0,
+    "summary": {
+      "TP-base": 66,
+      "TP-comp": 66,
+      "FP": 0,
+      "FN": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "base cnt": 66,
+      "comp cnt": 66,
+      "TP-comp_TP-gt": 0,
+      "TP-comp_FP-gt": 66,
+      "TP-base_TP-gt": 0,
+      "TP-base_FP-gt": 66,
+      "gt_concordance": 0.0,
+      "gt_matrix": {
+        "None": {
+          "None": 66
+        }
+      }
+    }
+  },
+  {
+    "case": "normalized_self",
+    "argv": [
+      "/Users/akm/aayushkrm-AlignSSL/runs/truvari-native-20261104-env/bin/python",
+      "-m",
+      "truvari",
+      "bench",
+      "--base",
+      "/Users/akm/aayushkrm-AlignSSL/runs/truvari-colo829-case-20261104-run01/normalized.vcf.gz",
+      "--comp",
+      "/Users/akm/aayushkrm-AlignSSL/runs/truvari-colo829-case-20261104-run01/normalized.vcf.gz",
+      "--output",
+      "/Users/akm/aayushkrm-AlignSSL/repo/results/truvari_colo829_case_20261104_run01/normalized_self",
+      "--bnddist",
+      "1",
+      "--refdist",
+      "1",
+      "--sizemin",
+      "0",
+      "--sizefilt",
+      "0",
+      "--pctseq",
+      "0"
+    ],
+    "exit_code": 0,
+    "summary": {
+      "TP-base": 66,
+      "TP-comp": 66,
+      "FP": 0,
+      "FN": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "base cnt": 66,
+      "comp cnt": 66,
+      "TP-comp_TP-gt": 0,
+      "TP-comp_FP-gt": 66,
+      "TP-base_TP-gt": 0,
+      "TP-base_FP-gt": 66,
+      "gt_concordance": 0.0,
+      "gt_matrix": {
+        "None": {
+          "None": 66
+        }
+      }
+    }
+  },
+  {
+    "case": "original_to_normalized",
+    "argv": [
+      "/Users/akm/aayushkrm-AlignSSL/runs/truvari-native-20261104-env/bin/python",
+      "-m",
+      "truvari",
+      "bench",
+      "--base",
+      "/Users/akm/aayushkrm-AlignSSL/runs/truvari-colo829-case-20261104-run01/original.vcf.gz",
+      "--comp",
+      "/Users/akm/aayushkrm-AlignSSL/runs/truvari-colo829-case-20261104-run01/normalized.vcf.gz",
+      "--output",
+      "/Users/akm/aayushkrm-AlignSSL/repo/results/truvari_colo829_case_20261104_run01/original_to_normalized",
+      "--bnddist",
+      "1",
+      "--refdist",
+      "1",
+      "--sizemin",
+      "0",
+      "--sizefilt",
+      "0",
+      "--pctseq",
+      "0"
+    ],
+    "exit_code": 0,
+    "summary": {
+      "TP-base": 0,
+      "TP-comp": 0,
+      "FP": 66,
+      "FN": 66,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": null,
+      "base cnt": 66,
+      "comp cnt": 66,
+      "TP-comp_TP-gt": 0,
+      "TP-comp_FP-gt": 0,
+      "TP-base_TP-gt": 0,
+      "TP-base_FP-gt": 0,
+      "gt_concordance": 0,
+      "gt_matrix": {}
+    }
+  },
+  {
+    "case": "normalized_to_original",
+    "argv": [
+      "/Users/akm/aayushkrm-AlignSSL/runs/truvari-native-20261104-env/bin/python",
+      "-m",
+      "truvari",
+      "bench",
+      "--base",
+      "/Users/akm/aayushkrm-AlignSSL/runs/truvari-colo829-case-20261104-run01/normalized.vcf.gz",
+      "--comp",
+      "/Users/akm/aayushkrm-AlignSSL/runs/truvari-colo829-case-20261104-run01/original.vcf.gz",
+      "--output",
+      "/Users/akm/aayushkrm-AlignSSL/repo/results/truvari_colo829_case_20261104_run01/normalized_to_original",
+      "--bnddist",
+      "1",
+      "--refdist",
+      "1",
+      "--sizemin",
+      "0",
+      "--sizefilt",
+      "0",
+      "--pctseq",
+      "0"
+    ],
+    "exit_code": 0,
+    "summary": {
+      "TP-base": 0,
+      "TP-comp": 0,
+      "FP": 66,
+      "FN": 66,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": null,
+      "base cnt": 66,
+      "comp cnt": 66,
+      "TP-comp_TP-gt": 0,
+      "TP-comp_FP-gt": 0,
+      "TP-base_TP-gt": 0,
+      "TP-base_FP-gt": 0,
+      "gt_concordance": 0,
+      "gt_matrix": {}
+    }
+  }
+]

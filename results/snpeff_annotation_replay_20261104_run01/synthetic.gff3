@@ -1,0 +1,9 @@
+##gff-version 3
+chrA	synthetic	gene	1	90	.	+	.	ID=geneA;Name=geneA
+chrA	synthetic	mRNA	1	90	.	+	.	ID=txA;Parent=geneA
+chrA	synthetic	exon	1	90	.	+	.	ID=exonA;Parent=txA
+chrA	synthetic	CDS	1	90	.	+	0	ID=cdsA;Parent=txA
+chrB	synthetic	gene	1	90	.	+	.	ID=geneB;Name=geneB
+chrB	synthetic	mRNA	1	90	.	+	.	ID=txB;Parent=geneB
+chrB	synthetic	exon	1	90	.	+	.	ID=exonB;Parent=txB
+chrB	synthetic	CDS	1	90	.	+	0	ID=cdsB;Parent=txB

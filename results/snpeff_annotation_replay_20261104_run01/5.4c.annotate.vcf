@@ -1,0 +1,14 @@
+##fileformat=VCFv4.3
+##contig=<ID=chrA,length=100>
+##contig=<ID=chrB,length=100>
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="SV type">
+##INFO=<ID=MATEID,Number=.,Type=String,Description="Mate ID">
+##SnpEffVersion="5.4c (build 2026-02-23 07:25), by Pablo Cingolani"
+##SnpEffCmd="SnpEff  -noStats synthetic /Users/akm/aayushkrm-AlignSSL/repo/results/snpeff_annotation_replay_20261104_run01/input.vcf "
+##INFO=<ID=ANN,Number=.,Type=String,Description="Functional annotations: 'Allele | Annotation | Annotation_Impact | Gene_Name | Gene_ID | Feature_Type | Feature_ID | Transcript_BioType | Rank | HGVS.c | HGVS.p | cDNA.pos / cDNA.length | CDS.pos / CDS.length | AA.pos / AA.length | Distance | ERRORS / WARNINGS / INFO' ">
+##INFO=<ID=LOF,Number=.,Type=String,Description="Predicted loss of function effects for this variant. Format: 'Gene_Name | Gene_ID | Number_of_transcripts_in_gene | Percent_of_transcripts_affected'">
+##INFO=<ID=NMD,Number=.,Type=String,Description="Predicted nonsense mediated decay effects for this variant. Format: 'Gene_Name | Gene_ID | Number_of_transcripts_in_gene | Percent_of_transcripts_affected'">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+chrA	10	a	A	A[CHRB:20[	.	PASS	SVTYPE=BND;MATEID=b;ANN=A[CHRB:20[|gene_fusion|HIGH|geneA&geneB|geneA&geneB|transcript|txA|protein_coding|1/1|t(A%3BB)(%3B)(c.10)|t(A%3BB)(txA:Lys1_Lys4%3BtxB:Pro7_Pro30)|||||
+chrA	11	snv	A	G	.	PASS	ANN=G|missense_variant|MODERATE|geneA|geneA|transcript|txA|protein_coding|1/1|c.11A>G|p.Lys4Arg|11/90|11/90|4/29||WARNING_TRANSCRIPT_NO_START_CODON
+chrB	20	b	C	]CHRA:10]C	.	PASS	SVTYPE=BND;MATEID=a;ANN=]CHRA:10]C|gene_fusion|HIGH|geneA&geneB|geneA&geneB|transcript|txB|protein_coding|1/1|t(B%3BA)(%3B)(c.20)|t(B%3BA)(txB:Pro7_Pro30%3BtxA:Lys1_Lys4)|||||

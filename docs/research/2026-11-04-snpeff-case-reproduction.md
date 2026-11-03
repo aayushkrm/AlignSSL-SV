@@ -38,5 +38,7 @@ The observed version's parser behavior can produce the case pattern found
 in the public COLO829 VCF, whose header also names SnpEff 5.1d. The original
 intermediate VCF and deployed binary were not recovered. This does not prove
 the exact historical pipeline sequence, imply a biological variant error,
-or establish behavior for all versions and tools. The real-data comparison
-remains provisional pending independent review.
+or establish behavior for all versions and tools. A later [full annotation
+replay](2026-11-04-snpeff-annotation-replay.md) reproduces the behavior in the
+tested 5.1d and 5.4c builds on a separate synthetic fixture. The real-data
+comparison remains provisional pending independent review.

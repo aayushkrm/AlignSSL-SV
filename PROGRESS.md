@@ -39,6 +39,23 @@ idea is not novel. More precise gaps and a suitable independent, balanced
 cohort remain unestablished. Invas is additional inversion-transcript prior
 art. No expensive campaign or positive biological claim is released.
 
+A later [full annotation replay](docs/research/2026-11-04-snpeff-annotation-replay.md)
+builds separate artificial databases for SnpEff 5.1d and the tested 5.4c
+package. Both native commands uppercase BND mate-contig tokens while retaining
+the local CHROM spelling; a third ordinary SNV is retained as a control. The
+synthetic SNV has a missing-start-codon annotation warning. This supports the
+mechanism in those builds only, not historical provenance or clinical impact.
+A separate [Truvari 5.4.0 synthetic check](docs/research/2026-11-04-truvari-bnd-case-diagnostic.md)
+uses two reciprocal BND records for one invented adjacency. Self comparisons
+match both records; changing only the ALT mate-contig case produces no cross
+matches. The native cross F1 values are null. Exact-string handling is not
+itself judged a tool bug, and no real-data accuracy effect is established.
+The subsequent [site-only COLO829 Truvari check](docs/research/2026-11-04-truvari-colo829-case-protocol.md)
+reports all66 BND records matched in each self-control and none in either
+case-only cross comparison. The native cross F1 is null. Both inputs derive
+from one public callset; these are not biological FP/FN counts. Genotype
+fields in native summaries are meaningless because the inputs have no samples.
+
 All four requested subagents, including the current independent reviewer,
 stopped with the runtime's usage-limit error before completing their assigned
 follow-ups. The message offered retry on November 4 at 03:14 AM without a
@@ -50,8 +67,28 @@ values are requests, not verified backend configuration. Own cluster queue
 was empty at this checkpoint; no unrelated jobs or workspaces were changed.
 The targeted checks passed 42 tests in 6.61 seconds, and all 61 files named
 in the four new experiment receipts passed SHA256 verification. Native log
-whitespace is preserved as emitted.
+whitespace is preserved as emitted. The later SnpEff annotation and Truvari
+packets have another 16 and 63 verified receipt entries, respectively. The
+COLO829 Truvari packet has 58 verified output files and six verified
+site-only workspace files.
 The goal remains active and unmet.
+
+An [independent-source census](docs/research/2026-11-04-independent-callset-inventory.md)
+read 148,023 bytes of the central directory of a 15.2 GB public ZIP and found
+1,100 compressed callset members. Four preselected headers from four named
+samples, two platforms and three caller labels were retrieved with 1,048,898
+more range bytes; none declares SnpEff or ANN. Member labels do not authenticate
+donor identity, and headers do not establish BND content. No full archive,
+member CRC or archive MD5 was verified. This is not an independent annotated
+cohort or a prevalence estimate. Three bounded-range safety tests pass.
+The combined focused suite passed 45 tests in 5.04 seconds.
+
+Publication checkpoint: the preceding research packet was pushed as
+`ee80196fa0d0700a329f17576b8c8ab1f3acacb3`. With the user's existing approval,
+the default branch was updated at `28e42ffeb21991bbde73a1b47efdd7c29cfdc635`;
+the fetched commit changed only `README.md`, whose blob matches the research
+branch README. The later full-annotation packet is tracked on the research
+branch, not promoted as experimental content to `main`.
 
 ### Native Verix diagnostic and real-data follow-up — 2026-11-03
 

@@ -1,0 +1,186 @@
+{
+  "5.1d": {
+    "jar": "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-5.1d-interop/share/snpeff-5.1d-0/snpEff.jar",
+    "jar_sha256": "802383117ce2b414d44b98d9ee385209ca4d164b58b640183f46e843e47ce42f",
+    "steps": {
+      "version": {
+        "argv": [
+          "java",
+          "-jar",
+          "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-5.1d-interop/share/snpeff-5.1d-0/snpEff.jar",
+          "-version"
+        ],
+        "exit_code": 0
+      },
+      "build": {
+        "argv": [
+          "java",
+          "-Xmx512m",
+          "-jar",
+          "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-5.1d-interop/share/snpeff-5.1d-0/snpEff.jar",
+          "build",
+          "-gff3",
+          "-noCheckCds",
+          "-noCheckProtein",
+          "-nodownload",
+          "-noLog",
+          "-c",
+          "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-annotation-replay-20261104-run01/5.1d/snpEff.config",
+          "synthetic"
+        ],
+        "exit_code": 0
+      },
+      "annotate": {
+        "argv": [
+          "java",
+          "-Xmx512m",
+          "-jar",
+          "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-5.1d-interop/share/snpeff-5.1d-0/snpEff.jar",
+          "-noStats",
+          "-nodownload",
+          "-noLog",
+          "-c",
+          "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-annotation-replay-20261104-run01/5.1d/snpEff.config",
+          "synthetic",
+          "/Users/akm/aayushkrm-AlignSSL/repo/results/snpeff_annotation_replay_20261104_run01/input.vcf"
+        ],
+        "exit_code": 0
+      }
+    },
+    "records": {
+      "input": {
+        "a": {
+          "chrom": "chrA",
+          "pos": "10",
+          "ref": "A",
+          "alt": "A[chrB:20["
+        },
+        "snv": {
+          "chrom": "chrA",
+          "pos": "11",
+          "ref": "A",
+          "alt": "G"
+        },
+        "b": {
+          "chrom": "chrB",
+          "pos": "20",
+          "ref": "C",
+          "alt": "]chrA:10]C"
+        }
+      },
+      "output": {
+        "a": {
+          "chrom": "chrA",
+          "pos": "10",
+          "ref": "A",
+          "alt": "A[CHRB:20["
+        },
+        "snv": {
+          "chrom": "chrA",
+          "pos": "11",
+          "ref": "A",
+          "alt": "G"
+        },
+        "b": {
+          "chrom": "chrB",
+          "pos": "20",
+          "ref": "C",
+          "alt": "]CHRA:10]C"
+        }
+      },
+      "same_record_ids": true
+    }
+  },
+  "5.4c": {
+    "jar": "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-5.4c-interop/share/snpeff-5.4.0c-0/snpEff.jar",
+    "jar_sha256": "5e8f75cbf908a33c6fb2e65c81e66fe31236cb21bb0195541c4703d8202c22b3",
+    "steps": {
+      "version": {
+        "argv": [
+          "java",
+          "-jar",
+          "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-5.4c-interop/share/snpeff-5.4.0c-0/snpEff.jar",
+          "-version"
+        ],
+        "exit_code": 0
+      },
+      "build": {
+        "argv": [
+          "java",
+          "-Xmx512m",
+          "-jar",
+          "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-5.4c-interop/share/snpeff-5.4.0c-0/snpEff.jar",
+          "build",
+          "-gff3",
+          "-noCheckCds",
+          "-noCheckProtein",
+          "-nodownload",
+          "-noLog",
+          "-c",
+          "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-annotation-replay-20261104-run01/5.4c/snpEff.config",
+          "synthetic"
+        ],
+        "exit_code": 0
+      },
+      "annotate": {
+        "argv": [
+          "java",
+          "-Xmx512m",
+          "-jar",
+          "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-5.4c-interop/share/snpeff-5.4.0c-0/snpEff.jar",
+          "-noStats",
+          "-nodownload",
+          "-noLog",
+          "-c",
+          "/Users/akm/aayushkrm-AlignSSL/runs/snpeff-annotation-replay-20261104-run01/5.4c/snpEff.config",
+          "synthetic",
+          "/Users/akm/aayushkrm-AlignSSL/repo/results/snpeff_annotation_replay_20261104_run01/input.vcf"
+        ],
+        "exit_code": 0
+      }
+    },
+    "records": {
+      "input": {
+        "a": {
+          "chrom": "chrA",
+          "pos": "10",
+          "ref": "A",
+          "alt": "A[chrB:20["
+        },
+        "snv": {
+          "chrom": "chrA",
+          "pos": "11",
+          "ref": "A",
+          "alt": "G"
+        },
+        "b": {
+          "chrom": "chrB",
+          "pos": "20",
+          "ref": "C",
+          "alt": "]chrA:10]C"
+        }
+      },
+      "output": {
+        "a": {
+          "chrom": "chrA",
+          "pos": "10",
+          "ref": "A",
+          "alt": "A[CHRB:20["
+        },
+        "snv": {
+          "chrom": "chrA",
+          "pos": "11",
+          "ref": "A",
+          "alt": "G"
+        },
+        "b": {
+          "chrom": "chrB",
+          "pos": "20",
+          "ref": "C",
+          "alt": "]CHRA:10]C"
+        }
+      },
+      "same_record_ids": true
+    }
+  }
+}

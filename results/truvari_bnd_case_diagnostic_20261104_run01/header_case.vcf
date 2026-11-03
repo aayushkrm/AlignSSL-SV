@@ -1,0 +1,9 @@
+##fileformat=VCFv4.3
+##contig=<ID=chrA,length=100>
+##contig=<ID=chrB,length=100>
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="SV type">
+##INFO=<ID=MATEID,Number=.,Type=String,Description="Mate ID">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SYNTHETIC
+chrA	10	a	A	A[chrB:20[	.	PASS	SVTYPE=BND;MATEID=b	GT	0/1
+chrB	20	b	C	]chrA:10]C	.	PASS	SVTYPE=BND;MATEID=a	GT	0/1

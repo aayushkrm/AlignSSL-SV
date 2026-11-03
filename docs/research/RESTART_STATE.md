@@ -39,6 +39,25 @@ are complete but **independent review is pending**. The caller has 66 BNDs,
 Differences alone are not errors. Synthetic replays reproduce a known
 [nanomonsv upstream fix](2026-11-04-nanomonsv-source-reproduction.md) and
 [SnpEff 5.1d ALT uppercasing](2026-11-04-snpeff-case-reproduction.md).
+The [later full annotation replay](2026-11-04-snpeff-annotation-replay.md)
+also reproduces the case change with tested 5.1d and 5.4c jars on an artificial
+genome; its SNV annotation carries a synthetic-gene start-codon warning.
+The [Truvari 5.4.0 synthetic comparison](2026-11-04-truvari-bnd-case-diagnostic.md)
+matches both BND records in self-controls but neither in case-only cross
+comparisons; cross F1 is null. This is one artificial adjacency and does not
+measure real-world accuracy. Case-sensitive consumer handling is not itself
+classified as a bug.
+The later [COLO829 site-only Truvari check](2026-11-04-truvari-colo829-case-protocol.md)
+reports 66/66 self matches but no case-only cross matches on one source VCF.
+Both copies have all BND FILTER values and no sample fields. The native
+genotype summaries remain meaningless despite emitted numbers; `skip_gt=true`.
+This is not a biological FP/FN or prevalence result. Independent review is
+pending.
+The [1100-callset archive census](2026-11-04-independent-callset-inventory.md)
+read its ZIP central directory and four chosen headers by bounded range:
+1,100 gzip members, but none of four headers declares SnpEff/ANN. No
+variant body, full member CRC or archive MD5 was verified; filenames do not
+authenticate donor identity. No independent annotated cohort is established.
 The exact historical binaries/intermediate files remain unverified. On one
 public VCF the pinned Verix parser groups 66 records as singletons before,
 and 33 reciprocal-MATEID pairs after, a case-only ALT token change. The
@@ -56,6 +75,10 @@ tasks remain unfinished. Request a new Terra/max independent review after
 availability returns, and use Luna/max workers for distinct work. The earlier
 reviewed Verix synthetic packet is unaffected. Own queue was empty. The main
 model effort and agent routing are not independently backend-attested.
+Research checkpoint `ee80196` was pushed. User-approved `main` commit
+`28e42ff` was fetched and verified to change only `README.md`; its README blob
+matches the research branch. The full-annotation packet is a later research
+addition, not promoted to `main` as code or results.
 
 November3 later checkpoint: two synthetic Verix input families and their
 header-corrected repeats are complete. [Native result](2026-11-03-verix-native-diagnostic.md)

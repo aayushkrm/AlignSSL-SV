@@ -1,0 +1,22 @@
+{
+  "original_sha256": "5f697bb043fea98b4071dcee99a11446fa9132e51e97b402cc131d58ae6347d7",
+  "normalized_sha256": "fc9f95277c4ebd55c3094e24ea331faa36198db9596c54299021062a3962f3a5",
+  "lines": 9,
+  "unchanged_lines": 7,
+  "header_contigs": 2,
+  "changed_lines": 2,
+  "changes": [
+    {
+      "line": 8,
+      "id": "a",
+      "old_remote": "CHRB",
+      "new_remote": "chrB"
+    },
+    {
+      "line": 9,
+      "id": "b",
+      "old_remote": "CHRA",
+      "new_remote": "chrA"
+    }
+  ]
+}
