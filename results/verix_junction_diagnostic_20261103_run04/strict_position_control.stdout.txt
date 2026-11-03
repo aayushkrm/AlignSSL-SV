@@ -1,0 +1,63 @@
+[INFO] verix version v0.0.2
+[INFO] 
+ ***Params***
+ command: bench
+ output_dir: results/verix_junction_diagnostic_20261103_run04/strict_position_control
+ match_thr: 0
+ sizemin: 0
+ sizemax: None
+ merge_thr: 0
+ passonly: False
+ enforce_type: True
+ enforce_genotype: True
+ enforce_ins: True
+ formats: ['multi', 'multi']
+ csv_links: ['EVENT', 'EVENT']
+ types: []
+ breakend_mode: True
+ query: results/verix_junction_diagnostic_20261103_run04/fixtures/position_control.vcf
+ target: results/verix_junction_diagnostic_20261103_run04/fixtures/truth.vcf
+ plot: False
+[INFO] Loaded 1 query SVs
+[INFO] Loaded 1 target/truthset SVs
+[INFO] Finding matches...
+[INFO] Results:
+{
+    "n_query": 1,
+    "n_target": 1,
+    "class_proportions": {
+        "complete": 0.0,
+        "partial": 1.0,
+        "aggregate": 0.0,
+        "spurious": 0.0
+    },
+    "by_class": {
+        "partial": {
+            "num_matches": 1,
+            "num_contiguous_matches": 0,
+            "num_unique_targets": 1,
+            "mean_breakpoint_distance": 0.0,
+            "mean_breakpoint_hit_rate": 0.8333333333333334,
+            "mean_spurious_breakpoint_rate": 0.16666666666666666,
+            "mean_targets_per_record": 1.0,
+            "num_matches_by_query_target_type": {
+                "BND/BND": 1
+            },
+            "num_contiguous_matches_by_query_target_type": {},
+            "query_type_counts": {
+                "BND": 1
+            },
+            "query_type_proportions": {
+                "BND": 1.0
+            },
+            "target_type_counts": {
+                "BND": 1
+            },
+            "target_type_proportions": {
+                "BND": 1.0
+            }
+        }
+    }
+}
+[INFO] Wrote benchmark report to results/verix_junction_diagnostic_20261103_run04/strict_position_control/report.json
+[INFO] Wrote benchmark VCF to results/verix_junction_diagnostic_20261103_run04/strict_position_control/matches.vcf

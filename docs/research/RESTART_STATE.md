@@ -32,6 +32,18 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+November3 later checkpoint: two synthetic Verix input families and their
+header-corrected repeats are complete. [Native result](2026-11-03-verix-native-diagnostic.md)
+and [independent review](2026-11-03-verix-independent-review.md) distinguish
+breakpoint-set matches from adjacency/path claims. All 228 receipt entries
+pass; EBI job1614653 validates20 files with a missing-reference warning and
+does not flag the original header cardinality. No caller or biological error
+is established. A public COLO829 three-junction source is described in
+[the real-evidence scout](2026-11-03-complex-path-real-evidence.md), with
+shared-read and phase limitations. An all-record anchor census is underway;
+its independent review and converter investigation are pending. Do not
+mistake component calls without path grouping for a reported wrong path.
+
 November3 checkpoint: [actual CNP0002230 crosswalk](2026-11-03-synvii-archive-crosswalk.md)
 reconciles the three saved October16 metadata files against TableS3:
 231samples/292experiments/319runs/638readlinks, two separate references.

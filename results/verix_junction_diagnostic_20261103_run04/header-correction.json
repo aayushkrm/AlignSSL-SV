@@ -1,0 +1,61 @@
+{
+  "original_receipt_sha256": "2475b12fc876b42317f7b4b23dbf4a37b4c2d536b5d5eca3be263701bb0ee16c",
+  "original_directory": "results/verix_junction_diagnostic_20261103_run02",
+  "change": "MATEID header Number=1 to Number=.; all other input bytes unchanged",
+  "fixtures": [
+    {
+      "file": "construction.json",
+      "original_sha256": "9f3cd7ec3f17f6c6c2f4338e20b3e66a1c9bdc06f981a9890c119ca44f235f78",
+      "corrected_sha256": "9f3cd7ec3f17f6c6c2f4338e20b3e66a1c9bdc06f981a9890c119ca44f235f78",
+      "header_corrected": false
+    },
+    {
+      "file": "genotype_control.vcf",
+      "original_sha256": "ecbe4b1fa9572c0eafeedec1f28d610b1ab9a99f12e23bbacbbef9622a510861",
+      "corrected_sha256": "e93e58809e585e0f9437fcd90b84e83bf172c5af25a80e0f5e8682b799cbb40b",
+      "header_corrected": true
+    },
+    {
+      "file": "orientation_control.vcf",
+      "original_sha256": "6ab3293e376214fefb2202f2efc5bf3d487b27bbce88ca3823fa586fa800bc2f",
+      "corrected_sha256": "b88292410e5926dfb5726881d0f9ce9d71d0502b5ee49014dd18e0bc627c5ca9",
+      "header_corrected": true
+    },
+    {
+      "file": "position_control.vcf",
+      "original_sha256": "91189373ecc517b814dfb0cbbc3f1e3c712b18c5a9b95d7235fa41cfec06d7f2",
+      "corrected_sha256": "fcba1aec308bd77a1dc44f64545fe4f89f8b37e4e6cdb0d0cd3195bab613e366",
+      "header_corrected": true
+    },
+    {
+      "file": "reference.fa",
+      "original_sha256": "ab46a1c56330a94913c6d2ffb30c0888284206aa5421af2fe549b35ecd7f0a25",
+      "corrected_sha256": "ab46a1c56330a94913c6d2ffb30c0888284206aa5421af2fe549b35ecd7f0a25",
+      "header_corrected": false
+    },
+    {
+      "file": "rewired.vcf",
+      "original_sha256": "f2f56130f56a25942d041f086de81358e1705716fa1bbcf8f6feb7a6c4907d71",
+      "corrected_sha256": "4b32dea40934f28d6bddb0058bf5dfa6362ae68bed12d511dbb631bc3ced6e91",
+      "header_corrected": true
+    },
+    {
+      "file": "rewired_derivative.fa",
+      "original_sha256": "89aaf95a6a585519a014d019bc09e7691afd783a9d9ed02f5f675cabcc8c6864",
+      "corrected_sha256": "89aaf95a6a585519a014d019bc09e7691afd783a9d9ed02f5f675cabcc8c6864",
+      "header_corrected": false
+    },
+    {
+      "file": "truth.vcf",
+      "original_sha256": "d923e6ec03e44f659485de5d8b914d1984a7f3f35500d8b5910f68912d806806",
+      "corrected_sha256": "71a6c66ab004a34585951577f3a83a3f038ae20c105d6a47b13c8de762ec05ad",
+      "header_corrected": true
+    },
+    {
+      "file": "truth_derivative.fa",
+      "original_sha256": "f7b742c0453457de4705ab3e25ae197d4615df38136d7c4bfdcf8cfee65c5f3c",
+      "corrected_sha256": "f7b742c0453457de4705ab3e25ae197d4615df38136d7c4bfdcf8cfee65c5f3c",
+      "header_corrected": false
+    }
+  ]
+}

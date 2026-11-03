@@ -1,0 +1,13 @@
+##fileformat=VCFv4.3
+##contig=<ID=chr1,length=40000>
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="Structural variant type">
+##INFO=<ID=MATEID,Number=1,Type=String,Description="Reciprocal breakend ID">
+##INFO=<ID=EVENT,Number=1,Type=String,Description="Shared synthetic event">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE
+chr1	1000	a	A	A[chr1:15001[	.	PASS	SVTYPE=BND;MATEID=d;EVENT=event1	GT	0|1
+chr1	1001	b	A	]chr1:30000]A	.	PASS	SVTYPE=BND;MATEID=e;EVENT=event1	GT	0|1
+chr1	15000	c	A	A[chr1:30001[	.	PASS	SVTYPE=BND;MATEID=f;EVENT=event1	GT	0|1
+chr1	15001	d	A	]chr1:1000]A	.	PASS	SVTYPE=BND;MATEID=a;EVENT=event1	GT	0|1
+chr1	30000	e	A	A[chr1:1001[	.	PASS	SVTYPE=BND;MATEID=b;EVENT=event1	GT	0|1
+chr1	30001	f	A	]chr1:15000]A	.	PASS	SVTYPE=BND;MATEID=c;EVENT=event1	GT	0|1

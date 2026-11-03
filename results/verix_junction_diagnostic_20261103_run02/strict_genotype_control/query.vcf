@@ -1,0 +1,12 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##source=verix_v0.0.2
+##contig=<ID=chr1>
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position of the SV">
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="SV type">
+##INFO=<ID=CHROM2,Number=1,Type=String,Description="Chr of the last breakpoint, if different">
+##INFO=<ID=BKPS,Number=.,Type=String,Description="List of all SV breakpoints">
+##INFO=<ID=ID,Number=.,Type=String,Description="Unique CSV identifier">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE
+chr1	1000	event1	N	<SV>	.	.	ID=event1;END=30001;SVTYPE=BND;BKPS=chr1:1000,chr1:1001,chr1:15000,chr1:15001,chr1:30000,chr1:30001	GT	1/1

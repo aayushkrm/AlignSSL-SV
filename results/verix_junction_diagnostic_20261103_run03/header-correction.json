@@ -1,0 +1,43 @@
+{
+  "original_receipt_sha256": "5754b2b0133a5d7904241117ef11af1c080d9af885e7e85ac8c145c5ab7cda1f",
+  "original_directory": "results/verix_junction_diagnostic_20261103_run01",
+  "change": "MATEID header Number=1 to Number=.; all other input bytes unchanged",
+  "fixtures": [
+    {
+      "file": "genotype_control.vcf",
+      "original_sha256": "d98d62776c7091bdb6c505b4d41660ab5d8c157b5bab258d68fa9db7f2df1222",
+      "corrected_sha256": "762959c7159dc70ab122946280ae8fc7413c4e261296619ed5b4c4140d0f224c",
+      "header_corrected": true
+    },
+    {
+      "file": "orientation_control.vcf",
+      "original_sha256": "5bf00401a45cb5c0c55b540a0207fe7e909dc7630fcf079d74454f350e7ed2c9",
+      "corrected_sha256": "af1b5d87fee011a90fd24a1b00b49c4dbc4e81e3c41d5d6d479e663157960dbb",
+      "header_corrected": true
+    },
+    {
+      "file": "position_control.vcf",
+      "original_sha256": "1221a11a181cc47e02af88a4dda676407727639325cd693fe2a04513bca30451",
+      "corrected_sha256": "f9a554c876b7b4161f9a3900bcc0c3a36523bb4be8794680dc98fdb0827a2ecf",
+      "header_corrected": true
+    },
+    {
+      "file": "reference.fa",
+      "original_sha256": "52e2d0628494fee77266b1675ec6e5c86f2b46c1a48d6415e4ecd3480c90cead",
+      "corrected_sha256": "52e2d0628494fee77266b1675ec6e5c86f2b46c1a48d6415e4ecd3480c90cead",
+      "header_corrected": false
+    },
+    {
+      "file": "rewired.vcf",
+      "original_sha256": "dda47fb2cf69bba38a1dcdfbd74a4a6de7eae7a01c85cee9514a057020089398",
+      "corrected_sha256": "a238f0275767b5145fee994a8e98bee3119c755c02498e363b16ab1ea4046a98",
+      "header_corrected": true
+    },
+    {
+      "file": "truth.vcf",
+      "original_sha256": "b8e2426827e0829c999f9ebe98758d33e7d7d477b1554aa1b1a5d5f750c17864",
+      "corrected_sha256": "5d17a77684f2b659232c2acf5a4599b9c1317fbaaec85b6b1cf593e5f0f38993",
+      "header_corrected": true
+    }
+  ]
+}

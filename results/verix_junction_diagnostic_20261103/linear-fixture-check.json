@@ -1,0 +1,51 @@
+{
+  "truth": {
+    "adjacencies": [
+      [
+        "a",
+        "c"
+      ],
+      [
+        "b",
+        "e"
+      ],
+      [
+        "d",
+        "f"
+      ]
+    ],
+    "reference_segment_path": [
+      "reverse(B)",
+      "reverse(C)"
+    ],
+    "length": 40000,
+    "sequence_sha256": "b63116b26fcba12edb81e49a5cf99b5510fb0d12fb49cba56bb4048b0602a69e",
+    "saved_fasta_matches_traversal": true
+  },
+  "rewired": {
+    "adjacencies": [
+      [
+        "a",
+        "d"
+      ],
+      [
+        "b",
+        "e"
+      ],
+      [
+        "c",
+        "f"
+      ]
+    ],
+    "reference_segment_path": [
+      "C",
+      "B"
+    ],
+    "length": 40000,
+    "sequence_sha256": "50d2c790403c72d1b78bbff22732e98393ae76bedd36d6757398142d0f68c5e1",
+    "saved_fasta_matches_traversal": true
+  },
+  "same_breakends_and_sides": true,
+  "same_adjacencies": false,
+  "same_derivative_sequence": false
+}

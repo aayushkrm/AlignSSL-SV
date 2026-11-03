@@ -1,0 +1,72 @@
+[INFO] verix version v0.0.2
+[INFO] 
+ ***Params***
+ command: bench
+ output_dir: results/verix_junction_diagnostic_20261103_run01/strict_rewired
+ match_thr: 0
+ sizemin: 0
+ sizemax: None
+ merge_thr: 0
+ passonly: False
+ enforce_type: True
+ enforce_genotype: True
+ enforce_ins: True
+ formats: ['multi', 'multi']
+ csv_links: ['EVENT', 'EVENT']
+ types: []
+ breakend_mode: True
+ query: results/verix_junction_diagnostic_20261103_run01/fixtures/rewired.vcf
+ target: results/verix_junction_diagnostic_20261103_run01/fixtures/truth.vcf
+ plot: False
+[INFO] Loaded 1 query SVs
+[INFO] Loaded 1 target/truthset SVs
+[INFO] Finding matches...
+[INFO] Results:
+{
+    "n_query": 1,
+    "n_target": 1,
+    "tp_query": 1,
+    "tp_target": 1,
+    "fp": 0,
+    "fn": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "class_proportions": {
+        "complete": 1.0,
+        "partial": 0.0,
+        "aggregate": 0.0,
+        "spurious": 0.0
+    },
+    "by_class": {
+        "complete": {
+            "num_matches": 1,
+            "num_contiguous_matches": 1,
+            "num_unique_targets": 1,
+            "mean_breakpoint_distance": 0.0,
+            "mean_breakpoint_hit_rate": 1.0,
+            "mean_spurious_breakpoint_rate": 0.0,
+            "mean_targets_per_record": 1.0,
+            "num_matches_by_query_target_type": {
+                "BND/BND": 1
+            },
+            "num_contiguous_matches_by_query_target_type": {
+                "BND/BND": 1
+            },
+            "query_type_counts": {
+                "BND": 1
+            },
+            "query_type_proportions": {
+                "BND": 1.0
+            },
+            "target_type_counts": {
+                "BND": 1
+            },
+            "target_type_proportions": {
+                "BND": 1.0
+            }
+        }
+    }
+}
+[INFO] Wrote benchmark report to results/verix_junction_diagnostic_20261103_run01/strict_rewired/report.json
+[INFO] Wrote benchmark VCF to results/verix_junction_diagnostic_20261103_run01/strict_rewired/matches.vcf

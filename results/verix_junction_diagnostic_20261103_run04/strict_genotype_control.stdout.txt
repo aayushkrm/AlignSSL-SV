@@ -1,0 +1,37 @@
+[INFO] verix version v0.0.2
+[INFO] 
+ ***Params***
+ command: bench
+ output_dir: results/verix_junction_diagnostic_20261103_run04/strict_genotype_control
+ match_thr: 0
+ sizemin: 0
+ sizemax: None
+ merge_thr: 0
+ passonly: False
+ enforce_type: True
+ enforce_genotype: True
+ enforce_ins: True
+ formats: ['multi', 'multi']
+ csv_links: ['EVENT', 'EVENT']
+ types: []
+ breakend_mode: True
+ query: results/verix_junction_diagnostic_20261103_run04/fixtures/genotype_control.vcf
+ target: results/verix_junction_diagnostic_20261103_run04/fixtures/truth.vcf
+ plot: False
+[INFO] Loaded 1 query SVs
+[INFO] Loaded 1 target/truthset SVs
+[INFO] Finding matches...
+[INFO] Results:
+{
+    "n_query": 1,
+    "n_target": 1,
+    "class_proportions": {
+        "complete": 0.0,
+        "partial": 0.0,
+        "aggregate": 0.0,
+        "spurious": 1.0
+    },
+    "by_class": {}
+}
+[INFO] Wrote benchmark report to results/verix_junction_diagnostic_20261103_run04/strict_genotype_control/report.json
+[INFO] Wrote benchmark VCF to results/verix_junction_diagnostic_20261103_run04/strict_genotype_control/matches.vcf

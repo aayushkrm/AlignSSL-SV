@@ -11,6 +11,37 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ## 2026-09-22 research restart
 
+### Native Verix diagnostic and real-data follow-up — 2026-11-03
+
+The [native diagnostic](docs/research/2026-11-03-verix-native-diagnostic.md)
+tests explicitly grouped synthetic BNDs with identical local breakends but
+different mate connections. Verix v0.0.2 reports `complete` for both self
+and rewired cases under its breakpoint-based contract, including zero-distance
+oriented-breakend matching. Position/orientation/genotype sensitivity controls
+behave as expected. Two related constructions include a fully linear example;
+their topology and distinct sequences are checked separately. These are not
+real caller errors or publication evidence.
+
+The [independent review](docs/research/2026-11-03-verix-independent-review.md)
+accepts that narrow observation and catches a `MATEID` header declaration
+issue. Header-only copies reproduce all 14 original native reports. EBI
+validator job1614653 returns 0 for all 20 files and warns of missing reference
+metadata; it also accepts the original header and does not prove that the
+reserved-field condition was checked. All four complete raw packets, the
+validator output, controls and failed macOS validator startup are retained or
+documented. Four allocated CPUs for one second, 1.349 measured CPU-seconds;
+no unrelated workspace used. The goal remains active and unmet.
+
+The prior-art comparison identifies Veritig as a possible sequence-based
+control when a complete, caller-reported phased path and independent truth
+exist. A [COLO829 source check](docs/research/2026-11-03-complex-path-real-evidence.md)
+identifies a three-junction contig, caller records and a separate truth VCF,
+with shared-data and passage limits; the caller does not declare a complete
+phased path. An exploratory all-record BND census is in progress and will be
+reviewed before interpretation. Current runtime reports the main model as
+GPT-6.1 Terra; its reasoning effort is not independently attested. Worker
+model and effort values are requests, not independently verified.
+
 ### Actual CNP0002230 crosswalk; no usable contrast established — 2026-11-03
 
 The [offline archive crosswalk](docs/research/2026-11-03-synvii-archive-crosswalk.md)

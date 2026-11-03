@@ -1,0 +1,11 @@
+{
+    "n_query": 1,
+    "n_target": 1,
+    "class_proportions": {
+        "complete": 0.0,
+        "partial": 0.0,
+        "aggregate": 0.0,
+        "spurious": 1.0
+    },
+    "by_class": {}
+}

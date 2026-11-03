@@ -1,0 +1,22 @@
+##fileformat=VCFv4.2
+##FILTER=<ID=PASS,Description="All filters passed">
+##source=verix_bench_v0.0.2
+##contig=<ID=chr1>
+##INFO=<ID=END,Number=1,Type=Integer,Description="End position of the SV">
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="SV type">
+##INFO=<ID=CHROM2,Number=1,Type=String,Description="Chr of the last breakpoint, if different">
+##INFO=<ID=BKPS,Number=.,Type=String,Description="List of all SV breakpoints">
+##INFO=<ID=ID,Number=.,Type=String,Description="Unique CSV identifier">
+##FORMAT=<ID=GT,Number=1,Type=String,Description="Genotype">
+##INFO=<ID=BEST_MATCH_CLASS,Number=1,Type=String,Description="Match classification: complete | partial | aggregate | spurious">
+##INFO=<ID=BEST_MATCH_ID,Number=1,Type=String,Description="ID of the best matching target event">
+##INFO=<ID=BEST_MATCH_COV,Number=1,Type=String,Description="full iff all the breakpoints of the best target are matched, else partial">
+##INFO=<ID=BEST_MATCH_TYPE,Number=1,Type=String,Description="SV type of the best matching target event">
+##INFO=<ID=BEST_N_MATCHED,Number=1,Type=Integer,Description="Number of breakpoints matched in the best alignment">
+##INFO=<ID=BEST_BND_DIST,Number=1,Type=Integer,Description="Total breakpoints distance in the best alignment">
+##INFO=<ID=BEST_IS_CONTIGUOUS,Number=0,Type=Flag,Description="Set if the best target breakpoints were matched contiguously (applies to >1 match per chromosome only)">
+##INFO=<ID=MATCHES,Number=.,Type=String,Description="All candidate alignments">
+##INFO=<ID=SPURIOUS,Number=1,Type=Integer,Description="Number of query breakpoints that match no target event">
+##INFO=<ID=FRAGMENTED,Number=0,Type=Flag,Description="Set if best target match was covered by other query calls">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO	FORMAT	SAMPLE
+chr1	1000	event1	N	<SV>	.	.	ID=event1;END=30001;SVTYPE=BND;BKPS=chr1:1000,chr1:1001,chr1:15000,chr1:15001,chr1:30000,chr1:30001;BEST_MATCH_CLASS=partial;SPURIOUS=1;BEST_MATCH_ID=event1;BEST_MATCH_COV=partial;BEST_MATCH_TYPE=BND;BEST_N_MATCHED=5;BEST_BND_DIST=0;MATCHES=event1,BND,5,0,partial,False,chr1:1000-chr1:1000,chr1:15001-chr1:15001,chr1:1001-chr1:1001,chr1:30001-chr1:30001,chr1:30000-chr1:30000	GT	0/1

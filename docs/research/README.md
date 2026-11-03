@@ -17,6 +17,10 @@ dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-11-03-verix-native-diagnostic.md`](2026-11-03-verix-native-diagnostic.md) | Actual synthetic native-interface experiment | Related four packets, controls and header correction; no real caller error |
+| [`2026-11-03-verix-independent-review.md`](2026-11-03-verix-independent-review.md) | Independent actual-packet and correction review | Accepts scoped breakpoint-set observation; flags validator and phase limits |
+| [`2026-11-03-complex-path-real-evidence.md`](2026-11-03-complex-path-real-evidence.md) | Concrete COLO829 source and evidence limits | Three junctions, unphased/ungrouped caller records; no independent phased-path claim |
+| [`2026-11-03-complex-path-prior-art.md`](2026-11-03-complex-path-prior-art.md) | Existing comparator review | Veritig, vcfdist, Aardvark, phab, TT-Mars, Verix and bndeval; no method-novelty claim |
 | [`2026-11-03-literature-delta.md`](2026-11-03-literature-delta.md) | Bounded current primary-literature update | Verix overlaps complex-event metrics; biological phased-path truth remains unverified |
 | [`2026-11-03-synvii-archive-crosswalk.md`](2026-11-03-synvii-archive-crosswalk.md) | Actual offline archive reconciliation |231samples/319runs/638readlinks; path/dosage/phenotypes unresolved; no campaign |
 | [`2026-11-03-synvii-investment-review.md`](2026-11-03-synvii-investment-review.md) | Independent logic challenge | Cut sites versus adjacencies, selection and missing measurements explicit |

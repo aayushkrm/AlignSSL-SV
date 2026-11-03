@@ -1,0 +1,32 @@
+[
+  {
+    "run": "run01",
+    "receipt_sha256": "5754b2b0133a5d7904241117ef11af1c080d9af885e7e85ac8c145c5ab7cda1f",
+    "entries_checked": 55,
+    "failed": [],
+    "case_exit_codes": {
+      "default_self": 0,
+      "default_rewired": 0,
+      "strict_self": 0,
+      "strict_rewired": 0,
+      "strict_position_control": 0,
+      "strict_orientation_control": 0,
+      "strict_genotype_control": 0
+    }
+  },
+  {
+    "run": "run02",
+    "receipt_sha256": "2475b12fc876b42317f7b4b23dbf4a37b4c2d536b5d5eca3be263701bb0ee16c",
+    "entries_checked": 58,
+    "failed": [],
+    "case_exit_codes": {
+      "default_self": 0,
+      "default_rewired": 0,
+      "strict_self": 0,
+      "strict_rewired": 0,
+      "strict_position_control": 0,
+      "strict_orientation_control": 0,
+      "strict_genotype_control": 0
+    }
+  }
+]

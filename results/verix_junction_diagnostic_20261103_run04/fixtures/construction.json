@@ -1,0 +1,94 @@
+{
+  "eligible_pairings_in_lexical_order": [
+    [
+      [
+        "a",
+        "c"
+      ],
+      [
+        "b",
+        "e"
+      ],
+      [
+        "d",
+        "f"
+      ]
+    ],
+    [
+      [
+        "a",
+        "d"
+      ],
+      [
+        "b",
+        "e"
+      ],
+      [
+        "c",
+        "f"
+      ]
+    ],
+    [
+      [
+        "a",
+        "d"
+      ],
+      [
+        "b",
+        "f"
+      ],
+      [
+        "c",
+        "e"
+      ]
+    ],
+    [
+      [
+        "a",
+        "e"
+      ],
+      [
+        "b",
+        "d"
+      ],
+      [
+        "c",
+        "f"
+      ]
+    ]
+  ],
+  "selected_truth": [
+    [
+      "a",
+      "c"
+    ],
+    [
+      "b",
+      "e"
+    ],
+    [
+      "d",
+      "f"
+    ]
+  ],
+  "selected_rewired": [
+    [
+      "a",
+      "d"
+    ],
+    [
+      "b",
+      "e"
+    ],
+    [
+      "c",
+      "f"
+    ]
+  ],
+  "reference_length": 40000,
+  "derivative_lengths": [
+    40000,
+    40000
+  ],
+  "derivative_sequences_identical": false
+}
