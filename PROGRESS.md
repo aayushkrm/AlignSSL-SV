@@ -46,6 +46,13 @@ It is prior art, not a new validated biological truth cohort. A phased-path
 residual needs native representation checks and real evidence; no experiment
 is selected from this update. Publication goal remains active and unmet.
 
+Publication checkpoint: research packet/reviews/code are pushed at `3fc4a38`.
+Under the user's existing documentation-only approval, `main` is updated at
+`68635cc4943dd640da7a5b3cdc8aaf3584588c75`; fetched commit inspection shows
+only `README.md` changed. Its blob matches the research README,
+`d1e6069540590a69369d87f8bb3e237d49c9855b`. Experimental code and results
+remain on the research branch.
+
 ### Competing sources reviewed; actual synVII source census — 2026-10-16
 
 Two distinct Luna/max scouts compare recent human/somatic/edited material
