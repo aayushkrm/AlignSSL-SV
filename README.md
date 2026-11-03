@@ -8,7 +8,15 @@ context only. It is not the foundation for new work.
 
 ## Verified and planned
 
-Latest diagnostic (2026-10-16): the all-53-row Tier2 geometry screen completed.
+Latest source diagnostic (2026-11-03): the saved CNP0002230 metadata reconcile
+231 samples, 292 experiments, 319 runs and 638 read-file links. No raw reads
+were downloaded. This establishes archive membership, not a resolved
+chromosome-path, dosage or quantitative fitness dataset. No usable matched
+contrast or publication direction is established. Retrospective fitness
+inference is parked pending specific missing evidence.
+See [the archive crosswalk](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-03-synvii-archive-crosswalk.md).
+
+Completed diagnostic (2026-10-16): the all-53-row Tier2 geometry screen completed.
 It retained 15,460 observed read-name groups, including 4,170 UNKNOWN groups.
 Native output contains 21 Chimeric breakpoint labels and no Foldback labels;
 17 Chimeric labels occur in SA-consistent observed groups. Independent review
@@ -35,8 +43,10 @@ investment stop, not a biological null.
 
 The complete HG002 DNA read input passed extraction and custody review:
 5,359,077 original read identities and 80,344,827,828 bases. Full input data
-remain on the cluster, outside Git. No new calling, assembly or RNA campaign
-is released. New research questions are being compared; no publication result
+were preserved in permanent cluster storage, outside Git. Their full integrity
+has not been rechecked since the October scratch expiry.
+No new calling, assembly or RNA campaign is released.
+New research questions are being compared; no publication result
 is claimed. See [the decision](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-11-hg002-calling-release-decision.md)
 and [the input result](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-10-11-hg002-source-readset-result.md).
 
