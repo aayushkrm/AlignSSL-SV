@@ -8,6 +8,19 @@ context only. It is not the foundation for new work.
 
 ## Verified and planned
 
+Latest exploratory checks (2026-11-03 UTC): in one public COLO829 file, a
+case-only change to BND mate-contig names changes how the pinned Verix version
+groups records. Synthetic replays show compatible SnpEff 5.1d case behavior
+and a separate nanomonsv 0.7.1 base issue that was fixed upstream. The exact
+historical intermediate files are unavailable, and independent review of the
+real-data checks is pending. These observations do not establish a biological
+error or a publication result. See the [diagnostic](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-03-colo829-contig-alias-diagnostic.md)
+and [source replay](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-04-nanomonsv-source-reproduction.md).
+
+Recent clinical papers already use insertion sequence with SpliceAI; a generic
+mobile-element splice prediction method is not a new contribution. See the
+[prior-art check](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-04-mei-prior-art-check.md).
+
 Latest source diagnostic (2026-11-03): the saved CNP0002230 metadata reconcile
 231 samples, 292 experiments, 319 runs and 638 read-file links. No raw reads
 were downloaded. This establishes archive membership, not a resolved
