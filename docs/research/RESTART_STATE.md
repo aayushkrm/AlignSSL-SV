@@ -32,6 +32,26 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+November3 checkpoint: [actual CNP0002230 crosswalk](2026-11-03-synvii-archive-crosswalk.md)
+reconciles the three saved October16 metadata files against TableS3:
+231samples/292experiments/319runs/638readlinks, two separate references.
+All67SCRaMbLE source rows have exact aliases; three control-alias text
+differences and all unmatched records remain explicit. No eligible resolved
+path/dosage/fitness contrast is established. Park retrospective inference
+pending a named source that can resolve those gaps; no reads or job launched.
+[Logic review](2026-11-03-synvii-investment-review.md) corrects cut-site versus
+new-adjacency conditioning and the generic novelty premise. After the updated
+objective, Raman `01a1a210-2e23-7231-90c0-7a3755c98b63`, requestedTerra/max,
+accepts the actual packet accounting and park decision after independent
+reproduction. Old handles are not assumed active. The distinct
+[Luna/max literature delta](2026-11-03-literature-delta.md) adds Verix as
+direct prior art for breakpoint completeness/fragmentation; no new study
+is selected. Main serving-model
+configuration is not independently attested. Own cluster queue is empty;
+permanent geometry-run02 exists, expired AlignSSL scratch is no longer listed.
+The unrelated MCF7 workspace is untouched. Twelve focused parser controls
+pass. Full publication goal remains active/unmet.
+
 October16 next-action checkpoint: the completed geometry assay/reviews and
 current allocation STOP are pushed (55a2f75; raw small packet ab4a89e).
 Main README only is promoted at98c3d9c, fetched/verified onlyREADME.md changed.

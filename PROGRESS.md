@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-10-16** (local; earlier milestones retain their recorded dates). The research-restart section immediately below
+_Last updated: **2026-11-03** (UTC; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,41 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+### Actual CNP0002230 crosswalk; no usable contrast established — 2026-11-03
+
+The [offline archive crosswalk](docs/research/2026-11-03-synvii-archive-crosswalk.md)
+reconciles saved 16 October public metadata: 231 samples, 292 experiments,
+319 runs and all 638 read-file links, plus two reference links. All 67
+published SCRaMbLE strain rows have exact alias joins. Three control aliases
+have literal text differences; one is unspecified. All 160 archive-only
+samples and 56 source-only strains remain explicit. The
+[unchanged inputs and derived inventory](results/synvii_archive_inventory_20261103/README.md)
+are preserved. No raw read or reference body was acquired.
+
+This packet provides no resolved path/dosage matrix or quantitative fitness
+replicates. Eligibility remains UNKNOWN. Park retrospective fitness inference
+unless a named additional source can resolve these gaps; do not start a raw
+download or campaign merely to preserve the direction. The
+[independent logic review](docs/research/2026-11-03-synvii-investment-review.md)
+also distinguishes cut sites from new adjacencies and rejects generic
+“architecture matters” as sufficient novelty. The updated Terra/max-requested
+[packet reviewer](docs/research/2026-11-03-synvii-packet-review.md) independently
+reproduces the JSON and accepts the accounting and park decision. It flags
+additional genotype text and a figure-reference mismatch for later resolution.
+Model requests are recorded,
+not independently backend-attested. Final parser, historical progress and
+README checks: 25 pass in 5.30 s.
+
+Fresh own cluster queue is empty. Permanent HOME geometry-run02 exists;
+the expired AlignSSL scratch workspace is no longer listed. The unrelated
+MCF7 workspace is untouched. Use all useful resources and parallel experiments
+for justified workloads; this metadata check needs no cluster allocation.
+The [bounded literature update](docs/research/2026-11-03-literature-delta.md)
+finds Verix now covers complex-event breakpoint completeness/fragmentation.
+It is prior art, not a new validated biological truth cohort. A phased-path
+residual needs native representation checks and real evidence; no experiment
+is selected from this update. Publication goal remains active and unmet.
 
 ### Competing sources reviewed; actual synVII source census — 2026-10-16
 

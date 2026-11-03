@@ -6,18 +6,22 @@ The files separate verified code findings, experimental plans, external
 literature, and independent criticism so that hypotheses cannot silently become
 results.
 
-Current scientific decision, 2026-10-14: STOP the selected simple-inversion
-case as a new-method lead. The accepted input census remains evidence, but
-known allele competition, read linkage and local assembly do not define a
-distinct contribution. Earlier HG002 annotation and HG008 generic-presence
-stops remain in force. Accepted whole DNA and all historical results stay
-preserved. The publication goal remains active and unmet. Two stronger
-questions have been compared; a bounded existing-input geometry screen is
-selected, not a research campaign. Older rows below
-retain dated checkpoints, not current launch permissions.
+Current scientific state, 2026-11-03: the actual synVII archive crosswalk
+establishes metadata membership, not an eligible structural/phenotype
+contrast. Park retrospective fitness inference pending specific missing
+evidence. Earlier simple-inversion, HG002 annotation, HG008 generic-presence
+and current HiFi filter-error investment stops remain in force. The complete
+Tier2 geometry screen and all prior failures remain evidence. No publication
+direction is selected. The goal remains active and unmet. Older rows retain
+dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-11-03-literature-delta.md`](2026-11-03-literature-delta.md) | Bounded current primary-literature update | Verix overlaps complex-event metrics; biological phased-path truth remains unverified |
+| [`2026-11-03-synvii-archive-crosswalk.md`](2026-11-03-synvii-archive-crosswalk.md) | Actual offline archive reconciliation |231samples/319runs/638readlinks; path/dosage/phenotypes unresolved; no campaign |
+| [`2026-11-03-synvii-investment-review.md`](2026-11-03-synvii-investment-review.md) | Independent logic challenge | Cut sites versus adjacencies, selection and missing measurements explicit |
+| [`2026-11-03-synvii-packet-review.md`](2026-11-03-synvii-packet-review.md) | Updated Terra/max-requested actual packet review | Separate evidence review; no biological result inferred from metadata |
+| [`2026-10-16-matched-dosage-architecture-triage.md`](2026-10-16-matched-dosage-architecture-triage.md) | Preserved conditional architecture scout | Later review supersedes ambiguous structural conditioning and noise-only effect threshold |
 | [`2026-10-16-synvii-source-census.md`](2026-10-16-synvii-source-census.md) | Actual checksum-verified supplement census |127named strains/67SCRaMbLE labels; not the full219-clone quantitative panel; next source manifest check |
 | [`2026-10-16-controlled-sv-opportunity-scout.md`](2026-10-16-controlled-sv-opportunity-scout.md) | Controlled non-human resource comparison | Broad dosage mechanism already prior art; conditional matched-dosage architecture source diagnostic only |
 | [`2026-10-16-new-evidence-opportunity-scout.md`](2026-10-16-new-evidence-opportunity-scout.md) | Recent human/somatic/edited evidence comparison | No publication lead selected; COLO829 access and germline/somatic distinctions explicit |
