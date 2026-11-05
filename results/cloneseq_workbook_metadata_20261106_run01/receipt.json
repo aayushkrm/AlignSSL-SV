@@ -1,0 +1,47 @@
+{
+  "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12629990.1/41586_2025_9580_MOESM1_ESM.zip?md5=053c2a18cbd1da4a250efc78e49b57e7",
+  "expected_size": 18466636,
+  "expected_md5": "053c2a18cbd1da4a250efc78e49b57e7",
+  "transfer_cap_bytes": 20971520,
+  "script_sha256": "a5f4985d7a6599a859c958eae333d918b24b676f76a57787e90f32c00c6bb8c0",
+  "started_utc": "2026-11-05T21:00:06.590366+00:00",
+  "attempts": [
+    {
+      "route": "local",
+      "argv": [
+        "curl",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "60",
+        "--max-filesize",
+        "20971520",
+        "https://pmc-oa-opendata.s3.amazonaws.com/PMC12629990.1/41586_2025_9580_MOESM1_ESM.zip?md5=053c2a18cbd1da4a250efc78e49b57e7"
+      ],
+      "exit_code": 0,
+      "bytes": 18466636,
+      "md5": "053c2a18cbd1da4a250efc78e49b57e7",
+      "sha256": "5615ca8ceedfe860aed274f08d284f06d281b0eec28107c22f3ffddd07e2ca84",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_file": "/Users/akm/aayushkrm-AlignSSL/runs/cloneseq_workbook_metadata_20261106_run01/attempt01.zip"
+    }
+  ],
+  "successful_attempt": 1,
+  "extracted": {
+    "SupplementaryTables.xlsx": {
+      "bytes": 19158931,
+      "sha256": "7fd3bf312acb0ba617d28878bd9b4a54122164fb842e933d6a13c5efdc53ee33",
+      "zip_crc32_verified_on_full_read": "683021a1"
+    },
+    "SupplementaryTables-legends.docx": {
+      "bytes": 15174,
+      "sha256": "df8e3b751d0de6b461f61885a5c0fe51cf0cc690922216eebae22c6ce1b717f2",
+      "zip_crc32_verified_on_full_read": "3482c578"
+    }
+  },
+  "metadata_sha256": "26bbe616391c8bd3439b4adc615c0dab527f781d3bd3c2d37397715a53cc6ed6"
+}

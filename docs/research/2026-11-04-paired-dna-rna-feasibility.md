@@ -56,7 +56,10 @@ also compares pangenome-derived and standard calls for expression association,
 fine-mapping and prediction using 430 1000 Genomes samples with short-read
 RNA-seq. Its question and assay are not identical to the 60 direct-RNA data,
 but they directly narrow any generic claim that pangenome SVs add information
-beyond standard variants. The Life Sciences Literature bioRxiv metadata
+beyond standard variants. The same preprint also reports a control analysis
+of 201 HPRC samples with PacBio Kinnex long-read RNA; those samples contributed
+to the graph used in that control. This is close prior art, with a different
+assay and a different sample/graph relationship. The Life Sciences Literature bioRxiv metadata
 lookup retrieved the preprint; its publication-link lookup returned no entry
 on 2026-11-05 UTC, which does not prove that no later publication exists.
 

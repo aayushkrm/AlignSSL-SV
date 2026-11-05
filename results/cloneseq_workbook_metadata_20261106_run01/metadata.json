@@ -1,0 +1,63 @@
+{
+  "sheets": [
+    {
+      "name": "S1 - Coverage",
+      "declared_dimension": "A1:I153"
+    },
+    {
+      "name": "S2 - Tumor Fractions",
+      "declared_dimension": "A1:L153"
+    },
+    {
+      "name": "S3 - Clone frequencies (SVs)",
+      "declared_dimension": "A1:J449"
+    },
+    {
+      "name": "S4 - Clone frequencies (SNVs)",
+      "declared_dimension": "A1:J354"
+    },
+    {
+      "name": "S5 - Clone features",
+      "declared_dimension": "A1:C69"
+    },
+    {
+      "name": "S6 - Error rates & LOD",
+      "declared_dimension": "A1:F130"
+    },
+    {
+      "name": "S7 - SV read counts",
+      "declared_dimension": "A1:R72608"
+    },
+    {
+      "name": "S8 - SNV read counts",
+      "declared_dimension": "A1:O147985"
+    },
+    {
+      "name": "S9 - SV metadata",
+      "declared_dimension": "A1:AC3719"
+    },
+    {
+      "name": "S10 - SNV metadata",
+      "declared_dimension": "A1:I6957"
+    },
+    {
+      "name": "S11 - clinical data",
+      "declared_dimension": "A1:I1906"
+    },
+    {
+      "name": "S12 - recurrence data",
+      "declared_dimension": "A1:C36"
+    },
+    {
+      "name": "S13 - CA125",
+      "declared_dimension": "A1:C921"
+    },
+    {
+      "name": "S14 - surgeries",
+      "declared_dimension": "A1:D37"
+    }
+  ],
+  "legend_nonempty_paragraphs": 29,
+  "legend_text_sha256": "4dba7c8f160e6174698d0bbf9ad99a929af712d8cd7b77668a6c801920b3b72c",
+  "limits": "Workbook sheet names and declared dimensions plus document legends only; no worksheet rows inspected."
+}

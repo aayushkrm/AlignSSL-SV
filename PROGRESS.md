@@ -77,6 +77,11 @@ both SV- and SNV-derived clone estimates; it is closer prior art than the
 initial scout identified. This is a conditional question, not a selected study.
 A Sol/max scientific-investment comparison and independent reviewer scrutiny
 were requested before deciding what low-cost evidence to obtain next.
+The prior CloneSeq-SV [supplement metadata check](docs/research/2026-11-06-cloneseq-supplement-inventory.md)
+verified the public archive and found sheets described as SV/SNV read counts,
+clone estimates, assay errors and recurrence annotations. No patient data
+rows were inspected; joinability, independent truth and fair budgets remain
+unverified. The workbook is retained outside Git.
 
 The focused suite passed 48 tests; 34 receipt and script SHA256 checks passed.
 On November 5 UTC the project's cluster queue was empty. The only listed

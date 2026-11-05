@@ -54,3 +54,23 @@ reading patient data rows. Record source, commands, hashes, the complete
 sheet inventory and legend descriptions. This may establish what tables are
 described, not whether their data are usable, independently validated or
 adequately controlled. A scientific comparison would require a new protocol.
+
+## Workbook-metadata result
+
+The separate scope above was pushed as `456dbc5` before the full download.
+The public archive arrived through the local route with the declared
+18,466,636-byte size and publisher MD5. Both named members were fully
+decompressed and passed the ZIP library's CRC checks. The archive and
+members are retained outside Git; the [receipt and sheet metadata](../../results/cloneseq_workbook_metadata_20261106_run01/)
+contain their hashes. Seven source/script/output SHA256 checks passed.
+
+The workbook has 14 named sheets. Its legends describe coverage and tumor
+fraction, separate SV and SNV clone-frequency estimates, per-patient assay
+error rates, individual SV and SNV read counts, marker/clone metadata, and
+clinical and recurrence annotations. These are names and legend descriptions;
+the reported worksheet dimensions are declared ranges, not independently
+counted observations. No worksheet data rows were inspected. The presence of
+these table categories does not prove that rows join correctly, that an
+independent relapse truth exists, or that SV and SNV assay budgets can be
+matched. The original paper analyzed the same cohort, so a reanalysis would
+not itself be independent replication.
