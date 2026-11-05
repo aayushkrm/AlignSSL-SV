@@ -13,6 +13,18 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 
 ### Validator controls and paired-source feasibility — 2026-11-05 UTC
 
+An [independent review](docs/research/2026-11-06-independent-interop-review.md)
+reproduced 209 packet-file hashes and checked the raw comparator outputs.
+SnpEff's uppercasing and potential downstream consequences were already
+reported in 2019 and 2024. Stop this interoperability case as a publication
+lead; retain it as a bounded regression example. The review also found that
+all 66 transformed records retain stale `ANN` alleles, so the altered file
+must not be released as an annotation-consistent correction. The validator
+fixture cannot separate a remote-name mismatch from mate inconsistency. The
+reviewer could not independently verify the executed cluster binary or prove
+the protocol predated execution from repository evidence. No biological or
+clinical impact is established.
+
 In the [synthetic EBI validator check](docs/research/2026-11-04-ebi-validator-case-protocol.md),
 the tested v0.10.2 command did not warn about undeclared BND mate-contig
 names. It did warn about an undeclared local chromosome and rejected the
@@ -26,6 +38,15 @@ finds 11 exact RNA sample-title matches in Vienna alignment manifests and 13
 additional exact matches in a separate ONT-500 metadata table: 24 distinct
 titles among 60 RNA samples. A public object listing contains one VCF and
 one index for each of the 13 ONT-500 names; their contents were not fetched.
+The RNA study's public FLAIR count matrix was separately downloaded with its
+publisher MD5 verified. Its first row names all 60 RNA titles, including all
+24 DNA-matched titles; no expression rows were inspected. The compressed
+matrix is retained outside Git.
+An older HGSVC2 PanGenie release lists 56 of the 60 RNA sample-name tokens,
+including 34 outside the prior 24; the three-source union is 58 titles. This
+is a sample-list join: no VCF genotype, callability or matched aliquot was
+verified, and the PanGenie genotypes come from short reads. Earlier HGSVC
+studies already analyze SV/QTLs and phased SV/isoform relationships.
 The remaining 36 titles have no exact match in these two lists, not necessarily
 in other DNA resources. Identity, relatedness, reference reconciliation,
 allele-level outcomes, statistical power and novelty remain unresolved.
@@ -35,8 +56,10 @@ This is an exploratory alternative, not an accepted publication direction.
 The focused suite passed 48 tests; 34 receipt and script SHA256 checks passed.
 On November 5 UTC the project's cluster queue was empty. The only listed
 scratch workspace was for another project and was left untouched. Local
-available space was about 41 GiB. Independent reviews and the search for a
-stronger direction were dispatched; their outcomes are not yet assumed.
+available space was about 41 GiB. The independent reviewer completed the
+interoperability assessment; other bounded reviews and a direction scout
+were dispatched. The requested reviewer was Terra/max; backend model and effort
+were not independently attested.
 No large experiment or positive biological conclusion is authorized by these
 checks. The publication goal remains active and unmet.
 

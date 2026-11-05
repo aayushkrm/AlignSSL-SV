@@ -1,0 +1,31 @@
+{
+  "url": "https://zenodo.org/api/records/18763244",
+  "retrieved_utc": "2026-11-05T20:30:06.381724+00:00",
+  "script_sha256": "8457cddb40a9c0d8130454da9f8cb422a097304fa7ac4f3f001647a2a234a690",
+  "max_bytes": 2097152,
+  "attempts": [
+    {
+      "route": "local",
+      "argv": [
+        "curl",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "30",
+        "--max-filesize",
+        "2097152",
+        "https://zenodo.org/api/records/18763244"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 29191,
+      "stdout_sha256": "fb1d507c7d1e79bf5bbc4c2b29bf4aa833c2f21a289e70898f087ab01bd5b025"
+    }
+  ],
+  "successful_attempt": 1,
+  "files_listed": 81
+}

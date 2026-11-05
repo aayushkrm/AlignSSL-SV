@@ -38,12 +38,25 @@ malformed-ALT controls do trigger a warning and error respectively. One pending
 job was cancelled before allocation, and a separate four-CPU job completed;
 both attempts and receipts are retained. These observations do not establish
 clinical impact or that the validator promises remote-mate checking.
+The [independent interoperability review](2026-11-06-independent-interop-review.md)
+checked 209 packet hashes and found producer-side case behavior reported in
+2019 and 2024. **Stop as a publication lead**; preserve as a bounded regression
+case. All 66 transformed records have stale `ANN` allele strings; do not use
+the transformed copy as a corrected release. The validator's executed binary
+and pre-execution protocol timestamp could not be independently attested.
 
 The [paired DNA/RNA metadata check](2026-11-04-paired-dna-rna-feasibility.md)
 finds 11 exact RNA-title matches in Vienna alignment manifests and 13 disjoint
 matches in ONT-500 metadata, 24 of 60 titles in total. A complete listing names
 one Sniffles VCF and index for each ONT-500 match; file contents, exact sample
 provenance, assembly reconciliation, coverage, labels and novelty are unverified.
+The author's public FLAIR count file matches its published size and MD5; its
+first row contains all 60 RNA titles and all 24 DNA-matched titles exactly.
+No expression values were inspected; the compressed matrix is outside Git.
+The HGSVC2 short-read-genotyped source lists match 56 RNA name tokens, 34 beyond
+the earlier 24; the three-source union is 58. No VCF headers, allele genotypes
+or biological identity were checked. HGSVC2 and HGSVC3 contain close prior art
+on SV-associated expression, splicing and phased isoforms.
 Thirty-six names have no exact match in these two tables; do not infer aliases
 or absence from other resources. Prior work already covers generic MEI-splicing
 associations and DNA/RNA integration. No campaign has been selected.
@@ -52,7 +65,8 @@ The focused suite passed 48 tests and 34 receipt/script hashes matched. The
 project queue was empty; the only active scratch workspace was unrelated and
 untouched. Available local space was about 41 GiB. An independent Terra/max
 review and three bounded Luna/max tasks were requested; model/effort settings
-are requests, not independent backend attestation. Their outcomes are pending.
+are requests, not independent backend attestation. The interoperability
+review is complete; the other task outcomes are pending.
 The scientific publication goal remains active and unmet.
 
 November3 UTC later checkpoint: exploratory COLO829 [BND anchor census](2026-11-03-colo829-bnd-anchor-census.md)

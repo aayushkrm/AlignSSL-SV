@@ -1,0 +1,24 @@
+2020-09-02
+Contributor: HHU / Marschall Lab
+Contact: Jana Ebler (jana.ebler@hhu.de) / Tobias Marschall (tobias.marschall@hhu.de)
+
+PanGenie genotyping of Freeze 3 calls into the 3202 deep coverage samples from the 1000 Genomes Project.
+
+As reference panel of asssembly-based phased variants, the following (Freeze 3 based) call set was used:
+ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/working/20200825_HHU_genotyping-vcf-freeze3/
+
+PanGenie (git version 4aafdf6) was run with the following parameters for each sample separately:
+-i <reads.fasta> -v <input.vcf> -r <reference.fasta> -o <output-prefix> -s <sample-id> -j 24 -t 24 -g
+
+The resulting VCFs are merged across samples (using bcftools) to create the multi-sample VCF:
+pangenie_merged_multi_all.vcf.gz
+
+Removing alls SNVs resulted in the following (much smaller) file:
+pangenie_merged_multi_nosnvs.vcf.gz
+
+Additionally, we converted all variants back into their original bi-allelic representation and ran family-based phasing for the 1749 related samples from 571 families (whatshap phase --ped, version 1.0), resulting in:
+pangenie_merged_bi_all.vcf.gz
+pangenie_merged_bi_nosnvs.vcf.gz
+
+The complete list of deep coverage samples is contained in the two *sample-list.txt supplementary files.
+

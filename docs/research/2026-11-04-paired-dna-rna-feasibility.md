@@ -29,6 +29,21 @@ already describes FLAIR, SQANTI3 and transcript-level QTL analysis for these
 is a preprint. A repeat of its generic transcript-QTL workflow would not be
 a new contribution.
 
+The earlier [Ebert et al. HGSVC study](https://pmc.ncbi.nlm.nih.gov/articles/PMC8026704/)
+also genotyped assembly-discovered SVs in 1000 Genomes short-read genomes and
+tested expression and splicing associations in a combined set of 427 donors.
+It is direct prior art for population-scale SV/QTL analysis, as already noted
+in the project's [October prior-art decision](2026-10-09-public-paired-falsifier-decision.md).
+Its short-read-genotyped release may be a separate source to check for the 60
+RNA titles, but neither its exact sample coverage nor its per-allele accuracy
+has been verified for this purpose. A new study would need a specific residual
+beyond that work and controls for linked small variants and mapping bias.
+The [2025 HGSVC3 study](https://pmc.ncbi.nlm.nih.gov/articles/PMC12350169/)
+also compares haplotype-phased Iso-Seq isoforms for SV-containing genes and
+examines nearby differential expression in 12 individuals. Merely combining
+phased SVs with long-read isoforms is therefore established prior work; this
+does not rule out a precisely defined, independently tested residual.
+
 ## Source-only check, specified before fetching metadata
 
 Retrieve small public source manifests for the Vienna resource and an ENA
@@ -130,3 +145,85 @@ retains the other 36 names and does not infer aliases. All 24 candidates still
 need sample provenance, allele presence, read coverage, reference and outcome
 checks. They may not be statistically independent; relatives and correlated
 haplotypes require explicit handling.
+
+## Processed RNA products: metadata-only protocol
+
+Before inspecting the deposit, the RNA authors' pinned repository README
+names Zenodo DOI `10.5281/zenodo.18763244` as a source of BAMs and derived
+quantifications. Retrieve only the corresponding public Zenodo record metadata
+and inspect its file names, sizes, declared checksums, version and license.
+Retain the source response and a local SHA256; do not download file contents
+or claim that a named product contains usable sample-level outcomes. Declared
+checksums are not verified without downloading the corresponding files. This
+check does not select a scientific endpoint or authorize a training campaign.
+
+The [Zenodo record](https://zenodo.org/records/18763244) was retrieved on
+2026-11-05 UTC. Its metadata identifies version V2, license CC-BY-4.0 and
+81 files. Sixty distinct `sorted_alignment_<sample>.bam` names cover all 60
+RNA titles, including the 24 titles matched to DNA metadata. The listing has
+no `.bai` or `.csi` filenames. It also names FLAIR transcript counts
+(`Geuvadis_60EUR_Transcripts_FLAIR_COUNTS.tsv.gz`, 7,577,751 bytes), three
+transcript TPM files and gene-level quantifications. The listed names do not
+verify the file contents, reference, identity or coverage; no deposited file
+was downloaded for this inventory. The source response, local SHA256, and
+retrieval command are preserved in the [metadata packet](../../results/rna_zenodo_record_20261106_run01/).
+
+## Processed RNA count header: separate planned check
+
+After the metadata-only inventory, fetch the one named FLAIR count file to
+the project `runs` directory, verify its full size and publisher-declared MD5,
+and inspect only its first decompressed row. Compare exact header fields with
+the 60 ENA titles and the 24 DNA-matched titles, retaining unmatched names.
+Keep the compressed file out of Git; record the source URL, commands, hashes,
+header and matching summary. Do not inspect expression values or use the
+matches as evidence of measured alleles, biological significance or power.
+If the first row is not a sample header, report that limit rather than guessing.
+
+The local download succeeded: 7,577,751 bytes, publisher MD5
+`3b841d33a7c7bfe4b250f700d1053b03`, local SHA256
+`6e8566ebb772125769ad417e305e21bafde6597666ec228d03f22c209acf960c`.
+The first row has 61 fields: `ids` followed by 60 distinct fields matching
+all 60 ENA titles exactly, including all 24 names matched to the DNA metadata.
+No matched sample field is duplicated. The [receipt and header summary](../../results/rna_flair_header_20261106_run01/)
+retain the full first row and every exact match. The compressed public matrix
+is retained outside Git in the project `runs` directory. No expression rows
+were inspected. A sample name in a count header is not evidence that any
+particular transcript, structural allele or sequencing molecule is usable.
+
+## Additional short-read-genotyped SV source: planned metadata check
+
+The [HGSVC2 source page](https://internationalgenome.org/data-portal/data-collections/hgsvc2/)
+describes PanGenie genotypes in 3,202 high-coverage 1000 Genomes samples.
+The [release listing](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/release/v1.0/PanGenie_results/)
+names two small sample lists, with 2,504 and 698 in their filenames, alongside
+large VCFs. Retrieve only those lists and the adjacent README and manifest;
+preserve responses and hashes. Compare exact sample identifiers to all 60 RNA
+titles, report duplicates and unmatched names, and separately identify the
+subset outside the prior 24 long-read DNA metadata matches. Do not retrieve VCF
+bodies or interpret listed samples as verified genotypes, long-read DNA,
+callability, biological identity, or statistical power. This source is older
+and its discovery/calling biases require appropriate comparison with newer
+long-read callsets. Inspect the lists' format before choosing a parsing field.
+
+The source README calls the two files its complete deep-coverage sample list.
+Each observed row has exactly two underscore-separated fields matching
+`(HG|NA)[0-9]{5}_ERR[0-9]+`. Before calculating overlap, use the left field
+as the source's sample-name token and retain the full sample/run row. Reject
+any rows outside this format and report token duplicates across both lists.
+This is still a sample-list join, not a check of VCF sample-column names.
+
+All four small text responses were retrieved locally. The release manifest's
+declared sizes and MD5 values match the README and both sample-list files.
+The two lists contain 3,202 rows with 3,202 distinct sample-name tokens and
+no duplicates. Of the 60 RNA titles, **56** exactly match a token; **34** of
+those matches are outside the earlier 24-title long-read DNA metadata union.
+Thus **58** RNA titles match at least one of these three source lists, with
+22 appearing in both the short-read PanGenie list and the earlier 24-title
+union. The four absent from PanGenie are `HG00098`, `HG00104`, `HG00124`,
+and `HG00249`; the first and third have a prior long-read metadata match.
+The [packet](../../results/hgsvc2_sample_lists_20261106_run01/) retains all
+60 comparisons and full matching sample/run rows. These counts do not prove
+VCF-column membership, SV genotype quality or identity of cell-line aliquots.
+The protocol was written before these checks during this session, but was
+first committed afterward; the repository cannot independently prove its
+pre-execution state.

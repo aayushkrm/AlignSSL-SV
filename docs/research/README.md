@@ -8,11 +8,15 @@ results.
 
 Current scientific state, 2026-11-05 UTC: exploratory COLO829 representation
 checks reproduce a known upstream nanomonsv fix and a possible SnpEff case
-mechanism; the real-data findings remain independently unreviewed. Recent
+mechanism. Independent review finds the producer behavior was reported years
+ago and stops it as a publication lead; the case remains a bounded regression
+example. Recent
 clinical studies already apply sequence-aware SpliceAI to long insertions;
 no generic MEI-splice method novelty or suitable independent cohort is shown.
-A synthetic EBI validator check and a 24-title paired DNA/RNA metadata
-crosswalk provide bounded feasibility evidence, not biological results.
+A synthetic EBI validator check and paired DNA/RNA sample-list crosswalks
+provide bounded feasibility evidence, not biological results. A public RNA
+count header contains 60 titles; 58 appear in at least one of three DNA
+sample lists, subject to source-specific limits.
 The actual synVII archive crosswalk
 establishes metadata membership, not an eligible structural/phenotype
 contrast. Park retrospective fitness inference pending specific missing
@@ -24,16 +28,17 @@ dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
-| [`2026-11-04-ebi-validator-case-protocol.md`](2026-11-04-ebi-validator-case-protocol.md) | Synthetic validator controls and execution | Tested command did not warn on two remote-contig probes; local and malformed-ALT controls triggered; review pending |
-| [`2026-11-04-paired-dna-rna-feasibility.md`](2026-11-04-paired-dna-rna-feasibility.md) | Two-source exact-title crosswalk and prior art | 24 of 60 titles match one of two DNA metadata sets; contents, sample provenance and scientific value unresolved |
-| [`2026-11-03-colo829-contig-alias-diagnostic.md`](2026-11-03-colo829-contig-alias-diagnostic.md) | Exploratory native-tool real-file interoperability check | 66 singleton versus 33 paired BND groups; exact input change and failed attempt retained; independent review pending |
+| [`2026-11-06-independent-interop-review.md`](2026-11-06-independent-interop-review.md) | Independent scientific and provenance audit | Stop case behavior as publication lead; 209 packet hashes pass; stale ANN and timestamp/validator limits identified |
+| [`2026-11-04-ebi-validator-case-protocol.md`](2026-11-04-ebi-validator-case-protocol.md) | Synthetic validator controls and execution | Tested command did not warn on two remote-contig probes; reviewer identified fixture and provenance limits |
+| [`2026-11-04-paired-dna-rna-feasibility.md`](2026-11-04-paired-dna-rna-feasibility.md) | Three-source exact-title crosswalk, RNA count header and prior art | 24 long-read DNA-list matches; 56 older short-read genotype-list matches; union 58 of 60; allele outcomes unresolved |
+| [`2026-11-03-colo829-contig-alias-diagnostic.md`](2026-11-03-colo829-contig-alias-diagnostic.md) | Exploratory native-tool real-file interoperability check | 66 singleton versus 33 paired BND groups; reviewer notes prior art, alias assumptions and stale ANN alleles |
 | [`2026-11-03-colo829-bnd-anchor-census.md`](2026-11-03-colo829-bnd-anchor-census.md) | Whole-file caller/truth BND census | Differences alone are not errors; source investigation and synthetic replay link caller pattern to known version behavior |
 | [`2026-11-03-colo829-junction-sequence-check.md`](2026-11-03-colo829-junction-sequence-check.md) | Unfinished worker draft | J1–J3 sequence interpretations remain unaccepted; discrepancy and incomplete worker status explicit |
 | [`2026-11-04-nanomonsv-source-reproduction.md`](2026-11-04-nanomonsv-source-reproduction.md) | Synthetic known-fix reproduction | Old and fixed official source versions run on eight artificial cases; no claim about exact historical binary |
 | [`2026-11-04-snpeff-case-reproduction.md`](2026-11-04-snpeff-case-reproduction.md) | Synthetic SnpEff parser/serializer replay | 5.1d uppercases two synthetic ALT mate contigs; historical pipeline provenance unproven |
 | [`2026-11-04-snpeff-annotation-replay.md`](2026-11-04-snpeff-annotation-replay.md) | Full native annotation replay | Tested 5.1d and 5.4c builds change synthetic BND mate-contig case; no prevalence or clinical claim |
 | [`2026-11-04-truvari-bnd-case-diagnostic.md`](2026-11-04-truvari-bnd-case-diagnostic.md) | Second native comparator on synthetic input | Self matches, case-only cross mismatches; one adjacency, no biological accuracy claim |
-| [`2026-11-04-truvari-colo829-case-protocol.md`](2026-11-04-truvari-colo829-case-protocol.md) | Second native comparator on projected real-file records | 66 self matches versus zero case-only cross matches; same source, no GT or biological accuracy claim; independent review pending |
+| [`2026-11-04-truvari-colo829-case-protocol.md`](2026-11-04-truvari-colo829-case-protocol.md) | Second native comparator on projected real-file records | 66 self matches versus zero case-only cross matches; same source, no GT or biological accuracy claim; scoped review complete |
 | [`2026-11-04-independent-callset-inventory.md`](2026-11-04-independent-callset-inventory.md) | Bounded external-source census | 1,100 archive members; four selected headers lack SnpEff/ANN declarations; no prevalence or verified second annotated cohort |
 | [`2026-11-04-mei-prior-art-check.md`](2026-11-04-mei-prior-art-check.md) | Primary-literature challenge to MEI scout | Two clinical papers already use sequence-aware SpliceAI; cohort and specific residual unestablished |
 | [`2026-11-03-independent-opportunity.md`](2026-11-03-independent-opportunity.md) | Conditional MEI-splice scout | Retained proposal; follow-up prior-art check supersedes generic novelty premise |

@@ -60,4 +60,12 @@ four-CPU batch ran as job `1614659` on the `amd_256M` partition and completed
 maximum step RSS. The [packet](../../results/ebi_validator_case_20261104_run01/README.md)
 retains both attempts, source-generated inputs, full native reports,
 accounting and 11 verified file hashes. No unrelated job was touched.
-Independent review of the wider findings remains pending.
+
+The later [independent review](2026-11-06-independent-interop-review.md)
+accepts the scoped observations but notes that the fixture changes both the
+remote token and mate consistency, and there is no positive control for a
+promised remote-mate check. The cluster binary was not independently inspected;
+its expected hash agrees with published release metadata. The reviewer could
+not independently establish that the protocol's exact contents predated the
+run: Git first recorded it afterward. The review recommends no expensive
+campaign or major novelty, biological-accuracy or clinical-impact claim.

@@ -1,0 +1,597 @@
+{
+  "source_rows": 3202,
+  "distinct_source_sample_tokens": 3202,
+  "duplicate_source_tokens": {},
+  "rna_titles": 60,
+  "rna_titles_matching_pangenie_list": 56,
+  "additional_matches_beyond_prior_24": 34,
+  "rows": [
+    {
+      "rna_title": "HG00098",
+      "pangenie_list_rows": [],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00099",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00099_ERR3240116"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00100",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00100_ERR3240117"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00101",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00101_ERR3240118"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00102",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00102_ERR3240119"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00103",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00103_ERR3240120"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00104",
+      "pangenie_list_rows": [],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "HG00110",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00110_ERR3240126"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00111",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00111_ERR3240127"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00112",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00112_ERR3240128"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00115",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00115_ERR3240131"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00116",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00116_ERR3240132"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00117",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00117_ERR3240133"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00118",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00118_ERR3240193"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "HG00119",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00119_ERR3240194"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00121",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00121_ERR3240195"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00124",
+      "pangenie_list_rows": [],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00126",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00126_ERR3240199"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00128",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00128_ERR3240136"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00138",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00138_ERR3240144"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "HG00142",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00142_ERR3240148"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00149",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00149_ERR3240153"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00238",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00238_ERR3240180"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00249",
+      "pangenie_list_rows": [],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "HG00253",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00253_ERR3240211"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00260",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00260_ERR3240217"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "HG00262",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00262_ERR3240219"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00263",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00263_ERR3240220"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "HG00265",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "HG00265_ERR3240222"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA06985",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA06985_ERR3239276"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA07037",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA07037_ERR3239280"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA07051",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA07051_ERR3239281"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA07357",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA07357_ERR3239283"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA10847",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA10847_ERR3239284"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA10851",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA10851_ERR3239285"
+        }
+      ],
+      "prior_long_read_metadata_match": true
+    },
+    {
+      "rna_title": "NA11831",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA11831_ERR3239288"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA11840",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA11840_ERR3239290"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA11894",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA11894_ERR3239292"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA11918",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA11918_ERR3239293"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA11992",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA11992_ERR3239297"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA11993",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB36890.698.sample-list.txt",
+          "full_row": "NA11993_ERR3989307"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA11994",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA11994_ERR3239298"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12005",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12005_ERR3239302"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12156",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12156_ERR3239310"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12249",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12249_ERR3239312"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12275",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12275_ERR3239467"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12286",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12286_ERR3239470"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12383",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12383_ERR3239476"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12489",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12489_ERR3239315"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12750",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12750_ERR3239319"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12760",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12760_ERR3239321"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12761",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12761_ERR3239322"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12762",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12762_ERR3239323"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12763",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12763_ERR3239324"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12776",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12776_ERR3239325"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12812",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12812_ERR3239326"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12813",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12813_ERR3239327"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12814",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12814_ERR3239328"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12815",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12815_ERR3239329"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    },
+    {
+      "rna_title": "NA12873",
+      "pangenie_list_rows": [
+        {
+          "source": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+          "full_row": "NA12873_ERR3239332"
+        }
+      ],
+      "prior_long_read_metadata_match": false
+    }
+  ],
+  "source_sha256": {
+    "pangenie-genotyping.PRJEB31736.2504.sample-list.txt": "9b8e03625d622d094a5490e678b0ed8c414088c8a459f652561648c58631a30c",
+    "pangenie-genotyping.PRJEB36890.698.sample-list.txt": "49d69632f6d94fba5d06e71813dcad62f0991d1fb5c2d20c40d638064a38a8b5"
+  },
+  "prior_crosswalk_sha256": "2f9203808324b4e08b07d99f50272cc54730f5a1454762327b4d13d3248f7eb7",
+  "script_sha256": "d48f5944c4a6a5d43239376c80e09786a68aad77cba8b675aa7594f03e12c840",
+  "limits": "Sample-list tokens only: no VCF header, genotypes or biological identity verified."
+}

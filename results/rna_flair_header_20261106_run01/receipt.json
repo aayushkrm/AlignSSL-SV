@@ -1,0 +1,36 @@
+{
+  "url": "https://zenodo.org/api/records/18763244/files/Geuvadis_60EUR_Transcripts_FLAIR_COUNTS.tsv.gz/content",
+  "declared_size": 7577751,
+  "declared_md5": "3b841d33a7c7bfe4b250f700d1053b03",
+  "max_download_bytes": 8388608,
+  "max_header_bytes": 1048576,
+  "retrieved_utc": "2026-11-05T20:32:05.456199+00:00",
+  "script_sha256": "6e3ae8fba248a32f4ab4bb04a6397f31b02c6b91eaf768fed13f352a4857cd0c",
+  "attempts": [
+    {
+      "route": "local",
+      "argv": [
+        "curl",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "45",
+        "--max-filesize",
+        "8388608",
+        "https://zenodo.org/api/records/18763244/files/Geuvadis_60EUR_Transcripts_FLAIR_COUNTS.tsv.gz/content"
+      ],
+      "exit_code": 0,
+      "bytes": 7577751,
+      "sha256": "6e8566ebb772125769ad417e305e21bafde6597666ec228d03f22c209acf960c",
+      "md5": "3b841d33a7c7bfe4b250f700d1053b03",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_file": "/Users/akm/aayushkrm-AlignSSL/runs/rna_flair_counts_20261106_run01/attempt01.gz"
+    }
+  ],
+  "successful_attempt": 1,
+  "header_summary_sha256": "8cf8f247d6cc516fd0e22ced84f4a1ca34d7d077207c96e7b8086a6789110e81"
+}

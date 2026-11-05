@@ -1,0 +1,119 @@
+{
+  "retrieved_utc": "2026-11-05T20:35:48.780969+00:00",
+  "max_bytes_per_response": 262144,
+  "script_sha256": "8a5af72b40a8dc9233b20b7c451967968e14b75ba0d9e8849454aee5b6a1773d",
+  "sources": [
+    {
+      "name": "20200902_HHU_genotyping_pangenie-results-freeze3_MANIFEST.txt",
+      "url": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/release/v1.0/PanGenie_results/20200902_HHU_genotyping_pangenie-results-freeze3_MANIFEST.txt",
+      "successful_attempt": 1,
+      "attempts": [
+        {
+          "route": "local",
+          "argv": [
+            "curl",
+            "--fail",
+            "--silent",
+            "--show-error",
+            "--location",
+            "--connect-timeout",
+            "8",
+            "--max-time",
+            "25",
+            "--max-filesize",
+            "262144",
+            "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/release/v1.0/PanGenie_results/20200902_HHU_genotyping_pangenie-results-freeze3_MANIFEST.txt"
+          ],
+          "exit_code": 0,
+          "bytes": 1441,
+          "stdout_sha256": "c8118a5f8cb4daa723fe347661bdc3a159825ed4230017a7c36f606f07c8f666",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "20200902_HHU_genotyping_pangenie-results-freeze3_README.txt",
+      "url": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/release/v1.0/PanGenie_results/20200902_HHU_genotyping_pangenie-results-freeze3_README.txt",
+      "successful_attempt": 1,
+      "attempts": [
+        {
+          "route": "local",
+          "argv": [
+            "curl",
+            "--fail",
+            "--silent",
+            "--show-error",
+            "--location",
+            "--connect-timeout",
+            "8",
+            "--max-time",
+            "25",
+            "--max-filesize",
+            "262144",
+            "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/release/v1.0/PanGenie_results/20200902_HHU_genotyping_pangenie-results-freeze3_README.txt"
+          ],
+          "exit_code": 0,
+          "bytes": 1271,
+          "stdout_sha256": "de3af9e0381ecbe805291458003b0462fc9f19417a2ac891e34fedc3b77d0f02",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+      "url": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/release/v1.0/PanGenie_results/pangenie-genotyping.PRJEB31736.2504.sample-list.txt",
+      "successful_attempt": 1,
+      "attempts": [
+        {
+          "route": "local",
+          "argv": [
+            "curl",
+            "--fail",
+            "--silent",
+            "--show-error",
+            "--location",
+            "--connect-timeout",
+            "8",
+            "--max-time",
+            "25",
+            "--max-filesize",
+            "262144",
+            "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/release/v1.0/PanGenie_results/pangenie-genotyping.PRJEB31736.2504.sample-list.txt"
+          ],
+          "exit_code": 0,
+          "bytes": 47576,
+          "stdout_sha256": "9b8e03625d622d094a5490e678b0ed8c414088c8a459f652561648c58631a30c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "name": "pangenie-genotyping.PRJEB36890.698.sample-list.txt",
+      "url": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/release/v1.0/PanGenie_results/pangenie-genotyping.PRJEB36890.698.sample-list.txt",
+      "successful_attempt": 1,
+      "attempts": [
+        {
+          "route": "local",
+          "argv": [
+            "curl",
+            "--fail",
+            "--silent",
+            "--show-error",
+            "--location",
+            "--connect-timeout",
+            "8",
+            "--max-time",
+            "25",
+            "--max-filesize",
+            "262144",
+            "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/release/v1.0/PanGenie_results/pangenie-genotyping.PRJEB36890.698.sample-list.txt"
+          ],
+          "exit_code": 0,
+          "bytes": 13262,
+          "stdout_sha256": "49d69632f6d94fba5d06e71813dcad62f0991d1fb5c2d20c40d638064a38a8b5",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ]
+}

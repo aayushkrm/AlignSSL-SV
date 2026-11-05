@@ -8,14 +8,21 @@ context only. It is not the foundation for new work.
 
 ## Verified and planned
 
-Latest exploratory checks (2026-11-03 UTC): in one public COLO829 file, a
-case-only change to BND mate-contig names changes how the pinned Verix version
-groups records. Synthetic replays show compatible SnpEff 5.1d case behavior
-and a separate nanomonsv 0.7.1 base issue that was fixed upstream. The exact
-historical intermediate files are unavailable, and independent review of the
-real-data checks is pending. These observations do not establish a biological
-error or a publication result. See the [diagnostic](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-03-colo829-contig-alias-diagnostic.md)
-and [source replay](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-04-nanomonsv-source-reproduction.md).
+Latest review (2026-11-05 UTC): a case-only change to BND mate-contig names in
+one public COLO829 file changes native comparator output. The independent
+[review](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-06-independent-interop-review.md)
+found the SnpEff producer behavior was reported years ago and recommends
+stopping this as a publication lead. The altered file also has stale `ANN`
+allele strings. Keep the work as a bounded regression case; it does not
+establish a biological error or a publication result.
+
+Current feasibility work compares published DNA sample lists with 60 public
+direct-RNA sample names. The union of three DNA lists covers 58 names; 24 are
+in the two long-read DNA metadata sets, and the third is an older short-read
+genotyping list. A public transcript-count file's header contains all 60 RNA
+names. These are name matches, not verified SV genotypes or RNA effects.
+Close prior work already covers SVs and expression, splicing and phased
+isoforms, so novelty remains unproven. See the [source check](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-04-paired-dna-rna-feasibility.md).
 
 Recent clinical papers already use insertion sequence with SpliceAI; a generic
 mobile-element splice prediction method is not a new contribution. See the
