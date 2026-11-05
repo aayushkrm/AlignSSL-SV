@@ -17,10 +17,10 @@ allele strings. Keep the work as a bounded regression case; it does not
 establish a biological error or a publication result.
 
 Current feasibility work compares published DNA sample lists with 60 public
-direct-RNA sample names. The union of three DNA lists covers 58 names; 24 are
-in the two long-read DNA metadata sets, and the third is an older short-read
-genotyping list. A public transcript-count file's header contains all 60 RNA
-names. These are name matches, not verified SV genotypes or RNA effects.
+direct-RNA sample names. The union of three DNA sources covers 58 names; 24
+are in two long-read DNA metadata sets, and 56 occur in the header of an older
+short-read genotype VCF. A public transcript-count file's header contains all
+60 RNA names. These are name matches, not verified SV genotypes or RNA effects.
 Close prior work already covers SVs and expression, splicing and phased
 isoforms, so novelty remains unproven. See the [source check](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-04-paired-dna-rna-feasibility.md).
 
