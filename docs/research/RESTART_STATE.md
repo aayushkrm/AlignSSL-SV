@@ -54,9 +54,16 @@ The author's public FLAIR count file matches its published size and MD5; its
 first row contains all 60 RNA titles and all 24 DNA-matched titles exactly.
 No expression values were inspected; the compressed matrix is outside Git.
 The HGSVC2 short-read-genotyped source lists match 56 RNA name tokens, 34 beyond
-the earlier 24; the three-source union is 58. No VCF headers, allele genotypes
-or biological identity were checked. HGSVC2 and HGSVC3 contain close prior art
-on SV-associated expression, splicing and phased isoforms.
+the earlier 24; the three-source union is 58. The later, preregistered
+[VCF-header check](2026-11-06-hgsvc2-vcf-header-protocol.md) confirms those 56
+exact sample columns among 3,202, but no allele genotypes or biological
+identity were checked. HGSVC2 and HGSVC3 contain close prior art on
+SV-associated expression, splicing and phased isoforms.
+The [Vienna phased VCF header](2026-11-06-vienna-vcf-header-feasibility.md)
+contains nine of the 11 Vienna alignment matches; the other two are absent.
+All nine also occur in the HGSVC2 header. Its CHM13/graph reference context
+differs from the RNA authors' GRCh37-based workflow; reconcile before any
+locus analysis. The independent worker's header-only packet is preserved.
 Thirty-six names have no exact match in these two tables; do not infer aliases
 or absence from other resources. Prior work already covers generic MEI-splicing
 associations and DNA/RNA integration. No campaign has been selected.

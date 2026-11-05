@@ -28,11 +28,12 @@ dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
-| [`2026-11-06-hgsvc2-vcf-header-protocol.md`](2026-11-06-hgsvc2-vcf-header-protocol.md) | Prospective bounded source-header check | Sample-list to VCF-column mapping only; no genotypes or RNA values |
+| [`2026-11-06-vienna-vcf-header-feasibility.md`](2026-11-06-vienna-vcf-header-feasibility.md) | Independent Vienna phased VCF header check | Nine of 11 alignment-name matches in 908 columns; assembly context and two missing samples explicit |
+| [`2026-11-06-hgsvc2-vcf-header-protocol.md`](2026-11-06-hgsvc2-vcf-header-protocol.md) | Preregistered bounded source-header check | 56 exact RNA names in 3,202 VCF columns; no genotypes or RNA values inspected |
 | [`2026-11-06-paired-source-independent-audit.md`](2026-11-06-paired-source-independent-audit.md) | Independent original crosswalk and source audit | 11 Vienna and 13 ONT exact matches reproduce; ONT paper-versus-archive scope corrected |
 | [`2026-11-06-independent-interop-review.md`](2026-11-06-independent-interop-review.md) | Independent scientific and provenance audit | Stop case behavior as publication lead; 209 packet hashes pass; stale ANN and timestamp/validator limits identified |
 | [`2026-11-04-ebi-validator-case-protocol.md`](2026-11-04-ebi-validator-case-protocol.md) | Synthetic validator controls and execution | Tested command did not warn on two remote-contig probes; reviewer identified fixture and provenance limits |
-| [`2026-11-04-paired-dna-rna-feasibility.md`](2026-11-04-paired-dna-rna-feasibility.md) | Three-source exact-title crosswalk, RNA count header and prior art | 24 long-read DNA-list matches; 56 older short-read genotype-list matches; union 58 of 60; allele outcomes unresolved |
+| [`2026-11-04-paired-dna-rna-feasibility.md`](2026-11-04-paired-dna-rna-feasibility.md) | Three-source exact-title crosswalk, RNA count header and prior art | 24 long-read DNA-list matches; 56 older short-read VCF-header matches; union 58 of 60; allele outcomes unresolved |
 | [`2026-11-03-colo829-contig-alias-diagnostic.md`](2026-11-03-colo829-contig-alias-diagnostic.md) | Exploratory native-tool real-file interoperability check | 66 singleton versus 33 paired BND groups; reviewer notes prior art, alias assumptions and stale ANN alleles |
 | [`2026-11-03-colo829-bnd-anchor-census.md`](2026-11-03-colo829-bnd-anchor-census.md) | Whole-file caller/truth BND census | Differences alone are not errors; source investigation and synthetic replay link caller pattern to known version behavior |
 | [`2026-11-03-colo829-junction-sequence-check.md`](2026-11-03-colo829-junction-sequence-check.md) | Unfinished worker draft | J1–J3 sequence interpretations remain unaccepted; discrepancy and incomplete worker status explicit |

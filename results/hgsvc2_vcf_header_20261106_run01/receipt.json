@@ -1,0 +1,21 @@
+{
+  "url": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/HGSVC2/release/v1.0/PanGenie_results/pangenie_merged_bi_nosnvs.vcf.gz",
+  "declared_size": 1753712867,
+  "declared_md5_not_verified": "003c94d1249b946f2276787dfad93e99",
+  "crosswalk_sha256": "77b046c3be38ded805ff31303de3bbc4105238909a83d9e576a031775b5a1df8",
+  "script_sha256": "6daba16cb9968d556c81634f8fbe499513ac95ec54a7b6fc1f91c9dbc38d4211",
+  "attempts": [
+    {
+      "route": "local",
+      "limit_bytes": 262144,
+      "exit_code": 0,
+      "retrieved_utc": "2026-11-05T20:43:47.815231+00:00",
+      "prefix_bytes": 262144,
+      "prefix_sha256": "47cd75d7fede0c0cb6a51a7f61638233617cf4670e86faa4354a671c059a809e",
+      "prefix_path": "/Users/akm/aayushkrm-AlignSSL/runs/hgsvc2_vcf_header_20261106_run01/attempt01.prefix",
+      "stderr_sha256": "b7b5cd3f5cfe988fd636b611bbce3e202ae62ded34ff064ba6ad0fa27f58a9f5",
+      "header_decoded": true
+    }
+  ],
+  "header_summary_sha256": "acfc54e9266ca2c0019e2844ad9174c76b50bf42f714d8e3a73bb82c07c85751"
+}

@@ -1,0 +1,58 @@
+{
+  "description": "Copies of the completed independent worker's public source metadata and header-only BGZF block; source retrieval claims are in range_fetch_receipt.json and the research report.",
+  "original_scratch": "/tmp/vienna-vcf-header-check",
+  "files": {
+    "listing_1.html": {
+      "bytes": 1173,
+      "sha256": "5f6deab41aafb7c9a79de7afb919fecedce08ede57dd89e7cf2dd97a59802b52"
+    },
+    "listing_2.html": {
+      "bytes": 1992,
+      "sha256": "b836f0fabc3d08b61302ee66053c9bcd4488f5f5e5a3a0f9c45f6e2b8c87bf9b"
+    },
+    "listing_3.html": {
+      "bytes": 3021,
+      "sha256": "5b0036e2a74e135f8d865466aacb570eb681fccd053cecf486a39b753101ea62"
+    },
+    "listing_4.html": {
+      "bytes": 1386,
+      "sha256": "4d09bbace2acf1970692bb6d67fa739141f0f7b4dd62d21867b9139796b359c8"
+    },
+    "manifest_v1_0.tsv": {
+      "bytes": 487972,
+      "sha256": "f67c50d063ae6683f55786f703e76d7fed03a7dac8b3f6cf9505adbd6827302a"
+    },
+    "manifest_v1_1.tsv": {
+      "bytes": 3637,
+      "sha256": "55de63dc102f05f0530eb71f68ec3d74b81a30d220a521f0ab840e78e86385a2"
+    },
+    "readme_v1_0.txt": {
+      "bytes": 221,
+      "sha256": "a1196d7fe392175768b9f2a394ac87bcd4f45b7bbdfecd371159cc3a00707dec"
+    },
+    "readme_v1_1_shapeit.md": {
+      "bytes": 380,
+      "sha256": "861372aa26d980fefa99226c22a7591151a89deab6166ae726ced96bdd8b71bd"
+    },
+    "giggles_readme.md": {
+      "bytes": 1756,
+      "sha256": "cc5a0d5bd30f641a1cffe47074c19769cdade2baa908312cb31ceaf9203e8f55"
+    },
+    "graph_augmentation_readme.txt": {
+      "bytes": 678,
+      "sha256": "41aa8cdc2a3655d24456e4c11660b72a2661f7c79a7ac432dbc89ab935cdc382"
+    },
+    "vcf_header_bgzf_blocks.bin": {
+      "bytes": 2880,
+      "sha256": "5488b0caf0d2f81e82f069b5a6d6f5b2a611222d821f4b3984f6f09eafc92d08"
+    },
+    "vcf_header.txt": {
+      "bytes": 10132,
+      "sha256": "f0147bb55ed25f47d7a1564aaa00789ae7b3a5046303cd7ae5547dc7b102ad3e"
+    },
+    "range_fetch_receipt.json": {
+      "bytes": 10892,
+      "sha256": "a7d049151996c8c8b0d8b6c3e4192688002becef9153af5926c6df0bcf0491cd"
+    }
+  }
+}

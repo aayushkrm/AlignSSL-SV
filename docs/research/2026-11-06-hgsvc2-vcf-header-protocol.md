@@ -38,3 +38,28 @@ permitted in this check. Biological sample identity, reference reconciliation,
 SV callability, genotype accuracy and the value or novelty of a downstream
 question remain separate unresolved issues. This protocol is committed before
 the first bounded VCF-prefix request.
+
+## Result
+
+The protocol was pushed as research commit `f4a0e5c` before the source
+request. The local route returned HTTP 206 with `Content-Range: bytes
+0-262143/1753712867`; the 262,144-byte prefix decoded a complete header.
+Its local SHA256 is
+`47cd75d7fede0c0cb6a51a7f61638233617cf4670e86faa4354a671c059a809e`.
+The prefix is retained outside Git and may contain compressed variant rows;
+none were inspected. The release's whole-file MD5 remains unverified.
+
+The header has 3,202 sample columns with no duplicate names. Exactly **56 of
+the 60** RNA titles appear as identical VCF column names; the full sample/run
+row mapping was not needed. The four absent are `HG00098`, `HG00104`,
+`HG00124` and `HG00249`. The first and third have long-read DNA metadata
+matches from the earlier crosswalk. Consequently 58 RNA titles have either
+an HGSVC2 VCF column or a long-read DNA metadata match; this union combines
+different kinds of evidence and is not a count of verified DNA/RNA pairs.
+
+The [receipt and header summary](../../results/hgsvc2_vcf_header_20261106_run01/)
+record all columns, mapping modes, unmatched titles, response metadata and
+hashes. A separate header reread reproduced 3,202 distinct columns, and five
+saved source/script/output hashes matched. No VCF data row, genotype quality,
+allele, expression value, reference agreement or cell-line identity was
+evaluated. This observation does not establish power or a novel contribution.

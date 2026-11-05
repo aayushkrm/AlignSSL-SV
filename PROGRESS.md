@@ -46,10 +46,18 @@ publisher MD5 verified. Its first row names all 60 RNA titles, including all
 24 DNA-matched titles; no expression rows were inspected. The compressed
 matrix is retained outside Git.
 An older HGSVC2 PanGenie release lists 56 of the 60 RNA sample-name tokens,
-including 34 outside the prior 24; the three-source union is 58 titles. This
-is a sample-list join: no VCF genotype, callability or matched aliquot was
-verified, and the PanGenie genotypes come from short reads. Earlier HGSVC
-studies already analyze SV/QTLs and phased SV/isoform relationships.
+including 34 outside the prior 24; a preregistered bounded range request then
+confirmed those 56 as exact VCF sample columns. The union is 58 titles, but
+combines VCF-header and long-read metadata evidence. No VCF genotype,
+callability or matched aliquot was verified, and the PanGenie genotypes come
+from short reads. Earlier HGSVC studies already analyze SV/QTLs and phased
+SV/isoform relationships.
+An independent [Vienna phased-VCF header check](docs/research/2026-11-06-vienna-vcf-header-feasibility.md)
+found nine of the 11 Vienna alignment names among 908 sample columns; the
+other two are absent from that VCF. All nine are also in the 56 HGSVC2 VCF
+header matches. The Vienna callset and RNA analysis use reference contexts
+that require reconciliation. The header-only source packet was preserved and
+independently reread; no variant records were inspected.
 The remaining 36 titles have no exact match in these two lists, not necessarily
 in other DNA resources. Identity, relatedness, reference reconciliation,
 allele-level outcomes, statistical power and novelty remain unresolved.
@@ -70,7 +78,8 @@ Publication checkpoint: research commit `5b4a447` was pushed. The user's
 approved default-branch documentation update is `d2cc678`; its only changed
 file is `README.md`, and its README blob matches the research branch. A
 [header-only HGSVC2 sample check](docs/research/2026-11-06-hgsvc2-vcf-header-protocol.md)
-is specified before execution; it will not inspect genotypes or RNA values.
+was pushed as `f4a0e5c` before execution and did not inspect genotypes or RNA
+values. Its raw prefix is retained outside Git.
 
 ### COLO829 representation checks and MEI prior art — 2026-11-03 UTC
 

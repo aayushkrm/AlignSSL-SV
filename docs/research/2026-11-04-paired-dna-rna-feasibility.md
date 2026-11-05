@@ -86,6 +86,14 @@ hg38, T2T and graph alignments. Any locus comparison needs an explicit,
 verified reference and coordinate reconciliation. Shared sample title does
 not prove the same aliquot, cell-line passage or a usable SV/RNA allele.
 
+A separate [Vienna phased-callset header check](2026-11-06-vienna-vcf-header-feasibility.md)
+found nine of those 11 titles among its 908 sample columns; `HG00098` and
+`HG00124` are absent. All nine are also among the HGSVC2 VCF-header matches.
+The Vienna header does not declare its assembly; the release and paper place
+the phased callset in a CHM13/graph context and describe later GRCh38 lift-over.
+Alignment-list membership must not be treated as membership in this particular
+phased callset, and assembly reconciliation remains essential.
+
 The Vienna data-reuse statement is included in the source packet. It asks
 users to cite the study and reserves certain global analyses until the first
 major paper; the [major paper was published in 2025](https://doi.org/10.1038/s41586-025-09290-7).
@@ -233,3 +241,8 @@ VCF-column membership, SV genotype quality or identity of cell-line aliquots.
 The protocol was written before these checks during this session, but was
 first committed afterward; the repository cannot independently prove its
 pre-execution state.
+
+A separately preregistered [VCF-header check](2026-11-06-hgsvc2-vcf-header-protocol.md)
+then confirmed that those same 56 RNA titles appear as exact columns in the
+HGSVC2 biallelic no-SNV VCF; the other four do not. The header had 3,202
+distinct sample columns. No VCF variant or genotype row was inspected.
