@@ -1,0 +1,66 @@
+{
+  "source_url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12629990.1/41586_2025_9580_MOESM1_ESM.zip?md5=053c2a18cbd1da4a250efc78e49b57e7",
+  "retrieved_utc": "2026-11-05T20:57:38.358846+00:00",
+  "max_body_bytes": 524288,
+  "script_sha256": "c740cf5d60a2b365488640109e1cc3b57ffc2b5dc9eea0202a9f228367415f3e",
+  "reader_sha256": "b4eaaa4a4e9af0738595bbd2e628cb330938f21c4ee268c0786f80c1b9220bd7",
+  "publisher_archive_md5_not_verified": "053c2a18cbd1da4a250efc78e49b57e7",
+  "head": {
+    "Content-Length": "18466636",
+    "ETag": "\"7c3cf6e161407318977516c90f0cda82-3\"",
+    "Last-Modified": "Mon, 23 Feb 2026 20:58:40 GMT"
+  },
+  "archive_bytes": 18466636,
+  "bytes_transferred": 226,
+  "requests": [
+    {
+      "start": 18466614,
+      "end": 18466635,
+      "bytes": 22,
+      "etag": "\"7c3cf6e161407318977516c90f0cda82-3\"",
+      "last_modified": "Mon, 23 Feb 2026 20:58:40 GMT",
+      "saved_as": "range01.bin",
+      "sha256": "4ff89af85323f0cc7af5d21859ab8cc82361568aa9441b5c069f28a3ae6de178"
+    },
+    {
+      "start": 18466594,
+      "end": 18466613,
+      "bytes": 20,
+      "etag": "\"7c3cf6e161407318977516c90f0cda82-3\"",
+      "last_modified": "Mon, 23 Feb 2026 20:58:40 GMT",
+      "saved_as": "range02.bin",
+      "sha256": "2a4b1b4cfba849480b63d3bd4c5614346f3994cda9a79270f3074e35c219c636"
+    },
+    {
+      "start": 18466430,
+      "end": 18466613,
+      "bytes": 184,
+      "etag": "\"7c3cf6e161407318977516c90f0cda82-3\"",
+      "last_modified": "Mon, 23 Feb 2026 20:58:40 GMT",
+      "saved_as": "range03.bin",
+      "sha256": "b2bb395b436196ac47f7c4ca0e716ebcad78bc31b716992598bdb86bfc8e59fe"
+    }
+  ],
+  "etag_consistent": true,
+  "entries": [
+    {
+      "name": "2024-08-17508B-s1/SupplementaryTables.xlsx",
+      "directory": false,
+      "compressed_size": 18453832,
+      "uncompressed_size": 19158931,
+      "crc32_not_verified": "683021a1",
+      "compression_method": 8,
+      "header_offset": 0
+    },
+    {
+      "name": "2024-08-17508B-s1/SupplementaryTables-legends.docx",
+      "directory": false,
+      "compressed_size": 12446,
+      "uncompressed_size": 15174,
+      "crc32_not_verified": "3482c578",
+      "compression_method": 8,
+      "header_offset": 18453904
+    }
+  ],
+  "limits": "ZIP directory only; archive MD5 and member CRCs not verified, no members opened."
+}

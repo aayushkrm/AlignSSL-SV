@@ -28,3 +28,29 @@ the actual failure and try an equivalent bounded route. Any later inspection
 of table contents or hypothesis-driven comparison needs a separate scope that
 states what data and claims are being tested. This protocol is pushed before
 the archive request.
+
+## Directory result
+
+The protocol was pushed as `92c72da` before retrieval. Three exact HTTP
+range responses transferred 226 bytes from the 18,466,636-byte archive;
+their ETags matched the HEAD response. The directory lists two members:
+`SupplementaryTables.xlsx` (19,158,931 uncompressed bytes) and
+`SupplementaryTables-legends.docx` (15,174 uncompressed bytes). The
+[packet](../../results/cloneseq_supplement_inventory_20261106_run01/) retains
+all three ranges and their hashes. Five source/script hashes were checked.
+No member or patient result was read; archive MD5 and member CRCs remain
+unverified. A workbook name alone does not establish the content needed for
+an independent comparison.
+
+## Separate planned workbook-metadata check
+
+Download this exact 18,466,636-byte archive once to the project `runs`
+directory, with a 20 MiB transfer cap. Verify its publisher-declared MD5
+`053c2a18cbd1da4a250efc78e49b57e7` and exact size before opening it. Read
+only the two named members above, enforce their declared uncompressed sizes,
+and retain the archive and extracted members outside Git. Inspect only the
+workbook's sheet names/dimensions and the document's table legends, without
+reading patient data rows. Record source, commands, hashes, the complete
+sheet inventory and legend descriptions. This may establish what tables are
+described, not whether their data are usable, independently validated or
+adequately controlled. A scientific comparison would require a new protocol.
