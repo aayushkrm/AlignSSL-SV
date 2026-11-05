@@ -65,6 +65,16 @@ allele-level outcomes, statistical power and novelty remain unresolved.
 Existing MEI and DNA/RNA studies already cover broad versions of this idea.
 This is an exploratory alternative, not an accepted publication direction.
 
+A separate [ctDNA direction scout](docs/research/2026-11-06-independent-direction-scout.md)
+asks whether patient-specific SV junctions could improve relapse-seeding clone
+assignment beyond the published mutation-based ECLIPSE analysis. The relevant
+TRACERx datasets are controlled access; a same-patient tumor/plasma/relapse
+join, usable junction coverage or assay material, and independent relapse truth
+remain unverified. SV ctDNA detection and strong mutation-based lineage
+methods already exist. This is a conditional question, not a selected study.
+A Sol/max scientific-investment comparison and independent reviewer scrutiny
+were requested before deciding what low-cost evidence to obtain next.
+
 The focused suite passed 48 tests; 34 receipt and script SHA256 checks passed.
 On November 5 UTC the project's cluster queue was empty. The only listed
 scratch workspace was for another project and was left untouched. Local

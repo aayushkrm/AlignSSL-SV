@@ -78,8 +78,10 @@ untouched. Available local space was about 41 GiB. An independent Terra/max
 review and three bounded Luna/max tasks were requested; model/effort settings
 are requests, not independent backend attestation. The interoperability
 review, initial crosswalk audit and Vienna header scout are complete. A broader
-direction scout, paired-study scientific review and two further bounded source
-audits are underway.
+[direction scout](2026-11-06-independent-direction-scout.md) proposes an SV
+ctDNA relapse-clone question with strong prior baselines and unresolved
+controlled-access/material feasibility. A Sol/max investment decision,
+paired-study scientific review and two bounded source audits are underway.
 The scientific publication goal remains active and unmet.
 
 November3 UTC later checkpoint: exploratory COLO829 [BND anchor census](2026-11-03-colo829-bnd-anchor-census.md)
