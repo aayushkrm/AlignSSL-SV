@@ -60,6 +60,9 @@ on SV-associated expression, splicing and phased isoforms.
 Thirty-six names have no exact match in these two tables; do not infer aliases
 or absence from other resources. Prior work already covers generic MEI-splicing
 associations and DNA/RNA integration. No campaign has been selected.
+The [independent source audit](2026-11-06-paired-source-independent-audit.md)
+reproduced the original 11 and 13 exact matches and notes that the linked ONT
+paper describes the first 100 samples, while the archive table covers 500.
 
 The focused suite passed 48 tests and 34 receipt/script hashes matched. The
 project queue was empty; the only active scratch workspace was unrelated and

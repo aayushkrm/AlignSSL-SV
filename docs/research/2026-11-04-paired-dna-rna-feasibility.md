@@ -116,6 +116,12 @@ titles use `HG...` and `NA...`; **do not infer `GM`↔`NA` aliases from matching
 digits**. The next comparison counts exact strings only. Any candidate alias
 would need a separately documented authoritative crosswalk.
 
+The linked 2024 paper describes the first 100 samples, whereas the archive
+README and table describe 500. The paper does not by itself validate the
+additional rows or the 13 object pairs. An [independent audit](2026-11-06-paired-source-independent-audit.md)
+reproduced the original 11 and 13 exact matches and checked their receipts;
+its findings do not attest to allele identity, quality, passage or outcomes.
+
 The exact join found 13 RNA titles in the 500-row metadata table, none also in
 the 11 Vienna matches: 24 unique exact titles across both sources. Thirty-six
 titles have no exact match to either metadata set; this is not proof that no

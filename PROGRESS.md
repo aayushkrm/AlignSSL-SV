@@ -38,6 +38,9 @@ finds 11 exact RNA sample-title matches in Vienna alignment manifests and 13
 additional exact matches in a separate ONT-500 metadata table: 24 distinct
 titles among 60 RNA samples. A public object listing contains one VCF and
 one index for each of the 13 ONT-500 names; their contents were not fetched.
+An [independent source audit](docs/research/2026-11-06-paired-source-independent-audit.md)
+reproduced the 11 and 13 counts and their hashes. The linked ONT paper covers
+the first 100 samples; the later archive metadata describes 500.
 The RNA study's public FLAIR count matrix was separately downloaded with its
 publisher MD5 verified. Its first row names all 60 RNA titles, including all
 24 DNA-matched titles; no expression rows were inspected. The compressed
@@ -62,6 +65,12 @@ were dispatched. The requested reviewer was Terra/max; backend model and effort
 were not independently attested.
 No large experiment or positive biological conclusion is authorized by these
 checks. The publication goal remains active and unmet.
+
+Publication checkpoint: research commit `5b4a447` was pushed. The user's
+approved default-branch documentation update is `d2cc678`; its only changed
+file is `README.md`, and its README blob matches the research branch. A
+[header-only HGSVC2 sample check](docs/research/2026-11-06-hgsvc2-vcf-header-protocol.md)
+is specified before execution; it will not inspect genotypes or RNA values.
 
 ### COLO829 representation checks and MEI prior art — 2026-11-03 UTC
 

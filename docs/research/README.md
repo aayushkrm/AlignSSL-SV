@@ -28,6 +28,8 @@ dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-11-06-hgsvc2-vcf-header-protocol.md`](2026-11-06-hgsvc2-vcf-header-protocol.md) | Prospective bounded source-header check | Sample-list to VCF-column mapping only; no genotypes or RNA values |
+| [`2026-11-06-paired-source-independent-audit.md`](2026-11-06-paired-source-independent-audit.md) | Independent original crosswalk and source audit | 11 Vienna and 13 ONT exact matches reproduce; ONT paper-versus-archive scope corrected |
 | [`2026-11-06-independent-interop-review.md`](2026-11-06-independent-interop-review.md) | Independent scientific and provenance audit | Stop case behavior as publication lead; 209 packet hashes pass; stale ANN and timestamp/validator limits identified |
 | [`2026-11-04-ebi-validator-case-protocol.md`](2026-11-04-ebi-validator-case-protocol.md) | Synthetic validator controls and execution | Tested command did not warn on two remote-contig probes; reviewer identified fixture and provenance limits |
 | [`2026-11-04-paired-dna-rna-feasibility.md`](2026-11-04-paired-dna-rna-feasibility.md) | Three-source exact-title crosswalk, RNA count header and prior art | 24 long-read DNA-list matches; 56 older short-read genotype-list matches; union 58 of 60; allele outcomes unresolved |
