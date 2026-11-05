@@ -35,6 +35,29 @@ flowchart LR
 
 **Novelty claim to test:** the possible contribution is a matched, patient-level comparison of SV-junction clone assignment with the mutation-based TRACERx lineage result, with relapse tissue as truth. Do not claim a new SV ctDNA assay or general SV superiority. A bounded search found no direct study of this exact comparison. That does not prove that no such study exists.
 
+### Subsequent closer prior art — 2026-11-05 UTC
+
+The main investigation found an important prior study missing from the scout's
+original table: [Williams et al., Nature 2025](https://doi.org/10.1038/s41586-025-09580-0)
+introduced CloneSeq-SV, combining single-cell tumor WGS with targeted deep
+sequencing of clone-specific SV junctions in longitudinal cfDNA from ovarian
+cancer patients. The paper estimates clone frequencies using both SVs and
+SNVs and compares the inferred dominant clone with cfDNA WGS read-depth and
+allele-frequency evidence. Its summary tables include SV- and SNV-derived
+clone frequencies and error rates; raw sequencing is listed under controlled
+dbGaP accession `phs002857.v3.p1`, with processed data in Synapse
+`syn66399325`. Their accessibility and suitability for a fair, independent
+incremental-value test remain unverified.
+
+This directly occupies the broad idea of using SV junctions to track relapse
+clones and narrows the potential contribution substantially. A specific
+NSCLC comparison to ECLIPSE might still be distinct, but a change of cancer
+type or comparator alone is not evidence of a publication-worthy advance.
+The [TRACERx article](https://pmc.ncbi.nlm.nih.gov/articles/PMC7614605/)
+describes patient-specific anchored multiplex PCR for selected mutations;
+its cfDNA reads must not be assumed to cover arbitrary SV junctions. The
+independent scientific investment decision must consider both constraints.
+
 ## Dataset and baseline
 
 | Resource | What the record supports | Access and open question |

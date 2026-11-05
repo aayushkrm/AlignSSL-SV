@@ -28,7 +28,7 @@ dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
-| [`2026-11-06-independent-direction-scout.md`](2026-11-06-independent-direction-scout.md) | Conditional alternative: SV ctDNA lineage | Strong mutation-based and SV-assay prior art; controlled data and matched plasma/relapse feasibility unresolved |
+| [`2026-11-06-independent-direction-scout.md`](2026-11-06-independent-direction-scout.md) | Conditional alternative: SV ctDNA lineage | 2025 CloneSeq-SV already tracks clones and reports SV/SNV estimates; controlled data and matched plasma/relapse feasibility unresolved |
 | [`2026-11-06-vienna-vcf-header-feasibility.md`](2026-11-06-vienna-vcf-header-feasibility.md) | Independent Vienna phased VCF header check | Nine of 11 alignment-name matches in 908 columns; assembly context and two missing samples explicit |
 | [`2026-11-06-hgsvc2-vcf-header-protocol.md`](2026-11-06-hgsvc2-vcf-header-protocol.md) | Preregistered bounded source-header check | 56 exact RNA names in 3,202 VCF columns; no genotypes or RNA values inspected |
 | [`2026-11-06-paired-source-independent-audit.md`](2026-11-06-paired-source-independent-audit.md) | Independent original crosswalk and source audit | 11 Vienna and 13 ONT exact matches reproduce; ONT paper-versus-archive scope corrected |

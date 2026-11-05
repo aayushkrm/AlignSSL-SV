@@ -71,7 +71,10 @@ assignment beyond the published mutation-based ECLIPSE analysis. The relevant
 TRACERx datasets are controlled access; a same-patient tumor/plasma/relapse
 join, usable junction coverage or assay material, and independent relapse truth
 remain unverified. SV ctDNA detection and strong mutation-based lineage
-methods already exist. This is a conditional question, not a selected study.
+methods already exist. A subsequent primary-source check found the 2025
+CloneSeq-SV study already tracks relapse clones with SV junctions and reports
+both SV- and SNV-derived clone estimates; it is closer prior art than the
+initial scout identified. This is a conditional question, not a selected study.
 A Sol/max scientific-investment comparison and independent reviewer scrutiny
 were requested before deciding what low-cost evidence to obtain next.
 
