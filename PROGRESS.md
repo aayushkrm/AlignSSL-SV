@@ -58,8 +58,9 @@ other two are absent from that VCF. All nine are also in the 56 HGSVC2 VCF
 header matches. The Vienna callset and RNA analysis use reference contexts
 that require reconciliation. The header-only source packet was preserved and
 independently reread; no variant records were inspected.
-The remaining 36 titles have no exact match in these two lists, not necessarily
-in other DNA resources. Identity, relatedness, reference reconciliation,
+Thirty-six titles have no exact match in the two original long-read DNA
+metadata lists; 34 of those appear in the HGSVC2 VCF header. Identity,
+relatedness, reference reconciliation,
 allele-level outcomes, statistical power and novelty remain unresolved.
 Existing MEI and DNA/RNA studies already cover broad versions of this idea.
 This is an exploratory alternative, not an accepted publication direction.
@@ -74,8 +75,8 @@ were not independently attested.
 No large experiment or positive biological conclusion is authorized by these
 checks. The publication goal remains active and unmet.
 
-Publication checkpoint: research commit `5b4a447` was pushed. The user's
-approved default-branch documentation update is `d2cc678`; its only changed
+Publication checkpoint: research commit `68bd65b` was pushed. The user's
+approved default-branch documentation update is `de9bf19`; its only changed
 file is `README.md`, and its README blob matches the research branch. A
 [header-only HGSVC2 sample check](docs/research/2026-11-06-hgsvc2-vcf-header-protocol.md)
 was pushed as `f4a0e5c` before execution and did not inspect genotypes or RNA

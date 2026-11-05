@@ -64,7 +64,8 @@ contains nine of the 11 Vienna alignment matches; the other two are absent.
 All nine also occur in the HGSVC2 header. Its CHM13/graph reference context
 differs from the RNA authors' GRCh37-based workflow; reconcile before any
 locus analysis. The independent worker's header-only packet is preserved.
-Thirty-six names have no exact match in these two tables; do not infer aliases
+Thirty-six names have no exact match in the two original long-read DNA
+metadata sets; 34 of those appear in the HGSVC2 header. Do not infer aliases
 or absence from other resources. Prior work already covers generic MEI-splicing
 associations and DNA/RNA integration. No campaign has been selected.
 The [independent source audit](2026-11-06-paired-source-independent-audit.md)
@@ -76,7 +77,9 @@ project queue was empty; the only active scratch workspace was unrelated and
 untouched. Available local space was about 41 GiB. An independent Terra/max
 review and three bounded Luna/max tasks were requested; model/effort settings
 are requests, not independent backend attestation. The interoperability
-review is complete; the other task outcomes are pending.
+review, initial crosswalk audit and Vienna header scout are complete. A broader
+direction scout, paired-study scientific review and two further bounded source
+audits are underway.
 The scientific publication goal remains active and unmet.
 
 November3 UTC later checkpoint: exploratory COLO829 [BND anchor census](2026-11-03-colo829-bnd-anchor-census.md)

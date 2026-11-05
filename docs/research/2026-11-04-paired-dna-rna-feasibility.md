@@ -28,21 +28,37 @@ already describes FLAIR, SQANTI3 and transcript-level QTL analysis for these
 60 cell lines. The associated [2026 manuscript](https://doi.org/10.21203/rs.3.rs-4613444/v2)
 is a preprint. A repeat of its generic transcript-QTL workflow would not be
 a new contribution.
+In version 2, the authors report 87 significant transcript-SNP QTLs and
+describe excluding 42,065 discovered transcripts that did not align to a
+GENCODE gene from subsequent analysis. They also describe multi-sample Bambu
+discovery. These are the authors' reported analysis choices, not validation of
+the contents of the downloaded FLAIR matrix. Any new analysis must account
+for transcript ascertainment and determine whether a discovery catalogue used
+held-out samples before presenting an independent evaluation.
 
 The earlier [Ebert et al. HGSVC study](https://pmc.ncbi.nlm.nih.gov/articles/PMC8026704/)
 also genotyped assembly-discovered SVs in 1000 Genomes short-read genomes and
 tested expression and splicing associations in a combined set of 427 donors.
 It is direct prior art for population-scale SV/QTL analysis, as already noted
 in the project's [October prior-art decision](2026-10-09-public-paired-falsifier-decision.md).
-Its short-read-genotyped release may be a separate source to check for the 60
-RNA titles, but neither its exact sample coverage nor its per-allele accuracy
-has been verified for this purpose. A new study would need a specific residual
-beyond that work and controls for linked small variants and mapping bias.
+Its short-read-genotyped release has exact VCF header matches for 56 of the
+60 RNA titles in the later check below. Per-allele accuracy has not been
+verified for this purpose. A new study would need a specific residual beyond
+that work and controls for linked small variants and mapping bias.
 The [2025 HGSVC3 study](https://pmc.ncbi.nlm.nih.gov/articles/PMC12350169/)
 also compares haplotype-phased Iso-Seq isoforms for SV-containing genes and
 examines nearby differential expression in 12 individuals. Merely combining
 phased SVs with long-read isoforms is therefore established prior work; this
 does not rule out a precisely defined, independently tested residual.
+
+The [Lu et al. 2026 bioRxiv preprint](https://doi.org/10.64898/2026.07.01.735728)
+also compares pangenome-derived and standard calls for expression association,
+fine-mapping and prediction using 430 1000 Genomes samples with short-read
+RNA-seq. Its question and assay are not identical to the 60 direct-RNA data,
+but they directly narrow any generic claim that pangenome SVs add information
+beyond standard variants. The Life Sciences Literature bioRxiv metadata
+lookup retrieved the preprint; its publication-link lookup returned no entry
+on 2026-11-05 UTC, which does not prove that no later publication exists.
 
 ## Source-only check, specified before fetching metadata
 
