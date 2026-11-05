@@ -32,6 +32,29 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+November 5 UTC checkpoint: [synthetic EBI validator controls](2026-11-04-ebi-validator-case-protocol.md)
+show no remote-contig warning in the tested configuration; local-contig and
+malformed-ALT controls do trigger a warning and error respectively. One pending
+job was cancelled before allocation, and a separate four-CPU job completed;
+both attempts and receipts are retained. These observations do not establish
+clinical impact or that the validator promises remote-mate checking.
+
+The [paired DNA/RNA metadata check](2026-11-04-paired-dna-rna-feasibility.md)
+finds 11 exact RNA-title matches in Vienna alignment manifests and 13 disjoint
+matches in ONT-500 metadata, 24 of 60 titles in total. A complete listing names
+one Sniffles VCF and index for each ONT-500 match; file contents, exact sample
+provenance, assembly reconciliation, coverage, labels and novelty are unverified.
+Thirty-six names have no exact match in these two tables; do not infer aliases
+or absence from other resources. Prior work already covers generic MEI-splicing
+associations and DNA/RNA integration. No campaign has been selected.
+
+The focused suite passed 48 tests and 34 receipt/script hashes matched. The
+project queue was empty; the only active scratch workspace was unrelated and
+untouched. Available local space was about 41 GiB. An independent Terra/max
+review and three bounded Luna/max tasks were requested; model/effort settings
+are requests, not independent backend attestation. Their outcomes are pending.
+The scientific publication goal remains active and unmet.
+
 November3 UTC later checkpoint: exploratory COLO829 [BND anchor census](2026-11-03-colo829-bnd-anchor-census.md)
 and [case-alias native diagnostic](2026-11-03-colo829-contig-alias-diagnostic.md)
 are complete but **independent review is pending**. The caller has 66 BNDs,

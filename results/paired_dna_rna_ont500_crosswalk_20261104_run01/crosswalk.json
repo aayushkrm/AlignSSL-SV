@@ -1,0 +1,357 @@
+{
+  "ont500_metadata_rows": 500,
+  "ont500_distinct_ids": 500,
+  "ont500_id_prefixes": {
+    "HG": 461,
+    "GM": 39,
+    "NA": 0
+  },
+  "rna_titles": 60,
+  "vienna_exact": 11,
+  "ont500_exact": 13,
+  "both_exact": 0,
+  "either_exact": 24,
+  "neither_exact": [
+    "HG00104",
+    "HG00118",
+    "HG00138",
+    "HG00249",
+    "HG00260",
+    "HG00265",
+    "NA06985",
+    "NA07037",
+    "NA07051",
+    "NA07357",
+    "NA10847",
+    "NA11831",
+    "NA11840",
+    "NA11894",
+    "NA11918",
+    "NA11992",
+    "NA11993",
+    "NA11994",
+    "NA12005",
+    "NA12156",
+    "NA12249",
+    "NA12275",
+    "NA12286",
+    "NA12383",
+    "NA12489",
+    "NA12750",
+    "NA12760",
+    "NA12761",
+    "NA12762",
+    "NA12763",
+    "NA12776",
+    "NA12812",
+    "NA12813",
+    "NA12814",
+    "NA12815",
+    "NA12873"
+  ],
+  "rows": [
+    {
+      "rna_sample_title": "HG00098",
+      "vienna_listed_alignment": true,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00099",
+      "vienna_listed_alignment": true,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00100",
+      "vienna_listed_alignment": true,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00101",
+      "vienna_listed_alignment": true,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00102",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": true
+    },
+    {
+      "rna_sample_title": "HG00103",
+      "vienna_listed_alignment": true,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00104",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00110",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": true
+    },
+    {
+      "rna_sample_title": "HG00111",
+      "vienna_listed_alignment": true,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00112",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": true
+    },
+    {
+      "rna_sample_title": "HG00115",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": true
+    },
+    {
+      "rna_sample_title": "HG00116",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": true
+    },
+    {
+      "rna_sample_title": "HG00117",
+      "vienna_listed_alignment": true,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00118",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00119",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": true
+    },
+    {
+      "rna_sample_title": "HG00121",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": true
+    },
+    {
+      "rna_sample_title": "HG00124",
+      "vienna_listed_alignment": true,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00126",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": true
+    },
+    {
+      "rna_sample_title": "HG00128",
+      "vienna_listed_alignment": true,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00138",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00142",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": true
+    },
+    {
+      "rna_sample_title": "HG00149",
+      "vienna_listed_alignment": true,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00238",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": true
+    },
+    {
+      "rna_sample_title": "HG00249",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00253",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": true
+    },
+    {
+      "rna_sample_title": "HG00260",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "HG00262",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": true
+    },
+    {
+      "rna_sample_title": "HG00263",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": true
+    },
+    {
+      "rna_sample_title": "HG00265",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA06985",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA07037",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA07051",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA07357",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA10847",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA10851",
+      "vienna_listed_alignment": true,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA11831",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA11840",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA11894",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA11918",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA11992",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA11993",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA11994",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12005",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12156",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12249",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12275",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12286",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12383",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12489",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12750",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12760",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12761",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12762",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12763",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12776",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12812",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12813",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12814",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12815",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    },
+    {
+      "rna_sample_title": "NA12873",
+      "vienna_listed_alignment": false,
+      "ont500_exact_metadata_label": false
+    }
+  ],
+  "ont500_source_sha256": "cb7721f68f524a1d7cda4fa25bbe8da0f357998a129a720601a3f5252763acb0",
+  "vienna_crosswalk_sha256": "5b214a19e2d5066c91ca2eb9a9a8f6b8829130b9e3b0fa3eedf13a990f11bc2c",
+  "limits": "Exact strings only; GM/NA aliases, individual file availability and biological identity unverified."
+}

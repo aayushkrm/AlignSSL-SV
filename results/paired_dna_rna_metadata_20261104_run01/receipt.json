@@ -1,0 +1,52 @@
+{
+  "retrieved_utc": "2026-11-03T19:11:00.776152+00:00",
+  "script_sha256": "9a471e45e1a8b5507c5c0a2c42dd9ab5b50e5e909a1ac8b93bf8680024055eb6",
+  "max_bytes_per_response": 2097152,
+  "sources": [
+    {
+      "name": "vienna_manifest.tsv",
+      "url": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1KG_ONT_VIENNA/1KG_ONT_VIENNA_manifest.tsv",
+      "status": 200,
+      "bytes": 296458,
+      "sha256": "0cb727c5d3634e61394d8d4e6054860ccc56b15ba1763caaab63bd81b36067b3",
+      "last_modified": "Tue, 22 Aug 2023 08:00:10 GMT",
+      "content_type": "text/tab-separated-values"
+    },
+    {
+      "name": "vienna_manifest_20240112.tsv",
+      "url": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1KG_ONT_VIENNA/1KG_ONT_VIENNA_manifest_20240112.tsv",
+      "status": 200,
+      "bytes": 36158,
+      "sha256": "8632001f5ae5fbf5038bc7f176f20b8101d1db404ebafd650e01e9e3edf520a1",
+      "last_modified": "Fri, 12 Jan 2024 16:09:52 GMT",
+      "content_type": "text/tab-separated-values"
+    },
+    {
+      "name": "vienna_manifest_20240215.tsv",
+      "url": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1KG_ONT_VIENNA/1KG_ONT_VIENNA_manifest_20240215.tsv",
+      "status": 200,
+      "bytes": 79549,
+      "sha256": "a698baec38debb72f6f6faafbd77fb1b01f18c5591829072cdf796af5bd87e60",
+      "last_modified": "Fri, 16 Feb 2024 20:25:00 GMT",
+      "content_type": "text/tab-separated-values"
+    },
+    {
+      "name": "vienna_reuse.md",
+      "url": "https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1KG_ONT_VIENNA/README_1KG_ONT_VIENNA_datareuse_statement.md",
+      "status": 200,
+      "bytes": 2673,
+      "sha256": "c7625d393e872cf68bde6b306de57a874cbbea39647a7521b756b26c01ec9480",
+      "last_modified": "Wed, 26 Mar 2025 11:58:47 GMT",
+      "content_type": "text/markdown"
+    },
+    {
+      "name": "ena_prjeb76585_read_runs.tsv",
+      "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB76585&result=read_run&fields=study_accession%2Crun_accession%2Csample_accession%2Csample_alias%2Csecondary_sample_accession%2Clibrary_strategy&format=tsv&limit=0",
+      "status": 200,
+      "bytes": 3935,
+      "sha256": "326c7241efe49f6e79ebaa0006bc144ea7dc4c5656eff1e520398a0dcb5ea758",
+      "last_modified": null,
+      "content_type": "text/plain"
+    }
+  ]
+}

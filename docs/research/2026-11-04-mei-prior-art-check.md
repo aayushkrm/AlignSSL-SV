@@ -26,6 +26,17 @@ gap remains. These cases were not selected prospectively as a complete panel.
 Do not count relatives or reads as independent alleles; do not use these
 published outcomes as a blinded final test.
 
+A separate [GTEx study](https://link.springer.com/article/10.1186/s13059-020-02101-4)
+already coupled 20,545 polymorphic MEIs from 639 individuals to expression
+and splicing across 48 tissues and used reporter assays for selected loci.
+Its putatively causal QTL assignments are predictions, not universal proof
+of mechanism. A [rare-disease study](https://pmc.ncbi.nlm.nih.gov/articles/PMC12047269/)
+also already integrates long-read SV calls with expression through
+Watershed-SV. These are direct prior art against a generic population MEI
+association or generic DNA/RNA integration pitch. See the separate
+[paired-source feasibility check](2026-11-04-paired-dna-rna-feasibility.md)
+for the unresolved opportunity and sample/reference constraints.
+
 The earlier [conditional scout](2026-11-03-independent-opportunity.md)
 identifies additional case reports and a rare-disease MEI table. That table
 does not by itself establish sample-linked RNA outcomes for every entry. A

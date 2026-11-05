@@ -1,0 +1,12 @@
+{
+  "source": "results/snpeff_annotation_replay_20261104_run01/input.vcf",
+  "source_sha256": "529198033086dbd92ce7fb490965955c9a9b43244c80c94a2a23a63ba3e215d4",
+  "script_sha256": "8b2a5bd34f87f3e5e532f9067fe1b8b3ccebec1ee544cc7b7e0fa03999f70795",
+  "inputs": {
+    "valid.vcf": "529198033086dbd92ce7fb490965955c9a9b43244c80c94a2a23a63ba3e215d4",
+    "uppercase_remote.vcf": "1f1829cb3b3d8cf2e94ef8960b25db3db7f54c38dca9d96aae595c8a432574ef",
+    "undeclared_remote.vcf": "3bcff363fc7ddd37816406685294277518cf26c21acaed08fd04dd6208819031",
+    "undeclared_local.vcf": "9177bebc4c6ec423206d0463b24164fcf0b777f663d953eafd5fc898817a1421",
+    "malformed_alt.vcf": "2a9fa77754fdd40acad0aad941bd5e57db9bfdbb8e431f4449f0a23c172982d7"
+  }
+}

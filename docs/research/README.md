@@ -6,11 +6,13 @@ The files separate verified code findings, experimental plans, external
 literature, and independent criticism so that hypotheses cannot silently become
 results.
 
-Current scientific state, 2026-11-03 UTC: exploratory COLO829 representation
+Current scientific state, 2026-11-05 UTC: exploratory COLO829 representation
 checks reproduce a known upstream nanomonsv fix and a possible SnpEff case
 mechanism; the real-data findings remain independently unreviewed. Recent
 clinical studies already apply sequence-aware SpliceAI to long insertions;
 no generic MEI-splice method novelty or suitable independent cohort is shown.
+A synthetic EBI validator check and a 24-title paired DNA/RNA metadata
+crosswalk provide bounded feasibility evidence, not biological results.
 The actual synVII archive crosswalk
 establishes metadata membership, not an eligible structural/phenotype
 contrast. Park retrospective fitness inference pending specific missing
@@ -22,6 +24,8 @@ dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
+| [`2026-11-04-ebi-validator-case-protocol.md`](2026-11-04-ebi-validator-case-protocol.md) | Synthetic validator controls and execution | Tested command did not warn on two remote-contig probes; local and malformed-ALT controls triggered; review pending |
+| [`2026-11-04-paired-dna-rna-feasibility.md`](2026-11-04-paired-dna-rna-feasibility.md) | Two-source exact-title crosswalk and prior art | 24 of 60 titles match one of two DNA metadata sets; contents, sample provenance and scientific value unresolved |
 | [`2026-11-03-colo829-contig-alias-diagnostic.md`](2026-11-03-colo829-contig-alias-diagnostic.md) | Exploratory native-tool real-file interoperability check | 66 singleton versus 33 paired BND groups; exact input change and failed attempt retained; independent review pending |
 | [`2026-11-03-colo829-bnd-anchor-census.md`](2026-11-03-colo829-bnd-anchor-census.md) | Whole-file caller/truth BND census | Differences alone are not errors; source investigation and synthetic replay link caller pattern to known version behavior |
 | [`2026-11-03-colo829-junction-sequence-check.md`](2026-11-03-colo829-junction-sequence-check.md) | Unfinished worker draft | J1–J3 sequence interpretations remain unaccepted; discrepancy and incomplete worker status explicit |

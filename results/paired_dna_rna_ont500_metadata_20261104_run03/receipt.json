@@ -1,0 +1,28 @@
+{
+  "retrieved_utc": "2026-11-03T19:16:37.374456+00:00",
+  "script_sha256": "955a5420c5478b777245c9bfcf499fd5c5cc51110deb32d799622098d4abaf5c",
+  "sources": [
+    {
+      "name": "ont500_metadata.tsv",
+      "url": "https://s3.amazonaws.com/1000g-ont/PROCESSED_DATA/1kGP_LRSC_500_ONT_Metadata.tsv",
+      "argv": [
+        "/Users/akm/aayushkrm-AlignSSL/tools/cluster.sh",
+        "curl --fail --silent --show-error --location --connect-timeout 8 --max-time 25 --max-filesize 2097152 https://s3.amazonaws.com/1000g-ont/PROCESSED_DATA/1kGP_LRSC_500_ONT_Metadata.tsv"
+      ],
+      "exit_code": 0,
+      "bytes": 14811,
+      "sha256": "cb7721f68f524a1d7cda4fa25bbe8da0f357998a129a720601a3f5252763acb0"
+    },
+    {
+      "name": "ont500_readme.txt",
+      "url": "https://s3.amazonaws.com/1000g-ont/PROCESSED_DATA/READ_ME.txt",
+      "argv": [
+        "/Users/akm/aayushkrm-AlignSSL/tools/cluster.sh",
+        "curl --fail --silent --show-error --location --connect-timeout 8 --max-time 25 --max-filesize 2097152 https://s3.amazonaws.com/1000g-ont/PROCESSED_DATA/READ_ME.txt"
+      ],
+      "exit_code": 0,
+      "bytes": 2252,
+      "sha256": "f3c5a68cb76d62cf22935ca205177181682971922d724afe825b6570c1d96846"
+    }
+  ]
+}

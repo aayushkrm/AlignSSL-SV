@@ -1,0 +1,16 @@
+{
+  "retrieved_utc": "2026-11-03T19:15:18.369541+00:00",
+  "script_sha256": "27ff80e6c1443d4b926f8c89b9c4ea09ad0e0ef9b2a7e73153a73565b814d344",
+  "sources": [
+    {
+      "name": "ont500_metadata.tsv",
+      "url": "https://s3.amazonaws.com/1000g-ont/PROCESSED_DATA/1kGP_LRSC_500_ONT_Metadata.tsv",
+      "error": "timeout: The read operation timed out"
+    },
+    {
+      "name": "ont500_readme.txt",
+      "url": "https://s3.amazonaws.com/1000g-ont/PROCESSED_DATA/READ_ME.txt",
+      "error": "URLError: <urlopen error _ssl.c:1112: The handshake operation timed out>"
+    }
+  ]
+}

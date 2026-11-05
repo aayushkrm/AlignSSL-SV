@@ -1,0 +1,272 @@
+{
+  "retrieved_utc": "2026-11-03T19:18:15.603986+00:00",
+  "prefix": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/",
+  "pages": [
+    {
+      "url": "https://s3.amazonaws.com/1000g-ont/?list-type=2&prefix=PROCESSED_DATA%2FALIGNED_TO_HG38%2FSNIFFLES_v2.6.2%2F&max-keys=1000",
+      "sha256": "38b365a2421f62967f63f5cc10c90ad552fffc7c3c2b96806526391ddb1439e1",
+      "bytes": 378290,
+      "is_truncated": "false",
+      "argv": [
+        "/Users/akm/aayushkrm-AlignSSL/tools/cluster.sh",
+        "curl --fail --silent --show-error --location --connect-timeout 8 --max-time 25 --max-filesize 2097152 'https://s3.amazonaws.com/1000g-ont/?list-type=2&prefix=PROCESSED_DATA%2FALIGNED_TO_HG38%2FSNIFFLES_v2.6.2%2F&max-keys=1000'"
+      ]
+    }
+  ],
+  "object_count": 1000,
+  "target_count": 13,
+  "targets_with_vcf": 13,
+  "targets_with_exactly_one_vcf_and_csi": 13,
+  "rows": [
+    {
+      "rna_title": "HG00102",
+      "vcf_objects": [
+        {
+          "vcf": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00102.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz",
+            "size": 14465584,
+            "etag": "\"8c4669f710c7bcac46c2f5046759becd-2\"",
+            "last_modified": "2025-09-10T21:27:28.000Z"
+          },
+          "index": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00102.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz.csi",
+            "size": 160819,
+            "etag": "\"e120cb733038feb8f235b075ebe4e28f\"",
+            "last_modified": "2025-09-10T21:27:37.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "rna_title": "HG00110",
+      "vcf_objects": [
+        {
+          "vcf": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00110.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz",
+            "size": 14288061,
+            "etag": "\"5a93b68a4b5adec582934463414ceddd-2\"",
+            "last_modified": "2025-09-10T21:28:34.000Z"
+          },
+          "index": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00110.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz.csi",
+            "size": 158371,
+            "etag": "\"91a0c2ba9c112c252aaac7840143b641\"",
+            "last_modified": "2025-09-10T21:28:42.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "rna_title": "HG00112",
+      "vcf_objects": [
+        {
+          "vcf": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00112.XY.GBR.EUR_sniffles_v2.6.2.vcf.gz",
+            "size": 14836276,
+            "etag": "\"78a79a6115981c096a1fd569f43efbb2-2\"",
+            "last_modified": "2025-09-10T21:28:50.000Z"
+          },
+          "index": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00112.XY.GBR.EUR_sniffles_v2.6.2.vcf.gz.csi",
+            "size": 160659,
+            "etag": "\"8286006e22b262e34355de678d2a148f\"",
+            "last_modified": "2025-09-10T21:28:59.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "rna_title": "HG00115",
+      "vcf_objects": [
+        {
+          "vcf": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00115.XY.GBR.EUR_sniffles_v2.6.2.vcf.gz",
+            "size": 19717398,
+            "etag": "\"0782733b5c197982104666773d854601-3\"",
+            "last_modified": "2025-09-10T21:29:22.000Z"
+          },
+          "index": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00115.XY.GBR.EUR_sniffles_v2.6.2.vcf.gz.csi",
+            "size": 160834,
+            "etag": "\"14166f0cd3e6b9a8b469d8f8e8ee4e5c\"",
+            "last_modified": "2025-09-10T21:29:31.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "rna_title": "HG00116",
+      "vcf_objects": [
+        {
+          "vcf": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00116.XY.GBR.EUR_sniffles_v2.6.2.vcf.gz",
+            "size": 16668114,
+            "etag": "\"c108c68230f72f28b8fc44775a31c0db-2\"",
+            "last_modified": "2025-09-10T21:29:38.000Z"
+          },
+          "index": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00116.XY.GBR.EUR_sniffles_v2.6.2.vcf.gz.csi",
+            "size": 161662,
+            "etag": "\"8ff9b4dfe4c548ca11abff20caebaf32\"",
+            "last_modified": "2025-09-10T21:29:47.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "rna_title": "HG00119",
+      "vcf_objects": [
+        {
+          "vcf": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00119.XY.GBR.EUR_sniffles_v2.6.2.vcf.gz",
+            "size": 14540929,
+            "etag": "\"df94f8e40cb3ab332ec5d65351d43782-2\"",
+            "last_modified": "2025-09-10T21:29:55.000Z"
+          },
+          "index": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00119.XY.GBR.EUR_sniffles_v2.6.2.vcf.gz.csi",
+            "size": 160985,
+            "etag": "\"3058571775b2ec339955071d7a89b31d\"",
+            "last_modified": "2025-09-10T21:30:04.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "rna_title": "HG00121",
+      "vcf_objects": [
+        {
+          "vcf": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00121.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz",
+            "size": 14355056,
+            "etag": "\"81e0441a2b3e573aeb005fe8eee7fb89-2\"",
+            "last_modified": "2025-09-10T21:30:11.000Z"
+          },
+          "index": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00121.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz.csi",
+            "size": 158596,
+            "etag": "\"f1f0d88ee6a25d56a871a681cc0d3e34\"",
+            "last_modified": "2025-09-10T21:30:20.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "rna_title": "HG00126",
+      "vcf_objects": [
+        {
+          "vcf": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00126.XY.GBR.EUR_sniffles_v2.6.2.vcf.gz",
+            "size": 23446466,
+            "etag": "\"7d4b8d8479c24c9b9f0f35d74e40eec6-3\"",
+            "last_modified": "2025-09-10T21:30:27.000Z"
+          },
+          "index": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00126.XY.GBR.EUR_sniffles_v2.6.2.vcf.gz.csi",
+            "size": 160277,
+            "etag": "\"6169d9fe7df2d5e20f86b45e9ceeea4b\"",
+            "last_modified": "2025-09-10T21:30:36.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "rna_title": "HG00142",
+      "vcf_objects": [
+        {
+          "vcf": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00142.XY.GBR.EUR_sniffles_v2.6.2.vcf.gz",
+            "size": 15078804,
+            "etag": "\"626ad46b3b0120275fb617a5340f4c3a-2\"",
+            "last_modified": "2025-09-10T21:31:16.000Z"
+          },
+          "index": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00142.XY.GBR.EUR_sniffles_v2.6.2.vcf.gz.csi",
+            "size": 160947,
+            "etag": "\"4926493d570e849d5bf893e1e70dad3b\"",
+            "last_modified": "2025-09-10T21:31:25.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "rna_title": "HG00238",
+      "vcf_objects": [
+        {
+          "vcf": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00238.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz",
+            "size": 13831950,
+            "etag": "\"dcd01e190bb1246ede639dd01e0e9a95-2\"",
+            "last_modified": "2025-09-10T21:35:02.000Z"
+          },
+          "index": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00238.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz.csi",
+            "size": 160356,
+            "etag": "\"c05cd104515b07ca3e63e40333b465da\"",
+            "last_modified": "2025-09-10T21:35:11.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "rna_title": "HG00253",
+      "vcf_objects": [
+        {
+          "vcf": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00253.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz",
+            "size": 14580003,
+            "etag": "\"bf0b08ab7a2f366873994adc2ec290b6-2\"",
+            "last_modified": "2025-09-10T21:36:23.000Z"
+          },
+          "index": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00253.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz.csi",
+            "size": 161639,
+            "etag": "\"6a33705d4b1259fa3f18de87f6695fce\"",
+            "last_modified": "2025-09-10T21:36:32.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "rna_title": "HG00262",
+      "vcf_objects": [
+        {
+          "vcf": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00262.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz",
+            "size": 15100456,
+            "etag": "\"d046f872eba760bed52e629f4c42d1e1-2\"",
+            "last_modified": "2025-09-10T21:37:28.000Z"
+          },
+          "index": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00262.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz.csi",
+            "size": 160797,
+            "etag": "\"42da4bbff4f0244c0472057dbfc7b8ea\"",
+            "last_modified": "2025-09-10T21:37:36.000Z"
+          }
+        }
+      ]
+    },
+    {
+      "rna_title": "HG00263",
+      "vcf_objects": [
+        {
+          "vcf": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00263.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz",
+            "size": 15833730,
+            "etag": "\"c2471c7054268876a2fac3f9a7686960-2\"",
+            "last_modified": "2025-09-10T21:37:44.000Z"
+          },
+          "index": {
+            "key": "PROCESSED_DATA/ALIGNED_TO_HG38/SNIFFLES_v2.6.2/HG00263.XX.GBR.EUR_sniffles_v2.6.2.vcf.gz.csi",
+            "size": 161208,
+            "etag": "\"3ee248470232710254724e38d6b7bc2d\"",
+            "last_modified": "2025-09-10T21:37:52.000Z"
+          }
+        }
+      ]
+    }
+  ],
+  "crosswalk_sha256": "2f9203808324b4e08b07d99f50272cc54730f5a1454762327b4d13d3248f7eb7",
+  "script_sha256": "f44389937fb46b25869189d839ba7264c6da616026a2d67aeee130795318a11d",
+  "limits": "Object listings only. ETags are opaque; file bodies, identities, genotypes and usability were not verified."
+}

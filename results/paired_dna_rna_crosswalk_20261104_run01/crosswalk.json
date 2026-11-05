@@ -1,0 +1,1387 @@
+{
+  "rna_runs": 60,
+  "distinct_matching_format_titles": 60,
+  "unresolved_rna_rows": [],
+  "dna_distinct_manifest_ids": 1019,
+  "dna_matching_rna_titles": 11,
+  "rna_titles_not_in_dna_manifests": [
+    "HG00102",
+    "HG00104",
+    "HG00110",
+    "HG00112",
+    "HG00115",
+    "HG00116",
+    "HG00118",
+    "HG00119",
+    "HG00121",
+    "HG00126",
+    "HG00138",
+    "HG00142",
+    "HG00238",
+    "HG00249",
+    "HG00253",
+    "HG00260",
+    "HG00262",
+    "HG00263",
+    "HG00265",
+    "NA06985",
+    "NA07037",
+    "NA07051",
+    "NA07357",
+    "NA10847",
+    "NA11831",
+    "NA11840",
+    "NA11894",
+    "NA11918",
+    "NA11992",
+    "NA11993",
+    "NA11994",
+    "NA12005",
+    "NA12156",
+    "NA12249",
+    "NA12275",
+    "NA12286",
+    "NA12383",
+    "NA12489",
+    "NA12750",
+    "NA12760",
+    "NA12761",
+    "NA12762",
+    "NA12763",
+    "NA12776",
+    "NA12812",
+    "NA12813",
+    "NA12814",
+    "NA12815",
+    "NA12873"
+  ],
+  "rna_titles_not_in_author_list": [],
+  "author_list_not_in_rna_titles": [],
+  "dna_modes_among_rna_titles": {
+    "gaf": 11,
+    "hg38": 11,
+    "t2t": 11
+  },
+  "rows": [
+    {
+      "sample_title": "HG00098",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350373",
+          "sample_accession": "SAMEA115732024",
+          "sample_alias": "LCLs-32",
+          "sample_title": "HG00098",
+          "secondary_sample_accession": "ERS20241452",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [
+        "gaf",
+        "hg38",
+        "t2t"
+      ],
+      "listed_dna_files": [
+        {
+          "path": "1KG_ONT_VIENNA/gaf/HG00098.gaf.gz",
+          "bytes": 2095348870,
+          "md5": "75273f21fc6b042afea1b606de9c5545",
+          "mode": "gaf",
+          "sample": "HG00098"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/hg38/HG00098.hg38.cram",
+          "bytes": 3647197018,
+          "md5": "32cb93ab6a4d19027a65d074c6a3a088",
+          "mode": "hg38",
+          "sample": "HG00098"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/t2t/HG00098.t2t.cram",
+          "bytes": 3241337185,
+          "md5": "fc8c90fdf377add06b10163f97cbb58c",
+          "mode": "t2t",
+          "sample": "HG00098"
+        }
+      ]
+    },
+    {
+      "sample_title": "HG00099",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350374",
+          "sample_accession": "SAMEA115732025",
+          "sample_alias": "LCLs-33",
+          "sample_title": "HG00099",
+          "secondary_sample_accession": "ERS20241453",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [
+        "gaf",
+        "hg38",
+        "t2t"
+      ],
+      "listed_dna_files": [
+        {
+          "path": "1KG_ONT_VIENNA/gaf/HG00099.gaf.gz",
+          "bytes": 3705753200,
+          "md5": "814ce2c043b287adb1a65a3db67c7bdf",
+          "mode": "gaf",
+          "sample": "HG00099"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/hg38/HG00099.hg38.cram",
+          "bytes": 6051193018,
+          "md5": "3acdaac83721016516c3de3f1cb1de3c",
+          "mode": "hg38",
+          "sample": "HG00099"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/t2t/HG00099.t2t.cram",
+          "bytes": 5641143809,
+          "md5": "d4e8d09a39cd47a18698d37881b3f230",
+          "mode": "t2t",
+          "sample": "HG00099"
+        }
+      ]
+    },
+    {
+      "sample_title": "HG00100",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350375",
+          "sample_accession": "SAMEA115732026",
+          "sample_alias": "LCLs-34",
+          "sample_title": "HG00100",
+          "secondary_sample_accession": "ERS20241454",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [
+        "gaf",
+        "hg38",
+        "t2t"
+      ],
+      "listed_dna_files": [
+        {
+          "path": "1KG_ONT_VIENNA/gaf/HG00100.gaf.gz",
+          "bytes": 2599930360,
+          "md5": "4a89f8bba10018c3c2df65229f6ab9b9",
+          "mode": "gaf",
+          "sample": "HG00100"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/hg38/HG00100.hg38.cram",
+          "bytes": 4750539668,
+          "md5": "5566b5742db87772e89f620c49f32e6a",
+          "mode": "hg38",
+          "sample": "HG00100"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/t2t/HG00100.t2t.cram",
+          "bytes": 4203624760,
+          "md5": "4df03b62b9c340d26a384966e41b6147",
+          "mode": "t2t",
+          "sample": "HG00100"
+        }
+      ]
+    },
+    {
+      "sample_title": "HG00101",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350376",
+          "sample_accession": "SAMEA115732027",
+          "sample_alias": "LCLs-35",
+          "sample_title": "HG00101",
+          "secondary_sample_accession": "ERS20241455",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [
+        "gaf",
+        "hg38",
+        "t2t"
+      ],
+      "listed_dna_files": [
+        {
+          "path": "1KG_ONT_VIENNA/gaf/HG00101.gaf.gz",
+          "bytes": 2449278978,
+          "md5": "b33c029bbc878cacac3ea21a2dbdcedf",
+          "mode": "gaf",
+          "sample": "HG00101"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/hg38/HG00101.hg38.cram",
+          "bytes": 4682425232,
+          "md5": "daf4182c86d94ba723afd72dd5d71f8e",
+          "mode": "hg38",
+          "sample": "HG00101"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/t2t/HG00101.t2t.cram",
+          "bytes": 4226823238,
+          "md5": "eb2e2824ec9c32a103c7edaa7344bbb1",
+          "mode": "t2t",
+          "sample": "HG00101"
+        }
+      ]
+    },
+    {
+      "sample_title": "HG00102",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350377",
+          "sample_accession": "SAMEA115732028",
+          "sample_alias": "LCLs-36",
+          "sample_title": "HG00102",
+          "secondary_sample_accession": "ERS20241456",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00103",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350378",
+          "sample_accession": "SAMEA115732029",
+          "sample_alias": "LCLs-37",
+          "sample_title": "HG00103",
+          "secondary_sample_accession": "ERS20241457",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [
+        "gaf",
+        "hg38",
+        "t2t"
+      ],
+      "listed_dna_files": [
+        {
+          "path": "1KG_ONT_VIENNA/gaf/HG00103.gaf.gz",
+          "bytes": 2043214263,
+          "md5": "4d944172ad471621f11ba65220946745",
+          "mode": "gaf",
+          "sample": "HG00103"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/hg38/HG00103.hg38.cram",
+          "bytes": 4030999370,
+          "md5": "f556e75d84e89e873863cc394fbe2fe2",
+          "mode": "hg38",
+          "sample": "HG00103"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/t2t/HG00103.t2t.cram",
+          "bytes": 3557913029,
+          "md5": "62624522d9ebaf20a5c90aac716e8c20",
+          "mode": "t2t",
+          "sample": "HG00103"
+        }
+      ]
+    },
+    {
+      "sample_title": "HG00104",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350379",
+          "sample_accession": "SAMEA115732030",
+          "sample_alias": "LCLs-38",
+          "sample_title": "HG00104",
+          "secondary_sample_accession": "ERS20241458",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00110",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350380",
+          "sample_accession": "SAMEA115732031",
+          "sample_alias": "LCLs-39",
+          "sample_title": "HG00110",
+          "secondary_sample_accession": "ERS20241459",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00111",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350381",
+          "sample_accession": "SAMEA115732032",
+          "sample_alias": "LCLs-40",
+          "sample_title": "HG00111",
+          "secondary_sample_accession": "ERS20241460",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [
+        "gaf",
+        "hg38",
+        "t2t"
+      ],
+      "listed_dna_files": [
+        {
+          "path": "1KG_ONT_VIENNA/gaf/HG00111.gaf.gz",
+          "bytes": 4496082396,
+          "md5": "a2dc6beb05cb30cccd0612733002e094",
+          "mode": "gaf",
+          "sample": "HG00111"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/hg38/HG00111.hg38.cram",
+          "bytes": 8113482903,
+          "md5": "7b02ca1a59a8f8d1a900e9f75124ccba",
+          "mode": "hg38",
+          "sample": "HG00111"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/t2t/HG00111.t2t.cram",
+          "bytes": 7369372704,
+          "md5": "26a096e00f214fad369e51b30bd5ad67",
+          "mode": "t2t",
+          "sample": "HG00111"
+        }
+      ]
+    },
+    {
+      "sample_title": "HG00112",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350382",
+          "sample_accession": "SAMEA115732033",
+          "sample_alias": "LCLs-41",
+          "sample_title": "HG00112",
+          "secondary_sample_accession": "ERS20241461",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00115",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350383",
+          "sample_accession": "SAMEA115732034",
+          "sample_alias": "LCLs-42",
+          "sample_title": "HG00115",
+          "secondary_sample_accession": "ERS20241462",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00116",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350384",
+          "sample_accession": "SAMEA115732035",
+          "sample_alias": "LCLs-43",
+          "sample_title": "HG00116",
+          "secondary_sample_accession": "ERS20241463",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00117",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350385",
+          "sample_accession": "SAMEA115732036",
+          "sample_alias": "LCLs-44",
+          "sample_title": "HG00117",
+          "secondary_sample_accession": "ERS20241464",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [
+        "gaf",
+        "hg38",
+        "t2t"
+      ],
+      "listed_dna_files": [
+        {
+          "path": "1KG_ONT_VIENNA/gaf/HG00117.gaf.gz",
+          "bytes": 3288666925,
+          "md5": "64f26acc0ed1375c39ab69913affa9c1",
+          "mode": "gaf",
+          "sample": "HG00117"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/hg38/HG00117.hg38.cram",
+          "bytes": 6100352784,
+          "md5": "bdd76a00d0d77dfd39ff3845d863ce5f",
+          "mode": "hg38",
+          "sample": "HG00117"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/t2t/HG00117.t2t.cram",
+          "bytes": 5330071422,
+          "md5": "4fc74f7fd4ae0b8227ff403b37e415e3",
+          "mode": "t2t",
+          "sample": "HG00117"
+        }
+      ]
+    },
+    {
+      "sample_title": "HG00118",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350386",
+          "sample_accession": "SAMEA115732037",
+          "sample_alias": "LCLs-45",
+          "sample_title": "HG00118",
+          "secondary_sample_accession": "ERS20241465",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00119",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350387",
+          "sample_accession": "SAMEA115732038",
+          "sample_alias": "LCLs-46",
+          "sample_title": "HG00119",
+          "secondary_sample_accession": "ERS20241466",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00121",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350388",
+          "sample_accession": "SAMEA115732039",
+          "sample_alias": "LCLs-47",
+          "sample_title": "HG00121",
+          "secondary_sample_accession": "ERS20241467",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00124",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350389",
+          "sample_accession": "SAMEA115732040",
+          "sample_alias": "LCLs-48",
+          "sample_title": "HG00124",
+          "secondary_sample_accession": "ERS20241468",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [
+        "gaf",
+        "hg38",
+        "t2t"
+      ],
+      "listed_dna_files": [
+        {
+          "path": "1KG_ONT_VIENNA/gaf/HG00124.gaf.gz",
+          "bytes": 2929872671,
+          "md5": "8b5737ae593e9c0c037f185eaeb6ee3c",
+          "mode": "gaf",
+          "sample": "HG00124"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/hg38/HG00124.hg38.cram",
+          "bytes": 5627918274,
+          "md5": "c046af3e5f53081355195cd2e8431ce3",
+          "mode": "hg38",
+          "sample": "HG00124"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/t2t/HG00124.t2t.cram",
+          "bytes": 4956927048,
+          "md5": "706e4706a6aceb4b7593946c61e1f6fd",
+          "mode": "t2t",
+          "sample": "HG00124"
+        }
+      ]
+    },
+    {
+      "sample_title": "HG00126",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350390",
+          "sample_accession": "SAMEA115732041",
+          "sample_alias": "LCLs-49",
+          "sample_title": "HG00126",
+          "secondary_sample_accession": "ERS20241469",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00128",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350391",
+          "sample_accession": "SAMEA115732042",
+          "sample_alias": "LCLs-50",
+          "sample_title": "HG00128",
+          "secondary_sample_accession": "ERS20241470",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [
+        "gaf",
+        "hg38",
+        "t2t"
+      ],
+      "listed_dna_files": [
+        {
+          "path": "1KG_ONT_VIENNA/gaf/HG00128.gaf.gz",
+          "bytes": 3953843125,
+          "md5": "76679327d7cfa8a829315ce88a923c48",
+          "mode": "gaf",
+          "sample": "HG00128"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/hg38/HG00128.hg38.cram",
+          "bytes": 6382091132,
+          "md5": "058c323b1cdd5fe40fabbf5fc0e45e5c",
+          "mode": "hg38",
+          "sample": "HG00128"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/t2t/HG00128.t2t.cram",
+          "bytes": 5885720676,
+          "md5": "0b95034a0f81c780368ef9dd8a425a8b",
+          "mode": "t2t",
+          "sample": "HG00128"
+        }
+      ]
+    },
+    {
+      "sample_title": "HG00138",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350392",
+          "sample_accession": "SAMEA115732043",
+          "sample_alias": "LCLs-51",
+          "sample_title": "HG00138",
+          "secondary_sample_accession": "ERS20241471",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00142",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350393",
+          "sample_accession": "SAMEA115732044",
+          "sample_alias": "LCLs-52",
+          "sample_title": "HG00142",
+          "secondary_sample_accession": "ERS20241472",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00149",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350394",
+          "sample_accession": "SAMEA115732045",
+          "sample_alias": "LCLs-53",
+          "sample_title": "HG00149",
+          "secondary_sample_accession": "ERS20241473",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [
+        "gaf",
+        "hg38",
+        "t2t"
+      ],
+      "listed_dna_files": [
+        {
+          "path": "1KG_ONT_VIENNA/gaf/HG00149.gaf.gz",
+          "bytes": 10364503349,
+          "md5": "620ca17805750ffe9785fc88c1c7e76b",
+          "mode": "gaf",
+          "sample": "HG00149"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/hg38/HG00149.hg38.cram",
+          "bytes": 18494530744,
+          "md5": "1fe69b056d07afd0004e12ce9e78046b",
+          "mode": "hg38",
+          "sample": "HG00149"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/t2t/HG00149.t2t.cram",
+          "bytes": 16930397480,
+          "md5": "56fad470464a504273f3261e3ce9a1d2",
+          "mode": "t2t",
+          "sample": "HG00149"
+        }
+      ]
+    },
+    {
+      "sample_title": "HG00238",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350395",
+          "sample_accession": "SAMEA115732046",
+          "sample_alias": "LCLs-54",
+          "sample_title": "HG00238",
+          "secondary_sample_accession": "ERS20241474",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00249",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350396",
+          "sample_accession": "SAMEA115732047",
+          "sample_alias": "LCLs-55",
+          "sample_title": "HG00249",
+          "secondary_sample_accession": "ERS20241475",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00253",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350397",
+          "sample_accession": "SAMEA115732048",
+          "sample_alias": "LCLs-56",
+          "sample_title": "HG00253",
+          "secondary_sample_accession": "ERS20241476",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00260",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350398",
+          "sample_accession": "SAMEA115732049",
+          "sample_alias": "LCLs-57",
+          "sample_title": "HG00260",
+          "secondary_sample_accession": "ERS20241477",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00262",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350399",
+          "sample_accession": "SAMEA115732050",
+          "sample_alias": "LCLs-58",
+          "sample_title": "HG00262",
+          "secondary_sample_accession": "ERS20241478",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00263",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350400",
+          "sample_accession": "SAMEA115732051",
+          "sample_alias": "LCLs-59",
+          "sample_title": "HG00263",
+          "secondary_sample_accession": "ERS20241479",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "HG00265",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350401",
+          "sample_accession": "SAMEA115732052",
+          "sample_alias": "LCLs-60",
+          "sample_title": "HG00265",
+          "secondary_sample_accession": "ERS20241480",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA06985",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350342",
+          "sample_accession": "SAMEA115731993",
+          "sample_alias": "LCLs-1",
+          "sample_title": "NA06985",
+          "secondary_sample_accession": "ERS20241421",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA07037",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350343",
+          "sample_accession": "SAMEA115731994",
+          "sample_alias": "LCLs-2",
+          "sample_title": "NA07037",
+          "secondary_sample_accession": "ERS20241422",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA07051",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350344",
+          "sample_accession": "SAMEA115731995",
+          "sample_alias": "LCLs-3",
+          "sample_title": "NA07051",
+          "secondary_sample_accession": "ERS20241423",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA07357",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350345",
+          "sample_accession": "SAMEA115731996",
+          "sample_alias": "LCLs-4",
+          "sample_title": "NA07357",
+          "secondary_sample_accession": "ERS20241424",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA10847",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350346",
+          "sample_accession": "SAMEA115731997",
+          "sample_alias": "LCLs-5",
+          "sample_title": "NA10847",
+          "secondary_sample_accession": "ERS20241425",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA10851",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350347",
+          "sample_accession": "SAMEA115731998",
+          "sample_alias": "LCLs-6",
+          "sample_title": "NA10851",
+          "secondary_sample_accession": "ERS20241426",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [
+        "gaf",
+        "hg38",
+        "t2t"
+      ],
+      "listed_dna_files": [
+        {
+          "path": "1KG_ONT_VIENNA/gaf/NA10851.gaf.gz",
+          "bytes": 5567991989,
+          "md5": "18734592a7f81bb1db2ccaf02c4f86bc",
+          "mode": "gaf",
+          "sample": "NA10851"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/hg38/NA10851.hg38.cram",
+          "bytes": 10272586315,
+          "md5": "638be95a7af7b14d76e419e3f68853c8",
+          "mode": "hg38",
+          "sample": "NA10851"
+        },
+        {
+          "path": "1KG_ONT_VIENNA/t2t/NA10851.t2t.cram",
+          "bytes": 9287397868,
+          "md5": "696dc16da3e119952b3b074f560b971a",
+          "mode": "t2t",
+          "sample": "NA10851"
+        }
+      ]
+    },
+    {
+      "sample_title": "NA11831",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350348",
+          "sample_accession": "SAMEA115731999",
+          "sample_alias": "LCLs-7",
+          "sample_title": "NA11831",
+          "secondary_sample_accession": "ERS20241427",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA11840",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350349",
+          "sample_accession": "SAMEA115732000",
+          "sample_alias": "LCLs-8",
+          "sample_title": "NA11840",
+          "secondary_sample_accession": "ERS20241428",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA11894",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350350",
+          "sample_accession": "SAMEA115732001",
+          "sample_alias": "LCLs-9",
+          "sample_title": "NA11894",
+          "secondary_sample_accession": "ERS20241429",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA11918",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350351",
+          "sample_accession": "SAMEA115732002",
+          "sample_alias": "LCLs-10",
+          "sample_title": "NA11918",
+          "secondary_sample_accession": "ERS20241430",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA11992",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350352",
+          "sample_accession": "SAMEA115732003",
+          "sample_alias": "LCLs-11",
+          "sample_title": "NA11992",
+          "secondary_sample_accession": "ERS20241431",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA11993",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350353",
+          "sample_accession": "SAMEA115732004",
+          "sample_alias": "LCLs-12",
+          "sample_title": "NA11993",
+          "secondary_sample_accession": "ERS20241432",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA11994",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350354",
+          "sample_accession": "SAMEA115732005",
+          "sample_alias": "LCLs-13",
+          "sample_title": "NA11994",
+          "secondary_sample_accession": "ERS20241433",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12005",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350355",
+          "sample_accession": "SAMEA115732006",
+          "sample_alias": "LCLs-14",
+          "sample_title": "NA12005",
+          "secondary_sample_accession": "ERS20241434",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12156",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350356",
+          "sample_accession": "SAMEA115732007",
+          "sample_alias": "LCLs-15",
+          "sample_title": "NA12156",
+          "secondary_sample_accession": "ERS20241435",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12249",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350357",
+          "sample_accession": "SAMEA115732008",
+          "sample_alias": "LCLs-16",
+          "sample_title": "NA12249",
+          "secondary_sample_accession": "ERS20241436",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12275",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350358",
+          "sample_accession": "SAMEA115732009",
+          "sample_alias": "LCLs-17",
+          "sample_title": "NA12275",
+          "secondary_sample_accession": "ERS20241437",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12286",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350359",
+          "sample_accession": "SAMEA115732010",
+          "sample_alias": "LCLs-18",
+          "sample_title": "NA12286",
+          "secondary_sample_accession": "ERS20241438",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12383",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350360",
+          "sample_accession": "SAMEA115732011",
+          "sample_alias": "LCLs-19",
+          "sample_title": "NA12383",
+          "secondary_sample_accession": "ERS20241439",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12489",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350361",
+          "sample_accession": "SAMEA115732012",
+          "sample_alias": "LCLs-20",
+          "sample_title": "NA12489",
+          "secondary_sample_accession": "ERS20241440",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12750",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350362",
+          "sample_accession": "SAMEA115732013",
+          "sample_alias": "LCLs-21",
+          "sample_title": "NA12750",
+          "secondary_sample_accession": "ERS20241441",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12760",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350363",
+          "sample_accession": "SAMEA115732014",
+          "sample_alias": "LCLs-22",
+          "sample_title": "NA12760",
+          "secondary_sample_accession": "ERS20241442",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12761",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350364",
+          "sample_accession": "SAMEA115732015",
+          "sample_alias": "LCLs-23",
+          "sample_title": "NA12761",
+          "secondary_sample_accession": "ERS20241443",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12762",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350365",
+          "sample_accession": "SAMEA115732016",
+          "sample_alias": "LCLs-24",
+          "sample_title": "NA12762",
+          "secondary_sample_accession": "ERS20241444",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12763",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350366",
+          "sample_accession": "SAMEA115732017",
+          "sample_alias": "LCLs-25",
+          "sample_title": "NA12763",
+          "secondary_sample_accession": "ERS20241445",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12776",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350367",
+          "sample_accession": "SAMEA115732018",
+          "sample_alias": "LCLs-26",
+          "sample_title": "NA12776",
+          "secondary_sample_accession": "ERS20241446",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12812",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350368",
+          "sample_accession": "SAMEA115732019",
+          "sample_alias": "LCLs-27",
+          "sample_title": "NA12812",
+          "secondary_sample_accession": "ERS20241447",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12813",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350369",
+          "sample_accession": "SAMEA115732020",
+          "sample_alias": "LCLs-28",
+          "sample_title": "NA12813",
+          "secondary_sample_accession": "ERS20241448",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12814",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350370",
+          "sample_accession": "SAMEA115732021",
+          "sample_alias": "LCLs-29",
+          "sample_title": "NA12814",
+          "secondary_sample_accession": "ERS20241449",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12815",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350371",
+          "sample_accession": "SAMEA115732022",
+          "sample_alias": "LCLs-30",
+          "sample_title": "NA12815",
+          "secondary_sample_accession": "ERS20241450",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    },
+    {
+      "sample_title": "NA12873",
+      "author_list_member": true,
+      "rna_runs": [
+        {
+          "run_accession": "ERR13350372",
+          "sample_accession": "SAMEA115732023",
+          "sample_alias": "LCLs-31",
+          "sample_title": "NA12873",
+          "secondary_sample_accession": "ERS20241451",
+          "library_strategy": "OTHER"
+        }
+      ],
+      "listed_dna_modes": [],
+      "listed_dna_files": []
+    }
+  ],
+  "dna_manifest_conflicts": [],
+  "author_code_commit": "70f64b309fd3325ec518857270b78d5f4e2a80f9",
+  "author_file": "scripts/02_transcript_quantification/04_bambu_transcript_quantification.R",
+  "author_file_sha256": "6edabdef945f36a2445a004dffcd259574c5cfcf81b212973ec191e72b8132df",
+  "author_sample_ids": [
+    "HG00098",
+    "HG00099",
+    "HG00100",
+    "HG00101",
+    "HG00102",
+    "HG00103",
+    "HG00104",
+    "HG00110",
+    "HG00111",
+    "HG00112",
+    "HG00115",
+    "HG00116",
+    "HG00117",
+    "HG00118",
+    "HG00119",
+    "HG00121",
+    "HG00124",
+    "HG00126",
+    "HG00128",
+    "HG00138",
+    "HG00142",
+    "HG00149",
+    "HG00238",
+    "HG00249",
+    "HG00253",
+    "HG00260",
+    "HG00262",
+    "HG00263",
+    "HG00265",
+    "NA06985",
+    "NA07037",
+    "NA07051",
+    "NA07357",
+    "NA10847",
+    "NA10851",
+    "NA11831",
+    "NA11840",
+    "NA11894",
+    "NA11918",
+    "NA11992",
+    "NA11993",
+    "NA11994",
+    "NA12005",
+    "NA12156",
+    "NA12249",
+    "NA12275",
+    "NA12286",
+    "NA12383",
+    "NA12489",
+    "NA12750",
+    "NA12760",
+    "NA12761",
+    "NA12762",
+    "NA12763",
+    "NA12776",
+    "NA12812",
+    "NA12813",
+    "NA12814",
+    "NA12815",
+    "NA12873"
+  ],
+  "ena_titles_sha256": "7bcd97862f8849e5175af270bb980fc66a05da7123ed634f9c7c77f3b8f67d80",
+  "rna_run_report_sha256": "326c7241efe49f6e79ebaa0006bc144ea7dc4c5656eff1e520398a0dcb5ea758",
+  "dna_manifest_sha256": {
+    "vienna_manifest.tsv": "0cb727c5d3634e61394d8d4e6054860ccc56b15ba1763caaab63bd81b36067b3",
+    "vienna_manifest_20240112.tsv": "8632001f5ae5fbf5038bc7f176f20b8101d1db404ebafd650e01e9e3edf520a1",
+    "vienna_manifest_20240215.tsv": "a698baec38debb72f6f6faafbd77fb1b01f18c5591829072cdf796af5bd87e60"
+  },
+  "limits": "Exact public metadata joins only; no reads, allele-level truth or sample identity verification."
+}

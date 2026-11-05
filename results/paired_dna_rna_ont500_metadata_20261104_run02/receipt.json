@@ -1,0 +1,62 @@
+{
+  "retrieved_utc": "2026-11-03T19:16:07.815826+00:00",
+  "script_sha256": "7d5bdd5782826f0b1f6f531bcd32835713cf7d5768796491cce81768d37517db",
+  "sources": [
+    {
+      "name": "ont500_metadata.tsv",
+      "url": "https://s3.amazonaws.com/1000g-ont/PROCESSED_DATA/1kGP_LRSC_500_ONT_Metadata.tsv",
+      "argv": [
+        "curl",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "35",
+        "--retry",
+        "1",
+        "--max-filesize",
+        "2097152",
+        "--output",
+        "/Users/akm/aayushkrm-AlignSSL/repo/results/paired_dna_rna_ont500_metadata_20261104_run02/ont500_metadata.tsv",
+        "--write-out",
+        "%{http_code}",
+        "https://s3.amazonaws.com/1000g-ont/PROCESSED_DATA/1kGP_LRSC_500_ONT_Metadata.tsv"
+      ],
+      "exit_code": 0,
+      "http_status": "200",
+      "bytes": 14811,
+      "sha256": "cb7721f68f524a1d7cda4fa25bbe8da0f357998a129a720601a3f5252763acb0"
+    },
+    {
+      "name": "ont500_readme.txt",
+      "url": "https://s3.amazonaws.com/1000g-ont/PROCESSED_DATA/READ_ME.txt",
+      "argv": [
+        "curl",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--location",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "35",
+        "--retry",
+        "1",
+        "--max-filesize",
+        "2097152",
+        "--output",
+        "/Users/akm/aayushkrm-AlignSSL/repo/results/paired_dna_rna_ont500_metadata_20261104_run02/ont500_readme.txt",
+        "--write-out",
+        "%{http_code}",
+        "https://s3.amazonaws.com/1000g-ont/PROCESSED_DATA/READ_ME.txt"
+      ],
+      "exit_code": 0,
+      "http_status": "200",
+      "bytes": 2252,
+      "sha256": "f3c5a68cb76d62cf22935ca205177181682971922d724afe825b6570c1d96846"
+    }
+  ]
+}

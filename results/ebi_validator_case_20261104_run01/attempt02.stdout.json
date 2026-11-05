@@ -1,0 +1,113 @@
+{
+  "validator_sha256": "7326fc83425f5367f9974aaa223f2b48b1854bf9ecd5e9e5eae3899b3107fc87",
+  "slurm_job_id": "1614659",
+  "allocated_cpus": "4",
+  "node": "hydra-n2.ipa.icgbio.ru",
+  "results": [
+    {
+      "input": "malformed_alt.vcf",
+      "input_sha256": "2a9fa77754fdd40acad0aad941bd5e57db9bfdbb8e431f4449f0a23c172982d7",
+      "command": [
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/tools/vcf-validator-v0.10.2-20261103/vcf_validator_linux",
+        "-i",
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/tools/vcf-validator-v0.10.2-20261103/case-diagnostic-20261104-run01/inputs/malformed_alt.vcf",
+        "-l",
+        "warning",
+        "-r",
+        "summary",
+        "-o",
+        "/tmp/alignssl-validator-case-ksq8qqgf"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "[info] Reading from input file...\n[info] Summary report written to : /tmp/alignssl-validator-case-ksq8qqgf/malformed_alt.vcf.errors_summary.1793732918297.txt\n[info] According to the VCF specification, the input file is not valid\n",
+      "reports": {
+        "malformed_alt.vcf.errors_summary.1793732918297.txt": "According to the VCF specification, the input file is not valid\nError: Alternate is not a single dot or a comma-separated list of bases. This occurs 1 time(s), first time in line 7.\nWarning: A valid 'reference' entry is not listed in the meta section. This occurs 1 time(s), first time in line 7.\n"
+      }
+    },
+    {
+      "input": "undeclared_local.vcf",
+      "input_sha256": "9177bebc4c6ec423206d0463b24164fcf0b777f663d953eafd5fc898817a1421",
+      "command": [
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/tools/vcf-validator-v0.10.2-20261103/vcf_validator_linux",
+        "-i",
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/tools/vcf-validator-v0.10.2-20261103/case-diagnostic-20261104-run01/inputs/undeclared_local.vcf",
+        "-l",
+        "warning",
+        "-r",
+        "summary",
+        "-o",
+        "/tmp/alignssl-validator-case-tp8asm25"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "[info] Reading from input file...\n[info] Summary report written to : /tmp/alignssl-validator-case-tp8asm25/undeclared_local.vcf.errors_summary.1793732918297.txt\n[info] According to the VCF specification, the input file is valid\n",
+      "reports": {
+        "undeclared_local.vcf.errors_summary.1793732918297.txt": "According to the VCF specification, the input file is valid\nWarning: A valid 'reference' entry is not listed in the meta section. This occurs 1 time(s), first time in line 7.\nWarning: Chromosome/contig 'chrZ' is not described in a 'contig' meta description. This occurs 1 time(s), first time in line 7.\n"
+      }
+    },
+    {
+      "input": "undeclared_remote.vcf",
+      "input_sha256": "3bcff363fc7ddd37816406685294277518cf26c21acaed08fd04dd6208819031",
+      "command": [
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/tools/vcf-validator-v0.10.2-20261103/vcf_validator_linux",
+        "-i",
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/tools/vcf-validator-v0.10.2-20261103/case-diagnostic-20261104-run01/inputs/undeclared_remote.vcf",
+        "-l",
+        "warning",
+        "-r",
+        "summary",
+        "-o",
+        "/tmp/alignssl-validator-case-scqnnxmx"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "[info] Reading from input file...\n[info] Summary report written to : /tmp/alignssl-validator-case-scqnnxmx/undeclared_remote.vcf.errors_summary.1793732918297.txt\n[info] According to the VCF specification, the input file is valid\n",
+      "reports": {
+        "undeclared_remote.vcf.errors_summary.1793732918297.txt": "According to the VCF specification, the input file is valid\nWarning: A valid 'reference' entry is not listed in the meta section. This occurs 1 time(s), first time in line 7.\n"
+      }
+    },
+    {
+      "input": "uppercase_remote.vcf",
+      "input_sha256": "1f1829cb3b3d8cf2e94ef8960b25db3db7f54c38dca9d96aae595c8a432574ef",
+      "command": [
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/tools/vcf-validator-v0.10.2-20261103/vcf_validator_linux",
+        "-i",
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/tools/vcf-validator-v0.10.2-20261103/case-diagnostic-20261104-run01/inputs/uppercase_remote.vcf",
+        "-l",
+        "warning",
+        "-r",
+        "summary",
+        "-o",
+        "/tmp/alignssl-validator-case-8gybui03"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "[info] Reading from input file...\n[info] Summary report written to : /tmp/alignssl-validator-case-8gybui03/uppercase_remote.vcf.errors_summary.1793732918297.txt\n[info] According to the VCF specification, the input file is valid\n",
+      "reports": {
+        "uppercase_remote.vcf.errors_summary.1793732918297.txt": "According to the VCF specification, the input file is valid\nWarning: A valid 'reference' entry is not listed in the meta section. This occurs 1 time(s), first time in line 7.\n"
+      }
+    },
+    {
+      "input": "valid.vcf",
+      "input_sha256": "529198033086dbd92ce7fb490965955c9a9b43244c80c94a2a23a63ba3e215d4",
+      "command": [
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/tools/vcf-validator-v0.10.2-20261103/vcf_validator_linux",
+        "-i",
+        "/beegfs/datasets/home/igorno/alignssl_restart_20260922/tools/vcf-validator-v0.10.2-20261103/case-diagnostic-20261104-run01/inputs/valid.vcf",
+        "-l",
+        "warning",
+        "-r",
+        "summary",
+        "-o",
+        "/tmp/alignssl-validator-case-s6w6q5ce"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "[info] Reading from input file...\n[info] Summary report written to : /tmp/alignssl-validator-case-s6w6q5ce/valid.vcf.errors_summary.1793732918318.txt\n[info] According to the VCF specification, the input file is valid\n",
+      "reports": {
+        "valid.vcf.errors_summary.1793732918318.txt": "According to the VCF specification, the input file is valid\nWarning: A valid 'reference' entry is not listed in the meta section. This occurs 1 time(s), first time in line 7.\n"
+      }
+    }
+  ]
+}

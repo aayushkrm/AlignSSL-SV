@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-11-03** (UTC; earlier milestones retain their recorded dates). The research-restart section immediately below
+_Last updated: **2026-11-05** (UTC; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,35 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+### Validator controls and paired-source feasibility — 2026-11-05 UTC
+
+In the [synthetic EBI validator check](docs/research/2026-11-04-ebi-validator-case-protocol.md),
+the tested v0.10.2 command did not warn about undeclared BND mate-contig
+names. It did warn about an undeclared local chromosome and rejected the
+malformed-ALT control. These are observations for five synthetic inputs and
+one configuration; they do not establish clinical impact or a general
+validator requirement. The first cluster request was cancelled while pending;
+the second completed. Both attempts and their outputs are preserved.
+
+The [paired DNA/RNA feasibility check](docs/research/2026-11-04-paired-dna-rna-feasibility.md)
+finds 11 exact RNA sample-title matches in Vienna alignment manifests and 13
+additional exact matches in a separate ONT-500 metadata table: 24 distinct
+titles among 60 RNA samples. A public object listing contains one VCF and
+one index for each of the 13 ONT-500 names; their contents were not fetched.
+The remaining 36 titles have no exact match in these two lists, not necessarily
+in other DNA resources. Identity, relatedness, reference reconciliation,
+allele-level outcomes, statistical power and novelty remain unresolved.
+Existing MEI and DNA/RNA studies already cover broad versions of this idea.
+This is an exploratory alternative, not an accepted publication direction.
+
+The focused suite passed 48 tests; 34 receipt and script SHA256 checks passed.
+On November 5 UTC the project's cluster queue was empty. The only listed
+scratch workspace was for another project and was left untouched. Local
+available space was about 41 GiB. Independent reviews and the search for a
+stronger direction were dispatched; their outcomes are not yet assumed.
+No large experiment or positive biological conclusion is authorized by these
+checks. The publication goal remains active and unmet.
 
 ### COLO829 representation checks and MEI prior art — 2026-11-03 UTC
 
@@ -56,7 +85,7 @@ case-only cross comparison. The native cross F1 is null. Both inputs derive
 from one public callset; these are not biological FP/FN counts. Genotype
 fields in native summaries are meaningless because the inputs have no samples.
 
-All four requested subagents, including the current independent reviewer,
+At the earlier checkpoint, all four requested subagents, including its independent reviewer,
 stopped with the runtime's usage-limit error before completing their assigned
 follow-ups. The message offered retry on November 4 at 03:14 AM without a
 stated timezone. The earlier independent review of the synthetic Verix packet

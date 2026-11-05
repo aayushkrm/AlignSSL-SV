@@ -1,0 +1,9 @@
+{
+  "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB76585&result=read_run&fields=study_accession%2Crun_accession%2Csample_accession%2Csample_alias%2Csample_title%2Csample_description%2Csecondary_sample_accession%2Clibrary_strategy&format=tsv&limit=0",
+  "retrieved_utc": "2026-11-03T19:12:12.945256+00:00",
+  "status": 200,
+  "bytes": 6007,
+  "sha256": "7bcd97862f8849e5175af270bb980fc66a05da7123ed634f9c7c77f3b8f67d80",
+  "script_sha256": "a53499dec155cd1967f487df5b24998a07839e7acc3aa61c66142860afbd4c66",
+  "max_bytes": 2097152
+}

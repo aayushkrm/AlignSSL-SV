@@ -1,0 +1,9 @@
+##fileformat=VCFv4.3
+##contig=<ID=chrA,length=100>
+##contig=<ID=chrB,length=100>
+##INFO=<ID=SVTYPE,Number=1,Type=String,Description="SV type">
+##INFO=<ID=MATEID,Number=.,Type=String,Description="Mate ID">
+#CHROM	POS	ID	REF	ALT	QUAL	FILTER	INFO
+chrA	10	a	A	A[chrZ:20[	.	PASS	SVTYPE=BND;MATEID=b
+chrA	11	snv	A	G	.	PASS	.
+chrB	20	b	C	]chrZ:10]C	.	PASS	SVTYPE=BND;MATEID=a

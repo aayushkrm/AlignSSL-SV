@@ -1,0 +1,19 @@
+{
+  "validator_sha256": "7326fc83425f5367f9974aaa223f2b48b1854bf9ecd5e9e5eae3899b3107fc87",
+  "cluster_script_sha256": "1fac5e93fd6f00901e1e4feb85393abce9f3bc247e820316f4cc393e143051de",
+  "job_01": "1614658 cancelled before allocation; debug partition",
+  "job_02": "1614659 completed; amd_256M partition",
+  "files_sha256": {
+    "accounting.txt": "31fee0cb520431d99e624c3ad92580761985a6fbd82402093fe32ae54b9d224f",
+    "attempt01-pending.stderr.txt": "b1651bcb40ef115ca8541e367c141f1f3cb6722f25f385a4007cf8213e6a85e9",
+    "attempt01-pending.stdout.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "attempt02.stderr.txt": "dee0d46c419a64242f292998a4a54011266f1aa18e2417276831895b6950a7e1",
+    "attempt02.stdout.json": "0f8cba9387dd0ac2e758aefe44ec7668dfc3f8a6716649ca8ebff427f1ce9f1b",
+    "input-manifest.json": "250d5a142b879d4af4be3dd0f10ad855cae1aaf4598b7e6d663d2db856775942",
+    "inputs/malformed_alt.vcf": "2a9fa77754fdd40acad0aad941bd5e57db9bfdbb8e431f4449f0a23c172982d7",
+    "inputs/undeclared_local.vcf": "9177bebc4c6ec423206d0463b24164fcf0b777f663d953eafd5fc898817a1421",
+    "inputs/undeclared_remote.vcf": "3bcff363fc7ddd37816406685294277518cf26c21acaed08fd04dd6208819031",
+    "inputs/uppercase_remote.vcf": "1f1829cb3b3d8cf2e94ef8960b25db3db7f54c38dca9d96aae595c8a432574ef",
+    "inputs/valid.vcf": "529198033086dbd92ce7fb490965955c9a9b43244c80c94a2a23a63ba3e215d4"
+  }
+}
