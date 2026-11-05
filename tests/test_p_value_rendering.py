@@ -35,6 +35,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DOCS = [
     ROOT / "docs" / "AlignSSL_SV_manuscript.md",
     ROOT / "README.md",
+    ROOT / "docs" / "archive" / "README-legacy-ssl.md",
     ROOT / "docs" / "project.md",
     ROOT / "PROGRESS.md",
 ]
