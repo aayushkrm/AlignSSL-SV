@@ -8,7 +8,21 @@ context only. It is not the foundation for new work.
 
 ## Verified and planned
 
-Latest review (2026-11-05 UTC): a case-only change to BND mate-contig names in
+Latest research check (2026-11-22 UTC): a public CloneSeq-SV table audit found
+matching SV and SNV specimen-time keys for 23 of 24 patients. All 12
+author-listed plasma-WGS specimens also match both count-table keys, across
+six patients. These are availability checks, not proof of clone accuracy or
+equal assay cost. An independent review reproduced the narrow counts and
+identified reporting corrections that are being made. A later preprint uses
+the same cohort and reports that only three of the six WGS patients had
+clones distinguishable by both marker classes. The processed-data archive
+returned HTTP 403 to an anonymous download request; authenticated access has
+not been tested. No publication result has been established. See the
+[audit](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-22-cloneseq-content-result.md),
+[independent review](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-22-cloneseq-content-independent-review.md)
+and [literature update](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-22-cloneseq-literature-update.md).
+
+Earlier interoperability review (2026-11-05 UTC): a case-only change to BND mate-contig names in
 one public COLO829 file changes native comparator output. The independent
 [review](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-06-independent-interop-review.md)
 found the SnpEff producer behavior was reported years ago and recommends
@@ -16,7 +30,7 @@ stopping this as a publication lead. The altered file also has stale `ANN`
 allele strings. Keep the work as a bounded regression case; it does not
 establish a biological error or a publication result.
 
-Current feasibility work compares published DNA sample lists with 60 public
+Earlier feasibility work compares published DNA sample lists with 60 public
 direct-RNA sample names. The union of three DNA sources covers 58 names; 24
 are in two long-read DNA metadata sets, and 56 occur in the header of an older
 short-read genotype VCF. A public transcript-count file's header contains all
@@ -28,7 +42,7 @@ Recent clinical papers already use insertion sequence with SpliceAI; a generic
 mobile-element splice prediction method is not a new contribution. See the
 [prior-art check](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-04-mei-prior-art-check.md).
 
-Latest source diagnostic (2026-11-03): the saved CNP0002230 metadata reconcile
+Source diagnostic (2026-11-03): the saved CNP0002230 metadata reconcile
 231 samples, 292 experiments, 319 runs and 638 read-file links. No raw reads
 were downloaded. This establishes archive membership, not a resolved
 chromosome-path, dosage or quantitative fitness dataset. No usable matched
