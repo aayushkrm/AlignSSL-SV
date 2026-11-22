@@ -15,11 +15,14 @@ six patients. These are availability checks, not proof of clone accuracy or
 equal assay cost. An independent review reproduced the narrow counts and
 identified reporting corrections that are being made. A later preprint uses
 the same cohort and reports that only three of the six WGS patients had
-clones distinguishable by both marker classes. The processed-data archive
+clones distinguishable by both marker classes. The comparative CloneSeq
+campaign is parked pending a suitable independent cohort, reference and
+budget. The processed-data archive
 returned HTTP 403 to an anonymous download request; authenticated access has
 not been tested. No publication result has been established. See the
 [audit](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-22-cloneseq-content-result.md),
-[independent review](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-22-cloneseq-content-independent-review.md)
+[independent review](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-22-cloneseq-content-independent-review.md),
+[investment decision](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-22-investment-reassessment.md)
 and [literature update](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-22-cloneseq-literature-update.md).
 
 Earlier interoperability review (2026-11-05 UTC): a case-only change to BND mate-contig names in
