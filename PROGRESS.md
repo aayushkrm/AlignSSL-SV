@@ -50,6 +50,13 @@ reproduced the narrow findings, and found that 16 incomplete S10 metadata rows
 were omitted from run 02's aggregate missing-key report. A same-time
 diagnostic also needs correction for mixed matching and nonmatching samples.
 The observed key counts remain supported; a third reporting run is specified.
+The independent [investment reassessment](docs/research/2026-11-22-investment-reassessment.md)
+recommends parking the CloneSeq comparative campaign: the direct follow-up
+already studies the same cohort, only three of its six WGS patients met that
+paper's joint marker-distinguishability criterion, and an independent
+reference and fair resource comparison remain unresolved. This is not a
+biological null. It proposes a finite COLO829 hard-region crosswalk as one
+possible next diagnostic; other directions are also being screened.
 
 The cluster queue contains `1000g_wget`, whose paths identify the separate
 Alice CNN workflow; it was left running. One workspace's project ownership

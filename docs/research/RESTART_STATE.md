@@ -57,6 +57,10 @@ six patients; no WGS profiles were checked. The anonymous Synapse archive
 download-reference request returned 403, while authenticated access was not
 tested. The 2026 cfClone preprint reuses the same cohort and reports only
 three of those six patients with clones distinguishable by both marker classes.
+The subsequent [independent investment reassessment](2026-11-22-investment-reassessment.md)
+parks the comparative CloneSeq campaign pending a usable independent cohort,
+appropriate reference and budget. It suggests a finite COLO829 hard-region
+crosswalk for consideration; no new experiment or result is yet selected.
 Cluster job `1637246_1` and a workspace nearing expiry
 were checked for ownership. The job's paths identify the separate Alice CNN
 workflow and it was left running. The workspace's ownership remained unclear;
