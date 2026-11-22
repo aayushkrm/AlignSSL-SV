@@ -13,7 +13,8 @@ matching SV and SNV specimen-time keys for 23 of 24 patients. All 12
 author-listed plasma-WGS specimens also match both count-table keys, across
 six patients. These are availability checks, not proof of clone accuracy or
 equal assay cost. An independent review reproduced the narrow counts and
-identified reporting corrections that are being made. A later preprint uses
+identified a missing metadata count. The corrected audit records all 16
+incomplete metadata rows and preserves the linkage counts. A later preprint uses
 the same cohort and reports that only three of the six WGS patients had
 clones distinguishable by both marker classes. The comparative CloneSeq
 campaign is parked pending a suitable independent cohort, reference and
@@ -24,6 +25,12 @@ not been tested. No publication result has been established. See the
 [independent review](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-22-cloneseq-content-independent-review.md),
 [investment decision](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-22-investment-reassessment.md)
 and [literature update](https://github.com/aayushkrm/AlignSSL-SV/blob/research/genotype-confidence-contracts-20261001/docs/research/2026-11-22-cloneseq-literature-update.md).
+
+A separate [input check](https://github.com/aayushkrm/AlignSSL-SV/tree/research/genotype-confidence-contracts-20261001/results/hg002_illumina_header_20261122_run01)
+verified indexed access to a public HG002 30× NovaSeq GRCh38 BAM. It provides
+one input for testing whether blind proposals recover supported SVs beyond
+existing callers and catalogs. The project's next experimental direction is
+under review.
 
 Earlier interoperability review (2026-11-05 UTC): a case-only change to BND mate-contig names in
 one public COLO829 file changes native comparator output. The independent
