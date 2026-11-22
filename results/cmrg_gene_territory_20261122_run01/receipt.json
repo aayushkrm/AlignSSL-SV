@@ -1,0 +1,4699 @@
+{
+  "protocol_commit": "a173624",
+  "roster_sha256": "13419ef5a604010b35ded0a2ba4cff99f1fb91c5b210636ab40f637849349951",
+  "script_sha256": "4e6198b3004c044a868d00aa15e25cda00c09dff341f195f0d1f4b9e4d8af458",
+  "sources": {
+    "gencode": {
+      "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_46/gencode.v46.annotation.gtf.gz",
+      "bytes": 51006804,
+      "sha256": "82b0e52bc4956486528152e3850660b3c41767ab103d87949e41d38f92ef8b38",
+      "verified_hash": {
+        "md5": "68070e3c87f6a0e70af6e4ff4d55f61c"
+      }
+    },
+    "reference_index": {
+      "url": "https://storage.googleapis.com/gcp-public-data--broad-references/hg38/v0/Homo_sapiens_assembly38.fasta.fai",
+      "bytes": 160928,
+      "sha256": "edefd93c489dc1baefad312f40388089f8db5cf6dcc3ba0955669ead274e8b6b",
+      "verified_hash": {
+        "sha256": "edefd93c489dc1baefad312f40388089f8db5cf6dcc3ba0955669ead274e8b6b"
+      }
+    }
+  },
+  "status_counts": {
+    "placed": 382,
+    "no_match": 12,
+    "multi_match": 1
+  },
+  "union_intervals": 368,
+  "union_bases": 23732357,
+  "bed_sha256": {
+    "territory_provisional.bed": "1adf5f08c075382d30f3260bab22dc1884c9dd93cab5a26b0032fa28debf0f33",
+    "matched_genes.bed": "4fc354833e4527b287ab4eabbe0fc3697b036c7bd119ff93e0e17b7c4e64c697"
+  },
+  "rows": [
+    {
+      "gene": "A4GALT",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000128274.17",
+          "chr22",
+          42692120,
+          42721298
+        ]
+      ]
+    },
+    {
+      "gene": "ABCG8",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000143921.9",
+          "chr2",
+          43831941,
+          43882988
+        ]
+      ]
+    },
+    {
+      "gene": "ABO",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000175164.16",
+          "chr9",
+          133233277,
+          133276024
+        ]
+      ]
+    },
+    {
+      "gene": "ABR",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000159842.16",
+          "chr17",
+          1003518,
+          1229738
+        ]
+      ]
+    },
+    {
+      "gene": "ADAMTS10",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000142303.14",
+          "chr19",
+          8580239,
+          8610735
+        ]
+      ]
+    },
+    {
+      "gene": "ADAMTSL2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000197859.11",
+          "chr9",
+          133532163,
+          133575519
+        ]
+      ]
+    },
+    {
+      "gene": "AFP",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000081051.8",
+          "chr4",
+          73431137,
+          73456174
+        ]
+      ]
+    },
+    {
+      "gene": "AGL",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000162688.17",
+          "chr1",
+          99850360,
+          99924023
+        ]
+      ]
+    },
+    {
+      "gene": "AGRN",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000188157.15",
+          "chr1",
+          1020119,
+          1056118
+        ]
+      ]
+    },
+    {
+      "gene": "ALOXE3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000179148.11",
+          "chr17",
+          8095899,
+          8119047
+        ]
+      ]
+    },
+    {
+      "gene": "ANKRD11",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000167522.17",
+          "chr16",
+          89267629,
+          89490561
+        ]
+      ]
+    },
+    {
+      "gene": "ANO7",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000146205.15",
+          "chr2",
+          241188508,
+          241225976
+        ]
+      ]
+    },
+    {
+      "gene": "APOBEC1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000111701.7",
+          "chr12",
+          7649399,
+          7665908
+        ]
+      ]
+    },
+    {
+      "gene": "APOBEC3H",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000100298.16",
+          "chr22",
+          39097223,
+          39104067
+        ]
+      ]
+    },
+    {
+      "gene": "APOC1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000130208.10",
+          "chr19",
+          44914246,
+          44919349
+        ]
+      ]
+    },
+    {
+      "gene": "APOC2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000234906.11",
+          "chr19",
+          44946034,
+          44949565
+        ]
+      ]
+    },
+    {
+      "gene": "APOC4",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000267467.4",
+          "chr19",
+          44942236,
+          44945496
+        ]
+      ]
+    },
+    {
+      "gene": "ARHGEF10",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000104728.16",
+          "chr8",
+          1823925,
+          1958641
+        ]
+      ]
+    },
+    {
+      "gene": "ASIP",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000101440.10",
+          "chr20",
+          34194568,
+          34269344
+        ]
+      ]
+    },
+    {
+      "gene": "ATPAF2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000171953.16",
+          "chr17",
+          17977408,
+          18039209
+        ]
+      ]
+    },
+    {
+      "gene": "AXIN1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000103126.15",
+          "chr16",
+          287439,
+          352723
+        ]
+      ]
+    },
+    {
+      "gene": "B3GAT3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000149541.10",
+          "chr11",
+          62615295,
+          62622154
+        ]
+      ]
+    },
+    {
+      "gene": "BAX",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000087088.21",
+          "chr19",
+          48954814,
+          48961798
+        ]
+      ]
+    },
+    {
+      "gene": "BFSP2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000170819.5",
+          "chr3",
+          133400055,
+          133475222
+        ]
+      ]
+    },
+    {
+      "gene": "BLOC1S3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000189114.8",
+          "chr19",
+          45178783,
+          45216933
+        ]
+      ]
+    },
+    {
+      "gene": "BRAF",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000157764.14",
+          "chr7",
+          140719326,
+          140924929
+        ]
+      ]
+    },
+    {
+      "gene": "BSG",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000172270.22",
+          "chr19",
+          571276,
+          583494
+        ]
+      ]
+    },
+    {
+      "gene": "BTRC",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000166167.18",
+          "chr10",
+          101354032,
+          101557321
+        ]
+      ]
+    },
+    {
+      "gene": "C1R",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000159403.18",
+          "chr12",
+          7080213,
+          7092540
+        ]
+      ]
+    },
+    {
+      "gene": "C3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000125730.18",
+          "chr19",
+          6677703,
+          6730562
+        ]
+      ]
+    },
+    {
+      "gene": "CABIN1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000099991.18",
+          "chr22",
+          24011191,
+          24178628
+        ]
+      ]
+    },
+    {
+      "gene": "CALR3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000269058.6",
+          "chr19",
+          16479060,
+          16496167
+        ]
+      ]
+    },
+    {
+      "gene": "CANT1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000171302.17",
+          "chr17",
+          78991715,
+          79009867
+        ]
+      ]
+    },
+    {
+      "gene": "CASP10",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000003400.16",
+          "chr2",
+          201182871,
+          201229428
+        ]
+      ]
+    },
+    {
+      "gene": "CBR3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000159231.6",
+          "chr21",
+          36135078,
+          36146562
+        ]
+      ]
+    },
+    {
+      "gene": "CBS",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000160200.18",
+          "chr21",
+          43053190,
+          43076943
+        ]
+      ]
+    },
+    {
+      "gene": "CCL3L1",
+      "status": "no_match",
+      "matches": []
+    },
+    {
+      "gene": "CCL4L1",
+      "status": "no_match",
+      "matches": []
+    },
+    {
+      "gene": "CD247",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000198821.12",
+          "chr1",
+          167425026,
+          167518640
+        ]
+      ]
+    },
+    {
+      "gene": "CD320",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000167775.11",
+          "chr19",
+          8302126,
+          8308358
+        ]
+      ]
+    },
+    {
+      "gene": "CD4",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000010610.10",
+          "chr12",
+          6786857,
+          6820799
+        ]
+      ]
+    },
+    {
+      "gene": "CD55",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000196352.18",
+          "chr1",
+          207321518,
+          207386804
+        ]
+      ]
+    },
+    {
+      "gene": "CDH15",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000129910.8",
+          "chr16",
+          89171747,
+          89195492
+        ]
+      ]
+    },
+    {
+      "gene": "CDH17",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000079112.10",
+          "chr8",
+          94127161,
+          94217303
+        ]
+      ]
+    },
+    {
+      "gene": "CEL",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000170835.17",
+          "chr9",
+          133061980,
+          133071861
+        ]
+      ]
+    },
+    {
+      "gene": "CFC1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000136698.10",
+          "chr2",
+          130592164,
+          130599575
+        ]
+      ]
+    },
+    {
+      "gene": "CFC1B",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000152093.8",
+          "chr2",
+          130521196,
+          130528604
+        ]
+      ]
+    },
+    {
+      "gene": "CFD",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000197766.9",
+          "chr19",
+          859452,
+          867884
+        ]
+      ]
+    },
+    {
+      "gene": "CFHR1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000244414.8",
+          "chr1",
+          196819730,
+          196837159
+        ]
+      ]
+    },
+    {
+      "gene": "CFHR3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000116785.15",
+          "chr1",
+          196774812,
+          196795407
+        ]
+      ]
+    },
+    {
+      "gene": "CHL1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000134121.10",
+          "chr3",
+          196762,
+          409417
+        ]
+      ]
+    },
+    {
+      "gene": "CHMP1A",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000131165.16",
+          "chr16",
+          89640815,
+          89657738
+        ]
+      ]
+    },
+    {
+      "gene": "CHRNA4",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000101204.18",
+          "chr20",
+          63343222,
+          63378401
+        ]
+      ]
+    },
+    {
+      "gene": "CIRH1A",
+      "status": "no_match",
+      "matches": []
+    },
+    {
+      "gene": "CLCN7",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000103249.19",
+          "chr16",
+          1444933,
+          1475077
+        ]
+      ]
+    },
+    {
+      "gene": "CLIP2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000106665.16",
+          "chr7",
+          74289406,
+          74405935
+        ]
+      ]
+    },
+    {
+      "gene": "CNR2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000188822.8",
+          "chr1",
+          23870514,
+          23913362
+        ]
+      ]
+    },
+    {
+      "gene": "COL18A1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000182871.16",
+          "chr21",
+          45405164,
+          45513720
+        ]
+      ]
+    },
+    {
+      "gene": "COL6A1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000142156.16",
+          "chr21",
+          45981769,
+          46005050
+        ]
+      ]
+    },
+    {
+      "gene": "COL6A2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000142173.17",
+          "chr21",
+          46098111,
+          46132848
+        ]
+      ]
+    },
+    {
+      "gene": "COX14",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000178449.9",
+          "chr12",
+          50112081,
+          50120457
+        ]
+      ]
+    },
+    {
+      "gene": "COX6B1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000126267.11",
+          "chr19",
+          35648322,
+          35658782
+        ]
+      ]
+    },
+    {
+      "gene": "CR1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000203710.12",
+          "chr1",
+          207496146,
+          207641765
+        ]
+      ]
+    },
+    {
+      "gene": "CREB3L3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000060566.14",
+          "chr19",
+          4153630,
+          4173054
+        ]
+      ]
+    },
+    {
+      "gene": "CRYAA",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000160202.7",
+          "chr21",
+          43169007,
+          43172805
+        ]
+      ]
+    },
+    {
+      "gene": "CTDP1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000060069.18",
+          "chr18",
+          79679802,
+          79754503
+        ]
+      ]
+    },
+    {
+      "gene": "CYB5R3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000100243.22",
+          "chr22",
+          42615729,
+          42720870
+        ]
+      ]
+    },
+    {
+      "gene": "CYP2G1P",
+      "status": "multi_match",
+      "matches": [
+        [
+          "ENSG00000130612.17",
+          "chr19",
+          40891218,
+          40900155
+        ],
+        [
+          "ENSG00000290611.1",
+          "chr19",
+          40890825,
+          40912357
+        ]
+      ]
+    },
+    {
+      "gene": "CYP4F12",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000186204.15",
+          "chr19",
+          15673017,
+          15697174
+        ]
+      ]
+    },
+    {
+      "gene": "CYP4F3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000186529.16",
+          "chr19",
+          15640896,
+          15662825
+        ]
+      ]
+    },
+    {
+      "gene": "D2HGDH",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000180902.18",
+          "chr2",
+          241734601,
+          241768816
+        ]
+      ]
+    },
+    {
+      "gene": "DAXX",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000204209.13",
+          "chr6",
+          33318557,
+          33323016
+        ]
+      ]
+    },
+    {
+      "gene": "DAZL",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000092345.14",
+          "chr3",
+          16586791,
+          16670306
+        ]
+      ]
+    },
+    {
+      "gene": "DCLRE1C",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000152457.19",
+          "chr10",
+          14897358,
+          14954432
+        ]
+      ]
+    },
+    {
+      "gene": "DEAF1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000177030.19",
+          "chr11",
+          644232,
+          707118
+        ]
+      ]
+    },
+    {
+      "gene": "DGCR6",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000183628.14",
+          "chr22",
+          18906027,
+          18914238
+        ]
+      ]
+    },
+    {
+      "gene": "DIP2C",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000151240.18",
+          "chr10",
+          274200,
+          689668
+        ]
+      ]
+    },
+    {
+      "gene": "DLGAP2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000198010.13",
+          "chr8",
+          737627,
+          1708476
+        ]
+      ]
+    },
+    {
+      "gene": "DMPK",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000104936.20",
+          "chr19",
+          45769708,
+          45782552
+        ]
+      ]
+    },
+    {
+      "gene": "DNMT3L",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000142182.9",
+          "chr21",
+          44246338,
+          44262216
+        ]
+      ]
+    },
+    {
+      "gene": "DOK7",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000175920.18",
+          "chr4",
+          3463305,
+          3501473
+        ]
+      ]
+    },
+    {
+      "gene": "DPP6",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000130226.18",
+          "chr7",
+          153748132,
+          154894285
+        ]
+      ]
+    },
+    {
+      "gene": "DPY19L2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000177990.12",
+          "chr12",
+          63558912,
+          63668939
+        ]
+      ]
+    },
+    {
+      "gene": "DRD4",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000069696.7",
+          "chr11",
+          637268,
+          640706
+        ]
+      ]
+    },
+    {
+      "gene": "DSPP",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000152591.15",
+          "chr4",
+          87608528,
+          87616873
+        ]
+      ]
+    },
+    {
+      "gene": "DUX4",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000260596.5",
+          "chr4",
+          190173773,
+          190185942
+        ]
+      ]
+    },
+    {
+      "gene": "DUX4L1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000280757.1",
+          "chr4",
+          190084411,
+          190085686
+        ]
+      ]
+    },
+    {
+      "gene": "DYX1C1",
+      "status": "no_match",
+      "matches": []
+    },
+    {
+      "gene": "ECHS1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000127884.5",
+          "chr10",
+          133362484,
+          133373354
+        ]
+      ]
+    },
+    {
+      "gene": "EEF1A2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000101210.14",
+          "chr20",
+          63488012,
+          63499239
+        ]
+      ]
+    },
+    {
+      "gene": "EHMT1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000181090.21",
+          "chr9",
+          137618991,
+          137870016
+        ]
+      ]
+    },
+    {
+      "gene": "EIF2B5",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000145191.15",
+          "chr3",
+          184135037,
+          184146127
+        ]
+      ]
+    },
+    {
+      "gene": "EIF4E",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000151247.13",
+          "chr4",
+          98879275,
+          98929133
+        ]
+      ]
+    },
+    {
+      "gene": "ELANE",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000197561.7",
+          "chr19",
+          851013,
+          856247
+        ]
+      ]
+    },
+    {
+      "gene": "ENO3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000108515.18",
+          "chr17",
+          4948091,
+          4957131
+        ]
+      ]
+    },
+    {
+      "gene": "ESPN",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000187017.18",
+          "chr1",
+          6424775,
+          6461367
+        ]
+      ]
+    },
+    {
+      "gene": "ESRRA",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000173153.17",
+          "chr11",
+          64305496,
+          64316743
+        ]
+      ]
+    },
+    {
+      "gene": "ETFB",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000105379.10",
+          "chr19",
+          51345168,
+          51366388
+        ]
+      ]
+    },
+    {
+      "gene": "ETHE1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000105755.8",
+          "chr19",
+          43506718,
+          43527230
+        ]
+      ]
+    },
+    {
+      "gene": "EXTL2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000162694.14",
+          "chr1",
+          100872371,
+          100895179
+        ]
+      ]
+    },
+    {
+      "gene": "F7",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000057593.14",
+          "chr13",
+          113105787,
+          113120685
+        ]
+      ]
+    },
+    {
+      "gene": "FAM20C",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000177706.9",
+          "chr7",
+          192570,
+          260772
+        ]
+      ]
+    },
+    {
+      "gene": "FAT1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000083857.15",
+          "chr4",
+          186587793,
+          186726722
+        ]
+      ]
+    },
+    {
+      "gene": "FCGR1A",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000150337.14",
+          "chr1",
+          149782670,
+          149791675
+        ]
+      ]
+    },
+    {
+      "gene": "FCGR2B",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000072694.22",
+          "chr1",
+          161663142,
+          161678654
+        ]
+      ]
+    },
+    {
+      "gene": "FCGR3A",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000203747.13",
+          "chr1",
+          161541758,
+          161550968
+        ]
+      ]
+    },
+    {
+      "gene": "FGF3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000186895.4",
+          "chr11",
+          69809967,
+          69819416
+        ]
+      ]
+    },
+    {
+      "gene": "FGFRL1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000127418.15",
+          "chr4",
+          1009935,
+          1026898
+        ]
+      ]
+    },
+    {
+      "gene": "FKBP8",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000105701.16",
+          "chr19",
+          18531750,
+          18544077
+        ]
+      ]
+    },
+    {
+      "gene": "FLAD1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000160688.19",
+          "chr1",
+          154983337,
+          154993111
+        ]
+      ]
+    },
+    {
+      "gene": "FLG",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000143631.11",
+          "chr1",
+          152302164,
+          152325239
+        ]
+      ]
+    },
+    {
+      "gene": "FLT4",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000037280.16",
+          "chr5",
+          180601505,
+          180649624
+        ]
+      ]
+    },
+    {
+      "gene": "FOXN1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000109101.8",
+          "chr17",
+          28506242,
+          28538900
+        ]
+      ]
+    },
+    {
+      "gene": "FSCN2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000186765.12",
+          "chr17",
+          81528376,
+          81537130
+        ]
+      ]
+    },
+    {
+      "gene": "FTCD",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000160282.15",
+          "chr21",
+          46136159,
+          46155579
+        ]
+      ]
+    },
+    {
+      "gene": "FUT1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000174951.12",
+          "chr19",
+          48748010,
+          48755390
+        ]
+      ]
+    },
+    {
+      "gene": "FUT3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000171124.14",
+          "chr19",
+          5842887,
+          5851471
+        ]
+      ]
+    },
+    {
+      "gene": "FXN",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000165060.15",
+          "chr9",
+          69035750,
+          69079076
+        ]
+      ]
+    },
+    {
+      "gene": "G6PC3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000141349.10",
+          "chr17",
+          44070619,
+          44082151
+        ]
+      ]
+    },
+    {
+      "gene": "GAK",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000178950.18",
+          "chr4",
+          849275,
+          932373
+        ]
+      ]
+    },
+    {
+      "gene": "GALNT9",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000182870.13",
+          "chr12",
+          132196371,
+          132329589
+        ]
+      ]
+    },
+    {
+      "gene": "GALR1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000166573.6",
+          "chr18",
+          77249847,
+          77277900
+        ]
+      ]
+    },
+    {
+      "gene": "GALT",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000213930.12",
+          "chr9",
+          34638132,
+          34651035
+        ]
+      ]
+    },
+    {
+      "gene": "GCGR",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000215644.10",
+          "chr17",
+          81804131,
+          81814008
+        ]
+      ]
+    },
+    {
+      "gene": "GCSH",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000140905.11",
+          "chr16",
+          81081944,
+          81096395
+        ]
+      ]
+    },
+    {
+      "gene": "GDF3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000184344.4",
+          "chr12",
+          7689783,
+          7695775
+        ]
+      ]
+    },
+    {
+      "gene": "GIP",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000159224.4",
+          "chr17",
+          48958553,
+          48968596
+        ]
+      ]
+    },
+    {
+      "gene": "GIPC3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000179855.9",
+          "chr19",
+          3585477,
+          3593541
+        ]
+      ]
+    },
+    {
+      "gene": "GNPTG",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000090581.11",
+          "chr16",
+          1351930,
+          1365737
+        ]
+      ]
+    },
+    {
+      "gene": "GOLGA3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000090615.16",
+          "chr12",
+          132768901,
+          132829143
+        ]
+      ]
+    },
+    {
+      "gene": "GP1BA",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000185245.9",
+          "chr17",
+          4932276,
+          4935023
+        ]
+      ]
+    },
+    {
+      "gene": "GP6",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000088053.11",
+          "chr19",
+          55013704,
+          55038264
+        ]
+      ]
+    },
+    {
+      "gene": "GPI",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000105220.17",
+          "chr19",
+          34359479,
+          34402413
+        ]
+      ]
+    },
+    {
+      "gene": "GPIHBP1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000277494.2",
+          "chr8",
+          143213217,
+          143217170
+        ]
+      ]
+    },
+    {
+      "gene": "GRIN1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000176884.17",
+          "chr9",
+          137138345,
+          137168756
+        ]
+      ]
+    },
+    {
+      "gene": "GRK1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000185974.7",
+          "chr13",
+          113667218,
+          113737736
+        ]
+      ]
+    },
+    {
+      "gene": "GSTM1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000134184.13",
+          "chr1",
+          109687813,
+          109709039
+        ]
+      ]
+    },
+    {
+      "gene": "GSTT1",
+      "status": "no_match",
+      "matches": []
+    },
+    {
+      "gene": "GTF2I",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000263001.8",
+          "chr7",
+          74650230,
+          74760692
+        ]
+      ]
+    },
+    {
+      "gene": "GTF2IRD2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000196275.16",
+          "chr7",
+          74796150,
+          74851605
+        ]
+      ]
+    },
+    {
+      "gene": "GUSB",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000169919.17",
+          "chr7",
+          65960683,
+          65982215
+        ]
+      ]
+    },
+    {
+      "gene": "GYPA",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000170180.22",
+          "chr4",
+          144109302,
+          144140751
+        ]
+      ]
+    },
+    {
+      "gene": "GYPB",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000250361.10",
+          "chr4",
+          143996103,
+          144019380
+        ]
+      ]
+    },
+    {
+      "gene": "GYPE",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000197465.14",
+          "chr4",
+          143870863,
+          143905563
+        ]
+      ]
+    },
+    {
+      "gene": "H19",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000130600.22",
+          "chr11",
+          1995165,
+          2004552
+        ]
+      ]
+    },
+    {
+      "gene": "HBG1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000213934.9",
+          "chr11",
+          5248268,
+          5249857
+        ]
+      ]
+    },
+    {
+      "gene": "HBM",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000206177.7",
+          "chr16",
+          153891,
+          166764
+        ]
+      ]
+    },
+    {
+      "gene": "HCN2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000099822.3",
+          "chr19",
+          589880,
+          617159
+        ]
+      ]
+    },
+    {
+      "gene": "HCN3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000143630.10",
+          "chr1",
+          155277462,
+          155289848
+        ]
+      ]
+    },
+    {
+      "gene": "HEATR2",
+      "status": "no_match",
+      "matches": []
+    },
+    {
+      "gene": "HES7",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000179111.9",
+          "chr17",
+          8120591,
+          8124106
+        ]
+      ]
+    },
+    {
+      "gene": "HLA-B",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000234745.14",
+          "chr6",
+          31353871,
+          31367067
+        ]
+      ]
+    },
+    {
+      "gene": "HLA-DQB1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000179344.17",
+          "chr6",
+          32659466,
+          32668383
+        ]
+      ]
+    },
+    {
+      "gene": "HLA-DRB1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000196126.12",
+          "chr6",
+          32577901,
+          32589848
+        ]
+      ]
+    },
+    {
+      "gene": "HMGCL",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000117305.15",
+          "chr1",
+          23801884,
+          23838620
+        ]
+      ]
+    },
+    {
+      "gene": "HMX1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000215612.8",
+          "chr4",
+          8846075,
+          8871839
+        ]
+      ]
+    },
+    {
+      "gene": "HNF1A",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000135100.19",
+          "chr12",
+          120978542,
+          121002512
+        ]
+      ]
+    },
+    {
+      "gene": "HOMER2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000103942.13",
+          "chr15",
+          82836945,
+          82986153
+        ]
+      ]
+    },
+    {
+      "gene": "HOXB8",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000120068.7",
+          "chr17",
+          48611376,
+          48615292
+        ]
+      ]
+    },
+    {
+      "gene": "HPD",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000158104.11",
+          "chr12",
+          121839526,
+          121863596
+        ]
+      ]
+    },
+    {
+      "gene": "HSD11B2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000176387.7",
+          "chr16",
+          67430651,
+          67437553
+        ]
+      ]
+    },
+    {
+      "gene": "HYAL1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000114378.17",
+          "chr3",
+          50299889,
+          50312381
+        ]
+      ]
+    },
+    {
+      "gene": "HYDIN",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000157423.18",
+          "chr16",
+          70802083,
+          71230722
+        ]
+      ]
+    },
+    {
+      "gene": "IFITM3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000142089.17",
+          "chr11",
+          319675,
+          329475
+        ]
+      ]
+    },
+    {
+      "gene": "IFNL3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000197110.10",
+          "chr19",
+          39243454,
+          39245250
+        ]
+      ]
+    },
+    {
+      "gene": "IGHA1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000211895.5",
+          "chr14",
+          105703994,
+          105708665
+        ]
+      ]
+    },
+    {
+      "gene": "IGHG1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000211896.7",
+          "chr14",
+          105736342,
+          105743071
+        ]
+      ]
+    },
+    {
+      "gene": "IGHG2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000211893.4",
+          "chr14",
+          105639558,
+          105644790
+        ]
+      ]
+    },
+    {
+      "gene": "IGHM",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000211899.10",
+          "chr14",
+          105851704,
+          105856218
+        ]
+      ]
+    },
+    {
+      "gene": "IGHV3-21",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000211947.2",
+          "chr14",
+          106235063,
+          106235594
+        ]
+      ]
+    },
+    {
+      "gene": "IGKC",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000211592.8",
+          "chr2",
+          88857160,
+          88857683
+        ]
+      ]
+    },
+    {
+      "gene": "IGKV1-5",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000243466.1",
+          "chr2",
+          88947300,
+          88947957
+        ]
+      ]
+    },
+    {
+      "gene": "IKBKB",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000104365.16",
+          "chr8",
+          42271301,
+          42332460
+        ]
+      ]
+    },
+    {
+      "gene": "IKZF1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000185811.21",
+          "chr7",
+          50304067,
+          50405101
+        ]
+      ]
+    },
+    {
+      "gene": "IMPA1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000133731.10",
+          "chr8",
+          81656913,
+          81686331
+        ]
+      ]
+    },
+    {
+      "gene": "INPP5D",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000168918.14",
+          "chr2",
+          233059966,
+          233207903
+        ]
+      ]
+    },
+    {
+      "gene": "INPP5E",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000148384.14",
+          "chr9",
+          136428618,
+          136439845
+        ]
+      ]
+    },
+    {
+      "gene": "INSL3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000248099.4",
+          "chr19",
+          17816511,
+          17821574
+        ]
+      ]
+    },
+    {
+      "gene": "INSR",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000171105.14",
+          "chr19",
+          7112254,
+          7294414
+        ]
+      ]
+    },
+    {
+      "gene": "JAG2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000184916.9",
+          "chr14",
+          105140981,
+          105168824
+        ]
+      ]
+    },
+    {
+      "gene": "KANSL1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000120071.15",
+          "chr17",
+          46029915,
+          46225389
+        ]
+      ]
+    },
+    {
+      "gene": "KATNAL2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000167216.19",
+          "chr18",
+          46917491,
+          47103478
+        ]
+      ]
+    },
+    {
+      "gene": "KCNE1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000180509.13",
+          "chr21",
+          34446687,
+          34512214
+        ]
+      ]
+    },
+    {
+      "gene": "KCNJ18",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000260458.3",
+          "chr17",
+          21692522,
+          21704612
+        ]
+      ]
+    },
+    {
+      "gene": "KCNV2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000168263.9",
+          "chr9",
+          2717509,
+          2730037
+        ]
+      ]
+    },
+    {
+      "gene": "KDM2B",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000089094.20",
+          "chr12",
+          121429095,
+          121581023
+        ]
+      ]
+    },
+    {
+      "gene": "KIR2DL1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000125498.20",
+          "chr19",
+          54769792,
+          54784322
+        ]
+      ]
+    },
+    {
+      "gene": "KIR2DL3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000243772.8",
+          "chr19",
+          54738512,
+          54753052
+        ]
+      ]
+    },
+    {
+      "gene": "KIR3DL1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000167633.18",
+          "chr19",
+          54816467,
+          54830778
+        ]
+      ]
+    },
+    {
+      "gene": "KISS1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000170498.10",
+          "chr1",
+          204190340,
+          204196491
+        ]
+      ]
+    },
+    {
+      "gene": "KISS1R",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000116014.10",
+          "chr19",
+          917286,
+          921005
+        ]
+      ]
+    },
+    {
+      "gene": "KLF11",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000172059.11",
+          "chr2",
+          10042848,
+          10054836
+        ]
+      ]
+    },
+    {
+      "gene": "KLF14",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000266265.4",
+          "chr7",
+          130730696,
+          130734207
+        ]
+      ]
+    },
+    {
+      "gene": "KLK4",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000167749.12",
+          "chr19",
+          50906350,
+          50911395
+        ]
+      ]
+    },
+    {
+      "gene": "KMT2C",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000055609.21",
+          "chr7",
+          152134921,
+          152436644
+        ]
+      ]
+    },
+    {
+      "gene": "KNG1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000113889.14",
+          "chr3",
+          186717347,
+          186744410
+        ]
+      ]
+    },
+    {
+      "gene": "KRTAP1-1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000188581.9",
+          "chr17",
+          41040540,
+          41041450
+        ]
+      ]
+    },
+    {
+      "gene": "LAMB1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000091136.15",
+          "chr7",
+          107923798,
+          108003213
+        ]
+      ]
+    },
+    {
+      "gene": "LBR",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000143815.15",
+          "chr1",
+          225401501,
+          225428925
+        ]
+      ]
+    },
+    {
+      "gene": "LCE3B",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000187238.5",
+          "chr1",
+          152613810,
+          152614098
+        ]
+      ]
+    },
+    {
+      "gene": "LHFPL5",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000197753.11",
+          "chr6",
+          35797205,
+          35845397
+        ]
+      ]
+    },
+    {
+      "gene": "LIPN",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000204020.6",
+          "chr10",
+          88759981,
+          88779626
+        ]
+      ]
+    },
+    {
+      "gene": "LIX1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000145721.12",
+          "chr5",
+          97091866,
+          97142753
+        ]
+      ]
+    },
+    {
+      "gene": "LMF1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000103227.19",
+          "chr16",
+          853633,
+          981318
+        ]
+      ]
+    },
+    {
+      "gene": "LMNB2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000176619.13",
+          "chr19",
+          2427637,
+          2456959
+        ]
+      ]
+    },
+    {
+      "gene": "LPA",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000198670.13",
+          "chr6",
+          160531481,
+          160664275
+        ]
+      ]
+    },
+    {
+      "gene": "LRIG2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000198799.12",
+          "chr1",
+          113073197,
+          113132260
+        ]
+      ]
+    },
+    {
+      "gene": "LRPAP1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000163956.13",
+          "chr4",
+          3503611,
+          3532446
+        ]
+      ]
+    },
+    {
+      "gene": "LZTFL1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000163818.20",
+          "chr3",
+          45823315,
+          45916042
+        ]
+      ]
+    },
+    {
+      "gene": "MAFA",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000182759.4",
+          "chr8",
+          143419181,
+          143430732
+        ]
+      ]
+    },
+    {
+      "gene": "MAN1B1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000177239.16",
+          "chr9",
+          137086856,
+          137109189
+        ]
+      ]
+    },
+    {
+      "gene": "MAP2K3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000034152.20",
+          "chr17",
+          21284671,
+          21315232
+        ]
+      ]
+    },
+    {
+      "gene": "MARVELD2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000152939.17",
+          "chr5",
+          69415064,
+          69444330
+        ]
+      ]
+    },
+    {
+      "gene": "MASP2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000009724.18",
+          "chr1",
+          11022008,
+          11047239
+        ]
+      ]
+    },
+    {
+      "gene": "MBOAT7",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000125505.17",
+          "chr19",
+          54173411,
+          54189882
+        ]
+      ]
+    },
+    {
+      "gene": "MC1R",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000258839.4",
+          "chr16",
+          89912118,
+          89920973
+        ]
+      ]
+    },
+    {
+      "gene": "MDK",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000110492.17",
+          "chr11",
+          46380755,
+          46383837
+        ]
+      ]
+    },
+    {
+      "gene": "MEST",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000106484.16",
+          "chr7",
+          130486170,
+          130506465
+        ]
+      ]
+    },
+    {
+      "gene": "MLC1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000100427.16",
+          "chr22",
+          50059390,
+          50085426
+        ]
+      ]
+    },
+    {
+      "gene": "MLPH",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000115648.14",
+          "chr2",
+          237485427,
+          237555322
+        ]
+      ]
+    },
+    {
+      "gene": "MOGS",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000115275.15",
+          "chr2",
+          74461056,
+          74465410
+        ]
+      ]
+    },
+    {
+      "gene": "MPG",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000103152.12",
+          "chr16",
+          77006,
+          85851
+        ]
+      ]
+    },
+    {
+      "gene": "MRC1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000260314.3",
+          "chr10",
+          17809347,
+          17911164
+        ]
+      ]
+    },
+    {
+      "gene": "MST1R",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000164078.15",
+          "chr3",
+          49886901,
+          49903873
+        ]
+      ]
+    },
+    {
+      "gene": "MUC1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000185499.17",
+          "chr1",
+          155185823,
+          155192916
+        ]
+      ]
+    },
+    {
+      "gene": "MUC16",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000181143.17",
+          "chr19",
+          8848843,
+          9010390
+        ]
+      ]
+    },
+    {
+      "gene": "MUC3A",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000169894.18",
+          "chr7",
+          100949533,
+          100968347
+        ]
+      ]
+    },
+    {
+      "gene": "MUC4",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000145113.22",
+          "chr3",
+          195746764,
+          195811973
+        ]
+      ]
+    },
+    {
+      "gene": "MUC5B",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000117983.17",
+          "chr11",
+          1223065,
+          1262172
+        ]
+      ]
+    },
+    {
+      "gene": "MUSK",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000030304.15",
+          "chr9",
+          110668778,
+          110806558
+        ]
+      ]
+    },
+    {
+      "gene": "MYO9B",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000099331.14",
+          "chr19",
+          17075776,
+          17214537
+        ]
+      ]
+    },
+    {
+      "gene": "MYOT",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000120729.10",
+          "chr5",
+          137867857,
+          137887851
+        ]
+      ]
+    },
+    {
+      "gene": "MYT1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000196132.14",
+          "chr20",
+          64102393,
+          64242253
+        ]
+      ]
+    },
+    {
+      "gene": "NACA",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000196531.14",
+          "chr12",
+          56712304,
+          56731628
+        ]
+      ]
+    },
+    {
+      "gene": "NAIP",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000249437.8",
+          "chr5",
+          70968165,
+          71025339
+        ]
+      ]
+    },
+    {
+      "gene": "NAPRT",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000147813.16",
+          "chr8",
+          143574784,
+          143578649
+        ]
+      ]
+    },
+    {
+      "gene": "NBEAP1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000258590.6",
+          "chr15",
+          20657637,
+          20688408
+        ]
+      ]
+    },
+    {
+      "gene": "NCF1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000158517.16",
+          "chr7",
+          74774010,
+          74789315
+        ]
+      ]
+    },
+    {
+      "gene": "NCF1C",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000165178.9",
+          "chr7",
+          75156638,
+          75172044
+        ]
+      ]
+    },
+    {
+      "gene": "NCR3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000204475.10",
+          "chr6",
+          31588894,
+          31593006
+        ]
+      ]
+    },
+    {
+      "gene": "NDUFA6",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000184983.11",
+          "chr22",
+          42085525,
+          42090884
+        ]
+      ]
+    },
+    {
+      "gene": "NDUFAF1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000137806.10",
+          "chr15",
+          41387217,
+          41409403
+        ]
+      ]
+    },
+    {
+      "gene": "NDUFB1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000183648.11",
+          "chr14",
+          92116121,
+          92121917
+        ]
+      ]
+    },
+    {
+      "gene": "NDUFV3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000160194.18",
+          "chr21",
+          42879643,
+          42913304
+        ]
+      ]
+    },
+    {
+      "gene": "NFKBIL1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000204498.11",
+          "chr6",
+          31546869,
+          31558829
+        ]
+      ]
+    },
+    {
+      "gene": "NLRP12",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000142405.23",
+          "chr19",
+          53793740,
+          53824403
+        ]
+      ]
+    },
+    {
+      "gene": "NLRP2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000022556.16",
+          "chr19",
+          54953129,
+          55001142
+        ]
+      ]
+    },
+    {
+      "gene": "NLRP7",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000167634.12",
+          "chr19",
+          54923508,
+          54966312
+        ]
+      ]
+    },
+    {
+      "gene": "NOD1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000106100.11",
+          "chr7",
+          30424526,
+          30478784
+        ]
+      ]
+    },
+    {
+      "gene": "NOTCH2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000134250.21",
+          "chr1",
+          119911552,
+          120100779
+        ]
+      ]
+    },
+    {
+      "gene": "NPM1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000181163.14",
+          "chr5",
+          171387115,
+          171411810
+        ]
+      ]
+    },
+    {
+      "gene": "NPPA",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000175206.11",
+          "chr1",
+          11845708,
+          11848345
+        ]
+      ]
+    },
+    {
+      "gene": "NSMF",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000165802.23",
+          "chr9",
+          137447569,
+          137459334
+        ]
+      ]
+    },
+    {
+      "gene": "NUTM2B",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000188199.11",
+          "chr10",
+          79703226,
+          79714681
+        ]
+      ]
+    },
+    {
+      "gene": "NUTM2D",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000214562.15",
+          "chr10",
+          87357719,
+          87370695
+        ]
+      ]
+    },
+    {
+      "gene": "OCLN",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000197822.12",
+          "chr5",
+          69492291,
+          69558104
+        ]
+      ]
+    },
+    {
+      "gene": "OPRL1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000125510.18",
+          "chr20",
+          64080081,
+          64100643
+        ]
+      ]
+    },
+    {
+      "gene": "OR12D2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000280236.3",
+          "chr6",
+          29395630,
+          29398008
+        ]
+      ]
+    },
+    {
+      "gene": "OR4F5",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000186092.7",
+          "chr1",
+          65418,
+          71585
+        ]
+      ]
+    },
+    {
+      "gene": "OR51A2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000205496.1",
+          "chr11",
+          4954771,
+          4955713
+        ]
+      ]
+    },
+    {
+      "gene": "ORC6",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000091651.9",
+          "chr16",
+          46689642,
+          46698394
+        ]
+      ]
+    },
+    {
+      "gene": "P2RX2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000187848.15",
+          "chr12",
+          132618775,
+          132622388
+        ]
+      ]
+    },
+    {
+      "gene": "P2RX5",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000083454.23",
+          "chr17",
+          3672198,
+          3696240
+        ]
+      ]
+    },
+    {
+      "gene": "PADI4",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000159339.13",
+          "chr1",
+          17308194,
+          17364004
+        ]
+      ]
+    },
+    {
+      "gene": "PAPSS2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000198682.13",
+          "chr10",
+          87659612,
+          87747705
+        ]
+      ]
+    },
+    {
+      "gene": "PCBP1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000169564.7",
+          "chr2",
+          70087476,
+          70089203
+        ]
+      ]
+    },
+    {
+      "gene": "PCCB",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000114054.14",
+          "chr3",
+          136250339,
+          136337896
+        ]
+      ]
+    },
+    {
+      "gene": "PCDHA10",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000250120.8",
+          "chr5",
+          140855882,
+          141012347
+        ]
+      ]
+    },
+    {
+      "gene": "PCMT1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000120265.21",
+          "chr6",
+          149749443,
+          149811420
+        ]
+      ]
+    },
+    {
+      "gene": "PDE4DIP",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000178104.22",
+          "chr1",
+          148808139,
+          149048286
+        ]
+      ]
+    },
+    {
+      "gene": "PDE6B",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000133256.13",
+          "chr4",
+          625572,
+          670782
+        ]
+      ]
+    },
+    {
+      "gene": "PDLIM3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000154553.17",
+          "chr4",
+          185500659,
+          185535507
+        ]
+      ]
+    },
+    {
+      "gene": "PDPK1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000140992.19",
+          "chr16",
+          2537978,
+          2603188
+        ]
+      ]
+    },
+    {
+      "gene": "PDSS1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000148459.16",
+          "chr10",
+          26697700,
+          26746798
+        ]
+      ]
+    },
+    {
+      "gene": "PEX5",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000139197.11",
+          "chr12",
+          7188684,
+          7218574
+        ]
+      ]
+    },
+    {
+      "gene": "PGAM5",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000247077.8",
+          "chr12",
+          132710818,
+          132722734
+        ]
+      ]
+    },
+    {
+      "gene": "PHKG2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000156873.16",
+          "chr16",
+          30748292,
+          30761176
+        ]
+      ]
+    },
+    {
+      "gene": "PIGV",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000060642.12",
+          "chr1",
+          26787053,
+          26800659
+        ]
+      ]
+    },
+    {
+      "gene": "PKD1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000008710.20",
+          "chr16",
+          2088707,
+          2135898
+        ]
+      ]
+    },
+    {
+      "gene": "PKN3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000160447.7",
+          "chr9",
+          128702502,
+          128720916
+        ]
+      ]
+    },
+    {
+      "gene": "PLA2G10",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000069764.10",
+          "chr16",
+          14672547,
+          14694308
+        ]
+      ]
+    },
+    {
+      "gene": "PLTP",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000100979.15",
+          "chr20",
+          45898620,
+          45912155
+        ]
+      ]
+    },
+    {
+      "gene": "PMS2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000122512.17",
+          "chr7",
+          5970924,
+          6009130
+        ]
+      ]
+    },
+    {
+      "gene": "PNKP",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000039650.12",
+          "chr19",
+          49859881,
+          49878351
+        ]
+      ]
+    },
+    {
+      "gene": "POLG2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000256525.8",
+          "chr17",
+          64477784,
+          64497054
+        ]
+      ]
+    },
+    {
+      "gene": "PPIA",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000196262.15",
+          "chr7",
+          44796679,
+          44824564
+        ]
+      ]
+    },
+    {
+      "gene": "PPIP5K1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000168781.24",
+          "chr15",
+          43533461,
+          43590208
+        ]
+      ]
+    },
+    {
+      "gene": "PRG4",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000116690.13",
+          "chr1",
+          186296278,
+          186314567
+        ]
+      ]
+    },
+    {
+      "gene": "PRKCG",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000126583.12",
+          "chr19",
+          53879189,
+          53907652
+        ]
+      ]
+    },
+    {
+      "gene": "PRODH",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000100033.17",
+          "chr22",
+          18912776,
+          18936553
+        ]
+      ]
+    },
+    {
+      "gene": "PROZ",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000126231.15",
+          "chr13",
+          113158647,
+          113172386
+        ]
+      ]
+    },
+    {
+      "gene": "PRSS2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000275896.7",
+          "chr7",
+          142760397,
+          142774564
+        ]
+      ]
+    },
+    {
+      "gene": "PRSS3P2",
+      "status": "no_match",
+      "matches": []
+    },
+    {
+      "gene": "PSPH",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000146733.14",
+          "chr7",
+          56011050,
+          56051604
+        ]
+      ]
+    },
+    {
+      "gene": "PTEN",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000171862.16",
+          "chr10",
+          87862637,
+          87971930
+        ]
+      ]
+    },
+    {
+      "gene": "PTK6",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000101213.7",
+          "chr20",
+          63528000,
+          63537376
+        ]
+      ]
+    },
+    {
+      "gene": "PTPRC",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000081237.21",
+          "chr1",
+          198638456,
+          198757476
+        ]
+      ]
+    },
+    {
+      "gene": "PTPRN2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000155093.20",
+          "chr7",
+          157539055,
+          158587823
+        ]
+      ]
+    },
+    {
+      "gene": "PTPRQ",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000139304.16",
+          "chr12",
+          80402177,
+          80680273
+        ]
+      ]
+    },
+    {
+      "gene": "PXDN",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000130508.11",
+          "chr2",
+          1631886,
+          1744852
+        ]
+      ]
+    },
+    {
+      "gene": "RFX2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000087903.13",
+          "chr19",
+          5993163,
+          6199572
+        ]
+      ]
+    },
+    {
+      "gene": "RGPD3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000153165.19",
+          "chr2",
+          106391289,
+          106468413
+        ]
+      ]
+    },
+    {
+      "gene": "RHCE",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000188672.19",
+          "chr1",
+          25362248,
+          25430192
+        ]
+      ]
+    },
+    {
+      "gene": "RHOA",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000067560.14",
+          "chr3",
+          49359138,
+          49412998
+        ]
+      ]
+    },
+    {
+      "gene": "RNF212",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000178222.14",
+          "chr4",
+          1056249,
+          1113564
+        ]
+      ]
+    },
+    {
+      "gene": "RNF213",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000173821.20",
+          "chr17",
+          80260851,
+          80398794
+        ]
+      ]
+    },
+    {
+      "gene": "RPIA",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000153574.9",
+          "chr2",
+          88691672,
+          88750929
+        ]
+      ]
+    },
+    {
+      "gene": "RPL22",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000116251.11",
+          "chr1",
+          6185019,
+          6209389
+        ]
+      ]
+    },
+    {
+      "gene": "RPN1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000163902.12",
+          "chr3",
+          128619968,
+          128681075
+        ]
+      ]
+    },
+    {
+      "gene": "RPS17",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000182774.13",
+          "chr15",
+          82536749,
+          82540459
+        ]
+      ]
+    },
+    {
+      "gene": "SAR1B",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000152700.14",
+          "chr5",
+          134601148,
+          134649271
+        ]
+      ]
+    },
+    {
+      "gene": "SBK3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000231274.5",
+          "chr19",
+          55540655,
+          55545543
+        ]
+      ]
+    },
+    {
+      "gene": "SDHA",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000073578.18",
+          "chr5",
+          218302,
+          257082
+        ]
+      ]
+    },
+    {
+      "gene": "SEC63",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000025796.14",
+          "chr6",
+          107867755,
+          107958208
+        ]
+      ]
+    },
+    {
+      "gene": "SEMG1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000124233.12",
+          "chr20",
+          45207032,
+          45209768
+        ]
+      ]
+    },
+    {
+      "gene": "SERPINF2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000167711.14",
+          "chr17",
+          1742835,
+          1755265
+        ]
+      ]
+    },
+    {
+      "gene": "SH2B1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000178188.16",
+          "chr16",
+          28846599,
+          28874212
+        ]
+      ]
+    },
+    {
+      "gene": "SHANK2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000162105.21",
+          "chr11",
+          70467853,
+          71252577
+        ]
+      ]
+    },
+    {
+      "gene": "SHANK3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000251322.12",
+          "chr22",
+          50674407,
+          50733212
+        ]
+      ]
+    },
+    {
+      "gene": "SIGLEC16",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000161643.13",
+          "chr19",
+          49969599,
+          49975819
+        ]
+      ]
+    },
+    {
+      "gene": "SIRT3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000142082.15",
+          "chr11",
+          215029,
+          236931
+        ]
+      ]
+    },
+    {
+      "gene": "SLC17A5",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000119899.13",
+          "chr6",
+          73593378,
+          73653992
+        ]
+      ]
+    },
+    {
+      "gene": "SLC22A1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000175003.15",
+          "chr6",
+          160121814,
+          160158718
+        ]
+      ]
+    },
+    {
+      "gene": "SLC22A12",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000197891.12",
+          "chr11",
+          64590640,
+          64602353
+        ]
+      ]
+    },
+    {
+      "gene": "SLC26A9",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000174502.19",
+          "chr1",
+          205913047,
+          205943460
+        ]
+      ]
+    },
+    {
+      "gene": "SLC27A4",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000167114.13",
+          "chr9",
+          128340526,
+          128361470
+        ]
+      ]
+    },
+    {
+      "gene": "SLC27A5",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000083807.10",
+          "chr19",
+          58479511,
+          58512413
+        ]
+      ]
+    },
+    {
+      "gene": "SLC29A4",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000164638.11",
+          "chr7",
+          5274368,
+          5306912
+        ]
+      ]
+    },
+    {
+      "gene": "SLC5A11",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000158865.13",
+          "chr16",
+          24845840,
+          24911628
+        ]
+      ]
+    },
+    {
+      "gene": "SLC6A18",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000164363.10",
+          "chr5",
+          1225380,
+          1246189
+        ]
+      ]
+    },
+    {
+      "gene": "SLC6A3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000142319.19",
+          "chr5",
+          1392793,
+          1445440
+        ]
+      ]
+    },
+    {
+      "gene": "SMG1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000157106.18",
+          "chr16",
+          18804859,
+          18926408
+        ]
+      ]
+    },
+    {
+      "gene": "SMN1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000172062.17",
+          "chr5",
+          70925029,
+          70953942
+        ]
+      ]
+    },
+    {
+      "gene": "SMN2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000205571.15",
+          "chr5",
+          70049637,
+          70078522
+        ]
+      ]
+    },
+    {
+      "gene": "SMOC2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000112562.20",
+          "chr6",
+          168441150,
+          168673445
+        ]
+      ]
+    },
+    {
+      "gene": "SNORD64",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000276610.1",
+          "chr15",
+          24985099,
+          24985166
+        ]
+      ]
+    },
+    {
+      "gene": "SNTG2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000172554.12",
+          "chr2",
+          950848,
+          1367613
+        ]
+      ]
+    },
+    {
+      "gene": "SOHLH1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000165643.11",
+          "chr9",
+          135693406,
+          135704498
+        ]
+      ]
+    },
+    {
+      "gene": "SPATA31C1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000230246.9",
+          "chr9",
+          87914487,
+          87923657
+        ]
+      ]
+    },
+    {
+      "gene": "SPI1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000066336.13",
+          "chr11",
+          47354859,
+          47409369
+        ]
+      ]
+    },
+    {
+      "gene": "SPRN",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000203772.8",
+          "chr10",
+          133420665,
+          133424625
+        ]
+      ]
+    },
+    {
+      "gene": "SRGAP2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000266028.8",
+          "chr1",
+          206203345,
+          206464436
+        ]
+      ]
+    },
+    {
+      "gene": "SRR",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000167720.13",
+          "chr17",
+          2303382,
+          2325260
+        ]
+      ]
+    },
+    {
+      "gene": "SSTR5",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000162009.10",
+          "chr16",
+          1063866,
+          1081454
+        ]
+      ]
+    },
+    {
+      "gene": "STK11",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000118046.18",
+          "chr19",
+          1177557,
+          1228431
+        ]
+      ]
+    },
+    {
+      "gene": "STXBP2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000076944.18",
+          "chr19",
+          7636771,
+          7647873
+        ]
+      ]
+    },
+    {
+      "gene": "SULT1A1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000196502.15",
+          "chr16",
+          28605195,
+          28610044
+        ]
+      ]
+    },
+    {
+      "gene": "SUZ12",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000178691.11",
+          "chr17",
+          31937006,
+          32001038
+        ]
+      ]
+    },
+    {
+      "gene": "TAPBP",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000231925.14",
+          "chr6",
+          33299693,
+          33314284
+        ]
+      ]
+    },
+    {
+      "gene": "TAS2R45",
+      "status": "no_match",
+      "matches": []
+    },
+    {
+      "gene": "TAS2R46",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000226761.3",
+          "chr12",
+          11061364,
+          11062294
+        ]
+      ]
+    },
+    {
+      "gene": "TBXA2R",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000006638.13",
+          "chr19",
+          3594506,
+          3606875
+        ]
+      ]
+    },
+    {
+      "gene": "TCEB3C",
+      "status": "no_match",
+      "matches": []
+    },
+    {
+      "gene": "TCF3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000071564.19",
+          "chr19",
+          1609290,
+          1652615
+        ]
+      ]
+    },
+    {
+      "gene": "TERT",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000164362.21",
+          "chr5",
+          1253146,
+          1295068
+        ]
+      ]
+    },
+    {
+      "gene": "TFPT",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000105619.14",
+          "chr19",
+          54107019,
+          54115657
+        ]
+      ]
+    },
+    {
+      "gene": "THBS2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000186340.17",
+          "chr6",
+          169215779,
+          169254050
+        ]
+      ]
+    },
+    {
+      "gene": "TJP2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000119139.21",
+          "chr9",
+          69121263,
+          69274615
+        ]
+      ]
+    },
+    {
+      "gene": "TM4SF19",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000145107.16",
+          "chr3",
+          196319341,
+          196338503
+        ]
+      ]
+    },
+    {
+      "gene": "TMC6",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000141524.19",
+          "chr17",
+          78107396,
+          78132407
+        ]
+      ]
+    },
+    {
+      "gene": "TMEM114",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000232258.7",
+          "chr16",
+          8537604,
+          8590511
+        ]
+      ]
+    },
+    {
+      "gene": "TMEM5",
+      "status": "no_match",
+      "matches": []
+    },
+    {
+      "gene": "TMEM8A",
+      "status": "no_match",
+      "matches": []
+    },
+    {
+      "gene": "TNNI3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000129991.14",
+          "chr19",
+          55151766,
+          55157773
+        ]
+      ]
+    },
+    {
+      "gene": "TNNT1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000105048.18",
+          "chr19",
+          55132697,
+          55149206
+        ]
+      ]
+    },
+    {
+      "gene": "TNNT3",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000130595.20",
+          "chr11",
+          1919702,
+          1938706
+        ]
+      ]
+    },
+    {
+      "gene": "TPCN2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000162341.18",
+          "chr11",
+          69048931,
+          69136316
+        ]
+      ]
+    },
+    {
+      "gene": "TPO",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000115705.22",
+          "chr2",
+          1374065,
+          1543711
+        ]
+      ]
+    },
+    {
+      "gene": "TRAPPC10",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000160218.13",
+          "chr21",
+          44012308,
+          44106552
+        ]
+      ]
+    },
+    {
+      "gene": "TRBV9",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000211716.2",
+          "chr7",
+          142391890,
+          142392412
+        ]
+      ]
+    },
+    {
+      "gene": "TRMT1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000104907.13",
+          "chr19",
+          13104901,
+          13117567
+        ]
+      ]
+    },
+    {
+      "gene": "TRPM4",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000130529.16",
+          "chr19",
+          49157740,
+          49211836
+        ]
+      ]
+    },
+    {
+      "gene": "TTC37",
+      "status": "no_match",
+      "matches": []
+    },
+    {
+      "gene": "TTLL1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000100271.17",
+          "chr22",
+          43039515,
+          43089419
+        ]
+      ]
+    },
+    {
+      "gene": "TUBGCP6",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000128159.12",
+          "chr22",
+          50217688,
+          50245023
+        ]
+      ]
+    },
+    {
+      "gene": "TWIST2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000233608.5",
+          "chr2",
+          238848031,
+          238910534
+        ]
+      ]
+    },
+    {
+      "gene": "TYK2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000105397.15",
+          "chr19",
+          10350532,
+          10380608
+        ]
+      ]
+    },
+    {
+      "gene": "TYMS",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000176890.16",
+          "chr18",
+          657652,
+          673578
+        ]
+      ]
+    },
+    {
+      "gene": "U2AF1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000160201.12",
+          "chr21",
+          43092955,
+          43107570
+        ]
+      ]
+    },
+    {
+      "gene": "UGT2A1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000173610.13",
+          "chr4",
+          69588416,
+          69653249
+        ]
+      ]
+    },
+    {
+      "gene": "UGT2A2",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000271271.6",
+          "chr4",
+          69588416,
+          69639642
+        ]
+      ]
+    },
+    {
+      "gene": "UGT2B17",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000197888.3",
+          "chr4",
+          68537172,
+          68576413
+        ]
+      ]
+    },
+    {
+      "gene": "UGT2B28",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000135226.18",
+          "chr4",
+          69280474,
+          69295050
+        ]
+      ]
+    },
+    {
+      "gene": "UNKL",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000059145.19",
+          "chr16",
+          1363204,
+          1414751
+        ]
+      ]
+    },
+    {
+      "gene": "USP8",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000138592.14",
+          "chr15",
+          50424379,
+          50514421
+        ]
+      ]
+    },
+    {
+      "gene": "UVSSA",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000163945.19",
+          "chr4",
+          1345690,
+          1395989
+        ]
+      ]
+    },
+    {
+      "gene": "VANGL1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000173218.15",
+          "chr1",
+          115641969,
+          115698224
+        ]
+      ]
+    },
+    {
+      "gene": "VKORC1",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000167397.15",
+          "chr16",
+          31090841,
+          31095980
+        ]
+      ]
+    },
+    {
+      "gene": "VPS53",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000141252.21",
+          "chr17",
+          508502,
+          721717
+        ]
+      ]
+    },
+    {
+      "gene": "ZAN",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000146839.19",
+          "chr7",
+          100733594,
+          100797797
+        ]
+      ]
+    },
+    {
+      "gene": "ZNF141",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000131127.14",
+          "chr4",
+          337813,
+          384868
+        ]
+      ]
+    },
+    {
+      "gene": "ZNF407",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000215421.10",
+          "chr18",
+          74597869,
+          75065671
+        ]
+      ]
+    },
+    {
+      "gene": "ZNF419",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000105136.22",
+          "chr19",
+          57487710,
+          57496098
+        ]
+      ]
+    },
+    {
+      "gene": "ZNF469",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000225614.4",
+          "chr16",
+          88382958,
+          88440757
+        ]
+      ]
+    },
+    {
+      "gene": "ZNF479",
+      "status": "placed",
+      "matches": [
+        [
+          "ENSG00000185177.14",
+          "chr7",
+          57117675,
+          57139864
+        ]
+      ]
+    }
+  ],
+  "scope": "Annotation only; exact gene-name placement. No read, truth, or variant data."
+}

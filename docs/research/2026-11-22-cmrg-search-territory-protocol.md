@@ -25,3 +25,17 @@ compatibility, and record any explicitly unplaced names. This roster,
 rather than benchmark VCF records or confident-region masks, defines the
 generator's search space. The scorer separately applies the truth masks,
 the sequence and context rules, and the flank requirements.
+
+## Follow-up for the 13 unresolved annotations
+
+Use the public [HGNC API](https://www.genenames.org/help/rest/) to check each
+of the 12 missing names and the one multiple exact match. Read only the
+current exact symbol record and the previous-symbol record. A unique
+approved record can resolve a previous symbol only if that exact previous
+name appears in its history and its Ensembl stable gene ID identifies
+exactly one compatible GENCODE v46 gene interval. Strip only the Ensembl
+version suffix when comparing stable IDs. For a multi-match, require the
+approved symbol's Ensembl ID to identify one of the existing candidates.
+Keep absent or withdrawn records, alternate locations, aliases without
+a documented previous symbol and residual ambiguity visible. This step
+does not choose loci or import outcomes from either truth VCF.
