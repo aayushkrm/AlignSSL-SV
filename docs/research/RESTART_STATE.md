@@ -44,8 +44,16 @@ The completed [public-workbook schema check](2026-11-06-cloneseq-schema-protocol
 read only the first row of each sheet and resolved all 14 headers. The next
 step must test exact keys, missingness, measurement semantics, independent
 reference and cost before making any comparison; all published samples are
-development evidence. Cluster job `1637246_1` and a workspace nearing expiry
-are under a read-only ownership check. No cluster resource has been changed.
+development evidence. The [content audit](2026-11-22-cloneseq-content-protocol.md)
+found exact SV/SNV specimen-time keys for 23/24 author-listed patients in its
+corrected run. Marker-join ambiguities, assay units and costs, and independent
+reference remain unresolved; initial and corrected outputs are preserved and
+independent result review is pending. A targeted author-WGS sample-key check
+is separately specified before execution. Cluster job `1637246_1` and a workspace nearing expiry
+were checked for ownership. The job's paths identify the separate Alice CNN
+workflow and it was left running. The workspace's ownership remained unclear;
+the user explicitly requested extension, and it now expires 2026-12-22
+19:44:39 cluster time with no extensions left. Its contents were not changed.
 
 November 5 UTC checkpoint: [synthetic EBI validator controls](2026-11-04-ebi-validator-case-protocol.md)
 show no remote-contig warning in the tested configuration; local-contig and

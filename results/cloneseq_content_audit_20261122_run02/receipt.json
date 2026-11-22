@@ -1,0 +1,9 @@
+{
+  "audit_sha256": "a1bbf8261ecd200cfbfb057f4bc7f33001f6b8611261fffe2a8549c1898f34f2",
+  "script_sha256": "0734dae21c0346549dff7dbf847d7060b6e5742ea12544d36e0e1cb7f3cb7e76",
+  "workbook_sha256": "7fd3bf312acb0ba617d28878bd9b4a54122164fb842e933d6a13c5efdc53ee33",
+  "author_config_sha256": "f5a25b5b0109a102b670e0a549679da08e49c33bd6fdb1d65292005e366ac954",
+  "schema_sha256": "02917a6c1bef6dfc59e63f2cd1284322dab19a4c3fe23d3b833e803ceeb78d93",
+  "author_commit": "076281373393e6922652371262f5975af9a41a30",
+  "protocol_commit": "364d75a"
+}

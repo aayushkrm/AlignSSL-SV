@@ -89,3 +89,17 @@ analyst hours, two CPU-hours, 4 GiB RAM and at most 100 MiB new source
 metadata, as proposed in the investment draft; these are local spending
 limits, not limits on the user's overall research goal. This protocol is
 pushed before the first data-row inspection.
+
+## Prespecified follow-up: author WGS sample keys
+
+After the initial availability run, check the fixed 12 `patient_wgs` sample
+identifiers from the pinned author configuration against the S2 `sample`
+field and the exact S7/S8 specimen-time keys. Read only the patient, sample,
+timepoint and day fields from S2, S7 and S8. Keep duplicate or conflicting
+S2 mappings unresolved; do not expose sample identifiers in Git. Report the
+number of author-listed samples with an exact unique S2 mapping and both SV
+and SNV specimen keys, and the number of distinct patients represented.
+This checks identifier linkage only: it does not establish that the actual
+WGS profiles are accessible, distinguish clones, or provide independent
+seeding truth. No count or clinical outcome values will be inspected in this
+follow-up. This amendment is pushed before that targeted read.

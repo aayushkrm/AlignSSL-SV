@@ -31,10 +31,22 @@ reference, measurement units and comparable assay costs remain unverified.
 No patient data row was read in this check. The published cohort is
 exploratory development evidence, not an untouched final test.
 
-The current cluster queue contains a job named `1000g_wget`; one workspace
-has approximately two hours remaining. Their relationship to this project is
-being checked. No job or workspace has been changed. Local disk shows about
-15 GiB free. The publication goal remains active and unmet.
+A separately preregistered [content-feasibility audit](docs/research/2026-11-22-cloneseq-content-protocol.md)
+then read the public measurement/metadata sheets without evaluating clinical
+outcomes. The corrected run found exact shared SV/SNV specimen-time keys for
+23 of the 24 author-listed patients. The named WGS subset covers six patients,
+but access to the actual reference profiles and their ability to distinguish
+clones remain unverified. Some marker joins are ambiguous or have missing
+composite keys; numeric fields do not establish equal assay cost or molecule
+units. An initial run's missing-clone-label check was corrected, and both
+versions are retained. Independent result review is pending.
+
+The cluster queue contains `1000g_wget`, whose paths identify the separate
+Alice CNN workflow; it was left running. One workspace's project ownership
+remains unclear. At the user's explicit request it was extended until
+2026-12-22 19:44:39 cluster time, using its last available renewal. Its
+contents were not changed. Local disk shows about 15 GiB free. The publication
+goal remains active and unmet.
 
 ### Validator controls and paired-source feasibility — 2026-11-05 UTC
 

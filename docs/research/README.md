@@ -28,9 +28,10 @@ dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
-| [`2026-11-22-cloneseq-content-protocol.md`](2026-11-22-cloneseq-content-protocol.md) | Prospective all-patient data-content feasibility check | Fixed author roster; joins, missingness, count validity and evidence availability only |
+| [`2026-11-22-cloneseq-content-result.md`](2026-11-22-cloneseq-content-result.md) | Actual public-table availability audit | 23/24 exact specimen-time matches; marker-key ambiguities and missing independent reference; result review pending |
+| [`2026-11-22-cloneseq-content-protocol.md`](2026-11-22-cloneseq-content-protocol.md) | All-patient data-content feasibility check | Corrected run finds 23/24 patients with exact specimen-time keys; marker, cost and reference issues under independent review |
 | [`2026-11-22-independent-investment-review.md`](2026-11-22-independent-investment-review.md) | Independent scientific challenge | Allows bounded feasibility check; distinguishes clone measurement from seeding truth and flags assay-budget limits |
-| [`2026-11-22-cluster-ownership-audit.md`](2026-11-22-cluster-ownership-audit.md) | Read-only cluster ownership and expiry audit | Running job associated with another workflow; one workspace near expiry has unresolved project ownership |
+| [`2026-11-22-cluster-ownership-audit.md`](2026-11-22-cluster-ownership-audit.md) | Cluster ownership and expiry audit | Separate Alice job untouched; ambiguous workspace extended at the user's request until December 22 |
 | [`2026-11-06-cloneseq-schema-protocol.md`](2026-11-06-cloneseq-schema-protocol.md) | Public-table schema check | All 14 first rows resolved; join semantics, measurement units and independent truth unverified |
 | [`2026-11-06-paired-scientific-review.md`](2026-11-06-paired-scientific-review.md) | Independent investment challenge | Stops generic paired SV–RNA; specifies a narrow falsifier and cautions against ctDNA claims without a fair reference |
 | [`2026-11-06-scientific-investment-decision.md`](2026-11-06-scientific-investment-decision.md) | Preserved investment-decision draft | Agent runtime later reported a usage-limit error; objective version and independent-review limits explicit |

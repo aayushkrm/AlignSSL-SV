@@ -49,3 +49,14 @@ CNN baseline workflow, with AlignSSL-SV ownership unproven. Keep
 `pairsv-baseline-Cx2BFe` ownership unresolved and note its same-day expiry.
 Leave all resources unchanged unless project ownership is established through
 appropriate records.
+
+## Subsequent user-authorized extension
+
+The user explicitly requested extension of `pairsv-baseline-Cx2BFe` to preserve
+its contents. After checking the cluster's `ws_extend` usage, the orchestrator
+ran `ws_extend pairsv-baseline-Cx2BFe 30`. The command succeeded and a fresh
+`ws_list` showed expiration **2026-12-22 19:44:39 cluster time**, with zero
+extensions remaining. The command also reported updating the local reminder
+settings. The workspace's project ownership remains unresolved; no workspace
+contents were read or changed. The Alice-associated download job was not
+modified.

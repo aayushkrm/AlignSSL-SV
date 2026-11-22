@@ -1,0 +1,1564 @@
+{
+  "patients": [
+    {
+      "patient": "SPECTRUM-OV-002",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 12,
+          "S2 - Tumor Fractions": 12,
+          "S3 - Clone frequencies (SVs)": 24,
+          "S5 - Clone features": 2,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 4350,
+          "S8 - SNV read counts": 18390,
+          "S9 - SV metadata": 121
+        },
+        "exact_shared_specimens": 12,
+        "shared_specimens_with_exposed_numeric_counts": 12,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 4350
+        },
+        "snv_counts": {
+          "valid_exposed": 18390
+        },
+        "sv_background": {
+          "valid_exposed": 4350
+        },
+        "snv_background": {
+          "valid_exposed": 18390
+        },
+        "sv_marker_join": {
+          "unique": 4350,
+          "unique_with_clone_label": 4350
+        },
+        "snv_marker_join": {
+          "unique": 18390,
+          "unique_with_clone_label": 18390
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 12,
+        "dna_yield_rows": 12,
+        "sv_correction_rows": 121
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-003",
+      "in_author_timeline": false,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "ABSENT",
+        "marker_to_clone_metadata": "ABSENT",
+        "count_fields_and_units": "ABSENT",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 1,
+          "S2 - Tumor Fractions": 1,
+          "S3 - Clone frequencies (SVs)": 1,
+          "S5 - Clone features": 1,
+          "S6 - Error rates & LOD": 3,
+          "S7 - SV read counts": 264,
+          "S9 - SV metadata": 88
+        },
+        "exact_shared_specimens": 0,
+        "shared_specimens_with_exposed_numeric_counts": 0,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 264
+        },
+        "snv_counts": {},
+        "sv_background": {
+          "valid_exposed": 264
+        },
+        "snv_background": {},
+        "sv_marker_join": {
+          "unique": 264,
+          "unique_with_clone_label": 264
+        },
+        "snv_marker_join": {},
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [],
+        "coverage_rows": 1,
+        "dna_yield_rows": 1,
+        "sv_correction_rows": 88
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-004",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "UNRESOLVED",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 12,
+          "S2 - Tumor Fractions": 12,
+          "S3 - Clone frequencies (SVs)": 24,
+          "S4 - Clone frequencies (SNVs)": 24,
+          "S5 - Clone features": 2,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 6150,
+          "S8 - SNV read counts": 11520,
+          "S9 - SV metadata": 172
+        },
+        "exact_shared_specimens": 12,
+        "shared_specimens_with_exposed_numeric_counts": 12,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 6150
+        },
+        "snv_counts": {
+          "valid_exposed": 11520
+        },
+        "sv_background": {
+          "valid_exposed": 6150
+        },
+        "snv_background": {
+          "valid_exposed": 11520
+        },
+        "sv_marker_join": {
+          "unique": 5934,
+          "unique_with_clone_label": 5934,
+          "ambiguous_metadata": 216
+        },
+        "snv_marker_join": {
+          "unique": 11520,
+          "unique_with_clone_label": 11520
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 12,
+        "dna_yield_rows": 12,
+        "sv_correction_rows": 172
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-006",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 9,
+          "S2 - Tumor Fractions": 9,
+          "S3 - Clone frequencies (SVs)": 27,
+          "S4 - Clone frequencies (SNVs)": 27,
+          "S5 - Clone features": 3,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 8263,
+          "S8 - SNV read counts": 8937,
+          "S9 - SV metadata": 310
+        },
+        "exact_shared_specimens": 9,
+        "shared_specimens_with_exposed_numeric_counts": 9,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 8263
+        },
+        "snv_counts": {
+          "valid_exposed": 8937
+        },
+        "sv_background": {
+          "valid_exposed": 8260,
+          "zero_total": 3
+        },
+        "snv_background": {
+          "valid_exposed": 8937
+        },
+        "sv_marker_join": {
+          "unique": 8263,
+          "unique_with_clone_label": 8263
+        },
+        "snv_marker_join": {
+          "unique": 8937,
+          "unique_with_clone_label": 8937
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 9,
+        "dna_yield_rows": 9,
+        "sv_correction_rows": 310
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-009",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 2,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "UNRESOLVED",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 13,
+          "S2 - Tumor Fractions": 13,
+          "S3 - Clone frequencies (SVs)": 78,
+          "S4 - Clone frequencies (SNVs)": 65,
+          "S5 - Clone features": 6,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 7577,
+          "S8 - SNV read counts": 11856,
+          "S9 - SV metadata": 195
+        },
+        "exact_shared_specimens": 13,
+        "shared_specimens_with_exposed_numeric_counts": 13,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 7577
+        },
+        "snv_counts": {
+          "valid_exposed": 11856
+        },
+        "sv_background": {
+          "valid_exposed": 7577
+        },
+        "snv_background": {
+          "valid_exposed": 11856
+        },
+        "sv_marker_join": {
+          "unique": 7499,
+          "unique_with_clone_label": 7499,
+          "ambiguous_metadata": 78
+        },
+        "snv_marker_join": {
+          "unique": 11856,
+          "unique_with_clone_label": 11856
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 13,
+        "dna_yield_rows": 13,
+        "sv_correction_rows": 195
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-014",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "UNRESOLVED",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 3,
+          "S2 - Tumor Fractions": 3,
+          "S3 - Clone frequencies (SVs)": 6,
+          "S5 - Clone features": 2,
+          "S6 - Error rates & LOD": 3,
+          "S7 - SV read counts": 772,
+          "S8 - SNV read counts": 45,
+          "S9 - SV metadata": 86
+        },
+        "exact_shared_specimens": 3,
+        "shared_specimens_with_exposed_numeric_counts": 3,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 772
+        },
+        "snv_counts": {
+          "valid_exposed": 45
+        },
+        "sv_background": {
+          "valid_exposed": 772
+        },
+        "snv_background": {
+          "valid_exposed": 45
+        },
+        "sv_marker_join": {
+          "unique": 772,
+          "unique_with_clone_label": 772
+        },
+        "snv_marker_join": {
+          "missing_key": 45
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 3,
+        "dna_yield_rows": 3,
+        "sv_correction_rows": 86
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-022",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 2,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 13,
+          "S2 - Tumor Fractions": 13,
+          "S3 - Clone frequencies (SVs)": 39,
+          "S4 - Clone frequencies (SNVs)": 39,
+          "S5 - Clone features": 3,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 3607,
+          "S8 - SNV read counts": 11481,
+          "S9 - SV metadata": 93
+        },
+        "exact_shared_specimens": 13,
+        "shared_specimens_with_exposed_numeric_counts": 13,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 3607
+        },
+        "snv_counts": {
+          "valid_exposed": 11481
+        },
+        "sv_background": {
+          "valid_exposed": 3607
+        },
+        "snv_background": {
+          "valid_exposed": 11481
+        },
+        "sv_marker_join": {
+          "unique": 3607,
+          "unique_with_clone_label": 3607
+        },
+        "snv_marker_join": {
+          "unique": 11481,
+          "unique_with_clone_label": 11481
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 13,
+        "dna_yield_rows": 13,
+        "sv_correction_rows": 93
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-025",
+      "in_author_timeline": false,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 1,
+          "S2 - Tumor Fractions": 1,
+          "S3 - Clone frequencies (SVs)": 2,
+          "S4 - Clone frequencies (SNVs)": 2,
+          "S5 - Clone features": 2,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 523,
+          "S8 - SNV read counts": 1107,
+          "S9 - SV metadata": 175
+        },
+        "exact_shared_specimens": 1,
+        "shared_specimens_with_exposed_numeric_counts": 1,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 523
+        },
+        "snv_counts": {
+          "valid_exposed": 1107
+        },
+        "sv_background": {
+          "valid_exposed": 523
+        },
+        "snv_background": {
+          "valid_exposed": 1107
+        },
+        "sv_marker_join": {
+          "unique": 523,
+          "unique_with_clone_label": 523
+        },
+        "snv_marker_join": {
+          "unique": 1107,
+          "unique_with_clone_label": 1107
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 1,
+        "dna_yield_rows": 1,
+        "sv_correction_rows": 175
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-026",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 4,
+          "S2 - Tumor Fractions": 4,
+          "S3 - Clone frequencies (SVs)": 16,
+          "S4 - Clone frequencies (SNVs)": 12,
+          "S5 - Clone features": 4,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 3231,
+          "S8 - SNV read counts": 2580,
+          "S9 - SV metadata": 271
+        },
+        "exact_shared_specimens": 4,
+        "shared_specimens_with_exposed_numeric_counts": 4,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 3231
+        },
+        "snv_counts": {
+          "valid_exposed": 2580
+        },
+        "sv_background": {
+          "valid_exposed": 3229,
+          "zero_total": 2
+        },
+        "snv_background": {
+          "valid_exposed": 2568,
+          "zero_total": 12
+        },
+        "sv_marker_join": {
+          "unique": 3231,
+          "unique_with_clone_label": 3231
+        },
+        "snv_marker_join": {
+          "unique": 2580,
+          "unique_with_clone_label": 2580
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 4,
+        "dna_yield_rows": 4,
+        "sv_correction_rows": 271
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-031",
+      "in_author_timeline": false,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 2,
+          "S2 - Tumor Fractions": 2,
+          "S3 - Clone frequencies (SVs)": 10,
+          "S4 - Clone frequencies (SNVs)": 8,
+          "S5 - Clone features": 5,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 806,
+          "S8 - SNV read counts": 2040,
+          "S9 - SV metadata": 135
+        },
+        "exact_shared_specimens": 2,
+        "shared_specimens_with_exposed_numeric_counts": 2,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 806
+        },
+        "snv_counts": {
+          "valid_exposed": 2040
+        },
+        "sv_background": {
+          "valid_exposed": 806
+        },
+        "snv_background": {
+          "valid_exposed": 2040
+        },
+        "sv_marker_join": {
+          "unique": 806,
+          "unique_with_clone_label": 806
+        },
+        "snv_marker_join": {
+          "unique": 2040,
+          "unique_with_clone_label": 2040
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 2,
+        "dna_yield_rows": 2,
+        "sv_correction_rows": 135
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-036",
+      "in_author_timeline": false,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "UNRESOLVED",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 3,
+          "S2 - Tumor Fractions": 3,
+          "S3 - Clone frequencies (SVs)": 6,
+          "S4 - Clone frequencies (SNVs)": 6,
+          "S5 - Clone features": 2,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 3703,
+          "S8 - SNV read counts": 1314,
+          "S9 - SV metadata": 414
+        },
+        "exact_shared_specimens": 3,
+        "shared_specimens_with_exposed_numeric_counts": 3,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 3703
+        },
+        "snv_counts": {
+          "valid_exposed": 1314
+        },
+        "sv_background": {
+          "valid_exposed": 3702,
+          "zero_total": 1
+        },
+        "snv_background": {
+          "valid_exposed": 1314
+        },
+        "sv_marker_join": {
+          "unique": 3703,
+          "unique_with_clone_label": 3703
+        },
+        "snv_marker_join": {
+          "unique": 1296,
+          "unique_with_clone_label": 1296,
+          "missing_key": 18
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 3,
+        "dna_yield_rows": 3,
+        "sv_correction_rows": 414
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-037",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "UNRESOLVED",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 4,
+          "S2 - Tumor Fractions": 4,
+          "S3 - Clone frequencies (SVs)": 16,
+          "S4 - Clone frequencies (SNVs)": 16,
+          "S5 - Clone features": 4,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 625,
+          "S8 - SNV read counts": 8382,
+          "S9 - SV metadata": 53
+        },
+        "exact_shared_specimens": 4,
+        "shared_specimens_with_exposed_numeric_counts": 4,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 625
+        },
+        "snv_counts": {
+          "valid_exposed": 8382
+        },
+        "sv_background": {
+          "valid_exposed": 624,
+          "zero_total": 1
+        },
+        "snv_background": {
+          "valid_exposed": 8370,
+          "zero_total": 12
+        },
+        "sv_marker_join": {
+          "unique": 577,
+          "unique_with_clone_label": 577,
+          "ambiguous_metadata": 48
+        },
+        "snv_marker_join": {
+          "unique": 8382,
+          "unique_with_clone_label": 8382
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 4,
+        "dna_yield_rows": 4,
+        "sv_correction_rows": 53
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-044",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 2,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "UNRESOLVED",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 10,
+          "S2 - Tumor Fractions": 10,
+          "S3 - Clone frequencies (SVs)": 20,
+          "S5 - Clone features": 2,
+          "S6 - Error rates & LOD": 3,
+          "S7 - SV read counts": 2098,
+          "S8 - SNV read counts": 48,
+          "S9 - SV metadata": 70
+        },
+        "exact_shared_specimens": 8,
+        "shared_specimens_with_exposed_numeric_counts": 8,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 2098
+        },
+        "snv_counts": {
+          "valid_exposed": 48
+        },
+        "sv_background": {
+          "valid_exposed": 2098
+        },
+        "snv_background": {
+          "valid_exposed": 48
+        },
+        "sv_marker_join": {
+          "unique": 2098,
+          "unique_with_clone_label": 2098
+        },
+        "snv_marker_join": {
+          "missing_key": 48
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 10,
+        "dna_yield_rows": 10,
+        "sv_correction_rows": 70
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-045",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 2,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 7,
+          "S2 - Tumor Fractions": 7,
+          "S3 - Clone frequencies (SVs)": 28,
+          "S4 - Clone frequencies (SNVs)": 28,
+          "S5 - Clone features": 4,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 3885,
+          "S8 - SNV read counts": 5985,
+          "S9 - SV metadata": 186
+        },
+        "exact_shared_specimens": 7,
+        "shared_specimens_with_exposed_numeric_counts": 7,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 3885
+        },
+        "snv_counts": {
+          "valid_exposed": 5985
+        },
+        "sv_background": {
+          "valid_exposed": 3885
+        },
+        "snv_background": {
+          "valid_exposed": 5985
+        },
+        "sv_marker_join": {
+          "unique": 3885,
+          "unique_with_clone_label": 3885
+        },
+        "snv_marker_join": {
+          "unique": 5985,
+          "unique_with_clone_label": 5985
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 7,
+        "dna_yield_rows": 7,
+        "sv_correction_rows": 186
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-046",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 7,
+          "S2 - Tumor Fractions": 7,
+          "S3 - Clone frequencies (SVs)": 28,
+          "S4 - Clone frequencies (SNVs)": 14,
+          "S5 - Clone features": 4,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 2571,
+          "S8 - SNV read counts": 8220,
+          "S9 - SV metadata": 123
+        },
+        "exact_shared_specimens": 7,
+        "shared_specimens_with_exposed_numeric_counts": 7,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 2571
+        },
+        "snv_counts": {
+          "valid_exposed": 8220
+        },
+        "sv_background": {
+          "valid_exposed": 2571
+        },
+        "snv_background": {
+          "valid_exposed": 8219,
+          "zero_total": 1
+        },
+        "sv_marker_join": {
+          "unique": 2571,
+          "unique_with_clone_label": 2571
+        },
+        "snv_marker_join": {
+          "unique": 8220,
+          "unique_with_clone_label": 8220
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 7,
+        "dna_yield_rows": 7,
+        "sv_correction_rows": 123
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-051",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 8,
+          "S2 - Tumor Fractions": 8,
+          "S3 - Clone frequencies (SVs)": 8,
+          "S4 - Clone frequencies (SNVs)": 8,
+          "S5 - Clone features": 1,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 5918,
+          "S8 - SNV read counts": 12660,
+          "S9 - SV metadata": 247
+        },
+        "exact_shared_specimens": 8,
+        "shared_specimens_with_exposed_numeric_counts": 8,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 5918
+        },
+        "snv_counts": {
+          "valid_exposed": 12660
+        },
+        "sv_background": {
+          "valid_exposed": 5918
+        },
+        "snv_background": {
+          "valid_exposed": 12654,
+          "zero_total": 6
+        },
+        "sv_marker_join": {
+          "unique": 5918,
+          "unique_with_clone_label": 5918
+        },
+        "snv_marker_join": {
+          "unique": 12660,
+          "unique_with_clone_label": 12660
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 8,
+        "dna_yield_rows": 8,
+        "sv_correction_rows": 247
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-065",
+      "in_author_timeline": false,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "UNRESOLVED",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 1,
+          "S2 - Tumor Fractions": 1,
+          "S3 - Clone frequencies (SVs)": 1,
+          "S5 - Clone features": 1,
+          "S6 - Error rates & LOD": 3,
+          "S7 - SV read counts": 150,
+          "S8 - SNV read counts": 3,
+          "S9 - SV metadata": 50
+        },
+        "exact_shared_specimens": 1,
+        "shared_specimens_with_exposed_numeric_counts": 1,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 150
+        },
+        "snv_counts": {
+          "valid_exposed": 3
+        },
+        "sv_background": {
+          "valid_exposed": 150
+        },
+        "snv_background": {
+          "valid_exposed": 3
+        },
+        "sv_marker_join": {
+          "unique": 150,
+          "unique_with_clone_label": 150
+        },
+        "snv_marker_join": {
+          "missing_key": 3
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 1,
+        "dna_yield_rows": 1,
+        "sv_correction_rows": 50
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-068",
+      "in_author_timeline": false,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "UNRESOLVED",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 2,
+          "S2 - Tumor Fractions": 2,
+          "S3 - Clone frequencies (SVs)": 2,
+          "S5 - Clone features": 1,
+          "S6 - Error rates & LOD": 3,
+          "S7 - SV read counts": 431,
+          "S8 - SNV read counts": 30,
+          "S9 - SV metadata": 72
+        },
+        "exact_shared_specimens": 2,
+        "shared_specimens_with_exposed_numeric_counts": 2,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 431
+        },
+        "snv_counts": {
+          "valid_exposed": 30
+        },
+        "sv_background": {
+          "valid_exposed": 431
+        },
+        "snv_background": {
+          "valid_exposed": 30
+        },
+        "sv_marker_join": {
+          "unique": 431,
+          "unique_with_clone_label": 431
+        },
+        "snv_marker_join": {
+          "missing_key": 30
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 2,
+        "dna_yield_rows": 2,
+        "sv_correction_rows": 72
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-075",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 7,
+          "S2 - Tumor Fractions": 7,
+          "S3 - Clone frequencies (SVs)": 21,
+          "S4 - Clone frequencies (SNVs)": 21,
+          "S5 - Clone features": 3,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 3833,
+          "S8 - SNV read counts": 7287,
+          "S9 - SV metadata": 184
+        },
+        "exact_shared_specimens": 7,
+        "shared_specimens_with_exposed_numeric_counts": 7,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 3833
+        },
+        "snv_counts": {
+          "valid_exposed": 7287
+        },
+        "sv_background": {
+          "valid_exposed": 3829,
+          "zero_total": 4
+        },
+        "snv_background": {
+          "valid_exposed": 7287
+        },
+        "sv_marker_join": {
+          "unique": 3833,
+          "unique_with_clone_label": 3833
+        },
+        "snv_marker_join": {
+          "unique": 7287,
+          "unique_with_clone_label": 7287
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 7,
+        "dna_yield_rows": 7,
+        "sv_correction_rows": 184
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-081",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 2,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 8,
+          "S2 - Tumor Fractions": 8,
+          "S3 - Clone frequencies (SVs)": 32,
+          "S4 - Clone frequencies (SNVs)": 24,
+          "S5 - Clone features": 4,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 7018,
+          "S8 - SNV read counts": 6072,
+          "S9 - SV metadata": 293
+        },
+        "exact_shared_specimens": 8,
+        "shared_specimens_with_exposed_numeric_counts": 8,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 7018
+        },
+        "snv_counts": {
+          "valid_exposed": 6072
+        },
+        "sv_background": {
+          "valid_exposed": 7018
+        },
+        "snv_background": {
+          "valid_exposed": 6072
+        },
+        "sv_marker_join": {
+          "unique": 7018,
+          "unique_with_clone_label": 7018
+        },
+        "snv_marker_join": {
+          "unique": 6072,
+          "unique_with_clone_label": 6072
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 8,
+        "dna_yield_rows": 8,
+        "sv_correction_rows": 293
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-083",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "UNRESOLVED",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 4,
+          "S2 - Tumor Fractions": 4,
+          "S3 - Clone frequencies (SVs)": 8,
+          "S4 - Clone frequencies (SNVs)": 8,
+          "S5 - Clone features": 2,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 876,
+          "S8 - SNV read counts": 3864,
+          "S9 - SV metadata": 73
+        },
+        "exact_shared_specimens": 4,
+        "shared_specimens_with_exposed_numeric_counts": 4,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 876
+        },
+        "snv_counts": {
+          "valid_exposed": 3864
+        },
+        "sv_background": {
+          "valid_exposed": 876
+        },
+        "snv_background": {
+          "valid_exposed": 3864
+        },
+        "sv_marker_join": {
+          "unique": 876,
+          "unique_with_clone_label": 876
+        },
+        "snv_marker_join": {
+          "unique": 3852,
+          "unique_with_clone_label": 3852,
+          "missing_key": 12
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 4,
+        "dna_yield_rows": 4,
+        "sv_correction_rows": 73
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-107",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 2,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 9,
+          "S2 - Tumor Fractions": 9,
+          "S3 - Clone frequencies (SVs)": 18,
+          "S4 - Clone frequencies (SNVs)": 18,
+          "S5 - Clone features": 4,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 2063,
+          "S8 - SNV read counts": 11394,
+          "S9 - SV metadata": 77
+        },
+        "exact_shared_specimens": 9,
+        "shared_specimens_with_exposed_numeric_counts": 9,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 2063
+        },
+        "snv_counts": {
+          "valid_exposed": 11394
+        },
+        "sv_background": {
+          "valid_exposed": 2059,
+          "zero_total": 4
+        },
+        "snv_background": {
+          "valid_exposed": 11394
+        },
+        "sv_marker_join": {
+          "unique": 2063,
+          "unique_with_clone_label": 2063
+        },
+        "snv_marker_join": {
+          "unique": 11394,
+          "unique_with_clone_label": 11394
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 9,
+        "dna_yield_rows": 9,
+        "sv_correction_rows": 77
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-129",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 3,
+          "S2 - Tumor Fractions": 3,
+          "S3 - Clone frequencies (SVs)": 15,
+          "S4 - Clone frequencies (SNVs)": 15,
+          "S5 - Clone features": 5,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 1062,
+          "S8 - SNV read counts": 4176,
+          "S9 - SV metadata": 122
+        },
+        "exact_shared_specimens": 3,
+        "shared_specimens_with_exposed_numeric_counts": 3,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 1062
+        },
+        "snv_counts": {
+          "valid_exposed": 4176
+        },
+        "sv_background": {
+          "valid_exposed": 1059,
+          "zero_total": 3
+        },
+        "snv_background": {
+          "valid_exposed": 4176
+        },
+        "sv_marker_join": {
+          "unique": 1062,
+          "unique_with_clone_label": 1062
+        },
+        "snv_marker_join": {
+          "unique": 4176,
+          "unique_with_clone_label": 4176
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 3,
+        "dna_yield_rows": 3,
+        "sv_correction_rows": 122
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-139",
+      "in_author_timeline": true,
+      "author_wgs_specimens_listed": 0,
+      "statuses": {
+        "sample_time_keys": "PRESENT",
+        "marker_to_clone_metadata": "PRESENT",
+        "count_fields_and_units": "UNRESOLVED",
+        "material_and_sequencing_budget": "UNRESOLVED",
+        "independent_error_controls": "UNRESOLVED",
+        "timing_and_calibration": "UNRESOLVED",
+        "separate_molecular_reference": "UNRESOLVED",
+        "full_reuse_and_reproducibility": "UNRESOLVED"
+      },
+      "evidence": {
+        "sheet_rows": {
+          "S1 - Coverage": 9,
+          "S2 - Tumor Fractions": 9,
+          "S3 - Clone frequencies (SVs)": 18,
+          "S4 - Clone frequencies (SNVs)": 18,
+          "S5 - Clone features": 1,
+          "S6 - Error rates & LOD": 6,
+          "S7 - SV read counts": 2831,
+          "S8 - SNV read counts": 10593,
+          "S9 - SV metadata": 108
+        },
+        "exact_shared_specimens": 9,
+        "shared_specimens_with_exposed_numeric_counts": 9,
+        "shared_timepoints_without_exact_sample": 0,
+        "sv_counts": {
+          "valid_exposed": 2831
+        },
+        "snv_counts": {
+          "valid_exposed": 10593
+        },
+        "sv_background": {
+          "valid_exposed": 2813,
+          "zero_total": 18
+        },
+        "snv_background": {
+          "valid_exposed": 10592,
+          "zero_total": 1
+        },
+        "sv_marker_join": {
+          "unique": 2831,
+          "unique_with_clone_label": 2831
+        },
+        "snv_marker_join": {
+          "unique": 10593,
+          "unique_with_clone_label": 10593
+        },
+        "sv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "snv_bamtypes": [
+          "duplex",
+          "simplex",
+          "uncollapsed"
+        ],
+        "coverage_rows": 9,
+        "dna_yield_rows": 9,
+        "sv_correction_rows": 108
+      }
+    }
+  ],
+  "sheet_row_counts": {
+    "S1 - Coverage": 152,
+    "S2 - Tumor Fractions": 152,
+    "S3 - Clone frequencies (SVs)": 448,
+    "S4 - Clone frequencies (SNVs)": 353,
+    "S5 - Clone features": 68,
+    "S6 - Error rates & LOD": 129,
+    "S7 - SV read counts": 72607,
+    "S8 - SNV read counts": 147984,
+    "S9 - SV metadata": 3718,
+    "S10 - SNV metadata": 6956
+  },
+  "missing_patient_rows": {},
+  "outside_roster_patient_labels": {},
+  "sv_metadata_keys": 3711,
+  "snv_metadata_keys": 6940,
+  "sv_duplicate_metadata_keys": 5,
+  "snv_duplicate_metadata_keys": 0,
+  "workbook_sha256": "7fd3bf312acb0ba617d28878bd9b4a54122164fb842e933d6a13c5efdc53ee33",
+  "author_config_sha256": "f5a25b5b0109a102b670e0a549679da08e49c33bd6fdb1d65292005e366ac954",
+  "author_commit": "076281373393e6922652371262f5975af9a41a30",
+  "schema_sha256": "02917a6c1bef6dfc59e63f2cd1284322dab19a4c3fe23d3b833e803ceeb78d93",
+  "protocol_commit": "364d75a",
+  "script_sha256": "0734dae21c0346549dff7dbf847d7060b6e5742ea12544d36e0e1cb7f3cb7e76",
+  "checked_utc": "2026-11-22T12:45:47.127448+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:22) [Clang 22.1.3 ]",
+  "openpyxl": "3.1.5",
+  "limits": "S1-S10 keys, count validity and field presence only; no recurrence rows, allele fractions, performance comparisons or outcome analysis."
+}
