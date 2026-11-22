@@ -1,0 +1,1559 @@
+{
+  "shared_autosomal_bp": 11855002,
+  "cmrg_autosomal_mask_bp": 11961541,
+  "cmrg_row_status_counts": {
+    "non_pass": 250
+  },
+  "cmrg_distinct_shared_edit_keys": 0,
+  "cmrg_eligible_row_status_by_type": {},
+  "v5_eligible_rows_in_shared_scope_by_type": {},
+  "cmrg_rows": [
+    {
+      "chrom": "chr1",
+      "pos1": 1041776,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr1",
+      "pos1": 23884345,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr1",
+      "pos1": 25405592,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr1",
+      "pos1": 115686862,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr1",
+      "pos1": 204195224,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr1",
+      "pos1": 204195224,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 983265,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1005806,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1009359,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1056731,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1099589,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1151249,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1176399,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1197479,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1199166,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1230990,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1235458,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1278920,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1316699,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1354237,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1467942,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1517553,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1639995,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 1731282,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 10044118,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 88701623,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 88729710,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 237521935,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 237547341,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr2",
+      "pos1": 241765455,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr3",
+      "pos1": 45890256,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr3",
+      "pos1": 45890256,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr3",
+      "pos1": 49404094,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr3",
+      "pos1": 128657390,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr3",
+      "pos1": 128657390,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr3",
+      "pos1": 128676365,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr3",
+      "pos1": 136302171,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 660975,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 867473,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 869149,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 904216,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 1026082,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 1070461,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 1092989,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 1349061,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 1357014,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 1372729,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 1379758,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 1391669,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 3476234,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 3483080,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 3483080,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 69611288,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 73446587,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 185520481,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 186614872,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 186659790,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 186693362,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 186701979,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr4",
+      "pos1": 186712825,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr5",
+      "pos1": 1229907,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr5",
+      "pos1": 1242329,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr5",
+      "pos1": 1414399,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr5",
+      "pos1": 1414399,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr5",
+      "pos1": 1435782,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr5",
+      "pos1": 69428215,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr5",
+      "pos1": 134619330,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr5",
+      "pos1": 140842552,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr5",
+      "pos1": 171403994,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr5",
+      "pos1": 180639234,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr6",
+      "pos1": 73632008,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr6",
+      "pos1": 107944908,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr6",
+      "pos1": 149776321,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr6",
+      "pos1": 149803478,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr6",
+      "pos1": 160125555,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr6",
+      "pos1": 168488829,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr6",
+      "pos1": 168588127,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr6",
+      "pos1": 168607779,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr6",
+      "pos1": 168611199,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr6",
+      "pos1": 168624653,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr6",
+      "pos1": 169242634,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr7",
+      "pos1": 74827907,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr7",
+      "pos1": 74839100,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr7",
+      "pos1": 100783803,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr7",
+      "pos1": 140840325,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr7",
+      "pos1": 140908786,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr8",
+      "pos1": 1874765,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr8",
+      "pos1": 1897386,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr8",
+      "pos1": 1912533,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr8",
+      "pos1": 1920052,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr8",
+      "pos1": 1953182,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr8",
+      "pos1": 42327797,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr9",
+      "pos1": 69050407,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr9",
+      "pos1": 69088229,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr9",
+      "pos1": 69123204,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr9",
+      "pos1": 69163010,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr9",
+      "pos1": 69212971,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr9",
+      "pos1": 110729243,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr9",
+      "pos1": 128353758,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr9",
+      "pos1": 128356700,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr9",
+      "pos1": 135696127,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr9",
+      "pos1": 136431265,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr9",
+      "pos1": 137102262,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr9",
+      "pos1": 137102262,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr10",
+      "pos1": 14912807,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr10",
+      "pos1": 26710086,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr10",
+      "pos1": 101415486,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr10",
+      "pos1": 133369344,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr10",
+      "pos1": 133373025,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr10",
+      "pos1": 133422375,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr11",
+      "pos1": 640090,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr11",
+      "pos1": 647806,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr11",
+      "pos1": 647806,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr11",
+      "pos1": 677316,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr11",
+      "pos1": 696722,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr11",
+      "pos1": 1255550,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr11",
+      "pos1": 1255550,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr11",
+      "pos1": 47371360,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr11",
+      "pos1": 47371360,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr11",
+      "pos1": 69055528,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr11",
+      "pos1": 69082618,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr11",
+      "pos1": 69092380,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr11",
+      "pos1": 69124661,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr12",
+      "pos1": 7190512,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr12",
+      "pos1": 120987987,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr12",
+      "pos1": 121851677,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr12",
+      "pos1": 132620863,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr12",
+      "pos1": 132805296,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr14",
+      "pos1": 92120589,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr14",
+      "pos1": 105149868,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr15",
+      "pos1": 50495237,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 318897,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 321644,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 886545,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 914617,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 914617,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 917338,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 1356873,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 1367550,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 1376065,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 2104921,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 18821202,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 30749040,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 30752218,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 81085859,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 88411991,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 88426610,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 89176679,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 89328603,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 89342071,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 89390047,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 89398326,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 89412051,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 89421265,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr16",
+      "pos1": 89429172,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1006907,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1032633,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1035495,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1035495,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1072355,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1072355,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1074210,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1112985,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1121549,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1128725,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1194456,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1219654,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1219654,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 1751381,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 2304295,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 4933822,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 18007150,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 41041248,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 80274587,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 80274587,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr17",
+      "pos1": 80281590,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr18",
+      "pos1": 79687332,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr18",
+      "pos1": 79694219,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr18",
+      "pos1": 79726897,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr18",
+      "pos1": 79728698,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr18",
+      "pos1": 79739776,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr18",
+      "pos1": 79739776,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr18",
+      "pos1": 79752556,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 602101,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 605748,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 1182642,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 1195602,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 1209126,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 1612551,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 3590599,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 5996252,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 6152284,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 6163188,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 6693918,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 7644013,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 10377665,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 34392183,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 34392183,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 43517389,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 43517389,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 45190788,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 45775394,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 49169391,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 49172846,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 49867632,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 49875293,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 50906590,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 51357375,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 53794571,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 54181993,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 54965640,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 54999026,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 55137506,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 58488284,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr19",
+      "pos1": 58488284,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr20",
+      "pos1": 45208176,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr20",
+      "pos1": 45906708,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr20",
+      "pos1": 63361431,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr20",
+      "pos1": 63361431,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr20",
+      "pos1": 63366131,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr20",
+      "pos1": 63492159,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr20",
+      "pos1": 63492159,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr20",
+      "pos1": 64131401,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr20",
+      "pos1": 64147568,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr20",
+      "pos1": 64178470,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr20",
+      "pos1": 64233262,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr20",
+      "pos1": 64233262,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 36144484,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 42896313,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 42908564,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 45405287,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 45418663,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 45431488,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 45440469,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 45440469,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 45474780,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 45486389,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 45506745,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 45510951,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 45997137,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr21",
+      "pos1": 46002755,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr22",
+      "pos1": 39101634,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr22",
+      "pos1": 42634572,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr22",
+      "pos1": 42705440,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr22",
+      "pos1": 43078930,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr22",
+      "pos1": 43078930,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr22",
+      "pos1": 50063786,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr22",
+      "pos1": 50075170,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr22",
+      "pos1": 50081009,
+      "source_id": ".",
+      "status": "non_pass"
+    },
+    {
+      "chrom": "chr22",
+      "pos1": 50228233,
+      "source_id": ".",
+      "status": "non_pass"
+    }
+  ],
+  "receipt": {
+    "protocol_commit": "d1be3a8",
+    "scoring_cpu_seconds": 13.18,
+    "checked_utc": "2026-11-22T13:52:10.617169+00:00",
+    "script_sha256": "ce0c3e10e7e82cefd79d3279d8f2d68529c45ceda7bd0661172c3eb2870552c9",
+    "sources": {
+      "cmrg_vcf": {
+        "url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/CMRG_v1.00/GRCh38/StructuralVariant/HG002_GRCh38_CMRG_SV_v1.00.vcf.gz",
+        "bytes": 38549,
+        "md5": "98b9719a3228f2b5c0919654a0b57cc5",
+        "publisher_md5": null,
+        "sha256": "06a8740ad93dd0ede325fcf04c85f687a835699da715c72bdcfade5d588fd19e",
+        "cmrg_mirror": {
+          "url": "https://giab.s3.amazonaws.com/release/AshkenazimTrio/HG002_NA24385_son/CMRG_v1.00/GRCh38/StructuralVariant/HG002_GRCh38_CMRG_SV_v1.00.vcf.gz",
+          "byte_identical": true
+        }
+      },
+      "cmrg_bed": {
+        "url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/CMRG_v1.00/GRCh38/StructuralVariant/HG002_GRCh38_CMRG_SV_v1.00.bed",
+        "bytes": 12681,
+        "md5": "edb61bd8aa78d349a7f141d3f6e133c2",
+        "publisher_md5": null,
+        "sha256": "3306319595ffa472d8ba9a8ca8932304b01ec663e102900a61604410737ddf81",
+        "cmrg_mirror": {
+          "url": "https://giab.s3.amazonaws.com/release/AshkenazimTrio/HG002_NA24385_son/CMRG_v1.00/GRCh38/StructuralVariant/HG002_GRCh38_CMRG_SV_v1.00.bed",
+          "byte_identical": true
+        }
+      },
+      "v5_vcf": {
+        "url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/v5.0q/HG002_GRCh38_v5.0q_stvar.vcf.gz",
+        "bytes": 48040012,
+        "md5": "34dbeeac5eb3fc09e94c5cb8cfe9e24f",
+        "publisher_md5": "34dbeeac5eb3fc09e94c5cb8cfe9e24f",
+        "sha256": "d66b2d2496ff5418763813d3195599007dbff950514d10e5bc27b6c8b76e34b8",
+        "cmrg_mirror": null
+      },
+      "v5_bed": {
+        "url": "https://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/AshkenazimTrio/HG002_NA24385_son/v5.0q/HG002_GRCh38_v5.0q_stvar.benchmark.bed",
+        "bytes": 230609,
+        "md5": "55fc11c80ff376c0a8da99d0c69004f3",
+        "publisher_md5": "55fc11c80ff376c0a8da99d0c69004f3",
+        "sha256": "2f75ce942e1dd9e1a443e4e04fac640104aae5e23fba24d7d3f2c1f1f9985b00",
+        "cmrg_mirror": null
+      }
+    },
+    "scope": "Exact sequence and position equality with a full REF-span mask check. Unmatched alleles are unresolved."
+  }
+}

@@ -40,3 +40,20 @@ and post-score caller outputs if justified. An exact match here does not
 independently confirm biological truth. This is a real-data denominator
 check, with at most 64 MiB transfer and two CPU minutes for scoring. No new
 caller or cluster job is part of this check.
+
+## Correction for the released FILTER encoding
+
+Run 01 excluded all 250 CMRG rows under the literal PASS rule. A field census
+shows all 250 have the literal dot. The v5.0q VCF also uses dot for most rows,
+alongside named haplotype qualifiers. The VCF specification defines dot as
+filters unavailable or not applied. Both NIST resources publish VCF and BED
+pairs for benchmark use. Include PASS and dot in this scope comparison, retain
+the original flag in reports, and exclude rows with any named non-PASS
+filter. Do not describe a dot as a passed caller quality filter.
+[VCF specification](https://samtools.github.io/hts-specs/VCFv4.2.pdf).
+
+This correction follows the raw encoding check. It leaves the fixed allele,
+mask rules and scientific endpoint unchanged. Retain the first result and
+its script. Verify the previously downloaded files against the first receipt
+and use a separate output directory for the correction. Avoid a second
+download.
