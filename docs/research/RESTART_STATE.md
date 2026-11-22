@@ -50,8 +50,8 @@ corrected run. Marker-join ambiguities, assay units and costs, and independent
 reference remain unresolved; initial and corrected outputs are preserved.
 Independent review reproduced the narrow results and found that run 02 omitted
 16 incomplete S10 metadata rows from its aggregate missing-key report; it
-also identified a same-time counter limitation. A third reporting run is
-specified without changing prior results. A separately preregistered author-WGS
+also identified a same-time counter limitation. The third reporting run counted those rows and
+reproduced the original key counts and patient statuses. A separately preregistered author-WGS
 key check found all 12 listed WGS specimens linked to both count sheets in
 six patients; no WGS profiles were checked. The anonymous Synapse archive
 download-reference request returned 403, while authenticated access was not
@@ -60,7 +60,11 @@ three of those six patients with clones distinguishable by both marker classes.
 The subsequent [independent investment reassessment](2026-11-22-investment-reassessment.md)
 parks the comparative CloneSeq campaign pending a usable independent cohort,
 appropriate reference and budget. It suggests a finite COLO829 hard-region
-crosswalk for consideration; no new experiment or result is yet selected.
+crosswalk. Its [source screen](2026-11-22-colo829-centromeric-source-screen.md)
+closed the three-case route, with two outside shared reference sequence and
+one unresolved. The [dicast source check](../../results/dicast_archive_metadata_20261122_run01/)
+identified five formatted VCF inputs in the HG002 timing script; the inputs
+themselves remain unlocated. No new caller experiment is selected yet.
 Cluster job `1637246_1` and a workspace nearing expiry
 were checked for ownership. The job's paths identify the separate Alice CNN
 workflow and it was left running. The workspace's ownership remained unclear;

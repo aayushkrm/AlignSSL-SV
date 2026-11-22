@@ -1,0 +1,136 @@
+{
+  "source": "https://zenodo.org/records/19794240/files/02_dicast.zip?download=1",
+  "archive_size": 1840467967,
+  "publisher_md5_unverified": "fc93ce69b8df77e28f00770e69ab9816",
+  "max_range_transfer_bytes": 2097152,
+  "script_sha256": "cfa96844aed26d250e2e27909d7c7ce87736cfa8fce6680e1b0d36c4842300e6",
+  "checked_utc": "2026-11-22T13:29:10.992715+00:00",
+  "archive_entry_count": 42,
+  "vcf_named_entries": [],
+  "members": [
+    {
+      "member": "02_dicast/README.md",
+      "bytes": 4800,
+      "sha256": "3d3a53772cf0e017d00a3de83839d8a8c1330547dba9b17c799ea1a553d8c672",
+      "cache_file": "README.md"
+    },
+    {
+      "member": "02_dicast/dicast_benchmark_hg002.sh",
+      "bytes": 3170,
+      "sha256": "d4760f3926b436991493cc3c5f4d426a1f14b608afc61cb4cdd1ac0325255a2d",
+      "cache_file": "dicast_benchmark_hg002.sh"
+    },
+    {
+      "member": "02_dicast/configs/config.yaml",
+      "bytes": 783,
+      "sha256": "e771511035b3f78a9ca80f766af4cf2fb4d5c1a0bd355397e4eff95aa35d2c9f",
+      "cache_file": "config.yaml"
+    },
+    {
+      "member": "02_dicast/models/dicast_DEL_metadata.json",
+      "bytes": 3534,
+      "sha256": "f817a20fe4a731137ed1edaae66f3d3e445a10bae40e4d5a73148fbb17a8df44",
+      "cache_file": "dicast_DEL_metadata.json"
+    },
+    {
+      "member": "02_dicast/models/dicast_INS_metadata.json",
+      "bytes": 1868,
+      "sha256": "2abeb01a3f339a7585d3e4959bdee17b416364586c6df27540463fc8007ccc27",
+      "cache_file": "dicast_INS_metadata.json"
+    }
+  ],
+  "status": "ok",
+  "range_bytes": 8625,
+  "ranges": [
+    {
+      "start": 1840467945,
+      "end": 1840467966,
+      "bytes": 22
+    },
+    {
+      "start": 1840467925,
+      "end": 1840467944,
+      "bytes": 20
+    },
+    {
+      "start": 1840464672,
+      "end": 1840467944,
+      "bytes": 3273
+    },
+    {
+      "start": 1209379,
+      "end": 1209408,
+      "bytes": 30
+    },
+    {
+      "start": 1209409,
+      "end": 1209427,
+      "bytes": 19
+    },
+    {
+      "start": 1209428,
+      "end": 1211638,
+      "bytes": 2211
+    },
+    {
+      "start": 1840463288,
+      "end": 1840463317,
+      "bytes": 30
+    },
+    {
+      "start": 1840463318,
+      "end": 1840463352,
+      "bytes": 35
+    },
+    {
+      "start": 1840463353,
+      "end": 1840464671,
+      "bytes": 1319
+    },
+    {
+      "start": 1212040,
+      "end": 1212069,
+      "bytes": 30
+    },
+    {
+      "start": 1212070,
+      "end": 1212098,
+      "bytes": 29
+    },
+    {
+      "start": 1212099,
+      "end": 1212366,
+      "bytes": 268
+    },
+    {
+      "start": 194629,
+      "end": 194658,
+      "bytes": 30
+    },
+    {
+      "start": 194659,
+      "end": 194699,
+      "bytes": 41
+    },
+    {
+      "start": 194700,
+      "end": 195376,
+      "bytes": 677
+    },
+    {
+      "start": 1235,
+      "end": 1264,
+      "bytes": 30
+    },
+    {
+      "start": 1265,
+      "end": 1305,
+      "bytes": 41
+    },
+    {
+      "start": 1306,
+      "end": 1825,
+      "bytes": 520
+    }
+  ]
+}

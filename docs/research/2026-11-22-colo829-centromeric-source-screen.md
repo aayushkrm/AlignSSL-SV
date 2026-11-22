@@ -1,0 +1,17 @@
+# COLO829 centromeric junctions and benchmark scope
+
+The fixed development set has three junctions from Figures 1D–F of the [published COLO829 donor-specific assembly study](https://pmc.ncbi.nlm.nih.gov/articles/PMC13722029/#F1). The question was whether any junction supports a new, exact allele comparison inside the shared evaluation scope of a standard-reference benchmark. The paper's breakpoint descriptions resolve two of the three cases at the reference-eligibility step. The remaining case has useful partial evidence from an earlier study and lacks an exact shared comparison.
+
+| Published junction | Reference and comparator evidence | Disposition for an exact paired-breakend comparison |
+| --- | --- | --- |
+| `i(4)(q10)` | Both reported breakpoints are in alpha-satellite higher-order repeats. The Cell paper reports that the specific locations are absent from both GRCh38 and CHM13. | Outside shared sequence scope. |
+| `t(14;16)(p10;p10)` | Both reported breakpoints are in alpha-satellite higher-order repeats. The Cell paper reports that the specific locations are absent from both GRCh38 and CHM13. | Outside shared sequence scope. |
+| `t(1;3)(q12;p21)` | The Cell paper places the donor-specific breakpoints in an HSat2 array on 1q and in RARB on 3p. Earlier LINX work describes a COLO829 single breakend near chr3:25.3 Mb with a satellite insertion and infers a likely chr1 partner. These descriptions suggest a related event. The exact sequence, orientation, passage match and paired benchmark eligibility remain unresolved. | Unresolved. The earlier partial call is relevant and must be retained in any follow-up. |
+
+The first two dispositions apply to exact representation on these references. A caller can report partial evidence, an approximate breakend or the karyotypic event. Those are separate endpoints. The original study already describes the gain from a donor-specific reference. [Cell paper, breakpoint results and Figure 1](https://pmc.ncbi.nlm.nih.gov/articles/PMC13722029/). [LINX, Figure 6B](https://pmc.ncbi.nlm.nih.gov/articles/PMC9903802/#fig6).
+
+There is closer comparison prior art than the original scout recorded. Paulin et al. already evaluated COLO829 across GRCh38 and CHM13, including centromeric and telomeric calls, manual adjudication, and variation across four sequencing replicates. Their [two released benchmark VCFs](https://zenodo.org/records/13917379) are available for a future exact-allele question. The release lists the two VCFs without a callable mask. Their presence alone cannot establish a common evaluation denominator or a material match to the Cell study. [Paulin et al., Genome Research](https://doi.org/10.1101/gr.279352.124).
+
+The public SMaHT policy lists COLO829 sequence and variant data as open. The Cell study identifies SMaHT as the sequencing source and links track hubs and code. Exact file access, collection and passage correspondence between releases remain open. [SMaHT access policy](https://data.smaht.org/docs/access/data-availability-and-access). [Cell resource statement](https://pmc.ncbi.nlm.nih.gov/articles/PMC13722029/#S7).
+
+Close this finite three-junction comparison as a publication lead. It yielded no established discrepancy inside shared evaluable sequence. This source screen inspected published descriptions and release listings. It did not score callsets, inspect sequence, or determine whether other COLO829 loci would support a different question.

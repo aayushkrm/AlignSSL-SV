@@ -82,5 +82,11 @@ The [literature update](2026-11-22-cloneseq-literature-update.md) identifies a
 2026 cfClone preprint that reuses these WGS-reference patients and reports
 that only three of six had clone sets distinguishable with both marker
 classes. This is the preprint's finding, not a new result from this audit.
-No publication-worthy improvement has been established. A corrective run must
-preserve the earlier results and receive independent review.
+The [third reporting run](../../results/cloneseq_content_audit_20261122_run03/)
+records all 16 incomplete S10 metadata rows and finds no mixed same-time
+sample groups. It reproduces all 24 patient statuses and 149 shared keys.
+The 156 incomplete S8 join rows remain unresolved. Twelve focused tests
+passed across the three audit scripts. Both previous runs are preserved.
+The [investment reassessment](2026-11-22-investment-reassessment.md) parks
+the comparative campaign pending an independent cohort, reference and
+measurable assay budget.

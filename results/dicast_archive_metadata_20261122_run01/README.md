@@ -1,0 +1,7 @@
+# Dicast HG002 source archive check
+
+The [author's Zenodo release](https://zenodo.org/records/19794240) lists `02_dicast.zip` at 1,840,467,967 bytes. The [probe](../../analysis/probe_dicast_archive_sources.py) fetched 8,625 bytes over 18 exact HTTP ranges. Python's ZIP reader checked the CRC of each of the five extracted source files. The central directory lists 42 entries and zero names ending in VCF, VCF.GZ or BCF. The receipt pins the source members, transfer ranges and probe. The whole-archive MD5 remains unverified.
+
+The included `dicast_benchmark_hg002.sh` reproduces the timing workflow. It assumes an externally supplied 30× Illumina HG002 BAM and five formatted caller VCFs for Delly, Manta, Lumpy, CNVnator and GRIDSS. Its input paths are placeholders with no file URLs or checksums. It has no population-catalog argument. The [paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC13584385/) describes population catalogs for separate accuracy configurations. The timing script cannot establish the exact inputs for the published CMRG accuracy numbers.
+
+The [03_cuban.zip preview](https://zenodo.org/records/19794240/preview/03_cuban.zip?include_deleted=0) separately lists the visualization application, code and resources. No call VCF filename appeared in that preview. Another source could supply the exact inputs. All visited source members were read as text or metadata, outside Git. No caller code was executed.
