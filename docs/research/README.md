@@ -28,7 +28,12 @@ dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
-| [`2026-11-06-cloneseq-schema-protocol.md`](2026-11-06-cloneseq-schema-protocol.md) | Prospective public-table schema check | First worksheet row only; no biological or clinical outcomes |
+| [`2026-11-22-cloneseq-content-protocol.md`](2026-11-22-cloneseq-content-protocol.md) | Prospective all-patient data-content feasibility check | Fixed author roster; joins, missingness, count validity and evidence availability only |
+| [`2026-11-22-independent-investment-review.md`](2026-11-22-independent-investment-review.md) | Independent scientific challenge | Allows bounded feasibility check; distinguishes clone measurement from seeding truth and flags assay-budget limits |
+| [`2026-11-22-cluster-ownership-audit.md`](2026-11-22-cluster-ownership-audit.md) | Read-only cluster ownership and expiry audit | Running job associated with another workflow; one workspace near expiry has unresolved project ownership |
+| [`2026-11-06-cloneseq-schema-protocol.md`](2026-11-06-cloneseq-schema-protocol.md) | Public-table schema check | All 14 first rows resolved; join semantics, measurement units and independent truth unverified |
+| [`2026-11-06-paired-scientific-review.md`](2026-11-06-paired-scientific-review.md) | Independent investment challenge | Stops generic paired SV–RNA; specifies a narrow falsifier and cautions against ctDNA claims without a fair reference |
+| [`2026-11-06-scientific-investment-decision.md`](2026-11-06-scientific-investment-decision.md) | Preserved investment-decision draft | Agent runtime later reported a usage-limit error; objective version and independent-review limits explicit |
 | [`2026-11-06-cloneseq-supplement-inventory.md`](2026-11-06-cloneseq-supplement-inventory.md) | Prior-study supplement metadata check | Archive and members verified; 14 sheet names and legends describe SV/SNV counts, clone estimates and clinical records; no worksheet rows inspected |
 | [`2026-11-06-independent-direction-scout.md`](2026-11-06-independent-direction-scout.md) | Conditional alternative: SV ctDNA lineage | 2025 CloneSeq-SV already tracks clones and reports SV/SNV estimates; controlled data and matched plasma/relapse feasibility unresolved |
 | [`2026-11-06-vienna-vcf-header-feasibility.md`](2026-11-06-vienna-vcf-header-feasibility.md) | Independent Vienna phased VCF header check | Nine of 11 alignment-name matches in 908 columns; assembly context and two missing samples explicit |

@@ -1,6 +1,6 @@
 # AlignSSL-SV — Progress Tracker & Checkpoint
 
-_Last updated: **2026-11-05** (UTC; earlier milestones retain their recorded dates). The research-restart section immediately below
+_Last updated: **2026-11-22** (UTC; earlier milestones retain their recorded dates). The research-restart section immediately below
 is authoritative for the new direction; Part I and Part II retain the
 historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 `docs/project.md`, whose §16 carries the historical audit outcome._
@@ -10,6 +10,31 @@ historical SSL study and its negative result. Maps to the Phase 0–5 plan in
 ---
 
 ## 2026-09-22 research restart
+
+### Scientific direction and source-field check — 2026-11-22 UTC
+
+The preserved [independent scientific review](docs/research/2026-11-06-paired-scientific-review.md)
+recommends stopping a generic SV–RNA study because close prior work already
+exists. A narrower allele-linked question remains unproven. A separate
+[investment draft](docs/research/2026-11-06-scientific-investment-decision.md)
+proposes checking whether public CloneSeq-SV measurements can support a fair
+SV-plus-SNV comparison. The requested Sol/max agent wrote the draft but then
+reported a usage-limit error; clean completion and backend configuration were
+not established. Its cited goal version predates the current model-role
+settings. New independent scrutiny has been requested.
+
+The preregistered [first-row schema check](docs/research/2026-11-06-cloneseq-schema-protocol.md)
+resolved all 14 worksheet headers. SV and SNV tables name read counts,
+background counts and clone labels, but their identifiers differ and SNV
+marker metadata have no patient column. Table contents, joins, independent
+reference, measurement units and comparable assay costs remain unverified.
+No patient data row was read in this check. The published cohort is
+exploratory development evidence, not an untouched final test.
+
+The current cluster queue contains a job named `1000g_wget`; one workspace
+has approximately two hours remaining. Their relationship to this project is
+being checked. No job or workspace has been changed. Local disk shows about
+15 GiB free. The publication goal remains active and unmet.
 
 ### Validator controls and paired-source feasibility — 2026-11-05 UTC
 

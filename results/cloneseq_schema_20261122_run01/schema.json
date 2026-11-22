@@ -1,0 +1,250 @@
+{
+  "source_workbook_sha256": "7fd3bf312acb0ba617d28878bd9b4a54122164fb842e933d6a13c5efdc53ee33",
+  "expected_sha256": "7fd3bf312acb0ba617d28878bd9b4a54122164fb842e933d6a13c5efdc53ee33",
+  "script_sha256": "3ae82e7ecae48ab6578c6e7de10f89b8c7199faace61b851ab40ed2011c73674",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:22) [Clang 22.1.3 ]",
+  "openpyxl": "3.1.5",
+  "checked_utc": "2026-11-22T12:32:28.814473+00:00",
+  "protocol_commit": "7499eef",
+  "sheets": [
+    {
+      "sheet": "S1 - Coverage",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "patient",
+        "sample_id",
+        "timepoint",
+        "mean_sv_counts_duplex",
+        "mean_sv_counts_simplex",
+        "mean_sv_counts_uncollapsed_dedup",
+        "mean_snv_counts_duplex",
+        "mean_snv_counts_simplex",
+        "mean_snv_counts_uncollapsed"
+      ]
+    },
+    {
+      "sheet": "S2 - Tumor Fractions",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "patient",
+        "sample",
+        "timepoint",
+        "days",
+        "dna_yield",
+        "tumorfraction_TP53",
+        "tumorfraction_ClonalSV",
+        "tumorfraction_ClonalSNV",
+        "nClonal_SV",
+        "ndetectedClonal_SV",
+        "nClonal_SNV",
+        "ndetectedClonal_SNV"
+      ]
+    },
+    {
+      "sheet": "S3 - Clone frequencies (SVs)",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "patient",
+        "timepoint",
+        "days",
+        "clone_id",
+        "tumor_fraction",
+        "clone_frequency",
+        "nSV_detected",
+        "nSV_total",
+        "fractionSV_detected",
+        "clone_frequency_normalized"
+      ]
+    },
+    {
+      "sheet": "S4 - Clone frequencies (SNVs)",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "patient",
+        "timepoint",
+        "days",
+        "clone_id",
+        "tumor_fraction",
+        "clone_frequency",
+        "nSNV_detected",
+        "nSNV_total",
+        "fractionSNV_detected",
+        "clone_frequency_normalized"
+      ]
+    },
+    {
+      "sheet": "S5 - Clone features",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "patient",
+        "clone_id",
+        "features"
+      ]
+    },
+    {
+      "sheet": "S6 - Error rates & LOD",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "patient",
+        "bamtype",
+        "mutation_type",
+        "alt_counts",
+        "total_counts",
+        "error_rate"
+      ]
+    },
+    {
+      "sheet": "S7 - SV read counts",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "patient",
+        "sample_id",
+        "timepoint",
+        "days",
+        "target_idx",
+        "bamtype",
+        "total_counts",
+        "alt_counts",
+        "VAF",
+        "ref_seq_reads",
+        "ref_span_reads",
+        "alt_seq_reads",
+        "alt_span_reads",
+        "VAF.background",
+        "total_counts.background",
+        "alt_counts.background",
+        "alt_seq_reads.background",
+        "alt_span_reads.background"
+      ]
+    },
+    {
+      "sheet": "S8 - SNV read counts",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "patient",
+        "sample",
+        "timepoint",
+        "days",
+        "target_idx",
+        "bamtype",
+        "clonality",
+        "clone_id",
+        "Hugo_Symbol",
+        "total_counts",
+        "alt_counts",
+        "VAF",
+        "total_counts.background",
+        "alt_counts.background",
+        "VAF.background"
+      ]
+    },
+    {
+      "sheet": "S9 - SV metadata",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "patient",
+        "target_idx",
+        "chromosome_1",
+        "position_1",
+        "strand_1",
+        "chromosome_2",
+        "position_2",
+        "strand_2",
+        "type",
+        "rearrangement_type",
+        "singlecelltumor.total_counts",
+        "singlecelltumor.alt_seq_reads",
+        "singlecelltumor.alt_span_reads",
+        "singlecelltumor.alt_clipped_reads",
+        "singlecelltumor.alt_counts",
+        "singlecelltumor.VAF",
+        "singlecellnormal.total_counts",
+        "singlecellnormal.alt_seq_reads",
+        "singlecellnormal.alt_span_reads",
+        "singlecellnormal.alt_clipped_reads",
+        "singlecellnormal.alt_counts",
+        "singlecellnormal.VAF",
+        "bulknormalwgs.total_counts",
+        "bulknormalwgs.alt_counts",
+        "bulknormalwgs.VAF",
+        "clonality",
+        "clone_id",
+        "nclones",
+        "correction"
+      ]
+    },
+    {
+      "sheet": "S10 - SNV metadata",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "target_idx",
+        "clonality",
+        "Hugo_Symbol",
+        "clone_id",
+        "sbmclone_clones",
+        "articull",
+        "filter_out",
+        "remove_trinuc",
+        "correction"
+      ]
+    },
+    {
+      "sheet": "S11 - clinical data",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "ptid",
+        "time_from_dx",
+        "event_type",
+        "event_name",
+        "diagnosis",
+        "Final_tp",
+        "treatment_count",
+        "rn",
+        "treatment_level"
+      ]
+    },
+    {
+      "sheet": "S12 - recurrence data",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "patient_id",
+        "recurrence_number",
+        "date"
+      ]
+    },
+    {
+      "sheet": "S13 - CA125",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "CA125",
+        "days",
+        "patient_id"
+      ]
+    },
+    {
+      "sheet": "S14 - surgeries",
+      "row": 1,
+      "status": "header",
+      "fields": [
+        "patient_id",
+        "surgery_id",
+        "surgery_type",
+        "surgery_date"
+      ]
+    }
+  ],
+  "limits": "Only the first row of each sheet was inspected; no patient observations or later rows were analyzed."
+}

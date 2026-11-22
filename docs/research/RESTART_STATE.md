@@ -32,6 +32,21 @@ This section is reverse chronological. Older pending/unbooked descriptions
 are preserved decision snapshots, not current launch permissions; later
 completed or closed entries supersede them.
 
+November 22 UTC checkpoint: the [paired-science review](2026-11-06-paired-scientific-review.md)
+stops the broad SV–RNA direction and offers a narrow falsifier. The preserved
+[investment draft](2026-11-06-scientific-investment-decision.md) proposes a
+CloneSeq-SV content-feasibility check; the requested Sol/max agent later
+reported a usage-limit error and did not return clean completion. Its older
+objective differs from the current objective in model-role settings. An
+independent Terra/max review was requested; backend routing remains unverified.
+
+The completed [public-workbook schema check](2026-11-06-cloneseq-schema-protocol.md)
+read only the first row of each sheet and resolved all 14 headers. The next
+step must test exact keys, missingness, measurement semantics, independent
+reference and cost before making any comparison; all published samples are
+development evidence. Cluster job `1637246_1` and a workspace nearing expiry
+are under a read-only ownership check. No cluster resource has been changed.
+
 November 5 UTC checkpoint: [synthetic EBI validator controls](2026-11-04-ebi-validator-case-protocol.md)
 show no remote-contig warning in the tested configuration; local-contig and
 malformed-ALT controls do trigger a warning and error respectively. One pending
