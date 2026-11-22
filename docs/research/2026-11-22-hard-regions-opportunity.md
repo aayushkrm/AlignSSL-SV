@@ -60,6 +60,24 @@ flowchart LR
 
 The 2025 *Platinum Pedigree* release adds a possible later check in NA12878 and relatives: 24,315 SVs across about 2.77 Gb, with open-consent data, assemblies and calls. It can support an independent-person follow-up if the input read type and candidate-stage files match. It does not make HG002 an external test. [Paper](https://doi.org/10.1038/s41592-025-02750-y), [data repository](https://github.com/Platinum-Pedigree-Consortium/Platinum-Pedigree-Datasets)
 
+Blind insertion discovery from short reads is established. MindTheGap uses
+read k-mers and local assembly for discovery and reconstruction. Pamir
+finds and genotypes novel insertions in one or multiple Illumina genomes.
+A new insertion proposal must show a specific benefit beyond these methods
+or an applicable current equivalent. [MindTheGap paper](https://doi.org/10.1093/bioinformatics/btu545).
+[Pamir paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC5870608/).
+
+Manta provides a documented early-stage control. Its
+`candidateSV.vcf.gz` contains unscored candidates eligible for its later
+scoring stage, and `diploidSV.vcf.gz` gives the germline scored output.
+Read both from the same frozen run to distinguish failure to emit an early
+candidate from losing an emitted candidate later. Manta can emit partially
+assembled or symbolic insertions. Give those calls a separate locus-level
+status and retain the sequence-level question as unresolved. The user guide
+also documents a high-sensitivity configuration. A gain confined to the
+default candidate threshold is a weak contribution.
+[Manta user guide](https://github.com/Illumina/manta/blob/master/docs/userGuide/README.md#structural-variant-predictions).
+
 ## Public data assets
 
 | Asset | What is available | Use and limit |
