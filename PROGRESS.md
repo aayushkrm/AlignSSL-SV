@@ -63,7 +63,7 @@ found two exact junctions outside shared reference sequence and one with
 unresolved allele identity and earlier single-breakend evidence. Close this
 finite route. The [hard-region candidate scout](docs/research/2026-11-22-hard-regions-opportunity.md)
 found a distinct question beyond existing candidates. The dicast archive
-check obtained source metadata but did not locate the benchmark caller VCFs.
+check obtained source metadata but did not locate the benchmark caller VCFs. A separate [HG002 input audit](results/hg002_illumina_header_20261122_run01/) verified a public NovaSeq GRCh38 BAM and BAI by indexed region query. This supplies a path to make fresh matched-read caller outputs.
 A [low-frequency somatic scout](docs/research/2026-11-22-mosaic-sv-opportunity.md)
 found no independently verified SV truth for the proposed physical mixture.
 

@@ -1,0 +1,13 @@
+# HG002 Illumina input audit
+
+The older [DeepVariant performance BAM](https://github.com/google/deepvariant/blob/r1.10/docs/deepvariant-details.md) has the GRCh37 chromosome lengths and 86 sequence entries. The separate [Google Health NovaSeq BAM](https://storage.googleapis.com/brain-genomics-public/research/sequencing/grch38/bam/novaseq/wgs_pcr_free/30x/HG002.novaseq.pcr-free.30x.dedup.grch38.bam) has the GRCh38 chromosome lengths, 3,366 sequence entries, and one HG002 Illumina read group. Its header lists BWA 0.7.17 and MarkDuplicates 4.1.2.0.
+
+The probe checked the first 256 KiB of each pinned cloud object and decoded only the BAM text headers. The complete ordered name and length lists agree with the [Broad FASTA index](https://storage.googleapis.com/gcp-public-data--broad-references/hg38/v0/Homo_sapiens_assembly38.fasta.fai) and the [1000 Genomes FASTA index](https://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/GRCh38_reference_genome/GRCh38_full_analysis_set_plus_decoy_hla.fa.fai). The BAM header has zero per-contig MD5 fields. The index agreement establishes dictionary compatibility. The exact sequence used for the original alignment still needs provenance.
+
+The GRCh38 BAM object is 43,667,905,004 bytes. The public BAI is 9,390,960 bytes at generation `1607665356361183`, with publisher MD5 `d3bd1bf2c785da0226d37bb14a802553`. The [public NovaSeq FASTQ pairs](https://www.biorxiv.org/content/10.64898/2026.09.23.752440v1.full) are a reproducible realignment alternative when an exact, fixed FASTA is required. The verified object sizes are 25,664,092,287 and 26,634,286,830 bytes. The NovaSeq alignment is a candidate for a new same-read caller comparison. Its identity with the dicast accuracy-run input remains unresolved.
+
+Reproduce the text-header receipt with `python3 analysis/check_hg002_illumina_header.py NEW_RECEIPT.json`. The response and header hashes are in this packet. The whole BAM objects and FASTQ files were not downloaded.
+
+A separate fixed-window check used `pysam 0.24.1`. It downloaded the pinned BAI to a temporary directory, verified the size and publisher MD5, and opened the version-pinned BAM over HTTPS. The half-open interval `chr22:20,000,000–20,001,000` returned **299 alignment records**. The check counted records without inspecting alleles or retaining reads. BAI SHA256 `4d200f299c2549c2ee3a384c24f7d28460984354bd4ce9b46405771a3ee2dad1`. The interval is a data-access control with no use in caller scoring.
+
+To repeat the indexed read, use the receipt's NovaSeq URL as the first argument to `pysam.AlignmentFile`, mode `rb`, and pass the local, verified BAI as `index_filename` with `require_index=True`. Count `bam.fetch("chr22", 20000000, 20001000)`.

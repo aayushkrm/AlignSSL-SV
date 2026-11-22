@@ -1,0 +1,71 @@
+{
+  "checked_utc": "2026-11-22T13:42:12.822604+00:00",
+  "script_sha256": "5c73ed9830102d5505f270fb6ddf69069f46ae232f9d0c55547f5feeb5fab506",
+  "objects": {
+    "deepvariant_legacy": {
+      "url": "https://storage.googleapis.com/deepvariant/performance-testdata/HG002_NIST_150bp_downsampled_30x.bam?generation=1511805283906087",
+      "object_bytes": 71929103696,
+      "range_bytes": 262144,
+      "range_sha256": "33e509d5042d43756bd8aaa43d530a52baeb5247d6806ec1d22a5fb1b4c75be2",
+      "header_bytes": 3330,
+      "header_sha256": "240692ffa807a091cd3412081c86bd525a121c913a5bad01d53a7a473e9cd001",
+      "sort_order": "coordinate",
+      "read_groups": [
+        {
+          "sample": "HG002",
+          "platform": "ILLUMINA"
+        }
+      ],
+      "programs": [
+        {
+          "PN": "bwa",
+          "VN": "0.7.12-r1039"
+        },
+        {
+          "PN": "bamsormadup",
+          "VN": "2.0.25"
+        }
+      ],
+      "contigs": 86,
+      "contigs_with_md5": 0,
+      "contig_name_length_sha256": "592f0e9d3baba9dc55c9adb269eaba5cdb5dad34b07b6714865f01275481fff0",
+      "chromosome_examples": {
+        "1": 249250621,
+        "22": 51304566
+      }
+    },
+    "novaseq_grch38": {
+      "url": "https://storage.googleapis.com/brain-genomics-public/research/sequencing/grch38/bam/novaseq/wgs_pcr_free/30x/HG002.novaseq.pcr-free.30x.dedup.grch38.bam?generation=1607665356367383",
+      "object_bytes": 43667905004,
+      "range_bytes": 262144,
+      "range_sha256": "cd0846f6e89d42e28590c67a0723104ed0123841dbb19ad1b187107ccf938301",
+      "header_bytes": 147952,
+      "header_sha256": "422fa7b0931c6fe39eecf072659909e5b3c1275e45eaedbb465ba1999b551f07",
+      "sort_order": "coordinate",
+      "read_groups": [
+        {
+          "sample": "HG002",
+          "platform": "ILLUMINA"
+        }
+      ],
+      "programs": [
+        {
+          "PN": "bwa",
+          "VN": "0.7.17-r1194-dirty"
+        },
+        {
+          "PN": "MarkDuplicates",
+          "VN": "Version:4.1.2.0"
+        }
+      ],
+      "contigs": 3366,
+      "contigs_with_md5": 0,
+      "contig_name_length_sha256": "0173d4b32f5aeb07bf759f0c00750749511ddb2360cfaf6e066470afaacf6719",
+      "chromosome_examples": {
+        "chr1": 248956422,
+        "chr22": 50818468
+      }
+    }
+  },
+  "scope": "BAM text headers only. No alignment records decoded or retained."
+}

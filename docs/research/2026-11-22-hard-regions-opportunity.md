@@ -93,7 +93,7 @@ The novelty claim must stay narrow: **candidate generation in hard regions**, no
 - **Selection:** CMRG targets 273 challenging genes. It cannot estimate genome-wide recall or prevalence.
 - **Candidate labels:** DICAST's curated set uses caller, technology and database support, plus manual review. These support classes are not error probabilities. Its manually added FNs are not a census of every missed SV.
 - **Matching:** breakpoints, size and sequence can differ across equivalent events. The choice of matcher can change FN counts. Keep complex or unresolved events out of the primary score.
-- **Input provenance:** The DICAST paper used 30× HG002 Illumina WGS and five named callers. The small Zenodo source bundles do not provide those call VCFs. This scout did not verify a public, same-run candidate manifest or download reads.
+- **Input provenance:** The DICAST paper used 30× HG002 Illumina WGS and five named callers. The small Zenodo source bundles do not provide those call VCFs. This scout did not verify a public, same-run candidate manifest or download reads. A separate [source check](../../results/hg002_illumina_header_20261122_run01/) verified a distinct, public 30× HG002 NovaSeq GRCh38 BAM via an indexed range query. This can support a fresh, matched-read baseline if the research design warrants one.
 - **Project fit:** The repository describes SV calling and genotyping but does not define the current implementation as a de novo proposer. This question requires a new capability, not an evaluation of the current model.
 
 ## Stop rule
