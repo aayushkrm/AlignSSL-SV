@@ -25,7 +25,8 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 CHECKER = ROOT / "analysis" / "check_manuscript.py"
 DOCS = {
-    "readme": ROOT / "README.md",
+    # The current root README is a landing page; legacy table gates read the archive.
+    "readme": ROOT / "docs" / "archive" / "README-legacy-ssl.md",
     "progress": ROOT / "PROGRESS.md",
     "project": ROOT / "docs" / "project.md",
     "manuscript": ROOT / "docs" / "AlignSSL_SV_manuscript.md",
