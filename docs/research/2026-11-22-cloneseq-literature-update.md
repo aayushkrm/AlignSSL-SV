@@ -44,6 +44,29 @@ Sørensen et al. published a 2026 study of SV-based ctDNA detection in 144 stage
 
 This is useful independent evidence for SVs as plasma tumor markers. Its endpoint is sample-level ctDNA detection and recurrence. It does not assign tumor clones. The paper does not report an equal-number, equal-depth marker comparison. The raw data remain under the access terms of the source studies; the paper provides public supplementary SV catalogs and [SVrecon code](https://github.com/lindbjerg-group/SVreconManta) and [SVreconDELLY code](https://github.com/lindbjerg-group/SVreconDELLY). [Open-access paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC12983592/); [data structure](https://genome.au.dk/library/GDK000005/).
 
+### Additional independent-cohort search
+
+- Li et al. (2026) tested personalized breakpoint ddPCR using multisite
+  biopsies from four ovarian-cancer patients and pretreatment plasma. The
+  paper reports feasibility of SV detection, rather than a longitudinal,
+  matched-SV/SNV clone-accuracy benchmark. Its data statement says sequencing
+  data will be deposited in EGA, without giving an accession in that
+  statement. [Primary paper](https://www.oncoscience.us/article/645/text/).
+- Schmid et al. (2025) compared SNV and breakpoint detection for sarcoma,
+  including dilution series and plasma from three patients. This is related
+  assay-level evidence, not an independently established clone-truth cohort.
+  The paper says sequencing data are available on reasonable request.
+  [Primary paper](https://onlinelibrary.wiley.com/doi/full/10.1002/cam4.70704).
+- Zhang et al. (2025) analyzed mutations, immunoglobulin rearrangements and
+  clonality in 57 lymphoma patients' liquid-biopsy samples. These
+  rearrangements and the study's disease-monitoring aim do not by themselves
+  supply an independent solid-tumor SV-versus-SNV clone-accuracy reference.
+  Its data statement says datasets are available on reasonable request.
+  [Primary paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC12689601/).
+
+These are candidate leads and constraints, not proof that no suitable cohort
+exists. No access request was sent, and no patient-level data were acquired.
+
 ### Other relevant resources
 
 - The 2026 SMaHT integrated mosaicism map profiles 25 postmortem donors across 381 tissue samples and up to 20 tissue types, using short-read, long-read, duplex and selected single-cell assays. It is a valuable independent human-mosaicism resource. It is not a treatment-time ovarian plasma cohort. The paper directs users to the [SMaHT Data Portal](https://data.smaht.org/). [Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC13684657/).
@@ -85,6 +108,14 @@ An inconclusive or underpowered study would not establish a biological null. Any
 ## Search notes and limits
 
 The researcher used Firecrawl paper search and full-page retrieval, Exa search and fetch, Parallel web search, Consensus search and record fetch, SciSpace search and fetch, and public NCBI E-utilities/OpenAlex citation endpoints. In that worker session the packaged Life Sciences Literature helper was unavailable, so the worker queried NCBI E-utilities directly; that does not establish its availability in other sessions. Parallel Research required OAuth. Elicit reported that this account’s plan does not include API access. AlphaXiv’s listed index excludes biomedical journal papers, so it was not useful for this question.
+
+A follow-up on 2026-11-22 used the Life Sciences Literature PubMed helper for
+three targeted searches of rearrangements, plasma and clone tracking, followed
+by publication summaries and primary-paper checks. Its first invocation lacked
+`requests`; an isolated `uv` environment with that dependency worked. A Scite
+query returned a paid-plan/trial requirement, so Consensus and the primary
+articles supplied alternative leads. Search terms and result limits constrain
+this screen; it was not a systematic review.
 
 The literature worker was requested with GPT-6 Luna at maximum effort; the effective model and reasoning setting are not independently attested by runtime metadata available to this research run.
 
