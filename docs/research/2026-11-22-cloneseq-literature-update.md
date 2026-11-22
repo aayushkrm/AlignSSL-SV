@@ -119,4 +119,8 @@ this screen; it was not a systematic review.
 
 The literature worker was requested with GPT-6 Luna at maximum effort; the effective model and reasoning setting are not independently attested by runtime metadata available to this research run.
 
-No project workbook was read. No experiment, cluster job or expensive compute was run. No Git history was changed. Only this note was written.
+The initial literature worker did not read the project workbook, run an
+experiment or cluster job, or change Git history. The separate, prospectively
+specified content audits did read permitted workbook fields, as documented in
+the [content result](2026-11-22-cloneseq-content-result.md). The additional
+cohort search above used publications and data statements only.

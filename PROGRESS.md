@@ -55,8 +55,10 @@ The cluster queue contains `1000g_wget`, whose paths identify the separate
 Alice CNN workflow; it was left running. One workspace's project ownership
 remains unclear. At the user's explicit request it was extended until
 2026-12-22 19:44:39 cluster time, using its last available renewal. Its
-contents were not changed. Local disk shows about 15 GiB free. The publication
-goal remains active and unmet.
+contents were not changed. Local disk shows about 14 GiB free. The publication
+goal remains active and unmet. A later metadata-only `stat` found the retained
+HG002 home BAM and index present at their recorded sizes and modification
+times; it did not rehash their contents.
 
 ### Validator controls and paired-source feasibility — 2026-11-05 UTC
 

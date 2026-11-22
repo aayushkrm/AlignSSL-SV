@@ -62,6 +62,8 @@ were checked for ownership. The job's paths identify the separate Alice CNN
 workflow and it was left running. The workspace's ownership remained unclear;
 the user explicitly requested extension, and it now expires 2026-12-22
 19:44:39 cluster time with no extensions left. Its contents were not changed.
+The retained HG002 home BAM and BAI still had their recorded sizes and
+modification times on November 22; this was not a content-hash check.
 
 November 5 UTC checkpoint: [synthetic EBI validator controls](2026-11-04-ebi-validator-case-protocol.md)
 show no remote-contig warning in the tested configuration; local-contig and

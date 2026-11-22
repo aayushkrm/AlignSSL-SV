@@ -60,3 +60,12 @@ extensions remaining. The command also reported updating the local reminder
 settings. The workspace's project ownership remains unresolved; no workspace
 contents were read or changed. The Alice-associated download job was not
 modified.
+
+## Subsequent project-input metadata check
+
+On 2026-11-22 UTC, a read-only `stat` of the previously recorded HG002 home
+BAM and BAI found them present at 48,727,325,910 and 21,582,928 bytes. Their
+modification times match the earlier [custody record](../../results/hg002_read_extract_20261010/custody_qa/stat.before.txt).
+This is a presence, size and timestamp check, not a new file-hash or biological
+integrity verification. A fresh queue check still showed only the unrelated
+Alice-associated `1000g_wget` task; no job was modified.
