@@ -67,6 +67,26 @@ check obtained source metadata but did not locate the benchmark caller VCFs. A s
 A [low-frequency somatic scout](docs/research/2026-11-22-mosaic-sv-opportunity.md)
 found no independently verified SV truth for the proposed physical mixture.
 
+The [CMRG and v5.0q check](results/cmrg_shared_scope_20261122_run02/)
+found 84 exact deletion and 114 exact insertion representations within both
+benchmark masks. The first run excluded every CMRG row because the published
+VCF uses FILTER dot. The corrected run keeps that encoding visible and both
+runs are preserved. The result is a development denominator. The independent
+review supports a finite Manta comparison after the exact alignment reference
+is established. It also reproduced the retained CloneSeq run03 counts and
+records that the exact run03 source was still uncommitted at execution.
+
+The [research decision](docs/research/2026-11-22-scientific-direction-decision.md)
+selects one development test of blind deletion proposals from raw Illumina
+fragments against an otherwise identical local-alignment admission control.
+A result must add exact alleles beyond native callers and a sample-excluded
+catalog at a fixed review budget. The [gene roster](results/cmrg_gene_roster_20261122_run01/)
+reproduces 395 published symbols without using variant coordinates. The
+[orchestration handoff](docs/research/2026-11-22-orchestration-handoff.md) and
+independent review support a bounded baseline diagnostic. The exact FASTA
+for the prealigned BAM is unverified. A fresh common alignment from pinned
+FASTQs is an alternative under review. No caller campaign has started.
+
 The cluster queue contains `1000g_wget`, whose paths identify the separate
 Alice CNN workflow; it was left running. One workspace's project ownership
 remains unclear. At the user's explicit request it was extended until

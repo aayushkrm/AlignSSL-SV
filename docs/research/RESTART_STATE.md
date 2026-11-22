@@ -64,7 +64,13 @@ crosswalk. Its [source screen](2026-11-22-colo829-centromeric-source-screen.md)
 closed the three-case route, with two outside shared reference sequence and
 one unresolved. The [dicast source check](../../results/dicast_archive_metadata_20261122_run01/)
 identified five formatted VCF inputs in the HG002 timing script; the inputs
-themselves remain unlocated. No new caller experiment is selected yet.
+themselves remain unlocated. The [scientific decision](2026-11-22-scientific-direction-decision.md)
+selects blind deletion proposals from raw reads versus local read admission,
+with native caller and sample-excluded catalog baselines. The
+[shared-scope test](../../results/cmrg_shared_scope_20261122_run02/) found
+84 exact deletions and 114 exact insertions in both masks. The NIST 395-gene
+roster is saved independently of allele coordinates. Exact alignment FASTA
+identity, comparator input provenance, and locked pilot design remain open.
 Cluster job `1637246_1` and a workspace nearing expiry
 were checked for ownership. The job's paths identify the separate Alice CNN
 workflow and it was left running. The workspace's ownership remained unclear;

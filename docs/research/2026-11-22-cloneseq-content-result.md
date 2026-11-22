@@ -90,3 +90,9 @@ passed across the three audit scripts. Both previous runs are preserved.
 The [investment reassessment](2026-11-22-investment-reassessment.md) parks
 the comparative campaign pending an independent cohort, reference and
 measurable assay budget.
+
+The [subsequent independent audit](2026-11-22-candidate-proposal-review.md)
+recomputed the retained hashes and reproduced the saved counts. The run03
+script and tests were still uncommitted at the recorded run-time HEAD.
+The matching receipt supports artifact identity but cannot show a
+pre-execution Git pin for those exact source bytes.

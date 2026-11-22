@@ -1,0 +1,14 @@
+{
+  "source_commit": "f56326c60641b5fef9e09e27fb02b78457091944",
+  "source": "https://raw.githubusercontent.com/usnistgov/cmrg-benchmarkset-manuscript/f56326c60641b5fef9e09e27fb02b78457091944/data/tidy/bench_coverage.tsv.gz",
+  "input_bytes": 2467870,
+  "input_sha256": "b87d64516b82c547fe7e23291c3a896d58ab2a9a6e2d0f8f1cb866d5bc77471b",
+  "rule": "region=gene, benchmark=v4, autosomal coords, coverage <=0.9 on either reference",
+  "union_genes": 395,
+  "by_reference": {
+    "GRCh37": 362,
+    "GRCh38": 354
+  },
+  "genes_tsv_sha256": "13419ef5a604010b35ded0a2ba4cff99f1fb91c5b210636ab40f637849349951",
+  "limits": "Author candidate gene labels only. No variant locations or gene intervals used."
+}
