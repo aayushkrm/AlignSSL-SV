@@ -47,9 +47,17 @@ reference and cost before making any comparison; all published samples are
 development evidence. The [content audit](2026-11-22-cloneseq-content-protocol.md)
 found exact SV/SNV specimen-time keys for 23/24 author-listed patients in its
 corrected run. Marker-join ambiguities, assay units and costs, and independent
-reference remain unresolved; initial and corrected outputs are preserved and
-independent result review is pending. A targeted author-WGS sample-key check
-is separately specified before execution. Cluster job `1637246_1` and a workspace nearing expiry
+reference remain unresolved; initial and corrected outputs are preserved.
+Independent review reproduced the narrow results and found that run 02 omitted
+16 incomplete S10 metadata rows from its aggregate missing-key report; it
+also identified a same-time counter limitation. A third reporting run is
+specified without changing prior results. A separately preregistered author-WGS
+key check found all 12 listed WGS specimens linked to both count sheets in
+six patients; no WGS profiles were checked. The anonymous Synapse archive
+download-reference request returned 403, while authenticated access was not
+tested. The 2026 cfClone preprint reuses the same cohort and reports only
+three of those six patients with clones distinguishable by both marker classes.
+Cluster job `1637246_1` and a workspace nearing expiry
 were checked for ownership. The job's paths identify the separate Alice CNN
 workflow and it was left running. The workspace's ownership remained unclear;
 the user explicitly requested extension, and it now expires 2026-12-22

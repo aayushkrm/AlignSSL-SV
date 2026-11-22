@@ -1,0 +1,68 @@
+{
+  "checked_utc": "2026-11-22T13:01:25.310070+00:00",
+  "anonymous": true,
+  "max_response_bytes": 131072,
+  "script_sha256": "18efed58730f435e4b87de4bcc3dac86a4f8b10e7316c388ccd574c2f22efc59",
+  "requests": [
+    {
+      "name": "project",
+      "method": "GET",
+      "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn66399325",
+      "request_json": null,
+      "status": 200,
+      "bytes": 295,
+      "sha256": "6ad425f1cce9619a11512d6876ec94f89e3dad3a7ff60a237a9967cf3d6a324a",
+      "saved_as": "project.json"
+    },
+    {
+      "name": "children",
+      "method": "POST",
+      "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/children",
+      "request_json": {
+        "parentId": "syn66399325",
+        "includeTypes": [
+          "file",
+          "folder"
+        ],
+        "limit": 50,
+        "sortBy": "NAME",
+        "sortDirection": "ASC"
+      },
+      "status": 200,
+      "bytes": 620,
+      "sha256": "60db7e0481e8bddded852a01a3029d7690a381959affc892dfb3e3f015a2cefb",
+      "saved_as": "children.json"
+    },
+    {
+      "name": "archive_entity",
+      "method": "GET",
+      "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn68823979",
+      "request_json": null,
+      "status": 200,
+      "bytes": 396,
+      "sha256": "9be2a1361041570c5a4505c99cddae0cc4f14791622f22ebd3c088e784a35a20",
+      "saved_as": "archive_entity.json"
+    },
+    {
+      "name": "archive_filehandles",
+      "method": "GET",
+      "url": "https://repo-prod.prod.sagebase.org/repo/v1/entity/syn68823979/filehandles",
+      "request_json": null,
+      "status": 403,
+      "bytes": 124,
+      "sha256": "8a40381a362843b24b46612281ca693e0a09fa331d3e6569c7b69ab67d15fb4c",
+      "saved_as": "archive_filehandles.json"
+    },
+    {
+      "name": "archive_download_reference",
+      "method": "GET",
+      "url": "https://repo-prod.prod.sagebase.org/file/v1/file/161011949?redirect=false&fileAssociateType=FileEntity&fileAssociateId=syn68823979",
+      "request_json": null,
+      "status": 403,
+      "bytes": 124,
+      "sha256": "8a40381a362843b24b46612281ca693e0a09fa331d3e6569c7b69ab67d15fb4c",
+      "saved_as": "archive_download_reference.json"
+    }
+  ],
+  "limits": "Anonymous metadata and download-reference check only; no file contents or access applications."
+}

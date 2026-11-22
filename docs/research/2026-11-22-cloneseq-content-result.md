@@ -15,8 +15,9 @@ did not require a nonmissing clone label when marking a unique metadata join
 as clone-linked. Its exact source and output are preserved, but that status
 must not be used. The [corrected run](../../results/cloneseq_content_audit_20261122_run02/)
 adds this check; six focused tests pass. In this particular dataset the
-corrected patient-status counts did not change. Independent review of the
-actual code, joins and results is pending.
+corrected patient-status counts did not change. An [independent review](2026-11-22-cloneseq-content-independent-review.md)
+reproduced the narrow findings and identified the missing-key reporting and
+same-time diagnostic limitations described below.
 
 ## Observed availability
 
@@ -27,8 +28,8 @@ actual code, joins and results is pending.
 - Those matches comprise 149 distinct patient/sample/time/day tuples; these
   are repeated measurements, not 149 independent patients. All six patients
   named in the authors' 12-sample cfDNA-WGS configuration have at least one
-  exact SV/SNV specimen-time match. This does **not** yet link the specific
-  WGS specimens to those measurements or establish access to WGS profiles.
+  exact SV/SNV specimen-time match. This initial check did not itself link
+  the specific WGS specimens to those measurements.
 - The audit read 72,607 SV and 147,984 SNV count-sheet rows. All had finite,
   nonnegative integer `total_counts` and `alt_counts` with `alt <= total`
   and a positive total under the coded validity rule. This checks data shape,
@@ -38,11 +39,18 @@ actual code, joins and results is pending.
   missing component of the author-code composite join key. These are row
   counts, not counts of false variants or independent events; a duplicate or
   missing key may have a legitimate source explanation. Uncertain joins stay
-  unresolved.
+  unresolved. Run 02 omitted 16 incomplete S10 metadata rows from its key
+  index without a missing-key counter; its zero duplicate SNV metadata keys
+  refers only to complete keys. The reviewer found four SV duplicate groups
+  with the same nonmissing clone label and one with different labels; all
+  remain ambiguous under the prospective rule.
 - Fourteen patients meet this audit's strict **metadata-linkage-only** rule
   for all their observed count rows; nine remain unresolved and one has no
   count rows of one type. Even a unique clone label does not prove marker
-  exclusivity, copy-number correctness, or a valid reference.
+  exclusivity, agreement of the two arms on a clone, copy-number correctness,
+  or a valid reference. The run's same-time counter can miss an unmatched
+  sample when a different sample matches within the same time group; the
+  independent reviewer found no such mixed group in the current workbook.
 
 The eight-category patient table keeps separate data availability, marker
 linkage, count units, cost, error controls, calibration, reference and reuse.
@@ -53,8 +61,26 @@ proof those resources do not exist. The source paper already describes
 off-target controls and limited WGS validation; their per-sample accessibility
 and suitability for a new comparison require direct verification.
 
-No publication-worthy improvement has been established. A further prospective
-check of the authors' 12 named WGS sample identifiers against S2/S7/S8 is
-specified in the protocol. It can test exact linkage, not the availability or
-independence of actual WGS profiles. An independent review must assess the
-current results and any material code correction.
+## Targeted WGS sample-key follow-up
+
+The amendment to the protocol was pushed as `1c72bb4` before the targeted
+read. The [key-only audit](../../results/cloneseq_wgs_key_audit_20261122_run01/)
+found that all 12 author-listed WGS sample identifiers have a unique S2
+sample match and an identical patient, sample, timepoint and day key in both
+count sheets. They represent **six patients**, with two listed samples each.
+The audit read the first four identifier/time fields only; it did not read
+read counts, clinical outcomes or WGS signals. A key match does not establish
+marker distinguishability, independent clone truth or equivalent assay cost.
+
+A separate [anonymous Synapse check](../../results/cloneseq_synapse_metadata_20261122_run01/)
+found that project and archive metadata are visible, but both the file-handle
+and documented download-reference requests returned HTTP 403. No archive was
+downloaded. Authenticated access has not been tested, and the response does
+not establish the applicable legal terms or the contents' suitability.
+
+The [literature update](2026-11-22-cloneseq-literature-update.md) identifies a
+2026 cfClone preprint that reuses these WGS-reference patients and reports
+that only three of six had clone sets distinguishable with both marker
+classes. This is the preprint's finding, not a new result from this audit.
+No publication-worthy improvement has been established. A corrective run must
+preserve the earlier results and receive independent review.

@@ -28,8 +28,10 @@ dated checkpoints, not current launch permissions.
 
 | Document | Role | Current status |
 |---|---|---|
-| [`2026-11-22-cloneseq-content-result.md`](2026-11-22-cloneseq-content-result.md) | Actual public-table availability audit | 23/24 exact specimen-time matches; marker-key ambiguities and missing independent reference; result review pending |
-| [`2026-11-22-cloneseq-content-protocol.md`](2026-11-22-cloneseq-content-protocol.md) | All-patient data-content feasibility check | Corrected run finds 23/24 patients with exact specimen-time keys; marker, cost and reference issues under independent review |
+| [`2026-11-22-cloneseq-content-result.md`](2026-11-22-cloneseq-content-result.md) | Actual public-table availability audit | 23/24 exact specimen-time matches; all 12 author-listed WGS specimens link by key; marker and reference issues remain |
+| [`2026-11-22-cloneseq-content-independent-review.md`](2026-11-22-cloneseq-content-independent-review.md) | Independent content audit | Reproduces narrow key findings; identifies omitted missing S10 metadata rows and a same-time diagnostic limitation |
+| [`2026-11-22-cloneseq-literature-update.md`](2026-11-22-cloneseq-literature-update.md) | CloneSeq follow-up literature | cfClone reuses the cohort and reports three of six WGS patients with clones distinguishable by both marker classes; anonymous processed-archive request returned 403 |
+| [`2026-11-22-cloneseq-content-protocol.md`](2026-11-22-cloneseq-content-protocol.md) | All-patient data-content feasibility check | Third-run reporting corrections specified after independent review; no comparative experiment authorized |
 | [`2026-11-22-independent-investment-review.md`](2026-11-22-independent-investment-review.md) | Independent scientific challenge | Allows bounded feasibility check; distinguishes clone measurement from seeding truth and flags assay-budget limits |
 | [`2026-11-22-cluster-ownership-audit.md`](2026-11-22-cluster-ownership-audit.md) | Cluster ownership and expiry audit | Separate Alice job untouched; ambiguous workspace extended at the user's request until December 22 |
 | [`2026-11-06-cloneseq-schema-protocol.md`](2026-11-06-cloneseq-schema-protocol.md) | Public-table schema check | All 14 first rows resolved; join semantics, measurement units and independent truth unverified |

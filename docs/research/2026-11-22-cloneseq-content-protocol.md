@@ -103,3 +103,35 @@ This checks identifier linkage only: it does not establish that the actual
 WGS profiles are accessible, distinguish clones, or provide independent
 seeding truth. No count or clinical outcome values will be inspected in this
 follow-up. This amendment is pushed before that targeted read.
+
+## Prospective correction after independent review
+
+The [independent review](2026-11-22-cloneseq-content-independent-review.md)
+identified missing S10 metadata rows in run 02's aggregate report and a
+same-time counter that can hide an extra unmatched sample. Preserve the two
+existing runs and their exact source. A third run may correct these reporting
+defects with the same frozen workbook, schema, author roster, S1–S10 scope,
+join rules and resource limits; it is not a comparative or outcome analysis.
+
+- Record the total incomplete S9/S10 metadata rows and per-component
+  missingness without recording actual keys. Record complete-key duplicates
+  separately. A missing join component remains unresolved even if both
+  tables have a missing value in the same position; do not promote it to a
+  biological match.
+- Within each patient/time/day group, count nonmatching SV and SNV sample keys
+  separately even when a different sample in that group matches. Do not
+  normalize sample names or publish specimen identifiers.
+- Keep zero, missing and invalid count cases distinguishable, and expose
+  independent missing and invalid flags when they occur together. No zero is
+  imputed. Verify the frozen schema hash and author checkout before reading
+  workbook rows. Record the exact command, runtime, input and script hashes,
+  output hash and any failure; use a new result directory.
+- Add focused synthetic tests for incomplete metadata, mixed same-time sample
+  names, simultaneous missing/invalid counts and the pre-read hash gate.
+  Compare the corrected aggregate results with run 02 and the independent
+  review. Ask the independent reviewer to check material changes before using
+  them to make a scientific decision.
+
+The 16 omitted metadata rows and the current workbook's lack of a mixed-name
+group were already observed by the reviewer; this correction is prospective
+for the new code and run, not a blinded discovery.

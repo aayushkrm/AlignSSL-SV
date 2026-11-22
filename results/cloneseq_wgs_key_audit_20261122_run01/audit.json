@@ -1,0 +1,56 @@
+{
+  "samples_listed": 12,
+  "sample_status_counts": {
+    "both_count_sheets": 12
+  },
+  "patients": [
+    {
+      "patient": "SPECTRUM-OV-009",
+      "sample_status_counts": {
+        "both_count_sheets": 2
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-022",
+      "sample_status_counts": {
+        "both_count_sheets": 2
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-044",
+      "sample_status_counts": {
+        "both_count_sheets": 2
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-045",
+      "sample_status_counts": {
+        "both_count_sheets": 2
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-081",
+      "sample_status_counts": {
+        "both_count_sheets": 2
+      }
+    },
+    {
+      "patient": "SPECTRUM-OV-107",
+      "sample_status_counts": {
+        "both_count_sheets": 2
+      }
+    }
+  ],
+  "distinct_patients": 6,
+  "patients_with_both_count_sheet_keys": 6,
+  "workbook_sha256": "7fd3bf312acb0ba617d28878bd9b4a54122164fb842e933d6a13c5efdc53ee33",
+  "author_config_sha256": "f5a25b5b0109a102b670e0a549679da08e49c33bd6fdb1d65292005e366ac954",
+  "author_commit": "076281373393e6922652371262f5975af9a41a30",
+  "script_sha256": "f1e9631ff09476c7c3a669745ac3ad5d46d3ed516e1c5ea7760b784f2436ab63",
+  "helper_sha256": "0734dae21c0346549dff7dbf847d7060b6e5742ea12544d36e0e1cb7f3cb7e76",
+  "protocol_commit": "1c72bb4",
+  "checked_utc": "2026-11-22T12:55:06.995118+00:00",
+  "python": "3.12.14 (main, Aug 25 2026, 13:50:22) [Clang 22.1.3 ]",
+  "openpyxl": "3.1.5",
+  "limits": "First four identifier/time columns only; no read counts, WGS signal files, clinical outcomes or clone accuracy inspected."
+}

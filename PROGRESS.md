@@ -26,9 +26,9 @@ settings. New independent scrutiny has been requested.
 The preregistered [first-row schema check](docs/research/2026-11-06-cloneseq-schema-protocol.md)
 resolved all 14 worksheet headers. SV and SNV tables name read counts,
 background counts and clone labels, but their identifiers differ and SNV
-marker metadata have no patient column. Table contents, joins, independent
-reference, measurement units and comparable assay costs remain unverified.
-No patient data row was read in this check. The published cohort is
+marker metadata have no patient column. At that stage, table contents, joins,
+independent reference, measurement units and comparable assay costs had not
+been checked. No patient data row was read in the schema check. The published cohort is
 exploratory development evidence, not an untouched final test.
 
 A separately preregistered [content-feasibility audit](docs/research/2026-11-22-cloneseq-content-protocol.md)
@@ -39,7 +39,17 @@ but access to the actual reference profiles and their ability to distinguish
 clones remain unverified. Some marker joins are ambiguous or have missing
 composite keys; numeric fields do not establish equal assay cost or molecule
 units. An initial run's missing-clone-label check was corrected, and both
-versions are retained. Independent result review is pending.
+versions are retained. A separately preregistered key-only check matched all
+12 named WGS specimens across six patients to both count sheets; this does not
+establish usable reference truth. An anonymous request for the processed
+Synapse archive's download reference returned HTTP 403; authenticated access
+is untested. A [2026 cfClone preprint](docs/research/2026-11-22-cloneseq-literature-update.md)
+reuses the six patients and reports only three with clone sets distinguishable
+by both marker classes. [Independent review](docs/research/2026-11-22-cloneseq-content-independent-review.md)
+reproduced the narrow findings, and found that 16 incomplete S10 metadata rows
+were omitted from run 02's aggregate missing-key report. A same-time
+diagnostic also needs correction for mixed matching and nonmatching samples.
+The observed key counts remain supported; a third reporting run is specified.
 
 The cluster queue contains `1000g_wget`, whose paths identify the separate
 Alice CNN workflow; it was left running. One workspace's project ownership
